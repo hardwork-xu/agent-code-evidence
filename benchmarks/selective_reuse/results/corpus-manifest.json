@@ -1,0 +1,26 @@
+{
+  "version": "authored-adversarial-v1",
+  "split": "development_adversarial_regression",
+  "limitation": "72 authored instances from 24 syntax templates in 6 families; numeric variants are correlated and are not 72 independent semantic mechanisms. No natural error-rate, generalization, model-task or holdout claim is supported.",
+  "count": 72,
+  "template_count": 24,
+  "family_counts": {
+    "class_global": 12,
+    "decorator_defaults": 12,
+    "dynamic_wildcards": 12,
+    "imports_aliases_shadowing": 12,
+    "top_level_rebind": 12,
+    "unrelated_edits": 12
+  },
+  "decision_counts": {
+    "changed": 15,
+    "fresh": 12,
+    "unknown": 45
+  },
+  "contract_class_counts": {
+    "runtime_effect_out_of_scope": 9,
+    "supported_static": 27,
+    "unsupported_static": 36
+  },
+  "sha256": "3ba5ebf06dd40caa0d8d369be5af6253955c4f0baf55c1a3116e03e2d9edf491"
+}
