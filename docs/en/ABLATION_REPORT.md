@@ -4,7 +4,7 @@ This experiment was designed **after** the complete-only primary method
 reused zero natural graphs. It uses the same frozen data and is not a holdout or
 confirmation of the failed primary hypothesis. Only the completeness gate is
 removed. Source-read and catalog checks, output provenance and all unknown,
-missing or truncated statuses remain. Three baselines were rerun contemporaneously,
+missing or truncated statuses remain. Three methods were rerun contemporaneously,
 with one warmup and five complete trajectory repetitions per method.
 
 The candidate reused **364/480** natural anchor transitions per repetition.
