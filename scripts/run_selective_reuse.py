@@ -196,6 +196,10 @@ def validate_manifest(manifest, protocol):
     if [r['repository'] for r in manifest['repositories']] != protocol['natural']['repositories']:
         raise ValueError('repository selection drift')
     for repo in manifest['repositories']:
+        if len({v['commit'] for v in repo['versions']}) != len(repo['versions']):
+            raise ValueError('duplicate pinned commits')
+        if repo.get('prefixes') != PREFIXES[repo['repository']]:
+            raise ValueError('source prefix drift')
         if len(repo['versions']) != protocol['natural']['versions'] or not repo.get('anchors'):
             raise ValueError('incomplete pinned source corpus')
         for index, version in enumerate(repo['versions']):
@@ -203,8 +207,21 @@ def validate_manifest(manifest, protocol):
                 raise ValueError('missing source or license record')
             if index and version['parents'][0] != repo['versions'][index - 1]['commit']:
                 raise ValueError('broken first-parent chain')
-        if any('text' in anchor for anchor in repo['anchors']):
-            raise ValueError('metadata manifest must not redistribute source text')
+        seen = set()
+        for anchor in repo['anchors']:
+            required = {'id', 'path', 'symbol', 'kind', 'start_line', 'end_line', 'text_sha256', 'file_sha256'}
+            if not isinstance(anchor, dict) or set(anchor) != required:
+                raise ValueError('invalid anchor metadata schema')
+            if (anchor['id'] in seen or anchor['id'] != sha256(anchor['path'] + ':' + anchor['symbol'])
+                    or anchor['path'] not in repo['versions'][0]['files']
+                    or anchor['file_sha256'] != repo['versions'][0]['files'][anchor['path']]
+                    or type(anchor['start_line']) is not int or type(anchor['end_line']) is not int
+                    or not 1 <= anchor['start_line'] <= anchor['end_line']
+                    or anchor['kind'] != 'function' or len(anchor['text_sha256']) != 64):
+                raise ValueError('invalid or duplicate anchor metadata')
+            seen.add(anchor['id'])
+        if len(seen) > 24:
+            raise ValueError('anchor selection limit exceeded')
 
 
 def source_loader(cache, repo, version):
@@ -221,7 +238,7 @@ def source_loader(cache, repo, version):
     return load
 
 
-def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None):
+def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None, progress=None):
     rows = [] if rows is None else rows
     for repetition in range(-1, repetitions):
         order = METHODS[(repetition + offset) % 3:] + METHODS[:(repetition + offset) % 3]
@@ -230,6 +247,9 @@ def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=Non
             session = GraphSession(anchors, mode=method)
             previous = None
             for index, (load, sid) in enumerate(zip(loaders, ids)):
+                if progress:
+                    progress({"group": name, "method": method, "repetition": repetition + 1,
+                              "version_index": index, "snapshot_id": sid})
                 started = time.perf_counter_ns()
                 texts = load()
                 loaded = time.perf_counter_ns()
@@ -288,6 +308,9 @@ def environment():
             'release': platform.release(), 'architecture': platform.machine(),
             'cpu': cpu.stdout.strip() if cpu and not cpu.returncode else platform.processor(),
             'implementation': platform.python_implementation(), 'third_party_runtime': 'none',
+            'memory_bytes': int(subprocess.check_output(['sysctl', '-n', 'hw.memsize']))
+                if sys.platform == 'darwin' else None,
+            'logical_cpus': __import__('os').cpu_count(),
             'threads': 1, 'source_commit': subprocess.check_output(
                 ['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
             'source_dirty': bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT)),
@@ -296,7 +319,56 @@ def environment():
             'runner_sha256': digest(Path(__file__).read_bytes())}
 
 
+def validate_measurements(result):
+    if result.get('status', 'passed') != 'passed':
+        raise ValueError('only a completed passed run can be summarized')
+    rows = result['rows']
+    if not rows or any(r.get('status') != 'passed' for r in rows):
+        raise ValueError('cannot summarize an empty or failed measurement as success')
+    groups = {r['group'] for r in rows}
+    if 'expected_groups' in result and groups != set(result['expected_groups']):
+        raise ValueError('missing study group')
+    keys = [(r['group'], r['repetition'], r['method'], r['version_index']) for r in rows]
+    if len(keys) != len(set(keys)):
+        raise ValueError('duplicate measurement')
+    invariant_rows = {}
+    for row in rows:
+        phase = 'capture' if row['version_index'] == 0 else 'replay'
+        if (row['phase'] != phase or row['elapsed_ns'] < 0 or row['load_ns'] < 0
+                or row['graph_ns'] < 0 or row['elapsed_ns'] != row['load_ns'] + row['graph_ns']):
+            raise ValueError('invalid phase or timing record')
+        if (row['source_changed'] != bool(row['changed_paths'])
+                or row['changed_paths'] != sorted(set(row['changed_paths']))
+                or (row['catalog_changed'] and not row['source_changed'])):
+            raise ValueError('inconsistent source-change metadata')
+        key = row['group'], row['version_index']
+        invariant = {k: row[k] for k in ['graphs', 'phase', 'snapshot_id', 'source_changed',
+                                        'changed_paths', 'catalog_changed']}
+        if key in invariant_rows and invariant_rows[key] != invariant:
+            raise ValueError('fixed-snapshot output or metadata drift across methods/repeats')
+        invariant_rows[key] = invariant
+    for group in groups:
+        selected = [r for r in rows if r['group'] == group]
+        reps = set(range(1, result.get('repetitions', max(r['repetition'] for r in selected)) + 1))
+        versions = set(range(max(r['version_index'] for r in selected) + 1))
+        expected_count = 6 if group.startswith('natural:') else 2
+        if len(versions) != expected_count:
+            raise ValueError('incomplete revision trajectory')
+        expected = {(group, rep, method, version) for rep in reps for method in METHODS for version in versions}
+        if set(k for k in keys if k[0] == group) != expected:
+            raise ValueError('incomplete method/repetition/version grid')
+        for rep in reps:
+            for version in versions:
+                pair = [r for r in selected if r['repetition'] == rep and r['version_index'] == version]
+                if (len({tuple(r['graphs']) for r in pair}) != 1
+                        or any(not r.get('equivalence') for r in pair)):
+                    raise ValueError('canonical graph mismatch in raw results')
+    return 0
+
+
 def summarize(result):
+    if not result.get('_changed_only'):
+        validate_measurements(result)
     groups = {}
     if any(r.get('status') != 'passed' for r in result['rows']):
         raise ValueError('cannot summarize a failed measurement as success')
@@ -339,7 +411,19 @@ def run(args):
               'started_at_utc': datetime.now(timezone.utc).isoformat(),
               'protocol_sha256': digest((DATA / 'protocol.json').read_bytes()),
               'environment': environment(), 'rows': [], 'status': 'running'}
-    write(args.output, result)
+    result['repetitions'] = protocol['timing']['repetitions']
+    result['expected_groups'] = []
+    if args.suite in {'all', 'synthetic'}:
+        result['expected_groups'] += [f'synthetic:{n}:{w}' for n in protocol['synthetic']['module_counts']
+                                      for w in protocol['synthetic']['workloads']]
+    if args.suite in {'all', 'natural'}:
+        result['expected_groups'] += ['natural:' + r for r in protocol['natural']['repositories']]
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open('x') as handle:
+        handle.write(json.dumps(result, indent=2) + '\n')
+    def progress(location):
+        result['progress'] = location
+        write(args.output, result)
     try:
         if args.suite in {'all', 'synthetic'}:
             for n in protocol['synthetic']['module_counts']:
@@ -347,7 +431,7 @@ def run(args):
                     loaders, ids, anchors = synthetic_loaders(n, workload)
                     replay_group(f'synthetic:{n}:{workload}', loaders, ids, anchors,
                                  protocol['timing']['repetitions'], n, rows=result['rows'],
-                                 checkpoint=lambda: write(args.output, result))
+                                 checkpoint=lambda: write(args.output, result), progress=progress)
                     write(args.output, result)
         if args.suite in {'all', 'natural'}:
             manifest = json.loads((DATA / 'natural-manifest.json').read_text())
@@ -356,21 +440,26 @@ def run(args):
             for index, repo in enumerate(manifest['repositories']):
                 loaders = [source_loader(args.cache_dir, repo, version) for version in repo['versions']]
                 first = loaders[0]()
+                expected = [{k: v for k, v in a.items() if k != 'text'} for a in anchors_for(first)]
+                if expected != repo['anchors']:
+                    raise ValueError('deterministic anchor selection drift')
                 anchors = [{**a, 'text': ''.join(first[a['path']].splitlines(keepends=True)[
                     a['start_line'] - 1:a['end_line']])} for a in repo['anchors']]
                 replay_group('natural:' + repo['repository'], loaders,
                     [v['commit'] for v in repo['versions']], anchors,
                     protocol['timing']['repetitions'], index, rows=result['rows'],
-                    checkpoint=lambda: write(args.output, result))
+                    checkpoint=lambda: write(args.output, result), progress=progress)
                 write(args.output, result)
-        result['summary'] = summarize(result)
         result['status'] = 'passed'
-    except Exception as exc:
-        result['status'] = 'failed'
+        result['summary'] = summarize(result)
+    except (Exception, KeyboardInterrupt) as exc:
+        result['status'] = 'interrupted' if isinstance(exc, KeyboardInterrupt) else 'failed'
+        result['finished_at_utc'] = datetime.now(timezone.utc).isoformat()
         result['error_type'] = type(exc).__name__
         # Keep paths and exception detail in local stderr rather than public data.
         write(args.output, result)
         raise
+    result.pop('progress', None)
     result['finished_at_utc'] = datetime.now(timezone.utc).isoformat()
     write(args.output, result)
 
@@ -381,8 +470,12 @@ def main():
     parser.add_argument('--cache-dir', type=Path, default=ROOT / 'work/selective-reuse/archives',
                         help='private download cache / 不提交的下载缓存')
     parser.add_argument('--suite', choices=['synthetic', 'natural', 'all'], default='all')
-    parser.add_argument('--output', type=Path, default=DATA / 'results/replay.json')
+    parser.add_argument('--output', type=Path, help='new raw run path, never overwritten / 不覆盖既有原始记录')
     args = parser.parse_args()
+    if args.output is None and args.action == 'analyze':
+        parser.error('analyze requires --output pointing to a saved run / 请指定已有结果')
+    if args.output is None:
+        args.output = DATA / 'results' / (datetime.now(timezone.utc).strftime('replay-%Y%m%dT%H%M%S%fZ') + '.json')
     if args.action == 'prepare':
         prepare(args.cache_dir)
     elif args.action == 'run':
