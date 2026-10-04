@@ -205,3 +205,32 @@ is not substituted for the failed primary hypothesis. / 消融结果独立保留
 Final local suite: 984 passed, 2 skipped because optional tiktoken was absent;
 Ruff and source-attribution checks passed. Docker is unavailable on this host.
 Remote CI for this research branch has not been run. / 本地检查与远端CI明确分开。
+
+## 2026-10-04 21:02 UTC — incremental baseline and held-out protocol
+
+The reviewed research branch was published as draft PR #4 at `41f8099`.
+CI run `37233127334` passed all five jobs, including isolated builds and optional
+tokenizer/MCP integration. Six public files were anonymously read back and matched
+local hashes. / 草稿PR与远端CI已回读核验，未合并或发布正式版。
+
+Added process-private guarded module summaries keyed by path/source hash,
+transactional current-version retention, and three incremental replay modes.
+The combined whole-corpus guard is the primary simple comparator; unchanged input
+can reuse graphs without paying for graph reconstruction. Source-local guards and
+negative-lookup invalidation remain part of correctness tests. The focused combined
+baseline/historical-runner regression command passed 103 tests.
+新增逐文件摘要和组合基线；保留已有模式与历史原始结果。
+
+Before any held-out graph/timing measurement, four new repositories, eight
+contiguous versions each and 24 anchors each were pinned. Source-only preparation
+found 15/28 transitions with identical included source. The initial protocol and
+manifest are retained; an explicit premeasurement amendment adds the incremental
+whole-corpus comparator and makes it the primary timing/RSS baseline. No source
+version, anchor, threshold or transition was removed.
+源数据检查促成测量前基线加强，未按性能结果换样本。
+
+Memory measurements use separate fresh subprocesses for uninstrumented RSS
+and tracemalloc, never mixing profiler times with ordinary timing. Independent
+harness review found and corrected group-label inconsistencies, weak provenance
+binding, missing policy forwarding and unvalidated peak/worker identities before
+any held-out measurement. / 计时与内存剖析分开，独立复核问题在正式测量前修复。

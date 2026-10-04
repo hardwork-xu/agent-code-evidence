@@ -243,15 +243,17 @@ def source_loader(cache, repo, version):
     return load
 
 
-def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None, progress=None, methods=None):
+def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None, progress=None, methods=None, policy=None, warmup=1):
+    if type(warmup) is not int or warmup < 0:
+        raise ValueError('warmup must be a nonnegative trajectory count')
     rows = [] if rows is None else rows
     methods = METHODS if methods is None else methods
-    for repetition in range(-1, repetitions):
+    for repetition in range(-warmup, repetitions):
         shift = (repetition + offset) % len(methods)
         order = methods[shift:] + methods[:shift]
         outputs = {}
         for method in order:
-            session = GraphSession(anchors, mode=method)
+            session = GraphSession(anchors, mode=method, **(policy or {}))
             previous = None
             for index, (load, sid) in enumerate(zip(loaders, ids)):
                 if progress:
@@ -290,7 +292,7 @@ def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=Non
                                  'equivalence': True, 'status': 'passed'})
                     if checkpoint:
                         checkpoint()
-        print(name, 'warmup' if repetition == -1 else f'repetition {repetition+1}', flush=True)
+        print(name, 'warmup' if repetition < 0 else f'repetition {repetition+1}', flush=True)
     return rows
 
 

@@ -1,0 +1,166 @@
+{
+  "amendments_before_primary": [
+    {
+      "changes": [
+        "Add incremental_whole_corpus_guard as the sixth method and use it for the primary timing and RSS comparisons.",
+        "Retain incremental_index_rebuild as a secondary ablation.",
+        "Preserve original protocol and manifest byte-for-byte as initial-protocol.json and initial-manifest.json."
+      ],
+      "date_utc": "2026-10-04T20:57:03.410875+00:00",
+      "previous_manifest_sha256": "c1260d624256a360e3f8d803289b0be1892cb12a7170f446ccfc2460cfaafc2a",
+      "previous_protocol_sha256": "6c9efa7278dc6bb95eb26057866fae62d95f6593eaa258ff564111fcd7676699",
+      "reason": "Source-only manifest inspection found 15 of 28 replay transitions production-source-identical. Incremental index rebuild alone lacks a trivial whole-corpus-equality guard, so it could overstate selective-read-set benefit. Strengthen the primary baseline to incremental indexing plus whole-corpus guard before any held-out graph extraction or timing. This adjustment uses input byte-change counts only, not resolver or method outcomes.",
+      "unchanged": [
+        "repository/release/commit selection",
+        "all source and archive hashes",
+        "all exact license bytes",
+        "24 fixed anchors per repository",
+        "all eight snapshots and all transitions",
+        "timing and memory repetitions",
+        "20-percent/three-of-four timing and 2x/512-MiB memory thresholds"
+      ]
+    }
+  ],
+  "certificate": "Same anchors, limits and full module/path catalog; consult all relevant source files including unsuccessful lookups. Candidate permits incomplete graphs only with their unknown/truncated states unchanged. Persistent indexing must update changed files and invalidate affected module-resolution state. No externally supplied certificates.",
+  "claim_boundary": "Canonical equality with this bounded static resolver, not Python semantic soundness, coding-agent effectiveness, independent human evaluation, or a new incremental-computation principle.",
+  "correctness_gate": "Zero canonical graph mismatches against warm_ast_rebuild for every anchor, version, method, warmup and measured trajectory. Preserve incomplete, ambiguous, missing and truncated statuses. Any mismatch blocks delivery of the reuse implementation regardless of speed.",
+  "date": "2026-10-04",
+  "development_base_commit": "41f8099713eb32df2b7de0e0fe7f64cbccfd9c41",
+  "fairness": "All methods share an indexed corpus within each snapshot across anchors and use warm AST caches within one trajectory. All three incremental modes maintain the same persistent index policy. The primary incremental_whole_corpus_guard baseline reuses all graphs for an entirely byte-identical source corpus and rebuilds all graphs with incremental indexing when any source changes. The secondary incremental_index_rebuild ablation rebuilds every graph for every snapshot. Each method/repetition starts with a new GraphSession. No measured state survives between trajectories. Nonincremental whole-corpus guard and read-set-any-status are retained comparators.",
+  "hypothesis": "Combining persistent file/module indexing with consulted-file read-set reuse reduces full replay cost beyond a persistent incremental index plus whole-corpus-equality graph reuse.",
+  "memory": {
+    "limitations": "RSS includes interpreter/import/source/graph/index overhead and native allocations. Traced Python memory is partial and instrumentation affects allocation behavior, so Python heap measurements use separate subprocesses and never feed the RSS gate. OS high-water RSS is not an index-only measurement.",
+    "metrics": [
+      "Uninstrumented RUSAGE_SELF ru_maxrss high-water peak normalized to bytes on macOS/Linux",
+      "Separate tracemalloc subprocess peak Python bytes",
+      "Separate tracemalloc subprocess post-gc retained Python bytes after each version"
+    ],
+    "modalities": [
+      "rss",
+      "python_traced"
+    ],
+    "primary_gate": "For every repository, candidate median full-trajectory peak RSS must be at most twice incremental_whole_corpus_guard median peak RSS and at most 536870912 bytes (512 MiB). Report all raw runs, medians, maximums and ratios, including gate failures.",
+    "process_policy": "Two separate modalities, rss (without tracemalloc) and python_traced (with tracemalloc); three fresh subprocesses per modality/method/repository, each one complete eight-revision trajectory; no in-process warmup. Compare medians across three processes. RSS gate uses only the uninstrumented rss modality. Instrumented runs are not timing runs.",
+    "repetitions": 3
+  },
+  "memory_repetitions": 3,
+  "methods": [
+    "warm_ast_rebuild",
+    "whole_corpus_guard",
+    "read_set_any_status",
+    "incremental_index_rebuild",
+    "incremental_whole_corpus_guard",
+    "incremental_read_set"
+  ],
+  "natural": {
+    "anchor_rule": "Parse only oldest-revision production .py/.pyi source with stdlib ast. Enumerate top-level FunctionDef/AsyncFunctionDef; retain first declaration metadata for duplicate path:symbol identities while preserving all declarations in source. Sort identities by SHA256(path + colon + symbol), take first 24. Anchor metadata is fixed across all revisions. Retain all ambiguous, unchanged, missing, unresolved and truncated graph outcomes without reselection.",
+    "anchors": 24,
+    "anchors_per_repository": 24,
+    "excluded_development_repositories": [
+      "PyCQA/pyflakes",
+      "Textualize/rich",
+      "dateutil/dateutil",
+      "encode/httpx",
+      "more-itertools/more-itertools",
+      "openai/human-eval",
+      "pallets/click",
+      "pallets/itsdangerous",
+      "pallets/markupsafe",
+      "psf/requests",
+      "pydantic/pydantic",
+      "pypa/packaging",
+      "pytest-dev/pluggy",
+      "python-attrs/attrs",
+      "python-babel/babel",
+      "python-humanize/humanize",
+      "tox-dev/filelock",
+      "urllib3/urllib3"
+    ],
+    "execute_third_party": false,
+    "prefixes": {
+      "Python-Markdown/markdown": [
+        "markdown/"
+      ],
+      "agronholm/anyio": [
+        "src/anyio/"
+      ],
+      "encode/starlette": [
+        "starlette/"
+      ],
+      "pallets/jinja": [
+        "src/jinja2/"
+      ]
+    },
+    "repositories": [
+      "pallets/jinja",
+      "encode/starlette",
+      "agronholm/anyio",
+      "Python-Markdown/markdown"
+    ],
+    "resource_limits": {
+      "max_archive_bytes": 33554432,
+      "max_file_bytes": 2097152,
+      "max_production_bytes": 5242880,
+      "max_production_files": 500
+    },
+    "revision_rule": "Latest stable non-draft GitHub release returned at pin time, and its seven immediate first parents. Pin exact eight SHA values before inspecting source outcomes. Retain every intervening transition even if source-identical; do not extend or replace histories after examining graph or timing outcomes. If the release/first-parent chain is unavailable, record failure and seek a documented premeasurement amendment rather than silently substitute.",
+    "selection_reason": "Four separately maintained permissive Python packages from different domains, absent from every repository in third_party/manifest.json and the four selective-reuse development repositories. They are distinct projects, not versions/forks/source-copy variants. Convenience selection is not population sampling.",
+    "source_rule": "Retain UTF-8 .py and .pyi files under fixed package prefixes; exclude path components test/tests/fixtures/vendor/vendored/_vendor/generated and filenames beginning test_. Do not execute third-party code. Record every excluded source count and all parse failures during anchor enumeration. Preserve undecodable files as exclusions, not replacement candidates.",
+    "unit": "Repository. Trajectories, revisions and anchors are repeated/dependent observations.",
+    "versions": 8,
+    "viability_rule": "Metadata/license/source-resource viability only: nonarchived nonfork repository with recent upstream activity (within 24 months of protocol date), permissive license, eight linked revisions, exactly 24 eligible anchors and at least one changed production-source file across the interval. Record any failure without inspecting graphs or timings and require an explicit premeasurement amendment for substitution."
+  },
+  "novelty_boundary": "Engineering application/evaluation of established incremental-computation and dependency-tracking ideas. Research novelty requires a separate literature argument and external end-to-end task evidence.",
+  "primary_comparison": {
+    "baseline": "incremental_whole_corpus_guard",
+    "candidate": "incremental_read_set",
+    "reason": "Strongest combined comparator: persistent indexing for changed snapshots and whole-corpus reuse on byte-identical source snapshots. The incremental_index_rebuild method remains a prespecified secondary ablation.",
+    "statistic": "For each repository and method, sum elapsed_ns over all seven replay transitions in each complete measured trajectory; compare medians of the five trajectory totals. Initial capture is reported separately and capture-plus-replay totals are a required secondary metric. Do not pool anchors or transitions as independent samples.",
+    "target": "At least 20 percent lower median end-to-end replay trajectory time on at least three of the four fixed repositories, with zero canonical mismatches; disclose every repository regression and the memory gate outcome."
+  },
+  "repetitions": 5,
+  "reporting": "Retain all source-identical transitions, all outcomes and failures; report corpus sizes, changed-path counts, source-unchanged fraction, anchor coverage, per-repository timing ranges and both trajectory totals. No significance or representative-natural-prevalence claim from four convenience-sampled repositories. Keep historical exploratory development outcomes separate. Do not tune implementation after held-out timings without marking the study developmental and acquiring a new untouched holdout.",
+  "resolver_policy": {
+    "max_depth": 4,
+    "max_nodes": 256
+  },
+  "schema_version": 1,
+  "status": "Prespecified repository-held-out convenience sample; frozen before candidate graph extraction or timings; not public preregistration.",
+  "study": "incremental-index-and-read-set-repository-holdout",
+  "supersedes_protocol_sha256": [
+    "6c9efa7278dc6bb95eb26057866fae62d95f6593eaa258ff564111fcd7676699"
+  ],
+  "targets": {
+    "max_rss_bytes": 536870912,
+    "max_rss_ratio": 2,
+    "min_repositories": 3,
+    "replay_reduction": 0.2
+  },
+  "timing": {
+    "clock": "perf_counter_ns",
+    "include": [
+      "archive read and SHA256 verification",
+      "tar decompression, UTF-8 decoding and per-source checksum verification",
+      "source and catalog change detection",
+      "persistent index maintenance",
+      "read-set validation",
+      "AST/cache lookup",
+      "graph reconstruction or defensive graph cloning and resealing",
+      "all fallback work"
+    ],
+    "initial_capture": "Record separately for each trajectory and include in required secondary capture-plus-replay totals. No primary replay-only result may be described as overall cold-start speedup.",
+    "order": "Rotate whole method trajectories by repository index and repetition, preserving revision order within each trajectory; save the actual order.",
+    "parallel_benchmarks": false,
+    "repetitions": 5,
+    "separate": [
+      "network download",
+      "source/anchor preparation",
+      "canonical equivalence validation",
+      "result serialization",
+      "memory instrumentation"
+    ],
+    "threads": 1,
+    "warmup_trajectories": 1
+  },
+  "warmup": 1
+}
