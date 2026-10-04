@@ -140,7 +140,7 @@ Source-changing transitions only (same frozen inputs; no resampling):
 
 {t_changed}
 
-All 24 natural snapshots had zero complete sampled graphs. That is a coverage
+All 24 natural revision instances (20 distinct source snapshots) had zero complete sampled graphs. That is a coverage
 limitation of this resolver and this sampling frame, not evidence that natural
 programs are unsafe. Selective reuse retained {eligible}/{targets} natural anchor-transition graphs
 per repetition. This is a replay count, not evidence of semantic safety. A
@@ -157,8 +157,7 @@ natural-workload frequency estimate.
 
 ## 5. Provenance correction
 
-Exact third-party license texts are retained and checked offline. Independent
-inspection of 71 original source files verified 1309 distributed excerpts:
+Exact third-party license texts are retained and checked offline. A separate scripted source-identity audit of 71 original source files verified 1309 distributed excerpts:
 748 byte matches, 544 matches after presentation whitespace, and 17 historical
 noncontiguous excerpts whose declared contiguous line spans were inaccurate.
 The 17 cases are explicitly indexed; historical raw outputs are unchanged.
@@ -272,7 +271,7 @@ listed implementation files and runner were committed and content-hashed.
 
 {t_changed}
 
-24 个自然快照中，被选图的完整数量全部为零。这反映当前解析器和采样范围
+24 个自然版本出现（20 种唯一源码快照）中，被选图的完整数量全部为零。这反映当前解析器和采样范围
 的覆盖局限，不是说自然程序不安全。每轮选择性策略复用 {eligible}/{targets} 个自然锚点转换图。这不是语义安全
 数量。全语料相同的简单策略可保留不完整图及其 unknown 状态，选择性模式
 则重建，因此只和重建比较会隐去更强的简单替代方案。
@@ -284,7 +283,7 @@ listed implementation files and runner were committed and content-hashed.
 
 ## 来源勘误
 
-已补齐并离线核对第三方许可原文。独立核对 71 个原文件中的 1309 处已分发
+已补齐并离线核对第三方许可原文。单独脚本核对 71 个原文件中的 1309 处已分发
 摘录：748 字节完全一致、544 仅有呈现空白差异，17 处历史非连续摘录误标
 连续行范围。17 项均单列定位勘误，不修改历史原始输出，也不冒称连续出处
 全部正确。[核验数据](../../third_party/source-verification.json) ·

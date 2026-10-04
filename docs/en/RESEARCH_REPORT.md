@@ -98,7 +98,7 @@ Source-changing transitions only (same frozen inputs; no resampling):
 | more-itertools/more-itertools | 651.05 | 649.94 | 647.50 | +0.5% | +0.4% |
 | python-humanize/humanize | 242.91 | 242.38 | 242.31 | +0.2% | +0.0% |
 
-All 24 natural snapshots had zero complete sampled graphs. That is a coverage
+All 24 natural revision instances (20 distinct source snapshots) had zero complete sampled graphs. That is a coverage
 limitation of this resolver and this sampling frame, not evidence that natural
 programs are unsafe. Selective reuse retained 0/480 natural anchor-transition graphs
 per repetition. This is a replay count, not evidence of semantic safety. A
@@ -120,8 +120,7 @@ natural-workload frequency estimate.
 
 ## 5. Provenance correction
 
-Exact third-party license texts are retained and checked offline. Independent
-inspection of 71 original source files verified 1309 distributed excerpts:
+Exact third-party license texts are retained and checked offline. A separate scripted source-identity audit of 71 original source files verified 1309 distributed excerpts:
 748 byte matches, 544 matches after presentation whitespace, and 17 historical
 noncontiguous excerpts whose declared contiguous line spans were inaccurate.
 The 17 cases are explicitly indexed; historical raw outputs are unchanged.

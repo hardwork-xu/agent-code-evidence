@@ -1,0 +1,45 @@
+{
+  "attribution": "passed; historical 17 noncontiguous excerpt locations explicitly retained as limitations",
+  "checked_at_utc": "2026-10-04T20:11:05.263335+00:00",
+  "dependency_versions": {
+    "build": "1.3.0",
+    "pytest": "8.4.2",
+    "ruff": "0.13.1",
+    "setuptools": "80.9.0"
+  },
+  "docker": "not available; not run",
+  "implementation_sha256": {
+    "scripts/render_selective_report.py": "2b5e867543883c8b21fa53490e9ad97bb04658d6bb32795a533049d78103fed3",
+    "scripts/run_selective_ablation.py": "d4f2ea649ec4db7ac5c320e87f306d615f4cecb36e5a0c5d004baec46764e0f4",
+    "scripts/run_selective_reuse.py": "d44c72a9d84c7cf8a26d59fd2098b77eb952d2efa9a12c43a8a2a0026c7b64a6",
+    "src/contextproof/__init__.py": "ef87b48edc5100642605cee1f0537a6a2f922f73ca0963a95ed944a4851c794e",
+    "src/contextproof/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/contextproof/cli.py": "b6b713817366891fcb815feeaef203cd2095e4b1e340dba879d7b02cc29b74ca",
+    "src/contextproof/dependencies.py": "a83f4f3fb6c7c8fa92ea801088ef1e2be9a995025e925189947bd7eb0541c493",
+    "src/contextproof/evidence.py": "63b41f50ced294c391399121752b5ffb096dc153d75f4eeb30a0a3f74357fc6a",
+    "src/contextproof/graph.py": "a0e1aeebaf46d9daf1b895a66082300b6ecd0eb9f63049992e1c628de0e1d6de",
+    "src/contextproof/graph_delta.py": "dd46426a75e42fad59818c6b32303ad5f62c1d4464c5474ae2c1379bee65b741",
+    "src/contextproof/graph_payload.py": "663eca2ac57b5f1ef127b946057629999bfde47c93bf38c8bbc72007ce5ec509",
+    "src/contextproof/graph_session.py": "d86b59beff2566f514464d1b4791fb5bc58dfd2f8a51028d986d457e0829b4ff",
+    "src/contextproof/index.py": "d8b6838ab5161d69e9b50480674345830a2921cc4be9b1c6a02f5a95d792d108",
+    "src/contextproof/mcp.py": "3b954718f775ccb2f99c971369a99fdb202d3a1f20eb0a27330d7d14ece12712",
+    "src/contextproof/models.py": "4bc812d50fe6773f5c89181b7259de9950f4c25ea4272081cdc38b130f15c8bf",
+    "src/contextproof/parse_cache.py": "9aa2ecc4dec7dc4ccd86f66e8202de6cd0de431ce3e8fd79c53c7902398edc85",
+    "src/contextproof/report.py": "12993022760f71142b6ae796ce7d8b1a18a7774f6eb6ed4d8d7c8aef331db666",
+    "src/contextproof/retrieval.py": "c237c65f99197b4565374decd2afc9bf6e1fc079d527f74beb1ab994fc1e1a68",
+    "src/contextproof/reuse.py": "22e479fdcfac08efaacf509801fba7df9cec1606035ecd0dd02172af9e14930d",
+    "src/contextproof/revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
+    "src/contextproof/session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
+    "src/contextproof/static_scope.py": "e74136be0939e5973818fede4d625c76feaec3605d337fcee8bab8093e4d70fb"
+  },
+  "python": "3.12.2",
+  "remote_ci": "not run for this research branch",
+  "ruff": "passed",
+  "tests": {
+    "command": "python -m pytest -q -rs tests benchmarks/graph/test_scope_audit.py benchmarks/revision_baselines/test_baselines.py",
+    "failed": 0,
+    "passed": 984,
+    "skip_reason": "optional tiktoken is not installed",
+    "skipped": 2
+  }
+}

@@ -169,3 +169,39 @@ collection now records these files for the subsequent experimental reuse path.
 Validation: `pytest -q tests/test_static_scope_research.py` (41 passed), plus
 independent frozen adversarial cases; full validation is recorded separately
 against the final source hashes. No historical experiment results were replaced.
+
+## 2026-10-04 — primary replay and exploratory extension / 主实验与探索扩展
+
+Commits `b30d3e5`, `873c2ed`, `05c5312` and `b25b3d4` record the actual resolver,
+certificate, validation and preflight corrections. Initial source preparation
+failed to recognize the British license filename `LICENCE`; the downloader was
+corrected. Initial primary startup rejected duplicate overload anchor IDs before
+any timing; the original manifest and failure are retained. Neither case was
+silently deleted. / 真实过程包括 LICENCE 文件名识别和重载锚点去重修复，保留失败。
+
+The fixed primary run `selective-20261004T195433Z` emitted 630 timing records and
+9720 graph outputs with matching bytes across methods. It did not meet its
+utility target: 0/480 natural anchor transitions were selectively reused, with
+zero complete sampled graphs in all 24 natural snapshots. The report is rendered
+from raw results; no target or sample was changed after observing this result.
+主实验未达到目标，完整性门槛在这些自然样本中没有覆盖；报告直接来自原始数据。
+
+A separate `ablation-protocol.json` was then frozen for unknown-preserving graph
+memoization. It is explicitly exploratory and uses the same data; it is not a
+holdout or a rescued primary hypothesis. The default policy remains unchanged.
+An independent 88-test suite checks retained unknown/truncated/missing states
+and byte parity before timing this new mode. / 后续消融独立记录，不冒充主假设成功。
+
+Attribution inspection found 17 historical noncontiguous excerpts with misleading
+contiguous spans. New provenance indexes record them without changing old model
+outputs or scores. Full license texts are included in source distributions.
+
+The separate run `ablation-20261004T200446Z` retained 364/480 natural graph
+transitions without changing their unknown states. Contemporaneous whole-corpus
+baselines were rerun; the per-repository reductions are in the generated
+`docs/en/ABLATION_REPORT.md` and Chinese counterpart. This exploratory result
+is not substituted for the failed primary hypothesis. / 消融结果独立保留，未替换主结论。
+
+Final local suite: 984 passed, 2 skipped because optional tiktoken was absent;
+Ruff and source-attribution checks passed. Docker is unavailable on this host.
+Remote CI for this research branch has not been run. / 本地检查与远端CI明确分开。

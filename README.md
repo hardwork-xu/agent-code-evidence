@@ -23,6 +23,20 @@ requires no model, GPU or API key. Hosted-model experiments are separate.
 [简体中文](docs/README.zh-CN.md) · [Graph API and contracts](docs/GRAPH.md) ·
 [Measured report](docs/GRAPH_REPORT.md) · [Model protocol](docs/REVISION_STUDY_PROTOCOL.md)
 
+## Research branch (1.2.0a1)
+
+Resolver 3 corrects class-body global rebinding; older graphs must be recaptured.
+The new [source-read replay study](docs/en/RESEARCH_REPORT.md) preserves a negative
+result: complete-only certificates reused **0/480** natural anchor transitions,
+and no repository met the predeclared speed target. All sampled natural graphs
+had unresolved frontiers. This is not a mature-paper or general acceleration claim.
+
+The [research API and example](docs/en/SELECTIVE_REUSE.md) are offline and require
+no model key. An explicitly exploratory `read_set_any_status` mode tests caching
+unknown outputs while retaining their unknown status. It is not a freshness
+certificate. [Source attribution](third_party/README.md) now includes exact
+licenses and 17 disclosed historical excerpt-location limitations.
+
 ## Run the three-hop example
 
 ```sh
@@ -150,3 +164,6 @@ Maintained by **hardwork-xu**, with AI assistance for design, implementation,
 experiments and writing. The project claims no new retrieval algorithm or
 published research result. Source and evaluation records are public; personal
 plans, account data and raw local diagnostics are kept outside Git.
+
+The [post-result ablation](docs/en/ABLATION_REPORT.md) preserves unknown states and reuses 364/480 natural graph transitions. Relative to the contemporaneous whole-corpus guard, replay time decreases by 83.0% (Rich), 29.3% (Humanize), 18.8% (More Itertools), and 6.2% (Pyflakes). These are same-data exploratory CPU results, not task-quality gains.
+

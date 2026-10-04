@@ -129,3 +129,19 @@ MCP SDK 验证实际 stdio 调用。模型推理不在 CI 中自动运行。
 
 项目由 **hardwork-xu** 维护，使用 AI 辅助设计、实现、实验与写作。
 采用 [MIT 许可证](../LICENSE)，上游来源与许可证保留在各实验 manifest 中。
+
+## 研究分支（1.2.0a1）
+
+解析器 3 修复类体 global 重绑定，旧图需要重新捕获。
+[读取集回放研究](zh/RESEARCH_REPORT.md) 保留否定结果：只允许完整图的策略
+在自然锚点转换中复用 **0/480**，四库均未达到预设加速目标；所选自然图
+都有未解析前沿。这不代表成熟论文或普遍加速结论。
+
+[研究 API 与示例](zh/SELECTIVE_REUSE.md) 可离线运行，无需模型密钥。
+探索性 `read_set_any_status` 模式只研究保留 unknown 输出的缓存，不认证
+它为 fresh。[第三方归属](../third_party/README.md) 补齐许可原文，并披露
+17 项历史摘录定位限制。
+
+
+[结果后的消融](zh/ABLATION_REPORT.md) 保留未知状态，复用 364/480 个自然图转换；相对同期整体缓存基线，回放耗时分别降低 83.0%（Rich）、29.3%（Humanize）、18.8%（More Itertools）、6.2%（Pyflakes）。这是同数据上的探索性 CPU 结果，不是任务质量收益。
+
