@@ -243,7 +243,7 @@ def source_loader(cache, repo, version):
     return load
 
 
-def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None, progress=None, methods=None, policy=None, warmup=1):
+def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None, progress=None, methods=None, policy=None, warmup=1, reference=None):
     if type(warmup) is not int or warmup < 0:
         raise ValueError('warmup must be a nonnegative trajectory count')
     rows = [] if rows is None else rows
@@ -270,6 +270,14 @@ def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=Non
                 previous = texts
                 output = [digest(canonical_graph_bytes(g)) for g in result.graphs]
                 key = index
+                if reference is not None and reference.get(index) != output:
+                    rows.append({'group': name, 'repetition': repetition + 1, 'method': method,
+                                 'version_index': index, 'status': 'failed',
+                                 'expected_graphs': reference.get(index), 'actual_graphs': output,
+                                 'error': 'uncached_reference_mismatch'})
+                    if checkpoint:
+                        checkpoint()
+                    raise RuntimeError(f'uncached graph mismatch: {name}/{method}/{index}')
                 if key in outputs and outputs[key] != output:
                     rows.append({'group': name, 'repetition': repetition + 1, 'method': method,
                                  'version_index': index, 'status': 'failed',

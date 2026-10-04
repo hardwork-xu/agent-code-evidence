@@ -61,6 +61,10 @@ def study(tmp_path, monkeypatch):
            'runner_sha256': runner.base.digest(Path(runner.__file__).read_bytes()),
            'protocol_snapshot': deepcopy(protocol), 'environment': environment,
            'timing_rows': [], 'memory_trials': []}
+    raw['cold_reference'] = [
+        {'group': repo['repository'], 'version_index': index, 'snapshot_id': version['commit'],
+         'graphs': [sha('output-' + str(index))], 'complete': 1}
+        for index, version in enumerate(repo['versions'])]
     raw['provenance'] = {k: raw[k] for k in ('runner_sha256', 'protocol_sha256', 'manifest_sha256')}
     raw['provenance']['implementation_files'] = deepcopy(environment['implementation_files'])
     raw['provenance']['supporting_scripts'] = {
@@ -110,6 +114,91 @@ def test_authored_complete_grid_and_repository_trajectory_totals(study):
 
 def test_provenance_covers_the_executed_loader_and_timing_harness(study):
     assert runner.source_provenance()['supporting_scripts'] == study.raw['provenance']['supporting_scripts']
+
+
+@pytest.mark.parametrize('change', ['missing', 'duplicate', 'group', 'snapshot', 'version',
+                                    'graph', 'complete', 'all-methods-share-wrong-graph'])
+def test_every_result_must_match_a_complete_uncached_reference_grid(study, change):
+    references = study.raw['cold_reference']
+    if change == 'missing':
+        references.pop()
+    elif change == 'duplicate':
+        references.append(deepcopy(references[0]))
+    elif change == 'group':
+        references[0]['group'] = 'wrong/repository'
+    elif change == 'snapshot':
+        references[0]['snapshot_id'] = 'f' * 40
+    elif change == 'version':
+        references[0]['version_index'] = -1
+    elif change == 'graph':
+        references[0]['graphs'] = [sha('different from cold rebuild')]
+    elif change == 'complete':
+        references[0]['complete'] = 0
+    else:
+        # Pairwise agreement between every method, repetition and memory
+        # modality still cannot replace the uncached independent output.
+        wrong = [sha('shared cache bug')]
+        for row in study.raw['timing_rows']:
+            if row['version_index'] == 1:
+                row['graphs'] = wrong
+        for trial in study.raw['memory_trials']:
+            trial['rows'][1]['graphs'] = wrong
+    with pytest.raises(ValueError):
+        runner.summarize(study.raw, study.protocol, study.manifest)
+
+
+@pytest.mark.parametrize('mismatch_at', [0, 1])
+def test_uncached_reference_guards_warmup_and_measured_outputs(monkeypatch, mismatch_at):
+    """Fake clock/session exercise failure routing, not timing or a cache oracle."""
+    calls = []
+    class FakeSession:
+        def __init__(self, selected, **kwargs):
+            pass
+        def update(self, texts, sid):
+            index = len(calls)
+            calls.append(index)
+            graph = {'frontier': [], 'output': 'bad' if index == mismatch_at else 'control'}
+            return SimpleNamespace(graphs=[graph], reused=0, rebuilt=1, reasons={'rebuild': 1})
+    ticks = iter(range(100))
+    monkeypatch.setattr(runner.base.time, 'perf_counter_ns', lambda: next(ticks))
+    monkeypatch.setattr(runner.base, 'GraphSession', FakeSession)
+    monkeypatch.setattr(runner.base, 'canonical_graph_bytes', lambda graph: graph['output'].encode())
+    rows = []
+    with pytest.raises(RuntimeError):
+        runner.base.replay_group('natural:authored/repo', [lambda: {'a.py': 'VALUE = 1\n'}],
+                                 ['1' * 40], [{}], 1, rows=rows, methods=['warm_ast_rebuild'],
+                                 warmup=1, reference={0: [sha('control')]})
+    assert len(calls) == mismatch_at + 1
+    assert rows[-1]['status'] == 'failed'
+    assert rows[-1]['repetition'] == mismatch_at
+    assert rows[-1]['expected_graphs'] == [sha('control')]
+
+
+def test_cold_reference_shares_only_within_snapshot_and_never_accepts_a_cache(study, monkeypatch):
+    for texts in study.texts:
+        texts['pkg/api.py'] += '\ndef another_entry():\n    return 17\n'
+    selected = runner.corpus.anchors_for(study.texts[0])
+    study.repo['anchors'] = [{k: v for k, v in a.items() if k != 'text'} for a in selected]
+    install_authored_sources(study, monkeypatch)
+    created, used = [], []
+    original_factory, original_build = runner._Corpus.from_texts, runner.build_graph
+    def fresh(cls, texts, parsed_cache=None, **kwargs):
+        assert parsed_cache is None
+        assert kwargs.get('module_cache') is None
+        result = original_factory(texts, parsed_cache, **kwargs)
+        created.append(result)
+        return result
+    def build(*args, **kwargs):
+        used.append(kwargs['_corpus'])
+        return original_build(*args, **kwargs)
+    monkeypatch.setattr(runner._Corpus, 'from_texts', classmethod(fresh))
+    monkeypatch.setattr(runner, 'build_graph', build)
+    references = list(runner.cold_reference(study.repo, study.tmp / 'cache', study.protocol))
+    assert len(created) == len(references) == 3
+    assert len({id(item) for item in created}) == 3
+    assert len(used) == 6
+    for index, corpus in enumerate(created):
+        assert all(item is corpus for item in used[index * 2:index * 2 + 2])
 
 
 @pytest.mark.parametrize('change', ['missing-timing', 'duplicate-timing', 'missing-memory',
@@ -171,6 +260,19 @@ def test_saved_run_cannot_be_reinterpreted_under_different_pins(study, field):
 
 def test_mutated_protocol_snapshot_cannot_relax_saved_target(study):
     study.raw['protocol_snapshot']['targets']['replay_reduction'] = 0
+    with pytest.raises(ValueError):
+        runner.summarize(study.raw, study.protocol, study.manifest)
+
+
+@pytest.mark.parametrize('object_name', ['protocol', 'manifest'])
+def test_validators_bind_supplied_objects_to_their_hashed_file_bytes(study, object_name):
+    if object_name == 'protocol':
+        study.protocol['targets']['replay_reduction'] = 0
+        study.raw['protocol_snapshot']['targets']['replay_reduction'] = 0
+    else:
+        study.manifest['repositories'][0]['prefixes'] = ['other-package/']
+    # The caller and result agree with each other, but the named pin still
+    # hashes the original immutable file. Agreement cannot replace that pin.
     with pytest.raises(ValueError):
         runner.summarize(study.raw, study.protocol, study.manifest)
 
@@ -284,6 +386,7 @@ def test_memory_worker_graphs_match_direct_rebuild_on_authored_sources(study, mo
 def install_run(study, monkeypatch, suite='memory'):
     monkeypatch.setattr(runner, 'load_inputs', lambda: (study.protocol, study.manifest))
     monkeypatch.setattr(runner.base, 'environment', lambda: deepcopy(study.environment))
+    install_authored_sources(study, monkeypatch)
     return Namespace(suite=suite, cache_dir=study.tmp / 'cache', output=study.tmp / 'run.json')
 
 

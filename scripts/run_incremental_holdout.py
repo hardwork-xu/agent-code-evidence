@@ -21,7 +21,8 @@ import tracemalloc
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'src'))
-from contextproof.graph import canonical_graph_bytes  # noqa: E402
+from contextproof.dependencies import _Corpus  # noqa: E402
+from contextproof.graph import canonical_graph_bytes, build_graph  # noqa: E402
 from contextproof.reuse import GraphSession  # noqa: E402
 from scripts import prepare_incremental_holdout as corpus  # noqa: E402
 from scripts import run_selective_reuse as base  # noqa: E402
@@ -67,8 +68,12 @@ def validate_provenance(result, protocol, manifest):
         raise ValueError('frozen protocol differs from run')
     # The input object and file are both supplied by the pinned study. Later
     # analysis may use different runtime code, but not a different input file.
-    if (provenance['protocol_sha256'] != base.digest((DATA / 'protocol.json').read_bytes())
-            or provenance['manifest_sha256'] != base.digest((DATA / 'manifest.json').read_bytes())):
+    protocol_bytes = (DATA / 'protocol.json').read_bytes()
+    manifest_bytes = (DATA / 'manifest.json').read_bytes()
+    if (provenance['protocol_sha256'] != base.digest(protocol_bytes)
+            or provenance['manifest_sha256'] != base.digest(manifest_bytes)
+            or json.loads(protocol_bytes) != protocol
+            or json.loads(manifest_bytes) != manifest):
         raise ValueError('saved run uses different source/protocol pins')
     files = provenance.get('implementation_files')
     required = {'src/contextproof/' + p for p in
@@ -95,6 +100,26 @@ def anchors(repo, first):
     if [{k: v for k, v in a.items() if k != 'text'} for a in selected] != repo['anchors']:
         raise ValueError('frozen anchor selection drift / 固定锚点漂移')
     return selected
+
+
+def cold_reference(repo, cache, protocol):
+    """No cross-version AST/module cache / 不使用跨版本 AST 或摘要缓存的参照。
+
+    Share one newly parsed/indexed corpus among anchors of the same snapshot.
+    每个快照重新解析与索引，仅在同一快照的锚点之间共享临时语料。
+    """
+    selected = None
+    for index, version in enumerate(repo['versions']):
+        texts = corpus.source_loader(cache, repo, version)()
+        if selected is None:
+            selected = anchors(repo, texts)
+        fresh = _Corpus.from_texts(texts)
+        graphs = [build_graph(texts, version['commit'], [a], _corpus=fresh,
+                              **protocol['resolver_policy']) for a in selected]
+        yield {'group': repo['repository'], 'version_index': index,
+               'snapshot_id': version['commit'],
+               'graphs': [base.digest(canonical_graph_bytes(g)) for g in graphs],
+               'complete': sum(not g['frontier'] for g in graphs)}
 
 
 def rss_bytes(value, system=None):
@@ -138,10 +163,12 @@ def memory_worker(repo, method, modality, cache, protocol):
         del result
         gc.collect()
         current, peak = tracemalloc.get_traced_memory() if modality == 'python_traced' else (None, None)
+        native_peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
         rows.append({'version_index': index, 'snapshot_id': version['commit'],
                      'graphs': hashes, 'reused': counts[0], 'rebuilt': counts[1],
-                     'complete': counts[2], 'rss_peak_bytes': rss_bytes(
-                         resource.getrusage(resource.RUSAGE_SELF).ru_maxrss),
+                     'complete': counts[2], 'rss_peak_bytes': rss_bytes(native_peak),
+                     'rss_native_value': native_peak,
+                     'rss_native_unit': 'bytes' if sys.platform == 'darwin' else 'KiB',
                      'python_retained_bytes': current, 'python_peak_bytes': peak})
     if modality == 'python_traced':
         tracemalloc.stop()
@@ -184,6 +211,20 @@ def validate(result, protocol, manifest):
         raise ValueError('study group/method drift')
     versions = protocol['natural']['versions']
     invariants = {}
+    expected_reference = {(r, v) for r in repos for v in range(versions)}
+    for row in result.get('cold_reference', []):
+        key = row['group'], row['version_index']
+        if key not in expected_reference or key in invariants:
+            raise ValueError('unknown or duplicate uncached reference')
+        repo = repos[row['group']]
+        if (row['snapshot_id'] != repo['versions'][row['version_index']]['commit']
+                or not isinstance(row['graphs'], list) or len(row['graphs']) != len(repo['anchors'])
+                or any(not _hex(g, 64) for g in row['graphs'])
+                or not _integer(row['complete']) or row['complete'] > len(repo['anchors'])):
+            raise ValueError('invalid uncached reference output')
+        invariants[key] = row['graphs'], row['complete']
+    if set(invariants) != expected_reference:
+        raise ValueError('incomplete uncached reference grid')
 
     def check_output(row, name):
         version = row['version_index']
@@ -348,6 +389,7 @@ def run(args):
            'methods': protocol['methods'], 'expected_groups': protocol['natural']['repositories'],
            'command': f'python scripts/run_incremental_holdout.py run --suite {args.suite} --output NEW_RUN.json',
            'environment': base.environment(), 'timing_rows': [], 'memory_trials': [],
+           'cold_reference': [],
            'timing_orders': [{'group': repo['repository'], 'repetition': rep + 1,
                 'methods': protocol['methods'][(rep + offset) % len(protocol['methods']):]
                     + protocol['methods'][:(rep + offset) % len(protocol['methods'])]}
@@ -363,6 +405,11 @@ def run(args):
         base.write(args.output, raw)
 
     try:
+        for repo in manifest['repositories']:
+            for row in cold_reference(repo, args.cache_dir, protocol):
+                raw['cold_reference'].append(row)
+                checkpoint({'phase': 'uncached_reference', 'group': row['group'],
+                            'version_index': row['version_index']})
         if args.suite in ('timing', 'all'):
             for offset, repo in enumerate(manifest['repositories']):
                 loaders = [corpus.source_loader(args.cache_dir, repo, v) for v in repo['versions']]
@@ -371,7 +418,9 @@ def run(args):
                                   [v['commit'] for v in repo['versions']], selected,
                                   protocol['repetitions'], offset, rows=raw['timing_rows'],
                                   checkpoint=checkpoint, progress=checkpoint, methods=protocol['methods'],
-                                  policy=protocol['resolver_policy'], warmup=protocol['warmup'])
+                                  policy=protocol['resolver_policy'], warmup=protocol['warmup'],
+                                  reference={r['version_index']: r['graphs'] for r in raw['cold_reference']
+                                             if r['group'] == repo['repository']})
         if args.suite in ('memory', 'all'):
             for offset, repo in enumerate(manifest['repositories']):
                 for rep in range(1, protocol['memory_repetitions'] + 1):

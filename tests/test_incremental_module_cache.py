@@ -137,6 +137,29 @@ def test_negative_lookup_and_source_local_guards_survive_reuse_then_invalidate(m
     assert not restored.graphs[0]["frontier"]
 
 
+@pytest.mark.parametrize("replacement", ["worker = 1\n", "from other import *\n"])
+def test_summary_hit_replays_negative_reads_into_rebuilt_graph_certificate(replacement):
+    """Rebuild after anchor edit, then change a previously absent package binding.
+
+    锚点改变触发重建后，缓存摘要的负向查找仍必须登记到新图的失效证书。
+    """
+    before = sources()
+    selected = [anchor(before)]
+    session = GraphSession(selected, mode="incremental_read_set")
+    parity(session, before, "initial", selected)
+    edited = before | {"app.py": before["app.py"].replace(
+        "return pkg.worker.compute()", "return pkg.worker.compute() + 1")}
+    rebuilt = parity(session, edited, "anchor-edit", selected)
+    assert rebuilt.rebuilt == 1
+    assert session.index_stats["indexed_modules"] == 1
+    assert session.index_stats["reused_modules"] == 3
+    assert "pkg/__init__.py" not in {n["path"] for n in rebuilt.graphs[0]["nodes"].values()}
+    changed = edited | {"pkg/__init__.py": replacement}
+    invalidated = parity(session, changed, "negative-binding-changed", selected)
+    assert invalidated.rebuilt == 1 and invalidated.reused == 0
+    assert invalidated.graphs[0]["frontier"]
+
+
 @pytest.mark.parametrize("mode", MODES)
 @pytest.mark.parametrize("collision", ["src/pkg/worker.py", "pkg/worker.pyi", "pkg/worker/__init__.py"])
 def test_catalog_collisions_add_remove_and_restore_without_invalidating_local_summaries(mode, collision):
