@@ -147,3 +147,25 @@ local logs and personal records stay outside Git. Release building now checks
 archive ownership, public maintainer metadata, content hashes and personal paths.
 See the [measured report](GRAPH_REPORT.md) for final engineering replay and paired
 model results, methodological limits and reproduction records.
+
+## 2026-10-04 — static contract correction / 静态契约修正
+
+An independently reproduced class-body `global` rebinding counterexample returned
+`fresh=true` under resolver 2 despite changed runtime output. Resolver 3 retains
+uncertainty for explicit writes paired with a global declaration in the same
+class scope. It rejects old graph versions and requires recapture. The new
+regression suite checks assignments, imports, deletion, nested scopes and
+unrelated class controls. This is a bounded static-contract correction, not a
+claim of general Python semantic soundness.
+
+独立复现的类体 `global` 重绑定反例在解析器 2 中误判为 fresh。解析器 3
+保留显式写入的不确定性，并要求旧图重新捕获；不宣称一般 Python 语义安全。
+
+Source inspection also identified resolver reads that do not appear as graph
+nodes: package files checked before submodule fallback. Optional read-set
+collection now records these files for the subsequent experimental reuse path.
+路径查找依赖还包括未成为图节点的包文件，读取集会记录这些依赖。
+
+Validation: `pytest -q tests/test_static_scope_research.py` (41 passed), plus
+independent frozen adversarial cases; full validation is recorded separately
+against the final source hashes. No historical experiment results were replaced.

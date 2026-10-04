@@ -129,6 +129,9 @@ class _Corpus:
 
     def _load_texts(self, texts: dict[str, str], parsed_cache: dict | None = None) -> None:
         self.texts = dict(sorted(texts.items()))
+        # Read dependencies include unsuccessful lookups, not only graph nodes.
+        # 记录查找所读取的文件，包括未命中属性的包文件。
+        self.lookup_paths: set[str] = set()
         self.trees: dict[str, ast.Module] = {}
         self.modules: dict[str, list[str]] = defaultdict(list)
         self.bindings: dict[str, dict[str, list[dict]]] = {}
@@ -234,6 +237,7 @@ class _Corpus:
             return _unresolved("qualified expression exceeds the static resolution depth limit")
         if not attrs:
             return _unresolved("a module value has no bounded definition witness")
+        self.lookup_paths.update(self.modules.get(module, []))
         uncertainty = module_lookup_uncertainty(self, module, attrs)
         if uncertainty:
             return _unresolved(uncertainty)
@@ -258,6 +262,7 @@ class _Corpus:
 
     def resolve_name(self, path: str, name: str, attrs: list[str],
                      seen: set[tuple[str, str]] | None = None) -> dict:
+        self.lookup_paths.add(path)
         seen = set() if seen is None else seen
         if len(seen) >= 128:
             return _unresolved("import chain exceeds the static resolution depth limit")

@@ -40,6 +40,74 @@ def pattern_names(node: ast.AST) -> set[str]:
     return names
 
 
+def _definition_expressions(node: ast.AST) -> list[ast.AST]:
+    """Expressions in the enclosing scope; 外层作用域中的定义时表达式。"""
+    if isinstance(node, ast.ClassDef):
+        return [*node.bases, *node.decorator_list, *(item.value for item in node.keywords)]
+    expressions = [item for item in [*node.args.defaults, *node.args.kw_defaults]
+                   if item is not None]
+    for arg in [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs,
+                *([node.args.vararg] if node.args.vararg else []),
+                *([node.args.kwarg] if node.args.kwarg else [])]:
+        if arg.annotation is not None:
+            expressions.append(arg.annotation)
+    if not isinstance(node, ast.Lambda):
+        expressions.extend(node.decorator_list)
+        if node.returns is not None:
+            expressions.append(node.returns)
+    return expressions
+
+
+def _class_global_writes(owner: ast.ClassDef) -> list[tuple[str, ast.AST]]:
+    """Find explicit class-suite writes to declared module globals.
+
+    Class bodies execute when defined, but each nested class has its own global
+    declarations. Function/lambda bodies and comprehension targets belong to
+    other scopes. Only writes paired with a global declaration in the same
+    class scope are returned; no branch or runtime call is evaluated.
+
+    类体在定义时执行；嵌套类的 global 声明独立。函数体及推导式目标不属于
+    外层类作用域。仅保留同一类作用域中显式声明为 global 的写入，不求值分支
+    或调用，也不声称覆盖任意 Python 运行时副作用。
+    """
+    result: list[tuple[str, ast.AST]] = []
+    classes = [owner]
+    while classes:
+        pending = list(classes.pop().body)
+        globals_: set[str] = set()
+        writes: list[tuple[str, ast.AST]] = []
+        while pending:
+            node = pending.pop()
+            names: set[str] = set()
+            if isinstance(node, ast.Global):
+                globals_.update(node.names)
+            elif isinstance(node, ast.Name) and isinstance(node.ctx, (ast.Store, ast.Del)):
+                names.add(node.id)
+            elif isinstance(node, _DECLARATIONS):
+                names.add(node.name)
+            elif isinstance(node, (ast.Import, ast.ImportFrom)):
+                names.update(alias.asname or alias.name.split(".")[0] for alias in node.names)
+            elif isinstance(node, ast.ExceptHandler) and node.name:
+                names.add(node.name)
+            elif isinstance(node, (ast.MatchAs, ast.MatchStar)) and node.name:
+                names.add(node.name)
+            elif isinstance(node, ast.MatchMapping) and node.rest:
+                names.add(node.rest)
+            writes.extend((name, node) for name in sorted(names))
+            if isinstance(node, ast.ClassDef):
+                classes.append(node)
+            if isinstance(node, (*_DECLARATIONS, ast.Lambda)):
+                pending.extend(_definition_expressions(node))
+            elif isinstance(node, ast.comprehension):
+                # The iteration target is local to the comprehension.
+                # 推导式循环目标不会重绑定外层类声明的 global。
+                pending.extend([node.iter, *node.ifs])
+            else:
+                pending.extend(ast.iter_child_nodes(node))
+        result.extend((name, node) for name, node in writes if name in globals_)
+    return result
+
+
 def guard_module_bindings(corpus: Any) -> None:
     """Retain syntactic rebinding not represented by simple top-level assignment targets."""
     for path, tree in corpus.trees.items():
@@ -62,20 +130,13 @@ def guard_module_bindings(corpus: Any) -> None:
             if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda)):
                 # Definition-time expressions execute in the surrounding scope;
                 # nested bodies do not. Parameters themselves do not bind here.
-                pending.extend(item for item in [*node.args.defaults, *node.args.kw_defaults]
-                               if item is not None)
-                for arg in [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs,
-                            *([node.args.vararg] if node.args.vararg else []),
-                            *([node.args.kwarg] if node.args.kwarg else [])]:
-                    if arg.annotation is not None:
-                        pending.append(arg.annotation)
-                if not isinstance(node, ast.Lambda):
-                    pending.extend(node.decorator_list)
-                    if node.returns is not None:
-                        pending.append(node.returns)
+                pending.extend(_definition_expressions(node))
                 continue
             if isinstance(node, ast.ClassDef):
-                pending.extend([*node.bases, *node.decorator_list, *(item.value for item in node.keywords)])
+                for name, write in _class_global_writes(node):
+                    corpus.bindings[path].setdefault(name, []).append(
+                        {"kind": "dynamic", "node": write})
+                pending.extend(_definition_expressions(node))
                 continue
             pending.extend(ast.iter_child_nodes(node))
 

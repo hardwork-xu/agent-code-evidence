@@ -20,7 +20,9 @@ from .index import source_lines
 
 KIND = "contextproof.evidence-graph"
 SCOPE = "python-transitive-static"
-RESOLVER_VERSION = 2
+# Version 3 rejects class-body global writes that v2 could falsely resolve.
+# 第 3 版保守拒绝类体 global 重绑定；旧图必须重新捕获，不能沿用旧判定。
+RESOLVER_VERSION = 3
 GUARANTEE = (
     "observed source and import-binding identity in a bounded static Python closure only; "
     "unresolved and truncated frontiers prevent freshness; no runtime or semantic guarantee"
@@ -130,7 +132,8 @@ def _walk(graph: dict, root: str | None) -> tuple[list[str], list[dict]]:
 
 def build_graph(texts: Mapping[str, str], snapshot_id: str, anchors: list[dict], *,
                 max_depth: int = 4, max_nodes: int = 256,
-                parsed_cache: dict | None = None) -> dict:
+                parsed_cache: dict | None = None, read_set: set[str] | None = None,
+                _corpus: _Corpus | None = None) -> dict:
     """Build current enclosing declarations and a deduplicated bounded closure.
 
     ``anchors`` retain original capture IDs and selected source text; changes to
@@ -138,6 +141,9 @@ def build_graph(texts: Mapping[str, str], snapshot_id: str, anchors: list[dict],
     ``parsed_cache`` is an optional trusted process-local AST cache keyed by
     (path, SHA256 text). The module catalog and all resolutions are rebuilt so
     additions and previously negative lookups cannot be hidden by that cache.
+    ``read_set`` optionally collects consulted source paths, including negative
+    attribute lookup modules; callers must also guard the entire path catalog.
+    可选 read_set 记录查找依赖；跨版本复用仍须验证完整路径目录。
     """
     if not isinstance(snapshot_id, str) or not snapshot_id:
         raise ValueError("snapshot_id must be a nonempty provider identity")
@@ -149,7 +155,10 @@ def build_graph(texts: Mapping[str, str], snapshot_id: str, anchors: list[dict],
         raise ValueError("at least one anchor is required")
     if any(not isinstance(anchor, dict) for anchor in anchors):
         raise ValueError("anchor must be an object")
-    corpus = _Corpus.from_texts(dict(texts), parsed_cache=parsed_cache)
+    # Private preindexed corpus is created by GraphSession for this exact snapshot.
+    # 内部会话在同一快照多个锚点之间共享索引；不接受外部序列化索引。
+    corpus = (_Corpus.from_texts(dict(texts), parsed_cache=parsed_cache)
+              if _corpus is None else _corpus)
     graph = {"schema_version": 1, "kind": KIND, "scope": SCOPE, "guarantee": GUARANTEE,
              "snapshot_id": snapshot_id,
              "policy": {"max_depth": max_depth, "max_nodes": max_nodes, "resolver_version": RESOLVER_VERSION},
@@ -249,6 +258,10 @@ def build_graph(texts: Mapping[str, str], snapshot_id: str, anchors: list[dict],
     graph["frontier"] = _sort_records(graph["frontier"])
     graph["nodes"] = dict(sorted(graph["nodes"].items()))
     graph["edges"] = dict(sorted(graph["edges"].items()))
+    if read_set is not None:
+        read_set.update(corpus.lookup_paths)
+        read_set.update(anchor["path"] for anchor in anchors)
+        read_set.update(node["path"] for node in graph["nodes"].values())
     return _seal(graph)
 
 
