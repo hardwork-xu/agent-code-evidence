@@ -108,9 +108,15 @@ def _class_global_writes(owner: ast.ClassDef) -> list[tuple[str, ast.AST]]:
     return result
 
 
-def guard_module_bindings(corpus: Any) -> None:
-    """Retain syntactic rebinding not represented by simple top-level assignment targets."""
-    for path, tree in corpus.trees.items():
+def guard_module_bindings(corpus: Any, paths=None) -> None:
+    """Retain source-local rebinding / 保留单文件重绑定，不依赖模块目录。
+
+    Optional paths limit work to newly indexed files; guards read no other file
+    and must run exactly once before a file's binding summary is cached.
+    可选 paths 仅处理新建索引；每个文件缓存前执行一次，且不读取其他文件。
+    """
+    for path in corpus.trees if paths is None else paths:
+        tree = corpus.trees[path]
         pending = list(tree.body)
         while pending:
             node = pending.pop()

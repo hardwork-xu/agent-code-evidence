@@ -15,6 +15,7 @@ from typing import Any
 
 from .evidence import _bundle_error, _entry_error, _json, _safe_parts, sha256
 from .index import _root_path, iter_source_files, read_source_bytes, snapshot_id, source_lines
+from .module_cache import ModuleCache, _ModuleSummary
 from .static_scope import guard_module_bindings, guard_references, module_lookup_uncertainty
 
 
@@ -111,11 +112,16 @@ class _Corpus:
         self._load_texts(texts)
 
     @classmethod
-    def from_texts(cls, texts: dict[str, str], parsed_cache: dict | None = None) -> "_Corpus":
+    def from_texts(cls, texts: dict[str, str], parsed_cache: dict | None = None, *,
+                   module_cache: ModuleCache | None = None,
+                   _source_hashes: dict[str, str] | None = None) -> "_Corpus":
         """Build the same static corpus from already validated immutable source.
 
         No filesystem reads occur. The provider owns source allowlisting and
-        snapshot consistency; path traversal is still rejected here.
+        snapshot consistency; path traversal is still rejected here. A private
+        GraphSession may supply its already computed hashes and transaction-local
+        module cache. These are internal objects, never serialized certificates.
+        会话可提供已计算哈希及本轮模块摘要缓存；它们不是外部可提交的证书。
         """
         corpus = cls.__new__(cls)
         corpus.root = None
@@ -124,10 +130,12 @@ class _Corpus:
             _safe_parts(path)
             if not isinstance(source, str):
                 raise ValueError("source corpus values must be text")
-        corpus._load_texts(texts, parsed_cache)
+        corpus._load_texts(texts, parsed_cache, module_cache, _source_hashes)
         return corpus
 
-    def _load_texts(self, texts: dict[str, str], parsed_cache: dict | None = None) -> None:
+    def _load_texts(self, texts: dict[str, str], parsed_cache: dict | None = None,
+                    module_cache: ModuleCache | None = None,
+                    source_hashes: dict[str, str] | None = None) -> None:
         self.texts = dict(sorted(texts.items()))
         # Read dependencies include unsuccessful lookups, not only graph nodes.
         # 记录查找所读取的文件，包括未命中属性的包文件。
@@ -148,20 +156,38 @@ class _Corpus:
                 names.add(".".join(parts[1:]))
             for name in sorted(names - {""}):
                 self.modules[name].append(path)
-            cache_key = (path, sha256(source))
+            cache_key = (path, source_hashes[path] if source_hashes is not None else sha256(source))
+            summary = module_cache.lookup(cache_key) if module_cache is not None else None
+            if summary is not None:
+                if summary.tree is not None:
+                    self.trees[path] = summary.tree
+                    self.bindings[path] = summary.bindings
+                    self.definitions[path] = summary.definitions
+                    if summary.wildcard:
+                        self.wildcards.add(path)
+                continue
             tree = parsed_cache.get(cache_key) if parsed_cache is not None else None
             if tree is None:
                 try:
                     tree = ast.parse(source, filename=path)
                 except (SyntaxError, ValueError, RecursionError):
+                    if module_cache is not None:
+                        module_cache.store(cache_key, _ModuleSummary.capture(None))
                     continue
                 if parsed_cache is not None:
                     parsed_cache[cache_key] = tree
             self.trees[path] = tree
             self._index(path, tree)
-        guard_module_bindings(self)
-        self.snapshot_id = snapshot_id({path: sha256(text)
-                                        for path, text in self.texts.items()})
+            if module_cache is not None:
+                guard_module_bindings(self, paths=(path,))
+                summary = _ModuleSummary.capture(tree, self.bindings[path], self.definitions[path],
+                                                 path in self.wildcards)
+                module_cache.store(cache_key, summary)
+                self.bindings[path], self.definitions[path] = summary.bindings, summary.definitions
+        if module_cache is None:
+            guard_module_bindings(self)
+        self.snapshot_id = snapshot_id(source_hashes if source_hashes is not None else {
+            path: sha256(text) for path, text in self.texts.items()})
 
     def _index(self, path: str, tree: ast.Module) -> None:
         bindings: dict[str, list[dict]] = defaultdict(list)
