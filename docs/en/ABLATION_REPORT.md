@@ -43,7 +43,8 @@ This is a same-data exploratory mechanism ablation. It does not establish
 out-of-sample performance, complete dependency registration in general Python,
 semantic safety, task relevance, coding-agent improvement or new memoization theory.
 A per-module incremental binding-summary baseline and retained-memory/RSS costs
-are unmeasured. Source hashing still touches all supplied text, and read/catalog
+were unmeasured in this ablation; see the separate
+[follow-up study](MATURATION_REPORT.md). Source hashing still touches all supplied text, and read/catalog
 invalidation remains coarse. Initial capture is included in the last table, but
 process startup and session construction are not. The unchanged primary report
 retains its original zero-coverage result and failed utility target.

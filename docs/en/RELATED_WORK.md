@@ -1,68 +1,145 @@
-# Related-work positioning / 相关工作与贡献边界
+# Related work and contribution boundaries
 
-核查日期：2026-10-04。以下仅保留5个高相关来源，均回到作者、项目官方或arXiv原始页面。不是系统性文献综述，也不构成“首次提出”的证明。
+Sources checked on 2026-10-04. This note retains five closely related sources,
+using author, official-project or original arXiv pages. It is not a systematic
+literature review and does not establish a priority claim.
 
 ## 1. Build Systems à la Carte
 
-**作者/年份：** Andrey Mokhov、Neil Mitchell、Simon Peyton Jones；2018，PACMPL 2 (ICFP), Article 79，DOI `10.1145/3236774`。作者机构的[出版记录](https://www.microsoft.com/en-us/research/publication/build-systems-la-carte/)与[正式论文PDF](https://www.microsoft.com/en-us/research/wp-content/uploads/2018/03/build-systems.pdf)可访问。核对的是2018论文，不把2020扩展期刊版混入同一版本。
+**Authors and version:** Andrey Mokhov, Neil Mitchell and Simon Peyton Jones;
+2018, PACMPL 2 (ICFP), Article 79, DOI `10.1145/3236774`. The authors' institution
+provides the [publication record](https://www.microsoft.com/en-us/research/publication/build-systems-la-carte/)
+and [paper PDF](https://www.microsoft.com/en-us/research/wp-content/uploads/2018/03/build-systems.pdf).
+This is the 2018 paper, not its 2020 extended journal version.
 
-**直接定位：** §4.2.2（PDF第14–15页）、§5.3（第20–21页）。Verifying traces已经记录先前依赖及其hash，并据此决定是否重建；scheduler与rebuilder分离。
+**Relevant sections:** §4.2.2 (PDF pages 14–15) and §5.3 (pages 20–21). Verifying
+traces already retain prior dependencies and their hashes to decide whether to
+rebuild; scheduling and rebuilding are separate concerns.
 
-**中文差异：** 当前read-set guard是已有增量思想在有界源码证据图上的工程适配，不能声称首次依赖证书、首次按hash复用或新的通用增量构建算法。可能有价值的是明确源码证据契约、保守失效、独立反例与实际工作量边界。
+**Boundary:** Dependency-hash traces and reuse decisions are established. Our
+read-set guard adapts these ideas to bounded source-evidence graphs; naming the
+stored read set a certificate does not establish a new general incremental
+algorithm. The defensible scope is an inspectable source-evidence contract,
+conservative invalidation, explicit uncertainty, independent counterexamples and
+measured workload limits. Replay equality and semantic validity remain separate.
 
-**EN:** Dependency-hash traces and rebuild decisions are established. Our defensible scope is a reproducible adaptation to bounded source-evidence graphs, with explicit uncertainty and separate replay/semantic evaluations. No general incremental-computation novelty follows from naming the stored read set a certificate.
+## 2. Tup manual: observed reads and ghost nodes
 
-## 2. Tup manual — observed reads and ghost nodes
+**Attribution and date:** The Tup project's [official manual](https://gittup.org/tup/manual.html)
+has no named individual author or publication date: **n.d., accessed 2026-10-04**.
+Do not assign the related 2009 paper's date to this manual.
 
-**作者/年份：** Tup项目官方手册；该页面没有个人作者署名或发布日期，记为 **n.d.，accessed 2026-10-04**。不要借用相关2009论文的年份冒充本手册日期。[官方手册](https://gittup.org/tup/manual.html)可访问。
+**Relevant sections:** `graph --ghosts`, `graph.ghosts` and the Tupfile `command`
+description. The manual retains nodes for attempted reads of nonexistent files
+and tracks inputs actually read by commands, providing a direct precedent for
+negative dependencies.
 
-**直接定位：** `graph --ghosts`、`graph.ghosts`，以及Tupfile `command`描述。手册明确保留尝试读取但不存在的文件节点，并追踪命令实际读取的输入。这为负依赖提供直接先例。
-
-**中文差异：** “未找到”会受未来文件/绑定变化影响，不是本项目新发现。当前方案观察静态名称解析查询，以既有候选文件读集和保守目录集合检查防止错误复用；Tup观察实际构建命令的文件访问，两者对象不同。这里没有运行或比较Tup。
-
-**EN:** Failed lookups are established dependencies. Our candidate-file tracking addresses static module resolution, whereas Tup monitors command accesses. The current catalog guard is deliberately coarse; it does not establish minimal invalidation or a new negative-dependency algorithm.
+**Boundary:** A failed lookup becoming invalid after a later file or binding
+change is not a new observation. Our scheme records static name-resolution
+consultations and checks candidate-file reads plus the complete catalog; Tup
+observes file accesses by build commands. These are different objects. We have
+not run or benchmarked Tup. Our coarse catalog guard establishes neither minimal
+invalidation nor a new negative-dependency algorithm.
 
 ## 3. Bazel Skyframe documentation
 
-**作者/年份：** Bazel项目官方文档；页面未列个人作者或发布/更新日期，记为 **n.d.，accessed 2026-10-04**。[官方说明](https://bazel.build/reference/skyframe)可访问。
+**Attribution and date:** The Bazel project's [official documentation](https://bazel.build/reference/skyframe)
+provides no individual author or publication/update date: **n.d., accessed
+2026-10-04**.
 
-**直接定位：** “Evaluation”“Incrementality”“Mapping to Bazel concepts”。未注册输入读取可能破坏增量正确性；文件内容、文件状态和目录列表分别进入依赖图。文档还区分重建与对旧结果原地增量修改。
+**Relevant sections:** “Evaluation,” “Incrementality” and “Mapping to Bazel
+concepts.” Unregistered input reads can undermine incremental correctness. File
+contents, file state and directory listings are distinct dependencies. The
+account also distinguishes rebuilding from incrementally modifying prior results.
 
-**中文差异：** 本项目必须证明所有影响解析结果的读都被登记；仅追踪图中成功解析到的node文件不够。`package/__init__.py`从无属性变成遮蔽子模块、目录新增歧义module均需失效。逐字节fresh-build比较只验证当前解析器输出，不证明程序语义。
-
-**EN:** Complete dependency registration and clean-rebuild equivalence are prior engineering principles. This package can contribute inspectable guards and regression evidence for its narrower resolver. A few successful fixtures are not a proof of complete dependency tracking, hermeticity, or optimal invalidation.
+**Boundary:** Complete dependency registration and clean-rebuild equivalence are
+established engineering principles. Tracking only files represented by resolved
+graph nodes is insufficient: an attribute added to `package/__init__.py` can
+shadow a submodule, and a new catalog entry can make a module ambiguous. Every
+consultation that affects this resolver must be registered. Byte-equivalent fresh
+reconstruction checks this resolver's output, not program semantics. Successful
+fixtures alone prove neither complete tracking, hermeticity nor optimal invalidation.
 
 ## 4. ContextBench: A Benchmark for Context Retrieval in Coding Agents
 
-**作者/年份：** Han Li、Letian Zhu、Bohan Zhang、Rili Feng、Jiaming Wang、Yue Pan、Earl T. Barr、Federica Sarro、Zhaoyang Chu、He Ye；2026。[arXiv v3](https://arxiv.org/abs/2602.05892v3)，2026-02-11；v1为2026-02-05。[正文](https://arxiv.org/html/2602.05892v3)可访问。
+**Authors and version:** Han Li, Letian Zhu, Bohan Zhang, Rili Feng, Jiaming Wang,
+Yue Pan, Earl T. Barr, Federica Sarro, Zhaoyang Chu and He Ye; 2026.
+[arXiv v3](https://arxiv.org/abs/2602.05892v3), dated 2026-02-11; v1 is dated
+2026-02-05. The [full text](https://arxiv.org/html/2602.05892v3) is available.
 
-**直接定位：** §2.3–2.5与附录D/H。它提供人工标注的任务上下文与分粒度、过程层面的检索评估。它已经超出仅看最终任务成功率的评估方式。
+**Relevant sections:** §2.3–2.5 and Appendices D/H. The benchmark provides
+human-annotated task context and process-level retrieval evaluation at multiple
+granularities, extending evaluation beyond final task success.
 
-**中文差异：** 本项目研究跨版本源码证据是否可复用，ContextBench主要评估任务所需上下文的检索/利用。两者互补，但当前合成oracle没有任务gold context，不能冒称ContextBench复现或检索质量提升。后续需另外验证task-conditioned coverage，避免“所有静态依赖都够用”的假设。
-
-**EN:** Context relevance and temporal source validity are distinct. The proposed package focuses on reuse decisions across revisions; ContextBench supplies a model for task-context evaluation. No ContextBench score or task benefit has been measured in the current oracle study.
+**Boundary:** Context relevance and temporal source validity are distinct.
+ContextBench evaluates retrieval and use of task context; this package studies
+whether source evidence can be reused across revisions. Our synthetic oracles
+supply no gold task context. The separate [upstream-test witness audit](../../benchmarks/task_evidence/README.md)
+measures coverage of physical source lines executed by selected original tests.
+Those traces are neither minimal nor sufficient context, and are not expert gold
+annotations. They do not reproduce ContextBench, establish general retrieval
+quality or demonstrate a model-task benefit.
 
 ## 5. When Retrieval Hurts Code Completion: A Diagnostic Study of Stale Repository Context
 
-**作者/年份：** Haojun Weng、Qianqian Yang、Hao Fu、Haobin Pan、Xinwei Lv；2026。[arXiv v1](https://arxiv.org/abs/2605.14478v1)，2026-05-14；[正文](https://arxiv.org/html/2605.14478v1)可访问。页面写“Submitted to Information and Software Technology”，不能改称已获该期刊接收。
+**Authors and version:** Haojun Weng, Qianqian Yang, Hao Fu, Haobin Pan and Xinwei
+Lv; 2026. [arXiv v1](https://arxiv.org/abs/2605.14478v1), dated 2026-05-14;
+[full text](https://arxiv.org/html/2605.14478v1). The page says “Submitted to
+Information and Software Technology”; this must not be reported as journal acceptance.
 
-**直接定位：** 摘要、实验设计与validity讨论。作者用5个Python仓库中17个helper签名变更样本，比较current/stale/no-retrieval/mixed条件，说明旧上下文可能引导错误，而非只有缺少上下文的问题。该小诊断集不等于自然总体错误率。
+**Relevant sections:** Abstract, experimental design and validity discussion.
+The authors compare current, stale, no-retrieval and mixed contexts on 17 helper
+signature changes from five Python repositories. This diagnostic study shows
+that stale context can mislead, beyond merely lacking context; it does not estimate
+an overall natural failure rate.
 
-**中文差异：** “旧上下文有害”已有实验证据，不应包装成当前贡献。可研究的是何时能有条件认证复用、何时必须拒绝或更新，以及风险/覆盖率/成本取舍；需要模型任务实验后才能声称改善代码生成。本轮没有重跑该论文实验。
+**Boundary:** Evidence that stale context can harm completion already exists.
+The defensible question is when reuse can be conditionally certified, when to
+abstain or refresh, and what risk/coverage/cost tradeoffs follow. Resolver regression
+results and replay equality do not establish better generated code or task
+success. Such a claim requires model-task experiments. This work did not rerun
+that paper's experiments.
 
-**EN:** Stale-context harm is established diagnostic evidence. A defensible next question is conditional reuse versus abstention under revision changes, not rediscovering harm. Resolver regression results and replay equality alone cannot establish better completions or task success.
+## Defensible present claim
 
-## 可守住的当前表述 / Defensible present claim
+This package implements and evaluates conservative reuse for bounded Python
+source-evidence graphs. It records consulted sources, invalidates on catalog or
+read-set changes, retains incomplete frontiers and separates replay equality,
+limited static contracts, out-of-scope runtime stress and task execution witnesses.
+Persistent source-local summaries are described in the
+[incremental design](INCREMENTAL_DESIGN.md). This remains a scoped adaptation of
+established incremental techniques and a reproducible research artifact. It has
+not established a new general algorithm, population-level risk reduction or
+improved model-task performance.
 
-**中文：** 本研究包实现并评估了一个有界Python源码证据图的保守复用策略：记录解析所咨询的来源，目录或读集变化时重建，对不完整闭包保留不确定性，并将增量输出一致性与有限静态契约、运行时契约外压力分别检验。它是已有增量技术的明确领域适配与可复核实验包；现阶段尚未证明新的通用算法、自然数据风险降低或模型任务收益。
+The companion [maturation report](MATURATION_REPORT.md) records the current
+experimental status and evidence boundaries. Results for a heldout performance
+study must come from its completed, validated records; this literature note
+asserts no pending speed or memory result.
 
-**EN:** This package implements and evaluates conservative reuse for bounded Python source-evidence graphs. It tracks consulted sources, invalidates on catalog/read-set changes, retains incomplete frontiers, and separates byte-equivalent replay from static-contract and out-of-scope runtime tests. This is a scoped engineering adaptation and research artifact, not an established new general algorithm or demonstrated model-task improvement.
+## Comparisons and gaps that must remain visible
 
-## 最应避免的比较缺口 / Critical comparison gaps
+- Compare methods that share a snapshot corpus and parsing/indexing work. The
+  current design includes persistent-summary reconstruction and a combined
+  whole-corpus guard; selective reuse must be compared with these practical
+  alternatives. Count source verification, hashing, catalog checks, copying,
+  rendering and memory rather than isolating only avoided graph work.
+- Every update still hashes all supplied source bytes and checks the full path
+  set. Source-local summary reuse does not imply sublinear ingestion. File-level
+  read sets and catalog invalidation remain coarse; no minimal-invalidation or
+  repository-size-independent total-cost claim follows.
+- Report replay equality, in-contract false-fresh/unknown/coverage and runtime
+  stress separately. Fresh output from the same resolver cannot replace independent
+  semantic expectations. Reusing an unresolved result preserves uncertainty rather
+  than certifying freshness.
+- The historical 72-case corpus comes from 24 authored synthetic templates and
+  includes known development regressions. Natural-source replay is not natural
+  semantic labeling. The new upstream assertion audit is a convenience sample
+  from development repositories, with independent execution labels but no gold
+  sufficient context. It is distinct from the repository-heldout performance
+  study. Task sufficiency and end-to-end model benefits remain unestablished.
 
-- 不能只与每个anchor重新解析全部源码的弱基线比较。所有mode应共享同快照corpus和跨版本ASTcache，并计入hash、目录检查、图复制/封装与峰值内存。/ Share fair parsing/indexing work and include guard/output costs.
-- 当前实现每次hash全部输入；文件级读集及全目录失效也较粗。不能宣称更新总成本与仓库大小无关或最小失效。/ Full-input hashing and coarse invalidation limit scalability claims.
-- 必须同时报告字节等价、契约内false-fresh/unknown/coverage和契约外压力；不以同一解析器自洽替代独立预期。/ Separate replay equivalence, scoped validity, and out-of-contract stress.
-- 72例只含24个自写合成模板，含已知失败的开发回归。自然源码回放与自然语义标注不同；任务上下文充分性和端到端模型实验仍需独立验证。/ The authored corpus is not natural-history or task-effectiveness evidence.
+These comparisons are our interpretation of the sources and implementation, not
+an assessment of this project by the cited authors.
 
-这些差异判断基于上述来源与本实现，不代表论文作者对本项目的评价。
+[简体中文](../zh/RELATED_WORK.md)

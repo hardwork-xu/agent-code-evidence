@@ -137,6 +137,16 @@ MCP SDK 验证实际 stdio 调用。模型推理不在 CI 中自动运行。
 在自然锚点转换中复用 **0/480**，四库均未达到预设加速目标；所选自然图
 都有未解析前沿。这不代表成熟论文或普遍加速结论。
 
+后续[研究稿与完整结果](zh/MATURATION_REPORT.md) 在四个按仓库隔离的新样本上
+比较六种方法，测量持久模块摘要、选择性图复用，以及独立进程 RSS 和 Python
+内存。另有九案例、72 次隔离执行的上游测试证据研究，保留 BM25 覆盖优于图的
+案例。[设计与条件保证](zh/INCREMENTAL_DESIGN.md) 解释缓存和失效机制。
+这些证据不能等同于模型任务提升或已经通过同行评审的成熟成果。
+
+复现实验分支请使用：
+`git clone --branch research/evidence-risk-20261004 https://github.com/hardwork-xu/agent-code-evidence.git`。
+研究稿记录实际测量提交、固定来源和原始运行；上面的常规安装和稳定图示例仍可在 main 使用。
+
 [研究 API 与示例](zh/SELECTIVE_REUSE.md) 可离线运行，无需模型密钥。
 探索性 `read_set_any_status` 模式只研究保留 unknown 输出的缓存，不认证
 它为 fresh。[第三方归属](../third_party/README.md) 补齐许可原文，并披露

@@ -62,13 +62,15 @@ Values below are medians in ms; positive percentage is faster, negative is slowe
 out-of-sample performance, complete dependency registration in general Python,
 semantic safety, task relevance, coding-agent improvement or new memoization theory.
 A per-module incremental binding-summary baseline and retained-memory/RSS costs
-are unmeasured. Source hashing still touches all supplied text, and read/catalog
+were unmeasured in this ablation; see the separate
+[follow-up study](MATURATION_REPORT.md). Source hashing still touches all supplied text, and read/catalog
 invalidation remains coarse. Initial capture is included in the last table, but
 process startup and session construction are not. The unchanged primary report
 retains its original zero-coverage result and failed utility target.
 ''' if lang == 'en' else '''这是同数据上的探索性机制消融，不能证明样本外性能、一般Python输入
 登记完备性、语义安全、任务相关性、代码Agent收益或新的缓存理论。
-逐模块绑定摘要增量基线、驻留内存/RSS尚未测量。仍哈希全部输入，读取集
+本次消融尚未测量逐模块绑定摘要增量基线、驻留内存/RSS；后续见
+[独立后续报告](MATURATION_REPORT.md)。仍哈希全部输入，读取集
 与目录失效规则仍较粗。末表包含首次捕获，但不包含进程启动与会话构造。
 主报告的零覆盖结果和未达效用目标保持原样。
 ''')

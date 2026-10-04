@@ -31,6 +31,20 @@ result: complete-only certificates reused **0/480** natural anchor transitions,
 and no repository met the predeclared speed target. All sampled natural graphs
 had unresolved frontiers. This is not a mature-paper or general acceleration claim.
 
+The follow-up [research manuscript and complete results](docs/en/MATURATION_REPORT.md)
+compare persistent module summaries and selective graph reuse across six methods
+on four separately held-out repositories, with isolated RSS and Python-memory
+measurements. A separate nine-case, 72-process study measures upstream-test
+execution-witness coverage, including cases where BM25 covers more than the graph.
+[Design and conditional guarantees](docs/en/INCREMENTAL_DESIGN.md) explain the
+cache and invalidation mechanisms. These studies do not establish model-task
+improvement or peer-reviewed research maturity.
+
+To reproduce this experimental branch, clone with
+`git clone --branch research/evidence-risk-20261004 https://github.com/hardwork-xu/agent-code-evidence.git`.
+The manuscript records the exact measured commits, source pins and raw runs;
+normal installation and the stable graph example below remain available on main.
+
 The [research API and example](docs/en/SELECTIVE_REUSE.md) are offline and require
 no model key. An explicitly exploratory `read_set_any_status` mode tests caching
 unknown outputs while retaining their unknown status. It is not a freshness

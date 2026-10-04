@@ -1,68 +1,115 @@
-# Related-work positioning / 相关工作与贡献边界
+# 相关工作与贡献边界
 
-核查日期：2026-10-04。以下仅保留5个高相关来源，均回到作者、项目官方或arXiv原始页面。不是系统性文献综述，也不构成“首次提出”的证明。
+来源核查日期：2026-10-04。本说明保留五个密切相关的来源，均回到作者、项目官方
+或 arXiv 原始页面。这不是系统性文献综述，也不构成“首次提出”的证明。
 
 ## 1. Build Systems à la Carte
 
-**作者/年份：** Andrey Mokhov、Neil Mitchell、Simon Peyton Jones；2018，PACMPL 2 (ICFP), Article 79，DOI `10.1145/3236774`。作者机构的[出版记录](https://www.microsoft.com/en-us/research/publication/build-systems-la-carte/)与[正式论文PDF](https://www.microsoft.com/en-us/research/wp-content/uploads/2018/03/build-systems.pdf)可访问。核对的是2018论文，不把2020扩展期刊版混入同一版本。
+**作者与版本：** Andrey Mokhov、Neil Mitchell、Simon Peyton Jones；2018，
+PACMPL 2 (ICFP)，Article 79，DOI `10.1145/3236774`。作者机构提供了
+[出版记录](https://www.microsoft.com/en-us/research/publication/build-systems-la-carte/)
+和[论文 PDF](https://www.microsoft.com/en-us/research/wp-content/uploads/2018/03/build-systems.pdf)。
+核查对象是 2018 年论文，不混入 2020 年扩展期刊版。
 
-**直接定位：** §4.2.2（PDF第14–15页）、§5.3（第20–21页）。Verifying traces已经记录先前依赖及其hash，并据此决定是否重建；scheduler与rebuilder分离。
+**直接定位：** §4.2.2（PDF 第 14–15 页）和 §5.3（第 20–21 页）。验证式轨迹
+已经记录先前依赖及其哈希，用来决定是否重建；调度器与重建器是分离的概念。
 
-**中文差异：** 当前read-set guard是已有增量思想在有界源码证据图上的工程适配，不能声称首次依赖证书、首次按hash复用或新的通用增量构建算法。可能有价值的是明确源码证据契约、保守失效、独立反例与实际工作量边界。
+**贡献边界：** 按依赖哈希决定复用是已有思想。当前读集检查把这些思想适配到
+有界源码证据图；把读集命名为“证书”并不能证明新的通用增量算法。可以论证的范围
+是可检查的源码证据契约、保守失效、明确的不确定性、独立反例与实测工作量边界。
+回放一致性和语义有效性仍须分别判断。
 
-**EN:** Dependency-hash traces and rebuild decisions are established. Our defensible scope is a reproducible adaptation to bounded source-evidence graphs, with explicit uncertainty and separate replay/semantic evaluations. No general incremental-computation novelty follows from naming the stored read set a certificate.
+## 2. Tup 手册：观察到的读取与 ghost 节点
 
-## 2. Tup manual — observed reads and ghost nodes
+**署名与日期：** Tup 项目的[官方手册](https://gittup.org/tup/manual.html)
+未列个人作者或发布日期，记为 **n.d.，访问于 2026-10-04**。不能把相关 2009 年
+论文的年份作为本手册日期。
 
-**作者/年份：** Tup项目官方手册；该页面没有个人作者署名或发布日期，记为 **n.d.，accessed 2026-10-04**。不要借用相关2009论文的年份冒充本手册日期。[官方手册](https://gittup.org/tup/manual.html)可访问。
+**直接定位：** `graph --ghosts`、`graph.ghosts` 以及 Tupfile 的 `command`
+说明。手册保留尝试读取但不存在的文件节点，并跟踪命令实际读取的输入，是负依赖
+的直接先例。
 
-**直接定位：** `graph --ghosts`、`graph.ghosts`，以及Tupfile `command`描述。手册明确保留尝试读取但不存在的文件节点，并追踪命令实际读取的输入。这为负依赖提供直接先例。
+**贡献边界：** 后续文件或绑定变化可能使此前“未找到”的结果失效，这不是新的
+发现。当前方案记录静态名称解析所咨询的来源，检查候选文件读集和完整目录集合；
+Tup 观察构建命令的文件访问，两者对象不同。本研究没有运行或比较 Tup。当前粗粒度
+目录检查不能证明最小失效，也不构成新的负依赖算法。
 
-**中文差异：** “未找到”会受未来文件/绑定变化影响，不是本项目新发现。当前方案观察静态名称解析查询，以既有候选文件读集和保守目录集合检查防止错误复用；Tup观察实际构建命令的文件访问，两者对象不同。这里没有运行或比较Tup。
+## 3. Bazel Skyframe 文档
 
-**EN:** Failed lookups are established dependencies. Our candidate-file tracking addresses static module resolution, whereas Tup monitors command accesses. The current catalog guard is deliberately coarse; it does not establish minimal invalidation or a new negative-dependency algorithm.
+**署名与日期：** Bazel 项目的[官方文档](https://bazel.build/reference/skyframe)
+未列个人作者或发布、更新日期，记为 **n.d.，访问于 2026-10-04**。
 
-## 3. Bazel Skyframe documentation
+**直接定位：** “Evaluation”“Incrementality”和“Mapping to Bazel concepts”。
+未登记的输入读取可能破坏增量正确性；文件内容、文件状态和目录列表是不同依赖。
+文档还区分重新构建与在旧结果上进行增量修改。
 
-**作者/年份：** Bazel项目官方文档；页面未列个人作者或发布/更新日期，记为 **n.d.，accessed 2026-10-04**。[官方说明](https://bazel.build/reference/skyframe)可访问。
-
-**直接定位：** “Evaluation”“Incrementality”“Mapping to Bazel concepts”。未注册输入读取可能破坏增量正确性；文件内容、文件状态和目录列表分别进入依赖图。文档还区分重建与对旧结果原地增量修改。
-
-**中文差异：** 本项目必须证明所有影响解析结果的读都被登记；仅追踪图中成功解析到的node文件不够。`package/__init__.py`从无属性变成遮蔽子模块、目录新增歧义module均需失效。逐字节fresh-build比较只验证当前解析器输出，不证明程序语义。
-
-**EN:** Complete dependency registration and clean-rebuild equivalence are prior engineering principles. This package can contribute inspectable guards and regression evidence for its narrower resolver. A few successful fixtures are not a proof of complete dependency tracking, hermeticity, or optimal invalidation.
+**贡献边界：** 完整登记依赖、与全新重建保持一致，都是已有工程原则。只跟踪
+已解析图节点对应的文件不够：`package/__init__.py` 新增属性可能遮蔽子模块，
+新增目录项可能让模块解析产生歧义。所有影响本解析器结果的读取都必须登记。
+逐字节比较全新重建结果只验证解析器输出，不证明程序语义。有限的成功案例不能
+证明依赖跟踪完备、环境封闭或失效范围最优。
 
 ## 4. ContextBench: A Benchmark for Context Retrieval in Coding Agents
 
-**作者/年份：** Han Li、Letian Zhu、Bohan Zhang、Rili Feng、Jiaming Wang、Yue Pan、Earl T. Barr、Federica Sarro、Zhaoyang Chu、He Ye；2026。[arXiv v3](https://arxiv.org/abs/2602.05892v3)，2026-02-11；v1为2026-02-05。[正文](https://arxiv.org/html/2602.05892v3)可访问。
+**作者与版本：** Han Li、Letian Zhu、Bohan Zhang、Rili Feng、Jiaming Wang、
+Yue Pan、Earl T. Barr、Federica Sarro、Zhaoyang Chu、He Ye；2026。
+[arXiv v3](https://arxiv.org/abs/2602.05892v3)，日期为 2026-02-11；v1 日期为
+2026-02-05。[正文](https://arxiv.org/html/2602.05892v3)可访问。
 
-**直接定位：** §2.3–2.5与附录D/H。它提供人工标注的任务上下文与分粒度、过程层面的检索评估。它已经超出仅看最终任务成功率的评估方式。
+**直接定位：** §2.3–2.5 和附录 D/H。该基准提供人工标注的任务上下文，以及
+多个粒度、过程层面的检索评估，已超出只衡量最终任务成功率的做法。
 
-**中文差异：** 本项目研究跨版本源码证据是否可复用，ContextBench主要评估任务所需上下文的检索/利用。两者互补，但当前合成oracle没有任务gold context，不能冒称ContextBench复现或检索质量提升。后续需另外验证task-conditioned coverage，避免“所有静态依赖都够用”的假设。
-
-**EN:** Context relevance and temporal source validity are distinct. The proposed package focuses on reuse decisions across revisions; ContextBench supplies a model for task-context evaluation. No ContextBench score or task benefit has been measured in the current oracle study.
+**贡献边界：** 上下文相关性与跨版本源码有效性是不同问题。ContextBench 评估
+任务上下文的检索和利用；本研究关注源码证据跨版本是否可复用。自写合成预期没有
+任务标准上下文。另行开展的[上游测试执行证据审计](../../benchmarks/task_evidence/README.md)
+衡量原始测试实际执行的物理源码行被上下文覆盖多少。这些轨迹既不是最小、充分
+上下文，也不是专家标准标注；不能称为 ContextBench 复现，不能证明一般检索质量
+或模型任务收益。
 
 ## 5. When Retrieval Hurts Code Completion: A Diagnostic Study of Stale Repository Context
 
-**作者/年份：** Haojun Weng、Qianqian Yang、Hao Fu、Haobin Pan、Xinwei Lv；2026。[arXiv v1](https://arxiv.org/abs/2605.14478v1)，2026-05-14；[正文](https://arxiv.org/html/2605.14478v1)可访问。页面写“Submitted to Information and Software Technology”，不能改称已获该期刊接收。
+**作者与版本：** Haojun Weng、Qianqian Yang、Hao Fu、Haobin Pan、Xinwei Lv；
+2026。[arXiv v1](https://arxiv.org/abs/2605.14478v1)，日期为 2026-05-14；
+[正文](https://arxiv.org/html/2605.14478v1)可访问。页面写明“Submitted to
+Information and Software Technology”，不能改称已获该期刊接收。
 
-**直接定位：** 摘要、实验设计与validity讨论。作者用5个Python仓库中17个helper签名变更样本，比较current/stale/no-retrieval/mixed条件，说明旧上下文可能引导错误，而非只有缺少上下文的问题。该小诊断集不等于自然总体错误率。
+**直接定位：** 摘要、实验设计与有效性讨论。作者针对五个 Python 仓库中的
+17 个辅助函数签名变更，比较当前、过期、无检索和混合上下文。这项诊断实验说明
+过期上下文可能误导生成，不只是缺少上下文；它不估计自然任务总体的失败率。
 
-**中文差异：** “旧上下文有害”已有实验证据，不应包装成当前贡献。可研究的是何时能有条件认证复用、何时必须拒绝或更新，以及风险/覆盖率/成本取舍；需要模型任务实验后才能声称改善代码生成。本轮没有重跑该论文实验。
+**贡献边界：** 过期上下文可能损害补全已有实验证据。可研究的问题是何时能有
+条件地认证复用、何时应拒绝或刷新，以及风险、覆盖率和成本的取舍。解析器回归
+结果及回放一致性不能证明生成代码更好或任务更成功；这种结论需要模型任务实验。
+本研究没有重跑该论文的实验。
 
-**EN:** Stale-context harm is established diagnostic evidence. A defensible next question is conditional reuse versus abstention under revision changes, not rediscovering harm. Resolver regression results and replay equality alone cannot establish better completions or task success.
+## 可守住的当前表述
 
-## 可守住的当前表述 / Defensible present claim
+本研究包实现并评估有界 Python 源码证据图的保守复用：记录解析所咨询的来源，
+在目录或读集变化时失效，对不完整闭包保留不确定性，并把回放一致性、有限静态
+契约、契约外运行时压力与任务执行证据分别检验。持久化的模块局部摘要见
+[增量设计说明](INCREMENTAL_DESIGN.md)。这是已有增量技术在明确范围内的适配和
+可复核研究产物，尚未证明新的通用算法、自然总体风险降低或模型任务性能改善。
 
-**中文：** 本研究包实现并评估了一个有界Python源码证据图的保守复用策略：记录解析所咨询的来源，目录或读集变化时重建，对不完整闭包保留不确定性，并将增量输出一致性与有限静态契约、运行时契约外压力分别检验。它是已有增量技术的明确领域适配与可复核实验包；现阶段尚未证明新的通用算法、自然数据风险降低或模型任务收益。
+配套的[研究完善报告](MATURATION_REPORT.md)记录当前实验状态和证据边界。
+仓库留出性能研究的结果必须来自已完成并验证的记录；本文不为尚在运行的测量
+预先宣称速度或内存结果。
 
-**EN:** This package implements and evaluates conservative reuse for bounded Python source-evidence graphs. It tracks consulted sources, invalidates on catalog/read-set changes, retains incomplete frontiers, and separates byte-equivalent replay from static-contract and out-of-scope runtime tests. This is a scoped engineering adaptation and research artifact, not an established new general algorithm or demonstrated model-task improvement.
+## 必须保留的比较与缺口
 
-## 最应避免的比较缺口 / Critical comparison gaps
+- 比较方法应共享同快照语料及解析、索引工作。当前设计包含持久化摘要重建和
+  全语料检查组合，选择性复用必须与这些实用基线比较。成本需计入来源验证、
+  哈希、目录检查、复制、呈现及内存，不能只统计避免的图重建工作。
+- 每次更新仍会对所有输入源码字节计算哈希，并检查完整路径集合。复用模块局部
+  摘要不代表次线性的输入处理。文件级读集和目录失效仍较粗，不能推出最小失效
+  或总成本与仓库大小无关。
+- 分别报告回放一致性、契约内错误判新率、不确定比例和覆盖率，以及运行时
+  压力案例。同一解析器的全新输出不能替代独立语义预期；复用未解析结果仍然
+  保留不确定性，并不是认证其有效。
+- 历史 72 例来自 24 个自写合成模板，并包含已知开发回归。自然源码回放不同于
+  自然语义标注。新增的上游断言审计是开发项目中的便利样本，虽有独立执行标签，
+  仍没有标准充分上下文；它与仓库留出性能研究属于不同证据。任务上下文充分性
+  和端到端模型收益仍未得到证实。
 
-- 不能只与每个anchor重新解析全部源码的弱基线比较。所有mode应共享同快照corpus和跨版本ASTcache，并计入hash、目录检查、图复制/封装与峰值内存。/ Share fair parsing/indexing work and include guard/output costs.
-- 当前实现每次hash全部输入；文件级读集及全目录失效也较粗。不能宣称更新总成本与仓库大小无关或最小失效。/ Full-input hashing and coarse invalidation limit scalability claims.
-- 必须同时报告字节等价、契约内false-fresh/unknown/coverage和契约外压力；不以同一解析器自洽替代独立预期。/ Separate replay equivalence, scoped validity, and out-of-contract stress.
-- 72例只含24个自写合成模板，含已知失败的开发回归。自然源码回放与自然语义标注不同；任务上下文充分性和端到端模型实验仍需独立验证。/ The authored corpus is not natural-history or task-effectiveness evidence.
+以上差异判断是我们对来源与实现的解释，不代表被引作者对本项目的评价。
 
-这些差异判断基于上述来源与本实现，不代表论文作者对本项目的评价。
+[English](../en/RELATED_WORK.md)

@@ -234,3 +234,72 @@ and tracemalloc, never mixing profiler times with ordinary timing. Independent
 harness review found and corrected group-label inconsistencies, weak provenance
 binding, missing policy forwarding and unvalidated peak/worker identities before
 any held-out measurement. / 计时与内存剖析分开，独立复核问题在正式测量前修复。
+
+## 2026-10-04 21:13 UTC — committed task execution study / 固定版本任务执行研究
+
+Commits `ad30815`, `0fd20c3` and `a0070ea` record uncached-reference parity,
+pin-binding integrity checks, incremental design and the corrected task harness.
+The heldout validator now binds decoded protocol/manifest objects to their hashed
+files, rejects incomplete grids, and checks every cached output against a freshly
+parsed per-snapshot corpus. A three-revision counterexample verifies that cached
+module summaries still register negative reads when rebuilding a changed anchor.
+The focused validation passed 283 tests. / 无缓存参照、版本绑定与负读取回归已验证。
+
+A pre-commit task pilot incorrectly inherited postponed-annotation compiler flags.
+Independent review also found insufficient sandbox read restrictions, possible
+bytecode overrides, incomplete-grid acceptance and missing interruption records.
+The pilot remains byte-preserved and explicitly invalid for research conclusions.
+The corrected harness retains original future flags, rejects unverified import
+artifacts, validates complete case identities and atomically records each child.
+It adds independent traced/untraced controls before the corrected committed run.
+首次试跑存在编译语义与执行完整性缺陷；原始记录保留并标记无效，没有静默覆盖。
+
+The full local suite before the final provenance-only addition passed 1387 tests,
+with 2 optional tokenizer skips. The final task-focused suite passed 35 tests.
+The corrected run `bcebd88f-0906-4040-b3d3-e228f3f1a1df` at `a0070ea` completed
+72 isolated child executions; all nine cases had repeatable outcomes and matching
+traced/untraced assertions. Seven old-version cases failed while their new-version
+assertions passed; two were stable. These are release-pair observations, not
+causal attribution to individual patches. Source/runtime hashes remained unchanged.
+The global worktree was dirty because attribution/CI files were being edited;
+the measured-input dirty flag was false. / 实验源码已提交，非实验文件改动如实记录。
+
+Witness recall is 53.9249% for graph context versus 37.4493% for matched-line BM25,
+with the same mean 1168.78 supplied physical source lines. Pluggy reverses the
+aggregate ordering. All nine graph closures remain incomplete. This is
+task-conditioned execution coverage, not gold-context sufficiency or model benefit.
+The corrected run's numerical recall happens to match the invalid pilot; this
+does not retroactively validate the pilot or create an independent holdout.
+任务指标来自实际执行行，不能解释成代码修复成功率或依赖闭包完整。
+
+The next heldout timing/memory run starts from the same committed runtime, with
+other task-owned tests/builds paused. Its outcomes are recorded separately.
+
+## 2026-10-04 21:34 UTC — repository holdout completed / 仓库留出实验完成
+
+Run `holdout-20261004T211414735263Z` completed at 21:34:24 UTC from measured
+commit `a0070ea`, retaining 32 uncached snapshot references, 960 timing rows and
+144 separate memory processes. All 23040 timed graph outputs and 27648 memory-run
+outputs matched their uncached references; all 768 reference graphs remain
+incomplete. Five trajectory repetitions per method/repository are retained.
+144 个内存进程与计时分开；一致性不代表静态闭包完整或一般语义可靠。
+
+Against incremental indexing plus whole-corpus-equality reuse, the candidate's
+median replay reductions were 34.7% (Jinja), 55.8% (Starlette), 39.6% (AnyIO) and
+33.4% (Markdown). All four met the fixed 20% threshold. Candidate uninstrumented
+RSS medians ranged from 56.31 to 70.25 MiB and passed the 2x/512-MiB gates. AnyIO
+used 1.026x baseline RSS; no across-the-board memory improvement is claimed.
+Source-identical transitions, capture costs, all six methods and full min/max
+ranges are reported. The previous failed strict-completeness hypothesis remains
+unchanged. / 四库达到本次目标，不改写原严格完整性实验的失败结论。
+
+The corrected task report also exposes a graph-under-anchor case and a Pluggy
+case where BM25 covers substantially more executed lines. Original test URLs,
+invocation counts, exact licenses and both execution modalities are linked.
+A source downloader was independently exercised in a fresh external cache and
+then reused offline; all six archive hashes/sizes matched, with no source execution.
+
+Final local suite after publication integration: 1424 passed, 2 optional-tokenizer
+skips. Ruff, source attribution, strict raw-result validation and deterministic
+bilingual report checks passed. Package build and remote CI are separate gates
+and are recorded after their actual outcomes. / 本地验收不替代构建和远端 CI。

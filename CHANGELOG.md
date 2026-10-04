@@ -13,6 +13,16 @@
   excerpt citations. Historical raw results are unchanged.
   / 补齐许可原文，披露 17 项历史非连续摘录定位问题，不改原始实验。
 
+- Add transactional guarded module summaries and fair incremental/whole-corpus
+  comparators; validate held-out replay, RSS and separately traced Python memory.
+  / 新增事务式模块摘要与强增量基线，完成仓库留出计时和独立内存测量。
+- Add source-pinned upstream assertion witnesses with repeated traced/untraced
+  controls; preserve the invalid pilot and publish negative coverage cases.
+  / 新增固定来源断言及追踪开关对照，保留无效试跑与覆盖反例。
+- Add one-command verified archive downloads, immutable pilot checks, retained
+  license validation in source builds and generated bilingual research reports.
+  / 新增归档校验下载、历史记录保护、构建许可检查与双语结果再生成。
+
 This alpha is a bounded research artifact. It does not claim a mature paper,
 new general incremental algorithm, or improved coding-agent task success.
 本预发布版本为有界研究制品，未宣称成熟论文、通用新算法或代码任务收益。

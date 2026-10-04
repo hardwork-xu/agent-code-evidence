@@ -168,13 +168,16 @@ This is a remaining historical citation limitation, not a source-span success.
 ## 6. Interpretation and maturity gates
 
 {'The narrow timing target is met on this sample; independent task evidence is still required.' if target else 'The primary timing hypothesis fails its predeclared target. The artifact remains useful for falsifying an optimization claim, but the results do not justify a general selective-reuse speedup claim.'}
-A mature paper still needs a defensible contribution beyond the established
+At this primary experiment's cutoff, the remaining research requirements were
+a defensible contribution beyond the established
 incremental-computation mechanism, task-conditioned context labels independent
 of this resolver, repository/time-disjoint natural validation, and end-to-end
 coding-task evidence with fresh retrieval and simple invalidation baselines.
 Independent human review and external replication have not occurred here.
 An incremental per-module binding-summary baseline and retained-memory/RSS
-measurements are also absent; comparisons are limited to the three tested methods.
+measurements were absent from this experiment; its comparisons remain limited to
+these three methods. Later work is separately reported in
+[the follow-up study](MATURATION_REPORT.md), without replacing these results.
 No acceptance, publication, SOTA, production deployment or model-quality gain
 is claimed. This draft is a technical research record, not a completed paper.
 
@@ -292,10 +295,11 @@ listed implementation files and runner were committed and content-hashed.
 ## 结论与成熟度边界
 
 {'该样本达到狭窄的计时目标，但仍不能推出任务收益。' if target else '主要计时假设未达到预设目标。这个可复核的否定结果有价值，但不能据此宣传普遍加速。'}
-成熟论文还缺：超出现有增量思想的明确贡献、独立于本解析器的任务上下文
+截至本主实验结束时，仍缺少：超出现有增量思想的明确贡献、独立于本解析器的任务上下文
 标注、按仓库/时间隔离的自然验证，以及与新检索和简单失效基线的端到端
 代码任务对照。尚未发生独立人工复核、外部复现、同行接收或论文发表。
-也未实现逐模块绑定摘要的增量基线，未测缓存驻留内存/RSS，比较仅限三个已测方法。
+本实验当时未实现逐模块绑定摘要的增量基线，未测缓存驻留内存/RSS，比较仅限三个已测方法。
+后续工作见[独立后续报告](MATURATION_REPORT.md)，不会替换本次结果。
 这份初稿是技术研究记录，不是已经完成的论文，不宣称 SOTA、生产部署或
 模型质量提升。
 
