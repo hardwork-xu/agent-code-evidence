@@ -3,3 +3,6 @@ recursive-include docs *.md *.png *.svg *.html
 recursive-include examples *.py *.json
 recursive-include benchmarks *.py *.json *.jsonl *.md *.txt LICENSE
 recursive-include scripts *.py
+include NOTICE.md
+recursive-include third_party *
+recursive-include benchmarks/selective_reuse/licenses *

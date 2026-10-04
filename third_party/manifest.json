@@ -1,0 +1,976 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-04T19:42:45.043774+00:00",
+  "retrieval": "Original bytes fetched from raw.githubusercontent.com at the recorded full commit; frozen license digests checked when present.",
+  "sources": [
+    {
+      "project": "attrs",
+      "repository": "https://github.com/python-attrs/attrs",
+      "commit": "598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/LICENSE",
+          "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/LICENSE",
+          "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f",
+          "bytes": 1109,
+          "frozen_manifest_sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+        }
+      ]
+    },
+    {
+      "project": "attrs",
+      "repository": "https://github.com/python-attrs/attrs",
+      "commit": "9e443b18527dc96b194e92805fa751cbf8434ba9",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/attrs/9e443b18527dc96b194e92805fa751cbf8434ba9/LICENSE",
+          "url": "https://raw.githubusercontent.com/python-attrs/attrs/9e443b18527dc96b194e92805fa751cbf8434ba9/LICENSE",
+          "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f",
+          "bytes": 1109,
+          "frozen_manifest_sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+        }
+      ]
+    },
+    {
+      "project": "babel",
+      "repository": "https://github.com/python-babel/babel",
+      "commit": "65de3dcf2dc217d6135eff999dc87a3861065e8d",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/babel/65de3dcf2dc217d6135eff999dc87a3861065e8d/LICENSE",
+          "url": "https://raw.githubusercontent.com/python-babel/babel/65de3dcf2dc217d6135eff999dc87a3861065e8d/LICENSE",
+          "sha256": "908e0ad72053ae27c1d17e3340bd14cff9bf935992ed56526d17c983ab6e7af7",
+          "bytes": 1531,
+          "frozen_manifest_sha256": "908e0ad72053ae27c1d17e3340bd14cff9bf935992ed56526d17c983ab6e7af7"
+        }
+      ]
+    },
+    {
+      "project": "babel",
+      "repository": "https://github.com/python-babel/babel",
+      "commit": "cf7d22369cf40a8218cff1d3dc823eefa174aee0",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/babel/cf7d22369cf40a8218cff1d3dc823eefa174aee0/LICENSE",
+          "url": "https://raw.githubusercontent.com/python-babel/babel/cf7d22369cf40a8218cff1d3dc823eefa174aee0/LICENSE",
+          "sha256": "3f9142a40859dfcb33f45c16ad872b500d683cc4a20b17091478b404e900520f",
+          "bytes": 1531,
+          "frozen_manifest_sha256": "3f9142a40859dfcb33f45c16ad872b500d683cc4a20b17091478b404e900520f"
+        }
+      ]
+    },
+    {
+      "project": "click",
+      "repository": "https://github.com/pallets/click",
+      "commit": "874ca2bc1c30d93a4ac6e36a15ed685eafe89097",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.rst",
+          "path": "third_party/licenses/click/874ca2bc1c30d93a4ac6e36a15ed685eafe89097/LICENSE.rst",
+          "url": "https://raw.githubusercontent.com/pallets/click/874ca2bc1c30d93a4ac6e36a15ed685eafe89097/LICENSE.rst",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+          "bytes": 1475,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "click",
+      "repository": "https://github.com/pallets/click",
+      "commit": "934813e4d421071a1b3db3973c02fe2721359a6e",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.txt",
+          "path": "third_party/licenses/click/934813e4d421071a1b3db3973c02fe2721359a6e/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/pallets/click/934813e4d421071a1b3db3973c02fe2721359a6e/LICENSE.txt",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+          "bytes": 1475,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "dateutil",
+      "repository": "https://github.com/dateutil/dateutil",
+      "commit": "1ae807774053c071acc9e7d3d27778fba0a7773e",
+      "license": "Apache-2.0 OR BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/dateutil/1ae807774053c071acc9e7d3d27778fba0a7773e/LICENSE",
+          "url": "https://raw.githubusercontent.com/dateutil/dateutil/1ae807774053c071acc9e7d3d27778fba0a7773e/LICENSE",
+          "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e",
+          "bytes": 2889,
+          "frozen_manifest_sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e"
+        }
+      ]
+    },
+    {
+      "project": "dateutil",
+      "repository": "https://github.com/dateutil/dateutil",
+      "commit": "6b035517571e63b6a63a493740c5506ec1e5da44",
+      "license": "Apache-2.0 OR BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/dateutil/6b035517571e63b6a63a493740c5506ec1e5da44/LICENSE",
+          "url": "https://raw.githubusercontent.com/dateutil/dateutil/6b035517571e63b6a63a493740c5506ec1e5da44/LICENSE",
+          "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e",
+          "bytes": 2889,
+          "frozen_manifest_sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e"
+        }
+      ]
+    },
+    {
+      "project": "filelock",
+      "repository": "https://github.com/tox-dev/filelock",
+      "commit": "141f5d8c21be2830a9d93ad4ad822acf4b0f8a12",
+      "license": "Unlicense",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/filelock/141f5d8c21be2830a9d93ad4ad822acf4b0f8a12/LICENSE",
+          "url": "https://raw.githubusercontent.com/tox-dev/filelock/141f5d8c21be2830a9d93ad4ad822acf4b0f8a12/LICENSE",
+          "sha256": "88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd",
+          "bytes": 1210,
+          "frozen_manifest_sha256": "88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd"
+        }
+      ]
+    },
+    {
+      "project": "filelock",
+      "repository": "https://github.com/tox-dev/filelock",
+      "commit": "c2c43e456b4369ecac8c932115e41b3addc5c3d6",
+      "license": "Unlicense",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/filelock/c2c43e456b4369ecac8c932115e41b3addc5c3d6/LICENSE",
+          "url": "https://raw.githubusercontent.com/tox-dev/filelock/c2c43e456b4369ecac8c932115e41b3addc5c3d6/LICENSE",
+          "sha256": "88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd",
+          "bytes": 1210,
+          "frozen_manifest_sha256": "88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd"
+        }
+      ]
+    },
+    {
+      "project": "httpx",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "08eff926a6011ac84961fd2cee22d9fd4d4b1a88",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json",
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.md",
+          "path": "third_party/licenses/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/LICENSE.md",
+          "url": "https://raw.githubusercontent.com/encode/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+          "bytes": 1508,
+          "frozen_manifest_sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+        }
+      ]
+    },
+    {
+      "project": "httpx",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "2318fd822cdb16435ccb5cabcba16c0b7969c1e4",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.md",
+          "path": "third_party/licenses/httpx/2318fd822cdb16435ccb5cabcba16c0b7969c1e4/LICENSE.md",
+          "url": "https://raw.githubusercontent.com/encode/httpx/2318fd822cdb16435ccb5cabcba16c0b7969c1e4/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+          "bytes": 1508,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "httpx",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.md",
+          "path": "third_party/licenses/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/LICENSE.md",
+          "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+          "bytes": 1508,
+          "frozen_manifest_sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+        }
+      ]
+    },
+    {
+      "project": "httpx",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "2c51edd0c0d4124423661eb5678ae1a94a107260",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.md",
+          "path": "third_party/licenses/httpx/2c51edd0c0d4124423661eb5678ae1a94a107260/LICENSE.md",
+          "url": "https://raw.githubusercontent.com/encode/httpx/2c51edd0c0d4124423661eb5678ae1a94a107260/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+          "bytes": 1508,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "httpx",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "3b9060ee1121b48669e0b30045c9344065f4f2ae",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.md",
+          "path": "third_party/licenses/httpx/3b9060ee1121b48669e0b30045c9344065f4f2ae/LICENSE.md",
+          "url": "https://raw.githubusercontent.com/encode/httpx/3b9060ee1121b48669e0b30045c9344065f4f2ae/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+          "bytes": 1508,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "httpx",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "a11fc3849b94157274c98d99501acad05cbfb221",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.md",
+          "path": "third_party/licenses/httpx/a11fc3849b94157274c98d99501acad05cbfb221/LICENSE.md",
+          "url": "https://raw.githubusercontent.com/encode/httpx/a11fc3849b94157274c98d99501acad05cbfb221/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+          "bytes": 1508,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "httpx",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "b4b27ff6777c8906c2b31dd879bd4cc1d9e4f6ce",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.md",
+          "path": "third_party/licenses/httpx/b4b27ff6777c8906c2b31dd879bd4cc1d9e4f6ce/LICENSE.md",
+          "url": "https://raw.githubusercontent.com/encode/httpx/b4b27ff6777c8906c2b31dd879bd4cc1d9e4f6ce/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+          "bytes": 1508,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "human-eval",
+      "repository": "https://github.com/openai/human-eval",
+      "commit": "6d43fb980f9fee3c892a914eda09951f772ad10d",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/downstream/results/protocol.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/human-eval/6d43fb980f9fee3c892a914eda09951f772ad10d/LICENSE",
+          "url": "https://raw.githubusercontent.com/openai/human-eval/6d43fb980f9fee3c892a914eda09951f772ad10d/LICENSE",
+          "sha256": "bcba3de214851cce46ed5af42d6698044616eeace887c3231bc7a20474ab639e",
+          "bytes": 1083,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "itsdangerous",
+      "repository": "https://github.com/pallets/itsdangerous",
+      "commit": "096c8d42545d3b68ea21a4f890fb2b2d8979c0bd",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.txt",
+          "path": "third_party/licenses/itsdangerous/096c8d42545d3b68ea21a4f890fb2b2d8979c0bd/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/pallets/itsdangerous/096c8d42545d3b68ea21a4f890fb2b2d8979c0bd/LICENSE.txt",
+          "sha256": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7",
+          "bytes": 1475,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "itsdangerous",
+      "repository": "https://github.com/pallets/itsdangerous",
+      "commit": "49d263f60b6f78df8924be51262eeb5216ab1468",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.rst",
+          "path": "third_party/licenses/itsdangerous/49d263f60b6f78df8924be51262eeb5216ab1468/LICENSE.rst",
+          "url": "https://raw.githubusercontent.com/pallets/itsdangerous/49d263f60b6f78df8924be51262eeb5216ab1468/LICENSE.rst",
+          "sha256": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7",
+          "bytes": 1475,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "markupsafe",
+      "repository": "https://github.com/pallets/markupsafe",
+      "commit": "28ace20b140d15c083e1cbc163ee6b7778ba098c",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.txt",
+          "path": "third_party/licenses/markupsafe/28ace20b140d15c083e1cbc163ee6b7778ba098c/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/pallets/markupsafe/28ace20b140d15c083e1cbc163ee6b7778ba098c/LICENSE.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+          "bytes": 1475,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "markupsafe",
+      "repository": "https://github.com/pallets/markupsafe",
+      "commit": "fbba4acd0312826cec9cfe18371c7df07962cb65",
+      "license": "BSD-3-Clause",
+      "declared_in": [
+        "benchmarks/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.rst",
+          "path": "third_party/licenses/markupsafe/fbba4acd0312826cec9cfe18371c7df07962cb65/LICENSE.rst",
+          "url": "https://raw.githubusercontent.com/pallets/markupsafe/fbba4acd0312826cec9cfe18371c7df07962cb65/LICENSE.rst",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+          "bytes": 1475,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "packaging",
+      "repository": "https://github.com/pypa/packaging",
+      "commit": "0206c394cebce1b261299032edcb33f842b65d10",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/packaging/0206c394cebce1b261299032edcb33f842b65d10/LICENSE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/0206c394cebce1b261299032edcb33f842b65d10/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.APACHE",
+          "path": "third_party/licenses/packaging/0206c394cebce1b261299032edcb33f842b65d10/LICENSE.APACHE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/0206c394cebce1b261299032edcb33f842b65d10/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.BSD",
+          "path": "third_party/licenses/packaging/0206c394cebce1b261299032edcb33f842b65d10/LICENSE.BSD",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/0206c394cebce1b261299032edcb33f842b65d10/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "packaging",
+      "repository": "https://github.com/pypa/packaging",
+      "commit": "524b701c6e30fc4da9355117367273f591c6de72",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/packaging/524b701c6e30fc4da9355117367273f591c6de72/LICENSE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/524b701c6e30fc4da9355117367273f591c6de72/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.APACHE",
+          "path": "third_party/licenses/packaging/524b701c6e30fc4da9355117367273f591c6de72/LICENSE.APACHE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/524b701c6e30fc4da9355117367273f591c6de72/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.BSD",
+          "path": "third_party/licenses/packaging/524b701c6e30fc4da9355117367273f591c6de72/LICENSE.BSD",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/524b701c6e30fc4da9355117367273f591c6de72/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "packaging",
+      "repository": "https://github.com/pypa/packaging",
+      "commit": "702353715de375a65e49d1ae4af21c35dce838b8",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/packaging/702353715de375a65e49d1ae4af21c35dce838b8/LICENSE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/702353715de375a65e49d1ae4af21c35dce838b8/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.APACHE",
+          "path": "third_party/licenses/packaging/702353715de375a65e49d1ae4af21c35dce838b8/LICENSE.APACHE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/702353715de375a65e49d1ae4af21c35dce838b8/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.BSD",
+          "path": "third_party/licenses/packaging/702353715de375a65e49d1ae4af21c35dce838b8/LICENSE.BSD",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/702353715de375a65e49d1ae4af21c35dce838b8/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "packaging",
+      "repository": "https://github.com/pypa/packaging",
+      "commit": "b3a5d7d68991c040615d5345bb55f61de53ba176",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json",
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/LICENSE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197,
+          "frozen_manifest_sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "upstream_path": "LICENSE.APACHE",
+          "path": "third_party/licenses/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/LICENSE.APACHE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "frozen_manifest_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "upstream_path": "LICENSE.BSD",
+          "path": "third_party/licenses/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/LICENSE.BSD",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344,
+          "frozen_manifest_sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    },
+    {
+      "project": "packaging",
+      "repository": "https://github.com/pypa/packaging",
+      "commit": "b509bef6a4573595b23a97ecbfe569000918157f",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/packaging/b509bef6a4573595b23a97ecbfe569000918157f/LICENSE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/b509bef6a4573595b23a97ecbfe569000918157f/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.APACHE",
+          "path": "third_party/licenses/packaging/b509bef6a4573595b23a97ecbfe569000918157f/LICENSE.APACHE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/b509bef6a4573595b23a97ecbfe569000918157f/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.BSD",
+          "path": "third_party/licenses/packaging/b509bef6a4573595b23a97ecbfe569000918157f/LICENSE.BSD",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/b509bef6a4573595b23a97ecbfe569000918157f/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "packaging",
+      "repository": "https://github.com/pypa/packaging",
+      "commit": "d7ce40d8cc005a6b83f4abb33ae7d48d0428a4f6",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/packaging/d7ce40d8cc005a6b83f4abb33ae7d48d0428a4f6/LICENSE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/d7ce40d8cc005a6b83f4abb33ae7d48d0428a4f6/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.APACHE",
+          "path": "third_party/licenses/packaging/d7ce40d8cc005a6b83f4abb33ae7d48d0428a4f6/LICENSE.APACHE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/d7ce40d8cc005a6b83f4abb33ae7d48d0428a4f6/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "LICENSE.BSD",
+          "path": "third_party/licenses/packaging/d7ce40d8cc005a6b83f4abb33ae7d48d0428a4f6/LICENSE.BSD",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/d7ce40d8cc005a6b83f4abb33ae7d48d0428a4f6/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "packaging",
+      "repository": "https://github.com/pypa/packaging",
+      "commit": "d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/LICENSE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197,
+          "frozen_manifest_sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "upstream_path": "LICENSE.APACHE",
+          "path": "third_party/licenses/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/LICENSE.APACHE",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "frozen_manifest_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "upstream_path": "LICENSE.BSD",
+          "path": "third_party/licenses/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/LICENSE.BSD",
+          "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344,
+          "frozen_manifest_sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    },
+    {
+      "project": "pluggy",
+      "repository": "https://github.com/pytest-dev/pluggy",
+      "commit": "e13a58c5039bf7a8aa6a46a77244aea48b210510",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/pluggy/e13a58c5039bf7a8aa6a46a77244aea48b210510/LICENSE",
+          "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/e13a58c5039bf7a8aa6a46a77244aea48b210510/LICENSE",
+          "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606",
+          "bytes": 1110,
+          "frozen_manifest_sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+        }
+      ]
+    },
+    {
+      "project": "pluggy",
+      "repository": "https://github.com/pytest-dev/pluggy",
+      "commit": "f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/LICENSE",
+          "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/LICENSE",
+          "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606",
+          "bytes": 1110,
+          "frozen_manifest_sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+        }
+      ]
+    },
+    {
+      "project": "pydantic",
+      "repository": "https://github.com/pydantic/pydantic",
+      "commit": "1ab655a54c0defdc5a2a9b13bc90feb6fba78719",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/pydantic/1ab655a54c0defdc5a2a9b13bc90feb6fba78719/LICENSE",
+          "url": "https://raw.githubusercontent.com/pydantic/pydantic/1ab655a54c0defdc5a2a9b13bc90feb6fba78719/LICENSE",
+          "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3",
+          "bytes": 1129,
+          "frozen_manifest_sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+        }
+      ]
+    },
+    {
+      "project": "pydantic",
+      "repository": "https://github.com/pydantic/pydantic",
+      "commit": "df05e69a8a3fb37628a0e3a33518ca0425334bc9",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/pydantic/df05e69a8a3fb37628a0e3a33518ca0425334bc9/LICENSE",
+          "url": "https://raw.githubusercontent.com/pydantic/pydantic/df05e69a8a3fb37628a0e3a33518ca0425334bc9/LICENSE",
+          "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3",
+          "bytes": 1129,
+          "frozen_manifest_sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+        }
+      ]
+    },
+    {
+      "project": "requests",
+      "repository": "https://github.com/psf/requests",
+      "commit": "0e322af87745eff34caffe4df68456ebc20d9068",
+      "license": "Apache-2.0",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/requests/0e322af87745eff34caffe4df68456ebc20d9068/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/0e322af87745eff34caffe4df68456ebc20d9068/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142,
+          "frozen_manifest_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "upstream_path": "ext/LICENSE",
+          "path": "third_party/licenses/requests/0e322af87745eff34caffe4df68456ebc20d9068/ext/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/0e322af87745eff34caffe4df68456ebc20d9068/ext/LICENSE",
+          "sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725",
+          "bytes": 51,
+          "frozen_manifest_sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725"
+        }
+      ]
+    },
+    {
+      "project": "requests",
+      "repository": "https://github.com/psf/requests",
+      "commit": "147c8511ddbfa5e8f71bbf5c18ede0c4ceb3bba4",
+      "license": "Apache-2.0",
+      "declared_in": [
+        "benchmarks/v1/manifest.json",
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/requests/147c8511ddbfa5e8f71bbf5c18ede0c4ceb3bba4/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/147c8511ddbfa5e8f71bbf5c18ede0c4ceb3bba4/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142,
+          "frozen_manifest_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "upstream_path": "ext/LICENSE",
+          "path": "third_party/licenses/requests/147c8511ddbfa5e8f71bbf5c18ede0c4ceb3bba4/ext/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/147c8511ddbfa5e8f71bbf5c18ede0c4ceb3bba4/ext/LICENSE",
+          "sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725",
+          "bytes": 51,
+          "frozen_manifest_sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725"
+        }
+      ]
+    },
+    {
+      "project": "requests",
+      "repository": "https://github.com/psf/requests",
+      "commit": "2ad18e0e10e7d7ecd5384c378f25ec8821a10a29",
+      "license": "Apache-2.0",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/requests/2ad18e0e10e7d7ecd5384c378f25ec8821a10a29/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/2ad18e0e10e7d7ecd5384c378f25ec8821a10a29/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "ext/LICENSE",
+          "path": "third_party/licenses/requests/2ad18e0e10e7d7ecd5384c378f25ec8821a10a29/ext/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/2ad18e0e10e7d7ecd5384c378f25ec8821a10a29/ext/LICENSE",
+          "sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725",
+          "bytes": 51,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "requests",
+      "repository": "https://github.com/psf/requests",
+      "commit": "302225334678490ec66b3614a9dddb8a02c5f4fe",
+      "license": "Apache-2.0",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/requests/302225334678490ec66b3614a9dddb8a02c5f4fe/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/302225334678490ec66b3614a9dddb8a02c5f4fe/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "ext/LICENSE",
+          "path": "third_party/licenses/requests/302225334678490ec66b3614a9dddb8a02c5f4fe/ext/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/302225334678490ec66b3614a9dddb8a02c5f4fe/ext/LICENSE",
+          "sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725",
+          "bytes": 51,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "requests",
+      "repository": "https://github.com/psf/requests",
+      "commit": "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5",
+      "license": "Apache-2.0",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/requests/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "ext/LICENSE",
+          "path": "third_party/licenses/requests/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5/ext/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5/ext/LICENSE",
+          "sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725",
+          "bytes": 51,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "requests",
+      "repository": "https://github.com/psf/requests",
+      "commit": "b639e66c816514e40604d46f0088fbceec1a5149",
+      "license": "Apache-2.0",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/requests/b639e66c816514e40604d46f0088fbceec1a5149/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/b639e66c816514e40604d46f0088fbceec1a5149/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "ext/LICENSE",
+          "path": "third_party/licenses/requests/b639e66c816514e40604d46f0088fbceec1a5149/ext/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/b639e66c816514e40604d46f0088fbceec1a5149/ext/LICENSE",
+          "sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725",
+          "bytes": 51,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "requests",
+      "repository": "https://github.com/psf/requests",
+      "commit": "d3d504436ef0c2ac7ec8af13738b04dcc8c694be",
+      "license": "Apache-2.0",
+      "declared_in": [
+        "benchmarks/graph/history_manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE",
+          "path": "third_party/licenses/requests/d3d504436ef0c2ac7ec8af13738b04dcc8c694be/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/d3d504436ef0c2ac7ec8af13738b04dcc8c694be/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142,
+          "frozen_manifest_sha256": null
+        },
+        {
+          "upstream_path": "ext/LICENSE",
+          "path": "third_party/licenses/requests/d3d504436ef0c2ac7ec8af13738b04dcc8c694be/ext/LICENSE",
+          "url": "https://raw.githubusercontent.com/psf/requests/d3d504436ef0c2ac7ec8af13738b04dcc8c694be/ext/LICENSE",
+          "sha256": "3172d399cbd8f10609e73fec73d0e0b33eecd3c572a68b0722229d8c7059f725",
+          "bytes": 51,
+          "frozen_manifest_sha256": null
+        }
+      ]
+    },
+    {
+      "project": "urllib3",
+      "repository": "https://github.com/urllib3/urllib3",
+      "commit": "2458bfcd3dacdf6c196e98d077fc6bb02a5fc1df",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.txt",
+          "path": "third_party/licenses/urllib3/2458bfcd3dacdf6c196e98d077fc6bb02a5fc1df/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/urllib3/urllib3/2458bfcd3dacdf6c196e98d077fc6bb02a5fc1df/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+          "bytes": 1093,
+          "frozen_manifest_sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        }
+      ]
+    },
+    {
+      "project": "urllib3",
+      "repository": "https://github.com/urllib3/urllib3",
+      "commit": "56f01e088dc006c03d4ee6ea9da4ab810f1ed700",
+      "license": "MIT",
+      "declared_in": [
+        "benchmarks/v1/manifest.json"
+      ],
+      "license_files": [
+        {
+          "upstream_path": "LICENSE.txt",
+          "path": "third_party/licenses/urllib3/56f01e088dc006c03d4ee6ea9da4ab810f1ed700/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/urllib3/urllib3/56f01e088dc006c03d4ee6ea9da4ab810f1ed700/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+          "bytes": 1093,
+          "frozen_manifest_sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        }
+      ]
+    }
+  ]
+}

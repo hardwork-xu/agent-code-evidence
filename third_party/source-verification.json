@@ -1,0 +1,589 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-04",
+  "status": "verified-source-identity-with-known-historical-span-defects",
+  "method": "Fetch original source bytes from full GitHub commit URLs. Compare rendered text with the declared source range, allowing outer renderer whitespace as a separately counted category. For mismatching module residues, verify all nonempty displayed lines are an ordered subsequence of the same pinned file. No upstream code was executed.",
+  "source_files_fetched": 71,
+  "source_fetch_failures": 0,
+  "fragments_checked": 1309,
+  "exact_declared_span_matches": 748,
+  "declared_span_matches_ignoring_outer_renderer_whitespace": 544,
+  "known_noncontiguous_span_defects": 17,
+  "noncontiguous_line_selection_verified": 17,
+  "limitations": [
+    "17 historical Archex module-residue chunks report misleading contiguous-looking line ranges; original raw records remain unchanged.",
+    "Matching a file/span does not validate correctness of historical experimental outcomes or model judgments.",
+    "Hashes and offline checks detect later changes; they are not independent proof of authorship or an exhaustive legal audit."
+  ],
+  "defect_index": "third_party/noncontiguous-excerpts.json",
+  "files": [
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/__init__.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/__init__.py",
+      "sha256": "7ce608bedd5e192a90adee2e092dec256299d26c00b82f140faa9b6b9392f7f5",
+      "bytes": 2057,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/__init__.pyi",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/__init__.pyi",
+      "sha256": "4085e79c73e8b9c9835a46e936c5933fe7202756e7f257bb0e3c916bfc1875ec",
+      "bytes": 11281,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/_compat.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/_compat.py",
+      "sha256": "e219576d685d0e34020cae85285d448276773ce88782da69e78a84d27c5a1878",
+      "bytes": 2704,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/_funcs.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/_funcs.py",
+      "sha256": "e7eb54289b69de1e44979e4470397a1965c5a7af1f4fc0fc53bb8244deb8f7b2",
+      "bytes": 15854,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/_make.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/_make.py",
+      "sha256": "a2b2927fa0be0757997e96ade256c0b71be64b213fcb1946f3363dd75e6e7d69",
+      "bytes": 94157,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/_next_gen.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/_next_gen.py",
+      "sha256": "ec54646ed97f374d7b4ae0617ff570de6c36736a46661b4218ecda760cfbb69e",
+      "bytes": 24395,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/exceptions.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/exceptions.py",
+      "sha256": "1d116ae22c9b9afefe0dc670ca397a3357ae33661e2552bf845c6e6811809e02",
+      "bytes": 1977,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/filters.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/filters.py",
+      "sha256": "64188a58ba774742df099b2aed7d75a67f565fc36c952db05cce23b272ce19cf",
+      "bytes": 1795,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/setters.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/setters.py",
+      "sha256": "e7e75c4fadc640adf938d1334a07d70a46c1ee93e4691faabf5e669b83d54b34",
+      "bytes": 1617,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attr/validators.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attr/validators.py",
+      "sha256": "59a0751cb0071ea4475acaeffcaf47fac27b1128a5dc7dc29afd9df13b55671e",
+      "bytes": 20046,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attrs/__init__.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attrs/__init__.py",
+      "sha256": "a9e4096783b4f327334a7f38d2ff5b60e699c9113cd56b158be402ad8de4ac25",
+      "bytes": 1107,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attrs/__init__.pyi",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attrs/__init__.pyi",
+      "sha256": "9d99889e872333bb47578010c34bf13bf7e8ea82632ff3e89e557dcca296f036",
+      "bytes": 7931,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attrs/filters.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attrs/filters.py",
+      "sha256": "54e50c66e83db8453a754b80d1d1758c89d42b43cbddf2e03f45414b977e0831",
+      "bytes": 73,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@598494a618410490cfbe0c896b7a544f6d23e0d9",
+      "path": "src/attrs/setters.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/598494a618410490cfbe0c896b7a544f6d23e0d9/src/attrs/setters.py",
+      "sha256": "78bd5889d6105774f687dfd2608652651d4501c1c66f54ee093cb41342efd925",
+      "bytes": 73,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@9e443b18527dc96b194e92805fa751cbf8434ba9",
+      "path": "src/attr/_make.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/9e443b18527dc96b194e92805fa751cbf8434ba9/src/attr/_make.py",
+      "sha256": "2e7572d9ed07ca0a2a699927842d7dcfb2663adeea1a401a75fd8b6605952562",
+      "bytes": 101923,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@9e443b18527dc96b194e92805fa751cbf8434ba9",
+      "path": "src/attr/_next_gen.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/9e443b18527dc96b194e92805fa751cbf8434ba9/src/attr/_next_gen.py",
+      "sha256": "6acd6fa22f2c88023fa363901bc608899be69f41bbf92dff8ffefbe2b9e867f8",
+      "bytes": 6203,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@9e443b18527dc96b194e92805fa751cbf8434ba9",
+      "path": "src/attr/filters.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/9e443b18527dc96b194e92805fa751cbf8434ba9/src/attr/filters.py",
+      "sha256": "f6962f5ea760ea6b4bbca2086f9ea800b44ca0716741370608ee045d3735ab23",
+      "bytes": 1470,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@9e443b18527dc96b194e92805fa751cbf8434ba9",
+      "path": "src/attr/setters.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/9e443b18527dc96b194e92805fa751cbf8434ba9/src/attr/setters.py",
+      "sha256": "a5b09943ea44e99c630ea65f59652150579f5eda5e908538a92fd80cc2cf439d",
+      "bytes": 1400,
+      "status": "fetched"
+    },
+    {
+      "source": "attrs@9e443b18527dc96b194e92805fa751cbf8434ba9",
+      "path": "src/attr/validators.py",
+      "url": "https://raw.githubusercontent.com/python-attrs/attrs/9e443b18527dc96b194e92805fa751cbf8434ba9/src/attr/validators.py",
+      "sha256": "2c65696e2360fca1b362b2940f924f899931f1331fca70d91a84282c934220ca",
+      "bytes": 19676,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@08eff926a6011ac84961fd2cee22d9fd4d4b1a88",
+      "path": "httpx/_client.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/httpx/_client.py",
+      "sha256": "d086376600749fe0d098898828011c693134013a45a96d46150b663fd07e4102",
+      "bytes": 69273,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@08eff926a6011ac84961fd2cee22d9fd4d4b1a88",
+      "path": "httpx/_config.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/httpx/_config.py",
+      "sha256": "51d62258489b364e05f779e7d3ec0746dae0990bbbb734dbd40a61296679c184",
+      "bytes": 12366,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@08eff926a6011ac84961fd2cee22d9fd4d4b1a88",
+      "path": "httpx/_content.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/httpx/_content.py",
+      "sha256": "176e37a3552c80de8188fe41f49e3815fc307c061b6d0748da9e2bb9ac0ff35b",
+      "bytes": 8109,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@08eff926a6011ac84961fd2cee22d9fd4d4b1a88",
+      "path": "httpx/_models.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/httpx/_models.py",
+      "sha256": "358e23d2d2c127fa5e401a1b175da0e0a1697346689351bd5faa3543758b4a19",
+      "bytes": 42974,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@08eff926a6011ac84961fd2cee22d9fd4d4b1a88",
+      "path": "httpx/_urlparse.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/httpx/_urlparse.py",
+      "sha256": "fac05d6c5d24c9f3ad3d2211cb0a17b05513b726c1bfefe5eee24991c42cea92",
+      "bytes": 17826,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@08eff926a6011ac84961fd2cee22d9fd4d4b1a88",
+      "path": "httpx/_urls.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/08eff926a6011ac84961fd2cee22d9fd4d4b1a88/httpx/_urls.py",
+      "sha256": "db9696b268f773113a772b6ec83e804bb4a0ac6bac75b5f96db66ad208b5fd4e",
+      "bytes": 21901,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/__init__.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py",
+      "sha256": "0ac6997bac998f4ac783adf6d8058a587193315afdb718047c3e4fdff46bcfad",
+      "bytes": 2171,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_client.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_client.py",
+      "sha256": "c43f941baefe58c91e96d00039e1868fe719d91453026d7db1647194563bff8d",
+      "bytes": 65714,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_config.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_config.py",
+      "sha256": "a4fa7653ec2271f70ab05f8a6111352d876dddee84446788a1767c1a3a372d67",
+      "bytes": 8547,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_content.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_content.py",
+      "sha256": "2c61b3ac94d1dcebcde0c6f519554d2d7917247fbaa0a97002db4ef69e70ff28",
+      "bytes": 8161,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_decoders.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_decoders.py",
+      "sha256": "a74757f08d0d1077b1b37506a784ac66eb62321b17aeb5a5ebe1a7a956f488a3",
+      "bytes": 12041,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_models.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_models.py",
+      "sha256": "e3ffc6bb2bf580bc6e6428708a6f247d036220e709f5a72b785392babbd97e6b",
+      "bytes": 44700,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_multipart.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_multipart.py",
+      "sha256": "28e1c465997aa28860f663da2b2caedf8e6aab5ac92e0df94d41b7600cd70776",
+      "bytes": 9843,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_status_codes.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_status_codes.py",
+      "sha256": "0d89fedae7c180c797cb9b3cc77fd307bc2302e00031ec136a43eb9b9ad712c7",
+      "bytes": 5639,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_transports/__init__.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/__init__.py",
+      "sha256": "19b52805200ea7bcfe97ef63e5884c851dc3308727e8554b863d3bd8edcd9e7a",
+      "bytes": 275,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_transports/base.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/base.py",
+      "sha256": "9194bf54c6d58987c5e7bd29a205022756ee973fb26df2f9d4faacf7292d79b5",
+      "bytes": 2523,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_transports/default.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/default.py",
+      "sha256": "03379a454c95c0271c4f2c8d25ec437f49f57457f3cf2769748420bf0ecf2e79",
+      "bytes": 13983,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_transports/mock.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/mock.py",
+      "sha256": "3d3a34779ebb4484d7c46ae48ba90deffebbc300317f088c0dcb972626428c4a",
+      "bytes": 1232,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_types.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_types.py",
+      "sha256": "272878d4642aec039ebfc20e58a0c083bcc26ef1c07ee7e65b983f3e24ed12b6",
+      "bytes": 2965,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_urlparse.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_urlparse.py",
+      "sha256": "640987e3b38d7e4c6bae3f8f3d88467a21e36fa0232824be00d58837838bfca6",
+      "bytes": 18546,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_urls.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_urls.py",
+      "sha256": "757f7d551d4348e1e9828f40abb3f360ee0529dc6a2a3c32369f20adff1d1cdd",
+      "bytes": 21550,
+      "status": "fetched"
+    },
+    {
+      "source": "httpx@26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "path": "httpx/_utils.py",
+      "url": "https://raw.githubusercontent.com/encode/httpx/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_utils.py",
+      "sha256": "fd355ea802afc4990a1ddcfb74579be2cd0b66a41781e1645d281f88704aff5a",
+      "bytes": 8285,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@b3a5d7d68991c040615d5345bb55f61de53ba176",
+      "path": "src/packaging/markers.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/src/packaging/markers.py",
+      "sha256": "787fadc52db3ab51dd3694ddf4b71951c548c1ec0088d53482b9aae708ca9ce9",
+      "bytes": 8208,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@b3a5d7d68991c040615d5345bb55f61de53ba176",
+      "path": "src/packaging/metadata.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/src/packaging/metadata.py",
+      "sha256": "4e8c6320d3a64a7f266c479745254d32274426c3d46071181679cde0c6aabc7d",
+      "bytes": 32750,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@b3a5d7d68991c040615d5345bb55f61de53ba176",
+      "path": "src/packaging/specifiers.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/src/packaging/specifiers.py",
+      "sha256": "64ea6a2ffc3f2a3e9917f396765890533844c879436e2ebdf3d92bfac179187b",
+      "bytes": 39206,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@b3a5d7d68991c040615d5345bb55f61de53ba176",
+      "path": "src/packaging/utils.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/src/packaging/utils.py",
+      "sha256": "5e07663f7cb1f7ec101058ceecebcc8fd46311fe49951e4714547af6fed243d1",
+      "bytes": 5268,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@b3a5d7d68991c040615d5345bb55f61de53ba176",
+      "path": "src/packaging/version.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/b3a5d7d68991c040615d5345bb55f61de53ba176/src/packaging/version.py",
+      "sha256": "5e34412cd2b5ed430380b78ff141e7ab0898dd37528b4df1150511b5e736d750",
+      "bytes": 16236,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/__init__.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/__init__.py",
+      "sha256": "764e136bfbe67552716070dc7f286f40dc3c5773e0481a2628d5ea83e0f62436",
+      "bytes": 494,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/_elffile.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/_elffile.py",
+      "sha256": "71f940400904db9b738589aafda0a2ef641f6d3fed9fcf75b4fcdfa5b7873b01",
+      "bytes": 3306,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/_manylinux.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/_manylinux.py",
+      "sha256": "be5e4e0a8cf8931f341f9af05ca7975a397d58d2121a6af86604e94cff6553d7",
+      "bytes": 9612,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/_musllinux.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/_musllinux.py",
+      "sha256": "a7d66a35888e22d19e7bc29c64578717f61c76157018774aeabfbc9608b1bc64",
+      "bytes": 2694,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/_parser.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/_parser.py",
+      "sha256": "b3f4ef4ef0cd2b436b336401dd529385d58533835cd0fe899e439b925dcc8e93",
+      "bytes": 10236,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/_structures.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/_structures.py",
+      "sha256": "ab77953666d62461bf4b40e2b7f4b7028f2a42acffe4f6135c500a0597b9cabe",
+      "bytes": 1431,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/_tokenizer.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/_tokenizer.py",
+      "sha256": "27abf91fb273bdbfa0f35c69ff640008ac0eecbc47400ea292bc8c53bcd7c0df",
+      "bytes": 5273,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/licenses/__init__.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/licenses/__init__.py",
+      "sha256": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c",
+      "bytes": 5715,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/markers.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/markers.py",
+      "sha256": "73cf5337307b65d198864a2f9ba3d89aa1b21f15e561568b5b9f753c750d283f",
+      "bytes": 10561,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/metadata.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/metadata.py",
+      "sha256": "60989b33b1987b8adef3ed1adce9579864be5c38131283b8b6506ddaadb90678",
+      "bytes": 34762,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/requirements.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/requirements.py",
+      "sha256": "818c9148075bac8c8a0d8ebaba02035108d132fc641f600b8a84e65f7b672faa",
+      "bytes": 2947,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/specifiers.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/specifiers.py",
+      "sha256": "186d703cd31c2f47cc24eebcbc5e77c0a31dc277de84371a23eafd3694df8a50",
+      "bytes": 40074,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/tags.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/tags.py",
+      "sha256": "085aab2730337365cd19ec5eac7fff4fe639230abb59bb185ec88b1112d6c58d",
+      "bytes": 21014,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/utils.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/utils.py",
+      "sha256": "d05dc787d385b9182b8538066549792b6d85bf560fdad665d73ff680eea42620",
+      "bytes": 5050,
+      "status": "fetched"
+    },
+    {
+      "source": "packaging@d8e3b31b734926ebbcaff654279f6855a73e052f",
+      "path": "src/packaging/version.py",
+      "url": "https://raw.githubusercontent.com/pypa/packaging/d8e3b31b734926ebbcaff654279f6855a73e052f/src/packaging/version.py",
+      "sha256": "a257f2ba4fc33db7e5364278c0159eb57435edcef8c770c1e74d5d7a052fec36",
+      "bytes": 16676,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@e13a58c5039bf7a8aa6a46a77244aea48b210510",
+      "path": "src/pluggy/_callers.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/e13a58c5039bf7a8aa6a46a77244aea48b210510/src/pluggy/_callers.py",
+      "sha256": "8a3c610c38f94802297bf75cdc3350ec1baedaccbb4deb06f1290e17f55c1a1d",
+      "bytes": 6233,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@e13a58c5039bf7a8aa6a46a77244aea48b210510",
+      "path": "src/pluggy/_hooks.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/e13a58c5039bf7a8aa6a46a77244aea48b210510/src/pluggy/_hooks.py",
+      "sha256": "4e218bb420026f46d3efbcadfcaa337b77af4c06664c4dd783f4fc02d05a03d5",
+      "bytes": 23877,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@e13a58c5039bf7a8aa6a46a77244aea48b210510",
+      "path": "src/pluggy/_manager.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/e13a58c5039bf7a8aa6a46a77244aea48b210510/src/pluggy/_manager.py",
+      "sha256": "7dc614ed5111d02a654729b88c027b44215897a71f0d2795339f3d6071f1f6e0",
+      "bytes": 19517,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "path": "src/pluggy/__init__.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/src/pluggy/__init__.py",
+      "sha256": "53caad2119a6af449175bc4017c54926cd358cc51880a01cf6802361808b833e",
+      "bytes": 980,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "path": "src/pluggy/_callers.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/src/pluggy/_callers.py",
+      "sha256": "f24f22dc65414ff82d71c08f16937c5b0d2da305929d26b3ae5d2f6cff545d26",
+      "bytes": 7316,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "path": "src/pluggy/_hooks.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/src/pluggy/_hooks.py",
+      "sha256": "9bedea54b0dd9f84bdcb7a5f7cb3a93107832383c3c3c86b0132b5482f2b4245",
+      "bytes": 25108,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "path": "src/pluggy/_manager.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/src/pluggy/_manager.py",
+      "sha256": "ca5203170ad43ff98c006a5d44f8fdcf0c6e906ee758901f635cb2957c9700ca",
+      "bytes": 20265,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "path": "src/pluggy/_result.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/src/pluggy/_result.py",
+      "sha256": "7846a4fbb21ef3c6d193296c81b2f007a88ca20a2020c6617aaf16ddb22699cb",
+      "bytes": 2849,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "path": "src/pluggy/_tracing.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/src/pluggy/_tracing.py",
+      "sha256": "91206bdb917facd9255764212c3ea1d63c7a67591c28345bb98bc5e63bf7e695",
+      "bytes": 2089,
+      "status": "fetched"
+    },
+    {
+      "source": "pluggy@f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+      "path": "src/pluggy/_warnings.py",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pluggy/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/src/pluggy/_warnings.py",
+      "sha256": "b5dd00bd90697da9ab8820b73aab0bc31321f92cc03237e399ce7c4f9bcfde5c",
+      "bytes": 828,
+      "status": "fetched"
+    }
+  ]
+}
