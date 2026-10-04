@@ -122,7 +122,12 @@ def anchors_for(texts, limit=24):
                                'symbol': node.name, 'kind': 'function', 'start_line': start,
                                'end_line': node.end_lineno, 'text': text,
                                'text_sha256': sha256(text), 'file_sha256': sha256(source)})
-    return sorted(candidates, key=lambda x: x['id'])[:limit]
+    # One anchor per qualified identity; overload/redefinition ambiguity remains
+    # in the complete source corpus instead of being silently filtered away.
+    unique = {}
+    for candidate in candidates:
+        unique.setdefault(candidate['id'], candidate)
+    return sorted(unique.values(), key=lambda x: x['id'])[:limit]
 
 
 def prepare(cache):

@@ -1,4 +1,6 @@
 {
+  "anchor_selection_amended_at_utc": "2026-10-04T19:54:24.560249+00:00",
+  "anchor_selection_protocol_sha256": "ca129aed54bda5e94eadd26929736ed906b2b74e87ca0469b43db7367f2a1e0e",
   "pinned_at_utc": "2026-10-04T19:46:14.779869+00:00",
   "protocol_sha256": "205740dcbfe9dc0563ccf5409771f908edd52653909817b8c407c886aa73cdc5",
   "repositories": [
@@ -1422,36 +1424,6 @@
           "text_sha256": "458d621463bff8a1c0e0923831b331c2433a67e9027a5dedab53ee23af21f55b"
         },
         {
-          "end_line": 625,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "01beea812f31a40324494c57a7ffda98e0da87d23c7c2937b9f73a8f46b7b159",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 619,
-          "symbol": "map_reduce",
-          "text_sha256": "211020a412cee73896a61539598e86ebb7ec59303960ca3169dbb04fcf877914"
-        },
-        {
-          "end_line": 632,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "01beea812f31a40324494c57a7ffda98e0da87d23c7c2937b9f73a8f46b7b159",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 626,
-          "symbol": "map_reduce",
-          "text_sha256": "7e753e03eef8f8d5c6100477388f50b81cd8450d90f1cadf2303fe6026f88bae"
-        },
-        {
-          "end_line": 639,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "01beea812f31a40324494c57a7ffda98e0da87d23c7c2937b9f73a8f46b7b159",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 633,
-          "symbol": "map_reduce",
-          "text_sha256": "323c17a5bb87b581ffba89530cc68d3783630632c24f8796b38e9155b6073457"
-        },
-        {
           "end_line": 1473,
           "file_sha256": "6aff1f84b0a70b96c102e3b92a70539255f1489765fc54140b1c1478f95b4828",
           "id": "01e7e4a80d1e6d8adc90a6b3301c0d225ea55bc2173ecfbe8be5fe5acfe417d8",
@@ -1552,56 +1524,6 @@
           "text_sha256": "dad6d577fbac471afff00812e244cf09e86bb448fe832ddd2417f5cbc121dbbe"
         },
         {
-          "end_line": 863,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "089de5e0446854dc7b29cdfbe118ebd1e585e34ff2e3c16008cfc065d6c68aca",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 860,
-          "symbol": "minmax",
-          "text_sha256": "5d901f9cee743180d450b401493eb13803d59d674467c31ade6d7601293e4067"
-        },
-        {
-          "end_line": 870,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "089de5e0446854dc7b29cdfbe118ebd1e585e34ff2e3c16008cfc065d6c68aca",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 864,
-          "symbol": "minmax",
-          "text_sha256": "51704be2f2149ed4b54d2d29fcc3b9f67e1dc764738d9145f1aa16423df22b57"
-        },
-        {
-          "end_line": 877,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "089de5e0446854dc7b29cdfbe118ebd1e585e34ff2e3c16008cfc065d6c68aca",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 871,
-          "symbol": "minmax",
-          "text_sha256": "80d98e60ac370a1e9f1ea42f914872ddd59c76914c8924283d7885ccfba0cc18"
-        },
-        {
-          "end_line": 883,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "089de5e0446854dc7b29cdfbe118ebd1e585e34ff2e3c16008cfc065d6c68aca",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 878,
-          "symbol": "minmax",
-          "text_sha256": "ee51756c1af5ade4c318fc5c1b0500510a4a05f5a4702310b3d015228835cee7"
-        },
-        {
-          "end_line": 890,
-          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
-          "id": "089de5e0446854dc7b29cdfbe118ebd1e585e34ff2e3c16008cfc065d6c68aca",
-          "kind": "function",
-          "path": "more_itertools/more.pyi",
-          "start_line": 884,
-          "symbol": "minmax",
-          "text_sha256": "5d4eb72cdc6d6ddb7d4ce3d5aa410560c131fafbf6129be9044d3ba33feab351"
-        },
-        {
           "end_line": 1346,
           "file_sha256": "6aff1f84b0a70b96c102e3b92a70539255f1489765fc54140b1c1478f95b4828",
           "id": "0971859aca75c72f03cf24f62ded7c65e9933f0bb9f2c2e6259e2421118b0bd6",
@@ -1640,6 +1562,86 @@
           "start_line": 252,
           "symbol": "unique_to_each",
           "text_sha256": "28261fc9172cd2aca150af8dd14bf6fbbf610efd7866c03628676738a1715043"
+        },
+        {
+          "end_line": 298,
+          "file_sha256": "5e95c7e429831494fa11cfbf18aee6c77c0facdc6907c45c95877ddf8feb2dcf",
+          "id": "0dc141722559c101a69acfa4aff7d2785a20c8e9eaa8b8c2e3027988688c7abd",
+          "kind": "function",
+          "path": "more_itertools/more.py",
+          "start_line": 273,
+          "symbol": "last",
+          "text_sha256": "aa680fc4e1a33db759a262f643e8b329b00e63d51e44f97dd07a4309a5c80c97"
+        },
+        {
+          "end_line": 112,
+          "file_sha256": "16c6e6956207ca8871d6a2ac4899246d03b858c7456fc4efbcfcce17d6cc2b4e",
+          "id": "0e749678887221a81f464d3d61b1c8607dc04f6dcc4b0536dfac286d99bdc6e8",
+          "kind": "function",
+          "path": "more_itertools/recipes.pyi",
+          "start_line": 107,
+          "symbol": "grouper",
+          "text_sha256": "3e61079b1b71d37dcf5bafdeb3d4a9cfe788c72c183ecf7456a5c41171ec7787"
+        },
+        {
+          "end_line": 194,
+          "file_sha256": "16c6e6956207ca8871d6a2ac4899246d03b858c7456fc4efbcfcce17d6cc2b4e",
+          "id": "0ed8935f881b118a19de7c5255384c5b3c770b0330d85f190f21d0a6936ae283",
+          "kind": "function",
+          "path": "more_itertools/recipes.pyi",
+          "start_line": 191,
+          "symbol": "reshape",
+          "text_sha256": "07f5bcfb8edbb064d262c39ce5120b65d76907e01f7e8e8c9be1502b043356ea"
+        },
+        {
+          "end_line": 683,
+          "file_sha256": "30b711726f4f99c3472b3c55b42037cb92f0c9bbe4397678eacebcae82c41e2a",
+          "id": "0edc36b102c7f1fb23c795dec45e235ced20b1a24ac8f3db194c4f5b23322975",
+          "kind": "function",
+          "path": "more_itertools/more.pyi",
+          "start_line": 679,
+          "symbol": "filter_except",
+          "text_sha256": "2ce8eeb4c3278a26e52d0b2440f7b661d30fea6c05c54042f4829c572ba6c888"
+        },
+        {
+          "end_line": 263,
+          "file_sha256": "6aff1f84b0a70b96c102e3b92a70539255f1489765fc54140b1c1478f95b4828",
+          "id": "0ee17caaf3c23a9000955d2a89545b83ea6faf758175ca71f47942b399727c7c",
+          "kind": "function",
+          "path": "more_itertools/recipes.py",
+          "start_line": 252,
+          "symbol": "pad_none",
+          "text_sha256": "38533053e5775312b91d00137a501fbe9982c5a25bbb71798e8729d1a27b460b"
+        },
+        {
+          "end_line": 2569,
+          "file_sha256": "5e95c7e429831494fa11cfbf18aee6c77c0facdc6907c45c95877ddf8feb2dcf",
+          "id": "0f62ef671046b670b9452457106e3411f00f93df8c924777f0cc1a213c60e310",
+          "kind": "function",
+          "path": "more_itertools/more.py",
+          "start_line": 2554,
+          "symbol": "lstrip",
+          "text_sha256": "c779f743fb03d22b5d3b3c353fc9d851864ae8f91e6f1deef2e7d86fc6872e6a"
+        },
+        {
+          "end_line": 904,
+          "file_sha256": "6aff1f84b0a70b96c102e3b92a70539255f1489765fc54140b1c1478f95b4828",
+          "id": "1099f309011602b80b2b431983483e853d01faa95ca2972ebc7d946987030d5b",
+          "kind": "function",
+          "path": "more_itertools/recipes.py",
+          "start_line": 866,
+          "symbol": "iter_index",
+          "text_sha256": "dcda58c54538d6d0c1471e09b27529aec86332feb4fc90915ba63fe9e36d12bd"
+        },
+        {
+          "end_line": 239,
+          "file_sha256": "6aff1f84b0a70b96c102e3b92a70539255f1489765fc54140b1c1478f95b4828",
+          "id": "1136d73c856cec8c5b991bb805309aa14c241ea40d282f746304a86b009dc82a",
+          "kind": "function",
+          "path": "more_itertools/recipes.py",
+          "start_line": 216,
+          "symbol": "all_equal",
+          "text_sha256": "bee554bae77658dff01fb63ca307011f1a47ad8ecd8282597ed3e46f0af29e30"
         }
       ],
       "prefixes": [

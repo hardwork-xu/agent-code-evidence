@@ -23,7 +23,7 @@
     ],
     "selection_reason": "Four permissively licensed Python projects absent from the previous natural-source corpus; convenience sample, not representative of all software.",
     "revision_rule": "Latest non-prerelease non-draft GitHub release returned on this run; its commit and five first parents. Pin all SHAs before source outcomes. Do not replace projects based on results. If the repository has no GitHub release, use the first tag returned by the tags API, explicitly recorded as a tag rather than release.",
-    "anchors": "At most 24 top-level functions from the oldest revision per repository, sorted by SHA256(path + colon + function name), excluding test, fixture, vendor and generated trees; retain unresolved graphs. Freeze anchor metadata before timing.",
+    "anchors": "At most 24 top-level functions from the oldest revision per repository, sorted by SHA256(path + colon + function name), excluding test, fixture, vendor and generated trees; retain unresolved graphs. Freeze anchor metadata before timing. Deduplicate path/symbol identities by first declaration before hash selection; retain all duplicate definitions in analyzed source, so ambiguity is still reported.",
     "unit": "Repository and revision transition; functions and repeats are dependent observations, not independent studies.",
     "versions": 6,
     "execute_third_party": false
@@ -77,9 +77,11 @@
   "amendments_before_primary": [
     "Pyflakes releases/latest returned 404; use tag fallback without changing repository selection.",
     "Baseline strengthened to share indexed corpus within each snapshot before any primary results.",
-    "Preserve partial rows on failure and validate manifest protocol lineage; document actual trajectory order. Existing source SHAs and selection remain fixed."
+    "Preserve partial rows on failure and validate manifest protocol lineage; document actual trajectory order. Existing source SHAs and selection remain fixed.",
+    "First primary invocation rejected duplicated overload anchor identities before any measurements. Deduplicate anchor identities, retain ambiguous definitions, rebuild metadata from the same pinned source archives. Initial manifest retained separately."
   ],
   "supersedes_protocol_sha256": [
-    "205740dcbfe9dc0563ccf5409771f908edd52653909817b8c407c886aa73cdc5"
+    "205740dcbfe9dc0563ccf5409771f908edd52653909817b8c407c886aa73cdc5",
+    "a7ab23eda97f8c4cdb6671174ef30ba521e4b7bd97ffe8498bf13023e3682064"
   ]
 }

@@ -54,3 +54,13 @@ def test_failed_rows_cannot_be_summarized_as_success():
     import pytest
     with pytest.raises(ValueError, match='failed measurement'):
         summarize({'rows': [{'status': 'failed'}]})
+
+
+def test_overload_anchors_are_unique_without_removing_ambiguity():
+    text = 'def entry(x: int):\n    ...\ndef entry(x: str):\n    ...\n'
+    anchors = anchors_for({'app.py': text})
+    assert len(anchors) == 1
+    assert anchors[0]['start_line'] == 1
+    from contextproof.graph import build_graph
+    graph = build_graph({'app.py': text}, 'duplicate-definitions', anchors)
+    assert graph['frontier']
