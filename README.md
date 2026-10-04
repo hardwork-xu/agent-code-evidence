@@ -166,4 +166,3 @@ published research result. Source and evaluation records are public; personal
 plans, account data and raw local diagnostics are kept outside Git.
 
 The [post-result ablation](docs/en/ABLATION_REPORT.md) preserves unknown states and reuses 364/480 natural graph transitions. Relative to the contemporaneous whole-corpus guard, replay time decreases by 83.0% (Rich), 29.3% (Humanize), 18.8% (More Itertools), and 6.2% (Pyflakes). These are same-data exploratory CPU results, not task-quality gains.
-

@@ -144,4 +144,3 @@ MCP SDK 验证实际 stdio 调用。模型推理不在 CI 中自动运行。
 
 
 [结果后的消融](zh/ABLATION_REPORT.md) 保留未知状态，复用 364/480 个自然图转换；相对同期整体缓存基线，回放耗时分别降低 83.0%（Rich）、29.3%（Humanize）、18.8%（More Itertools）、6.2%（Pyflakes）。这是同数据上的探索性 CPU 结果，不是任务质量收益。
-
