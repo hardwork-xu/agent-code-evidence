@@ -97,12 +97,16 @@ writes and outside writes are denied. Runtime read exceptions include the Python
 installation, system runtime directories, root-directory data and ancestor metadata
 for allowed paths; arbitrary outside file contents remain denied.
 
-1. Download the six `archive_url` entries in `manifest.json` to a directory outside
-   the repository, named `{project}-{before|after}.tar.gz`. Keep TLS verification
-   enabled. The runner performs no network requests or installations.
-2. Verify/extract the archives, then use a new output directory for every run:
+1. Fetch the six fixed archives to a directory outside the repository. The helper
+   uses normal HTTPS verification, fixed byte/time limits and SHA-256 checks. It
+   atomically publishes verified downloads, reuses verified cache entries and
+   rejects mismatched existing files. It does not authenticate, extract or execute
+   archive contents. / 下载器校验固定归档的大小与哈希，复用已核验缓存；不解压、执行
+   或使用账号认证，错误缓存不会被覆盖。
+2. Verify/extract, then use a new output directory for every run:
 
 ```sh
+python scripts/fetch_task_inputs.py --cache /path/to/task-inputs
 python scripts/run_task_evidence.py --sources /path/to/task-inputs --extract
 python scripts/run_task_evidence.py --sources /path/to/task-inputs \
   --output /path/to/new-task-results

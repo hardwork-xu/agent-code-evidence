@@ -32,6 +32,8 @@ jobs:
       - run: ruff check .
       - run: python scripts/check_publication.py
       - run: python scripts/check_attribution.py
+      - run: python scripts/check_research_artifacts.py --require-results
+      - run: python scripts/render_maturation_report.py --check
       - run: >-
           python -m pytest -q tests benchmarks/graph/test_scope_audit.py
           benchmarks/revision_baselines/test_baselines.py

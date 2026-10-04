@@ -131,3 +131,45 @@ This verifies the recorded relationship, not independent proof of amendment timi
 自然来源选择引用较早协议哈希；后续测量前修订在 `protocol.json` 中列明，
 并保留被替代协议哈希。检查器输出两个哈希及关系状态，不改写其中任何一个。
 这核验的是已记录的关系，不是修订发生时序的独立证明。
+
+## Repository holdout and execution witnesses / 仓库留出与执行见证
+
+The same checker also covers the 32 pinned Jinja/Starlette/AnyIO/Python-Markdown
+revisions under `benchmarks/incremental_holdout`. It verifies all 32 exact license
+files, pinned license URLs, and byte counts. Initial protocol/manifest hashes and
+the unchanged repository objects must survive the recorded baseline amendment.
+同一检查器覆盖新留出研究的 32 个固定版本及 32 份精确保留的许可，核验固定
+许可 URL 与字节数。记录的基线修订必须保留初始协议、清单哈希以及未改变的
+仓库、源码和锚点对象。
+
+`benchmarks/task_evidence` uses nine reviewed upstream test identities from six
+already-known attrs/packaging/pluggy revisions. The checker binds archive and
+license declarations to their historical source pins, checks all ten full root
+license files, and checks test URLs, spans, source hashes and anchor paths.
+Ancillary documentation-license references in upstream metadata are not relabeled
+as license bodies. Published parameters and witness locations are metadata;
+upstream test/source bodies are not distributed. Its three Python support files
+are explicitly reviewed project-authored extraction/scoring code.
+任务见证研究使用来自六个已知 attrs/packaging/pluggy 版本的九项上游测试。
+检查器将归档和许可声明绑定到历史固定来源，核验十份完整根许可、测试 URL、
+范围、源码哈希和锚点路径。元数据中的许可文档引用不冒充许可正文；公开内容
+是参数及见证位置，不分发上游测试或源码正文。三个 Python 支持文件是经过审阅
+的项目自写提取与评分代码。
+
+`task-evidence-pilot.json` records the five original JSON file hashes of the
+invalid task pilot. Attribution validation rejects changed or missing pilot
+bytes; its `STATUS.md` remains editable for explicit defect disclosures and must
+retain the invalid-evidence label. There is no automatic inventory-update mode.
+`task-evidence-pilot.json` 固定无效任务试运行的五份原始 JSON 文件哈希，归属
+检查拒绝字节变化或缺失。`STATUS.md` 可继续明确披露缺陷，但须保留无效证据
+标签；检查器不提供自动更新该索引的模式。
+
+`python scripts/check_research_artifacts.py --require-results` additionally checks
+the saved primary result grids, provenance, summaries and execution-control
+records without downloads, source execution or measurements. It preserves failed
+holdout attempts and the explicitly invalid task pilot without counting either
+as successful primary evidence. These checks authenticate recorded relationships;
+they do not rerun upstream tests or prove that archived measurements reproduce.
+上述命令还离线核验主要结果的完整配对、来源、汇总及执行对照，不下载、不执行
+上游代码、不重新测量。失败留出尝试与明确无效的任务试运行保留原样，但不计作
+成功证据。记录一致性核验并不等于再次执行上游测试或复现实测结果。

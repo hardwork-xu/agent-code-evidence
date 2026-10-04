@@ -354,16 +354,17 @@ def assert_metadata_only(value, location: str = "") -> None:
             assert_metadata_only(nested, location + "/encoded-json")
 
 
-def check_metadata_corpus(root: Path) -> dict:
+def check_metadata_corpus(root: Path, *, study: str = "selective_reuse",
+                          manifest_name: str = "natural-manifest.json") -> dict:
     """Check the later metadata-only study without pinning timing outputs.
 
     校验后续研究的来源哈希、完整许可和无源码正文条件，不锁死新增计时结果字节。
     """
-    directory = root / "benchmarks/selective_reuse"
+    directory = safe_path(root, "benchmarks/" + study)
     if not directory.exists():
         return {"status": "absent", "projects": 0, "pinned_revisions": 0, "license_files": 0}
-    manifest = read_json(root, "benchmarks/selective_reuse/natural-manifest.json")
-    protocol_path = safe_path(root, "benchmarks/selective_reuse/protocol.json")
+    manifest = read_json(root, f"benchmarks/{study}/{manifest_name}")
+    protocol_path = safe_path(root, f"benchmarks/{study}/protocol.json")
     protocol = json.loads(protocol_path.read_text())
     current_protocol_hash = digest(protocol_path.read_bytes())
     pinned_protocol_hash = manifest["protocol_sha256"]
@@ -415,12 +416,17 @@ def check_metadata_corpus(root: Path) -> dict:
             total = 0
             for record in version["licenses"]:
                 local = record["local"]
-                prefix = "benchmarks/selective_reuse/licenses/" + owner_repo.replace("/", "--")
+                prefix = f"benchmarks/{study}/licenses/" + owner_repo.replace("/", "--")
                 if local != prefix + "/" + commit + "/" + record["path"]:
                     raise ValueError("metadata license path differs from pinned source")
                 raw = safe_path(root, local).read_bytes()
                 if digest(raw) != record["sha256"]:
                     raise ValueError("metadata license bytes changed: " + local)
+                if "bytes" in record and len(raw) != record["bytes"]:
+                    raise ValueError("metadata license byte count changed: " + local)
+                if ("url" in record and record["url"] !=
+                        f"https://raw.githubusercontent.com/{owner_repo}/{commit}/{record['path']}"):
+                    raise ValueError("metadata license URL is not pinned: " + local)
                 if local in licenses:
                     raise ValueError("duplicate metadata license record")
                 licenses.add(local)
@@ -468,6 +474,142 @@ def check_metadata_corpus(root: Path) -> dict:
             "scope": "source hashes, anchors and measured statistics; no upstream source bodies"}
 
 
+def check_incremental_holdout(root: Path) -> dict:
+    """Retain the initial selection and exact license bytes after amendments."""
+    report = check_metadata_corpus(root, study="incremental_holdout", manifest_name="manifest.json")
+    if report["status"] == "absent":
+        return report
+    base = "benchmarks/incremental_holdout/"
+    protocol = read_json(root, base + "protocol.json")
+    manifest = read_json(root, base + "manifest.json")
+    initial_protocol = safe_path(root, base + "initial-protocol.json").read_bytes()
+    initial_manifest = safe_path(root, base + "initial-manifest.json").read_bytes()
+    if (digest(initial_protocol) != manifest.get("initial_protocol_sha256")
+            or digest(initial_manifest) != manifest.get("initial_manifest_sha256")
+            or digest(initial_protocol) not in protocol.get("supersedes_protocol_sha256", [])
+            or json.loads(initial_manifest)["protocol_sha256"] != digest(initial_protocol)
+            or json.loads(initial_manifest)["repositories"] != manifest["repositories"]):
+        raise ValueError("held-out selection differs from retained initial pins")
+    return report | {"initial_selection_preserved": True}
+
+
+TASK_CASES = {
+    "packaging-prereleases", "packaging-specifier-iterable", "packaging-metadata-keywords",
+    "attrs-makeclass-annotations", "attrs-preinit-default", "attrs-init-subclass",
+    "pluggy-set-blocked", "pluggy-registration-name", "pluggy-call-extra",
+}
+TASK_PILOT_RETENTION = "third_party/task-evidence-pilot.json"
+TASK_PILOT_FILES = {
+    "benchmarks/task_evidence/results/initial/" + name
+    for name in ("runs.json", "cases.json", "sandbox.json", "provenance.json", "summary.json")
+}
+
+
+def check_task_pilot(root: Path) -> int:
+    """Keep invalid pilot observations intact without treating them as evidence."""
+    retained = read_json(root, TASK_PILOT_RETENTION)
+    if (retained.get("schema") != 1 or retained.get("status") != "invalid-retained"
+            or set(retained.get("files", {})) != TASK_PILOT_FILES):
+        raise ValueError("invalid pilot retention inventory is incomplete or reclassified")
+    for path, expected in retained["files"].items():
+        if not re.fullmatch(r"[0-9a-f]{64}", expected) or digest(safe_path(root, path).read_bytes()) != expected:
+            raise ValueError("retained invalid pilot bytes changed: " + path)
+    disclosure = safe_path(root, "benchmarks/task_evidence/results/initial/STATUS.md").read_text()
+    if not disclosure.startswith("# Invalid execution-semantics pilot; not research evidence"):
+        raise ValueError("invalid pilot disclosure was removed or reclassified")
+    return len(retained["files"])
+
+
+def check_task_evidence(root: Path) -> dict:
+    """Review metadata from known development sources; never execute upstream tests.
+
+    测试正文只在私有归档中运行；公开内容为来源元数据、参数及执行行号。
+    """
+    base = "benchmarks/task_evidence/"
+    directory = safe_path(root, base)
+    if not directory.exists():
+        return {"status": "absent", "projects": 0, "pinned_revisions": 0, "license_files": 0}
+    manifest = read_json(root, base + "manifest.json")
+    pilot_files = check_task_pilot(root)
+    if manifest["protocol_sha256"] != digest(safe_path(root, base + "PROTOCOL.md").read_bytes()):
+        raise ValueError("task evidence protocol bytes changed")
+    historical = read_json(root, PROTOCOL)["repositories"]
+    required = required_licenses(root)
+    repositories = manifest["repositories"]
+    if set(repositories) != {"attrs", "packaging", "pluggy"}:
+        raise ValueError("unreviewed task evidence source selection")
+    licenses, sources = set(), set()
+    for name, repository in repositories.items():
+        original = historical[name]
+        if any(repository[key] != original[key] for key in ("repository", "license")):
+            raise ValueError("task evidence source differs from historical origin")
+        if set(repository["versions"]) != {"before", "after"}:
+            raise ValueError("incomplete task evidence source pair")
+        for side, version in repository["versions"].items():
+            if any(version[key] != value for key, value in original["versions"][side].items()):
+                raise ValueError("task evidence pin differs from historical source")
+            key = name + "@" + version["commit"]
+            sources.add(key)
+            if not version["source_files"]:
+                raise ValueError("missing task evidence source hashes")
+            for path, value in version["source_files"].items():
+                safe_path(root, path)
+                if not path.endswith((".py", ".pyi")) or not re.fullmatch(r"[0-9a-f]{64}", value):
+                    raise ValueError("invalid task evidence source hash")
+            declared = {r["path"]: r["sha256"] for r in version["license_files"]}
+            for path, frozen_hash in required[key].items():
+                local = base + "licenses/" + name + "/" + side + "/" + path
+                raw = safe_path(root, local).read_bytes()
+                if (digest(raw) != declared[path]
+                        or frozen_hash is not None and digest(raw) != frozen_hash):
+                    raise ValueError("task evidence license bytes changed: " + local)
+                licenses.add(local)
+    on_disk = {p.relative_to(root).as_posix() for p in (directory / "licenses").rglob("*")
+               if p.is_file()}
+    if on_disk != licenses:
+        raise ValueError("unlisted or missing task evidence license files")
+    cases = manifest["cases"]
+    if {c["id"] for c in cases} != TASK_CASES or len(cases) != len(TASK_CASES):
+        raise ValueError("task evidence cases require source review")
+    for case in cases:
+        repo = repositories[case["repository"]]
+        safe_path(root, case["test_path"])
+        start, end = case["test_start"], case["test_end"]
+        if (type(start) is not int or type(end) is not int or not 1 <= start <= end
+                or not re.fullmatch(r"[0-9a-f]{64}", case["test_sha256"])
+                or not re.fullmatch(r"[0-9a-f]{64}", case["excerpt_sha256"])):
+            raise ValueError("invalid task test source identity")
+        expected = f"{repo['repository']}/blob/{repo['versions']['after']['commit']}/{case['test_path']}#L{start}"
+        if case["test_url"] != expected:
+            raise ValueError("task test URL is not pinned")
+        if not case["invocations"] or not case["anchors"] or not case["test_symbol"]:
+            raise ValueError("incomplete task invocation or anchor declaration")
+        for anchor in case["anchors"]:
+            if anchor["path"] not in repo["versions"]["after"]["source_files"]:
+                raise ValueError("task anchor is outside declared source")
+    records = 0
+    for path in sorted(directory.rglob("*")):
+        if not path.is_file() or "__pycache__" in path.parts or "licenses" in path.parts:
+            continue
+        relative = path.relative_to(root).as_posix()
+        safe_path(root, relative)
+        if path.suffix in {".json", ".md"}:
+            assert_metadata_only(json.loads(path.read_text()) if path.suffix == ".json"
+                                 else path.read_text(), relative)
+            records += 1
+        elif path.suffix == ".py" and path.parent == directory and path.name in {
+                "__init__.py", "suite.py", "worker.py"}:
+            continue  # Reviewed project-authored extraction/scoring/worker code.
+        else:
+            raise ValueError("unreviewed task evidence artifact: " + relative)
+    return {"status": "passed", "projects": len(repositories), "pinned_revisions": len(sources),
+            "license_files": len(licenses), "reviewed_test_cases": len(cases),
+            "metadata_records_checked": records,
+            "retained_invalid_pilot_files": pilot_files,
+            "scope": "known development sources; test metadata/parameters and execution witnesses; "
+                     "no upstream source bodies; not a held-out task-success claim"}
+
+
 def check(root: Path, *, write_inventory: bool = False) -> dict:
     pins = source_pins(root)
     manifest = read_json(root, "third_party/manifest.json")
@@ -482,6 +624,8 @@ def check(root: Path, *, write_inventory: bool = False) -> dict:
     verify_source_report(root, pins, inventory)
     metadata = check_metadata_corpus(root)
     return {"status": "passed", "metadata_only_study": metadata,
+            "incremental_holdout": check_incremental_holdout(root),
+            "task_evidence": check_task_evidence(root),
             "known_historical_span_defects": sum(
                 r["span_status"] == "historical-noncontiguous-module-excerpt"
                 for r in inventory["source_fragments"]),

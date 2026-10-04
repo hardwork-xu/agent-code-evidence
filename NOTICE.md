@@ -64,3 +64,35 @@ are retained in that study's `natural-manifest.json` and `licenses/` tree.
 选择性静态复用研究增加 Rich、humanize、more-itertools 和 Pyflakes，各固定六个
 版本。自然源码产物只含路径、哈希、锚点与实测统计，不含上游源码正文；原始
 许可文件、源码和归档哈希保存在该研究的清单与 `licenses/` 目录中。
+
+The repository holdout adds [Jinja](https://github.com/pallets/jinja),
+[Starlette](https://github.com/encode/starlette), [AnyIO](https://github.com/agronholm/anyio)
+and [Python-Markdown](https://github.com/Python-Markdown/markdown), eight pinned
+revisions each. Jinja, Starlette and Python-Markdown use BSD-3-Clause; AnyIO uses
+MIT. The 32 original license
+files remain byte-exact under `benchmarks/incremental_holdout/licenses/`;
+current and initial manifests preserve the unchanged source/anchor selection.
+Only source metadata, graph hashes and measured statistics are published.
+仓库留出研究新增 Jinja、Starlette、AnyIO 和 Python-Markdown，各固定八个版本。
+32 份原始许可位于 `benchmarks/incremental_holdout/licenses/`，字节保持原样；
+当前与初始清单保存未改变的源码及锚点选择。公开内容仅含源码元数据、图哈希与统计。
+
+The execution-witness audit reuses six development-source revisions of attrs,
+packaging and pluggy. Nine reviewed upstream tests are identified by pinned
+paths, symbols, spans and hashes. Distributed records contain test parameters,
+source locations and scored execution witnesses; the upstream test bodies and
+source trees are kept outside the distribution. Ten exact root license files
+are retained under `benchmarks/task_evidence/licenses/`, including packaging's
+Apache and BSD texts. The project-authored extractor/worker is not an upstream
+test implementation. The invalid pilot remains explicitly labeled and excluded
+from the corrected primary evidence.
+执行见证审计复用 attrs、packaging、pluggy 的六个开发来源版本，以固定路径、
+符号、范围及哈希标明九项上游测试。公开记录含参数、源码位置及执行见证评分，
+不含上游测试正文和源码树；十份完整许可原文位于 `benchmarks/task_evidence/licenses/`。
+自行编写的提取器和执行器不等于上游测试实现。无效试运行保留明确说明，并排除在
+修正后的主要证据之外。
+
+These license trees accompany the source distribution. The wheel contains only
+the ContextProof implementation and its own root license/notice, not benchmark
+corpora or upstream test bodies.
+以上许可目录随源码包分发；wheel 只含 ContextProof 实现及根许可与说明，不含实验语料。

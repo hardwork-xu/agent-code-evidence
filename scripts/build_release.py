@@ -38,6 +38,8 @@ import zipfile
 
 
 PUBLIC_MAINTAINER = "hardwork-xu"
+LICENSE_TREES = ("third_party/licenses", "benchmarks/selective_reuse/licenses",
+                 "benchmarks/incremental_holdout/licenses", "benchmarks/task_evidence/licenses")
 HOME_PATH = re.compile(
     rb"(?i)(?:/(?:Users|home)/[^/\s\"'<>]+|[a-z]:[\\/]+Users[\\/]+[^\\/\s\"'<>]+)"
 )
@@ -135,8 +137,20 @@ def check_record(payloads: dict[str, bytes]) -> None:
             "wheel RECORD does not cover exactly the wheel payload")
 
 
+def retained_licenses(source: Path) -> dict[str, bytes]:
+    """Read full retained license bytes, including spelling/format variants."""
+    return {path.relative_to(source).as_posix(): path.read_bytes()
+            for tree in LICENSE_TREES for path in sorted((source / tree).rglob('*'))
+            if path.is_file()}
+
+
+def check_retained_licenses(payloads: dict[str, bytes], expected: dict[str, bytes]) -> None:
+    for path, raw in expected.items():
+        require(payloads.get(path) == raw, "source license missing/changed: " + path)
+
+
 def validate_artifacts(wheel: Path, sdist: Path, project: dict, license_bytes: bytes,
-                       epoch: int) -> str:
+                       epoch: int, upstream_licenses: dict[str, bytes] | None = None) -> str:
     require(PUBLIC_MAINTAINER.encode() in license_bytes,
             "project LICENSE must identify the public maintainer")
     check_private_paths(license_bytes)
@@ -185,6 +199,7 @@ def validate_artifacts(wheel: Path, sdist: Path, project: dict, license_bytes: b
         require(payloads.get("LICENSE") == license_bytes, "source LICENSE is missing/changed")
         require("PKG-INFO" in payloads, "source metadata is missing")
         check_metadata(payloads["PKG-INFO"], name, version)
+        check_retained_licenses(payloads, upstream_licenses or {})
     return generator
 
 
@@ -212,7 +227,8 @@ def build_release(source: Path, output: Path, epoch: int, no_isolation: bool = F
         wheel, sdist = checked / wheels[0].name, checked / sdists[0].name
         normalize_wheel(wheels[0], wheel, epoch)
         normalize_sdist(sdists[0], sdist, epoch)
-        generator = validate_artifacts(wheel, sdist, project, license_bytes, epoch)
+        generator = validate_artifacts(wheel, sdist, project, license_bytes, epoch,
+                                       retained_licenses(source))
         info = {
             "name": project["name"], "version": project["version"],
             "source_date_epoch": epoch, "maintainer": PUBLIC_MAINTAINER,
