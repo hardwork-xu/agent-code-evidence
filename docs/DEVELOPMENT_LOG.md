@@ -303,3 +303,31 @@ Final local suite after publication integration: 1424 passed, 2 optional-tokeniz
 skips. Ruff, source attribution, strict raw-result validation and deterministic
 bilingual report checks passed. Package build and remote CI are separate gates
 and are recorded after their actual outcomes. / 本地验收不替代构建和远端 CI。
+
+## 2026-10-05 — offline summary portability correction / 离线汇总跨版本修正
+
+The first CI attempt for `2b47129` passed four of five jobs; Ubuntu/Python 3.11
+failed the offline task-summary comparison. The retained Pluggy BM25 macro recall
+is `0.33987077737077737`, while left-to-right float summation on Python 3.11
+recomputes `0.3398707773707774`: exactly one ULP apart. Python 3.12 changed the
+[`sum` float algorithm](https://docs.python.org/3.12/library/functions.html#sum).
+Local Python 3.11.3/3.12.2 readback isolated this single difference; integer counts,
+per-case metrics, source records and experimental outcomes did not differ.
+首轮远端 CI 的五项任务通过四项，Python 3.11 因浮点求和的最后一位差异拒绝
+已保存汇总；不是实验结果或原始执行记录发生变化。
+
+Only the offline reader now accepts either explicitly recomputed `math.fsum` mean
+or explicitly recomputed left-to-right mean for each `macro_recall`. No tolerance
+interval is used; even the next adjacent float outside those exact values is
+rejected. Other summary structure, counts, context sizes and per-case arithmetic
+remain exact checks. The measured aggregation writer, worker, resolver, protocols
+and raw result bytes remain unchanged, including the original provenance hashes.
+修正只作用于离线读取：接受两种明确求和算法各自导出的精确值，不采用宽松误差
+范围；结构、整数、上下文行数及逐案例指标仍须精确相符。原实验代码路径与数据
+不改写，也不以新检查器的文件哈希替换已记录的测量哈希。
+
+All 48 focused task/portability tests passed, including both historical encodings,
+adjacent-float tampering, nonfinite/bool values and unchanged strict fields. Ruff
+passed. Strict artifact validation passed on local Python 3.11.3 and 3.12.2.
+The new commit still requires its own remote CI; the failed first attempt remains
+part of the record. / 本地修正验证通过，新提交的远端 CI 须另外确认。

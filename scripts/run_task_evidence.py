@@ -10,6 +10,7 @@ import argparse
 from collections import Counter
 from datetime import datetime, timezone
 import json
+import math
 from pathlib import Path
 import platform
 import subprocess
@@ -321,6 +322,30 @@ def verify_inputs_unchanged(provenance: dict, manifest: dict, sources: Path) -> 
             verified_texts(sources / repo / state, pin)
 
 
+def _offline_aggregate(rows: list[dict], stored: dict) -> dict:
+    """Accept exact stable/legacy reduction results, never an approximate range.
+
+    Python 3.12 changed float sum(). Preserve original result bytes and the
+    measured writer; only this offline reader recognizes both reductions.
+    仅离线校验接受两种明确求和结果；原始数据不改写，也不采用近似容差。
+    """
+    expected = aggregate(rows)
+    valid = [row for row in rows if row['eligible']]
+    for group, summary in expected.items():
+        subset = [row for row in valid if group == 'all' or row['repository'] == group]
+        for method, metric in summary['methods'].items():
+            values = [row['metrics'][method]['recall'] for row in subset]
+            sequential = 0.0
+            for value in values:
+                sequential += value
+            alternatives = {math.fsum(values) / len(values), sequential / len(values)}
+            recorded = stored[group]['methods'][method]['macro_recall']
+            if type(recorded) is not float or recorded not in alternatives:
+                raise ValueError('summary macro recall differs from exact stable/legacy reductions')
+            metric['macro_recall'] = recorded
+    return expected
+
+
 def validate_result_bundle(directory: Path) -> dict:
     """Offline report integrity only; it does not rerun tests or authenticate source bytes."""
     directory = Path(directory)
@@ -417,7 +442,8 @@ def validate_result_bundle(directory: Path) -> dict:
                 'excluded_cases': [r['id'] for r in rows if not r['eligible']],
                 'before_fail_after_pass': sum(r['before_passed'] is False and r['after_passed'] is True for r in rows),
                 'trace_outcomes_consistent_cases': sum(r['trace_outcomes_consistent'] for r in rows),
-                'aggregate': aggregate(rows), 'no_model_or_repair_score': True}
+                'aggregate': _offline_aggregate(rows, summary['aggregate']),
+                'no_model_or_repair_score': True}
     if summary != expected or expected['eligible_cases'] != len(rows):
         raise ValueError('summary disagrees with eligible per-case evidence')
     return {'cases': len(rows), 'children': expected_children,
