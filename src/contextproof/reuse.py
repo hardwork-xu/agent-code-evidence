@@ -28,14 +28,20 @@ class GraphSession:
 
     Anchors and policy are fixed at construction. Source maps are defensively
     copied; returned graphs cannot mutate the cached originals. A catalog change
-    or changed consulted file triggers a rebuild. Incomplete graphs cannot use
-    selective certificates, even when their visible node files are unchanged.
-    The whole-corpus baseline may reuse any graph when every source byte agrees.
+    or changed consulted file triggers a rebuild. The default certificate mode
+    requires complete graphs. The exploratory ``read_set_any_status`` ablation
+    can reuse incomplete graphs while preserving every unknown/truncated state;
+    a cache hit never upgrades freshness. This ablation was introduced after the
+    primary study observed zero complete-graph coverage, not preregistered as a
+    primary method. The whole-corpus baseline may reuse any byte-identical corpus.
 
     构造时固定锚点与策略；防御性复制输入与输出。路径目录或读取文件改变时
-    重建。仅完整图可按读取集复用；全语料基线仅在全部源字节相同时复用。
+    重建。默认模式只复用完整图；探索性 read_set_any_status 保留未知/截断状态，
+    缓存命中不代表 fresh。该消融在主实验观察到完整图覆盖率为零后引入，非预注册
+    主方法。全语料基线仅在全部源字节相同时复用。
     """
-    MODES = {"warm_ast_rebuild", "whole_corpus_guard", "read_set_certificate"}
+    MODES = {"warm_ast_rebuild", "whole_corpus_guard", "read_set_certificate",
+             "read_set_any_status"}
 
     def __init__(self, anchors: list[dict], *, mode: str = "read_set_certificate",
                  max_depth: int = 4, max_nodes: int = 256):
@@ -82,7 +88,7 @@ class GraphSession:
                     reason = "whole_corpus_equal" if use else "corpus_changed"
                 elif not same_catalog:
                     reason = "catalog_changed"
-                elif graph["frontier"]:
+                elif self._mode == "read_set_certificate" and graph["frontier"]:
                     reason = "incomplete_graph"
                 elif any(hashes.get(path) != self._hashes.get(path)
                          for path in self._reads[index]):

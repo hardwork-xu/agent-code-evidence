@@ -243,10 +243,12 @@ def source_loader(cache, repo, version):
     return load
 
 
-def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None, progress=None):
+def replay_group(name, loaders, ids, anchors, repetitions, offset=0, *, rows=None, checkpoint=None, progress=None, methods=None):
     rows = [] if rows is None else rows
+    methods = METHODS if methods is None else methods
     for repetition in range(-1, repetitions):
-        order = METHODS[(repetition + offset) % 3:] + METHODS[:(repetition + offset) % 3]
+        shift = (repetition + offset) % len(methods)
+        order = methods[shift:] + methods[:shift]
         outputs = {}
         for method in order:
             session = GraphSession(anchors, mode=method)
