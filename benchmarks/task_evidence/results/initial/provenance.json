@@ -1,0 +1,10 @@
+{
+  "implementation_sha256": {
+    "benchmarks/task_evidence/suite.py": "f59a9f1bc162cefadb43469d1547e8905298cea7d9c96fa03b10c2f60da38f6c",
+    "benchmarks/task_evidence/worker.py": "e7b94b46c115f84e9bcb9acafbd9f23a71d7d952b1eacbef96c8fe6c8487f26d",
+    "scripts/run_task_evidence.py": "90174367a82a18a8fad7afeaf0c3f0dc034ef9841e22280cf260ec829d945f6b"
+  },
+  "manifest_sha256": "4653503c6b5208f1c07c2535a97c76aaadfc08dc102f3beb5fc9b8463bfba2a4",
+  "platform": "Darwin",
+  "python": "3.12.2"
+}

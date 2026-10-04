@@ -1,0 +1,109 @@
+{
+  "aggregate": {
+    "all": {
+      "cases": 9,
+      "methods": {
+        "fresh_anchors": {
+          "macro_recall": 0.13764196944525978,
+          "mean_context_lines": 111.33333333333333
+        },
+        "fresh_full_source": {
+          "macro_recall": 1.0,
+          "mean_context_lines": 4380.666666666667
+        },
+        "fresh_graph": {
+          "macro_recall": 0.5392489487936634,
+          "mean_context_lines": 1168.7777777777778
+        },
+        "lexical_matched_lines": {
+          "macro_recall": 0.3744928034221827,
+          "mean_context_lines": 1168.7777777777778
+        },
+        "stale_graph_current_bytes": {
+          "macro_recall": 0.10091334593927809,
+          "mean_context_lines": 135.33333333333334
+        }
+      }
+    },
+    "attrs": {
+      "cases": 3,
+      "methods": {
+        "fresh_anchors": {
+          "macro_recall": 0.09292194115575107,
+          "mean_context_lines": 257.3333333333333
+        },
+        "fresh_full_source": {
+          "macro_recall": 1.0,
+          "mean_context_lines": 5823.0
+        },
+        "fresh_graph": {
+          "macro_recall": 0.7034995265924618,
+          "mean_context_lines": 1736.6666666666667
+        },
+        "lexical_matched_lines": {
+          "macro_recall": 0.37721493883184376,
+          "mean_context_lines": 1736.6666666666667
+        },
+        "stale_graph_current_bytes": {
+          "macro_recall": 0.1146549747327712,
+          "mean_context_lines": 274.0
+        }
+      }
+    },
+    "packaging": {
+      "cases": 3,
+      "methods": {
+        "fresh_anchors": {
+          "macro_recall": 0.19276546494152602,
+          "mean_context_lines": 47.666666666666664
+        },
+        "fresh_full_source": {
+          "macro_recall": 1.0,
+          "mean_context_lines": 5653.0
+        },
+        "fresh_graph": {
+          "macro_recall": 0.6811887117299199,
+          "mean_context_lines": 1565.6666666666667
+        },
+        "lexical_matched_lines": {
+          "macro_recall": 0.4063926940639269,
+          "mean_context_lines": 1565.6666666666667
+        },
+        "stale_graph_current_bytes": {
+          "macro_recall": 0.0,
+          "mean_context_lines": 15.666666666666666
+        }
+      }
+    },
+    "pluggy": {
+      "cases": 3,
+      "methods": {
+        "fresh_anchors": {
+          "macro_recall": 0.12723850223850222,
+          "mean_context_lines": 29.0
+        },
+        "fresh_full_source": {
+          "macro_recall": 1.0,
+          "mean_context_lines": 1666.0
+        },
+        "fresh_graph": {
+          "macro_recall": 0.23305860805860804,
+          "mean_context_lines": 204.0
+        },
+        "lexical_matched_lines": {
+          "macro_recall": 0.33987077737077737,
+          "mean_context_lines": 204.0
+        },
+        "stale_graph_current_bytes": {
+          "macro_recall": 0.1880850630850631,
+          "mean_context_lines": 116.33333333333333
+        }
+      }
+    }
+  },
+  "before_fail_after_pass": 7,
+  "cases": 9,
+  "eligible_cases": 9,
+  "excluded_cases": [],
+  "no_model_or_repair_score": true
+}

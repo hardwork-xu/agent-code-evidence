@@ -1,0 +1,553 @@
+{
+  "cases": [
+    {
+      "anchors": [
+        {
+          "path": "src/packaging/specifiers.py",
+          "symbol": "Specifier.__init__"
+        },
+        {
+          "path": "src/packaging/specifiers.py",
+          "symbol": "Specifier.prereleases"
+        }
+      ],
+      "excerpt_sha256": "a8beb759531ed4a2f1e550e1425a560a15f9b528410b8fea7c796e69194815e9",
+      "id": "packaging-prereleases",
+      "invocations": [
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": "==1.0"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": ">=1.0"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": "<=1.0"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": "~=1.0"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": "<1.0"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": ">1.0"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": true,
+            "specifier": "<1.0.dev1"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": true,
+            "specifier": ">1.0.dev1"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": "!=1.0.dev1"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": false,
+            "specifier": "==1.0.*"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": true,
+            "specifier": "==1.0.dev1"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": true,
+            "specifier": ">=1.0.dev1"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": true,
+            "specifier": "<=1.0.dev1"
+          }
+        },
+        {
+          "kwargs": {
+            "expected": true,
+            "specifier": "~=1.0.dev1"
+          }
+        }
+      ],
+      "repository": "packaging",
+      "test_end": 537,
+      "test_path": "tests/test_specifiers.py",
+      "test_sha256": "417f0db966e3a4f79ff0684ea83fb390bbc53f01a6b23b70aaa4eb20d74b6af7",
+      "test_start": 517,
+      "test_symbol": "TestSpecifier.test_specifier_prereleases_detection",
+      "test_url": "https://github.com/pypa/packaging/blob/d8e3b31b734926ebbcaff654279f6855a73e052f/tests/test_specifiers.py#L517"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/packaging/specifiers.py",
+          "symbol": "SpecifierSet.__init__"
+        }
+      ],
+      "excerpt_sha256": "321c863666d374f5bb223c6cc815da93d4027f907334edeef89f690d5a5f01ca",
+      "id": "packaging-specifier-iterable",
+      "invocations": [
+        {}
+      ],
+      "repository": "packaging",
+      "test_end": 663,
+      "test_path": "tests/test_specifiers.py",
+      "test_sha256": "417f0db966e3a4f79ff0684ea83fb390bbc53f01a6b23b70aaa4eb20d74b6af7",
+      "test_start": 659,
+      "test_symbol": "TestSpecifierSet.test_create_from_specifiers",
+      "test_url": "https://github.com/pypa/packaging/blob/d8e3b31b734926ebbcaff654279f6855a73e052f/tests/test_specifiers.py#L659"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/packaging/metadata.py",
+          "symbol": "Metadata.from_raw"
+        }
+      ],
+      "excerpt_sha256": "51616ab0ed4fbe7e8fa33d353e51bd3ded6d4f80fe85e7ac5b46223fb90f3144",
+      "id": "packaging-metadata-keywords",
+      "invocations": [
+        {
+          "kwargs": {
+            "field_name": "keywords"
+          }
+        }
+      ],
+      "repository": "packaging",
+      "test_end": 626,
+      "test_path": "tests/test_metadata.py",
+      "test_sha256": "755a7519b6c36f0214590fbd68746933ef7842428e4a35cf8bd46b3806f03b48",
+      "test_start": 620,
+      "test_symbol": "TestMetadata.test_optional_defaults_to_none",
+      "test_url": "https://github.com/pypa/packaging/blob/d8e3b31b734926ebbcaff654279f6855a73e052f/tests/test_metadata.py#L620"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/attr/_make.py",
+          "symbol": "make_class"
+        },
+        {
+          "path": "src/attr/_funcs.py",
+          "symbol": "resolve_types"
+        }
+      ],
+      "excerpt_sha256": "06d0ea97e30b9e75f35318dac9416c8e58aeab1e72daeb7d1dd1b0ea92d0dc63",
+      "id": "attrs-makeclass-annotations",
+      "invocations": [
+        {}
+      ],
+      "repository": "attrs",
+      "test_end": 1201,
+      "test_path": "tests/test_make.py",
+      "test_sha256": "4b0838ca90db65f841b09c897a5a11fd27c6c5e3ed7c4db05b341e9582b7eda8",
+      "test_start": 1187,
+      "test_symbol": "TestMakeClass.test_annotations",
+      "test_url": "https://github.com/python-attrs/attrs/blob/598494a618410490cfbe0c896b7a544f6d23e0d9/tests/test_make.py#L1187"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/attr/_next_gen.py",
+          "symbol": "define"
+        }
+      ],
+      "excerpt_sha256": "21e680360b53ae804af3822465d3131908909f8398913722cad23bbe8ced1800",
+      "id": "attrs-preinit-default",
+      "invocations": [
+        {
+          "validation_disabled": true
+        },
+        {
+          "validation_disabled": false
+        }
+      ],
+      "repository": "attrs",
+      "test_end": 715,
+      "test_path": "tests/test_make.py",
+      "test_sha256": "4b0838ca90db65f841b09c897a5a11fd27c6c5e3ed7c4db05b341e9582b7eda8",
+      "test_start": 698,
+      "test_symbol": "TestAttributes.test_pre_init_kw_only_work_with_defaults",
+      "test_url": "https://github.com/python-attrs/attrs/blob/598494a618410490cfbe0c896b7a544f6d23e0d9/tests/test_make.py#L698"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/attr/_make.py",
+          "symbol": "attrs"
+        }
+      ],
+      "excerpt_sha256": "c89ac321b60a58cab8eabca73a2cb2eb960252f833a34ef053d930cfd2c1d8bc",
+      "id": "attrs-init-subclass",
+      "invocations": [
+        {
+          "kwargs": {
+            "slots": true
+          }
+        },
+        {
+          "kwargs": {
+            "slots": false
+          }
+        }
+      ],
+      "repository": "attrs",
+      "test_end": 770,
+      "test_path": "tests/test_functional.py",
+      "test_sha256": "5dd844c482bf7986fd2299479fed73021fd6779dfb23cdd700274d001210e490",
+      "test_start": 754,
+      "test_symbol": "TestFunctional.test_init_subclass",
+      "test_url": "https://github.com/python-attrs/attrs/blob/598494a618410490cfbe0c896b7a544f6d23e0d9/tests/test_functional.py#L754"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/pluggy/_manager.py",
+          "symbol": "PluginManager.set_blocked"
+        }
+      ],
+      "excerpt_sha256": "263409ac838003b804bbfe43c84c068ef8ebd6d7c76f9868ca5df83cbdbe79a5",
+      "id": "pluggy-set-blocked",
+      "invocations": [
+        {
+          "fixture": "pm"
+        }
+      ],
+      "repository": "pluggy",
+      "test_end": 123,
+      "test_path": "testing/test_pluginmanager.py",
+      "test_sha256": "7b6855cf2b6b29beddae0e69baef8462e85efc3cbecb4404e4a35bc6c118ea29",
+      "test_start": 95,
+      "test_symbol": "test_set_blocked",
+      "test_url": "https://github.com/pytest-dev/pluggy/blob/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/testing/test_pluginmanager.py#L95"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/pluggy/_manager.py",
+          "symbol": "PluginManager.register"
+        }
+      ],
+      "excerpt_sha256": "0293edd1123988a21bc7fd5ad59c14cd99a21126ff3f11c5f3ac4d890c84bd42",
+      "id": "pluggy-registration-name",
+      "invocations": [
+        {
+          "fixture": "pm"
+        }
+      ],
+      "repository": "pluggy",
+      "test_end": 92,
+      "test_path": "testing/test_pluginmanager.py",
+      "test_sha256": "7b6855cf2b6b29beddae0e69baef8462e85efc3cbecb4404e4a35bc6c118ea29",
+      "test_start": 76,
+      "test_symbol": "test_pm_name",
+      "test_url": "https://github.com/pytest-dev/pluggy/blob/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/testing/test_pluginmanager.py#L76"
+    },
+    {
+      "anchors": [
+        {
+          "path": "src/pluggy/_hooks.py",
+          "symbol": "HookCaller.call_extra"
+        }
+      ],
+      "excerpt_sha256": "df96378c143dfc11f027f502df4afc1aad67aa5ad70c38581ab00c1553945215",
+      "id": "pluggy-call-extra",
+      "invocations": [
+        {
+          "fixture": "pm"
+        }
+      ],
+      "repository": "pluggy",
+      "test_end": 412,
+      "test_path": "testing/test_pluginmanager.py",
+      "test_sha256": "7b6855cf2b6b29beddae0e69baef8462e85efc3cbecb4404e4a35bc6c118ea29",
+      "test_start": 400,
+      "test_symbol": "test_call_extra",
+      "test_url": "https://github.com/pytest-dev/pluggy/blob/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5/testing/test_pluginmanager.py#L400"
+    }
+  ],
+  "graph_policy": {
+    "max_depth": 4,
+    "max_nodes": 256
+  },
+  "lexical": {
+    "b": 0.75,
+    "budget": "unique physical lines in current graph",
+    "k1": 1.2,
+    "query": "upstream function including assertion text plus supplied path/symbol hints",
+    "window_lines": 20
+  },
+  "limits": [
+    "test execution witness is neither minimal nor sufficient context",
+    "no model or repair evaluated",
+    "same source projects and many functions as historical probes; no heldout generalization claim",
+    "release pairs contain multiple commits; before/after outcome is not causal attribution to one patch"
+  ],
+  "protocol_sha256": "fb708ff03c3c436c9395ba60076b1c3327e3e8019a9e89049589be1ce00b4569",
+  "repositories": {
+    "attrs": {
+      "license": "MIT",
+      "repository": "https://github.com/python-attrs/attrs",
+      "versions": {
+        "after": {
+          "archive_bytes": 806025,
+          "archive_sha256": "89a4ff32eccf7df6906615dee94f520d326573abc08601cc17c443a462c0f486",
+          "archive_url": "https://codeload.github.com/python-attrs/attrs/tar.gz/598494a618410490cfbe0c896b7a544f6d23e0d9",
+          "commit": "598494a618410490cfbe0c896b7a544f6d23e0d9",
+          "commit_date": "2024-12-16T06:26:35Z",
+          "license_files": [
+            {
+              "path": "LICENSE",
+              "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+            },
+            {
+              "path": "docs/license.md",
+              "sha256": "2da25a89fa0fe1957e42b32fb438290e2796009788c161da4fb9792d53f0146e"
+            }
+          ],
+          "source_files": {
+            "src/attr/__init__.py": "7ce608bedd5e192a90adee2e092dec256299d26c00b82f140faa9b6b9392f7f5",
+            "src/attr/_cmp.py": "dee987881b60b0462dbcd3fff17ad0c1309d1686485f80c4babefa37ed9add7f",
+            "src/attr/_compat.py": "e219576d685d0e34020cae85285d448276773ce88782da69e78a84d27c5a1878",
+            "src/attr/_config.py": "746ab7c51e9f819105e9406dfcbd13f9e507201e22e37911987d0fdbcb09570f",
+            "src/attr/_funcs.py": "e7eb54289b69de1e44979e4470397a1965c5a7af1f4fc0fc53bb8244deb8f7b2",
+            "src/attr/_make.py": "a2b2927fa0be0757997e96ade256c0b71be64b213fcb1946f3363dd75e6e7d69",
+            "src/attr/_next_gen.py": "ec54646ed97f374d7b4ae0617ff570de6c36736a46661b4218ecda760cfbb69e",
+            "src/attr/_version_info.py": "7b14aa6f76f913e7cc4ac819025130f5770ba448286cf391099a5c68482500ce",
+            "src/attr/converters.py": "1a50de3b33de4c581e0412db8fd1b9ec4cf994093af2e85200b45827f7b17bce",
+            "src/attr/exceptions.py": "1d116ae22c9b9afefe0dc670ca397a3357ae33661e2552bf845c6e6811809e02",
+            "src/attr/filters.py": "64188a58ba774742df099b2aed7d75a67f565fc36c952db05cce23b272ce19cf",
+            "src/attr/setters.py": "e7e75c4fadc640adf938d1334a07d70a46c1ee93e4691faabf5e669b83d54b34",
+            "src/attr/validators.py": "59a0751cb0071ea4475acaeffcaf47fac27b1128a5dc7dc29afd9df13b55671e",
+            "src/attrs/__init__.py": "a9e4096783b4f327334a7f38d2ff5b60e699c9113cd56b158be402ad8de4ac25",
+            "src/attrs/converters.py": "f244258eb5707d24d1bbc20dc0493c488d1e1abce659fb6c4fbaccd04ab2a213",
+            "src/attrs/exceptions.py": "0020829a0d7dfaf0c56833d8f6f165d7df523d709030dfdb10db380c02e3ce6b",
+            "src/attrs/filters.py": "54e50c66e83db8453a754b80d1d1758c89d42b43cbddf2e03f45414b977e0831",
+            "src/attrs/setters.py": "78bd5889d6105774f687dfd2608652651d4501c1c66f54ee093cb41342efd925",
+            "src/attrs/validators.py": "c5ccbac03e53b5391d086d5fe1759ba1c3d23b47da06393921f5497cfe92523d"
+          },
+          "tag": "24.3.0"
+        },
+        "before": {
+          "archive_bytes": 779110,
+          "archive_sha256": "a4412d8266699276ec15a8aac51fd826f0c61429f3c69e62e4752efdcbfafbe1",
+          "archive_url": "https://codeload.github.com/python-attrs/attrs/tar.gz/9e443b18527dc96b194e92805fa751cbf8434ba9",
+          "commit": "9e443b18527dc96b194e92805fa751cbf8434ba9",
+          "commit_date": "2023-12-31T06:20:03Z",
+          "license_files": [
+            {
+              "path": "LICENSE",
+              "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+            },
+            {
+              "path": "docs/license.md",
+              "sha256": "0eaf4b4ffe76f2873a044bcd32848319830259699b09ccf77b197b8d8a7b0cf7"
+            }
+          ],
+          "source_files": {
+            "src/attr/__init__.py": "5a55c937a20207463f1d9d259ae4d48226b492e49d9f6a7aedde0de9c6313593",
+            "src/attr/_cmp.py": "39066559d157ef8cf5f1a746114a78d0e8ea9b434dbb5165aa7bf6244f01da78",
+            "src/attr/_compat.py": "426472c628b6f79c1c41f6ae816ab1b88ba600fb0d436f91505f364193ea30ac",
+            "src/attr/_config.py": "cfcd55b7e19e4ffdad6b1b355d97e61f1f535a54b18cf6fa7991f52d31ac4b9e",
+            "src/attr/_funcs.py": "5414d414a2e496c9aac72b37a964932bf01cf59e2cd260095b0816f6703b2e59",
+            "src/attr/_make.py": "2e7572d9ed07ca0a2a699927842d7dcfb2663adeea1a401a75fd8b6605952562",
+            "src/attr/_next_gen.py": "6acd6fa22f2c88023fa363901bc608899be69f41bbf92dff8ffefbe2b9e867f8",
+            "src/attr/_version_info.py": "7b14aa6f76f913e7cc4ac819025130f5770ba448286cf391099a5c68482500ce",
+            "src/attr/converters.py": "2b2c39318d327e7511fd1c0dd55c9d7f412213efbe86d0f13a049cffe3582fa0",
+            "src/attr/exceptions.py": "1d116ae22c9b9afefe0dc670ca397a3357ae33661e2552bf845c6e6811809e02",
+            "src/attr/filters.py": "f6962f5ea760ea6b4bbca2086f9ea800b44ca0716741370608ee045d3735ab23",
+            "src/attr/setters.py": "a5b09943ea44e99c630ea65f59652150579f5eda5e908538a92fd80cc2cf439d",
+            "src/attr/validators.py": "2c65696e2360fca1b362b2940f924f899931f1331fca70d91a84282c934220ca",
+            "src/attrs/__init__.py": "f7fe706956c5b3bacbaad5d9ef7b4d0ebc617b3c99f1565e5f805bbd0dc4789c",
+            "src/attrs/converters.py": "f244258eb5707d24d1bbc20dc0493c488d1e1abce659fb6c4fbaccd04ab2a213",
+            "src/attrs/exceptions.py": "0020829a0d7dfaf0c56833d8f6f165d7df523d709030dfdb10db380c02e3ce6b",
+            "src/attrs/filters.py": "54e50c66e83db8453a754b80d1d1758c89d42b43cbddf2e03f45414b977e0831",
+            "src/attrs/setters.py": "78bd5889d6105774f687dfd2608652651d4501c1c66f54ee093cb41342efd925",
+            "src/attrs/validators.py": "c5ccbac03e53b5391d086d5fe1759ba1c3d23b47da06393921f5497cfe92523d"
+          },
+          "tag": "23.2.0"
+        }
+      }
+    },
+    "packaging": {
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "repository": "https://github.com/pypa/packaging",
+      "versions": {
+        "after": {
+          "archive_bytes": 120093,
+          "archive_sha256": "f5828ce6d6ce35a12c7eff765d8c3a04b9c21a1697b5c5ec94bf3597709d4fed",
+          "archive_url": "https://codeload.github.com/pypa/packaging/tar.gz/d8e3b31b734926ebbcaff654279f6855a73e052f",
+          "commit": "d8e3b31b734926ebbcaff654279f6855a73e052f",
+          "commit_date": "2024-11-08T09:47:12Z",
+          "license_files": [
+            {
+              "path": "LICENSE",
+              "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+            },
+            {
+              "path": "LICENSE.APACHE",
+              "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+            },
+            {
+              "path": "LICENSE.BSD",
+              "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+            },
+            {
+              "path": "docs/licenses.rst",
+              "sha256": "efe1f34e7f19037ce654f9f8e76cc6f7149d6fadd0cc8ee87691c4122b83b94a"
+            },
+            {
+              "path": "tasks/licenses.py",
+              "sha256": "65b3e244ab46d175e066e3fa250466bb12bf4296097d12bdfb6625bc0dfb038e"
+            }
+          ],
+          "source_files": {
+            "src/packaging/__init__.py": "764e136bfbe67552716070dc7f286f40dc3c5773e0481a2628d5ea83e0f62436",
+            "src/packaging/_elffile.py": "71f940400904db9b738589aafda0a2ef641f6d3fed9fcf75b4fcdfa5b7873b01",
+            "src/packaging/_manylinux.py": "be5e4e0a8cf8931f341f9af05ca7975a397d58d2121a6af86604e94cff6553d7",
+            "src/packaging/_musllinux.py": "a7d66a35888e22d19e7bc29c64578717f61c76157018774aeabfbc9608b1bc64",
+            "src/packaging/_parser.py": "b3f4ef4ef0cd2b436b336401dd529385d58533835cd0fe899e439b925dcc8e93",
+            "src/packaging/_structures.py": "ab77953666d62461bf4b40e2b7f4b7028f2a42acffe4f6135c500a0597b9cabe",
+            "src/packaging/_tokenizer.py": "27abf91fb273bdbfa0f35c69ff640008ac0eecbc47400ea292bc8c53bcd7c0df",
+            "src/packaging/licenses/__init__.py": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c",
+            "src/packaging/licenses/_spdx.py": "a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b",
+            "src/packaging/markers.py": "73cf5337307b65d198864a2f9ba3d89aa1b21f15e561568b5b9f753c750d283f",
+            "src/packaging/metadata.py": "60989b33b1987b8adef3ed1adce9579864be5c38131283b8b6506ddaadb90678",
+            "src/packaging/requirements.py": "818c9148075bac8c8a0d8ebaba02035108d132fc641f600b8a84e65f7b672faa",
+            "src/packaging/specifiers.py": "186d703cd31c2f47cc24eebcbc5e77c0a31dc277de84371a23eafd3694df8a50",
+            "src/packaging/tags.py": "085aab2730337365cd19ec5eac7fff4fe639230abb59bb185ec88b1112d6c58d",
+            "src/packaging/utils.py": "d05dc787d385b9182b8538066549792b6d85bf560fdad665d73ff680eea42620",
+            "src/packaging/version.py": "a257f2ba4fc33db7e5364278c0159eb57435edcef8c770c1e74d5d7a052fec36"
+          },
+          "tag": "24.2"
+        },
+        "before": {
+          "archive_bytes": 101614,
+          "archive_sha256": "9b1568b65362e1e5a95883fc3b0c907e4c269126fffed207b1db0e3a4e22102b",
+          "archive_url": "https://codeload.github.com/pypa/packaging/tar.gz/b3a5d7d68991c040615d5345bb55f61de53ba176",
+          "commit": "b3a5d7d68991c040615d5345bb55f61de53ba176",
+          "commit_date": "2023-10-01T13:49:25Z",
+          "license_files": [
+            {
+              "path": "LICENSE",
+              "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+            },
+            {
+              "path": "LICENSE.APACHE",
+              "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+            },
+            {
+              "path": "LICENSE.BSD",
+              "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+            }
+          ],
+          "source_files": {
+            "src/packaging/__init__.py": "12108cb824b3eb4220409f776ffe302720281e953d27eb9d746e1068c4f43eee",
+            "src/packaging/_elffile.py": "85b98af0e0fa67b7d8ea1c229c7114703d5bcbb73390688d62eed28671449369",
+            "src/packaging/_manylinux.py": "46aea9a570311fc5c5b4d7fab42f81fb548abaf08e0cf06f702a12ba532d6ed9",
+            "src/packaging/_musllinux.py": "92098118b1726e9cbceb4f7e293bf39addb30a108f598be1a790563f8257edd1",
+            "src/packaging/_parser.py": "e4384aff3609138538cb34a4804053e05eed4f6c59e8f931e204912b2bd79de4",
+            "src/packaging/_structures.py": "ab77953666d62461bf4b40e2b7f4b7028f2a42acffe4f6135c500a0597b9cabe",
+            "src/packaging/_tokenizer.py": "6a50ad6f05e138502614667a050fb0093485a11009db3fb2b087fbfff31327f9",
+            "src/packaging/markers.py": "787fadc52db3ab51dd3694ddf4b71951c548c1ec0088d53482b9aae708ca9ce9",
+            "src/packaging/metadata.py": "4e8c6320d3a64a7f266c479745254d32274426c3d46071181679cde0c6aabc7d",
+            "src/packaging/requirements.py": "c2cc06e265c74a013dc38363367952be02c6a3ac98bdf1d51059d686e1265f18",
+            "src/packaging/specifiers.py": "64ea6a2ffc3f2a3e9917f396765890533844c879436e2ebdf3d92bfac179187b",
+            "src/packaging/tags.py": "a641ba810dbc465852d3d573ca65615691ab585e5da075df2b55711bd71d8686",
+            "src/packaging/utils.py": "5e07663f7cb1f7ec101058ceecebcc8fd46311fe49951e4714547af6fed243d1",
+            "src/packaging/version.py": "5e34412cd2b5ed430380b78ff141e7ab0898dd37528b4df1150511b5e736d750"
+          },
+          "tag": "23.2"
+        }
+      }
+    },
+    "pluggy": {
+      "license": "MIT",
+      "repository": "https://github.com/pytest-dev/pluggy",
+      "versions": {
+        "after": {
+          "archive_bytes": 63190,
+          "archive_sha256": "33ab5c7ab6c4f86ad6f0040aabb46c354878d1583d8c7794ef7bc8d15d34af06",
+          "archive_url": "https://codeload.github.com/pytest-dev/pluggy/tar.gz/f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+          "commit": "f8aa4a009716a7994f2f6c1947d9fa69feccbdd5",
+          "commit_date": "2024-04-19T12:43:52Z",
+          "license_files": [
+            {
+              "path": "LICENSE",
+              "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+            }
+          ],
+          "source_files": {
+            "src/pluggy/__init__.py": "53caad2119a6af449175bc4017c54926cd358cc51880a01cf6802361808b833e",
+            "src/pluggy/_callers.py": "f24f22dc65414ff82d71c08f16937c5b0d2da305929d26b3ae5d2f6cff545d26",
+            "src/pluggy/_hooks.py": "9bedea54b0dd9f84bdcb7a5f7cb3a93107832383c3c3c86b0132b5482f2b4245",
+            "src/pluggy/_manager.py": "ca5203170ad43ff98c006a5d44f8fdcf0c6e906ee758901f635cb2957c9700ca",
+            "src/pluggy/_result.py": "7846a4fbb21ef3c6d193296c81b2f007a88ca20a2020c6617aaf16ddb22699cb",
+            "src/pluggy/_tracing.py": "91206bdb917facd9255764212c3ea1d63c7a67591c28345bb98bc5e63bf7e695",
+            "src/pluggy/_warnings.py": "b5dd00bd90697da9ab8820b73aab0bc31321f92cc03237e399ce7c4f9bcfde5c"
+          },
+          "tag": "1.5.0"
+        },
+        "before": {
+          "archive_bytes": 59223,
+          "archive_sha256": "0e0c8d365664142d53335640504cbecbfbef0154997ed51711b796a59da6e5b9",
+          "archive_url": "https://codeload.github.com/pytest-dev/pluggy/tar.gz/e13a58c5039bf7a8aa6a46a77244aea48b210510",
+          "commit": "e13a58c5039bf7a8aa6a46a77244aea48b210510",
+          "commit_date": "2023-08-26T16:04:02Z",
+          "license_files": [
+            {
+              "path": "LICENSE",
+              "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+            }
+          ],
+          "source_files": {
+            "src/pluggy/__init__.py": "0a30f72ff59a3a96de4042ab978458b0c512b5afda9f0d2098a8da33549a5e1a",
+            "src/pluggy/_callers.py": "8a3c610c38f94802297bf75cdc3350ec1baedaccbb4deb06f1290e17f55c1a1d",
+            "src/pluggy/_hooks.py": "4e218bb420026f46d3efbcadfcaa337b77af4c06664c4dd783f4fc02d05a03d5",
+            "src/pluggy/_manager.py": "7dc614ed5111d02a654729b88c027b44215897a71f0d2795339f3d6071f1f6e0",
+            "src/pluggy/_result.py": "08ca4d353832a6d527a188a04591ee26cd7580ab7d3b04ceb5e0d8858df00053",
+            "src/pluggy/_tracing.py": "ba2db0d71429b239faec849a1268b3be0a235d70149912f69f0955f955e67a67"
+          },
+          "tag": "1.3.0"
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "selection": "reviewed convenience sample from known development repositories; not heldout",
+  "sources": {
+    "contextbench": "https://arxiv.org/html/2602.05892v3",
+    "swebench": "https://www.swebench.com/SWE-bench/"
+  },
+  "study": "upstream-test-execution-witness-audit"
+}
