@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "study_id": "polybench500-edit-localization-20261013",
+  "status": "frozen-pilot-before-prediction-or-label-scoring",
+  "frozen_at": "2026-10-13T04:40:08.090762+00:00",
+  "scientific_scope": "Issue-only localization of removed base-version Python lines and edited existing Python files. Proxy labels, not necessary context, repair success, or semantic sufficiency.",
+  "pilot_reason": "Metadata-only selection produced 39 tasks across 6 unseen repositories; fewer than proposed 60 tasks, and repo sizes 1/10/10/10/2/6. No confirmatory maturity claim.",
+  "dataset": {
+    "name": "AmazonScience/SWE-PolyBench_500",
+    "revision": "546075b4b05d17ba914e72b8f4c6d5b1ea150c1d",
+    "filename": "test.csv",
+    "sha256": "20961b616b404875adead16dd456adc4cf583035436fc0d7e9c3f2adf8322e0c",
+    "url": "https://huggingface.co/datasets/AmazonScience/SWE-PolyBench_500/resolve/546075b4b05d17ba914e72b8f4c6d5b1ea150c1d/test.csv",
+    "declared_license": "MIT",
+    "card_sha256": "3a9ffcfc3328b5d0c433a64747354734c680aabc6e6348476f58e733368e83e2"
+  },
+  "selection": {
+    "rule": "Python; exclude all21 prior-used repositories; per-repo ascending sha256(external-context-20261013: + instance_id), first10; no substitution after observing resources, questions or targets.",
+    "selected_tasks": 39,
+    "selected_repositories": 6,
+    "tasks": [
+      {
+        "repo": "Significant-Gravitas/AutoGPT",
+        "instance_id": "Significant-Gravitas__AutoGPT-4652",
+        "base_commit": "9150f32f8b8602395534795ddd2d930a1684e419"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-13865",
+        "base_commit": "3a8de58c5192b620228128430ea52e6eda81c40a"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-15913",
+        "base_commit": "439de3f7f98ccc0d0fc4b1e3a02fac9bb761c809"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-7075",
+        "base_commit": "28cf873036d078b47fb9dd38ac3421a7c874da44"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-20136",
+        "base_commit": "fda125638f53febc059cb67f9d7abce058a8f44f"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-19219",
+        "base_commit": "2d956958252617a178a68a06582c99b133fe7d3d"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-13989",
+        "base_commit": "408b2d2bd08f667cf4154730cc323c4e49657eed"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-27717",
+        "base_commit": "ef5ab72f4b538d6f9ea032ac307b75b40ceef42e"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-3198",
+        "base_commit": "292186a3e7e1a819aa591901591673639c752157"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-27561",
+        "base_commit": "5330b83bc5637b8e7eafe095c22ef19e21baff2d"
+      },
+      {
+        "repo": "huggingface/transformers",
+        "instance_id": "huggingface__transformers-31095",
+        "base_commit": "a564d10afe1a78c31934f0492422700f61a0ffc0"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-19915",
+        "base_commit": "f0bae912201bbd265a3485ccf4f490be2fc675c7"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-19466",
+        "base_commit": "504716cb71973d4d4e485eb1724a3c4d3b621a69"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-20002",
+        "base_commit": "576daec845cbc83cebb040e018ba9fdae1902738"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-1767",
+        "base_commit": "b8a9f84fad1be2f27365a25b4e7f188d382d70d0"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-19955",
+        "base_commit": "ca9519bf182650cd464d6825de451471b3243627"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-20008",
+        "base_commit": "0ed820f5649bcb27531d73cfc023763712fc8bf9"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-19863",
+        "base_commit": "f6cf6a0e77dd504cfc35dd499dd8694b0b80b4ae"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-3983",
+        "base_commit": "4de7eaa6a80fd4257b866a6b695450c40b72dd28"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-19284",
+        "base_commit": "4c356306273153d5dc26fc5772b106b4f750095f"
+      },
+      {
+        "repo": "keras-team/keras",
+        "instance_id": "keras-team__keras-19826",
+        "base_commit": "2305fada8889e86463493bb4893b13ee8a8f0573"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-5625",
+        "base_commit": "d0d89d39efb5f292f72e70973f3b70c4ca095047"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-6456",
+        "base_commit": "1300a4bc8cf5ebd30c77668473e178bfb24b6679"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-5450",
+        "base_commit": "64b4165c8d9b8374295d4629ef57d4d58e9af7c8"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-6483",
+        "base_commit": "10adec5f1bc1babbd7f5cbea8290d8b1e62554ba"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-6765",
+        "base_commit": "ba622764cb7ccf4667878289f959857348ef8c19"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-19331",
+        "base_commit": "5fc7bb01e9d6398452d0a7b4a50ce234408ca99c"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-4420",
+        "base_commit": "f2150285a495fc530a7707218ea4980c17a170e5"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-7653",
+        "base_commit": "a673a51efa3e03aaa7c8c7e0004dc5ff9c536f2e"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-21201",
+        "base_commit": "df49404794d8f78c50020942497220154ec205ce"
+      },
+      {
+        "repo": "langchain-ai/langchain",
+        "instance_id": "langchain-ai__langchain-5432",
+        "base_commit": "ee57054d0596bf3176c73db64ad38f82e8e6f9a6"
+      },
+      {
+        "repo": "tensorflow/models",
+        "instance_id": "tensorflow__models-4628",
+        "base_commit": "7c5c01482f48f9f2532586e679686d821d516ae6"
+      },
+      {
+        "repo": "tensorflow/models",
+        "instance_id": "tensorflow__models-2727",
+        "base_commit": "176cf09c2d95f6cd2201e8a7fd215617d6be9453"
+      },
+      {
+        "repo": "yt-dlp/yt-dlp",
+        "instance_id": "yt-dlp__yt-dlp-1649",
+        "base_commit": "bfd973ece3369c593b5e82a88cc16de80088a73e"
+      },
+      {
+        "repo": "yt-dlp/yt-dlp",
+        "instance_id": "yt-dlp__yt-dlp-8917",
+        "base_commit": "95e82347b398d8bb160767cdd975edecd62cbabd"
+      },
+      {
+        "repo": "yt-dlp/yt-dlp",
+        "instance_id": "yt-dlp__yt-dlp-5933",
+        "base_commit": "f079514957401f49db30ec4cd25f8c8246b0c1de"
+      },
+      {
+        "repo": "yt-dlp/yt-dlp",
+        "instance_id": "yt-dlp__yt-dlp-3435",
+        "base_commit": "afac4caa7db30804bebac33e53c3cb0237958224"
+      },
+      {
+        "repo": "yt-dlp/yt-dlp",
+        "instance_id": "yt-dlp__yt-dlp-4841",
+        "base_commit": "07a1250e0e90515ff8142161536f9dafa6eaba1b"
+      },
+      {
+        "repo": "yt-dlp/yt-dlp",
+        "instance_id": "yt-dlp__yt-dlp-4524",
+        "base_commit": "565a4c594499eb4f2c218e12f8ad1cea3362aedd"
+      }
+    ]
+  },
+  "inputs": {
+    "query": "problem_statement only; never hints_text, patch, test_patch, modified_nodes, task_category or manual anchors",
+    "corpus": "Every regular .py file at exact base commit; no imports/execution. All tests included. Source decode uses Python encoding declaration; unreadable/link files counted, their targets remain in denominator.",
+    "publication": "Only upstream coordinates, hashes, scalar diagnostics/metrics; no dataset issues, patches or upstream source snippets redistributed."
+  },
+  "methods": [
+    "bm25_windows",
+    "bm25_declarations",
+    "anchors_only",
+    "graph_expand",
+    "window_expand",
+    "file_expand"
+  ],
+  "budgets": [
+    8000,
+    16000,
+    32000
+  ],
+  "primary_budget": 16000,
+  "parameters": {
+    "window_lines": 80,
+    "anchor_count": 3,
+    "graph_depth": 2,
+    "graph_nodes": 128,
+    "window_expansion_each_side": 80,
+    "bm25_k1": 1.2,
+    "bm25_b": 0.75,
+    "query_tuning": false
+  },
+  "packing": "Same deterministic JSON envelope including full issue and metadata; UTF-8 bytes; physical source lines deduplicated; no partial line truncation; declarations over80lines split; diagnostics outside payload not credited as source.",
+  "metrics": {
+    "primary": "Per-repository macro mean removed-base-line F1 at16000bytes, graph_expand versus each of bm25_windows and bm25_declarations separately.",
+    "secondary": [
+      "removed-base-line recall and precision",
+      "edited-existing-Python-file F1/recall",
+      "per-task byte consumption and candidate/frontier counts",
+      "descriptive wall seconds including source decode/index; not a performance claim"
+    ],
+    "unscorable": "Pure additions/new files without removed base lines are line-unscorable; retain every selected task and report no-target count. Evaluation failures explicit, not replaced; operational failure counts and conservative zero score shown separately.",
+    "uncertainty": "Per-repo effects and descriptive paired differences only; pilot no p-value, no significance claim, no task-independent confidence interval.",
+    "advance_to_confirmatory_only_if": "No integrity failure; >=4of6 repo line-F1 improvement vs BOTH lexical baselines, macro F1 absolute gain>=0.03 vs BOTH, macro recall degradation<=0.02 vs BOTH. This is planning gate, never proof of maturity."
+  },
+  "resources": {
+    "workers": 1,
+    "per_task_timeout_seconds": 300,
+    "max_python_files": 5000,
+    "max_python_bytes": 33554432,
+    "max_single_python_bytes": 1048576,
+    "max_address_space_bytes": 4294967296
+  },
+  "retention": "All selected tasks/failed attempts retained, new output directory required, no clobber; source changes require new run_id.",
+  "blindness": "Only metadata inspected before freeze; dataset CSV transferred to local cache but issue/patch values not analyzed. Gold scoring runs only after complete hashed prediction bundle. Retrieval subprocess receives issues/source only. ContextBench abandoned due unresolved dataset permission, no gold used.",
+  "external_comparison": "No upstream benchmark agent or LLM run; no academic novelty claim."
+}
