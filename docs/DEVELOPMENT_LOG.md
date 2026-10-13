@@ -331,3 +331,36 @@ adjacent-float tampering, nonfinite/bool values and unchanged strict fields. Ruf
 passed. Strict artifact validation passed on local Python 3.11.3 and 3.12.2.
 The new commit still requires its own remote CI; the failed first attempt remains
 part of the record. / 本地修正验证通过，新提交的远端 CI 须另外确认。
+
+## 2026-10-13 — research claim audit / 研究声明核验
+
+Recomputed the frozen four-repository holdout and nine-case task records without
+rerunning either experiment. The claim ledger distinguishes replay parity and
+recorded cost reductions from natural-code semantic certification, task relevance,
+agent benefit, novelty and external validation. Same-data supplementary analysis
+reports executed-witness density and source-context fraction, not relevance
+precision. All 768 reference graphs are incomplete, and historical graph/fresh
+anchor/BM25 model-task results still tie at 24/25.
+本次仅回算原始记录，未产生新的实验样本；将执行见证密度与真正任务相关性区分，
+保留完整图为零及旧任务结果持平的限制。
+
+Added source/evidence hash checks, explicit comparator and observation-unit checks,
+negative tests for unsupported status promotion, and bilingual generated status
+pages. The normal CLI validates this frozen study's record consistency;
+`--require-mature` is expected to exit 2 because substantive evidence is missing.
+It is not a universal or automatic scientific-maturity assessor.
+新增检查不能作为新增研究贡献或独立评议；新的研究结论需要新的证据与人工核验。
+
+Commands: `python scripts/check_research_claims.py`,
+`python -m pytest -q tests/test_research_claims.py`, and the existing full
+correctness/publication/build gates. Results are recorded after execution; no
+new model or external-label experiment was conducted in this audit.
+
+Local acceptance after integration: **1451 passed, 2 optional-tokenizer skips**;
+Ruff, attribution and claim-record checks passed. The first suite invocation used
+an environment without the editable package installed and stopped at import
+collection; rerunning with this checkout's absolute `src` on `PYTHONPATH` passed.
+`--require-mature` returned the expected status 2. Build and current remote CI
+are separate gates; no prior CI result is treated as validating this change.
+本地1451项通过、2项可选分词器跳过；首次调用因测试环境未加载本源码而收集失败，
+明确指向当前源码后通过。成熟度拒绝码为预期的2，不能写成成熟研究验收通过。

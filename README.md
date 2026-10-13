@@ -39,6 +39,9 @@ execution-witness coverage, including cases where BM25 covers more than the grap
 [Design and conditional guarantees](docs/en/INCREMENTAL_DESIGN.md) explain the
 cache and invalidation mechanisms. These studies do not establish model-task
 improvement or peer-reviewed research maturity.
+The [claim-by-claim research status](docs/en/RESEARCH_STATUS.md) links supported
+results to frozen records and lists missing semantic, task-benefit and external
+validation evidence. Its automated check verifies consistency, not scientific merit.
 
 To reproduce this experimental branch, clone with
 `git clone --branch research/evidence-risk-20261004 https://github.com/hardwork-xu/agent-code-evidence.git`.

@@ -8,3 +8,4 @@ recursive-include third_party *
 recursive-include benchmarks/selective_reuse/licenses *
 recursive-include benchmarks/incremental_holdout/licenses *
 recursive-include benchmarks/task_evidence/licenses *
+recursive-include research *.json

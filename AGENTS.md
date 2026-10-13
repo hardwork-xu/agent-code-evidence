@@ -9,6 +9,9 @@
 - Retain exact third-party license bytes and run `scripts/check_attribution.py`.
   Known noncontiguous historical excerpts are explicit limitations, not exact spans.
 - Maintain corresponding English/Chinese research docs and identical measurements.
+- Keep `research/claims.json` and generated status pages aligned with retained
+  evidence; run `scripts/check_research_claims.py`. A passing record check is
+  not scientific maturity, novelty or independent validation.
 - Keep local paths, account details, private learning notes and raw terminal logs
   outside Git. Run `scripts/check_publication.py` before public delivery.
 

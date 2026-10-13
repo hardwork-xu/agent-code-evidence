@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "profile": "frozen-20261004-research-claims-v1",
+  "recorded_on": "2026-10-13",
+  "artifact_commit": "3ecb10f274bf2573800ad9eaf539c5e4733f8449",
+  "measured_commit": "a0070ea71cea3c8944c004559602616114011b76",
+  "decision": "mature_research_not_established",
+  "validation_scope": "Offline identity and recorded-fact consistency; no new experiment, independent replication or scholarly judgment.",
+  "holdout": {
+    "run_id": "holdout-20261004T211414735263Z",
+    "baseline": "incremental_whole_corpus_guard",
+    "candidate": "incremental_read_set",
+    "unit": "repository",
+    "conditions": "4 convenience repositories, 8 release-centred revisions, 24 fixed anchors each, 5 measured trajectories, 3 fresh memory processes/modality/method/repository; single Apple M1 Pro."
+  },
+  "tasks": {
+    "run_id": "bcebd88f-0906-4040-b3d3-e228f3f1a1df",
+    "unit": "case within known development repository",
+    "conditions": "9 adapted upstream assertion cases,3 development repositories,72 isolated children; same unique physical-line budget; no LLM or human gold labels."
+  },
+  "claims": [
+    {
+      "id": "C1-source-identity",
+      "statement_en": "Pinned source text and artifact identity are auditable",
+      "statement_zh": "固定源码与产物身份可核查",
+      "state": "supported_artifact_identity",
+      "evidence": [
+        "benchmarks/incremental_holdout/manifest.json",
+        "benchmarks/task_evidence/manifest.json",
+        "benchmarks/task_evidence/results/primary-20261004/provenance.json"
+      ],
+      "boundary_en": "Exact source, test, license and measured implementation hashes resolve to retained pins. This is identity, not provenance authenticity, authorship or semantic truth."
+    },
+    {
+      "id": "C2-replay-parity",
+      "statement_en": "Incremental replay matches uncached bounded resolver on frozen holdout",
+      "statement_zh": "固定留出样本中的有界解析器回放一致",
+      "state": "supported_frozen_sample",
+      "evidence": [
+        "benchmarks/incremental_holdout/results/primary-20261004.json"
+      ],
+      "boundary_en": "All 768 references, every emitted timing and memory digest, complete grid and every frontier count match; zero mismatches. Independent natural-code semantic correctness and useful coverage remain unestablished; authored semantic regression tests are separate evidence."
+    },
+    {
+      "id": "C3-replay-performance",
+      "statement_en": "Selective replay reduces measured cost versus persistent indexing plus whole-corpus reuse",
+      "statement_zh": "强基线下固定样本回放耗时下降",
+      "state": "supported_frozen_sample",
+      "evidence": [
+        "benchmarks/incremental_holdout/protocol.json",
+        "benchmarks/incremental_holdout/results/primary-20261004.json"
+      ],
+      "boundary_en": "Frozen target >=20% replay reduction in >=3/4 repositories, RSS <=2x baseline and <=512MiB, correctness gate and full negative records. Observed 4/4. Do not relabel replay reduction cold-start speedup or agent speedup."
+    },
+    {
+      "id": "C4-semantic-freshness",
+      "statement_en": "Natural-code semantic freshness can be certified with useful coverage",
+      "statement_zh": "有用的自然代码语义fresh证书",
+      "state": "not_established_zero_complete_coverage",
+      "evidence": [
+        "benchmarks/incremental_holdout/results/primary-20261004.json",
+        "docs/en/INCREMENTAL_DESIGN.md"
+      ],
+      "boundary_en": "Cannot pass on replay equality. Need externally grounded behavioral/semantic change labels and a predeclared nonzero risk/coverage objective; current complete reference count is 0/768. Zero false acceptances at zero acceptances is not evidence of useful certification."
+    },
+    {
+      "id": "C5-execution-witness",
+      "statement_en": "Graph context covers more executed source on the nine adapted assertion cases in macro average",
+      "statement_zh": "九个开发样本中的执行见证覆盖",
+      "state": "supported_development_diagnostic",
+      "evidence": [
+        "benchmarks/task_evidence/results/primary-20261004/runs.json",
+        "benchmarks/task_evidence/results/primary-20261004/cases.json",
+        "benchmarks/task_evidence/PROTOCOL.md"
+      ],
+      "boundary_en": "Nine eligible cases, 72 children, trace/untraced parity, exact witness unions and means. Graph 0.5392489488 vs BM25 0.3744928034. Preserve Pluggy reversal and broad-span cases. Never label execution_density gold precision."
+    },
+    {
+      "id": "C6-agent-task-benefit",
+      "statement_en": "Graph evidence improves task success or task-relevant context over simpler fresh retrieval",
+      "statement_zh": "独立任务上下文质量及智能体收益",
+      "state": "not_established",
+      "evidence": [
+        "docs/GRAPH_REPORT.md",
+        "benchmarks/task_evidence/results/primary-20261004/cases.json"
+      ],
+      "boundary_en": "Historical graph/freshanchor/BM25 tie 24/25; current witness is not end-to-end evidence. Need untouched tasks, same query/localization/budget, independent labels for retrieval and actual downstream test-outcomes for agent benefit; external gold retrieval alone cannot set agent benefit to supported."
+    },
+    {
+      "id": "C7-novelty",
+      "statement_en": "Distinct research contribution beyond established incremental dependency tracking",
+      "statement_zh": "超出已有增量依赖原理的研究新颖性",
+      "state": "scoped_engineering_contribution_only",
+      "evidence": [
+        "docs/en/RELATED_WORK.md",
+        "docs/en/INCREMENTAL_DESIGN.md"
+      ],
+      "boundary_en": "Prior-work comparison must identify a nontrivial new empirical finding or method boundary. Hash tracing/negative dependencies are established. Mechanical validator can check citations/pins, not adjudicate novelty."
+    },
+    {
+      "id": "C8-external-validation",
+      "statement_en": "Independent external reproduction or independent human scholarly evaluation occurred",
+      "statement_zh": "独立外部复现与人工学术评议",
+      "state": "not_done",
+      "evidence": [
+        "docs/en/MATURATION_REPORT.md"
+      ],
+      "boundary_en": "Requires identifiable actual external run/reviewer record and scoped outcome. CI, same-machine rerun, model-based review and this audit do not satisfy it. Journal/conference acceptance is separate and never inferable from a research-quality gate."
+    }
+  ],
+  "evidence_sha256": {
+    "benchmarks/incremental_holdout/manifest.json": "126df30f4d69aa667b951ba1856dcb9b2ae03fba8d23e4a358e7127e936b7bc5",
+    "benchmarks/incremental_holdout/protocol.json": "a7eeb619d4e76c763bacc809f753135c3240544d82fc224e45b11a7d1121992d",
+    "benchmarks/incremental_holdout/results/primary-20261004.json": "1f4e5f128b3352fbb2116159297038289b5bf76120d502773d4decb9b31211a4",
+    "benchmarks/task_evidence/EXECUTION_AMENDMENT.md": "2d39a533f59a0ddf20448569ed24ba158877f5184659dbf87f1dddf2ca31c11c",
+    "benchmarks/task_evidence/PROTOCOL.md": "fb708ff03c3c436c9395ba60076b1c3327e3e8019a9e89049589be1ce00b4569",
+    "benchmarks/task_evidence/manifest.json": "4653503c6b5208f1c07c2535a97c76aaadfc08dc102f3beb5fc9b8463bfba2a4",
+    "benchmarks/task_evidence/results/primary-20261004/cases.json": "22179a89f9e1ac663c412f427aa76d98188216e41a64b0ed37e02f187b0dd194",
+    "benchmarks/task_evidence/results/primary-20261004/provenance.json": "73c5aa0c6dcca2809984ba080f78c0dd89a844a6ece46e536f5e0d0732231f47",
+    "benchmarks/task_evidence/results/primary-20261004/runs.json": "ac9f4ee4c0a12cd2a4ab0284d93380f448cea3ccf8023041ecb4b58eca29adde",
+    "benchmarks/task_evidence/results/primary-20261004/status.json": "53f22b15c872aec314a4ada44a7ce42bb6c3fde15612399f807a9accf5c679a9",
+    "benchmarks/task_evidence/results/primary-20261004/summary.json": "0c13853c4b609158aeb6be3570bef0eb168df9ea4689f5296dfbaa37c0ba9963",
+    "docs/GRAPH_REPORT.md": "92ee1f9bf8fc388af612e92a6375cbd39d669bcbf49ecf0bd7c489194221139c",
+    "docs/en/INCREMENTAL_DESIGN.md": "e7444929c0c3e5fc6849a758cb26cca14819085ead564971af352cce32a06222",
+    "docs/en/MATURATION_REPORT.md": "6c327426269fa4d3be475d4ff49a364a40cab8a8ffb0c4fd7f838620b7c7a711",
+    "docs/en/RELATED_WORK.md": "faf8da35fa07453912e4e7ecc0f7334b0f5402217b928ce1b923274b8bfcf777",
+    "src/contextproof/__init__.py": "ef87b48edc5100642605cee1f0537a6a2f922f73ca0963a95ed944a4851c794e",
+    "src/contextproof/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/contextproof/cli.py": "b6b713817366891fcb815feeaef203cd2095e4b1e340dba879d7b02cc29b74ca",
+    "src/contextproof/dependencies.py": "7699982d64fba2002add70c004bf7b7a784f98be427baa865dae1a78a77bb9bb",
+    "src/contextproof/evidence.py": "63b41f50ced294c391399121752b5ffb096dc153d75f4eeb30a0a3f74357fc6a",
+    "src/contextproof/graph.py": "a0e1aeebaf46d9daf1b895a66082300b6ecd0eb9f63049992e1c628de0e1d6de",
+    "src/contextproof/graph_delta.py": "dd46426a75e42fad59818c6b32303ad5f62c1d4464c5474ae2c1379bee65b741",
+    "src/contextproof/graph_payload.py": "663eca2ac57b5f1ef127b946057629999bfde47c93bf38c8bbc72007ce5ec509",
+    "src/contextproof/graph_session.py": "d86b59beff2566f514464d1b4791fb5bc58dfd2f8a51028d986d457e0829b4ff",
+    "src/contextproof/index.py": "d8b6838ab5161d69e9b50480674345830a2921cc4be9b1c6a02f5a95d792d108",
+    "src/contextproof/mcp.py": "3b954718f775ccb2f99c971369a99fdb202d3a1f20eb0a27330d7d14ece12712",
+    "src/contextproof/models.py": "4bc812d50fe6773f5c89181b7259de9950f4c25ea4272081cdc38b130f15c8bf",
+    "src/contextproof/module_cache.py": "289d9fa5b68fbafeac747d45c02fe7099b75af857c5c24997331bec95fb784a1",
+    "src/contextproof/parse_cache.py": "9aa2ecc4dec7dc4ccd86f66e8202de6cd0de431ce3e8fd79c53c7902398edc85",
+    "src/contextproof/report.py": "12993022760f71142b6ae796ce7d8b1a18a7774f6eb6ed4d8d7c8aef331db666",
+    "src/contextproof/retrieval.py": "c237c65f99197b4565374decd2afc9bf6e1fc079d527f74beb1ab994fc1e1a68",
+    "src/contextproof/reuse.py": "391d56f467b4edbb44ff9b581637ad07bbcf417ad121e4b41754dcf78374c28a",
+    "src/contextproof/revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
+    "src/contextproof/session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
+    "src/contextproof/static_scope.py": "3ad2b0cdecbafd3123df470fe6baea6a26f409b9817772872c876cbb148de801"
+  },
+  "unmet_criteria": [
+    {
+      "id": "semantic-freshness",
+      "status": "missing",
+      "en": "Independent semantic labels and nonzero useful acceptance coverage; current 0/768 complete graphs.",
+      "zh": "独立语义标签和非零有效接受覆盖；当前完整图0/768。"
+    },
+    {
+      "id": "task-relevance",
+      "status": "missing",
+      "en": "Untouched task-context labels with fixed budgets and strong lexical/context-expansion controls. Execution witnesses are not relevance gold.",
+      "zh": "未使用任务的独立上下文标签、固定预算和强词法/普通展开对照。执行见证不是相关性gold。"
+    },
+    {
+      "id": "agent-benefit",
+      "status": "missing",
+      "en": "Actual downstream task outcomes if agent improvement remains a claim. Historical graph and simpler fresh baselines tie 24/25.",
+      "zh": "若声称智能体收益，需要真实下游任务结果；历史图与简单fresh基线均24/25。"
+    },
+    {
+      "id": "generality",
+      "status": "missing",
+      "en": "Broader or prospective workloads and independent environment replication; repeated trajectories are not independent datasets.",
+      "zh": "更广泛或前瞻工作负载及独立环境复现；重复轨迹不是独立数据集。"
+    },
+    {
+      "id": "contribution-assessment",
+      "status": "missing",
+      "en": "A defensible contribution relative to prior work, with independent scrutiny. Publication or academic firstness is not itself required, and this checker cannot judge novelty.",
+      "zh": "相对已有工作的可辩护贡献及独立检视；不把发表或学术首创本身作为必要条件，检查器不能判定新颖性。"
+    }
+  ]
+}

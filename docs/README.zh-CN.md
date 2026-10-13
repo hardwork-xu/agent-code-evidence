@@ -142,6 +142,8 @@ MCP SDK 验证实际 stdio 调用。模型推理不在 CI 中自动运行。
 内存。另有九案例、72 次隔离执行的上游测试证据研究，保留 BM25 覆盖优于图的
 案例。[设计与条件保证](zh/INCREMENTAL_DESIGN.md) 解释缓存和失效机制。
 这些证据不能等同于模型任务提升或已经通过同行评审的成熟成果。
+[逐项研究状态](zh/RESEARCH_STATUS.md)将可支持的结论绑定到固定记录，并列出
+语义、任务收益和外部验证方面的缺口；自动检查验证记录一致性，不能判定科研价值。
 
 复现实验分支请使用：
 `git clone --branch research/evidence-risk-20261004 https://github.com/hardwork-xu/agent-code-evidence.git`。
