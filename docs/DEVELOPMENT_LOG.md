@@ -389,3 +389,27 @@ are separate gates; no prior CI result is treated as validating this change.
 2026-10-13–14实际记录：先冻结39任务pilot与预算，再修复独立合成反例并提交实测源码，
 串行尝试全部任务、封存预测后评分。保留5失败和7无行目标；两推进门槛失败。
 独立本地计算核对不等于外部同行验收。没有执行上游源码、模型或商业API。
+
+## 2026-10-14: catalog-query mechanism and counterexamples
+
+Starting from `ce6e36de7f6860296d66dadcb3105a8bbda9eb9a`, the process-local
+research session gained exact positive/negative candidate tuples and namespace
+existence observations. Source-read hashes remain mandatory; missing or unsupported
+trace versions force rebuilding. Query-aware whole-catalog and complete root-membership
+controls use the same summary cache and preserve every unknown/truncated state.
+This is an engineering application of existing dependency tracking ideas.
+
+The first implementation integration run exposed an undefined local mode variable;
+it was fixed before natural graph or timing runs. The explicit affected-suite command
+was `PYTHONPATH=src python -m pytest -q tests/test_module_catalog.py
+tests/test_catalog_reuse_review.py tests/test_incremental_module_cache.py
+tests/test_selective_reuse_oracles.py tests/test_selective_replay.py`.
+Independent test authorship and a separate fresh resolver check are local regression
+evidence, not human peer review. Natural-input preparation retains two failed sampling
+rules, all catalog events and a subsequently missing fixed RQ anchor. The source
+preflight is separate from candidate correctness and performance.
+
+实际开发记录：从上述真实提交新增目录查询足迹和两种强对照；完整读取哈希、未知与
+截断状态仍保留，证书缺失或版本不支持时重建。首次接入因局部变量漏定义失败，已在
+自然实验前修复。独立编写反例与本地 fresh 对照属于回归证据，不是人工同行评审。
+输入准备保留两次选样规则的否定结果、所有目录事件及后续缺失的固定 RQ 锚点。

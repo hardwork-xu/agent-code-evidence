@@ -16,7 +16,7 @@ def _stored_names(node: ast.AST) -> set[str]:
 
 
 def module_lookup_uncertainty(corpus, module: str, attrs: list[str]) -> str | None:
-    candidates = corpus.modules.get(module, [])
+    candidates = corpus.module_candidates(module)
     if attrs and len(candidates) == 1:
         path = candidates[0]
         if path in corpus.wildcards:

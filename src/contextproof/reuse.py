@@ -13,6 +13,7 @@ from .evidence import _safe_parts, sha256
 from .graph import build_graph, _seal
 from .parse_cache import ParseCache
 from .module_cache import ModuleCache
+from .catalog import ModuleCatalog, CATALOG_TRACE_VERSION
 
 
 @dataclass(frozen=True)
@@ -50,7 +51,8 @@ class GraphSession:
     """
     MODES = {"warm_ast_rebuild", "whole_corpus_guard", "read_set_certificate",
              "read_set_any_status", "incremental_index_rebuild", "incremental_read_set",
-             "incremental_whole_corpus_guard"}
+             "incremental_whole_corpus_guard", "incremental_catalog_coarse_guard",
+             "incremental_catalog_root_guard", "incremental_catalog_read_set"}
 
     def __init__(self, anchors: list[dict], *, mode: str = "read_set_certificate",
                  max_depth: int = 4, max_nodes: int = 256):
@@ -66,6 +68,9 @@ class GraphSession:
         self._hashes: dict[str, str] | None = None
         self._graphs: list[dict] = []
         self._reads: list[set[str]] = []
+        self._catalog_footprints: list[dict] = []
+        self._catalog_root_guards: list[dict] = []
+        self._catalog_versions: list[int | None] = []
 
     @property
     def index_stats(self) -> dict[str, int]:
@@ -75,6 +80,25 @@ class GraphSession:
         上次成功更新的摘要工作量；历史模式为零。计数独立于图，返回值不暴露缓存。
         """
         return self._module_cache.stats
+
+    def _catalog_trace_valid(self, index: int) -> bool:
+        """Internal missing traces are not empty-query evidence / 缺失不等于有效空查询。"""
+        return (index < len(self._catalog_versions)
+                and self._catalog_versions[index] == CATALOG_TRACE_VERSION
+                and index < len(self._catalog_footprints)
+                and isinstance(self._catalog_footprints[index], dict)
+                and index < len(self._catalog_root_guards)
+                and isinstance(self._catalog_root_guards[index], dict))
+
+    @property
+    def catalog_stats(self) -> dict[str, int]:
+        """Committed trace counts, not a semantic certificate / 已提交查询数，不是语义证书。"""
+        traces = [q for i, q in enumerate(self._catalog_footprints) if self._catalog_trace_valid(i)]
+        return {'available_traces': len(traces),
+                'tracked_graphs': sum(bool(q) for q in traces),
+                'catalog_free_graphs': sum(not q for q in traces),
+                'exact_queries': sum(k[0] == 'exact' for q in traces for k in q),
+                'subtree_queries': sum(k[0] == 'subtree' for q in traces for k in q)}
 
     def update(self, texts: Mapping[str, str], snapshot_id: str) -> Replay:
         """Hash all inputs then reuse or rebuild / 哈希全部输入后复用或重建。
@@ -91,14 +115,17 @@ class GraphSession:
             if not isinstance(source, str):
                 raise ValueError("source must be text / 源码必须为文本")
         hashes = {path: sha256(source) for path, source in current.items()}
-        incremental = self._mode in {"incremental_index_rebuild", "incremental_read_set",
-                                     "incremental_whole_corpus_guard"}
+        tracked = self._mode in {'incremental_catalog_coarse_guard',
+                                 'incremental_catalog_root_guard', 'incremental_catalog_read_set'}
+        incremental = tracked or self._mode in {'incremental_index_rebuild', 'incremental_read_set',
+                                                'incremental_whole_corpus_guard'}
+        catalog = ModuleCatalog(current) if tracked else None
         # A failed update discards its summaries; skipped graph builds still prune
         # changed/unread modules. No historical versions accumulate in the session.
         # 失败更新丢弃新摘要；全图复用也清理已改变的未读模块，不累积历史版本。
         module_cache = self._module_cache.for_snapshot(hashes) if incremental else None
         same_catalog = self._hashes is not None and hashes.keys() == self._hashes.keys()
-        graphs, reads, reasons = [], [], {}
+        graphs, reads, footprints, root_guards, reasons = [], [], [], [], {}
         reused = 0
         corpus = None
         for index, anchor in enumerate(self._anchors):
@@ -111,6 +138,23 @@ class GraphSession:
                 elif self._mode in {"whole_corpus_guard", "incremental_whole_corpus_guard"}:
                     use = hashes == self._hashes
                     reason = "whole_corpus_equal" if use else "corpus_changed"
+                elif tracked:
+                    if not self._catalog_trace_valid(index):
+                        reason = 'catalog_trace_unavailable'
+                    elif any(hashes.get(path) != self._hashes.get(path)
+                           for path in self._reads[index]):
+                        reason = 'read_dependency_changed'
+                    elif same_catalog:
+                        use, reason = True, 'read_set_equal'
+                    elif self._mode == 'incremental_catalog_coarse_guard':
+                        use = not self._catalog_footprints[index]
+                        reason = 'catalog_free_graph' if use else 'catalog_changed'
+                    elif self._mode == 'incremental_catalog_root_guard':
+                        use = catalog.roots_match(self._catalog_root_guards[index])
+                        reason = 'catalog_root_equal' if use else 'catalog_root_changed'
+                    else:
+                        use = catalog.matches(self._catalog_footprints[index])
+                        reason = 'catalog_queries_equal' if use else 'catalog_query_changed'
                 elif not same_catalog:
                     reason = "catalog_changed"
                 elif self._mode == "read_set_certificate" and graph["frontier"]:
@@ -125,18 +169,26 @@ class GraphSession:
                 graph["snapshot_id"] = snapshot_id
                 _seal(graph)
                 read_set = self._reads[index].copy()
+                footprint = self._catalog_footprints[index].copy()
+                roots = self._catalog_root_guards[index].copy()
                 reused += 1
             else:
                 read_set = set()
                 if corpus is None:
                     corpus = (_Corpus.from_texts(current, module_cache=module_cache,
-                                                _source_hashes=hashes) if incremental else
+                                                _source_hashes=hashes, _catalog=catalog,
+                                                _track_catalog=tracked) if incremental else
                               _Corpus.from_texts(current, parsed_cache=self._cache))
                 corpus.lookup_paths.clear()
+                corpus.catalog_queries.clear()
                 graph = build_graph(current, snapshot_id, [anchor], **self._policy,
                                     parsed_cache=self._cache, read_set=read_set, _corpus=corpus)
+                footprint = corpus.catalog_queries.copy()
+                roots = catalog.root_guards(footprint) if tracked else {}
             graphs.append(graph)
             reads.append(read_set)
+            footprints.append(footprint)
+            root_guards.append(roots)
             reasons[reason] = reasons.get(reason, 0) + 1
         # Publish atomically only after every anchor succeeded. Old AST entries are
         # discarded between snapshots to bound memory by the current source set.
@@ -144,6 +196,8 @@ class GraphSession:
         self._cache.memory = {key: tree for key, tree in self._cache.memory.items()
                               if hashes.get(key[0]) == key[1]}
         self._hashes, self._graphs, self._reads = hashes, graphs, reads
+        self._catalog_footprints, self._catalog_root_guards = footprints, root_guards
+        self._catalog_versions = [CATALOG_TRACE_VERSION if tracked else None] * len(graphs)
         if module_cache is not None:
             self._module_cache = module_cache
         return Replay(deepcopy(graphs), reused, len(graphs) - reused, reasons)
