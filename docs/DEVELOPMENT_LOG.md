@@ -500,3 +500,16 @@ unchanged. With bytecode disabled, all44 affected archive checks passed.
 新自然面板无新增收益、所有闭包不完整；九进程真实上游重放保留28条父版本
 失败。全量验收首轮归档目录因字节码缓存导致4项失败，未放宽归档检查或改
 实验数字；仅删除本任务生成且已核对的10个pyc，44项相关检查随后通过。
+
+
+The staged whitespace check flagged one trailing space in the exact Pygments
+AUTHORS attribution. The original byte was retained; only that attribution file
+is exempted by `.gitattributes`. The intended validation/docs stages became the
+actual combined commitc611cd5 after the first check rejected that attribution
+space. No separate test commit is claimed. Final portable-record checks add
+explicitly post-execution helper/dependency fingerprints and preserve the initial
+index; worker/runner/raw results remain unchanged.
+
+暂存空白检查遇到Pygments原始AUTHORS文件的尾随空格，保留原字节并仅对该
+归属文件设置例外。实际验证/文档变更合并在c611cd5，不虚构未发生的test提交。
+重放索引补充指纹明确标为执行后审查，原索引及所有原始结果不改。

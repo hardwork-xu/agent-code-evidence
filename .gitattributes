@@ -1,0 +1,2 @@
+# Preserve reviewed upstream attribution bytes, including original trailing space.
+benchmarks/global_bindings/upstream_execution/licenses/dependencies/pygments-AUTHORS.txt -whitespace
