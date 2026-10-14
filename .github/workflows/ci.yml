@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+
 jobs:
   test:
     timeout-minutes: 15
@@ -38,6 +41,10 @@ jobs:
       - run: PYTHONPATH=src python -m benchmarks.external_context.check
       - run: PYTHONPATH=src python -m benchmarks.external_context.report --check
       - run: PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
+      - run: >-
+          python -m benchmarks.global_bindings.report --check
+          --results benchmarks/global_bindings/results/development-20261014
+      - run: python -m benchmarks.global_bindings.upstream_execution.check
       - run: >-
           python -m pytest -q tests benchmarks/graph/test_scope_audit.py
           benchmarks/revision_baselines/test_baselines.py

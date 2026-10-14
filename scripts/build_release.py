@@ -40,7 +40,8 @@ import zipfile
 PUBLIC_MAINTAINER = "hardwork-xu"
 LICENSE_TREES = ("third_party/licenses", "benchmarks/selective_reuse/licenses",
                  "benchmarks/incremental_holdout/licenses", "benchmarks/task_evidence/licenses",
-                 "benchmarks/external_context/licenses")
+                 "benchmarks/external_context/licenses",
+                 "benchmarks/global_bindings/upstream_execution/licenses")
 HOME_PATH = re.compile(
     rb"(?i)(?:/(?:Users|home)/[^/\s\"'<>]+|[a-z]:[\\/]+Users[\\/]+[^\\/\s\"'<>]+)"
 )
