@@ -1,0 +1,148 @@
+{
+  "all_source_role_and_loaded_module_hashes_verified": true,
+  "classification": "portable reviewed runner reproduction of known development execution preflights; not new independent holdout, candidate gain or performance",
+  "command_normalization": "Absolute interpreter/input/output directories replaced with placeholders; script and flags unchanged.",
+  "commands": [
+    "python benchmarks/global_bindings/upstream_execution/run.py --source-root PREPARED_INPUTS --output NEW_EXTERNAL_RESULTS"
+  ],
+  "completed_at_utc": "2026-10-14T14:05:46.443176+00:00",
+  "environment": {
+    "cpu_count": 10,
+    "machine": "arm64",
+    "physical_memory_bytes": 17179869184,
+    "python": "3.12.2",
+    "system": "Darwin"
+  },
+  "files": {
+    "global-whole-panel.json": "eaafa22b7962ff0175aa545417ce6ba71e2a3a49e7285a098437618968f9a9ed",
+    "marshmallow-code--marshmallow-2d30a962a0a1-parent.json": "16b4ea4295535b702ddc8bb8b2b12c698fd004d7911a342e97e114d3e12effae",
+    "marshmallow-code--marshmallow-7dff08fcb7fb-fixed.json": "1506c35d1bb842d38342d3a386f4685316106900c104323e8980a8362a4257dd",
+    "python-poetry--tomlkit-229ee8660872-parent.json": "586d1e493bded11b9d937b66fdf14f07f48b44a096fdd90f4d32399d343da6e9",
+    "python-poetry--tomlkit-6b5f079099d4-fixed.json": "4a189baa43456670fda948529fc91e207dfbf4549aa8706702da014302d95cfd",
+    "python-semver--python-semver-1d515915d50b-parent.json": "f7ea307576f6d643cff5f1a1406f76f1e9cdee7c075d1251ccf6a83dfdbb6787",
+    "python-semver--python-semver-37ae009c7cac-fixed.json": "958a51444beb130949e1fe2ba94aae41076627b38119bc83e7f4fb97521ba668",
+    "runs.json": "f1553bc7dc1909b353b9d627a7cdb470e88a03c8d4a1511399c7b82b1d3e0ec4",
+    "theskumar--python-dotenv-0b2880591780-fixed.json": "e1e2590c0d68be3d5a598ac1486f6f5b7f0e404b7e9736ed86b3eb68c5fb7a78",
+    "theskumar--python-dotenv-791414804eff-parent.json": "167994a5581c55fc1390e49239dd329b02556dcdeec9cdfd11396bd0fed15ed4"
+  },
+  "input_sha256": "ca63c5f5b5e89b993831e7ce156aad79c16cd681f8d3eb02f8fd0e5354bac504",
+  "raw_logs_private_outside_git": true,
+  "records": [
+    {
+      "counts": {
+        "failed": 0,
+        "passed": 23,
+        "skipped": 0
+      },
+      "file": "global-whole-panel.json",
+      "observations": 200,
+      "repository": "pyparsing/pyparsing",
+      "role": "current_head_global_writer_preflight"
+    },
+    {
+      "counts": {
+        "failed": 1,
+        "passed": 6,
+        "skipped": 0
+      },
+      "file": "marshmallow-code--marshmallow-2d30a962a0a1-parent.json",
+      "observations": 0,
+      "repository": "marshmallow-code/marshmallow",
+      "role": "parent"
+    },
+    {
+      "counts": {
+        "failed": 0,
+        "passed": 7,
+        "skipped": 0
+      },
+      "file": "marshmallow-code--marshmallow-7dff08fcb7fb-fixed.json",
+      "observations": 0,
+      "repository": "marshmallow-code/marshmallow",
+      "role": "fixed"
+    },
+    {
+      "counts": {
+        "failed": 17,
+        "passed": 1,
+        "skipped": 0
+      },
+      "file": "python-poetry--tomlkit-229ee8660872-parent.json",
+      "observations": 0,
+      "repository": "python-poetry/tomlkit",
+      "role": "parent"
+    },
+    {
+      "counts": {
+        "failed": 0,
+        "passed": 18,
+        "skipped": 0
+      },
+      "file": "python-poetry--tomlkit-6b5f079099d4-fixed.json",
+      "observations": 0,
+      "repository": "python-poetry/tomlkit",
+      "role": "fixed"
+    },
+    {
+      "counts": {
+        "failed": 9,
+        "passed": 8,
+        "skipped": 0
+      },
+      "file": "python-semver--python-semver-1d515915d50b-parent.json",
+      "observations": 0,
+      "repository": "python-semver/python-semver",
+      "role": "parent"
+    },
+    {
+      "counts": {
+        "failed": 0,
+        "passed": 17,
+        "skipped": 0
+      },
+      "file": "python-semver--python-semver-37ae009c7cac-fixed.json",
+      "observations": 0,
+      "repository": "python-semver/python-semver",
+      "role": "fixed"
+    },
+    {
+      "counts": {
+        "failed": 0,
+        "passed": 1,
+        "skipped": 0
+      },
+      "file": "theskumar--python-dotenv-0b2880591780-fixed.json",
+      "observations": 0,
+      "repository": "theskumar/python-dotenv",
+      "role": "fixed"
+    },
+    {
+      "counts": {
+        "failed": 1,
+        "passed": 0,
+        "skipped": 0
+      },
+      "file": "theskumar--python-dotenv-791414804eff-parent.json",
+      "observations": 0,
+      "repository": "theskumar/python-dotenv",
+      "role": "parent"
+    }
+  ],
+  "runner_sha256": "77a9bc11ab6620df56123acb6d2dee040a3cca17b15dd188a2e7c1f1c517812e",
+  "schema_version": 1,
+  "source_execution": "Real fixed upstream production/test code, not simulated outputs; graph engine not part of this reproduction.",
+  "totals": {
+    "fixed": {
+      "failed": 0,
+      "passed": 43,
+      "skipped": 0
+    },
+    "parent": {
+      "failed": 28,
+      "passed": 15,
+      "skipped": 0
+    }
+  },
+  "upstream_assertions_unmodified": true,
+  "worker_sha256": "66b85eac2791fee06bdcba9b53c4418337c9d52b5a7f387a684204e7c26cd3f6"
+}

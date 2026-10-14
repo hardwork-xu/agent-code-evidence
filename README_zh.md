@@ -26,6 +26,19 @@ Python 3.11+、macOS/Linux；日常使用不需要模型、GPU 或 API Key。
 
 [协议与命令](docs/zh/EXTERNAL_PILOT_PROTOCOL.md) · [已有工作边界](docs/zh/EXTERNAL_RELATED_WORK.md)
 
+## 显式全局绑定可靠性（2026-10-14）
+
+[解析器 4](docs/zh/FUNCTION_GLOBAL_BINDINGS.md)将可能的延迟函数 global 写入保留为未知，
+不再选择模块初始字面量。32 个受控夹具中，20 个可能写入绑定从 resolved 改为 unresolved，
+12 个无写入控制保持支持；其中一个不可达写入体现保守代价。**自然面板没有新增观察绑定
+收益**：十个锚点闭包仍全部未知，三个 Pyparsing 键原本就 unresolved。四个上游修复提供
+43 个断言，不是 43 个修复任务；这些执行预检不能衡量候选收益。
+
+[设计、命令与限制](docs/zh/FUNCTION_GLOBAL_BINDINGS.md) ·
+[配对开发结果](benchmarks/global_bindings/results/development-20261014/REPORT_zh.md)
+两次协议修订与首轮基线均保留，最后修订发生在已观察基线之后。这是开发证据，不是 blind
+评估、性能提升或成熟研究。
+
 ## 运行三跳依赖演示
 
 ```sh
@@ -155,16 +168,20 @@ MCP SDK 验证实际 stdio 调用。模型推理不在 CI 中自动运行。
 48个fresh RSS子进程完成，预设内存门槛通过。[完整成本、负面与边界](docs/zh/CATALOG_RESULTS.md)保留
 初始捕获、回放、总成本与缺失RQ锚点；不宣称成熟研究，也不新增Release。
 
+以下前三条目录复现命令须在实测提交 `affa59024f70cde86d2549b690204aa73ddccc7d` 的独立检出中运行。
+当前解析器会明确拒绝旧测量指纹。最后一条则在当前研究检出中运行，按只读源码归档核验保留记录。
+
 ```sh
 PYTHONPATH=src python examples/catalog_reuse.py
 python scripts/prepare_catalog_sources.py --output /tmp/catalog-study-inputs
 PYTHONPATH=src python scripts/run_catalog_study.py --inputs /tmp/catalog-study-inputs/ready-manifest.json --protocol benchmarks/catalog_reuse/protocol.json --output /tmp/catalog-study-results
-PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
 ```
 
 ## 研究分支（1.2.0a1）
 
-解析器 3 修复类体 global 重绑定，旧图需要重新捕获。
+解析器 4 加入延迟函数 global 守卫，解析器 3 曾引入类体 global 修复；旧图需要重新捕获。
+下面的历史测量保留其原记录的解析器版本。
 [读取集回放研究](docs/zh/RESEARCH_REPORT.md) 保留否定结果：只允许完整图的策略
 在自然锚点转换中复用 **0/480**，四库均未达到预设加速目标；所选自然图
 都有未解析前沿。这不代表成熟论文或普遍加速结论。

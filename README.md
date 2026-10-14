@@ -40,6 +40,23 @@ negative/mixed pilot, with no maturity or external-tool superiority claim.
 [Protocol and commands](docs/en/EXTERNAL_PILOT_PROTOCOL.md) ·
 [Prior-work boundary](docs/en/EXTERNAL_RELATED_WORK.md)
 
+## Explicit-global binding reliability (2026-10-14)
+
+[Resolver 4](docs/en/FUNCTION_GLOBAL_BINDINGS.md) retains possible deferred
+function-global writes as unknown instead of selecting an initial module literal.
+In 32 controlled fixtures, 20 possible-write bindings changed from resolved to
+unresolved and 12 non-writing controls remained supported; one unreachable write
+shows the conservatism cost. **No new watched-binding gain appeared in the natural
+panel**: all ten anchor closures remain unknown, and three Pyparsing keys were
+already unresolved. Four upstream fixes supplied 43 assertions, not 43 repair
+tasks; their execution preflights do not measure candidate benefit.
+
+[Design, commands and limitations](docs/en/FUNCTION_GLOBAL_BINDINGS.md) ·
+[Paired development results](benchmarks/global_bindings/results/development-20261014/REPORT_en.md)
+Two protocol amendments and the first baseline remain recorded; the last amendment
+followed an observed baseline. This is development evidence, not blind evaluation,
+performance improvement or mature research.
+
 ## Catalog-dependency study (2026-10-14)
 
 The [new typed catalog guards](docs/en/CATALOG_RESULTS.md) retain positive and negative
@@ -58,16 +75,23 @@ matched 107 unique snapshots/2568 graphs. All 48 fresh RSS workers completed and
 [Complete costs, negatives and limits](docs/en/CATALOG_RESULTS.md) include capture,
 replay, total cost and the missing RQ anchor. No maturity claim or new Release.
 
+The first three catalog reproduction commands below use a separate checkout at measured
+commit `affa59024f70cde86d2549b690204aa73ddccc7d`. The current resolver deliberately
+rejects that old measurement fingerprint. Run the last command in the current
+research checkout to validate retained records against its read-only source archive.
+
 ```sh
 PYTHONPATH=src python examples/catalog_reuse.py
 python scripts/prepare_catalog_sources.py --output /tmp/catalog-study-inputs
 PYTHONPATH=src python scripts/run_catalog_study.py --inputs /tmp/catalog-study-inputs/ready-manifest.json --protocol benchmarks/catalog_reuse/protocol.json --output /tmp/catalog-study-results
-PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
 ```
 
 ## Research branch (1.2.0a1)
 
-Resolver 3 corrects class-body global rebinding; older graphs must be recaptured.
+Resolver 4 includes deferred function-global guards; resolver 3 introduced the
+class-body global repair. Older graphs must be recaptured. Historical measurements
+below retain their recorded resolver versions.
 The new [source-read replay study](docs/en/RESEARCH_REPORT.md) preserves a negative
 result: complete-only certificates reused **0/480** natural anchor transitions,
 and no repository met the predeclared speed target. All sampled natural graphs

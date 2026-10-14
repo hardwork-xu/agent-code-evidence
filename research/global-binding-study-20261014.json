@@ -1,0 +1,46 @@
+{
+  "baseline_commit": "09d6476ae5d42c9876d0df86b3b60dfa1c2ff048",
+  "boundaries": [
+    "Explicit-global guard uses established Python rules, not novel scope analysis",
+    "Real upstream assertions do not measure candidate effect",
+    "Known Scrapy versions are posthoc development evidence",
+    "Read traces are not necessary-context labels",
+    "No new performance, formal soundness, novelty, production or mature-research claim"
+  ],
+  "classification": "explicit static binding repair, controlled development regressions and retained negative natural panel",
+  "core_commit": "99f09f4594e44fc0805b4d4a4599a0a6857490c3",
+  "development_diagnosis": "benchmarks/global_bindings/development-diagnosis/scrapy-known-source-recheck.json",
+  "facts": {
+    "changed_natural_watched_edge_keys": 0,
+    "fixed_assertions_passed": 43,
+    "head_source_repositories": 8,
+    "interface_regression_checks": 462,
+    "natural_anchor_graphs": 10,
+    "natural_complete_graphs_both": 0,
+    "nonwriting_controls_supported_both": 12,
+    "observed_runtime_changes": 19,
+    "own_cases": 32,
+    "parent_assertions_failed": 28,
+    "parent_assertions_passed": 15,
+    "possible_writes_candidate_unknown": 20,
+    "possible_writes_old_supported": 20,
+    "pyparsing_lexical_methods_passed": 23,
+    "pyparsing_state_events": 200,
+    "unreachable_write_precision_cost": 1,
+    "upstream_change_units": 4,
+    "zero_explicit_writer_sources": 7
+  },
+  "maturity": "mature_research_not_established",
+  "paired_results": "benchmarks/global_bindings/results/development-20261014",
+  "prior_39_task_pilot": "benchmarks/external_context/results/pilot-20261014T081813Z",
+  "prior_negative_catalog_study": "benchmarks/catalog_reuse/results/catalog-20261014T121419Z-84b62e96",
+  "protocol_sha256": "1a096efe67caf2c5e88310ff46d2d682319c20380bfcbbda47154ee3c94aee77",
+  "required_future_evidence": [
+    "Broader independent useful semantic/task validation",
+    "Strong external comparators and fair frozen tasks",
+    "Independent external replication and substantive prior-work boundary"
+  ],
+  "schema_version": 1,
+  "updated_at_utc": "2026-10-14T14:14:38.049416+00:00",
+  "upstream_execution": "benchmarks/global_bindings/upstream_execution/results/portable-replay-20261014"
+}

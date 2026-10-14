@@ -475,3 +475,28 @@ the compiler's `_Class__x` name. No general runtime/semantic guarantee follows.
 实际264失败、191通过；它们由20个潜在写入夹具及12个负控制派生，不是455个
 独立观察。修复版455项通过；独立审查后补充7项编译器私有名称检查。不可达
 写入仍保守拒绝，反射、外部副作用及运行时语义证明均不在本修复范围。
+
+
+## 2026-10-14 — fixed execution panel and retained negatives / 固定执行面板与负面结果
+
+Core repair99f09f4, archive binding3ae2744 and panel freeze713682b are real local
+commits. A pre-measurement runner review added failed-row retention and true
+source-node pairing. After baseline134758 had run, independent physical-line
+review required a second amendmentd6231c5; that first baseline remains recorded.
+Final paired runs134920/134921 preserve20 corrected possible bindings and12
+controls, but zero new watched-binding gain across10 natural anchors. All closures
+remain unknown. Existing Scrapy double-version diagnosis is separately recorded.
+
+The portable upstream entry point ran nine fresh processes using unmodified
+upstream assertions:43 fixed passed,15 parent passed/28 failed,23 Pyparsing
+methods passed,200 binding-state events. This reproduces known development
+preflights and does not measure candidate task benefit. Full integration first
+returned4 failures/2567 passes/2 optional skips because importing the historical
+baseline generated23-source-archive bytecode caches. Only the ten verified
+new `.pyc` files were removed; source, ledger, assertions and raw results were
+unchanged. With bytecode disabled, all44 affected archive checks passed.
+
+真实阶段提交与首基线均保留。第二次修订发生在已观察基线之后，不能称盲测。
+新自然面板无新增收益、所有闭包不完整；九进程真实上游重放保留28条父版本
+失败。全量验收首轮归档目录因字节码缓存导致4项失败，未放宽归档检查或改
+实验数字；仅删除本任务生成且已核对的10个pyc，44项相关检查随后通过。

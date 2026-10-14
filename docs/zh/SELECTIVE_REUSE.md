@@ -65,8 +65,9 @@ python scripts/run_selective_reuse.py analyze --output PATH_TO_NEW_RUN_JSON
 四个 class-global 模板；解析器 3 修复了这 12 个，其余契约标签也一致。
 另外九个运行时副作用压力例仍在保证范围外，明确单列，不伪装成安全复用。
 
-解析器 3 拒绝旧图版本，比较前必须重新捕获基线。历史实验和解析器 2 制品
-保留，不用新结果覆盖旧记录。
+以上历史检查采用解析器 3。当前解析器为 4，还保守检查延迟函数 global 写入和
+类私有绑定名；见[设计与开发证据](FUNCTION_GLOBAL_BINDINGS.md)。当前比较前必须重新捕获
+旧图策略。原始实验和解析器 2/3 制品继续作为历史记录，不作为当前证书。
 
 ## 探索性保留 unknown 结果
 

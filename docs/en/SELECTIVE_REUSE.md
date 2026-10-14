@@ -82,8 +82,11 @@ class-global templates. Resolver 3 removes those 12; the remaining contract
 labels agree. Nine runtime-effect cases remain outside the guarantee and are
 reported separately, not silently promoted to safe reuse.
 
-Resolver 3 rejects old graph versions; recapture the baseline before comparison.
-The original measurements and resolver-2 artifacts are retained as history.
+Resolver 3 was the implementation for those historical checks. The current
+resolver is 4, which also conservatively guards deferred function-global writes
+and class-private binding names; see [design and development evidence](FUNCTION_GLOBAL_BINDINGS.md).
+Recapture older graph policies before current comparisons. Original measurements
+and resolver-2/3 artifacts remain historical records, not current certificates.
 
 ## Exploratory preservation of unknown results
 
