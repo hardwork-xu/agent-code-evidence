@@ -364,3 +364,28 @@ collection; rerunning with this checkout's absolute `src` on `PYTHONPATH` passed
 are separate gates; no prior CI result is treated as validating this change.
 本地1451项通过、2项可选分词器跳过；首次调用因测试环境未加载本源码而收集失败，
 明确指向当前源码后通过。成熟度拒绝码为预期的2，不能写成成熟研究验收通过。
+
+## 2026-10-13–14: external issue-only pilot
+
+- `aefdf06` froze39 metadata-selected tasks, six unused Python repositories,
+  six methods and8000/16000/32000 UTF-8 budgets before prediction/label analysis.
+  The selection is below the proposed60-task scale, explicitly a pilot.
+- Synthetic independent reviews caught malformed-diff accounting, missing grids,
+  silent source-manifest duplicates, and lost common anchors on unresolved graph
+  owners. They were repaired before formal predictions. Darwin's unsupported
+  address-space limit required a documented pre-prediction RSS-monitor amendment.
+- `2451b574856048f3d9dded1fc1f55f209241cdc2` measured run
+  `pilot-20261014T081813Z`:39 attempted,34 predicted,5 Python-byte-cap failures,
+  32 line-scorable and7 no-target tasks. No task was replaced. Both planning gates
+  failed. Source/patch accounting and all702 score cells were recomputed with
+  separate local parsers; this is not external replication or human peer review.
+- Protocol and reproducible commands: `docs/en/EXTERNAL_PILOT_PROTOCOL.md`;
+  generated bilingual result tables: `EXTERNAL_PILOT_RESULTS.md` in `docs/en/zh`;
+  original sealed records: `benchmarks/external_context/results/`.
+- Verification commands: `PYTHONPATH=src python -m benchmarks.external_context.check`
+  and `python -m benchmarks.external_context.report --check`; default tests include
+  source-integrity, budget, scoring, monitor and result-tampering counterexamples.
+
+2026-10-13–14实际记录：先冻结39任务pilot与预算，再修复独立合成反例并提交实测源码，
+串行尝试全部任务、封存预测后评分。保留5失败和7无行目标；两推进门槛失败。
+独立本地计算核对不等于外部同行验收。没有执行上游源码、模型或商业API。

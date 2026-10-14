@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-14",
+  "evidence_level": "external_edit_localization_pilot",
+  "decision": "do_not_advance_broad_graph_context_benefit_claim",
+  "mature_research_established": false,
+  "source_commit": "2451b574856048f3d9dded1fc1f55f209241cdc2",
+  "run_id": "pilot-20261014T081813Z",
+  "selected_tasks": 39,
+  "prediction_success": 34,
+  "resource_failure": 5,
+  "line_scorable": 32,
+  "line_no_target": 7,
+  "score_cells": 702,
+  "primary_budget": 16000,
+  "primary_comparisons": [
+    {
+      "baseline": "bm25_windows",
+      "macro_f1_difference": 0.0006479851727049651,
+      "macro_recall_difference": -0.09336382598104609,
+      "numerical_planning_gate": false,
+      "per_repo": [
+        {
+          "f1_difference": 0.0,
+          "repo": "Significant-Gravitas/AutoGPT"
+        },
+        {
+          "f1_difference": 0.0006150114198975112,
+          "repo": "huggingface/transformers"
+        },
+        {
+          "f1_difference": -0.003979686251419439,
+          "repo": "keras-team/keras"
+        },
+        {
+          "f1_difference": 0.010168900322527713,
+          "repo": "langchain-ai/langchain"
+        },
+        {
+          "f1_difference": -0.002564102564102564,
+          "repo": "tensorflow/models"
+        },
+        {
+          "f1_difference": -0.00035221189067342895,
+          "repo": "yt-dlp/yt-dlp"
+        }
+      ],
+      "positive_repos": 2
+    },
+    {
+      "baseline": "bm25_declarations",
+      "macro_f1_difference": -0.0025980775715528023,
+      "macro_recall_difference": -0.09722716283287103,
+      "numerical_planning_gate": false,
+      "per_repo": [
+        {
+          "f1_difference": 0.0,
+          "repo": "Significant-Gravitas/AutoGPT"
+        },
+        {
+          "f1_difference": 0.006691000931454291,
+          "repo": "huggingface/transformers"
+        },
+        {
+          "f1_difference": -0.002613240418118467,
+          "repo": "keras-team/keras"
+        },
+        {
+          "f1_difference": 0.006666994101907613,
+          "repo": "langchain-ai/langchain"
+        },
+        {
+          "f1_difference": -0.003076923076923077,
+          "repo": "tensorflow/models"
+        },
+        {
+          "f1_difference": -0.023256296967637174,
+          "repo": "yt-dlp/yt-dlp"
+        }
+      ],
+      "positive_repos": 2
+    }
+  ],
+  "evidence_sha256": {
+    "benchmarks/external_context/results/pilot-20261014T081813Z/manifest.json": "483349232c62441feaa0e7129401c1017132ac07f7755d5d80029147f7ba5e3f",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/postrun-label-source-audit.json": "46208ac2a6a668c7326936d6c8952fdf48827d080370e1848e5e38790af948cd",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/postrun-score-audit.json": "d4da7d0b8d598adb495a7f2c080dbd3353aa160ed05c3bec7e6e1cb9361ba77c",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-000.json": "98adff4ee0936df98f9a951306df54483eb83fa257f4492686f754762ae79b50",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-001.json": "7705edffd70842503243b5b1779b4173b3af89d86b63edf273b23f9ad7809cbf",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-002.json": "5c22fc9a39ff90656f56ffe374f20ce519c50717024201c631b4cd9a0ade1452",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-003.json": "9f48a1c831f664e301e4c04691bc7bc7fba6873722fe75dbb05a64e63eccf008",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-004.json": "f071de8281cf622bfb0fa63f24c5e1762b7a7feee61afe01b67fd1920ce40f50",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-005.json": "3edbb6d49cec93a83da2ccde6d4d2311b5c6ca31487502cd88e0797a0902048e",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-006.json": "a4dbd929d8410e241b7cc47bbad5090f9c12f373ad1ef7d7989368d3cbb394b4",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-007.json": "7795fab4eea7e8751a6e30a4c7a8fa159e39e2fa8c3a2a9b5611d65b06c56026",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-008.json": "e841c5f6b0ea4f4108c2f3a70a6a55ca410ba88006da545ea895a383185e265f",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-009.json": "7b1599fa85c8f4a28ded4d1eb39a2fae2ed0df98ffe04ed35e51682a9db224ba",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-010.json": "b0cf4d87c5cc654e1a7927d56eb1da46622ec5cfc0c0dbaf3d2e9a16f4aa9362",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-011.json": "0b30cfe2e17144a54e5f0e69ab4bbce2abc9d24f8dd491eb64249304632dcbe8",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-012.json": "fb52086f3e4c68006049e84c39b6cbac5932a9de34e12835fb39e51c5ed37d73",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-013.json": "81521e3caf7836da1bb0d0026d9047889daf2eb90a367da88bf6e5ae7810d4d9",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-014.json": "51735c29a6598594d29cc906a249a3d773128842fef9769c83eabe0279fc7a86",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-015.json": "1b01338087053763a493a71dac8603cc3221b1e957dacb07795a5e3927416a05",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-016.json": "c8a1715451f2693cb57b97eeb2387804b93c5c9530968595e448cf2e64e54981",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-017.json": "b4e42afb4c36189e0e417f710459865cc40d333d8fca5504cbe04cabc8fe85f8",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-018.json": "3947f1da46ef9d9d6653ef3db98670ad985d6915294f55231a06ba0be4b4f13c",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-019.json": "561528ae5c1438e58749e4fc9f8fdbc4593d09b967bdf947e560cd11b358fc38",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-020.json": "bc8d8ceb509dcbb1aebd6b7d3b847c8f89816609693b549aae9642939d4083d2",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-021.json": "4ca51177e293113916046bd9bc60f69d9b677f59f3cfd66c39c8df9751531c3f",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-022.json": "49bf77b9464227ca0eb0fb55114f7624a6f80c76f8480f3396de1ca8b319832f",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-023.json": "b9d5ac57ba1e4cb2300ff03d1965b0cb4f1b9c563f999e4688313d15d180fd6d",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-024.json": "e4fae0e012b165d1ca9b4897f9211678b099beca2cf8ee6b9991417017cf26a5",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-025.json": "359fe7ea0dc7a4bfcacbde5b5924da12e1b30c3f9bea8704541568bc3564328e",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-026.json": "ec056add983006c940e4ddd3bf795f1835c95c9af3d2e4cd23d2962140b327dc",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-027.json": "ec8adb7918a9c0ad9e239a5ca1c70ffbfb91212c0555e6375b57a7b5d2625251",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-028.json": "393394e02a868f320ab3243b46d650a2b2c95c500482efd2140f068b974340c7",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-029.json": "70a63d435472ad11249cf7d3b23e0ff491787c43bba2f7bbefc737de0c30814b",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-030.json": "397398ea05482a0f0cc804a6ecfe392208391069e7fb81fb8ed10e45ac234fe2",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-031.json": "e230a91c3d090aa90a5d1c2a1e871916c301a6ae719cb1bc7d88db38d4e69dcd",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-032.json": "839926fb75c81f4e756e9f3a2838124ffa3f71ea48f422ec8e6019d8433cd15e",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-033.json": "4e53d0cff2811a134e936b5740d3f4f98fa7dbc510b03a695649af5b9330718f",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-034.json": "6f9d91a88b230483275318de8efd6ec69d20ec7986af2f2513a9ab5dc280e740",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-035.json": "264312faabb25edeff38c6d5f0da49c0eee20da23914fba8c175631b4998221d",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-036.json": "4df7194e46d98132140e2b62ef3eee7efa7aef30418fab32cc1c49933f34c394",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-037.json": "a02cd728a84d42dc8c71ad346e13784891efba7862d88231f66c976c639c100c",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-038.json": "36adf01dedbe458bab0bf9a5ef3941c7012a4b0147c0c328baf183dab285541b",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-seal.json": "77c93f693a702543607c48a21a9b6bc7be0595b610cbfa4bbb4e79afe265a36c",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/scores.json": "37f86d7c50ec6de86644c37f3f70328901967ad71342936e39f0785eb5cf82c6",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/summary.json": "ec8e1ea77147752378a1a41b4519a0d1af4a7c9e4794471b55472d07d9719e14",
+    "benchmarks/external_context/results/pilot-20261014T081813Z/targets.json": "78668345426df2a4714a45277e58c0cab0ff3b7896b86d4551cf34cfd734b268"
+  },
+  "boundaries": [
+    "Edit coordinates are proxy labels, not necessary context or repair success.",
+    "Separately implemented local audits are not external replication or independent human scholarly review.",
+    "Original predictions lack anchor/candidate sidecars; any later deterministic diagnostic replay is post-hoc and separately labeled.",
+    "No direct run of Agentless, Aider or official SWE-bench retrieval.",
+    "Existing version-replay cost and unknown-source evidence claims retain their separate scope."
+  ],
+  "next_research_decision": {
+    "status": "new_study_not_run",
+    "focus": "Versioned source-evidence reliability and replay cost/abstention under natural changes, rather than promoting static graph localization.",
+    "requirements": [
+      "Untouched licensed tasks/repositories and registered mutation/update schedule",
+      "Strong persistent indexing/whole-corpus guard and pinned native refresh baseline",
+      "Separate source identity, semantic witness and downstream task outcomes",
+      "Fixed correctness, cost and useful-coverage endpoints before tuning",
+      "Retain negative cases and seek external reproduction/critique before mature claims"
+    ]
+  },
+  "posthoc_diagnostic": {
+    "evidence_level": "same-source deterministic replay of known packing failures, not independent holdout",
+    "tasks": 4,
+    "matched_outputs": 72,
+    "displacements": 5,
+    "cause": "64–68 extra metadata bytes rejected whole source pieces under frozen budgets",
+    "raw_primary_unchanged": true,
+    "manifest": "benchmarks/external_context/diagnostics/posthoc-packing-replay-20261014/manifest.json",
+    "evidence_sha256": {
+      "benchmarks/external_context/diagnostics/posthoc-packing-replay-20261014/summary.json": "602977fffba59aa59b058aa4ae21e0a0af8bea5a6048becee14d58cd4ea8feeb",
+      "benchmarks/external_context/diagnostics/posthoc-packing-replay-20261014/yt-dlp__yt-dlp-8917.json": "632db54d65be5646d3a3c5e5582159502b61c2e8b7b920d4c0e589d14e93d79f",
+      "benchmarks/external_context/diagnostics/posthoc-packing-replay-20261014/huggingface__transformers-13865.json": "699016c058eafcbabd91f1117705f52b3295d5d7a8f46338ff91719d0e6dfdf6",
+      "benchmarks/external_context/diagnostics/posthoc-packing-replay-20261014/huggingface__transformers-15913.json": "0be617b37775cdc409501323e8687d59b0d60e49602368c38df375fcb144c769",
+      "benchmarks/external_context/diagnostics/posthoc-packing-replay-20261014/huggingface__transformers-13989.json": "1300ef3e69ebb4264ba5aabd93cd3ee1ae014dfade0ccbdb5051f5f543ae3158",
+      "benchmarks/external_context/diagnostics/posthoc-packing-replay-20261014/manifest.json": "262942b6886bc1b8bb3d32630ef350b1ea9966a54cbc5474f51172abb363b352"
+    }
+  }
+}

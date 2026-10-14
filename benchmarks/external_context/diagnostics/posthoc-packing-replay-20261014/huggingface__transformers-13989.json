@@ -1,0 +1,472 @@
+{
+  "instance_id": "huggingface__transformers-13989",
+  "status": "all18_reproduced_exactly",
+  "all18_hash_blocks_bytes_status_match": true,
+  "query_sha256": "49cea1d4602b96592414a124d449c9813e8bf2cdc135778dd696a0dc41792249",
+  "archive_sha256": "83347f03d1043bafd6ca1f5f30b9b14aad324400aaf2722128b2e8a8d2301af7",
+  "anchors_identical_all_methods_budgets": true,
+  "anchors": [
+    {
+      "id": "2ba0a1cc4e17a2de2a022e6ddb335a9f3dc55613f7c538188ae87e2de6f4ea2f",
+      "path": "src/transformers/trainer_pt_utils.py",
+      "start_line": 852,
+      "end_line": 938,
+      "text_sha256": "a214afb2ae51a8f7015b4f20f36d86b2d762469151e69f81778c6d1819c0d9f9",
+      "file_sha256": "ff3cfa8255706d7be43526d6ea083154c5784fe650a1a82f22dd24e117f51d23"
+    },
+    {
+      "id": "824b6de3acf65ed3c107f49783b4c75d31c091991a4fe047981e694d37859788",
+      "path": "src/transformers/commands/env.py",
+      "start_line": 33,
+      "end_line": 85,
+      "text_sha256": "2594ea450db18caf1938d9439fcb4da00b587fb42530f62b305dbd9d9de0c283",
+      "file_sha256": "1770a6008736ccc195ec962bd4d5b464c5c7c64ccc5e3fd85515cec7cbaae372"
+    },
+    {
+      "id": "ca8c54002886d531d568112ccb5595b0cc47ffa704d9f67b9d7d8af2477ede04",
+      "path": "src/transformers/modeling_utils.py",
+      "start_line": 1064,
+      "end_line": 1465,
+      "text_sha256": "5cbce4698def26c50d0a62a0a2ce3425560e7c132b5ab4a06fa1b262c7cfdde3",
+      "file_sha256": "276391b3a6f8dff4cb99a30325c05ae6fb10d56add6aa139eecc4fce108cd192"
+    }
+  ],
+  "cases": [
+    {
+      "budget": 16000,
+      "anchor_candidates_in_graph": true,
+      "anchor_candidate_count": 9,
+      "graph_candidate_count": 46,
+      "anchor_candidate_spans": [
+        {
+          "path": "src/transformers/trainer_pt_utils.py",
+          "start": 852,
+          "end": 931
+        },
+        {
+          "path": "src/transformers/trainer_pt_utils.py",
+          "start": 932,
+          "end": 938
+        },
+        {
+          "path": "src/transformers/commands/env.py",
+          "start": 33,
+          "end": 85
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1064,
+          "end": 1143
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1144,
+          "end": 1223
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1224,
+          "end": 1303
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1304,
+          "end": 1383
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1384,
+          "end": 1463
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1464,
+          "end": 1465
+        }
+      ],
+      "removed_delivered_anchor_spans": [
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start_line": 1224,
+          "end_line": 1303
+        }
+      ],
+      "empty_envelope_bytes": {
+        "anchors_only": 3077,
+        "graph_expand": 3143
+      },
+      "rejections": [
+        {
+          "graph_rejected_piece": {
+            "piece": {
+              "path": "src/transformers/modeling_utils.py",
+              "start_line": 1224,
+              "end_line": 1303
+            },
+            "prior_blocks": [
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 852,
+                "end_line": 931
+              },
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 932,
+                "end_line": 938
+              },
+              {
+                "path": "src/transformers/commands/env.py",
+                "start_line": 33,
+                "end_line": 85
+              }
+            ],
+            "trial_bytes": 16042,
+            "accepted": false,
+            "trial_field_value_bytes": {
+              "blocks": 12590,
+              "budget": 5,
+              "candidate_span_count": 2,
+              "frontier_count": 2,
+              "frontier_summary": 105,
+              "frontier_summary_truncated": 5,
+              "issue": 2594,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 4,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 313,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 3,
+                "kind": "truncated"
+              },
+              {
+                "count": 40,
+                "kind": "unresolved"
+              },
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 55,
+            "candidate_span_count": 46,
+            "omitted_source_lines": 1601
+          },
+          "removed_covered": [
+            {
+              "path": "src/transformers/modeling_utils.py",
+              "start_line": 1224,
+              "end_line": 1303
+            }
+          ],
+          "matched_anchor_accepted_piece": {
+            "piece": {
+              "path": "src/transformers/modeling_utils.py",
+              "start_line": 1224,
+              "end_line": 1303
+            },
+            "prior_blocks": [
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 852,
+                "end_line": 931
+              },
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 932,
+                "end_line": 938
+              },
+              {
+                "path": "src/transformers/commands/env.py",
+                "start_line": 33,
+                "end_line": 85
+              }
+            ],
+            "trial_bytes": 15976,
+            "accepted": true,
+            "trial_field_value_bytes": {
+              "blocks": 12590,
+              "budget": 5,
+              "candidate_span_count": 1,
+              "frontier_count": 2,
+              "frontier_summary": 41,
+              "frontier_summary_truncated": 5,
+              "issue": 2594,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 3,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 313,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 12,
+            "candidate_span_count": 9,
+            "omitted_source_lines": 322
+          },
+          "same_prior_blocks": true,
+          "trial_byte_difference": 66,
+          "field_value_byte_differences": {
+            "candidate_span_count": 1,
+            "frontier_summary": 64,
+            "omitted_source_lines": 1
+          },
+          "confirmed_same_source_metadata_displacement": true
+        }
+      ],
+      "all_removed_lines_have_observed_whole_piece_rejection": true
+    },
+    {
+      "budget": 32000,
+      "anchor_candidates_in_graph": true,
+      "anchor_candidate_count": 9,
+      "graph_candidate_count": 46,
+      "anchor_candidate_spans": [
+        {
+          "path": "src/transformers/trainer_pt_utils.py",
+          "start": 852,
+          "end": 931
+        },
+        {
+          "path": "src/transformers/trainer_pt_utils.py",
+          "start": 932,
+          "end": 938
+        },
+        {
+          "path": "src/transformers/commands/env.py",
+          "start": 33,
+          "end": 85
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1064,
+          "end": 1143
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1144,
+          "end": 1223
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1224,
+          "end": 1303
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1304,
+          "end": 1383
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1384,
+          "end": 1463
+        },
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start": 1464,
+          "end": 1465
+        }
+      ],
+      "removed_delivered_anchor_spans": [
+        {
+          "path": "src/transformers/modeling_utils.py",
+          "start_line": 1464,
+          "end_line": 1465
+        }
+      ],
+      "empty_envelope_bytes": {
+        "anchors_only": 3077,
+        "graph_expand": 3143
+      },
+      "rejections": [
+        {
+          "graph_rejected_piece": {
+            "piece": {
+              "path": "src/transformers/modeling_utils.py",
+              "start_line": 1464,
+              "end_line": 1465
+            },
+            "prior_blocks": [
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 852,
+                "end_line": 931
+              },
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 932,
+                "end_line": 938
+              },
+              {
+                "path": "src/transformers/commands/env.py",
+                "start_line": 33,
+                "end_line": 85
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1064,
+                "end_line": 1143
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1144,
+                "end_line": 1223
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1224,
+                "end_line": 1303
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1384,
+                "end_line": 1463
+              }
+            ],
+            "trial_bytes": 32046,
+            "accepted": false,
+            "trial_field_value_bytes": {
+              "blocks": 28594,
+              "budget": 5,
+              "candidate_span_count": 2,
+              "frontier_count": 2,
+              "frontier_summary": 105,
+              "frontier_summary_truncated": 5,
+              "issue": 2594,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 4,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 313,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 3,
+                "kind": "truncated"
+              },
+              {
+                "count": 40,
+                "kind": "unresolved"
+              },
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 55,
+            "candidate_span_count": 46,
+            "omitted_source_lines": 1359
+          },
+          "removed_covered": [
+            {
+              "path": "src/transformers/modeling_utils.py",
+              "start_line": 1464,
+              "end_line": 1465
+            }
+          ],
+          "matched_anchor_accepted_piece": {
+            "piece": {
+              "path": "src/transformers/modeling_utils.py",
+              "start_line": 1464,
+              "end_line": 1465
+            },
+            "prior_blocks": [
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 852,
+                "end_line": 931
+              },
+              {
+                "path": "src/transformers/trainer_pt_utils.py",
+                "start_line": 932,
+                "end_line": 938
+              },
+              {
+                "path": "src/transformers/commands/env.py",
+                "start_line": 33,
+                "end_line": 85
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1064,
+                "end_line": 1143
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1144,
+                "end_line": 1223
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1224,
+                "end_line": 1303
+              },
+              {
+                "path": "src/transformers/modeling_utils.py",
+                "start_line": 1384,
+                "end_line": 1463
+              }
+            ],
+            "trial_bytes": 31979,
+            "accepted": true,
+            "trial_field_value_bytes": {
+              "blocks": 28594,
+              "budget": 5,
+              "candidate_span_count": 1,
+              "frontier_count": 2,
+              "frontier_summary": 41,
+              "frontier_summary_truncated": 5,
+              "issue": 2594,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 2,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 313,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 12,
+            "candidate_span_count": 9,
+            "omitted_source_lines": 80
+          },
+          "same_prior_blocks": true,
+          "trial_byte_difference": 67,
+          "field_value_byte_differences": {
+            "candidate_span_count": 1,
+            "frontier_summary": 64,
+            "omitted_source_lines": 2
+          },
+          "confirmed_same_source_metadata_displacement": true
+        }
+      ],
+      "all_removed_lines_have_observed_whole_piece_rejection": true
+    }
+  ]
+}

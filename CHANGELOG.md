@@ -26,3 +26,12 @@
 This alpha is a bounded research artifact. It does not claim a mature paper,
 new general incremental algorithm, or improved coding-agent task success.
 本预发布版本为有界研究制品，未宣称成熟论文、通用新算法或代码任务收益。
+
+## Unreleased — 2026-10-14 external research pilot
+
+- Add frozen issue-only real-task evaluation, strict shared byte budgets,
+  sealed predictions, reference-edit proxies and explicit failure denominators.
+- Retain39 task attempts, five source-cap failures and both failed advancement
+  gates; publish generated bilingual results and coordinate-only raw evidence.
+- External replication, agent repair gains and mature research remain unestablished.
+- 新增冻结真实任务试验、预算与封存核对，完整保留失败；未确立研究成熟度。

@@ -1,0 +1,4989 @@
+{
+  "audit_at_utc": "2026-10-14T08:31:42.071418+00:00",
+  "run_id": "pilot-20261014T081813Z",
+  "source_commit": "2451b574856048f3d9dded1fc1f55f209241cdc2",
+  "audit_script_sha256": "53a315e639acd27f3df452d48eb8ece5c47e6345fe9398ee6fecea46b9f60d23",
+  "status": "passed",
+  "independence": "No benchmark modules/checkers imported or invoked. Own diff section/hunk parser plus Git apply --numstat, set intersection counts and exact Fraction arithmetic.",
+  "checks": {
+    "checked": 28482
+  },
+  "discrepancies": [],
+  "original_run_file_hashes": {
+    "prediction-003.json": "9f48a1c831f664e301e4c04691bc7bc7fba6873722fe75dbb05a64e63eccf008",
+    "prediction-015.json": "1b01338087053763a493a71dac8603cc3221b1e957dacb07795a5e3927416a05",
+    "summary.json": "ec8e1ea77147752378a1a41b4519a0d1af4a7c9e4794471b55472d07d9719e14",
+    "prediction-019.json": "561528ae5c1438e58749e4fc9f8fdbc4593d09b967bdf947e560cd11b358fc38",
+    "prediction-035.json": "264312faabb25edeff38c6d5f0da49c0eee20da23914fba8c175631b4998221d",
+    "prediction-023.json": "b9d5ac57ba1e4cb2300ff03d1965b0cb4f1b9c563f999e4688313d15d180fd6d",
+    "prediction-022.json": "49bf77b9464227ca0eb0fb55114f7624a6f80c76f8480f3396de1ca8b319832f",
+    "prediction-034.json": "6f9d91a88b230483275318de8efd6ec69d20ec7986af2f2513a9ab5dc280e740",
+    "scores.json": "37f86d7c50ec6de86644c37f3f70328901967ad71342936e39f0785eb5cf82c6",
+    "prediction-018.json": "3947f1da46ef9d9d6653ef3db98670ad985d6915294f55231a06ba0be4b4f13c",
+    "prediction-038.json": "36adf01dedbe458bab0bf9a5ef3941c7012a4b0147c0c328baf183dab285541b",
+    "prediction-014.json": "51735c29a6598594d29cc906a249a3d773128842fef9769c83eabe0279fc7a86",
+    "prediction-002.json": "5c22fc9a39ff90656f56ffe374f20ce519c50717024201c631b4cd9a0ade1452",
+    "prediction-009.json": "7b1599fa85c8f4a28ded4d1eb39a2fae2ed0df98ffe04ed35e51682a9db224ba",
+    "prediction-033.json": "4e53d0cff2811a134e936b5740d3f4f98fa7dbc510b03a695649af5b9330718f",
+    "prediction-025.json": "359fe7ea0dc7a4bfcacbde5b5924da12e1b30c3f9bea8704541568bc3564328e",
+    "prediction-005.json": "3edbb6d49cec93a83da2ccde6d4d2311b5c6ca31487502cd88e0797a0902048e",
+    "prediction-013.json": "81521e3caf7836da1bb0d0026d9047889daf2eb90a367da88bf6e5ae7810d4d9",
+    "prediction-029.json": "70a63d435472ad11249cf7d3b23e0ff491787c43bba2f7bbefc737de0c30814b",
+    "prediction-028.json": "393394e02a868f320ab3243b46d650a2b2c95c500482efd2140f068b974340c7",
+    "prediction-012.json": "fb52086f3e4c68006049e84c39b6cbac5932a9de34e12835fb39e51c5ed37d73",
+    "prediction-004.json": "f071de8281cf622bfb0fa63f24c5e1762b7a7feee61afe01b67fd1920ce40f50",
+    "prediction-024.json": "e4fae0e012b165d1ca9b4897f9211678b099beca2cf8ee6b9991417017cf26a5",
+    "prediction-032.json": "839926fb75c81f4e756e9f3a2838124ffa3f71ea48f422ec8e6019d8433cd15e",
+    "prediction-008.json": "e841c5f6b0ea4f4108c2f3a70a6a55ca410ba88006da545ea895a383185e265f",
+    "prediction-027.json": "ec8adb7918a9c0ad9e239a5ca1c70ffbfb91212c0555e6375b57a7b5d2625251",
+    "prediction-031.json": "e230a91c3d090aa90a5d1c2a1e871916c301a6ae719cb1bc7d88db38d4e69dcd",
+    "prediction-seal.json": "77c93f693a702543607c48a21a9b6bc7be0595b610cbfa4bbb4e79afe265a36c",
+    "prediction-011.json": "0b30cfe2e17144a54e5f0e69ab4bbce2abc9d24f8dd491eb64249304632dcbe8",
+    "prediction-007.json": "7795fab4eea7e8751a6e30a4c7a8fa159e39e2fa8c3a2a9b5611d65b06c56026",
+    "prediction-006.json": "a4dbd929d8410e241b7cc47bbad5090f9c12f373ad1ef7d7989368d3cbb394b4",
+    "prediction-010.json": "b0cf4d87c5cc654e1a7927d56eb1da46622ec5cfc0c0dbaf3d2e9a16f4aa9362",
+    "manifest.json": "483349232c62441feaa0e7129401c1017132ac07f7755d5d80029147f7ba5e3f",
+    "prediction-030.json": "397398ea05482a0f0cc804a6ecfe392208391069e7fb81fb8ed10e45ac234fe2",
+    "prediction-026.json": "ec056add983006c940e4ddd3bf795f1835c95c9af3d2e4cd23d2962140b327dc",
+    "prediction-017.json": "b4e42afb4c36189e0e417f710459865cc40d333d8fca5504cbe04cabc8fe85f8",
+    "prediction-001.json": "7705edffd70842503243b5b1779b4173b3af89d86b63edf273b23f9ad7809cbf",
+    "prediction-021.json": "4ca51177e293113916046bd9bc60f69d9b677f59f3cfd66c39c8df9751531c3f",
+    "prediction-037.json": "a02cd728a84d42dc8c71ad346e13784891efba7862d88231f66c976c639c100c",
+    "prediction-036.json": "4df7194e46d98132140e2b62ef3eee7efa7aef30418fab32cc1c49933f34c394",
+    "prediction-020.json": "bc8d8ceb509dcbb1aebd6b7d3b847c8f89816609693b549aae9642939d4083d2",
+    "prediction-000.json": "98adff4ee0936df98f9a951306df54483eb83fa257f4492686f754762ae79b50",
+    "prediction-016.json": "c8a1715451f2693cb57b97eeb2387804b93c5c9530968595e448cf2e64e54981"
+  },
+  "raw_unchanged": true,
+  "prediction_counts": {
+    "predicted": 34,
+    "failed": 5
+  },
+  "failure_counts": {
+    "source_resource_limit": 5
+  },
+  "context_status_counts": {
+    "budget_too_small": 30,
+    "partial": 492,
+    "ready": 90
+  },
+  "task_count": 39,
+  "score_cells": 702,
+  "label_parse_git_numstat_verified": 39,
+  "line_scorable_tasks": 32,
+  "line_unscorable_tasks": [
+    "huggingface__transformers-31095",
+    "keras-team__keras-19466",
+    "keras-team__keras-3983",
+    "langchain-ai__langchain-6456",
+    "langchain-ai__langchain-7653",
+    "yt-dlp__yt-dlp-3435",
+    "yt-dlp__yt-dlp-4524"
+  ],
+  "task_diagnostics": [
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-4652",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "prediction_status": "predicted",
+      "python_removed_lines": 13,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 3,
+      "added_lines": 41,
+      "removed_lines": 13
+    },
+    {
+      "instance_id": "huggingface__transformers-13865",
+      "repo": "huggingface/transformers",
+      "prediction_status": "predicted",
+      "python_removed_lines": 2,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 4,
+      "added_lines": 15,
+      "removed_lines": 2
+    },
+    {
+      "instance_id": "huggingface__transformers-15913",
+      "repo": "huggingface/transformers",
+      "prediction_status": "predicted",
+      "python_removed_lines": 9,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 3,
+      "added_lines": 9,
+      "removed_lines": 9
+    },
+    {
+      "instance_id": "huggingface__transformers-7075",
+      "repo": "huggingface/transformers",
+      "prediction_status": "predicted",
+      "python_removed_lines": 1018,
+      "edited_existing_python_files": 8,
+      "line_scorable": true,
+      "hunks": 12,
+      "added_lines": 1126,
+      "removed_lines": 1018
+    },
+    {
+      "instance_id": "huggingface__transformers-20136",
+      "repo": "huggingface/transformers",
+      "prediction_status": "failed",
+      "python_removed_lines": 78,
+      "edited_existing_python_files": 4,
+      "line_scorable": true,
+      "hunks": 34,
+      "added_lines": 537,
+      "removed_lines": 78
+    },
+    {
+      "instance_id": "huggingface__transformers-19219",
+      "repo": "huggingface/transformers",
+      "prediction_status": "failed",
+      "python_removed_lines": 2,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 2,
+      "added_lines": 4,
+      "removed_lines": 2
+    },
+    {
+      "instance_id": "huggingface__transformers-13989",
+      "repo": "huggingface/transformers",
+      "prediction_status": "predicted",
+      "python_removed_lines": 9,
+      "edited_existing_python_files": 3,
+      "line_scorable": true,
+      "hunks": 12,
+      "added_lines": 150,
+      "removed_lines": 10
+    },
+    {
+      "instance_id": "huggingface__transformers-27717",
+      "repo": "huggingface/transformers",
+      "prediction_status": "failed",
+      "python_removed_lines": 47,
+      "edited_existing_python_files": 3,
+      "line_scorable": true,
+      "hunks": 12,
+      "added_lines": 72,
+      "removed_lines": 47
+    },
+    {
+      "instance_id": "huggingface__transformers-3198",
+      "repo": "huggingface/transformers",
+      "prediction_status": "predicted",
+      "python_removed_lines": 3,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 4,
+      "added_lines": 7,
+      "removed_lines": 3
+    },
+    {
+      "instance_id": "huggingface__transformers-27561",
+      "repo": "huggingface/transformers",
+      "prediction_status": "failed",
+      "python_removed_lines": 1,
+      "edited_existing_python_files": 2,
+      "line_scorable": true,
+      "hunks": 3,
+      "added_lines": 33,
+      "removed_lines": 1
+    },
+    {
+      "instance_id": "huggingface__transformers-31095",
+      "repo": "huggingface/transformers",
+      "prediction_status": "failed",
+      "python_removed_lines": 0,
+      "edited_existing_python_files": 2,
+      "line_scorable": false,
+      "hunks": 3,
+      "added_lines": 11,
+      "removed_lines": 0
+    },
+    {
+      "instance_id": "keras-team__keras-19915",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 3,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 8,
+      "removed_lines": 3
+    },
+    {
+      "instance_id": "keras-team__keras-19466",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 0,
+      "edited_existing_python_files": 1,
+      "line_scorable": false,
+      "hunks": 2,
+      "added_lines": 5,
+      "removed_lines": 0
+    },
+    {
+      "instance_id": "keras-team__keras-20002",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 4,
+      "edited_existing_python_files": 2,
+      "line_scorable": true,
+      "hunks": 2,
+      "added_lines": 13,
+      "removed_lines": 4
+    },
+    {
+      "instance_id": "keras-team__keras-1767",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 3,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 3,
+      "removed_lines": 3
+    },
+    {
+      "instance_id": "keras-team__keras-19955",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 75,
+      "edited_existing_python_files": 5,
+      "line_scorable": true,
+      "hunks": 10,
+      "added_lines": 81,
+      "removed_lines": 75
+    },
+    {
+      "instance_id": "keras-team__keras-20008",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 12,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 9,
+      "removed_lines": 12
+    },
+    {
+      "instance_id": "keras-team__keras-19863",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 5,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 19,
+      "removed_lines": 5
+    },
+    {
+      "instance_id": "keras-team__keras-3983",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 0,
+      "edited_existing_python_files": 1,
+      "line_scorable": false,
+      "hunks": 1,
+      "added_lines": 80,
+      "removed_lines": 0
+    },
+    {
+      "instance_id": "keras-team__keras-19284",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 4,
+      "edited_existing_python_files": 2,
+      "line_scorable": true,
+      "hunks": 2,
+      "added_lines": 2,
+      "removed_lines": 4
+    },
+    {
+      "instance_id": "keras-team__keras-19826",
+      "repo": "keras-team/keras",
+      "prediction_status": "predicted",
+      "python_removed_lines": 9,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 27,
+      "removed_lines": 9
+    },
+    {
+      "instance_id": "langchain-ai__langchain-5625",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 17,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 5,
+      "added_lines": 15,
+      "removed_lines": 17
+    },
+    {
+      "instance_id": "langchain-ai__langchain-6456",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 0,
+      "edited_existing_python_files": 1,
+      "line_scorable": false,
+      "hunks": 1,
+      "added_lines": 2,
+      "removed_lines": 0
+    },
+    {
+      "instance_id": "langchain-ai__langchain-5450",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 4,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 5,
+      "added_lines": 14,
+      "removed_lines": 4
+    },
+    {
+      "instance_id": "langchain-ai__langchain-6483",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 1,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 2,
+      "added_lines": 3,
+      "removed_lines": 1
+    },
+    {
+      "instance_id": "langchain-ai__langchain-6765",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 1,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 1,
+      "removed_lines": 1
+    },
+    {
+      "instance_id": "langchain-ai__langchain-19331",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 31,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 10,
+      "added_lines": 53,
+      "removed_lines": 31
+    },
+    {
+      "instance_id": "langchain-ai__langchain-4420",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 1,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 1,
+      "removed_lines": 1
+    },
+    {
+      "instance_id": "langchain-ai__langchain-7653",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 0,
+      "edited_existing_python_files": 1,
+      "line_scorable": false,
+      "hunks": 1,
+      "added_lines": 1,
+      "removed_lines": 0
+    },
+    {
+      "instance_id": "langchain-ai__langchain-21201",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 7,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 2,
+      "added_lines": 6,
+      "removed_lines": 7
+    },
+    {
+      "instance_id": "langchain-ai__langchain-5432",
+      "repo": "langchain-ai/langchain",
+      "prediction_status": "predicted",
+      "python_removed_lines": 1,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 7,
+      "removed_lines": 1
+    },
+    {
+      "instance_id": "tensorflow__models-4628",
+      "repo": "tensorflow/models",
+      "prediction_status": "predicted",
+      "python_removed_lines": 2,
+      "edited_existing_python_files": 3,
+      "line_scorable": true,
+      "hunks": 4,
+      "added_lines": 12,
+      "removed_lines": 2
+    },
+    {
+      "instance_id": "tensorflow__models-2727",
+      "repo": "tensorflow/models",
+      "prediction_status": "predicted",
+      "python_removed_lines": 46,
+      "edited_existing_python_files": 2,
+      "line_scorable": true,
+      "hunks": 34,
+      "added_lines": 650,
+      "removed_lines": 93
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-1649",
+      "repo": "yt-dlp/yt-dlp",
+      "prediction_status": "predicted",
+      "python_removed_lines": 267,
+      "edited_existing_python_files": 13,
+      "line_scorable": true,
+      "hunks": 39,
+      "added_lines": 254,
+      "removed_lines": 275
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-8917",
+      "repo": "yt-dlp/yt-dlp",
+      "prediction_status": "predicted",
+      "python_removed_lines": 16,
+      "edited_existing_python_files": 4,
+      "line_scorable": true,
+      "hunks": 15,
+      "added_lines": 60,
+      "removed_lines": 23
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-5933",
+      "repo": "yt-dlp/yt-dlp",
+      "prediction_status": "predicted",
+      "python_removed_lines": 65,
+      "edited_existing_python_files": 3,
+      "line_scorable": true,
+      "hunks": 10,
+      "added_lines": 33,
+      "removed_lines": 67
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-3435",
+      "repo": "yt-dlp/yt-dlp",
+      "prediction_status": "predicted",
+      "python_removed_lines": 0,
+      "edited_existing_python_files": 4,
+      "line_scorable": false,
+      "hunks": 5,
+      "added_lines": 37,
+      "removed_lines": 0
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-4841",
+      "repo": "yt-dlp/yt-dlp",
+      "prediction_status": "predicted",
+      "python_removed_lines": 1,
+      "edited_existing_python_files": 1,
+      "line_scorable": true,
+      "hunks": 1,
+      "added_lines": 1,
+      "removed_lines": 1
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-4524",
+      "repo": "yt-dlp/yt-dlp",
+      "prediction_status": "predicted",
+      "python_removed_lines": 0,
+      "edited_existing_python_files": 3,
+      "line_scorable": false,
+      "hunks": 3,
+      "added_lines": 37,
+      "removed_lines": 0
+    }
+  ],
+  "independent_repo_cells": [
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "anchors_only",
+      "budget": 8000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "anchors_only",
+      "budget": 16000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "anchors_only",
+      "budget": 32000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "bm25_declarations",
+      "budget": 8000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "bm25_declarations",
+      "budget": 16000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "bm25_declarations",
+      "budget": 32000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "bm25_windows",
+      "budget": 8000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "bm25_windows",
+      "budget": 16000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "bm25_windows",
+      "budget": 32000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "file_expand",
+      "budget": 8000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "file_expand",
+      "budget": 16000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "file_expand",
+      "budget": 32000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "graph_expand",
+      "budget": 8000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "graph_expand",
+      "budget": 16000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "graph_expand",
+      "budget": 32000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "window_expand",
+      "budget": 8000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "window_expand",
+      "budget": 16000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "method": "window_expand",
+      "budget": 32000,
+      "selected": 1,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 1,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 1,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "anchors_only",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.09229313100280842,
+          "recall": 0.07253389604404667,
+          "f1": 0.02590396299409445
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.16612763580505516,
+          "recall": 0.130561012879284,
+          "f1": 0.04662713338937002
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.2125,
+          "f1": 0.17
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.36666666666666664,
+          "recall": 0.425,
+          "f1": 0.34
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "anchors_only",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.04419105069694654,
+          "recall": 0.2330277232045405,
+          "f1": 0.02748348834361405
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.07954389125450377,
+          "recall": 0.4194499017681729,
+          "f1": 0.04947027901850529
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.2125,
+          "f1": 0.17
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.36666666666666664,
+          "recall": 0.425,
+          "f1": 0.34
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "anchors_only",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.020900214540690618,
+          "recall": 0.2330277232045405,
+          "f1": 0.01885685083408705
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.03762038617324311,
+          "recall": 0.4194499017681729,
+          "f1": 0.03394233150135669
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.11666666666666667,
+          "recall": 0.2125,
+          "f1": 0.13484848484848486
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.23333333333333334,
+          "recall": 0.425,
+          "f1": 0.2696969696969697
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "bm25_declarations",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.0787466307277628,
+          "recall": 0.11951538965291421,
+          "f1": 0.028872578903532085
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.14174393530997303,
+          "recall": 0.2151277013752456,
+          "f1": 0.051970642026357754
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.16666666666666666,
+          "recall": 0.24583333333333332,
+          "f1": 0.18484848484848485
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.3333333333333333,
+          "recall": 0.49166666666666664,
+          "f1": 0.3696969696969697
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "bm25_declarations",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.03541964959287794,
+          "recall": 0.13240680103810426,
+          "f1": 0.020876411024225685
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.06375536926718028,
+          "recall": 0.23833224186858765,
+          "f1": 0.037577539843606234
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.08761904761904762,
+          "recall": 0.24583333333333332,
+          "f1": 0.11538461538461539
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.17523809523809525,
+          "recall": 0.49166666666666664,
+          "f1": 0.23076923076923078
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "bm25_declarations",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.016800919208815785,
+          "recall": 0.16889810570229694,
+          "f1": 0.014614658837148266
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.030241654575868412,
+          "recall": 0.30401659026413447,
+          "f1": 0.026306385906866882
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.03777777777777778,
+          "recall": 0.2125,
+          "f1": 0.058517952635599696
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.07555555555555556,
+          "recall": 0.425,
+          "f1": 0.11703590527119939
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "bm25_windows",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.10740233846985672,
+          "recall": 0.05133522520555919,
+          "f1": 0.027449094115760783
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.1933242092457421,
+          "recall": 0.09240340537000655,
+          "f1": 0.04940836940836941
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.15,
+          "recall": 0.125,
+          "f1": 0.10666666666666667
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.3,
+          "recall": 0.25,
+          "f1": 0.21333333333333335
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "bm25_windows",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.053527242965729395,
+          "recall": 0.11328191321642533,
+          "f1": 0.026952400535782465
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.09634903733831292,
+          "recall": 0.2039074437895656,
+          "f1": 0.04851432096440844
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.11166666666666666,
+          "recall": 0.225,
+          "f1": 0.1096969696969697
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.22333333333333333,
+          "recall": 0.45,
+          "f1": 0.2193939393939394
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "bm25_windows",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.026504691347052706,
+          "recall": 0.23673870333988212,
+          "f1": 0.022586577822640647
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.04770844442469487,
+          "recall": 0.4261296660117878,
+          "f1": 0.04065584008075317
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.05396825396825397,
+          "recall": 0.225,
+          "f1": 0.07166666666666667
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.10793650793650794,
+          "recall": 0.45,
+          "f1": 0.14333333333333334
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "file_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.08921792328042329,
+          "recall": 0.07253389604404667,
+          "f1": 0.025332292814987577
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.16059226190476192,
+          "recall": 0.130561012879284,
+          "f1": 0.045598127066977634
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.2125,
+          "f1": 0.17
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.36666666666666664,
+          "recall": 0.425,
+          "f1": 0.34
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "file_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.05094476744186047,
+          "recall": 0.23652041039074437,
+          "f1": 0.03234359012256438
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.09170058139534884,
+          "recall": 0.4257367387033399,
+          "f1": 0.05821846222061588
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.2125,
+          "f1": 0.17
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.36666666666666664,
+          "recall": 0.425,
+          "f1": 0.34
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "file_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.024366625151605335,
+          "recall": 0.23652041039074437,
+          "f1": 0.021583258253062756
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.0438599252728896,
+          "recall": 0.4257367387033399,
+          "f1": 0.03884986485551296
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.11666666666666667,
+          "recall": 0.2125,
+          "f1": 0.13484848484848486
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.23333333333333334,
+          "recall": 0.425,
+          "f1": 0.2696969696969697
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "graph_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.09066462014575222,
+          "recall": 0.07253389604404667,
+          "f1": 0.025502309447263574
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.163196316262354,
+          "recall": 0.130561012879284,
+          "f1": 0.045904157005074435
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.17,
+          "recall": 0.2125,
+          "f1": 0.15333333333333332
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.34,
+          "recall": 0.425,
+          "f1": 0.30666666666666664
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "graph_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.042376444304946304,
+          "recall": 0.23324601615367824,
+          "f1": 0.027567411955679976
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.07627759974890336,
+          "recall": 0.41984282907662085,
+          "f1": 0.049621341520223954
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.10833333333333334,
+          "recall": 0.2125,
+          "f1": 0.13333333333333333
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.21666666666666667,
+          "recall": 0.425,
+          "f1": 0.26666666666666666
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "graph_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.019411383240845712,
+          "recall": 0.23324601615367824,
+          "f1": 0.01795612849419773
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.034940489833522284,
+          "recall": 0.41984282907662085,
+          "f1": 0.032321031289555914
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.07,
+          "recall": 0.2125,
+          "f1": 0.09395604395604396
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.14,
+          "recall": 0.425,
+          "f1": 0.1879120879120879
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "window_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.08935976725205448,
+          "recall": 0.07253389604404667,
+          "f1": 0.025569815453864095
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.16084758105369806,
+          "recall": 0.130561012879284,
+          "f1": 0.04602566781695537
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.2125,
+          "f1": 0.17
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.36666666666666664,
+          "recall": 0.425,
+          "f1": 0.34
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "window_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.05094476744186047,
+          "recall": 0.23652041039074437,
+          "f1": 0.03234359012256438
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.09170058139534884,
+          "recall": 0.4257367387033399,
+          "f1": 0.05821846222061588
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.2125,
+          "f1": 0.17
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.36666666666666664,
+          "recall": 0.425,
+          "f1": 0.34
+        }
+      }
+    },
+    {
+      "repo": "huggingface/transformers",
+      "method": "window_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 5,
+      "label_failures": 0,
+      "line": {
+        "scorable": 9,
+        "no_target": 1,
+        "ite": {
+          "precision": 0.024976519422030836,
+          "recall": 0.23652041039074437,
+          "f1": 0.021969336389937574
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.04495773495965551,
+          "recall": 0.4257367387033399,
+          "f1": 0.03954480550188763
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.11666666666666667,
+          "recall": 0.2125,
+          "f1": 0.13484848484848486
+        },
+        "successful_prediction_count": 5,
+        "successful_prediction_only": {
+          "precision": 0.23333333333333334,
+          "recall": 0.425,
+          "f1": 0.2696969696969697
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "anchors_only",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.3,
+          "f1": 0.21666666666666667
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.18333333333333332,
+          "recall": 0.3,
+          "f1": 0.21666666666666667
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "anchors_only",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "anchors_only",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "bm25_declarations",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0029069767441860465,
+          "recall": 0.125,
+          "f1": 0.005681818181818182
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0029069767441860465,
+          "recall": 0.125,
+          "f1": 0.005681818181818182
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.13333333333333333,
+          "recall": 0.4,
+          "f1": 0.19666666666666666
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.13333333333333333,
+          "recall": 0.4,
+          "f1": 0.19666666666666666
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "bm25_declarations",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0013204225352112676,
+          "recall": 0.125,
+          "f1": 0.002613240418118467
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0013204225352112676,
+          "recall": 0.125,
+          "f1": 0.002613240418118467
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.12928571428571428,
+          "recall": 0.52,
+          "f1": 0.2019047619047619
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.12928571428571428,
+          "recall": 0.52,
+          "f1": 0.2019047619047619
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "bm25_declarations",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0006097560975609756,
+          "recall": 0.125,
+          "f1": 0.0012135922330097086
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0006097560975609756,
+          "recall": 0.125,
+          "f1": 0.0012135922330097086
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.06631313131313131,
+          "recall": 0.52,
+          "f1": 0.11512626262626263
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.06631313131313131,
+          "recall": 0.52,
+          "f1": 0.11512626262626263
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "bm25_windows",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0030967620481927713,
+          "recall": 0.16666666666666666,
+          "f1": 0.006080516934693433
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0030967620481927713,
+          "recall": 0.16666666666666666,
+          "f1": 0.006080516934693433
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.15333333333333332,
+          "recall": 0.4,
+          "f1": 0.21666666666666667
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.15333333333333332,
+          "recall": 0.4,
+          "f1": 0.21666666666666667
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "bm25_windows",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0020058760683760684,
+          "recall": 0.25,
+          "f1": 0.003979686251419439
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0020058760683760684,
+          "recall": 0.25,
+          "f1": 0.003979686251419439
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.11166666666666666,
+          "recall": 0.4,
+          "f1": 0.16857142857142857
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.11166666666666666,
+          "recall": 0.4,
+          "f1": 0.16857142857142857
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "bm25_windows",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0009654387417218543,
+          "recall": 0.25,
+          "f1": 0.0019234434196302125
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0009654387417218543,
+          "recall": 0.25,
+          "f1": 0.0019234434196302125
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0603968253968254,
+          "recall": 0.4,
+          "f1": 0.10318181818181818
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.0603968253968254,
+          "recall": 0.4,
+          "f1": 0.10318181818181818
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "file_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.3,
+          "f1": 0.21666666666666667
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.18333333333333332,
+          "recall": 0.3,
+          "f1": 0.21666666666666667
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "file_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.00037650602409638556,
+          "recall": 0.041666666666666664,
+          "f1": 0.0007462686567164179
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.00037650602409638556,
+          "recall": 0.041666666666666664,
+          "f1": 0.0007462686567164179
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "file_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0005122950819672131,
+          "recall": 0.125,
+          "f1": 0.0010204081632653062
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0005122950819672131,
+          "recall": 0.125,
+          "f1": 0.0010204081632653062
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "graph_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.11666666666666667,
+          "recall": 0.3,
+          "f1": 0.16666666666666666
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.11666666666666667,
+          "recall": 0.3,
+          "f1": 0.16666666666666666
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "graph_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.08333333333333333,
+          "recall": 0.3,
+          "f1": 0.12857142857142856
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.08333333333333333,
+          "recall": 0.3,
+          "f1": 0.12857142857142856
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "graph_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.08333333333333333,
+          "recall": 0.3,
+          "f1": 0.12857142857142856
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.08333333333333333,
+          "recall": 0.3,
+          "f1": 0.12857142857142856
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "window_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18333333333333332,
+          "recall": 0.3,
+          "f1": 0.21666666666666667
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.18333333333333332,
+          "recall": 0.3,
+          "f1": 0.21666666666666667
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "window_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        }
+      }
+    },
+    {
+      "repo": "keras-team/keras",
+      "method": "window_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.00042444821731748726,
+          "recall": 0.08333333333333333,
+          "f1": 0.0008445945945945946
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.00042444821731748726,
+          "recall": 0.08333333333333333,
+          "f1": 0.0008445945945945946
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3,
+          "f1": 0.18333333333333332
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "anchors_only",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.017695492410893316,
+          "recall": 0.28860294117647056,
+          "f1": 0.031802062886559755
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.017695492410893316,
+          "recall": 0.28860294117647056,
+          "f1": 0.031802062886559755
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "anchors_only",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.017231290178952433,
+          "recall": 0.28860294117647056,
+          "f1": 0.03090771408144608
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.017231290178952433,
+          "recall": 0.28860294117647056,
+          "f1": 0.03090771408144608
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "anchors_only",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.017869139926095665,
+          "recall": 0.38235294117647056,
+          "f1": 0.03217578336897589
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.017869139926095665,
+          "recall": 0.38235294117647056,
+          "f1": 0.03217578336897589
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "bm25_declarations",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.014547500344735918,
+          "recall": 0.31985294117647056,
+          "f1": 0.026915168785901066
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.014547500344735918,
+          "recall": 0.31985294117647056,
+          "f1": 0.026915168785901066
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.30333333333333334,
+          "recall": 0.6,
+          "f1": 0.36333333333333334
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.30333333333333334,
+          "recall": 0.6,
+          "f1": 0.36333333333333334
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "bm25_declarations",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.007246852982350361,
+          "recall": 0.5845588235294118,
+          "f1": 0.014056320978628453
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.007246852982350361,
+          "recall": 0.5845588235294118,
+          "f1": 0.014056320978628453
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.15301587301587302,
+          "recall": 0.8,
+          "f1": 0.24356643356643357
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.15301587301587302,
+          "recall": 0.8,
+          "f1": 0.24356643356643357
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "bm25_declarations",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0032576495130269135,
+          "recall": 0.5919117647058824,
+          "f1": 0.006430763396772309
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0032576495130269135,
+          "recall": 0.5919117647058824,
+          "f1": 0.006430763396772309
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.07092203548085901,
+          "recall": 0.8,
+          "f1": 0.12946969696969696
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.07092203548085901,
+          "recall": 0.8,
+          "f1": 0.12946969696969696
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "bm25_windows",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0015434451219512196,
+          "recall": 0.15625,
+          "f1": 0.0030408902691511385
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0015434451219512196,
+          "recall": 0.15625,
+          "f1": 0.0030408902691511385
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.19166666666666668,
+          "recall": 0.5,
+          "f1": 0.2733333333333333
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.19166666666666668,
+          "recall": 0.5,
+          "f1": 0.2733333333333333
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "bm25_windows",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.005381946365189895,
+          "recall": 0.47610294117647056,
+          "f1": 0.010554414758008352
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.005381946365189895,
+          "recall": 0.47610294117647056,
+          "f1": 0.010554414758008352
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.17833333333333334,
+          "recall": 0.6,
+          "f1": 0.26857142857142857
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.17833333333333334,
+          "recall": 0.6,
+          "f1": 0.26857142857142857
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "bm25_windows",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.002994759791377073,
+          "recall": 0.49816176470588236,
+          "f1": 0.005921779241508944
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.002994759791377073,
+          "recall": 0.49816176470588236,
+          "f1": 0.005921779241508944
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.08782106782106783,
+          "recall": 0.6,
+          "f1": 0.15214285714285714
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.08782106782106783,
+          "recall": 0.6,
+          "f1": 0.15214285714285714
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "file_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.01427452809186692,
+          "recall": 0.31985294117647056,
+          "f1": 0.02657388428518759
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.01427452809186692,
+          "recall": 0.31985294117647056,
+          "f1": 0.02657388428518759
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "file_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0067079856788382596,
+          "recall": 0.44485294117647056,
+          "f1": 0.01310572720058653
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.0067079856788382596,
+          "recall": 0.44485294117647056,
+          "f1": 0.01310572720058653
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "file_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.004565670843496231,
+          "recall": 0.5294117647058824,
+          "f1": 0.009025535508034395
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.004565670843496231,
+          "recall": 0.5294117647058824,
+          "f1": 0.009025535508034395
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "graph_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.015899573910884913,
+          "recall": 0.2959558823529412,
+          "f1": 0.028741061432478537
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.015899573910884913,
+          "recall": 0.2959558823529412,
+          "f1": 0.028741061432478537
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.2976190476190476,
+          "recall": 0.7,
+          "f1": 0.3883333333333333
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.2976190476190476,
+          "recall": 0.7,
+          "f1": 0.3883333333333333
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "graph_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.011072053967930864,
+          "recall": 0.2959558823529412,
+          "f1": 0.020723315080536066
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.011072053967930864,
+          "recall": 0.2959558823529412,
+          "f1": 0.020723315080536066
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.24761904761904763,
+          "recall": 0.7,
+          "f1": 0.3335714285714286
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.24761904761904763,
+          "recall": 0.7,
+          "f1": 0.3335714285714286
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "graph_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.011350682192971242,
+          "recall": 0.3897058823529412,
+          "f1": 0.021281455687212746
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.011350682192971242,
+          "recall": 0.3897058823529412,
+          "f1": 0.021281455687212746
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.2119047619047619,
+          "recall": 0.7,
+          "f1": 0.28444444444444444
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.2119047619047619,
+          "recall": 0.7,
+          "f1": 0.28444444444444444
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "window_expand",
+      "budget": 8000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.014852586604261957,
+          "recall": 0.31985294117647056,
+          "f1": 0.027586553945249597
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.014852586604261957,
+          "recall": 0.31985294117647056,
+          "f1": 0.027586553945249597
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "window_expand",
+      "budget": 16000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.006060516370524562,
+          "recall": 0.31985294117647056,
+          "f1": 0.011835741506242042
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.006060516370524562,
+          "recall": 0.31985294117647056,
+          "f1": 0.011835741506242042
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "method": "window_expand",
+      "budget": 32000,
+      "selected": 10,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 8,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.005342870670018847,
+          "recall": 0.38235294117647056,
+          "f1": 0.010495873964504649
+        },
+        "successful_prediction_count": 8,
+        "successful_prediction_only": {
+          "precision": 0.005342870670018847,
+          "recall": 0.38235294117647056,
+          "f1": 0.010495873964504649
+        }
+      },
+      "file": {
+        "scorable": 10,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        },
+        "successful_prediction_count": 10,
+        "successful_prediction_only": {
+          "precision": 0.38333333333333336,
+          "recall": 0.6,
+          "f1": 0.45
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "anchors_only",
+      "budget": 8000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "anchors_only",
+      "budget": 16000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "anchors_only",
+      "budget": 32000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "bm25_declarations",
+      "budget": 8000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0031645569620253164,
+          "recall": 0.25,
+          "f1": 0.00625
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0031645569620253164,
+          "recall": 0.25,
+          "f1": 0.00625
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.08333333333333333,
+          "recall": 0.16666666666666666,
+          "f1": 0.1111111111111111
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.08333333333333333,
+          "recall": 0.16666666666666666,
+          "f1": 0.1111111111111111
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "bm25_declarations",
+      "budget": 16000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0015479876160990713,
+          "recall": 0.25,
+          "f1": 0.003076923076923077
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0015479876160990713,
+          "recall": 0.25,
+          "f1": 0.003076923076923077
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.041666666666666664,
+          "recall": 0.16666666666666666,
+          "f1": 0.06666666666666667
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.041666666666666664,
+          "recall": 0.16666666666666666,
+          "f1": 0.06666666666666667
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "bm25_declarations",
+      "budget": 32000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.000792393026941363,
+          "recall": 0.25,
+          "f1": 0.001579778830963665
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.000792393026941363,
+          "recall": 0.25,
+          "f1": 0.001579778830963665
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.020833333333333332,
+          "recall": 0.16666666666666666,
+          "f1": 0.037037037037037035
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.020833333333333332,
+          "recall": 0.16666666666666666,
+          "f1": 0.037037037037037035
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "bm25_windows",
+      "budget": 8000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.002702702702702703,
+          "recall": 0.25,
+          "f1": 0.0053475935828877
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.002702702702702703,
+          "recall": 0.25,
+          "f1": 0.0053475935828877
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.16666666666666666,
+          "recall": 0.16666666666666666,
+          "f1": 0.16666666666666666
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.16666666666666666,
+          "recall": 0.16666666666666666,
+          "f1": 0.16666666666666666
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "bm25_windows",
+      "budget": 16000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.001288659793814433,
+          "recall": 0.25,
+          "f1": 0.002564102564102564
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.001288659793814433,
+          "recall": 0.25,
+          "f1": 0.002564102564102564
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.08333333333333333,
+          "recall": 0.16666666666666666,
+          "f1": 0.1111111111111111
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.08333333333333333,
+          "recall": 0.16666666666666666,
+          "f1": 0.1111111111111111
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "bm25_windows",
+      "budget": 32000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0006257822277847309,
+          "recall": 0.25,
+          "f1": 0.0012484394506866417
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0006257822277847309,
+          "recall": 0.25,
+          "f1": 0.0012484394506866417
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.045454545454545456,
+          "recall": 0.16666666666666666,
+          "f1": 0.07142857142857142
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.045454545454545456,
+          "recall": 0.16666666666666666,
+          "f1": 0.07142857142857142
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "file_expand",
+      "budget": 8000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "file_expand",
+      "budget": 16000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "file_expand",
+      "budget": 32000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "graph_expand",
+      "budget": 8000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "graph_expand",
+      "budget": 16000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "graph_expand",
+      "budget": 32000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "window_expand",
+      "budget": 8000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "window_expand",
+      "budget": 16000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "tensorflow/models",
+      "method": "window_expand",
+      "budget": 32000,
+      "selected": 2,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "file": {
+        "scorable": 2,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "successful_prediction_count": 2,
+        "successful_prediction_only": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "anchors_only",
+      "budget": 8000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.16666666666666666,
+          "recall": 0.05448717948717949,
+          "f1": 0.07777777777777778
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.16666666666666666,
+          "recall": 0.05448717948717949,
+          "f1": 0.07777777777777778
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "anchors_only",
+      "budget": 16000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0037313432835820895,
+          "recall": 0.003745318352059925,
+          "f1": 0.003738317757009346
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.0037313432835820895,
+          "recall": 0.003745318352059925,
+          "f1": 0.003738317757009346
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.4444444444444444,
+          "recall": 0.1517094017094017,
+          "f1": 0.20238095238095238
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.4444444444444444,
+          "recall": 0.1517094017094017,
+          "f1": 0.20238095238095238
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "anchors_only",
+      "budget": 32000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.011904761904761904,
+          "recall": 0.026217228464419477,
+          "f1": 0.016374269005847954
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.011904761904761904,
+          "recall": 0.026217228464419477,
+          "f1": 0.016374269005847954
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.3333333333333333,
+          "recall": 0.1655982905982906,
+          "f1": 0.2111111111111111
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.3333333333333333,
+          "recall": 0.1655982905982906,
+          "f1": 0.2111111111111111
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "bm25_declarations",
+      "budget": 8000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.06388888888888888,
+          "recall": 0.02153558052434457,
+          "f1": 0.03221288515406162
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.06388888888888888,
+          "recall": 0.02153558052434457,
+          "f1": 0.03221288515406162
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.4166666666666667,
+          "recall": 0.10897435897435898,
+          "f1": 0.16666666666666666
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.4166666666666667,
+          "recall": 0.10897435897435898,
+          "f1": 0.16666666666666666
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "bm25_declarations",
+      "budget": 16000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.03096330275229358,
+          "recall": 0.025280898876404494,
+          "f1": 0.027835051546391754
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.03096330275229358,
+          "recall": 0.025280898876404494,
+          "f1": 0.027835051546391754
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.43333333333333335,
+          "recall": 0.2905982905982906,
+          "f1": 0.32222222222222224
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.43333333333333335,
+          "recall": 0.2905982905982906,
+          "f1": 0.32222222222222224
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "bm25_declarations",
+      "budget": 32000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.015151515151515152,
+          "recall": 0.028089887640449437,
+          "f1": 0.01968503937007874
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.015151515151515152,
+          "recall": 0.028089887640449437,
+          "f1": 0.01968503937007874
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.25476190476190474,
+          "recall": 0.2745726495726496,
+          "f1": 0.23905723905723905
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.25476190476190474,
+          "recall": 0.2745726495726496,
+          "f1": 0.23905723905723905
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "bm25_windows",
+      "budget": 8000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.00992063492063492,
+          "recall": 0.0046816479400749065,
+          "f1": 0.006361323155216285
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.00992063492063492,
+          "recall": 0.0046816479400749065,
+          "f1": 0.006361323155216285
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.08888888888888889,
+          "recall": 0.05448717948717949,
+          "f1": 0.05787037037037037
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.08888888888888889,
+          "recall": 0.05448717948717949,
+          "f1": 0.05787037037037037
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "bm25_windows",
+      "budget": 16000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.005208333333333333,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004930966469428008
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.005208333333333333,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004930966469428008
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.18055555555555555,
+          "recall": 0.12286324786324786,
+          "f1": 0.12261904761904761
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.18055555555555555,
+          "recall": 0.12286324786324786,
+          "f1": 0.12261904761904761
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "bm25_windows",
+      "budget": 32000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.008421985815602837,
+          "recall": 0.017790262172284643,
+          "f1": 0.011432009626955475
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.008421985815602837,
+          "recall": 0.017790262172284643,
+          "f1": 0.011432009626955475
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.19603174603174603,
+          "recall": 0.2745726495726496,
+          "f1": 0.2205988455988456
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.19603174603174603,
+          "recall": 0.2745726495726496,
+          "f1": 0.2205988455988456
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "file_expand",
+      "budget": 8000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.3333333333333333,
+          "recall": 0.11004273504273504,
+          "f1": 0.16111111111111112
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.3333333333333333,
+          "recall": 0.11004273504273504,
+          "f1": 0.16111111111111112
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "file_expand",
+      "budget": 16000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0041946308724832215,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004424778761061947
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.0041946308724832215,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004424778761061947
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.4444444444444444,
+          "recall": 0.1517094017094017,
+          "f1": 0.20238095238095238
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.4444444444444444,
+          "recall": 0.1517094017094017,
+          "f1": 0.20238095238095238
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "file_expand",
+      "budget": 32000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.011904761904761904,
+          "recall": 0.026217228464419477,
+          "f1": 0.016374269005847954
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.011904761904761904,
+          "recall": 0.026217228464419477,
+          "f1": 0.016374269005847954
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.3333333333333333,
+          "recall": 0.1655982905982906,
+          "f1": 0.2111111111111111
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.3333333333333333,
+          "recall": 0.1655982905982906,
+          "f1": 0.2111111111111111
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "graph_expand",
+      "budget": 8000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.25,
+          "recall": 0.11004273504273504,
+          "f1": 0.14444444444444443
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.25,
+          "recall": 0.11004273504273504,
+          "f1": 0.14444444444444443
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "graph_expand",
+      "budget": 16000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.004480286738351254,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004578754578754579
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.004480286738351254,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004578754578754579
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.4,
+          "recall": 0.20726495726495728,
+          "f1": 0.2462962962962963
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.4,
+          "recall": 0.20726495726495728,
+          "f1": 0.2462962962962963
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "graph_expand",
+      "budget": 32000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.011884550084889643,
+          "recall": 0.026217228464419477,
+          "f1": 0.016355140186915886
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.011884550084889643,
+          "recall": 0.026217228464419477,
+          "f1": 0.016355140186915886
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.4166666666666667,
+          "recall": 0.33226495726495725,
+          "f1": 0.32222222222222224
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.4166666666666667,
+          "recall": 0.33226495726495725,
+          "f1": 0.32222222222222224
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "window_expand",
+      "budget": 8000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.01020408163265306,
+          "recall": 0.003745318352059925,
+          "f1": 0.005479452054794521
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.16666666666666666,
+          "recall": 0.05448717948717949,
+          "f1": 0.07777777777777778
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.16666666666666666,
+          "recall": 0.05448717948717949,
+          "f1": 0.07777777777777778
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "window_expand",
+      "budget": 16000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.0041946308724832215,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004424778761061947
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.0041946308724832215,
+          "recall": 0.0046816479400749065,
+          "f1": 0.004424778761061947
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.4444444444444444,
+          "recall": 0.1517094017094017,
+          "f1": 0.20238095238095238
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.4444444444444444,
+          "recall": 0.1517094017094017,
+          "f1": 0.20238095238095238
+        }
+      }
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "method": "window_expand",
+      "budget": 32000,
+      "selected": 6,
+      "prediction_failures": 0,
+      "label_failures": 0,
+      "line": {
+        "scorable": 4,
+        "no_target": 2,
+        "ite": {
+          "precision": 0.011904761904761904,
+          "recall": 0.026217228464419477,
+          "f1": 0.016374269005847954
+        },
+        "successful_prediction_count": 4,
+        "successful_prediction_only": {
+          "precision": 0.011904761904761904,
+          "recall": 0.026217228464419477,
+          "f1": 0.016374269005847954
+        }
+      },
+      "file": {
+        "scorable": 6,
+        "no_target": 0,
+        "ite": {
+          "precision": 0.3333333333333333,
+          "recall": 0.1655982905982906,
+          "f1": 0.2111111111111111
+        },
+        "successful_prediction_count": 6,
+        "successful_prediction_only": {
+          "precision": 0.3333333333333333,
+          "recall": 0.1655982905982906,
+          "f1": 0.2111111111111111
+        }
+      }
+    }
+  ],
+  "independent_macro": [
+    {
+      "method": "anchors_only",
+      "budget": 8000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.0200321175077258,
+        "recall": 0.06081369259542953,
+        "f1": 0.010530912989241454
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.1527777777777778,
+        "recall": 0.19449786324786325,
+        "f1": 0.1524074074074074
+      }
+    },
+    {
+      "method": "anchors_only",
+      "budget": 16000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.01085894735991351,
+        "recall": 0.08756266378884517,
+        "f1": 0.010354920030344912
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.19074074074074074,
+        "recall": 0.21070156695156694,
+        "f1": 0.1676190476190476
+      }
+    },
+    {
+      "method": "anchors_only",
+      "budget": 32000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.008445686061924697,
+        "recall": 0.10693298214090509,
+        "f1": 0.011234483868151816
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.16111111111111112,
+        "recall": 0.21301638176638177,
+        "f1": 0.1632154882154882
+      }
+    },
+    {
+      "method": "bm25_declarations",
+      "budget": 8000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.027209092277933163,
+        "recall": 0.1393173185589549,
+        "f1": 0.016655408504218826
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.18388888888888888,
+        "recall": 0.2535790598290598,
+        "f1": 0.17043771043771044
+      }
+    },
+    {
+      "method": "bm25_declarations",
+      "budget": 16000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.012749702579805369,
+        "recall": 0.18620775390732008,
+        "f1": 0.011409657840714573
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.14082010582010582,
+        "recall": 0.3371830484330484,
+        "f1": 0.1582907832907833
+      }
+    },
+    {
+      "method": "bm25_declarations",
+      "budget": 32000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.006102038832976698,
+        "recall": 0.1939832930081048,
+        "f1": 0.007253972111328782
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.07510136377783437,
+        "recall": 0.3289565527065527,
+        "f1": 0.0965346980543059
+      }
+    },
+    {
+      "method": "bm25_windows",
+      "budget": 8000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.020777647210556388,
+        "recall": 0.10482225663538346,
+        "f1": 0.00804656967628489
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.1250925925925926,
+        "recall": 0.2076923076923077,
+        "f1": 0.13686728395061729
+      }
+    },
+    {
+      "method": "bm25_windows",
+      "budget": 16000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.011235343087740522,
+        "recall": 0.18234441705549514,
+        "f1": 0.008163595096456805
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.11092592592592593,
+        "recall": 0.25242165242165243,
+        "f1": 0.1300949975949976
+      }
+    },
+    {
+      "method": "bm25_windows",
+      "budget": 32000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.006585442987256533,
+        "recall": 0.20878178836967484,
+        "f1": 0.007185374926903653
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.07394540644540644,
+        "recall": 0.2777065527065527,
+        "f1": 0.10316979316979318
+      }
+    },
+    {
+      "method": "file_expand",
+      "budget": 8000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.018949422167490543,
+        "recall": 0.06602202592876286,
+        "f1": 0.009564271525828281
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.18055555555555555,
+        "recall": 0.2037571225071225,
+        "f1": 0.1662962962962963
+      }
+    },
+    {
+      "method": "file_expand",
+      "budget": 16000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.010370648336213055,
+        "recall": 0.1212869443623261,
+        "f1": 0.008436727456821546
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.19074074074074074,
+        "recall": 0.21070156695156694,
+        "f1": 0.1676190476190476
+      }
+    },
+    {
+      "method": "file_expand",
+      "budget": 32000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.006891558830305114,
+        "recall": 0.15285823392684103,
+        "f1": 0.008000578488368403
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.16111111111111112,
+        "recall": 0.21301638176638177,
+        "f1": 0.1632154882154882
+      }
+    },
+    {
+      "method": "graph_expand",
+      "budget": 8000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.019461379281548365,
+        "recall": 0.06203918279150796,
+        "f1": 0.009953803822422773
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.13904761904761906,
+        "recall": 0.2204237891737892,
+        "f1": 0.14212962962962963
+      }
+    },
+    {
+      "method": "graph_expand",
+      "budget": 16000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.009654797501871403,
+        "recall": 0.08898059107444906,
+        "f1": 0.00881158026916177
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.13988095238095238,
+        "recall": 0.23662749287749288,
+        "f1": 0.14029541446208113
+      }
+    },
+    {
+      "method": "graph_expand",
+      "budget": 32000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.007107769253117766,
+        "recall": 0.10819485449517315,
+        "f1": 0.009265454061387728
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.1303174603174603,
+        "recall": 0.2574608262108262,
+        "f1": 0.1381990231990232
+      }
+    },
+    {
+      "method": "window_expand",
+      "budget": 8000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.019069405914828252,
+        "recall": 0.06602202592876286,
+        "f1": 0.009772636908984701
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.1527777777777778,
+        "recall": 0.19449786324786325,
+        "f1": 0.1524074074074074
+      }
+    },
+    {
+      "method": "window_expand",
+      "budget": 16000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.010199985780811376,
+        "recall": 0.09350916658454832,
+        "f1": 0.008100685064978061
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.19074074074074074,
+        "recall": 0.21070156695156694,
+        "f1": 0.1676190476190476
+      }
+    },
+    {
+      "method": "window_expand",
+      "budget": 32000,
+      "line": {
+        "scorable_repositories": 6,
+        "precision": 0.007108100035688179,
+        "recall": 0.12140398556082796,
+        "f1": 0.008280678992480795
+      },
+      "file": {
+        "scorable_repositories": 6,
+        "precision": 0.16111111111111112,
+        "recall": 0.21301638176638177,
+        "f1": 0.1632154882154882
+      }
+    }
+  ],
+  "independent_comparisons": [
+    {
+      "baseline": "bm25_windows",
+      "macro_f1_difference": 0.0006479851727049652,
+      "macro_recall_difference": -0.09336382598104609,
+      "positive_repos": 2,
+      "per_repo": [
+        {
+          "repo": "Significant-Gravitas/AutoGPT",
+          "f1_difference": 0.0
+        },
+        {
+          "repo": "huggingface/transformers",
+          "f1_difference": 0.0006150114198975098
+        },
+        {
+          "repo": "keras-team/keras",
+          "f1_difference": -0.003979686251419439
+        },
+        {
+          "repo": "langchain-ai/langchain",
+          "f1_difference": 0.010168900322527714
+        },
+        {
+          "repo": "tensorflow/models",
+          "f1_difference": -0.002564102564102564
+        },
+        {
+          "repo": "yt-dlp/yt-dlp",
+          "f1_difference": -0.0003522118906734291
+        }
+      ],
+      "numerical_planning_gate": false
+    },
+    {
+      "baseline": "bm25_declarations",
+      "macro_f1_difference": -0.0025980775715528023,
+      "macro_recall_difference": -0.09722716283287103,
+      "positive_repos": 2,
+      "per_repo": [
+        {
+          "repo": "Significant-Gravitas/AutoGPT",
+          "f1_difference": 0.0
+        },
+        {
+          "repo": "huggingface/transformers",
+          "f1_difference": 0.006691000931454291
+        },
+        {
+          "repo": "keras-team/keras",
+          "f1_difference": -0.002613240418118467
+        },
+        {
+          "repo": "langchain-ai/langchain",
+          "f1_difference": 0.006666994101907613
+        },
+        {
+          "repo": "tensorflow/models",
+          "f1_difference": -0.003076923076923077
+        },
+        {
+          "repo": "yt-dlp/yt-dlp",
+          "f1_difference": -0.023256296967637174
+        }
+      ],
+      "numerical_planning_gate": false
+    }
+  ],
+  "source_manifest_matching_paths": [
+    "public-source-manifest.json",
+    "agent-code-evidence/benchmarks/external_context/sources.json"
+  ],
+  "scope_limits": [
+    "Source archive bytes and rendered context content not re-read; verify sealed source metadata and coordinate bounds only.",
+    "Issue text read solely for hash verification; no query/patch text included in audit outputs.",
+    "No retrieval rerun, new benchmark or model execution.",
+    "Pure removed-line localization labels do not measure necessary context or repair success.",
+    "Hash seals are integrity records, not cryptographic attestations by an independent organization."
+  ]
+}

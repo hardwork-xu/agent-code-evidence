@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "tasks": 4,
+  "contexts_exact": 72,
+  "discrepancy_cases": 5,
+  "all_anchors_identical": true,
+  "raw_unchanged": true,
+  "kind": "post-hoc deterministic replay diagnostics; not new holdout or independent validation",
+  "cases": [
+    {
+      "instance_id": "huggingface__transformers-13865",
+      "budget": 8000,
+      "anchor_candidates_in_graph": true,
+      "empty_envelope_bytes": {
+        "anchors_only": 2061,
+        "graph_expand": 2125
+      },
+      "all_removed_lines_have_observed_whole_piece_rejection": true,
+      "rejection_deltas": [
+        {
+          "piece": {
+            "path": "src/transformers/training_args.py",
+            "start_line": 70,
+            "end_line": 149
+          },
+          "graph_trial_bytes": 8034,
+          "anchor_trial_bytes": 7970,
+          "confirmed_same_source_metadata_displacement": true,
+          "field_value_byte_differences": {
+            "frontier_summary": 64
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "huggingface__transformers-13989",
+      "budget": 16000,
+      "anchor_candidates_in_graph": true,
+      "empty_envelope_bytes": {
+        "anchors_only": 3077,
+        "graph_expand": 3143
+      },
+      "all_removed_lines_have_observed_whole_piece_rejection": true,
+      "rejection_deltas": [
+        {
+          "piece": {
+            "path": "src/transformers/modeling_utils.py",
+            "start_line": 1224,
+            "end_line": 1303
+          },
+          "graph_trial_bytes": 16042,
+          "anchor_trial_bytes": 15976,
+          "confirmed_same_source_metadata_displacement": true,
+          "field_value_byte_differences": {
+            "candidate_span_count": 1,
+            "frontier_summary": 64,
+            "omitted_source_lines": 1
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "huggingface__transformers-13989",
+      "budget": 32000,
+      "anchor_candidates_in_graph": true,
+      "empty_envelope_bytes": {
+        "anchors_only": 3077,
+        "graph_expand": 3143
+      },
+      "all_removed_lines_have_observed_whole_piece_rejection": true,
+      "rejection_deltas": [
+        {
+          "piece": {
+            "path": "src/transformers/modeling_utils.py",
+            "start_line": 1464,
+            "end_line": 1465
+          },
+          "graph_trial_bytes": 32046,
+          "anchor_trial_bytes": 31979,
+          "confirmed_same_source_metadata_displacement": true,
+          "field_value_byte_differences": {
+            "candidate_span_count": 1,
+            "frontier_summary": 64,
+            "omitted_source_lines": 2
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "huggingface__transformers-15913",
+      "budget": 16000,
+      "anchor_candidates_in_graph": true,
+      "empty_envelope_bytes": {
+        "anchors_only": 1211,
+        "graph_expand": 1279
+      },
+      "all_removed_lines_have_observed_whole_piece_rejection": true,
+      "rejection_deltas": [
+        {
+          "piece": {
+            "path": "src/transformers/testing_utils.py",
+            "start_line": 1174,
+            "end_line": 1175
+          },
+          "graph_trial_bytes": 16031,
+          "anchor_trial_bytes": 15963,
+          "confirmed_same_source_metadata_displacement": true,
+          "field_value_byte_differences": {
+            "candidate_span_count": 2,
+            "frontier_summary": 65,
+            "omitted_source_lines": 1
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-8917",
+      "budget": 8000,
+      "anchor_candidates_in_graph": true,
+      "empty_envelope_bytes": {
+        "anchors_only": 7365,
+        "graph_expand": 7430
+      },
+      "all_removed_lines_have_observed_whole_piece_rejection": true,
+      "rejection_deltas": [
+        {
+          "piece": {
+            "path": "yt_dlp/options.py",
+            "start_line": 1896,
+            "end_line": 1908
+          },
+          "graph_trial_bytes": 8057,
+          "anchor_trial_bytes": 7992,
+          "confirmed_same_source_metadata_displacement": true,
+          "field_value_byte_differences": {
+            "frontier_count": 1,
+            "frontier_summary": 64
+          }
+        }
+      ]
+    }
+  ]
+}

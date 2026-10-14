@@ -1,0 +1,239 @@
+{
+  "instance_id": "huggingface__transformers-15913",
+  "status": "all18_reproduced_exactly",
+  "all18_hash_blocks_bytes_status_match": true,
+  "query_sha256": "22919fb7d63224e545795316fc3c8a56a7d7e422e6479bbff1e575dfac6f71a9",
+  "archive_sha256": "9902ee6775c67e1121f301a4cb9d973255711e2806b31eaacfef4182f5ef629b",
+  "anchors_identical_all_methods_budgets": true,
+  "anchors": [
+    {
+      "id": "55d23105b95276cd8126a079251f68aeccf09b163385fb0b92dfd2489c5a3e00",
+      "path": "src/transformers/models/auto/processing_auto.py",
+      "start_line": 85,
+      "end_line": 236,
+      "text_sha256": "fdf164c9f5d11b9f1e2600c5f3e7f0e627c942d2ae99d14b4b97f4d913f4765d",
+      "file_sha256": "dd809dbcd70c18e8ae380b0d9c33d56a4cfbc9eb926a8886bd030e1942bfa245"
+    },
+    {
+      "id": "a105e27e3f5ca029ca86cb936e1fe0c922eb5e93189835ec3645b98e76b57cbb",
+      "path": "src/transformers/models/clip/processing_clip.py",
+      "start_line": 22,
+      "end_line": 107,
+      "text_sha256": "bf1282d9a04c3826298361d6a22d8983d056bd6ba1eebbbf870f546fa1c3da44",
+      "file_sha256": "a2ad5e74b3801d95c7a3b7d0233b66a12717700c949a0af2c6044630b7fad9a8"
+    },
+    {
+      "id": "43d8ea74c802d59cda29e57af62fb983aa3b41fdc4e7a0a7819bbd593170f4b0",
+      "path": "src/transformers/testing_utils.py",
+      "start_line": 934,
+      "end_line": 1175,
+      "text_sha256": "17b7aaa2925de03d68cb9ec400d224a38b4f0eff7a74ff4a6f7cd5efcb89abb6",
+      "file_sha256": "391493cbc16a128da73f712a0d84459d0d674e3d4edd594ad91732e63f3a95f5"
+    }
+  ],
+  "cases": [
+    {
+      "budget": 16000,
+      "anchor_candidates_in_graph": true,
+      "anchor_candidate_count": 8,
+      "graph_candidate_count": 107,
+      "anchor_candidate_spans": [
+        {
+          "path": "src/transformers/models/auto/processing_auto.py",
+          "start": 85,
+          "end": 164
+        },
+        {
+          "path": "src/transformers/models/auto/processing_auto.py",
+          "start": 165,
+          "end": 236
+        },
+        {
+          "path": "src/transformers/models/clip/processing_clip.py",
+          "start": 22,
+          "end": 101
+        },
+        {
+          "path": "src/transformers/models/clip/processing_clip.py",
+          "start": 102,
+          "end": 107
+        },
+        {
+          "path": "src/transformers/testing_utils.py",
+          "start": 934,
+          "end": 1013
+        },
+        {
+          "path": "src/transformers/testing_utils.py",
+          "start": 1014,
+          "end": 1093
+        },
+        {
+          "path": "src/transformers/testing_utils.py",
+          "start": 1094,
+          "end": 1173
+        },
+        {
+          "path": "src/transformers/testing_utils.py",
+          "start": 1174,
+          "end": 1175
+        }
+      ],
+      "removed_delivered_anchor_spans": [
+        {
+          "path": "src/transformers/testing_utils.py",
+          "start_line": 1174,
+          "end_line": 1175
+        }
+      ],
+      "empty_envelope_bytes": {
+        "anchors_only": 1211,
+        "graph_expand": 1279
+      },
+      "rejections": [
+        {
+          "graph_rejected_piece": {
+            "piece": {
+              "path": "src/transformers/testing_utils.py",
+              "start_line": 1174,
+              "end_line": 1175
+            },
+            "prior_blocks": [
+              {
+                "path": "src/transformers/models/auto/processing_auto.py",
+                "start_line": 85,
+                "end_line": 164
+              },
+              {
+                "path": "src/transformers/models/auto/processing_auto.py",
+                "start_line": 165,
+                "end_line": 236
+              },
+              {
+                "path": "src/transformers/models/clip/processing_clip.py",
+                "start_line": 22,
+                "end_line": 101
+              },
+              {
+                "path": "src/transformers/models/clip/processing_clip.py",
+                "start_line": 102,
+                "end_line": 107
+              }
+            ],
+            "trial_bytes": 16031,
+            "accepted": false,
+            "trial_field_value_bytes": {
+              "blocks": 14418,
+              "budget": 5,
+              "candidate_span_count": 3,
+              "frontier_count": 2,
+              "frontier_summary": 106,
+              "frontier_summary_truncated": 5,
+              "issue": 728,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 4,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 338,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 25,
+                "kind": "truncated"
+              },
+              {
+                "count": 45,
+                "kind": "unresolved"
+              },
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 82,
+            "candidate_span_count": 107,
+            "omitted_source_lines": 4912
+          },
+          "removed_covered": [
+            {
+              "path": "src/transformers/testing_utils.py",
+              "start_line": 1174,
+              "end_line": 1175
+            }
+          ],
+          "matched_anchor_accepted_piece": {
+            "piece": {
+              "path": "src/transformers/testing_utils.py",
+              "start_line": 1174,
+              "end_line": 1175
+            },
+            "prior_blocks": [
+              {
+                "path": "src/transformers/models/auto/processing_auto.py",
+                "start_line": 85,
+                "end_line": 164
+              },
+              {
+                "path": "src/transformers/models/auto/processing_auto.py",
+                "start_line": 165,
+                "end_line": 236
+              },
+              {
+                "path": "src/transformers/models/clip/processing_clip.py",
+                "start_line": 22,
+                "end_line": 101
+              },
+              {
+                "path": "src/transformers/models/clip/processing_clip.py",
+                "start_line": 102,
+                "end_line": 107
+              }
+            ],
+            "trial_bytes": 15963,
+            "accepted": true,
+            "trial_field_value_bytes": {
+              "blocks": 14418,
+              "budget": 5,
+              "candidate_span_count": 1,
+              "frontier_count": 2,
+              "frontier_summary": 41,
+              "frontier_summary_truncated": 5,
+              "issue": 728,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 3,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 338,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 12,
+            "candidate_span_count": 8,
+            "omitted_source_lines": 240
+          },
+          "same_prior_blocks": true,
+          "trial_byte_difference": 68,
+          "field_value_byte_differences": {
+            "candidate_span_count": 2,
+            "frontier_summary": 65,
+            "omitted_source_lines": 1
+          },
+          "confirmed_same_source_metadata_displacement": true
+        }
+      ],
+      "all_removed_lines_have_observed_whole_piece_rejection": true
+    }
+  ]
+}

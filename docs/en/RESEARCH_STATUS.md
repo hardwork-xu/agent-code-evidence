@@ -60,6 +60,8 @@ High recall may result from broad declaration spans: packaging-metadata covers 1
 
 Next priority: after license/source/label verification, compare graph expansion with strong lexical retrieval and ordinary context expansion on unseen repositories with external task-relevance labels, fixed budgets and issue-only automatic localization. Retain failures and narrow claims when needed. This experiment has not run; even success would not establish agent repair benefit.
 
+See the separate39-task edit-localization pilot:[measured negative/mixed results](EXTERNAL_PILOT_RESULTS.md). Its patch-proxy labels do not fill the expert-necessary-context or downstream-benefit gap.
+
 ## Checks and evidence
 
 ```bash

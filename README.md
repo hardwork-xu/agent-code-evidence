@@ -23,6 +23,23 @@ requires no model, GPU or API key. Hosted-model experiments are separate.
 [简体中文](docs/README.zh-CN.md) · [Graph API and contracts](docs/GRAPH.md) ·
 [Measured report](docs/GRAPH_REPORT.md) · [Model protocol](docs/REVISION_STUDY_PROTOCOL.md)
 
+## External real-task pilot (2026-10-14)
+
+The [frozen issue-only study](docs/en/EXTERNAL_PILOT_RESULTS.md) attempted **39 real
+tasks across six unused repositories**:34 generated predictions and five hit the
+32 MiB Python-source cap. All tasks and failures are retained. Seven tasks have
+no removed-line target, so their line metrics remain undefined.
+
+Both predeclared planning gates failed. At16000 UTF-8 bytes, graph expansion
+achieved0.881158% repository-macro removed-line F1 and8.898059% recall;
+declaration BM25 achieved1.140966% F1 and18.620775% recall. These are reference-edit
+proxy labels, not necessary context or agent repair success. The [raw results,
+source checks and limits](docs/en/EXTERNAL_PILOT_RESULTS.md) support a reproducible
+negative/mixed pilot, with no maturity or external-tool superiority claim.
+
+[Protocol and commands](docs/en/EXTERNAL_PILOT_PROTOCOL.md) ·
+[Prior-work boundary](docs/en/EXTERNAL_RELATED_WORK.md)
+
 ## Research branch (1.2.0a1)
 
 Resolver 3 corrects class-body global rebinding; older graphs must be recaptured.

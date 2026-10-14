@@ -96,3 +96,13 @@ These license trees accompany the source distribution. The wheel contains only
 the ContextProof implementation and its own root license/notice, not benchmark
 corpora or upstream test bodies.
 以上许可目录随源码包分发；wheel 只含 ContextProof 实现及根许可与说明，不含实验语料。
+
+The external edit-localization pilot uses AmazonScience/SWE-PolyBench_500 at
+`546075b4b05d17ba914e72b8f4c6d5b1ea150c1d` (data card: MIT). Coordinate-only
+reference-edit targets and measured statistics retain this attribution; original
+issues, patches and repository source are not redistributed. The exact official
+Amazon Science MIT text and39 exact-base root licenses are preserved under
+`benchmarks/external_context/licenses/`. See `LICENSE_SOURCES.md` and `sources.json`
+there for pins/hashes and the distinction between edit labels and necessary context.
+外部先导实验使用固定SWE-PolyBench_500数据版本，公开参考编辑坐标及统计并保留原归属；
+原始题目、补丁与源码不重新分发。MIT原文及39份固定base根许可保留在上述目录。

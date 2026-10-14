@@ -173,6 +173,7 @@ def render(report: dict, language: str) -> str:
     lines += ['- ' + g['zh' if zh else 'en'] for g in report['unmet_criteria']]
     lines += ['', ('下一项优先实验：在许可、源码版本与标签核验完成后，固定预算盲测新仓库的外部任务相关性标签；只用issue正文自动定位，比较强词法检索、普通上下文展开和图展开。失败应保留并收窄主张。此实验尚未运行；即使成功，也不自动证明智能体修复收益。' if zh else
                   'Next priority: after license/source/label verification, compare graph expansion with strong lexical retrieval and ordinary context expansion on unseen repositories with external task-relevance labels, fixed budgets and issue-only automatic localization. Retain failures and narrow claims when needed. This experiment has not run; even success would not establish agent repair benefit.'), '',
+              ('另见39任务编辑定位先导实验：[实测及负面结果](EXTERNAL_PILOT_RESULTS.md)。它使用补丁代理标签，不能填补专家必要上下文或下游收益证据。' if zh else 'See the separate39-task edit-localization pilot:[measured negative/mixed results](EXTERNAL_PILOT_RESULTS.md). Its patch-proxy labels do not fill the expert-necessary-context or downstream-benefit gap.'), '',
               '## ' + ('复核命令与证据' if zh else 'Checks and evidence'), '',
               '```bash', 'python scripts/check_research_claims.py',
               '# Expected exit 2: current evidence does not establish maturity / 当前证据不足，预期退出2',

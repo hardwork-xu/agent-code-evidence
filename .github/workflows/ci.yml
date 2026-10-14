@@ -35,6 +35,8 @@ jobs:
       - run: python scripts/check_research_artifacts.py --require-results
       - run: python scripts/render_maturation_report.py --check
       - run: python scripts/check_research_claims.py
+      - run: PYTHONPATH=src python -m benchmarks.external_context.check
+      - run: PYTHONPATH=src python -m benchmarks.external_context.report --check
       - run: >-
           python -m pytest -q tests benchmarks/graph/test_scope_audit.py
           benchmarks/revision_baselines/test_baselines.py
