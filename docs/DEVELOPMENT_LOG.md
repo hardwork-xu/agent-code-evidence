@@ -413,3 +413,46 @@ preflight is separate from candidate correctness and performance.
 截断状态仍保留，证书缺失或版本不支持时重建。首次接入因局部变量漏定义失败，已在
 自然实验前修复。独立编写反例与本地 fresh 对照属于回归证据，不是人工同行评审。
 输入准备保留两次选样规则的否定结果、所有目录事件及后续缺失的固定 RQ 锚点。
+
+## 2026-10-14: frozen catalog study execution
+
+- `e0bc1188ac24a0696828ab6170a07f69c9eb71e9` implements the mechanism and441
+  affected regressions. Pre-freeze runner review found eight integrity issues,
+  including source-grid omission and missing child provenance; fixes preceded all
+  natural resolver/timing observations. Those local review probes are not independent
+  human replication.
+- A full integration check initially returned6failed/2064passed/2optional skips
+  because historical claims bound current evolving source to old measurements.
+  Exact20-source files from `a0070ea71cea3c8944c004559602616114011b76` were archived
+  without changing prior hashes or outcomes. The repaired ledger rejects relabelling
+  new source as the old run; the final pre-freeze suite returned2093passed/2skipped.
+- `affa59024f70cde86d2549b690204aa73ddccc7d` froze the four repositories, all
+  fixed anchors and source pins, four methods,20%target and source-inclusive costs.
+  The actual portable downloader reused107verified archives, with0new downloads.
+  Production paths and root licenses were rechecked; analyzed code was never executed.
+- `python -m benchmarks.catalog_reuse.legacy_oracle` compared107unique snapshots
+  and2568graphs to the unmodified `ce6e36de` resolver:0mismatches. This prevents
+  a shared catalog-refactoring bug from masquerading as replay equality.
+- `python scripts/run_catalog_study.py` produced
+  `catalog-20261014T121419Z-84b62e96` from the clean frozen source:1816retained
+  canonical-equal steps and48fresh RSS subprocesses. Performance target0/4, failed;
+  resource target passed. All95additional graph reuses, small timing differences,
+  capture costs, frontiers and the missing RQ anchor remain in the records.
+- `python -m benchmarks.catalog_reuse.report --check` verifies sealed raw files,
+  complete grids, frozen-source digests and generated English/Chinese reports.
+  Build, publication scan and remote CI are separate post-experiment gates.
+
+真实记录：先修复实验完整性漏洞和历史源码错绑，再真实提交冻结协议，串行运行旧解析器
+对照、自然回放和RSS。6项历史账本失败已记录并修复，不重跑/改写旧测量；当前全测试
+2093通过、2可选跳过。新性能门槛0/4失败，资源门槛通过；保留全部原始与负面结果。
+这些是有限工程研究证据，不等于成熟论文、Python语义证明或agent任务收益。
+
+Post-run acceptance:79affected reporting/runner/ledger tests passed; Ruff, attribution,
+frozen-artifact checks and both earlier research reports passed. Isolated sdist/wheel
+builds succeeded, installed-wheel CLI and the synthetic real-core example ran. The
+sdist retained exact bytes for20archived runtime files and52new raw result files.
+Docker was unavailable and not run; no build artifact is presented as a GitHub Release.
+Remote publication and CI must be read back after pushing this evidence commit.
+
+实测后79项受影响验证通过；构建、安装wheel入口及72项归档/结果字节检查通过。
+Docker未运行，构建文件不等于GitHub Release；远端状态仍须另行核验。

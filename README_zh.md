@@ -142,6 +142,26 @@ MCP SDK 验证实际 stdio 调用。模型推理不在 CI 中自动运行。
 项目由 **hardwork-xu** 维护，使用 AI 辅助设计、实现、实验与写作。
 采用 [MIT 许可证](LICENSE)，上游来源与许可证保留在各实验 manifest 中。
 
+## 目录依赖实验（2026-10-14）
+
+[新增类型化目录守卫](docs/zh/CATALOG_RESULTS.md)追踪正/负模块查询，并保留读取源码哈希及全部
+未知前沿。四个真实仓库提供64个八转移批次与全部23个目录变化事件对。相对完整查询根守卫，
+预设20%回放成本目标仅 **0/4** 库达成，整体失败；实测中位减少0.46%–5.10%，这种单机小幅
+差异不能建立稳健加速结论。机制相对根守卫在1536次锚点更新中多复用95次，表示减少不必要
+重建，不证明语义fresh或代码任务收益。
+
+首轮1536项回放输出仅15项无前沿，其余未知状态均保留。
+1816条步骤记录均与fresh图canonical一致；未修改的旧解析器也在107唯一快照/2568图上匹配。
+48个fresh RSS子进程完成，预设内存门槛通过。[完整成本、负面与边界](docs/zh/CATALOG_RESULTS.md)保留
+初始捕获、回放、总成本与缺失RQ锚点；不宣称成熟研究，也不新增Release。
+
+```sh
+PYTHONPATH=src python examples/catalog_reuse.py
+python scripts/prepare_catalog_sources.py --output /tmp/catalog-study-inputs
+PYTHONPATH=src python scripts/run_catalog_study.py --inputs /tmp/catalog-study-inputs/ready-manifest.json --protocol benchmarks/catalog_reuse/protocol.json --output /tmp/catalog-study-results
+PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
+```
+
 ## 研究分支（1.2.0a1）
 
 解析器 3 修复类体 global 重绑定，旧图需要重新捕获。

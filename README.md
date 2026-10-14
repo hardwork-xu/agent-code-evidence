@@ -40,6 +40,31 @@ negative/mixed pilot, with no maturity or external-tool superiority claim.
 [Protocol and commands](docs/en/EXTERNAL_PILOT_PROTOCOL.md) ·
 [Prior-work boundary](docs/en/EXTERNAL_RELATED_WORK.md)
 
+## Catalog-dependency study (2026-10-14)
+
+The [new typed catalog guards](docs/en/CATALOG_RESULTS.md) retain positive and negative
+module queries while preserving source hashes and all unknown frontiers. Four
+natural repositories supplied 64 updates, each combining eight commits, and all 23
+catalog event pairs. The primary 20% replay cost target against a complete module-root
+guard was met in **0/4** repositories, so the overall gate failed. Observed median
+reductions were 0.46%–5.10%; these small differences on one host do not establish a
+robust speedup. The mechanism reused 95 more of 1536 anchor updates than the root guard;
+this means fewer unnecessary rebuilds, without establishing
+semantic freshness or coding-task improvement.
+
+Only 15/1536 replay outputs in the first measured trajectories had no frontier; unknowns remain.
+All 1816 retained steps matched fresh canonical graphs; the unmodified baseline also
+matched 107 unique snapshots/2568 graphs. All 48 fresh RSS workers completed and the memory gate passed.
+[Complete costs, negatives and limits](docs/en/CATALOG_RESULTS.md) include capture,
+replay, total cost and the missing RQ anchor. No maturity claim or new Release.
+
+```sh
+PYTHONPATH=src python examples/catalog_reuse.py
+python scripts/prepare_catalog_sources.py --output /tmp/catalog-study-inputs
+PYTHONPATH=src python scripts/run_catalog_study.py --inputs /tmp/catalog-study-inputs/ready-manifest.json --protocol benchmarks/catalog_reuse/protocol.json --output /tmp/catalog-study-results
+PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
+```
+
 ## Research branch (1.2.0a1)
 
 Resolver 3 corrects class-body global rebinding; older graphs must be recaptured.
