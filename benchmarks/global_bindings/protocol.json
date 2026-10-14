@@ -67,13 +67,18 @@
   "natural_target": "Keep all8 source-head repositories including7 zero-writer rows, all4 regressionfix anchors on parent/fixed (8 anchors), all2 identified global-reading top-level declarations. Inspect watched binding certainty and retain all failures/frontiers; runtime read traces are not necessary-context labels. No minimum improvement or accuracy claim can be inferred from this small chosen panel.",
   "no_performance_claim": true,
   "no_semantic_maturity_claim": true,
+  "post_baseline_pre_candidate_amendment": {
+    "original_protocol_sha256": "a460b2071f3f0b119d051958daa5f7cd485a000ea6eddb813d26dd2b06b9a5fd",
+    "reason": "Independent selection review found splitlines treats Unicode separators as physical lines. Use existing physical source_lines. Inputs/anchors unchanged; retain first baseline globals-20261014T134758Z-baseline and rerun both roles. No candidate natural-panel graphs had run before amendment. This is development evidence, not a blind holdout.",
+    "time_utc": "2026-10-14T13:49:16.398570+00:00"
+  },
   "pre_measurement_amendment": {
     "date_utc": "2026-10-14T13:47:12.801056+00:00",
     "original_protocol_sha256": "c692165c98a544f4bb113479d6a665a68fdad24ccdb5cb873548dd3b00dd3a5e",
     "reason": "Independent runner review: preserve failed own/natural rows, include source-node key for watched-edge pairing, reject NUL paths and wrong cached engine import. No baseline/candidate panel graphs had run before amendment."
   },
   "primary_correctness_target": "All20 fixed possible-global-write fixtures retained unknown; all12 non-writing controls retain original supported literal binding;19 observed runtime changes, unreachable conservative refusal retained as cost",
-  "runner_sha256": "27891299c8c8e8b0ab43e4096ed32c3366126f9b495e53c702f8526587af9ef9",
+  "runner_sha256": "58f4082471aec2e8aa03c896647d3c67faf308aa2a8466dc1aeb7e69c63b38d8",
   "schema_version": 1,
   "source_licenses_reviewed_in": "benchmarks/global_bindings/upstream_execution/inputs.json"
 }

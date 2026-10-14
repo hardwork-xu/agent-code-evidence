@@ -86,7 +86,8 @@ def select(text, path, symbol):
     if len(found) != 1:
         raise ValueError('anchor absent or ambiguous')
     node = found[0]
-    value = ''.join(text.splitlines(keepends=True)[node.lineno - 1:node.end_lineno])
+    from contextproof.index import source_lines
+    value = ''.join(source_lines(text)[node.lineno - 1:node.end_lineno])
     return {'id': digest(canonical([path, symbol])), 'path': path, 'symbol': symbol,
             'kind': 'class' if isinstance(node, ast.ClassDef) else 'function',
             'start_line': node.lineno, 'end_line': node.end_lineno,
