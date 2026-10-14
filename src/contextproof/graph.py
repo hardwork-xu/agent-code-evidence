@@ -142,8 +142,11 @@ def build_graph(texts: Mapping[str, str], snapshot_id: str, anchors: list[dict],
     (path, SHA256 text). The module catalog and all resolutions are rebuilt so
     additions and previously negative lookups cannot be hidden by that cache.
     ``read_set`` optionally collects consulted source paths, including negative
-    attribute lookup modules; callers must also guard the entire path catalog.
-    可选 read_set 记录查找依赖；跨版本复用仍须验证完整路径目录。
+    attribute lookup modules. Cross-snapshot reuse also requires a complete
+    catalog guard or the process-local typed query guard in ``reuse.GraphSession``;
+    the source-read set alone is insufficient.
+    可选 read_set 记录查找依赖；跨版本复用还须完整目录守卫，或进程内会话的
+    类型化目录查询守卫。仅凭源码读取集不能复用。
     """
     if not isinstance(snapshot_id, str) or not snapshot_id:
         raise ValueError("snapshot_id must be a nonempty provider identity")

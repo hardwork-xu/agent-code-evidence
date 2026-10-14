@@ -143,7 +143,27 @@
     "src/contextproof/reuse.py": "391d56f467b4edbb44ff9b581637ad07bbcf417ad121e4b41754dcf78374c28a",
     "src/contextproof/revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
     "src/contextproof/session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
-    "src/contextproof/static_scope.py": "3ad2b0cdecbafd3123df470fe6baea6a26f409b9817772872c876cbb148de801"
+    "src/contextproof/static_scope.py": "3ad2b0cdecbafd3123df470fe6baea6a26f409b9817772872c876cbb148de801",
+    "research/frozen-20261004-source/contextproof/__init__.py": "ef87b48edc5100642605cee1f0537a6a2f922f73ca0963a95ed944a4851c794e",
+    "research/frozen-20261004-source/contextproof/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "research/frozen-20261004-source/contextproof/cli.py": "b6b713817366891fcb815feeaef203cd2095e4b1e340dba879d7b02cc29b74ca",
+    "research/frozen-20261004-source/contextproof/dependencies.py": "7699982d64fba2002add70c004bf7b7a784f98be427baa865dae1a78a77bb9bb",
+    "research/frozen-20261004-source/contextproof/evidence.py": "63b41f50ced294c391399121752b5ffb096dc153d75f4eeb30a0a3f74357fc6a",
+    "research/frozen-20261004-source/contextproof/graph.py": "a0e1aeebaf46d9daf1b895a66082300b6ecd0eb9f63049992e1c628de0e1d6de",
+    "research/frozen-20261004-source/contextproof/graph_delta.py": "dd46426a75e42fad59818c6b32303ad5f62c1d4464c5474ae2c1379bee65b741",
+    "research/frozen-20261004-source/contextproof/graph_payload.py": "663eca2ac57b5f1ef127b946057629999bfde47c93bf38c8bbc72007ce5ec509",
+    "research/frozen-20261004-source/contextproof/graph_session.py": "d86b59beff2566f514464d1b4791fb5bc58dfd2f8a51028d986d457e0829b4ff",
+    "research/frozen-20261004-source/contextproof/index.py": "d8b6838ab5161d69e9b50480674345830a2921cc4be9b1c6a02f5a95d792d108",
+    "research/frozen-20261004-source/contextproof/mcp.py": "3b954718f775ccb2f99c971369a99fdb202d3a1f20eb0a27330d7d14ece12712",
+    "research/frozen-20261004-source/contextproof/models.py": "4bc812d50fe6773f5c89181b7259de9950f4c25ea4272081cdc38b130f15c8bf",
+    "research/frozen-20261004-source/contextproof/module_cache.py": "289d9fa5b68fbafeac747d45c02fe7099b75af857c5c24997331bec95fb784a1",
+    "research/frozen-20261004-source/contextproof/parse_cache.py": "9aa2ecc4dec7dc4ccd86f66e8202de6cd0de431ce3e8fd79c53c7902398edc85",
+    "research/frozen-20261004-source/contextproof/report.py": "12993022760f71142b6ae796ce7d8b1a18a7774f6eb6ed4d8d7c8aef331db666",
+    "research/frozen-20261004-source/contextproof/retrieval.py": "c237c65f99197b4565374decd2afc9bf6e1fc079d527f74beb1ab994fc1e1a68",
+    "research/frozen-20261004-source/contextproof/reuse.py": "391d56f467b4edbb44ff9b581637ad07bbcf417ad121e4b41754dcf78374c28a",
+    "research/frozen-20261004-source/contextproof/revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
+    "research/frozen-20261004-source/contextproof/session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
+    "research/frozen-20261004-source/contextproof/static_scope.py": "3ad2b0cdecbafd3123df470fe6baea6a26f409b9817772872c876cbb148de801"
   },
   "unmet_criteria": [
     {
@@ -176,5 +196,27 @@
       "en": "A defensible contribution relative to prior work, with independent scrutiny. Publication or academic firstness is not itself required, and this checker cannot judge novelty.",
       "zh": "相对已有工作的可辩护贡献及独立检视；不把发表或学术首创本身作为必要条件，检查器不能判定新颖性。"
     }
-  ]
+  ],
+  "historical_sources": {
+    "src/contextproof/__init__.py": "research/frozen-20261004-source/contextproof/__init__.py",
+    "src/contextproof/__main__.py": "research/frozen-20261004-source/contextproof/__main__.py",
+    "src/contextproof/cli.py": "research/frozen-20261004-source/contextproof/cli.py",
+    "src/contextproof/dependencies.py": "research/frozen-20261004-source/contextproof/dependencies.py",
+    "src/contextproof/evidence.py": "research/frozen-20261004-source/contextproof/evidence.py",
+    "src/contextproof/graph.py": "research/frozen-20261004-source/contextproof/graph.py",
+    "src/contextproof/graph_delta.py": "research/frozen-20261004-source/contextproof/graph_delta.py",
+    "src/contextproof/graph_payload.py": "research/frozen-20261004-source/contextproof/graph_payload.py",
+    "src/contextproof/graph_session.py": "research/frozen-20261004-source/contextproof/graph_session.py",
+    "src/contextproof/index.py": "research/frozen-20261004-source/contextproof/index.py",
+    "src/contextproof/mcp.py": "research/frozen-20261004-source/contextproof/mcp.py",
+    "src/contextproof/models.py": "research/frozen-20261004-source/contextproof/models.py",
+    "src/contextproof/module_cache.py": "research/frozen-20261004-source/contextproof/module_cache.py",
+    "src/contextproof/parse_cache.py": "research/frozen-20261004-source/contextproof/parse_cache.py",
+    "src/contextproof/report.py": "research/frozen-20261004-source/contextproof/report.py",
+    "src/contextproof/retrieval.py": "research/frozen-20261004-source/contextproof/retrieval.py",
+    "src/contextproof/reuse.py": "research/frozen-20261004-source/contextproof/reuse.py",
+    "src/contextproof/revisions.py": "research/frozen-20261004-source/contextproof/revisions.py",
+    "src/contextproof/session.py": "research/frozen-20261004-source/contextproof/session.py",
+    "src/contextproof/static_scope.py": "research/frozen-20261004-source/contextproof/static_scope.py"
+  }
 }

@@ -17,6 +17,8 @@ Passing verifies record/claim consistency only. Substantive contribution needs c
 | C7-novelty | Distinct research contribution beyond established incremental dependency tracking | `scoped_engineering_contribution_only` |
 | C8-external-validation | Independent external reproduction or independent human scholarly evaluation occurred | `not_done` |
 
+Historical measurements bind to 20 implementation files at commit `a0070ea71cea3c8944c004559602616114011b76`. The ledger checks the [archived measured source](../../research/frozen-20261004-source/contextproof) and preserves the original source paths and measured hashes. Current source has evolved; The historical performance numbers below apply only to that archived implementation and do not establish current runtime speed. Archiving and repairing the ledger did not rerun the old benchmark.
+
 ## Recorded performance results
 
 Four convenience repositories, 8 revisions and 24 fixed anchors each, 5 timing repeats on one M1 Pro. Baseline: persistent indexing plus whole-corpus reuse. Candidate: additional read-set reuse. Repository is the unit; repetitions are not independent datasets.

@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "study": "catalog-query-footprints",
+  "status": "frozen",
+  "created_at_utc": "2026-10-14T09:35:50.770669+00:00",
+  "baseline_commit": "ce6e36de7f6860296d66dadcb3105a8bbda9eb9a",
+  "claim_boundary": "Engineering refinement of existing incremental dependency tracking for a fixed bounded static resolver. Replay equality is neither Python semantic soundness nor coding-agent usefulness. No novelty, SOTA or maturity claim.",
+  "question": "Do exact positive/negative module candidate tuples and namespace-existence answers reduce unnecessary graph reconstruction, and what is their full trajectory cost against a root-membership guard?",
+  "methods": [
+    "incremental_read_set",
+    "incremental_catalog_coarse_guard",
+    "incremental_catalog_root_guard",
+    "incremental_catalog_read_set"
+  ],
+  "method_labels": {
+    "incremental_read_set": "A: legacy whole-catalog and source-read hashes",
+    "incremental_catalog_coarse_guard": "B: query-aware whole catalog, valid zero-query graphs exempt",
+    "incremental_catalog_root_guard": "C: complete membership of queried canonical module roots",
+    "incremental_catalog_read_set": "D: exact candidate tuples plus subtree-existence booleans"
+  },
+  "primary_comparator": "incremental_catalog_root_guard",
+  "candidate": "incremental_catalog_read_set",
+  "graph_policy": {
+    "max_depth": 4,
+    "max_nodes": 256
+  },
+  "certificate_schema_version": 1,
+  "certificate": "Process-local certificates only; every exact query including empty tuple, every exact-or-descendant existence query including false, all consulted source hashes including negative attribute checks, failed parsing and missing anchors; fixed anchors/policy. Invalid/missing/unsupported trace forces rebuild. Unknown/truncated output is preserved.",
+  "correctness_gate": {
+    "maximum_canonical_graph_mismatches": 0,
+    "failure_action": "Preserve rows and counterexample; stop positive performance interpretation. Never remove fields, adjust tolerances or select away cases."
+  },
+  "mechanism_gate": "Frozen within-root unrelated add/remove counterexamples must reuse queried graphs without calling resolver; relevant query/source changes must rebuild. No-query controls alone do not establish granular-query value.",
+  "performance_target": {
+    "metric": "median sum of 16 replay updates, including source acquisition from local archive and all source integrity checks",
+    "minimum_reduction_fraction": 0.2,
+    "minimum_repositories_meeting_target": 3,
+    "repository_denominator": 4,
+    "against": "incremental_catalog_root_guard",
+    "initial_capture": "reported separately; total capture plus replay also reported",
+    "targets_are_not_results": true
+  },
+  "resource_gate": {
+    "absolute_peak_rss_bytes": 1073741824,
+    "maximum_candidate_to_primary_baseline_peak_rss_ratio": 2.0,
+    "measurement": "three fresh subprocesses per method/repository; median peaks and every sample retained"
+  },
+  "measurement": {
+    "clock": "perf_counter_ns",
+    "warmup": 1,
+    "repetitions": 5,
+    "memory_repetitions": 3,
+    "method_order": "Rotate whole method trajectories by (repository index + repetition index), including warmup index -1; snapshots remain oldest to newest. No concurrent performance runs.",
+    "threads": 1,
+    "seed": 0,
+    "garbage_collection": "normal interpreter defaults; no method-specific changes",
+    "include": [
+      "read local archive bytes and SHA256",
+      "tar decompression and validated production file selection",
+      "decode declared Python source encoding and raw file hashing",
+      "initial anchor AST/exact source capture in initial capture",
+      "GraphSession input defensive copy, all-input hashes, module catalog/index work",
+      "source and catalog guards, necessary graph rebuilding",
+      "graph defensive copies, snapshot resealing"
+    ],
+    "exclude": [
+      "network download",
+      "input metadata JSON parsing and protocol validation",
+      "fresh resolver and frozen-base oracle checks",
+      "result serialization",
+      "RSS experiments"
+    ],
+    "cold_vs_warm": "one unreported-time warmup trajectory per method; each timed trajectory uses a new session. Initial capture is warm-filesystem cold-session, not machine cold-start."
+  },
+  "sources": {
+    "repositories": [
+      "rq/rq",
+      "modelcontextprotocol/python-sdk",
+      "scrapy/scrapy",
+      "pypa/hatch"
+    ],
+    "fixed_heads": {
+      "rq/rq": "73add0bd3411536b95ecce605fcde52e0c5148e0",
+      "modelcontextprotocol/python-sdk": "754254c08fe1c3eda18b69da3d336106fe8d72d6",
+      "scrapy/scrapy": "a0951524990e4c43b1b4e8a3783942a0ad95ce7f",
+      "pypa/hatch": "ac9c0c9544795b380c2a5f63f80c1f46db3c5d4c"
+    },
+    "source_prefixes": {
+      "rq/rq": "rq/",
+      "modelcontextprotocol/python-sdk": "src/mcp/",
+      "scrapy/scrapy": "scrapy/",
+      "pypa/hatch": "src/hatch/"
+    },
+    "snapshots_per_repository": 17,
+    "anchors_per_repository": 24,
+    "ancestor_offsets_oldest_to_newest": [
+      128,
+      120,
+      112,
+      104,
+      96,
+      88,
+      80,
+      72,
+      64,
+      56,
+      48,
+      40,
+      32,
+      24,
+      16,
+      8,
+      0
+    ],
+    "primary_update_count": 64,
+    "secondary_event_pair_count": 23,
+    "unique_snapshots": 107,
+    "fixed_commit_windows_have_unequal_durations": true,
+    "production_suffixes": [
+      ".py",
+      ".pyi"
+    ],
+    "excluded_path_components": [
+      "__pycache__",
+      "test",
+      "testing",
+      "tests"
+    ],
+    "source_caps": {
+      "source_bytes": 16777216,
+      "source_files": 1500,
+      "single_file_bytes": 2097152,
+      "archive_download_bytes": 33554432
+    }
+  },
+  "anchor_rule": "At oldest primary snapshot enumerate unique direct module-body FunctionDef/AsyncFunctionDef path:symbol keys, sort by SHA256(UTF8(path+colon+symbol)), then identity, keep first24. Retain ambiguous/missing/unresolved anchors in later snapshots; never replace after outcomes.",
+  "secondary": "All23 immediate parent-to-commit production catalog-change pairs in the same128 first-parent transition windows; mechanism diagnostics, no timing generalization or favorable-event selection. Independent session for each pair.",
+  "units": "4 convenience-sampled repositories, 64 eight-transition source batches. Anchors, repeated runs and event pairs are dependent observations, not independent studies.",
+  "sampling_limits": "Repositories selected for structural feasibility and distinct software domains before candidate resolver/timing outcomes. AST source metadata was inspected; these are prospective natural trajectories, not strict untouched source holdouts or independent human validation. MCP Python SDK is also an optional integration dependency of this project; disclose relation.",
+  "negative_preflights": [
+    {
+      "rule": "latest stable release plus8first-parent transitions",
+      "result": "insufficient catalog changes",
+      "retained": true
+    },
+    {
+      "rule": "fixed HEAD plus128 first-parent transitions and newest8catalog events",
+      "result": "zero complete viable repositories among17scanned",
+      "retained": true
+    }
+  ],
+  "selection_amendment_before_freeze": "Use the same live fixed HEAD windows,17equally-spaced snapshots as primary and all catalog events as secondary. This change is based only on source paths/resource/AST feasibility, not resolver reuse or performance. Earlier negative observations are retained.",
+  "input_rule_sha256": "38c1e3bcf550645408a01f0b8f4fa8f14eccec5d64a80108e25ec272abe65912",
+  "history_exclusions_sha256": "7257f00157244eb82f410f6195d4a45ad9ccbf371d8414722d24ded58516b694",
+  "legacy_fresh_equivalence": "After freeze, independently reconstruct every unique source snapshot with the unmodified baseline ce6e36de resolver, compare canonical digests to new fresh reconstruction, retaining all mismatches. This guards shared catalog refactoring bugs; not a semantic oracle.",
+  "release_policy": "Existing Draft PR only; no merge, new Release or mature-study label based on this run.",
+  "maturity_gaps": [
+    "Independent downstream task validation",
+    "Broader independently selected repositories and platforms",
+    "Independent human semantic or evidence review",
+    "Novelty evidence beyond existing dependency tracking applications",
+    "External reproduction"
+  ],
+  "frozen_at_utc": "2026-10-14T10:04:45.414379+00:00",
+  "sources_pin_sha256": "fbb78fbb8434bdc2f9af80e91d75509dff9725c8c20274630c1f7251ef5e1d9c",
+  "implementation_sha256": {
+    "src/contextproof/__init__.py": "ef87b48edc5100642605cee1f0537a6a2f922f73ca0963a95ed944a4851c794e",
+    "src/contextproof/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/contextproof/catalog.py": "38230bd815c5b2c027bad8975162a448e992cc8bac2824e133439ca9b1a2b776",
+    "src/contextproof/cli.py": "b6b713817366891fcb815feeaef203cd2095e4b1e340dba879d7b02cc29b74ca",
+    "src/contextproof/dependencies.py": "d9c1dd1bedcde6c0236f3e4faad185d6e87eb6b90d13c79507f2a31e60b22e3a",
+    "src/contextproof/evidence.py": "63b41f50ced294c391399121752b5ffb096dc153d75f4eeb30a0a3f74357fc6a",
+    "src/contextproof/graph.py": "b454d6879882360976bbb7981f82d2734211f68f0408c30ae6dc43b15ef3aab6",
+    "src/contextproof/graph_delta.py": "dd46426a75e42fad59818c6b32303ad5f62c1d4464c5474ae2c1379bee65b741",
+    "src/contextproof/graph_payload.py": "663eca2ac57b5f1ef127b946057629999bfde47c93bf38c8bbc72007ce5ec509",
+    "src/contextproof/graph_session.py": "d86b59beff2566f514464d1b4791fb5bc58dfd2f8a51028d986d457e0829b4ff",
+    "src/contextproof/index.py": "d8b6838ab5161d69e9b50480674345830a2921cc4be9b1c6a02f5a95d792d108",
+    "src/contextproof/mcp.py": "3b954718f775ccb2f99c971369a99fdb202d3a1f20eb0a27330d7d14ece12712",
+    "src/contextproof/models.py": "4bc812d50fe6773f5c89181b7259de9950f4c25ea4272081cdc38b130f15c8bf",
+    "src/contextproof/module_cache.py": "289d9fa5b68fbafeac747d45c02fe7099b75af857c5c24997331bec95fb784a1",
+    "src/contextproof/parse_cache.py": "9aa2ecc4dec7dc4ccd86f66e8202de6cd0de431ce3e8fd79c53c7902398edc85",
+    "src/contextproof/report.py": "12993022760f71142b6ae796ce7d8b1a18a7774f6eb6ed4d8d7c8aef331db666",
+    "src/contextproof/retrieval.py": "c237c65f99197b4565374decd2afc9bf6e1fc079d527f74beb1ab994fc1e1a68",
+    "src/contextproof/reuse.py": "140784a7ccd7dd397928a983ae923d9668dcb817f4dc7c36e4d570f36cee62fa",
+    "src/contextproof/revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
+    "src/contextproof/session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
+    "src/contextproof/static_scope.py": "dfa62ba5b1fdb7d110ff16acce912c38a054c5ba3636490370f8d5c1bd35d417",
+    "benchmarks/catalog_reuse/suite.py": "6c07b9d5bbb09076a23f3db7ffa00416ff33bd7f97536b1c09748ed6a27b581b",
+    "scripts/run_catalog_study.py": "ea7919fdcbf0f55da69863486e50dba4e56b535b196488a36e59de64419ccf63"
+  },
+  "implementation_feature_commit": "e0bc1188ac24a0696828ab6170a07f69c9eb71e9",
+  "measurement_input_manifest_sha256": "479dd59b6775aa4476a389e42d3b244d8e3dceb198122d7dddbf831da102cdc2",
+  "local_freeze_not_public_preregistration": true
+}

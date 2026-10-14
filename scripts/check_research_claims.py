@@ -22,6 +22,11 @@ from scripts.check_research_artifacts import check_holdout, check_tasks  # noqa:
 
 HOLDOUT = 'benchmarks/incremental_holdout/results/primary-20261004.json'
 TASK = 'benchmarks/task_evidence/results/primary-20261004'
+MEASURED_COMMIT = 'a0070ea71cea3c8944c004559602616114011b76'
+HISTORICAL_SOURCE_ROOT = 'research/frozen-20261004-source/contextproof'
+# Immutable identity of the original implementation_files table, independent of
+# rehashed ledger entries. A different measured implementation needs a new profile.
+MEASURED_IMPLEMENTATION_SHA256 = '6188045421630dc62251e3216e017b2bcd517616618f5177f43608400fd0a494'
 STATES = {
     'C1-source-identity': 'supported_artifact_identity',
     'C2-replay-parity': 'supported_frozen_sample',
@@ -83,6 +88,7 @@ def validate(root: Path, *, validate_artifacts: bool = True) -> dict:
     ledger = read(root, 'research/claims.json')
     if (ledger['schema_version'] != 1
             or ledger['profile'] != 'frozen-20261004-research-claims-v1'
+            or ledger['measured_commit'] != MEASURED_COMMIT
             or ledger['decision'] != 'mature_research_not_established'):
         raise ValueError('unreviewed research profile or maturity promotion / 未评审的配置或成熟度升级')
     claims = ledger['claims']
@@ -93,26 +99,48 @@ def validate(root: Path, *, validate_artifacts: bool = True) -> dict:
             r['status'] != 'missing' for r in gaps):
         raise ValueError('unreviewed removal of missing evidence / 未评审地移除缺失证据')
     hashes = ledger['evidence_sha256']
+    h, p = read(root, HOLDOUT), read(root, TASK + '/provenance.json')
+    measured = h['provenance']['implementation_files']
+    table_bytes = json.dumps(measured, sort_keys=True, separators=(',', ':')).encode()
+    if hashlib.sha256(table_bytes).hexdigest() != MEASURED_IMPLEMENTATION_SHA256:
+        raise ValueError('implementation provenance differs from measured profile')
+    historical = ledger.get('historical_sources')
+    if historical is not None:
+        expected_mapping = {name: HISTORICAL_SOURCE_ROOT + '/' + Path(name).name
+                            for name in measured}
+        if historical != expected_mapping:
+            raise ValueError('historical source mapping differs from measured implementation')
+        if {name for name in hashes if name.startswith('src/contextproof/')} != set(measured):
+            raise ValueError('historical source hash keys differ from measured implementation')
+        for name, archive in historical.items():
+            if hashes.get(name) != measured[name] or hashes.get(archive) != measured[name]:
+                raise ValueError('historical source/archive hash differs from measured implementation: ' + name)
     required = {HOLDOUT, TASK + '/cases.json', TASK + '/runs.json',
                 TASK + '/provenance.json', TASK + '/summary.json',
                 'benchmarks/incremental_holdout/protocol.json',
                 'benchmarks/incremental_holdout/manifest.json',
                 'benchmarks/task_evidence/manifest.json'}
     required.update(p for claim in claims for p in claim['evidence'])
-    required.update(p.relative_to(root).as_posix() for p in
-                    (root / 'src/contextproof').glob('*.py'))
+    if historical is None:
+        # Backward compatibility: an undeclared archive retains the original
+        # requirement that all current runtime files match the old ledger.
+        required.update(path.relative_to(root).as_posix() for path in
+                        (root / 'src/contextproof').glob('*.py'))
+    else:
+        required.update(measured)
+        required.update(historical.values())
     if not required <= hashes.keys():
         raise ValueError('missing source/evidence hash / 缺失源码或证据哈希')
     for name, expected in hashes.items():
-        if hashlib.sha256(safe_path(root, name).read_bytes()).hexdigest() != expected:
+        actual_name = historical.get(name, name) if historical is not None else name
+        if hashlib.sha256(safe_path(root, actual_name).read_bytes()).hexdigest() != expected:
             raise ValueError('evidence hash mismatch: ' + name)
-    h, p = read(root, HOLDOUT), read(root, TASK + '/provenance.json')
     if (h['run_id'] != ledger['holdout']['run_id']
             or p['run_id'] != ledger['tasks']['run_id']
             or h['environment']['source_commit'] != ledger['measured_commit']
             or p['git_head'] != ledger['measured_commit']):
         raise ValueError('run/source identity differs from ledger / 运行或源码身份不符')
-    for name, measured_hash in h['provenance']['implementation_files'].items():
+    for name, measured_hash in measured.items():
         if hashes.get(name) != measured_hash:
             raise ValueError('runtime differs from measured implementation: ' + name)
     primary = h['protocol_snapshot']['primary_comparison']
@@ -131,8 +159,24 @@ def validate(root: Path, *, validate_artifacts: bool = True) -> dict:
             or sum(r['reduction'] >= .2 for r in observed['timing']) < 3
             or not all(r['memory_gate_met'] for r in observed['timing'])):
         raise ValueError('registered frozen-profile facts changed / 固定研究事实改变')
+    current_sources = {path.relative_to(root).as_posix() for path in
+                       (root / 'src/contextproof').glob('*.py')}
+    def current_matches(name, expected):
+        try:
+            return hashlib.sha256(safe_path(root, name).read_bytes()).hexdigest() == expected
+        except (OSError, ValueError):
+            # Current runtime is outside the historical identity gate; unavailable
+            # or redirected current files cannot certify equality with the archive.
+            return False
+    evolved = current_sources != set(measured) or any(
+        not current_matches(name, expected) for name, expected in measured.items())
     return {'record_validation': 'passed', 'maturity': ledger['decision'],
             'validation_scope': ledger['validation_scope'],
+            'historical_implementation': {'measured_commit': ledger['measured_commit'],
+                                         'source_count': len(measured),
+                                         'binding': 'archived_source' if historical is not None else 'current_runtime_legacy',
+                                         'archive_root': HISTORICAL_SOURCE_ROOT if historical is not None else None,
+                                         'current_runtime_evolved': evolved},
             'claims': claims, 'unmet_criteria': gaps, 'metrics': observed}
 
 
@@ -151,6 +195,18 @@ def render(report: dict, language: str) -> str:
              '| ID | ' + ('声明 | 状态 |' if zh else 'Claim | State |'), '|---|---|---|']
     for c in report['claims']:
         lines.append(f"| {c['id']} | {c['statement_zh' if zh else 'statement_en']} | `{c['state']}` |")
+    historical = report['historical_implementation']
+    if historical['binding'] == 'archived_source':
+        evolution_zh = '当前源码已演化；' if historical['current_runtime_evolved'] else '归档没有产生当前运行时的新测量；'
+        evolution_en = ('Current source has evolved; ' if historical['current_runtime_evolved'] else
+                        'Archiving does not create a new measurement of current runtime; ')
+        lines += ['', (f"历史测量固定于提交 `{historical['measured_commit']}` 的{historical['source_count']}份实现源码。"
+                       '账本核对[原测量源码归档](../../research/frozen-20261004-source/contextproof)，保留原始源码路径及测量哈希。'
+                       + evolution_zh + '下列旧性能数字只适用于归档实现，不证明当前运行时的速度。归档与账本修复没有重跑旧基准。'
+                       if zh else
+                       f"Historical measurements bind to {historical['source_count']} implementation files at commit `{historical['measured_commit']}`. "
+                       'The ledger checks the [archived measured source](../../research/frozen-20261004-source/contextproof) and preserves the original source paths and measured hashes. '
+                       + evolution_en + 'The historical performance numbers below apply only to that archived implementation and do not establish current runtime speed. Archiving and repairing the ledger did not rerun the old benchmark.')]
     lines += ['', '## ' + ('已记录的性能结果' if zh else 'Recorded performance results'), '',
               ('四个便利抽样仓库、各8修订和24固定锚点、5计时重复，单台M1 Pro。基线为持久索引+整库相等复用；候选增加读取集合复用。单位为仓库，重复不是独立数据集。' if zh else
                'Four convenience repositories, 8 revisions and 24 fixed anchors each, 5 timing repeats on one M1 Pro. Baseline: persistent indexing plus whole-corpus reuse. Candidate: additional read-set reuse. Repository is the unit; repetitions are not independent datasets.'), '',

@@ -40,6 +40,11 @@ class GraphSession:
     ``incremental_read_set`` combines those same summaries with unknown-preserving
     read-set reuse. ``incremental_whole_corpus_guard`` combines the same summaries
     with whole-source equality checks. Historical modes retain their behavior.
+    ``incremental_catalog_coarse_guard`` exempts valid zero-query graphs from
+    whole-catalog invalidation; ``incremental_catalog_root_guard`` checks complete
+    queried-root membership; ``incremental_catalog_read_set`` checks exact candidate
+    tuples and namespace-existence answers. All three require valid versioned traces
+    and unchanged consulted source bytes, and preserve incomplete output unchanged.
 
     构造时固定锚点与策略；防御性复制输入与输出。路径目录或读取文件改变时
     重建。默认模式只复用完整图；探索性 read_set_any_status 保留未知/截断状态，
@@ -48,6 +53,8 @@ class GraphSession:
     incremental_index_rebuild 复用已守卫文件摘要但重建所有图；incremental_read_set
     加入保留未知状态的读取集合复用；incremental_whole_corpus_guard 则仅在全部
     源码相同时复用图。已有模式行为保持不变。
+    三种 incremental_catalog 模式分别使用查询感知的全目录、完整查询根成员和
+    精确候选/命名空间存在性守卫；均要求有效版本化足迹及未变的读取字节，保留不完整输出。
     """
     MODES = {"warm_ast_rebuild", "whole_corpus_guard", "read_set_certificate",
              "read_set_any_status", "incremental_index_rebuild", "incremental_read_set",
