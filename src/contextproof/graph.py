@@ -20,9 +20,9 @@ from .index import source_lines
 
 KIND = "contextproof.evidence-graph"
 SCOPE = "python-transitive-static"
-# Version 3 rejects class-body global writes that v2 could falsely resolve.
-# 第 3 版保守拒绝类体 global 重绑定；旧图必须重新捕获，不能沿用旧判定。
-RESOLVER_VERSION = 3
+# Version 4 also rejects deferred function global writes, including class-private names.
+# 第4版也保留函数延迟 global 写入及类私有名称；旧图必须重新捕获。
+RESOLVER_VERSION = 4
 GUARANTEE = (
     "observed source and import-binding identity in a bounded static Python closure only; "
     "unresolved and truncated frontiers prevent freshness; no runtime or semantic guarantee"

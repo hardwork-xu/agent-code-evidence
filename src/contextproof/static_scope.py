@@ -58,54 +58,73 @@ def _definition_expressions(node: ast.AST) -> list[ast.AST]:
     return expressions
 
 
-def _class_global_writes(owner: ast.ClassDef) -> list[tuple[str, ast.AST]]:
-    """Find explicit class-suite writes to declared module globals.
+def _mangle(name: str, private_class: str | None) -> str:
+    """Compiler-style private binding name / 编译器规则下的类私有绑定名。"""
+    if (not private_class or not name.startswith("__") or name.endswith("__")
+            or "." in name):
+        return name
+    class_name = private_class.lstrip("_")
+    return "_" + class_name + name if class_name else name
 
-    Class bodies execute when defined, but each nested class has its own global
-    declarations. Function/lambda bodies and comprehension targets belong to
-    other scopes. Only writes paired with a global declaration in the same
-    class scope are returned; no branch or runtime call is evaluated.
 
-    类体在定义时执行；嵌套类的 global 声明独立。函数体及推导式目标不属于
-    外层类作用域。仅保留同一类作用域中显式声明为 global 的写入，不求值分支
-    或调用，也不声称覆盖任意 Python 运行时副作用。
+def _binding_scopes(tree: ast.Module):
+    """Yield blocks with their class mangling context / 返回词法块及类名改写上下文。"""
+    pending = [(tree, None)]
+    while pending:
+        node, private_class = pending.pop()
+        if isinstance(node, ast.ClassDef):
+            yield node, node.name
+            pending.extend((child, node.name) for child in node.body)
+            pending.extend((child, private_class) for child in _definition_expressions(node))
+        else:
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                yield node, private_class
+            pending.extend((child, private_class) for child in ast.iter_child_nodes(node))
+
+
+def _scope_global_writes(owner: ast.AST, private_class: str | None) -> list[tuple[str, ast.AST]]:
+    """Find explicit global binding writes in one lexical block.
+
+    A function may execute later, so a possible write prevents a fixed module
+    binding witness even if no call or branch reachability is established.
+    Nested bodies have independent global declarations; defaults/decorators
+    execute in the containing block. Comprehension iteration targets are local,
+    while assignment expressions can bind a containing function's global.
+
+    单独收集一个词法块的显式 global 重绑定。函数可能稍后执行；不假定调用
+    或分支可达。嵌套体声明独立，定义时表达式属于外层；推导式循环变量不
+    重绑定外层，但赋值表达式可能重绑定外层函数声明的全局名。
     """
-    result: list[tuple[str, ast.AST]] = []
-    classes = [owner]
-    while classes:
-        pending = list(classes.pop().body)
-        globals_: set[str] = set()
-        writes: list[tuple[str, ast.AST]] = []
-        while pending:
-            node = pending.pop()
-            names: set[str] = set()
-            if isinstance(node, ast.Global):
-                globals_.update(node.names)
-            elif isinstance(node, ast.Name) and isinstance(node.ctx, (ast.Store, ast.Del)):
-                names.add(node.id)
-            elif isinstance(node, _DECLARATIONS):
-                names.add(node.name)
-            elif isinstance(node, (ast.Import, ast.ImportFrom)):
-                names.update(alias.asname or alias.name.split(".")[0] for alias in node.names)
-            elif isinstance(node, ast.ExceptHandler) and node.name:
-                names.add(node.name)
-            elif isinstance(node, (ast.MatchAs, ast.MatchStar)) and node.name:
-                names.add(node.name)
-            elif isinstance(node, ast.MatchMapping) and node.rest:
-                names.add(node.rest)
-            writes.extend((name, node) for name in sorted(names))
-            if isinstance(node, ast.ClassDef):
-                classes.append(node)
-            if isinstance(node, (*_DECLARATIONS, ast.Lambda)):
-                pending.extend(_definition_expressions(node))
-            elif isinstance(node, ast.comprehension):
-                # The iteration target is local to the comprehension.
-                # 推导式循环目标不会重绑定外层类声明的 global。
-                pending.extend([node.iter, *node.ifs])
-            else:
-                pending.extend(ast.iter_child_nodes(node))
-        result.extend((name, node) for name, node in writes if name in globals_)
-    return result
+    globals_: set[str] = set()
+    writes: list[tuple[str, ast.AST]] = []
+    pending = list(owner.body)
+    while pending:
+        node = pending.pop()
+        names: set[str] = set()
+        if isinstance(node, ast.Global):
+            globals_.update(_mangle(name, private_class) for name in node.names)
+        elif isinstance(node, ast.Name) and isinstance(node.ctx, (ast.Store, ast.Del)):
+            names.add(node.id)
+        elif isinstance(node, _DECLARATIONS):
+            names.add(node.name)
+        elif isinstance(node, (ast.Import, ast.ImportFrom)):
+            names.update(alias.asname or alias.name.split(".")[0] for alias in node.names)
+        elif isinstance(node, ast.ExceptHandler) and node.name:
+            names.add(node.name)
+        elif isinstance(node, (ast.MatchAs, ast.MatchStar)) and node.name:
+            names.add(node.name)
+        elif isinstance(node, ast.MatchMapping) and node.rest:
+            names.add(node.rest)
+        writes.extend((_mangle(name, private_class), node) for name in sorted(names))
+        if isinstance(node, (*_DECLARATIONS, ast.Lambda)):
+            pending.extend(_definition_expressions(node))
+        elif isinstance(node, ast.comprehension):
+            # Ignore iteration targets; scan assignment expressions in the rest.
+            # 忽略推导式迭代目标，保留其它表达式中的外层赋值表达式。
+            pending.extend([node.iter, *node.ifs])
+        else:
+            pending.extend(ast.iter_child_nodes(node))
+    return [(name, node) for name, node in writes if name in globals_]
 
 
 def guard_module_bindings(corpus: Any, paths=None) -> None:
@@ -117,6 +136,13 @@ def guard_module_bindings(corpus: Any, paths=None) -> None:
     """
     for path in corpus.trees if paths is None else paths:
         tree = corpus.trees[path]
+        # Every explicit function/class block can potentially rebind a module
+        # global. Scan each block once; never execute repository code.
+        # 每个函数/类块都可能显式重绑定模块全局名；逐块扫描，不执行源码。
+        for owner, private_class in _binding_scopes(tree):
+            for name, write in _scope_global_writes(owner, private_class):
+                corpus.bindings[path].setdefault(name, []).append(
+                    {"kind": "dynamic", "node": write, "origin": "explicit_global_write"})
         pending = list(tree.body)
         while pending:
             node = pending.pop()
@@ -139,9 +165,6 @@ def guard_module_bindings(corpus: Any, paths=None) -> None:
                 pending.extend(_definition_expressions(node))
                 continue
             if isinstance(node, ast.ClassDef):
-                for name, write in _class_global_writes(node):
-                    corpus.bindings[path].setdefault(name, []).append(
-                        {"kind": "dynamic", "node": write})
                 pending.extend(_definition_expressions(node))
                 continue
             pending.extend(ast.iter_child_nodes(node))

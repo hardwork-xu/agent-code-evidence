@@ -456,3 +456,22 @@ Remote publication and CI must be read back after pushing this evidence commit.
 
 实测后79项受影响验证通过；构建、安装wheel入口及72项归档/结果字节检查通过。
 Docker未运行，构建文件不等于GitHub Release；远端状态仍须另行核验。
+
+
+## 2026-10-14 — explicit global write reliability / 显式全局写入可靠性
+
+Post hoc reconstruction of the published catalog study found a real Scrapy
+binding counterexample in one getter anchor: an initial literal is mutable via
+explicit `global` writes in other functions. This explains one affected anchor,
+not the overall low closure coverage. The first 455 independently specified
+interface regressions on source09d6476 retained 264 failures and191 passes;
+20 possible-write fixtures and12 controls are not455 independent observations.
+The corrected implementation passed all455, and an additional seven compiler
+name-mangling checks were added after review. Class-private `global __x` writes
+the compiler's `_Class__x` name. No general runtime/semantic guarantee follows.
+
+复核旧catalog样本发现Scrapy一个getter锚点的真实反例：同文件函数可能通过
+显式global改写初始字面量。不能据此解释整体低覆盖。旧版首轮455项接口回归
+实际264失败、191通过；它们由20个潜在写入夹具及12个负控制派生，不是455个
+独立观察。修复版455项通过；独立审查后补充7项编译器私有名称检查。不可达
+写入仍保守拒绝，反射、外部副作用及运行时语义证明均不在本修复范围。

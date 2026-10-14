@@ -318,6 +318,8 @@ class _Corpus:
             return _unresolved("wildcard import may shadow this binding")
         if not bindings:
             return _unresolved("name is not a static repository binding (possibly builtin/external)")
+        if any(binding.get("origin") == "explicit_global_write" for binding in bindings):
+            return _unresolved("explicit function/class global write may rebind this name")
         if len(bindings) != 1:
             return _unresolved("ambiguous or rebound name")
         binding = bindings[0]

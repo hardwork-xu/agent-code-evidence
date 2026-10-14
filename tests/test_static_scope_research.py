@@ -64,11 +64,13 @@ def test_class_global_definition_cannot_be_false_fresh():
     "class Nested:\n    global helper\n    helper = 2",
     "class Nested:\n    global helper\n    import math as helper",
     "class Nested:\n    global helper\n    del helper",
+    "def method():\n    global helper\n    helper = 2",
+    "def method():\n    class Nested:\n        global helper\n        helper = 2",
 ], ids=["assign", "unpack", "augassign", "delete", "import", "from-import",
         "def", "async-def", "class", "walrus", "for-target", "with-target",
         "except-target", "pattern", "unexecuted-branch", "method-default",
         "lambda-default", "nested-class-base", "nested-assign", "nested-import",
-        "nested-delete"])
+        "nested-delete", "deferred-method", "deferred-nested-class"])
 def test_explicit_class_global_write_is_unknown(body):
     source = "helper = 1\nclass Binder:\n" + indent(body, "    ")
     source += "\ndef entry():\n    return helper\n"
@@ -96,13 +98,10 @@ def test_explicit_class_global_write_is_unknown(body):
     "global helper\nvalues = {helper: helper for helper in (2, 3)}",
     "global helper\ndef method(helper=2):\n    return helper",
     "global helper\nmethod = lambda helper=2: helper",
-    "def method():\n    global helper\n    helper = 2",
-    "def method():\n    class Nested:\n        global helper\n        helper = 2",
 ], ids=["local-assign", "local-import", "local-from-import", "local-def",
         "declaration-only", "unrelated-global", "nested-local-assign",
         "nested-local-import", "nested-local-delete", "list-target", "dict-target",
-        "method-parameter", "lambda-parameter", "deferred-method",
-        "deferred-nested-class"])
+        "method-parameter", "lambda-parameter"])
 def test_unrelated_or_separate_lexical_scope_does_not_poison_global(body):
     source = "helper = 1\nclass Binder:\n" + indent(body, "    ")
     source += "\ndef entry():\n    return helper\n"
@@ -133,10 +132,10 @@ def test_nested_class_global_does_not_require_outer_global():
     assert compare_graphs(before, after)["status"] == "unresolved"
 
 
-@pytest.mark.parametrize("old_version", [1, 2])
+@pytest.mark.parametrize("old_version", [1, 2, 3])
 def test_pre_class_global_guard_graphs_require_recapture(old_version):
     current, _ = build("def entry():\n    return 1\n")
-    assert current["policy"]["resolver_version"] == RESOLVER_VERSION == 3
+    assert current["policy"]["resolver_version"] == RESOLVER_VERSION == 4
     previous = deepcopy(current)
     previous["policy"]["resolver_version"] = old_version
     seal_graph(previous)
