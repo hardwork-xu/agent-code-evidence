@@ -1,0 +1,74 @@
+{
+  "classification": "controlled development regressions plus fixed natural panel prospective to candidate graph outcomes; upstream execution preflights already observed; not unseen holdout, formal accuracy or mature research",
+  "engines": {
+    "baseline": {
+      "byte_archive_commit": "affa59024f70cde86d2549b690204aa73ddccc7d",
+      "fingerprint": {
+        "__init__.py": "ef87b48edc5100642605cee1f0537a6a2f922f73ca0963a95ed944a4851c794e",
+        "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+        "catalog.py": "38230bd815c5b2c027bad8975162a448e992cc8bac2824e133439ca9b1a2b776",
+        "cli.py": "b6b713817366891fcb815feeaef203cd2095e4b1e340dba879d7b02cc29b74ca",
+        "dependencies.py": "d9c1dd1bedcde6c0236f3e4faad185d6e87eb6b90d13c79507f2a31e60b22e3a",
+        "evidence.py": "63b41f50ced294c391399121752b5ffb096dc153d75f4eeb30a0a3f74357fc6a",
+        "graph.py": "b454d6879882360976bbb7981f82d2734211f68f0408c30ae6dc43b15ef3aab6",
+        "graph_delta.py": "dd46426a75e42fad59818c6b32303ad5f62c1d4464c5474ae2c1379bee65b741",
+        "graph_payload.py": "663eca2ac57b5f1ef127b946057629999bfde47c93bf38c8bbc72007ce5ec509",
+        "graph_session.py": "d86b59beff2566f514464d1b4791fb5bc58dfd2f8a51028d986d457e0829b4ff",
+        "index.py": "d8b6838ab5161d69e9b50480674345830a2921cc4be9b1c6a02f5a95d792d108",
+        "mcp.py": "3b954718f775ccb2f99c971369a99fdb202d3a1f20eb0a27330d7d14ece12712",
+        "models.py": "4bc812d50fe6773f5c89181b7259de9950f4c25ea4272081cdc38b130f15c8bf",
+        "module_cache.py": "289d9fa5b68fbafeac747d45c02fe7099b75af857c5c24997331bec95fb784a1",
+        "parse_cache.py": "9aa2ecc4dec7dc4ccd86f66e8202de6cd0de431ce3e8fd79c53c7902398edc85",
+        "report.py": "12993022760f71142b6ae796ce7d8b1a18a7774f6eb6ed4d8d7c8aef331db666",
+        "retrieval.py": "c237c65f99197b4565374decd2afc9bf6e1fc079d527f74beb1ab994fc1e1a68",
+        "reuse.py": "140784a7ccd7dd397928a983ae923d9668dcb817f4dc7c36e4d570f36cee62fa",
+        "revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
+        "session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
+        "static_scope.py": "dfa62ba5b1fdb7d110ff16acce912c38a054c5ba3636490370f8d5c1bd35d417"
+      },
+      "resolver_version": 3,
+      "source_commit": "09d6476ae5d42c9876d0df86b3b60dfa1c2ff048"
+    },
+    "candidate": {
+      "fingerprint": {
+        "__init__.py": "ef87b48edc5100642605cee1f0537a6a2f922f73ca0963a95ed944a4851c794e",
+        "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+        "catalog.py": "38230bd815c5b2c027bad8975162a448e992cc8bac2824e133439ca9b1a2b776",
+        "cli.py": "b6b713817366891fcb815feeaef203cd2095e4b1e340dba879d7b02cc29b74ca",
+        "dependencies.py": "ec82c58a473a8588615baf9b526bc2509f51cd5b1aae10803751fdf17357bd93",
+        "evidence.py": "63b41f50ced294c391399121752b5ffb096dc153d75f4eeb30a0a3f74357fc6a",
+        "graph.py": "bf8fc7a7223dc4fb62e3f9e5b4dfd94bf44813912fd116a7beadf09e2b76fdd2",
+        "graph_delta.py": "dd46426a75e42fad59818c6b32303ad5f62c1d4464c5474ae2c1379bee65b741",
+        "graph_payload.py": "663eca2ac57b5f1ef127b946057629999bfde47c93bf38c8bbc72007ce5ec509",
+        "graph_session.py": "d86b59beff2566f514464d1b4791fb5bc58dfd2f8a51028d986d457e0829b4ff",
+        "index.py": "d8b6838ab5161d69e9b50480674345830a2921cc4be9b1c6a02f5a95d792d108",
+        "mcp.py": "3b954718f775ccb2f99c971369a99fdb202d3a1f20eb0a27330d7d14ece12712",
+        "models.py": "4bc812d50fe6773f5c89181b7259de9950f4c25ea4272081cdc38b130f15c8bf",
+        "module_cache.py": "289d9fa5b68fbafeac747d45c02fe7099b75af857c5c24997331bec95fb784a1",
+        "parse_cache.py": "9aa2ecc4dec7dc4ccd86f66e8202de6cd0de431ce3e8fd79c53c7902398edc85",
+        "report.py": "12993022760f71142b6ae796ce7d8b1a18a7774f6eb6ed4d8d7c8aef331db666",
+        "retrieval.py": "c237c65f99197b4565374decd2afc9bf6e1fc079d527f74beb1ab994fc1e1a68",
+        "reuse.py": "140784a7ccd7dd397928a983ae923d9668dcb817f4dc7c36e4d570f36cee62fa",
+        "revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
+        "session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
+        "static_scope.py": "b5bf36dc50ec7fa544c34458090b8c52bd453db32e45c717e4e9cb77f91644d4"
+      },
+      "resolver_version": 4,
+      "source_commit": "99f09f4594e44fc0805b4d4a4599a0a6857490c3"
+    }
+  },
+  "execution_protocol": "Exact43 fixed upstream assertions on4 parent/fixed pairs plus23 whole lexical Pyparsing methods; outcomes already observed in resource/source preflight and separate from candidate effect",
+  "frozen_at_utc": "2026-10-14T13:46:10.132145+00:00",
+  "graph_policy": {
+    "max_depth": 4,
+    "max_nodes": 256
+  },
+  "inputs_sha256": "84a0b1d26e66bb213f5799b33b3607687dabfd07407ac79bfe928d68c71b8736",
+  "natural_target": "Keep all8 source-head repositories including7 zero-writer rows, all4 regressionfix anchors on parent/fixed (8 anchors), all2 identified global-reading top-level declarations. Inspect watched binding certainty and retain all failures/frontiers; runtime read traces are not necessary-context labels. No minimum improvement or accuracy claim can be inferred from this small chosen panel.",
+  "no_performance_claim": true,
+  "no_semantic_maturity_claim": true,
+  "primary_correctness_target": "All20 fixed possible-global-write fixtures retained unknown; all12 non-writing controls retain original supported literal binding;19 observed runtime changes, unreachable conservative refusal retained as cost",
+  "runner_sha256": "13438415f2a3e8abb5b139ea9918effe5213d3aa0c192c3a0c5357d0b61f1cab",
+  "schema_version": 1,
+  "source_licenses_reviewed_in": "benchmarks/global_bindings/upstream_execution/inputs.json"
+}
