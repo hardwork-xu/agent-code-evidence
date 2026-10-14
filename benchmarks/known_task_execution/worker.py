@@ -6,6 +6,7 @@ not the official container harness or a security sandbox. Logs stay private.
 The worker uses Python 3.8-compatible syntax for historical source tests.
 """
 import hashlib
+import importlib
 import importlib.metadata
 import ipaddress
 import json
@@ -107,6 +108,26 @@ def error_class(report):
     return value if value.isidentifier() else 'upstream_test_failure'
 
 
+def reviewed_plugins(names, versions):
+    """Load only locked test plugins from their distributions. / 只加载已锁定测试插件。"""
+    allowed = {'pytest_asyncio.plugin': 'pytest-asyncio', 'pytest_mock.plugin': 'pytest-mock'}
+    if not isinstance(names, list) or len(names) != len(set(names)):
+        raise ValueError('plugin names must be a distinct reviewed list')
+    modules = []
+    for name in names:
+        if name not in allowed or allowed[name] not in versions:
+            raise ValueError('unreviewed or unlocked test plugin')
+        distribution = importlib.metadata.distribution(allowed[name])
+        path = Path(distribution.locate_file(name.replace('.', '/') + '.py')).resolve()
+        module = importlib.import_module(name)
+        if Path(module.__file__).resolve() != path:
+            raise ValueError('test plugin import escaped its locked distribution')
+        if Path(module.__spec__.origin).resolve() != path:
+            raise ValueError('test plugin import spec differs')
+        modules.append(module)
+    return modules
+
+
 def execute(config):
     root = Path(config['execution_root']).resolve()
     expected = validate_tree(root, config['source_files'])
@@ -172,11 +193,12 @@ def execute(config):
 
     previous = network_guard(config['network_mode'], denied)
     try:
+        plugins = reviewed_plugins(config.get('pytest_plugins', []), installed)
         code = int(pytest.main(['-c', '/dev/null', '--rootdir=' + str(root),
                                '--confcutdir=' + str(root), '--import-mode=importlib',
                                '-p', 'no:cacheprovider', '-q',
                                *[str(root / value) for value in config['test_files']]],
-                              plugins=[Recorder()]))
+                              plugins=[Recorder(), *plugins]))
     finally:
         restore_network(previous)
     validate_tree(root, config['source_files'])
@@ -225,6 +247,7 @@ def execute(config):
             'results': outcomes, 'phase_reports': reports, 'collection_errors': collection_errors,
             'network_denials': denied, 'loaded_source_modules': loaded,
             'source_before_after_verified': True, 'dependency_versions': installed,
+            'explicit_test_plugins': config.get('pytest_plugins', []),
             'python_version': sys.version, 'elapsed_seconds': time.perf_counter() - started,
             'peak_rss_mib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss /
                             (1024 * 1024 if sys.platform == 'darwin' else 1024),

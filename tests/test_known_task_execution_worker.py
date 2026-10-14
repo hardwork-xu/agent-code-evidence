@@ -119,3 +119,13 @@ def test_crash_category_does_not_disclose_stack_path():
             reprcrash = Crash()
         longrepr = Long()
     assert worker.error_class(Report()) == 'MemoryError'
+
+
+@pytest.mark.parametrize('names,versions', [
+    (['unreviewed.plugin'], {}), (['pytest_asyncio.plugin'], {}),
+    (['pytest_asyncio.plugin', 'pytest_asyncio.plugin'], {'pytest-asyncio': '0.21.1'}),
+    ('pytest_asyncio.plugin', {'pytest-asyncio': '0.21.1'}),
+])
+def test_unreviewed_or_unlocked_plugins_are_rejected(names, versions):
+    with pytest.raises(ValueError):
+        worker.reviewed_plugins(names, versions)
