@@ -6,7 +6,10 @@ from collections import Counter
 import json
 from pathlib import Path
 
-from .suite import ROOT, METHODS, digest, safe_path, local_asset, summarize, validate_results
+from .suite import (
+    ROOT, METHODS, FROZEN_CATALOG_REFERENCE, digest, safe_path, local_asset,
+    summarize, validate_results,
+)
 
 INDEX = ROOT / 'benchmarks/catalog_reuse/results/index.json'
 
@@ -26,7 +29,9 @@ def load_records(index_path: Path = INDEX) -> tuple[dict, dict, dict]:
             raise ValueError('retained result file changed / 保留结果文件已变')
     folder = index_path.parent / safe_path(index['run_directory'])
     run = json.loads((folder / 'run.json').read_bytes())
-    validate_results(run)
+    # Historical reporting is explicit and cannot relax the measurement entry.
+    # 历史报告显式核验固定归档，不放宽新测量入口的当前源码检查。
+    validate_results(run, source_reference=FROZEN_CATALOG_REFERENCE)
     required_files = {'run.json', 'rows.jsonl', 'summary.json', 'legacy-oracle.json'}
     required_files.update(f"memory-{repo}-{repetition}-{method}.json"
                           for repo in range(len(run['sources']))
@@ -44,7 +49,7 @@ def load_records(index_path: Path = INDEX) -> tuple[dict, dict, dict]:
     rows = [json.loads(line) for line in (folder / 'rows.jsonl').read_text().splitlines()]
     if rows != run['rows']:
         raise ValueError('row journal differs from run / 逐行日志与运行记录不符')
-    summary = summarize(run)
+    summary = summarize(run, source_reference=FROZEN_CATALOG_REFERENCE)
     if summary != json.loads((folder / 'summary.json').read_bytes()):
         raise ValueError('saved summary differs / 保存摘要不符')
     reference = json.loads((folder / 'legacy-oracle.json').read_bytes())

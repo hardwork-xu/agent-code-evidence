@@ -44,6 +44,14 @@ PIN_PATH = ROOT / 'benchmarks/catalog_reuse/inputs.json'
 EXCLUDED_COMPONENTS = {'test', 'tests', 'testing', '__pycache__'}
 CAPS = {'source_bytes': 16 * 1024**2, 'source_files': 1500,
         'single_file_bytes': 2 * 1024**2, 'archive_download_bytes': 32 * 1024**2}
+# The sole archived run is fixed here, rather than selected by result assertions.
+# 唯一历史运行在此固定，不由结果文件自行选择可信归档。
+FROZEN_CATALOG_REFERENCE = 'frozen_catalog_20261014'
+FROZEN_CATALOG_COMMIT = 'affa59024f70cde86d2549b690204aa73ddccc7d'
+FROZEN_CATALOG_ARCHIVE = 'research/frozen-catalog-20261014-source'
+FROZEN_CATALOG_LEDGER_SHA256 = '0573ba3055d75eec2aa9fe7691048e3df2c7779ca94533a6a210101c5c77c715'
+FROZEN_CATALOG_PROTOCOL_SHA256 = 'a335536a0344c02e539361920d3c14ce33e5b4b2155dcd7726d2e4d2d33afd6c'
+FROZEN_CATALOG_RUN_SHA256 = '667dbee3726034cf40b3733ff4da3a60c34bdab80959d2671a2758795bbcc5a1'
 
 
 def digest(raw: bytes) -> str:
@@ -98,6 +106,44 @@ def implementation_fingerprint() -> dict[str, str]:
     files = [*sorted((ROOT / 'src/contextproof').glob('*.py')),
              ROOT / 'benchmarks/catalog_reuse/suite.py', ROOT / 'scripts/run_catalog_study.py']
     return {path.relative_to(ROOT).as_posix(): digest(path.read_bytes()) for path in files}
+
+
+def _validate_frozen_catalog_archive(protocol: dict) -> dict:
+    """Verify fixed historical bytes; never execute them / 核验固定历史字节，不执行。
+
+    Only the sealed 2026-10-14 protocol is eligible. A self-edited protocol or
+    ledger cannot create another trusted source reference.
+    仅接受已封存协议；自行修改协议或清单不能建立另一个可信源码版本。
+    """
+    if digest(canonical(protocol)) != FROZEN_CATALOG_PROTOCOL_SHA256:
+        raise ValueError('protocol is not the fixed historical catalog protocol')
+    raw = local_asset(ROOT, FROZEN_CATALOG_ARCHIVE + '/SOURCE_MAP.json').read_bytes()
+    if digest(raw) != FROZEN_CATALOG_LEDGER_SHA256:
+        raise ValueError('historical catalog archive ledger checksum mismatch')
+    ledger = json.loads(raw)
+    if (ledger['source_commit'] != FROZEN_CATALOG_COMMIT
+            or ledger['protocol_canonical_sha256'] != FROZEN_CATALOG_PROTOCOL_SHA256
+            or ledger['run_canonical_sha256'] != FROZEN_CATALOG_RUN_SHA256
+            or ledger['implementation_sha256'] != protocol['implementation_sha256']):
+        raise ValueError('historical catalog source binding mismatch')
+    expected, actual = protocol['implementation_sha256'], {}
+    for file in ledger['files']:
+        relative = safe_path(file['original_path'])
+        if file['archive_path'] != relative or relative in actual:
+            raise ValueError('historical catalog archive source map differs')
+        content = local_asset(ROOT, FROZEN_CATALOG_ARCHIVE + '/' + relative).read_bytes()
+        actual[relative] = digest(content)
+        if len(content) != file['bytes'] or actual[relative] != file['sha256']:
+            raise ValueError('historical catalog source checksum mismatch')
+    if actual != expected:
+        raise ValueError('historical catalog implementation fingerprint mismatch')
+    archive = ROOT / FROZEN_CATALOG_ARCHIVE
+    assets = list(archive.rglob('*'))
+    if (any(path.is_symlink() for path in assets)
+            or {path.relative_to(archive).as_posix() for path in assets if path.is_file()}
+            != set(expected) | {'SOURCE_MAP.json'}):
+        raise ValueError('historical catalog archive contains unexpected assets')
+    return ledger
 
 
 def source_pins(protocol: dict) -> dict:
@@ -388,7 +434,7 @@ def load_inputs(path: Path, protocol: dict) -> tuple[dict, list[Repository]]:
     return manifest, repositories
 
 
-def validate_protocol(protocol: dict) -> None:
+def _validate_protocol_contract(protocol: dict) -> None:
     if (type(protocol.get('schema_version')) is not int or protocol['schema_version'] != 1
             or protocol.get('status') != 'frozen'
             or protocol.get('methods') != list(METHODS)):
@@ -401,9 +447,6 @@ def validate_protocol(protocol: dict) -> None:
     if set(policy) != {'max_depth', 'max_nodes'} or any(type(v) is not int or v < 1 for v in policy.values()):
         raise ValueError('invalid fixed graph policy')
     source_pins(protocol)
-    fingerprint = protocol.get('implementation_sha256')
-    if not isinstance(fingerprint, dict) or fingerprint != implementation_fingerprint():
-        raise ValueError('measurement/core implementation differs from frozen protocol')
     target = protocol.get('performance_target', {})
     gate = protocol.get('resource_gate', {})
     if (type(target.get('minimum_reduction_fraction')) not in {int, float}
@@ -416,6 +459,14 @@ def validate_protocol(protocol: dict) -> None:
             or not math.isfinite(gate['maximum_candidate_to_primary_baseline_peak_rss_ratio'])
             or gate['maximum_candidate_to_primary_baseline_peak_rss_ratio'] <= 0):
         raise ValueError('invalid frozen performance/resource targets')
+
+
+def validate_protocol(protocol: dict) -> None:
+    """Measurement always binds current code / 测量始终绑定当前代码，无历史回退。"""
+    _validate_protocol_contract(protocol)
+    fingerprint = protocol.get('implementation_sha256')
+    if not isinstance(fingerprint, dict) or fingerprint != implementation_fingerprint():
+        raise ValueError('measurement/core implementation differs from frozen protocol')
 
 
 def method_order(repository_index: int, repetition: int) -> tuple[str, ...]:
@@ -637,7 +688,7 @@ def measure_rss(inputs: Path, protocol_path: Path, repository: Repository, metho
     return result
 
 
-def validate_results(result: dict) -> None:
+def validate_results(result: dict, *, source_reference: str = 'current') -> None:
     """Reject missing/duplicate/failed rows before any positive report.
 
     报告前拒绝缺失、重复、失败或不一致的原始记录。
@@ -647,7 +698,18 @@ def validate_results(result: dict) -> None:
     if result.get('status') != 'passed':
         raise ValueError('cannot summarize an incomplete or failed run')
     protocol = result['protocol']
-    validate_protocol(protocol)
+    if source_reference == 'current':
+        validate_protocol(protocol)
+    elif source_reference == FROZEN_CATALOG_REFERENCE:
+        ledger = _validate_frozen_catalog_archive(protocol)
+        _validate_protocol_contract(protocol)
+        if (result['environment'].get('source_commit') != FROZEN_CATALOG_COMMIT
+                or result['environment'].get('source_dirty') is not False
+                or result.get('run_id') != ledger['run_id']
+                or digest(canonical(result)) != FROZEN_CATALOG_RUN_SHA256):
+            raise ValueError('result is not the sealed historical catalog run')
+    else:
+        raise ValueError('unsupported result source reference; no automatic archive fallback')
     pins = source_pins(protocol)
     expected_sources = [{'repository': r['repo'], 'fixed_head': r['fixed_head'],
                          'primary_commits': [s['commit'] for s in r['primary_snapshots']],
@@ -752,8 +814,8 @@ def validate_results(result: dict) -> None:
             raise ValueError('RSS worker source, implementation, sample shape or output differs from parent')
 
 
-def summarize(result: dict) -> dict:
-    validate_results(result)
+def summarize(result: dict, *, source_reference: str = 'current') -> dict:
+    validate_results(result, source_reference=source_reference)
     groups = {}
     targets = result['protocol']['performance_target']
     resource_gate = result['protocol']['resource_gate']

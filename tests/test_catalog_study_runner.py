@@ -6,6 +6,7 @@ These are runner checks, not natural-repository research outcomes.
 from copy import deepcopy
 import io
 import json
+import shutil
 import tarfile
 
 import pytest
@@ -371,3 +372,124 @@ def test_cli_bilingual_help_and_worker_json(fixture_study, capsys):
     assert main(['--rss-worker', '--inputs', str(inputs), '--protocol', str(protocol_path),
                  '--repository', 'fixture/project', '--method', suite.METHODS[-1]]) == 0
     assert json.loads(capsys.readouterr().out)['status'] == 'passed'
+
+
+@pytest.fixture(scope='module')
+def sealed_catalog_run():
+    """Actual immutable published run, not invented historical rows / 真实封存运行。"""
+    root = suite.ROOT / 'benchmarks/catalog_reuse/results'
+    index = json.loads((root / 'index.json').read_bytes())
+    return json.loads((root / index['run_directory'] / 'run.json').read_bytes())
+
+
+@pytest.fixture
+def frozen_catalog_archive_copy(tmp_path, monkeypatch):
+    archive = tmp_path / suite.FROZEN_CATALOG_ARCHIVE
+    shutil.copytree(suite.ROOT / suite.FROZEN_CATALOG_ARCHIVE, archive)
+    protocol = json.loads((suite.ROOT / 'benchmarks/catalog_reuse/protocol.json').read_bytes())
+    # PIN_PATH retains the genuine source blueprint while only archival bytes
+    # move to a disposable root. No published file is mutated by these tests.
+    # 只复制归档到临时根；来源定义仍真实，测试不修改任何公开记录。
+    monkeypatch.setattr(suite, 'ROOT', tmp_path)
+    return archive, protocol
+
+
+def test_current_measurement_rejects_changed_code_before_any_replay(fixture_study, tmp_path, monkeypatch):
+    inputs, protocol_path, protocol, _ = fixture_study
+    changed = deepcopy(protocol['implementation_sha256'])
+    changed['src/contextproof/static_scope.py'] = '0' * 64
+    monkeypatch.setattr(suite, 'implementation_fingerprint', lambda: changed)
+    def forbidden_replay(*args, **kwargs):
+        pytest.fail('measurement must not use a historical-source fallback')
+    monkeypatch.setattr(suite, 'replay_trajectory', forbidden_replay)
+    output = tmp_path / 'changed-current-code'
+    with pytest.raises(ValueError, match='implementation differs'):
+        suite.run_study(inputs, protocol_path, output)
+    failed = json.loads((output / 'run.json').read_bytes())
+    assert failed['status'] == 'failed' and failed['rows'] == []
+    with pytest.raises(ValueError, match='implementation differs'):
+        suite.rss_worker(inputs, protocol_path, 'fixture/project', suite.METHODS[-1])
+
+
+def test_sealed_history_requires_explicit_archive_and_preserves_summary(sealed_catalog_run, monkeypatch):
+    from benchmarks.catalog_reuse import report
+    monkeypatch.setattr(suite, 'implementation_fingerprint', lambda: {})
+    with pytest.raises(ValueError, match='implementation differs'):
+        suite.validate_results(sealed_catalog_run)
+    suite.validate_results(sealed_catalog_run, source_reference=suite.FROZEN_CATALOG_REFERENCE)
+    index, actual, summary = report.load_records()
+    assert actual == sealed_catalog_run
+    assert index['measured_source_commit'] == suite.FROZEN_CATALOG_COMMIT
+    assert summary['repositories_meeting_replay_target'] == 0
+    assert summary['replay_target_met'] is False
+
+
+@pytest.mark.parametrize('tamper', ['source', 'missing_source', 'symlink_source',
+                                   'extra_source', 'ledger'])
+def test_historical_archive_bytes_and_manifest_cannot_be_self_resealed(
+        frozen_catalog_archive_copy, tamper):
+    archive, protocol = frozen_catalog_archive_copy
+    source = archive / 'src/contextproof/static_scope.py'
+    if tamper == 'source':
+        source.write_bytes(source.read_bytes() + b'\n# altered source\n')
+        ledger = json.loads((archive / 'SOURCE_MAP.json').read_bytes())
+        for file in ledger['files']:
+            if file['original_path'] == 'src/contextproof/static_scope.py':
+                file['sha256'] = suite.digest(source.read_bytes())
+                file['bytes'] = source.stat().st_size
+        save(archive / 'SOURCE_MAP.json', ledger)
+    elif tamper == 'missing_source':
+        source.unlink()
+    elif tamper == 'symlink_source':
+        raw = source.read_bytes()
+        source.unlink()
+        outside = archive.parent / 'outside-static-scope.py'
+        outside.write_bytes(raw)
+        source.symlink_to(outside)
+    elif tamper == 'extra_source':
+        (archive / 'untracked.py').write_text('unexpected = True\n')
+    else:
+        ledger = json.loads((archive / 'SOURCE_MAP.json').read_bytes())
+        ledger['source_commit'] = '0' * 40
+        save(archive / 'SOURCE_MAP.json', ledger)
+    with pytest.raises(ValueError, match='historical|symlink|missing'):
+        suite._validate_frozen_catalog_archive(protocol)
+
+
+def test_archive_source_tamper_without_ledger_change_is_rejected(frozen_catalog_archive_copy):
+    archive, protocol = frozen_catalog_archive_copy
+    source = archive / 'src/contextproof/static_scope.py'
+    source.write_bytes(source.read_bytes() + b'\n# same ledger, different source\n')
+    with pytest.raises(ValueError, match='source checksum mismatch'):
+        suite._validate_frozen_catalog_archive(protocol)
+
+
+@pytest.mark.parametrize('field', ['implementation_sha256', 'performance_target', 'graph_policy'])
+def test_self_edited_protocol_cannot_select_fixed_history(frozen_catalog_archive_copy, field):
+    _, protocol = frozen_catalog_archive_copy
+    if field == 'implementation_sha256':
+        protocol[field]['src/contextproof/static_scope.py'] = '0' * 64
+    elif field == 'performance_target':
+        protocol[field]['minimum_reduction_fraction'] = 0
+    else:
+        protocol[field]['max_depth'] += 1
+    with pytest.raises(ValueError, match='not the fixed historical catalog protocol'):
+        suite._validate_frozen_catalog_archive(protocol)
+
+
+@pytest.mark.parametrize('tamper', ['commit', 'dirty', 'timing'])
+def test_archive_cannot_relabel_or_remeasure_sealed_results(sealed_catalog_run, tamper):
+    result = deepcopy(sealed_catalog_run)
+    if tamper == 'commit':
+        result['environment']['source_commit'] = '0' * 40
+    elif tamper == 'dirty':
+        result['environment']['source_dirty'] = True
+    else:
+        result['rows'][0]['elapsed_ns'] += 1
+    with pytest.raises(ValueError, match='not the sealed historical catalog run'):
+        suite.validate_results(result, source_reference=suite.FROZEN_CATALOG_REFERENCE)
+
+
+def test_arbitrary_source_reference_is_not_an_archive_fallback(sealed_catalog_run):
+    with pytest.raises(ValueError, match='unsupported result source reference'):
+        suite.validate_results(sealed_catalog_run, source_reference='custom-new-history')
