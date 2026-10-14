@@ -1,0 +1,33 @@
+{
+  "study_id": "polybench500-edit-localization-20261013",
+  "recorded_at": "2026-10-14T08:12:34.448749+00:00",
+  "stage": "before-formal-prediction-and-label-scoring",
+  "changes": [
+    {
+      "id": "operational-download-retry",
+      "reason": "Four codeload archives exceeded the downloader initial100MB limit; this limit was not in the frozen Python corpus protocol.",
+      "decision": "Uniform500MiB compressed-archive transport ceiling. Reuse validated successful downloads, retry four; retain first failed attempts. No selected task replaced and Python corpus/worker limits unchanged."
+    },
+    {
+      "id": "macos-memory-enforcement",
+      "reason": "Synthetic CLI test: Darwin RLIMIT_AS setrlimit raises current limit exceeds maximum limit. No real task prediction or label score observed.",
+      "decision": "On Darwin monitor actual worker RSS every250ms against4GiB; terminate on exceed or monitoring failure. Brief overshoot between samples is possible; record mode/samplecount/peak. Linux retains hard4GiB address-space bound. Not equivalent enforcement or crossplatform performance evidence."
+    }
+  ],
+  "unchanged": [
+    "39selected task identities",
+    "query-only inputs",
+    "6methods",
+    "3budgets",
+    "source caps",
+    "primary endpoints",
+    "advancement criterion",
+    "allfailure retention"
+  ],
+  "clarifications": [
+    {
+      "id": "integrity-vs-operational-failures",
+      "decision": "Advancement uses the frozen integrity gate: source_integrity, worker_failure, memory_monitor_failure, or unsupported/invalid label parsing prevent advancement. Timeout/source-cap failures remain empty predictions and conservative zero scores where targets exist; source-absence diagnostic is unknown, not automatically out-of-corpus. No actual task outputs were observed."
+    }
+  ]
+}
