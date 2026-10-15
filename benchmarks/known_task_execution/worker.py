@@ -10,8 +10,11 @@ import importlib
 import importlib.metadata
 import ipaddress
 import json
+import os
 from pathlib import Path
+import random
 import resource
+import shlex
 import socket
 import sys
 import time
@@ -135,10 +138,14 @@ def reviewed_pytest_options(root, expected, config):
     仅恢复经源码字节核验的异步模式，不执行整份外来配置或改写原测试。
     """
     mode = config.get('asyncio_mode')
-    if mode is None:
+    strict = config.get('strict_upstream_pytest')
+    if mode is None and strict is None:
         return []
-    if mode not in {'auto', 'strict'} or 'pytest_asyncio.plugin' not in config.get('pytest_plugins', []):
+    if mode is not None and (mode not in {'auto', 'strict'} or
+                            'pytest_asyncio.plugin' not in config.get('pytest_plugins', [])):
         raise ValueError('async mode requires the explicit locked plugin')
+    if strict is not None and strict is not True:
+        raise ValueError('strict upstream pytest request must be true')
     proof = config.get('upstream_pytest_config', {})
     key = proof.get('path')
     if key not in expected or proof.get('sha256') != expected[key]['sha256']:
@@ -148,9 +155,210 @@ def reviewed_pytest_options(root, expected, config):
     except ImportError:
         import tomli as tomllib
     parsed = tomllib.loads((root / key).read_text(encoding='utf-8'))
-    if parsed.get('tool', {}).get('pytest', {}).get('ini_options', {}).get('asyncio_mode') != mode:
+    ini = parsed.get('tool', {}).get('pytest', {}).get('ini_options', {})
+    if mode is not None and ini.get('asyncio_mode') != mode:
         raise ValueError('requested async mode differs from fixed upstream config')
-    return ['--asyncio-mode=' + mode]
+    options = ['--asyncio-mode=' + mode] if mode is not None else []
+    if strict is True:
+        raw = ini.get('addopts')
+        addopts = shlex.split(raw) if isinstance(raw, str) else raw
+        required = ['--strict-markers', '--strict-config', '--durations=5']
+        if not isinstance(addopts, list) or not all(isinstance(x, str) for x in addopts):
+            raise ValueError('upstream addopts must be a string or string list')
+        if any(flag not in addopts for flag in required):
+            raise ValueError('strict flags differ from fixed upstream config')
+        markers = ini.get('markers', [])
+        if not isinstance(markers, list) or not all(isinstance(x, str) and '\0' not in x for x in markers):
+            raise ValueError('upstream markers must be a string list')
+        options.extend([*required, '-o', 'markers=' + '\n'.join(markers)])
+    return options
+
+
+NUMERICAL_STATE = {
+    'seed': 1337, 'python_hashseed': '0', 'preload_first': 'torch',
+    'torch_threads': 1, 'torch_interop_threads': 1,
+    'per_node_reset': ['python', 'numpy', 'torch', 'loaded_tensorflow'],
+    'backend': 'tensorflow', 'preserve_jax_explicit_rng': True,
+}
+
+
+def numerical_runtime_flags():
+    """Prove -s accepts the allowlisted env; -I/-E would ignore its hash seed.
+
+    用运行时标志验证 -s 接受白名单环境；仅检查环境变量不足以证明哈希种子。
+    """
+    return {key: getattr(sys.flags, key) for key in
+            ('ignore_environment', 'isolated', 'no_user_site', 'hash_randomization')}
+
+
+def dependency_module(name, versions):
+    """Import only the locked numerical dependency. / 仅导入锁定的数值依赖。"""
+    if name not in {'torch', 'numpy'} or name not in versions:
+        raise ValueError('unlocked numerical dependency')
+    distribution = importlib.metadata.distribution(name)
+    if distribution.version != versions[name]:
+        raise ValueError('numerical distribution version differs')
+    expected = Path(distribution.locate_file(name + '/__init__.py')).resolve()
+    module = importlib.import_module(name)
+    if (Path(module.__file__).resolve() != expected or
+            Path(module.__spec__.origin).resolve() != expected):
+        raise ValueError('numerical import escaped locked distribution')
+    return module
+
+
+class NumericalState:
+    """Fixed prospective eager seed condition; not universal determinism.
+
+    固定前瞻实验的种子边界位于 pytest setup hook，早于原 unittest setUp；
+    不改写原 setUp，不重置 JAX PRNGKey，也不声称覆盖所有图/本地随机流。
+    """
+    def __init__(self, config, versions, emit):
+        self.versions, self.emit, self.events = versions, emit, []
+        self.torch, self.numpy = None, None
+        self.enabled = config is not None
+        if self.enabled and json.dumps(config, sort_keys=True) != json.dumps(NUMERICAL_STATE, sort_keys=True):
+            raise ValueError('unreviewed numerical state configuration')
+        if self.enabled and os.environ.get('PYTHONHASHSEED') != '0':
+            raise ValueError('numerical hash seed environment differs')
+        if self.enabled and numerical_runtime_flags() != {
+                'ignore_environment': 0, 'isolated': 0, 'no_user_site': 1, 'hash_randomization': 0}:
+            raise ValueError('numerical runtime must accept fixed hash seed with user site disabled')
+
+    def reset(self, nodeid, phase):
+        if not self.enabled:
+            return
+        random.seed(1337)
+        self.numpy.random.seed(1337)
+        # torch.manual_seed also touches accelerator RNGs; use its CPU generator.
+        self.torch.random.default_generator.manual_seed(1337)
+        apis = ['random.seed', 'numpy.random.seed',
+                'torch.random.default_generator.manual_seed']
+        tensorflow = sys.modules.get('tensorflow')
+        if tensorflow is not None:
+            if (self.versions.get('tensorflow') != '2.16.2' or
+                    getattr(tensorflow, '__version__', None) != self.versions['tensorflow']):
+                raise ValueError('loaded TensorFlow version differs')
+            tensorflow.random.set_seed(1337)
+            apis.append('loaded_tensorflow.random.set_seed')
+        event = {'nodeid': nodeid, 'phase': phase, 'seed': 1337, 'called_apis': apis,
+                 'tensorflow_already_loaded': tensorflow is not None,
+                 'boundary': 'before original unittest setUp; original explicit seeds preserved',
+                 'JAX_rng_reset': False}
+        self.events.append(event)
+        self.emit('numerical_seed', event)
+
+    def bootstrap(self):
+        if not self.enabled:
+            return
+        if any(name in sys.modules for name in ('tensorflow', 'keras')):
+            raise ValueError('TensorFlow or Keras loaded before Torch-first bootstrap')
+        if self.versions.get('torch') != '2.2.2' or self.versions.get('numpy') != '1.26.4':
+            raise ValueError('unreviewed numerical dependency versions')
+        self.torch = dependency_module('torch', self.versions)
+        if any(name in sys.modules for name in ('tensorflow', 'keras')):
+            raise ValueError('Torch bootstrap unexpectedly imported TensorFlow or Keras')
+        self.torch.set_num_threads(1)
+        self.torch.set_num_interop_threads(1)
+        self.numpy = dependency_module('numpy', self.versions)
+        self.reset(None, 'before_collection')
+
+    def gate(self):
+        if not self.enabled:
+            return None
+        module = sys.modules.get('keras.src.backend.config') or sys.modules.get('keras.backend.config')
+        if module is None or module.backend() != 'tensorflow':
+            raise ValueError('actual Keras backend differs from prospective configuration')
+        tf = sys.modules.get('tensorflow')
+        if tf is None:
+            raise ValueError('selected TensorFlow backend was not actually imported')
+        if tf.config.list_physical_devices('GPU'):
+            raise ValueError('GPU visible in CPU-only numerical run')
+        record = {'backend': 'tensorflow', 'torch_first': True,
+                  'runtime_flags': numerical_runtime_flags(),
+                  'python_hashseed_env': os.environ.get('PYTHONHASHSEED'),
+                  'torch_cpu_threads': self.torch.get_num_threads(),
+                  'torch_interop_threads': self.torch.get_num_interop_threads(),
+                  'tensorflow_thread_env': {key: os.environ.get(key) for key in
+                                             ('TF_NUM_INTRAOP_THREADS', 'TF_NUM_INTEROP_THREADS')},
+                  'tensorflow_thread_API_values': {
+                      'intra': tf.config.threading.get_intra_op_parallelism_threads(),
+                      'inter': tf.config.threading.get_inter_op_parallelism_threads()},
+                  'tensorflow_visible_GPU_count': 0,
+                  'seed_boundary': 'pytest setup hook before original unittest setUp',
+                  'all_RNG_or_graph_determinism_claimed': False}
+        if (record['torch_cpu_threads'] != 1 or record['torch_interop_threads'] != 1 or
+                any(v != '1' for v in record['tensorflow_thread_env'].values())):
+            raise ValueError('CPU numerical thread controls differ')
+        self.emit('numerical_backend_gate', record)
+        return record
+
+
+def production_modules(root, expected, packages, cache=None):
+    """Audit file/spec and namespace search paths. / 核对文件与命名空间路径。"""
+    cache = {} if cache is None else cache
+    loaded = {}
+
+    def directory(value):
+        path = Path(value)
+        key = ('directory', str(path))
+        if key not in cache:
+            name = relative(path, root)
+            if path.is_symlink() or not path.is_dir():
+                raise ValueError('production namespace is not a source directory')
+            if name != '.' and not any(p.startswith(name + '/') for p in expected):
+                raise ValueError('production namespace has no source inventory')
+            cache[key] = name
+        return cache[key]
+
+    for name, module in list(sys.modules.items()):
+        if not any(name == p or name.startswith(p + '.') for p in packages):
+            continue
+        paths = [directory(p) for p in getattr(module, '__path__', [])]
+        spec = getattr(module, '__spec__', None)
+        spec_paths = [directory(p) for p in (getattr(spec, 'submodule_search_locations', None) or [])]
+        file = getattr(module, '__file__', None)
+        if file is None:
+            if not paths or getattr(spec, 'origin', None) is not None:
+                raise ValueError('production pathless module lacks reviewed namespace identity')
+            loaded[name] = {'path': None, 'sha256': None, 'namespace_paths': paths,
+                            'spec_search_paths': spec_paths}
+            continue
+        path = Path(file)
+        key = ('file', str(path))
+        if key not in cache:
+            source = relative(path, root)
+            if path.is_symlink() or source not in expected or sha(path.read_bytes()) != expected[source]['sha256']:
+                raise ValueError('production import identity differs')
+            cache[key] = source
+        source = cache[key]
+        origin = getattr(spec, 'origin', file)
+        if origin is None or Path(origin).resolve() != path.resolve():
+            raise ValueError('production import spec differs')
+        loaded[name] = {'path': source, 'sha256': expected[source]['sha256'],
+                        'namespace_paths': paths, 'spec_search_paths': spec_paths}
+    if not loaded:
+        raise ValueError('no actual upstream production module imported')
+    return loaded
+
+
+def process_guard(enabled, denied):
+    """Reject Python-audited process launches; not native/OS sandboxing.
+
+    拒绝 Python 审计可见的进程启动，不声称阻断全部原生库系统调用。
+    """
+    if enabled is not None and enabled is not True:
+        raise ValueError('process guard must be an explicit true request')
+    active = {'value': enabled is True}
+
+    def audit(event, args):
+        if active['value'] and (event in {'subprocess.Popen', 'os.system', 'os.fork',
+                                         'os.forkpty', 'os.posix_spawn'} or
+                                event.startswith(('os.exec', 'os.spawn'))):
+            denied.append({'event': event, 'reason': 'unreviewed_external_process'})
+            raise PermissionError('unreviewed external process')
+    if enabled:
+        sys.addaudithook(audit)
+    return active
 
 
 def execute(config):
@@ -174,7 +382,41 @@ def execute(config):
     collected, selected, deselected, reports, collection_errors, denied = [], [], [], [], [], []
     wanted = set(config['selectors'])
     started = time.perf_counter()
-    import pytest
+    progress = config.get('progress_path')
+    if progress is not None:
+        progress = Path(progress).resolve()
+        try:
+            progress.relative_to(root)
+        except ValueError:
+            pass
+        else:
+            raise ValueError('progress output must remain outside upstream source')
+        with progress.open('x') as stream:
+            stream.write('')
+
+    def emit(kind, payload):
+        if progress is not None:
+            event = {'event': kind, 'elapsed_seconds': time.perf_counter() - started,
+                     'payload': payload}
+            with progress.open('a') as stream:
+                stream.write(json.dumps(event, ensure_ascii=False, allow_nan=False) + '\n')
+
+    numerical = NumericalState(config.get('numerical_state'), installed, emit)
+    observed, identity_cache, backend_gates = {}, {}, []
+
+    def audit_imports():
+        current = production_modules(root, expected, config['production_packages'], identity_cache)
+        observed.update(current)
+        return current
+
+    previous = network_guard(config['network_mode'], denied)
+    process_denials = []
+    try:
+        numerical.bootstrap()
+        import pytest
+    except BaseException:
+        restore_network(previous)
+        raise
 
     class Recorder:
         def pytest_itemcollected(self, item):
@@ -196,6 +438,19 @@ def execute(config):
             final = [item.nodeid for item in session.items]
             if final != selected or any(node not in wanted for node in final):
                 raise ValueError('final selected tests differ from reviewed selection')
+            emit('collection', {'collected_all': collected, 'selected': selected,
+                                'deselected': deselected, 'missing': sorted(wanted - set(selected)),
+                                'collection_errors': collection_errors})
+            if numerical.enabled and not collection_errors:
+                audit_imports()
+                gate = numerical.gate()
+                backend_gates.append(gate)
+
+        @pytest.hookimpl(tryfirst=True)
+        def pytest_runtest_setup(self, item):
+            if numerical.enabled:
+                audit_imports()
+                numerical.reset(item.nodeid, 'pytest_setup_hook')
 
         def pytest_collectreport(self, report):
             if report.failed:
@@ -215,8 +470,11 @@ def execute(config):
                             'state': state, 'raw_outcome': report.outcome,
                             'wasxfail': wasxfail, 'strict_xpass': strict_xpass, 'kind': kind,
                             'error_type': category, 'seconds': report.duration})
+            emit('phase_report', reports[-1])
+            if numerical.enabled and report.when == 'teardown':
+                audit_imports()
 
-    previous = network_guard(config['network_mode'], denied)
+    process_state = process_guard(config.get('deny_external_processes'), process_denials)
     try:
         plugins = reviewed_plugins(config.get('pytest_plugins', []), installed)
         options = reviewed_pytest_options(root, expected, config)
@@ -227,26 +485,12 @@ def execute(config):
                                *[str(root / value) for value in config['test_files']]],
                               plugins=[Recorder(), *plugins]))
     finally:
+        process_state['value'] = False
         restore_network(previous)
     validate_tree(root, config['source_files'])
-    loaded = {}
-    for name, module in list(sys.modules.items()):
-        if not any(name == package or name.startswith(package + '.')
-                   for package in config['production_packages']):
-            continue
-        file = getattr(module, '__file__', None)
-        if file is None:
-            continue
-        path = Path(file)
-        key = relative(path, root)
-        if path.is_symlink() or key not in expected or sha(path.read_bytes()) != expected[key]['sha256']:
-            raise ValueError('production import identity differs')
-        origin = getattr(getattr(module, '__spec__', None), 'origin', file)
-        if origin is not None and Path(origin).resolve() != path.resolve():
-            raise ValueError('production import spec differs')
-        loaded[name] = {'path': key, 'sha256': expected[key]['sha256']}
-    if not loaded:
-        raise ValueError('no actual upstream production module imported')
+    # Recheck bytes without the during-run hash cache after the complete source audit.
+    observed.update(production_modules(root, expected, config['production_packages']))
+    loaded = observed
     outcomes = []
     for nodeid in selected:
         rows = [row for row in reports if row['nodeid'] == nodeid]
@@ -273,12 +517,19 @@ def execute(config):
             'selected': selected, 'deselected': deselected,
             'results': outcomes, 'phase_reports': reports, 'collection_errors': collection_errors,
             'network_denials': denied, 'loaded_source_modules': loaded,
+            'process_denials': process_denials,
             'source_before_after_verified': True, 'dependency_versions': installed,
             'explicit_test_plugins': config.get('pytest_plugins', []),
             'restored_upstream_pytest_options': options,
+            'numerical_state_config': config.get('numerical_state'),
+            'numerical_seed_events': numerical.events,
+            'numerical_backend_gates': backend_gates,
+            'progress_events_written': progress is not None,
             'python_version': sys.version, 'elapsed_seconds': time.perf_counter() - started,
             'peak_rss_mib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss /
                             (1024 * 1024 if sys.platform == 'darwin' else 1024),
+            'worker_CPU_seconds': resource.getrusage(resource.RUSAGE_SELF).ru_utime +
+                                  resource.getrusage(resource.RUSAGE_SELF).ru_stime,
             'classification': 'known_development_task_native_regression_execution',
             'limits': 'Finite upstream regression tests; not generated repair success, official '
                       'container reproduction, necessary context, or general semantic equivalence.'}
