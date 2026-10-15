@@ -564,3 +564,20 @@ indexes. No upstream tests were rerun by these parser checks.
 修正后对同一份有界读取且已校验的字节进行解析；额外畸形hunk采用更严格的
 输入策略，不宣称这是Git兼容性修复。保留原失败与各轮核对，53项测试通过，
 第四轮78角色索引一致。这些检查不等同于上游测试重跑或独立实验复现。
+
+## 2026-10-15 — public observation checks / 公开观测检查
+
+Added a privacy-filtered observation checker and bounded gzip transport. A
+separate review found that empty phase lists, moved condition membership,
+fabricated latest states, qualified partial records and missing claim guards
+could pass the first candidate. That unpublished candidate and its failures
+remain private; the corrected checker rejects these cases. It also executes
+only the exact SHA-verified author-written contract bytes and orders explicit
+UTC freeze times by datetime value.25 owned tests passed. These are synthetic
+bookkeeping controls, not upstream executions or scientific samples. Actual
+observation bundles are reviewed and recorded separately before publication.
+
+公开观测检查器修复了空阶段、错配任务、虚构最新状态、不完整记录误合格及
+声明缺失等反例，保留未发布首版和失败。仅执行已校验的自主判据字节，按
+UTC时间值排序；25项自编检查通过。自编计数不代表上游实测或独立研究样本，
+真实观测包另行审核记录；传输检查也不认证私有原始执行。
