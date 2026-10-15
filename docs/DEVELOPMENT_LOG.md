@@ -678,3 +678,34 @@ These checks are documentation consistency evidence, not a new experiment.
 测量，并连接执行核验和子集报告；0/768明确限定为2026-10-04固定留出实验。
 现有声明账本25项测试、Ruff、公开内容及归属检查通过。仅修改状态文字、生成器
 与本日志，不改原始测量、任务成员、通过判据和负面结果；不计为新实验。
+
+## 2026-10-15 — independent binding observer development / 独立绑定观测开发
+
+Implemented a separate CPython3.12 pre-op observer, bounded typed value codec,
+real graph-policy comparators, serial unchanged-test adapter and independent scorer.
+The observer does not import the resolver. Owned adversarial checks exposed the
+3.12 first-opcode bootstrap issue and non-exact code metadata invoking user hashing;
+corrected implementations retain the original failed logs outside Git. Literal
+projection also retained its same-line assignment and method-order failures.
+These are development counterexamples, not natural-task validation.
+
+Executed two previously exposed yt-dlp tasks: eight fresh conditions,112 original
+selectors per source-role panel in total, and four equal traced/plain phase outcomes.
+All four pairs fail resource qualification: Cryptodome's architecture probe attempts
+a system file subprocess. The denied operation and its diagnostic stack are retained;
+no process guard was weakened, and no task or assertion was replaced. All four observer
+reports are intact and complete; integrity alone is not admissibility or semantics.
+
+The prospective eight-task protocol and resource/coverage gates are frozen before
+the evaluator unseals task identities. Current-source rebuild, whole-corpus equality,
+read-set reuse and always-abstain are compared as actual implementations. Static
+predictions must be sealed before any new target executes. Runtime hypotheses are
+explicitly separate from the product's source-identity contract and whole-graph C4.
+The later execution/results section will identify actual runs and failures.
+
+独立实现CPython3.12执行前观测、类型化有界编码、真实图策略、串行原测试适配及独立计分。
+开发反例实际发现首次opcode跟踪、元数据子类调用用户hash、同行赋值投影和方法时序问题；
+修复后保留最初失败，不将自编反例说成自然任务验证。两个已暴露yt-dlp任务完成8条件，
+合计每版本112原selector，4组逐阶段结果相同；但依赖系统探测触发进程拦截，4/4不具
+完整运行资格。观测报告完整仍不等于运行资格或语义正确。新8任务协议在身份解封之前
+冻结，完整预测必须先于目标执行封存；不把派生运行时假设说成产品整图承诺。
