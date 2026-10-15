@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-14",
+  "measured_source_commit": "affa59024f70cde86d2549b690204aa73ddccc7d",
+  "run_id": "catalog-20261014T121419Z-84b62e96",
+  "protocol_sha256": "ab38da716cd93b5d8e48c1e7cf941009d3d3613b53875b6eb009810091cd17b9",
+  "sources_pin_sha256": "fbb78fbb8434bdc2f9af80e91d75509dff9725c8c20274630c1f7251ef5e1d9c",
+  "raw_index": "benchmarks/catalog_reuse/results/index.json",
+  "implementation": "Process-local exact positive/negative module candidates plus namespace-existence answers and consulted-source hashes. New modes, same resolver.",
+  "correctness": {
+    "canonical_mismatches": 0,
+    "retained_steps": 1816,
+    "measured_primary_steps": 1360,
+    "old_resolver_snapshots": 107,
+    "old_resolver_graphs": 2568,
+    "rss_processes": 48
+  },
+  "targets": {
+    "replay_target_met": false,
+    "repositories_meeting_replay_target": 0,
+    "memory_target_met": true
+  },
+  "decision": "performance_target_failed; scoped mechanism increment and replay evidence; mature research not established",
+  "mature_research": false,
+  "limits": [
+    "No semantic/runtime correctness proof",
+    "No downstream model-task run",
+    "One host and four convenience repositories",
+    "No academic firstness claim",
+    "39task pilot negative/mixed results unchanged"
+  ],
+  "groups": {
+    "modelcontextprotocol/python-sdk": {
+      "primary_replay_reduction_D_vs_C": 0.051001573298161684,
+      "secondary_replay_reduction_D_vs_A": 0.06908530196398066,
+      "median_peak_rss_ratio_D_vs_C": 0.944192205826712,
+      "replay_target_met": false,
+      "memory_target_met": true
+    },
+    "pypa/hatch": {
+      "primary_replay_reduction_D_vs_C": 0.04749908261374147,
+      "secondary_replay_reduction_D_vs_A": 0.07782378609204943,
+      "median_peak_rss_ratio_D_vs_C": 0.9836936828119338,
+      "replay_target_met": false,
+      "memory_target_met": true
+    },
+    "rq/rq": {
+      "primary_replay_reduction_D_vs_C": 0.004559426170026137,
+      "secondary_replay_reduction_D_vs_A": 0.004635434435747876,
+      "median_peak_rss_ratio_D_vs_C": 1.0621546961325967,
+      "replay_target_met": false,
+      "memory_target_met": true
+    },
+    "scrapy/scrapy": {
+      "primary_replay_reduction_D_vs_C": 0.00661022942752465,
+      "secondary_replay_reduction_D_vs_A": 0.016439000752423327,
+      "median_peak_rss_ratio_D_vs_C": 0.9557936342833367,
+      "replay_target_met": false,
+      "memory_target_met": true
+    }
+  },
+  "coverage": {
+    "frontier_free_outputs_first_measured_replays": 15,
+    "anchor_update_denominator": 1536,
+    "independent_frontier_free_anchors": 1,
+    "no_semantic_freshness_claim": true
+  },
+  "mechanism": {
+    "additional_reuses_D_vs_C_first_measured_replays": 95,
+    "anchor_update_denominator": 1536,
+    "updates_with_additional_reuse": 19,
+    "source_update_denominator": 64,
+    "same_zero_query_exemption_in_C_and_D": true,
+    "per_anchor_reuse_flags_recorded": false
+  }
+}

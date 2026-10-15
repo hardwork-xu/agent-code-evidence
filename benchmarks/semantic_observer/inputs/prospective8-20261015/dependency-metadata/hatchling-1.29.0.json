@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "distribution": "hatchling",
+  "version": "1.29.0",
+  "metadata_headers": {
+    "Author-email": [
+      "Ofek Lev <oss@ofek.dev>"
+    ],
+    "Classifier": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Natural Language :: English",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Topic :: Software Development :: Build Tools",
+      "Topic :: Software Development :: Libraries :: Python Modules"
+    ],
+    "Description-Content-Type": [
+      "text/markdown"
+    ],
+    "Keywords": [
+      "build,hatch,packaging"
+    ],
+    "License-Expression": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE.txt"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "hatchling"
+    ],
+    "Project-URL": [
+      "Homepage, https://hatch.pypa.io/latest/",
+      "Sponsor, https://github.com/sponsors/ofek",
+      "History, https://hatch.pypa.io/dev/history/hatchling/",
+      "Tracker, https://github.com/pypa/hatch/issues",
+      "Source, https://github.com/pypa/hatch/tree/master/backend"
+    ],
+    "Requires-Dist": [
+      "packaging>=24.2",
+      "pathspec>=0.10.1",
+      "pluggy>=1.0.0",
+      "tomli>=1.2.2; python_version < '3.11'",
+      "trove-classifiers"
+    ],
+    "Requires-Python": [
+      ">=3.10"
+    ],
+    "Summary": [
+      "Modern, extensible Python build backend"
+    ],
+    "Version": [
+      "1.29.0"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "hatchling 1.29.0"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "331e643a297708650930f767ef6df46e3811d246e71a803a86880b0aee55fc9b",
+  "wheel_record_inventory": [
+    {
+      "path": "hatchling-1.29.0.dist-info/METADATA",
+      "sha256": "331e643a297708650930f767ef6df46e3811d246e71a803a86880b0aee55fc9b",
+      "bytes": 3819
+    },
+    {
+      "path": "hatchling-1.29.0.dist-info/RECORD",
+      "sha256": "afe1e62701e052d38c0c0ffcd07a87e33e6c70dc508c7b9598809d913707765e",
+      "bytes": 6296
+    },
+    {
+      "path": "hatchling-1.29.0.dist-info/WHEEL",
+      "sha256": "41c708c5adba6e097513ab8ccb9f1d7865a2fb469e22491a9e01dcc64da459fc",
+      "bytes": 87
+    },
+    {
+      "path": "hatchling-1.29.0.dist-info/entry_points.txt",
+      "sha256": "79439ff35915d411dedc6fda7d60a63fdf1bbf2640f9e1f8b313fdc54f37e588",
+      "bytes": 54
+    },
+    {
+      "path": "hatchling-1.29.0.dist-info/licenses/LICENSE.txt",
+      "sha256": "7f143a8127ad4873862d70854b5bd2abd0085aa73e64fd2b08704a3b9f5c07fc",
+      "bytes": 1088
+    },
+    {
+      "path": "hatchling/__about__.py",
+      "sha256": "79597142a67ba06a6f9eddcb4e541fdee0065d6ea4614386be560b667d68add7",
+      "bytes": 23
+    },
+    {
+      "path": "hatchling/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/__main__.py",
+      "sha256": "99dcd4b605d93aad86be0059dc237d920345fce400dc4f71f46dcc16d8983731",
+      "bytes": 106
+    },
+    {
+      "path": "hatchling/bridge/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/bridge/app.py",
+      "sha256": "2f7b9adb0e6eb3ae47d6b39ddfa66aecd347be709ba0cb9cd1753a44a6116ac7",
+      "bytes": 3890
+    },
+    {
+      "path": "hatchling/build.py",
+      "sha256": "8bdc5f386de529d512e8807b1bf47843010b142f3e61fc2d5e75f13634d7e583",
+      "bytes": 5577
+    },
+    {
+      "path": "hatchling/builders/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/builders/app.py",
+      "sha256": "49b853d930d5818a32dc76541eb0447769daddac040b3bc33e173eb1722b654d",
+      "bytes": 530
+    },
+    {
+      "path": "hatchling/builders/binary.py",
+      "sha256": "249a3f72578edf1b1215326a21e49a40e66fd0d2ca6b6a2d198bb787ce7dec5c",
+      "bytes": 7639
+    },
+    {
+      "path": "hatchling/builders/config.py",
+      "sha256": "f4ed3f77be8c7b01bd6ae0baaada25f317a2c391879ebf77a3351795babf7b34",
+      "bytes": 35662
+    },
+    {
+      "path": "hatchling/builders/constants.py",
+      "sha256": "4ca21af3c9850e9d3e56bdd350f7c02f915354d60fe634dbfc5efbfec4193b70",
+      "bytes": 860
+    },
+    {
+      "path": "hatchling/builders/custom.py",
+      "sha256": "0ffb7fd0e0926738894b3aaa9bce893f173249aaf7efa25ce852eba80547eb1f",
+      "bytes": 2127
+    },
+    {
+      "path": "hatchling/builders/hooks/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/builders/hooks/custom.py",
+      "sha256": "3caf97218acccd3c803ed1b514f3b76791fb63a9a022f22d9d65706826efccfc",
+      "bytes": 1378
+    },
+    {
+      "path": "hatchling/builders/hooks/plugin/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/builders/hooks/plugin/hooks.py",
+      "sha256": "2d1052dae1d6177bf77bc2a86103502bc29cb9c92f1903020f15b20255204b43",
+      "bytes": 440
+    },
+    {
+      "path": "hatchling/builders/hooks/plugin/interface.py",
+      "sha256": "71e01e6a59c084d3121b26f415945dbc08849de7b5bdfa7a711e2ca1b60f2d2b",
+      "bytes": 4250
+    },
+    {
+      "path": "hatchling/builders/hooks/version.py",
+      "sha256": "cf7f7a8775be1d6e71b095f2c22ea2f67a3e337ca3a94bbf52a0d365693241fc",
+      "bytes": 2416
+    },
+    {
+      "path": "hatchling/builders/macos.py",
+      "sha256": "89d9a8a6211d525f5a137a9e8f36e4710dc35a1a528bc8149d205c040cc3f9e7",
+      "bytes": 2085
+    },
+    {
+      "path": "hatchling/builders/plugin/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/builders/plugin/hooks.py",
+      "sha256": "c61bfacaf6f643d03b6648bace4859ffe249d75b63fac7b6b1df8f722db708f2",
+      "bytes": 617
+    },
+    {
+      "path": "hatchling/builders/plugin/interface.py",
+      "sha256": "ce68735742a5132e6a4e886138c2cc6af06557f0d4cccab8b98f9272662cd450",
+      "bytes": 16217
+    },
+    {
+      "path": "hatchling/builders/sdist.py",
+      "sha256": "46a5c65ee90e1fb3db645176fd15c8eddf628cba9f1776b6bc40d26af84b9130",
+      "bytes": 13558
+    },
+    {
+      "path": "hatchling/builders/utils.py",
+      "sha256": "d5bc8e2f1120a0938bdb6ed5c0667158dc92b2fb6519f94d7533e56f6b261644",
+      "bytes": 3819
+    },
+    {
+      "path": "hatchling/builders/wheel.py",
+      "sha256": "752a9fbbe51e84aaeb6560185446b786954d77fb55666f50956a899652fc5b2f",
+      "bytes": 36554
+    },
+    {
+      "path": "hatchling/cli/__init__.py",
+      "sha256": "8b4cd2a2cc336a82cc64f00e0d3f7c51be88e1430db8a2b663ea1ce5ac9c0e39",
+      "bytes": 730
+    },
+    {
+      "path": "hatchling/cli/build/__init__.py",
+      "sha256": "225dba83bc6fcb3eb7bac5cca7c11378671a5452c13a2ddc55d7f98732549149",
+      "bytes": 4270
+    },
+    {
+      "path": "hatchling/cli/dep/__init__.py",
+      "sha256": "534a6f6f5ebb0db6906db7911f1d2f5d977743d3c2654a628cf4dde38a8edb4a",
+      "bytes": 1169
+    },
+    {
+      "path": "hatchling/cli/dep/core.py",
+      "sha256": "c07261903aa790f2a1edc99a44c4b3d1bc012077660bebd7e85f21d969e62c1c",
+      "bytes": 5316
+    },
+    {
+      "path": "hatchling/cli/metadata/__init__.py",
+      "sha256": "30de7e2dedcf0392dd079d26a97858e978d0499a4a42ab9ca273a4a700324ca4",
+      "bytes": 1695
+    },
+    {
+      "path": "hatchling/cli/version/__init__.py",
+      "sha256": "3afff788ae721f8621562821299ea4e29e1565cef2072abe5b1f6b7b1a955ac8",
+      "bytes": 1597
+    },
+    {
+      "path": "hatchling/dep/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/dep/core.py",
+      "sha256": "f9510bb08b2a1693c9dd18ac20826a466af48af22ac47f0a266d7e8c6d4d595b",
+      "bytes": 70
+    },
+    {
+      "path": "hatchling/licenses/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/licenses/supported.py",
+      "sha256": "641fb474d6916e23ea297f2b8d8ae20addad1c8f65e2852e7ca4445e73ed92e6",
+      "bytes": 68
+    },
+    {
+      "path": "hatchling/metadata/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/metadata/core.py",
+      "sha256": "8d833b6b8d5b44604bf1b42b85b9f2088efbb0c83eb2ccae72bcffbf5c5c8184",
+      "bytes": 62187
+    },
+    {
+      "path": "hatchling/metadata/custom.py",
+      "sha256": "d82eec9a761d70b52536d8f522c7f10968c850bb8f5ecc950d4a44696a704314",
+      "bytes": 1424
+    },
+    {
+      "path": "hatchling/metadata/plugin/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/metadata/plugin/hooks.py",
+      "sha256": "642b018d3b8da6ae7bf229e7fd4fe120c8d0f0b823316c5454a034b4b9e98d38",
+      "bytes": 397
+    },
+    {
+      "path": "hatchling/metadata/plugin/interface.py",
+      "sha256": "6547414bf20fe03ffa09e3a795a72f494b6bb27ca3945006f8b2258c0ca0a5a1",
+      "bytes": 1500
+    },
+    {
+      "path": "hatchling/metadata/spec.py",
+      "sha256": "dc0c6eca63be9dce2374be6543915c7a7ba3d0b4d6639f6418cefc9fe86abda8",
+      "bytes": 23344
+    },
+    {
+      "path": "hatchling/metadata/utils.py",
+      "sha256": "c478f6243f167e779e17e080409a03bfdb9b595383cdb4e7c5834ead720d590f",
+      "bytes": 2560
+    },
+    {
+      "path": "hatchling/ouroboros.py",
+      "sha256": "9eff899398f15e08866b7138fe986d8324d89064c0f4cf1aabe692056eef2bbe",
+      "bytes": 1507
+    },
+    {
+      "path": "hatchling/plugin/__init__.py",
+      "sha256": "4ef84cdb0d9ca6e493fd357917e9f94d4c8eae98418dbb16265dbc4b3df35ce0",
+      "bytes": 57
+    },
+    {
+      "path": "hatchling/plugin/exceptions.py",
+      "sha256": "bb9ad18317074c3fe49850d18c2f63942aea6150caf5e03ce6bbbf98eddfb8c0",
+      "bytes": 47
+    },
+    {
+      "path": "hatchling/plugin/manager.py",
+      "sha256": "3d0e3b8f10b764be926e96d1163783b3a240946e9f8558499a427d8791aa93f4",
+      "bytes": 3731
+    },
+    {
+      "path": "hatchling/plugin/specs.py",
+      "sha256": "08a47f071bfbbc8d87e98471e2ce67cdcc943796a7b0079f9abc85fac8dea868",
+      "bytes": 565
+    },
+    {
+      "path": "hatchling/plugin/utils.py",
+      "sha256": "b71324a3d678ba53adcc4c1324b074e27ecc51d9e083d3ccb56197b4916e48f1",
+      "bytes": 1638
+    },
+    {
+      "path": "hatchling/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/utils/constants.py",
+      "sha256": "32972b3701b0eeae1730c2708825fb1e3fd105089dda8f7576ad512ddc483f85",
+      "bytes": 149
+    },
+    {
+      "path": "hatchling/utils/context.py",
+      "sha256": "2f9f39d7b8d70f0cea8098de1a3f4c8b27532dd7f2532c7422d9a6c8d74c69f5",
+      "bytes": 6100
+    },
+    {
+      "path": "hatchling/utils/fs.py",
+      "sha256": "5e3a62274a02f658bdfa68d75637738244febb350d32f3fd330daef1de592782",
+      "bytes": 714
+    },
+    {
+      "path": "hatchling/version/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/version/core.py",
+      "sha256": "27fc29bdefe3574c58111643bdd3efdaf419353821d4f81a7ebca79c4a5a61f5",
+      "bytes": 2153
+    },
+    {
+      "path": "hatchling/version/scheme/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/version/scheme/plugin/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/version/scheme/plugin/hooks.py",
+      "sha256": "831c499eb73ec468e8d0da4b8b1ad0c63acb23b6d61d544506a79d5a63ebc8e6",
+      "bytes": 376
+    },
+    {
+      "path": "hatchling/version/scheme/plugin/interface.py",
+      "sha256": "e3ac78390aa92f0b6f8cee7c2384a7f147383c08303e4052e96ae57247670883",
+      "bytes": 2384
+    },
+    {
+      "path": "hatchling/version/scheme/standard.py",
+      "sha256": "91d74b75d6cefc3e7cf8d91c121d5086db7d142e95f182dc0c417315e2d6dc5c",
+      "bytes": 4420
+    },
+    {
+      "path": "hatchling/version/source/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/version/source/code.py",
+      "sha256": "8af286cb54376d8167be0ab9a0aaee15c72af02d9c03c312405ab981a4b2fb1b",
+      "bytes": 2348
+    },
+    {
+      "path": "hatchling/version/source/env.py",
+      "sha256": "16651de892e98e25d9f73e7c9f9cf96776cfc8d8074b371137e0f4510cadc1f2",
+      "bytes": 911
+    },
+    {
+      "path": "hatchling/version/source/plugin/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hatchling/version/source/plugin/hooks.py",
+      "sha256": "761cf8737a95e8accb71aefd97845c2acb5ad42f395a1ef2ded2e4b912a7e570",
+      "bytes": 502
+    },
+    {
+      "path": "hatchling/version/source/plugin/interface.py",
+      "sha256": "1caaade0e2ae48bc53f1aeffc3ad86af59ac03dac7d3b61db65c00df04e58a44",
+      "bytes": 1852
+    },
+    {
+      "path": "hatchling/version/source/regex.py",
+      "sha256": "a4e6e2c1e59042967ef665324b43a14bcb92ff14f4cb30637697db1ed069a279",
+      "bytes": 1065
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "hatchling-1.29.0.dist-info/licenses/LICENSE.txt",
+      "path": "licenses/7f143a8127ad4873862d70854b5bd2abd0085aa73e64fd2b08704a3b9f5c07fc.txt",
+      "sha256": "7f143a8127ad4873862d70854b5bd2abd0085aa73e64fd2b08704a3b9f5c07fc",
+      "bytes": 1088
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

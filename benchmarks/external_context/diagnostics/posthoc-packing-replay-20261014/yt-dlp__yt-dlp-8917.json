@@ -1,0 +1,292 @@
+{
+  "instance_id": "yt-dlp__yt-dlp-8917",
+  "status": "all18_reproduced_exactly",
+  "all18_hash_blocks_bytes_status_match": true,
+  "query_sha256": "36d74d1763d268fd22b6a66a46946bc4e57c6de66da4daf6a87a28e6980ebfd8",
+  "archive_sha256": "6c787d9c0a6f262d114be412d77d2e372f6eae3c0c604abb7c07b22264f99f69",
+  "anchors_identical_all_methods_budgets": true,
+  "anchors": [
+    {
+      "id": "54803d69425b40b77017652db135fc90ff9e0798282d9d333326123f2bf720c1",
+      "path": "yt_dlp/utils/_utils.py",
+      "start_line": 5111,
+      "end_line": 5404,
+      "text_sha256": "6cb74fdb370918365afbd39ae81915299ffbba6ca1dfa529b2d1c3e7bff0672c",
+      "file_sha256": "c3c6277fe08743928617f6b3cfe100b7d65a72713187cdb4be2c95f112fdea21"
+    },
+    {
+      "id": "f9456dc786c4b9c6575c87ba2fd84b55cb3e6b9c6c26997a6f4ed0ac75573a00",
+      "path": "yt_dlp/options.py",
+      "start_line": 216,
+      "end_line": 1908,
+      "text_sha256": "a1e0b920987565d6c58d32fa22f7d60c217d443e478ac1c13555639e9c50cc8e",
+      "file_sha256": "7a8d770a2f7005efac87e8fcaaf28ec670197a1b10262ae2bc7d6b98827b18a7"
+    },
+    {
+      "id": "f365802b52383dfa3cfc9db7ea0c4d70a8589cb3603890e8d6ff0eb136831514",
+      "path": "yt_dlp/postprocessor/embedthumbnail.py",
+      "start_line": 58,
+      "end_line": 227,
+      "text_sha256": "e06bc2e495919e93021b4af02328c93216a6ff83145096dac32fd03d6cfba9a4",
+      "file_sha256": "ffc72f40bf7dcfc4ca6679f3d0a62fa17459aa5dfc9292981ed424a463acd0fd"
+    }
+  ],
+  "cases": [
+    {
+      "budget": 8000,
+      "anchor_candidates_in_graph": true,
+      "anchor_candidate_count": 29,
+      "graph_candidate_count": 70,
+      "anchor_candidate_spans": [
+        {
+          "path": "yt_dlp/utils/_utils.py",
+          "start": 5111,
+          "end": 5190
+        },
+        {
+          "path": "yt_dlp/utils/_utils.py",
+          "start": 5191,
+          "end": 5270
+        },
+        {
+          "path": "yt_dlp/utils/_utils.py",
+          "start": 5271,
+          "end": 5350
+        },
+        {
+          "path": "yt_dlp/utils/_utils.py",
+          "start": 5351,
+          "end": 5404
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 216,
+          "end": 295
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 296,
+          "end": 375
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 376,
+          "end": 455
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 456,
+          "end": 535
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 536,
+          "end": 615
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 616,
+          "end": 695
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 696,
+          "end": 775
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 776,
+          "end": 855
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 856,
+          "end": 935
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 936,
+          "end": 1015
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1016,
+          "end": 1095
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1096,
+          "end": 1175
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1176,
+          "end": 1255
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1256,
+          "end": 1335
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1336,
+          "end": 1415
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1416,
+          "end": 1495
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1496,
+          "end": 1575
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1576,
+          "end": 1655
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1656,
+          "end": 1735
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1736,
+          "end": 1815
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1816,
+          "end": 1895
+        },
+        {
+          "path": "yt_dlp/options.py",
+          "start": 1896,
+          "end": 1908
+        },
+        {
+          "path": "yt_dlp/postprocessor/embedthumbnail.py",
+          "start": 58,
+          "end": 137
+        },
+        {
+          "path": "yt_dlp/postprocessor/embedthumbnail.py",
+          "start": 138,
+          "end": 217
+        },
+        {
+          "path": "yt_dlp/postprocessor/embedthumbnail.py",
+          "start": 218,
+          "end": 227
+        }
+      ],
+      "removed_delivered_anchor_spans": [
+        {
+          "path": "yt_dlp/options.py",
+          "start_line": 1896,
+          "end_line": 1908
+        }
+      ],
+      "empty_envelope_bytes": {
+        "anchors_only": 7365,
+        "graph_expand": 7430
+      },
+      "rejections": [
+        {
+          "graph_rejected_piece": {
+            "piece": {
+              "path": "yt_dlp/options.py",
+              "start_line": 1896,
+              "end_line": 1908
+            },
+            "prior_blocks": [],
+            "trial_bytes": 8057,
+            "accepted": false,
+            "trial_field_value_bytes": {
+              "blocks": 543,
+              "budget": 4,
+              "candidate_span_count": 2,
+              "frontier_count": 2,
+              "frontier_summary": 66,
+              "frontier_summary_truncated": 5,
+              "issue": 6921,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 4,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 88,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 11,
+                "kind": "truncated"
+              },
+              {
+                "count": 55,
+                "kind": "unresolved"
+              }
+            ],
+            "frontier_count": 66,
+            "candidate_span_count": 70,
+            "omitted_source_lines": 2852
+          },
+          "removed_covered": [
+            {
+              "path": "yt_dlp/options.py",
+              "start_line": 1896,
+              "end_line": 1908
+            }
+          ],
+          "matched_anchor_accepted_piece": {
+            "piece": {
+              "path": "yt_dlp/options.py",
+              "start_line": 1896,
+              "end_line": 1908
+            },
+            "prior_blocks": [],
+            "trial_bytes": 7992,
+            "accepted": true,
+            "trial_field_value_bytes": {
+              "blocks": 543,
+              "budget": 4,
+              "candidate_span_count": 2,
+              "frontier_count": 1,
+              "frontier_summary": 2,
+              "frontier_summary_truncated": 5,
+              "issue": 6921,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 4,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 88,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [],
+            "frontier_count": 0,
+            "candidate_span_count": 29,
+            "omitted_source_lines": 2144
+          },
+          "same_prior_blocks": true,
+          "trial_byte_difference": 65,
+          "field_value_byte_differences": {
+            "frontier_count": 1,
+            "frontier_summary": 64
+          },
+          "confirmed_same_source_metadata_displacement": true
+        }
+      ],
+      "all_removed_lines_have_observed_whole_piece_rejection": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-04",
+  "status": "exploratory protocol fixed after primary negative result and before ablation timings",
+  "trigger": "Primary complete-only certificates reused 0/480 natural graph transitions; no primary speed target met.",
+  "hypothesis": "An explicitly unknown graph can be cached without certifying it fresh if every resolver read and catalog remains unchanged.",
+  "primary_run": "selective-20261004T195433Z",
+  "primary_raw_sha256": "cdfc98088dbc0f159fc042294472d5f9277b16b7513b456359496061939776ba",
+  "natural_manifest_sha256": "c9034cc9fae4e44ae395c9b0a3ad280ae2da17050ff88de4408b5d687d4a5ef0",
+  "methods": [
+    "warm_ast_rebuild",
+    "whole_corpus_guard",
+    "read_set_any_status"
+  ],
+  "repetitions": 5,
+  "warmup": 1,
+  "cost_boundary": "Identical whole trajectories, archives, anchors, warm AST/index sharing and timing boundaries to primary run. Baselines rerun contemporaneously; never splice old timings.",
+  "correctness": "Zero full graph mismatches; unknown/truncated/missing statuses retained. Not semantic freshness.",
+  "analysis": "Per-repository timing, all/source-changing strata and reuse counts. Descriptive same-data ablation; no new confirmatory success target, no holdout/generalization claim.",
+  "missing": "No incremental per-module binding-summary baseline or RSS profile; no task relevance/LLM metric."
+}

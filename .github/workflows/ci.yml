@@ -9,8 +9,12 @@ on:
 permissions:
   contents: read
 
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+
 jobs:
   test:
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -30,12 +34,38 @@ jobs:
       - run: python -m pip install -e '.[dev]'
       - run: ruff check .
       - run: python scripts/check_publication.py
+      - run: python scripts/check_attribution.py
+      - run: python scripts/check_research_artifacts.py --require-results
+      - run: python scripts/render_maturation_report.py --check
+      - run: python scripts/check_research_claims.py
+      - run: PYTHONPATH=src python -m benchmarks.external_context.check
+      - run: PYTHONPATH=src python -m benchmarks.external_context.report --check
+      - run: PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
+      - run: >-
+          python -m benchmarks.global_bindings.report --check
+          --results benchmarks/global_bindings/results/development-20261014
+      - run: python -m benchmarks.global_bindings.upstream_execution.check
+      - run: >-
+          python -m benchmarks.known_task_execution.report --check
+          --bundle benchmarks/known_task_execution/results/known39-20261015
+          --expected-index-sha256 06020b127bb16d3b8c2b28438ea3b613d683d550d35b8a3401f36eae695ec45b
+      - run: python -m benchmarks.known_task_execution.secondary_report --check
+      - run: >-
+          python -m benchmarks.semantic_observer.prepare --check-spec
+          --spec benchmarks/semantic_observer/inputs/prospective8-20261015/spec.json
+          --expected-spec-sha256 af1ca2c413cde8dfac13ce216943603934574c4b9c7ea6f91eaa37ef38d5f265
+          --expected-index-sha256 0ab9b99349c561e7822aa3785f1b5d674d72bfa4c6f9fc89bdc1d11a753ed363
+      - run: >-
+          python -m benchmarks.semantic_observer.report --check
+          --bundle benchmarks/semantic_observer/results/prospective8-20261015
+          --expected-index-sha256 b0c354cf756bc700f14a8cfdfa0695b2d671305bd0715574b426e769f9dc8328
       - run: >-
           python -m pytest -q tests benchmarks/graph/test_scope_audit.py
           benchmarks/revision_baselines/test_baselines.py
       - run: python scripts/build_release.py --source-date-epoch "$(git show -s --format=%ct HEAD)"
 
   tokenizer:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
@@ -46,6 +76,7 @@ jobs:
       - run: pytest -q tests/test_evidence.py
 
   mcp-sdk:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4

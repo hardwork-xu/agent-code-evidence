@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "distribution": "pluggy",
+  "version": "1.6.0",
+  "metadata_headers": {
+    "Author-email": [
+      "Holger Krekel <holger@merlinux.eu>"
+    ],
+    "Classifier": [
+      "Development Status :: 6 - Mature",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: MIT License",
+      "Operating System :: POSIX",
+      "Operating System :: Microsoft :: Windows",
+      "Operating System :: MacOS :: MacOS X",
+      "Topic :: Software Development :: Testing",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Utilities",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13"
+    ],
+    "Description-Content-Type": [
+      "text/x-rst"
+    ],
+    "Dynamic": [
+      "license-file"
+    ],
+    "License": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "pluggy"
+    ],
+    "Provides-Extra": [
+      "dev",
+      "testing"
+    ],
+    "Requires-Dist": [
+      "pre-commit; extra == \"dev\"",
+      "tox; extra == \"dev\"",
+      "pytest; extra == \"testing\"",
+      "pytest-benchmark; extra == \"testing\"",
+      "coverage; extra == \"testing\""
+    ],
+    "Requires-Python": [
+      ">=3.9"
+    ],
+    "Summary": [
+      "plugin and hook calling mechanisms for python"
+    ],
+    "Version": [
+      "1.6.0"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "setuptools (80.7.1)"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "7438c35ee25a095eb7416f84b461c2d74425c5e734ad54c3912453c65244e01c",
+  "wheel_record_inventory": [
+    {
+      "path": "pluggy-1.6.0.dist-info/METADATA",
+      "sha256": "7438c35ee25a095eb7416f84b461c2d74425c5e734ad54c3912453c65244e01c",
+      "bytes": 4811
+    },
+    {
+      "path": "pluggy-1.6.0.dist-info/RECORD",
+      "sha256": "e3f054e6e651035e45561a2f97427e0cd24205e6c1ee6c9c38cc59424b743c90",
+      "bytes": 1055
+    },
+    {
+      "path": "pluggy-1.6.0.dist-info/WHEEL",
+      "sha256": "370dfa0e3ba1ff9543ba42b41fbf10cce5fefc5404a3a577ee6de7926f7a82d5",
+      "bytes": 91
+    },
+    {
+      "path": "pluggy-1.6.0.dist-info/licenses/LICENSE",
+      "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606",
+      "bytes": 1110
+    },
+    {
+      "path": "pluggy-1.6.0.dist-info/top_level.txt",
+      "sha256": "c4a4824616a2faff4c724bccb96a8dcf5e9cd6d6ec98e820a0c4b04e07296071",
+      "bytes": 7
+    },
+    {
+      "path": "pluggy/__init__.py",
+      "sha256": "0fa769d609840e3b43a7c840c1073eaab81aba59cbe2296daea90b0ddfa0f6d8",
+      "bytes": 811
+    },
+    {
+      "path": "pluggy/_callers.py",
+      "sha256": "804665946692615b2c676526a4d7e6602d1b755821da361b0057982afb913236",
+      "bytes": 5991
+    },
+    {
+      "path": "pluggy/_hooks.py",
+      "sha256": "13a7f79d8708e9d6c4b8ed069b2eb5a3380653fe7dfdeebd902d3c6b4e8406ea",
+      "bytes": 25218
+    },
+    {
+      "path": "pluggy/_manager.py",
+      "sha256": "2b8229fe99048ef4f6a0e21f40fa7c0b0016a1756710d81045ccbdb651a28b4a",
+      "bytes": 20219
+    },
+    {
+      "path": "pluggy/_result.py",
+      "sha256": "dd77f2ec3ae35db61bee9b91aaec98d956e274858daba3e9ed09ee12531d8fc4",
+      "bytes": 3098
+    },
+    {
+      "path": "pluggy/_tracing.py",
+      "sha256": "9d777604298381ff2327157e1cedcfab147e595e777969c5f01e001759c91a0a",
+      "bytes": 2073
+    },
+    {
+      "path": "pluggy/_version.py",
+      "sha256": "e45189369f4b924f6e3b17828d7a68086045efd02be8b18f391efe6ad06a6ffe",
+      "bytes": 511
+    },
+    {
+      "path": "pluggy/_warnings.py",
+      "sha256": "b5dd00bd90697da9ab8820b73aab0bc31321f92cc03237e399ce7c4f9bcfde5c",
+      "bytes": 828
+    },
+    {
+      "path": "pluggy/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "pluggy-1.6.0.dist-info/licenses/LICENSE",
+      "path": "licenses/d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606.txt",
+      "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606",
+      "bytes": 1110
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

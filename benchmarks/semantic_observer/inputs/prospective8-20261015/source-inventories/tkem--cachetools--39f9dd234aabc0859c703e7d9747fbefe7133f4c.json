@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "repository": "tkem/cachetools",
+  "commit": "39f9dd234aabc0859c703e7d9747fbefe7133f4c",
+  "files": [
+    {
+      "path": ".github/FUNDING.yml",
+      "bytes": 54,
+      "sha256": "0c634b596bc874a3f27db36c308f1a86b75d79ceb202c091b1056d031ef5c516"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "bytes": 534,
+      "sha256": "044c7d343af87240c231d08875e7928ece698c667e5ba80503f3bcaab409eceb"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "bytes": 28,
+      "sha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "bytes": 190,
+      "sha256": "3fe8ef9f691cae5cbce2a2f91263dd248e1eeb8fa5831badf620d6a4f4560dff"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "bytes": 1336,
+      "sha256": "6db61a83310f4587f429c3b209b0a3fb2b9ccb4712ea4fbc31e108eab6844503"
+    },
+    {
+      "path": ".github/SECURITY.md",
+      "bytes": 775,
+      "sha256": "b9146b5a0e2ce32216a6cb60b8209b41871b82eaac536392c76211f5ffd9d13c"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "bytes": 9299,
+      "sha256": "01c1ed1191fd4c1da2dc42372f572d4e42fc1b855db0cf56c2b7b2a7191f2116"
+    },
+    {
+      "path": ".github/copilot-review.md",
+      "bytes": 4923,
+      "sha256": "beef89c997480e071ceb3227464576ace5cc4acedb7ddf64f42a18eac131f827"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "bytes": 215,
+      "sha256": "60dd8fdc9a81cbc4ea245f63a3419ca89ac037f4f157afeeafdf4cc5c9244904"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 843,
+      "sha256": "9babb3bd55bee66bc5cbd7db585ceeea09ddc8fa5b6466f4dfa80432bcc668a6"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 98,
+      "sha256": "959e953eaf6757ec42f895308830912560bad4ceaf6fe052807d355527c8c6f3"
+    },
+    {
+      "path": ".readthedocs.yaml",
+      "bytes": 187,
+      "sha256": "08341a537ecca61a0216249673d68ef7e20478143654fd930b39b46c1b6a5e48"
+    },
+    {
+      "path": "CHANGELOG.rst",
+      "bytes": 15780,
+      "sha256": "b7b068263aaad1fb8f92bdb31aead8f354244a68191ad0f384883ffc6b995c66"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1085,
+      "sha256": "28c000b52b0ee27138a68ef778227e4057046e86b65f62f1cacb99b0cc49e0d2"
+    },
+    {
+      "path": "MANIFEST.in",
+      "bytes": 60,
+      "sha256": "112a66627a754e7be3084a4abec44998dfbe3c4e9515fca8fa38661e11800568"
+    },
+    {
+      "path": "README.rst",
+      "bytes": 4144,
+      "sha256": "b44071bcf42e41215188219203da345d48358acba735ef272b2bba8b7f2a3652"
+    },
+    {
+      "path": "docs/conf.py",
+      "bytes": 471,
+      "sha256": "f68affa8dfcf4a20d5fe872cfb0e19f9b284f8feda563dd8e8e23eafe75cd4eb"
+    },
+    {
+      "path": "docs/index.rst",
+      "bytes": 31459,
+      "sha256": "3158547980de18c94a5dabcad2b2f94753d759cb8cff10104cccde51e5edab47"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1665,
+      "sha256": "bb02a66397173399a9bcab7de0b1f0a34f7d6df83e357f94b52bd45b08f22cea"
+    },
+    {
+      "path": "src/cachetools/__init__.py",
+      "bytes": 23821,
+      "sha256": "630c4d9cb244d36f9ad8796de935f5a0779d9f35d5e34de003cea8d79f6c5eab"
+    },
+    {
+      "path": "src/cachetools/__init__.pyi",
+      "bytes": 7695,
+      "sha256": "ed9551103ba6c51b632604268e7104f649a7b0ec40c4c0a6802540e56e4b7c46"
+    },
+    {
+      "path": "src/cachetools/_cached.py",
+      "bytes": 7084,
+      "sha256": "f918cb6517d3d2fdb3e5eaecbf187b069b3cb1d7c999791f5f2561c9f49f7f5c"
+    },
+    {
+      "path": "src/cachetools/_cachedmethod.py",
+      "bytes": 15263,
+      "sha256": "6a500507f70afec58b0f3cc5df22332029d90c0c3a25ec0256009ba94e9ab9b9"
+    },
+    {
+      "path": "src/cachetools/func.py",
+      "bytes": 3275,
+      "sha256": "87724e4fc82303fd5172cc9fd03c7aaf6a767c6c477f3cb74a245fc45ebf7816"
+    },
+    {
+      "path": "src/cachetools/func.pyi",
+      "bytes": 2235,
+      "sha256": "b55c20d4122014165183e80b3078b402b9a5f1300c509143bd6ec861d5819af2"
+    },
+    {
+      "path": "src/cachetools/keys.py",
+      "bytes": 1967,
+      "sha256": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e"
+    },
+    {
+      "path": "src/cachetools/keys.pyi",
+      "bytes": 534,
+      "sha256": "594a1166a9c399a375b6095ee1b38408f44b7d7c8b7b57685caab85b4598a24c"
+    },
+    {
+      "path": "src/cachetools/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 15324,
+      "sha256": "72d99005a5d409aa14990b42b54646b726a4f3ca7a091a6f4831ff7701293eb8"
+    },
+    {
+      "path": "tests/test_cache.py",
+      "bytes": 148,
+      "sha256": "dbdf81b02f344a0e62a5dcf2364be7e135e2511e765e93b43864aeb7aa3b115c"
+    },
+    {
+      "path": "tests/test_cached.py",
+      "bytes": 16729,
+      "sha256": "27097d0df26efd2e6f72d03e5a8c9cdd7c4b5545ecee38aa439a78538c72fb0a"
+    },
+    {
+      "path": "tests/test_cachedmethod.py",
+      "bytes": 32324,
+      "sha256": "0d276a016da5a1bd034dbb547f9cd11ff59c1854e4681b8dc223099fc55553e1"
+    },
+    {
+      "path": "tests/test_classmethod.py",
+      "bytes": 5156,
+      "sha256": "465e882cf15481277cef959eb5d4ec0072d61c342079cac05684da55fe543851"
+    },
+    {
+      "path": "tests/test_fifo.py",
+      "bytes": 1699,
+      "sha256": "c6134627b4d9daab20e67b27fe2ff8d7e225116ae46d6a0e79b2c9b620d25941"
+    },
+    {
+      "path": "tests/test_func.py",
+      "bytes": 5937,
+      "sha256": "668e212d3a49b5442578e1a77579bacd20bbd466a8ea4a18ac04969fa4e75827"
+    },
+    {
+      "path": "tests/test_keys.py",
+      "bytes": 4773,
+      "sha256": "c6e39d6e781cb737159b43d725c4a0f00ce6f2885376fb6efd01c5d59e196064"
+    },
+    {
+      "path": "tests/test_lfu.py",
+      "bytes": 2904,
+      "sha256": "11981704035d965ae733140734efb7cd30615ef492cfeeb464f63992db59b404"
+    },
+    {
+      "path": "tests/test_lru.py",
+      "bytes": 2268,
+      "sha256": "dbfd53eb372f24571f70d739faeb6c4963f79c80ef18228f44b38b1112bf1a6c"
+    },
+    {
+      "path": "tests/test_rr.py",
+      "bytes": 2897,
+      "sha256": "995ee7555ebe96c8b4f988c23a8923de980b5f0c42ca073906988e28dd773ec2"
+    },
+    {
+      "path": "tests/test_threading.py",
+      "bytes": 5458,
+      "sha256": "83a6e611d8d77fa19faf47bdecce6c67270ef47682b77c9fbb417e78aa40ab96"
+    },
+    {
+      "path": "tests/test_tlru.py",
+      "bytes": 11685,
+      "sha256": "461fd80337d3e4a7fba830b30765cce19666611f797568f18740e4f6eea98199"
+    },
+    {
+      "path": "tests/test_ttl.py",
+      "bytes": 7885,
+      "sha256": "963e7553e31dbaed08c853d028883e09cc37e3d6ea918b24803555665b827376"
+    },
+    {
+      "path": "tox.ini",
+      "bytes": 676,
+      "sha256": "ca2be656d1b20d7731eb8bcd303df16893878ee2bdd95ef93e77a3c595411a52"
+    }
+  ]
+}

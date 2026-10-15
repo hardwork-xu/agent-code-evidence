@@ -1,0 +1,245 @@
+{
+  "instance_id": "huggingface__transformers-13865",
+  "status": "all18_reproduced_exactly",
+  "all18_hash_blocks_bytes_status_match": true,
+  "query_sha256": "829526a9940b35f60c0e13e6be39244c8f636df0dd540738d02a4208da90d579",
+  "archive_sha256": "5233ef1c182082b12e877c7c019baca94c25085d15d78880888ba13d83b78e61",
+  "anchors_identical_all_methods_budgets": true,
+  "anchors": [
+    {
+      "id": "4fe2734d1c5939915764219df01c526fcdb240f4e5b70de8af9bed48e0465175",
+      "path": "src/transformers/training_args.py",
+      "start_line": 70,
+      "end_line": 1209,
+      "text_sha256": "d976b577eba9df969b9b963e03d77711c80741d8e843bfc17fd769c4d51859d4",
+      "file_sha256": "e6df819fc3a4a798c480183badd85b642f71998c5b4eba6302fda1f52eb64fa4"
+    },
+    {
+      "id": "60cc84b068c61f5e821da044c9782e8542d4c2b0dd3025ef2a81c3711702e09d",
+      "path": "src/transformers/trainer_pt_utils.py",
+      "start_line": 847,
+      "end_line": 933,
+      "text_sha256": "a214afb2ae51a8f7015b4f20f36d86b2d762469151e69f81778c6d1819c0d9f9",
+      "file_sha256": "b1e03ca25933aad7450e7462a1408916271fa4ad520ca10103111eedb8f403de"
+    },
+    {
+      "id": "d2d1894809c7d7b437eee13dc00661634c699edd9f349e1e4e4c9ebdf0251757",
+      "path": "examples/tensorflow/language-modeling/run_clm.py",
+      "start_line": 124,
+      "end_line": 202,
+      "text_sha256": "5f49998d8684f3b941303419dc82fbf9f732d9f553d21f1ee4cce434828fa9f5",
+      "file_sha256": "6a4b861814c8ffc4cd38adfb4caa61da3dc451abdf1aadbccaeed465b2bbf20b"
+    }
+  ],
+  "cases": [
+    {
+      "budget": 8000,
+      "anchor_candidates_in_graph": true,
+      "anchor_candidate_count": 18,
+      "graph_candidate_count": 38,
+      "anchor_candidate_spans": [
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 70,
+          "end": 149
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 150,
+          "end": 229
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 230,
+          "end": 309
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 310,
+          "end": 389
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 390,
+          "end": 469
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 470,
+          "end": 549
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 550,
+          "end": 629
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 630,
+          "end": 709
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 710,
+          "end": 789
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 790,
+          "end": 869
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 870,
+          "end": 949
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 950,
+          "end": 1029
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 1030,
+          "end": 1109
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 1110,
+          "end": 1189
+        },
+        {
+          "path": "src/transformers/training_args.py",
+          "start": 1190,
+          "end": 1209
+        },
+        {
+          "path": "src/transformers/trainer_pt_utils.py",
+          "start": 847,
+          "end": 926
+        },
+        {
+          "path": "src/transformers/trainer_pt_utils.py",
+          "start": 927,
+          "end": 933
+        },
+        {
+          "path": "examples/tensorflow/language-modeling/run_clm.py",
+          "start": 124,
+          "end": 202
+        }
+      ],
+      "removed_delivered_anchor_spans": [
+        {
+          "path": "src/transformers/training_args.py",
+          "start_line": 70,
+          "end_line": 149
+        }
+      ],
+      "empty_envelope_bytes": {
+        "anchors_only": 2061,
+        "graph_expand": 2125
+      },
+      "rejections": [
+        {
+          "graph_rejected_piece": {
+            "piece": {
+              "path": "src/transformers/training_args.py",
+              "start_line": 70,
+              "end_line": 149
+            },
+            "prior_blocks": [],
+            "trial_bytes": 8034,
+            "accepted": false,
+            "trial_field_value_bytes": {
+              "blocks": 5809,
+              "budget": 4,
+              "candidate_span_count": 2,
+              "frontier_count": 2,
+              "frontier_summary": 105,
+              "frontier_summary_truncated": 5,
+              "issue": 1577,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 4,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 104,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 1,
+                "kind": "truncated"
+              },
+              {
+                "count": 34,
+                "kind": "unresolved"
+              },
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 47,
+            "candidate_span_count": 38,
+            "omitted_source_lines": 1379
+          },
+          "removed_covered": [
+            {
+              "path": "src/transformers/training_args.py",
+              "start_line": 70,
+              "end_line": 149
+            }
+          ],
+          "matched_anchor_accepted_piece": {
+            "piece": {
+              "path": "src/transformers/training_args.py",
+              "start_line": 70,
+              "end_line": 149
+            },
+            "prior_blocks": [],
+            "trial_bytes": 7970,
+            "accepted": true,
+            "trial_field_value_bytes": {
+              "blocks": 5809,
+              "budget": 4,
+              "candidate_span_count": 2,
+              "frontier_count": 2,
+              "frontier_summary": 41,
+              "frontier_summary_truncated": 5,
+              "issue": 1577,
+              "kind": 31,
+              "method": 14,
+              "omitted_source_lines": 4,
+              "schema_version": 1,
+              "scope": 43,
+              "snapshot_id": 66,
+              "source_text_hashes": 104,
+              "status": 9,
+              "unit": 12
+            },
+            "frontier_summary": [
+              {
+                "count": 12,
+                "kind": "unsupported_parse"
+              }
+            ],
+            "frontier_count": 12,
+            "candidate_span_count": 18,
+            "omitted_source_lines": 1226
+          },
+          "same_prior_blocks": true,
+          "trial_byte_difference": 64,
+          "field_value_byte_differences": {
+            "frontier_summary": 64
+          },
+          "confirmed_same_source_metadata_displacement": true
+        }
+      ],
+      "all_removed_lines_have_observed_whole_piece_rejection": true
+    }
+  ]
+}

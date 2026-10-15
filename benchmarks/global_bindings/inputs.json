@@ -1,0 +1,1444 @@
+{
+  "anchors": [
+    {
+      "path": "src/marshmallow/fields.py",
+      "repository": "marshmallow-code/marshmallow",
+      "role": "runtime_fix_fixed",
+      "sha": "7dff08fcb7fb40d2772728bb8d8a76b5beff3200",
+      "symbol": "TimeDelta._deserialize"
+    },
+    {
+      "path": "src/marshmallow/fields.py",
+      "repository": "marshmallow-code/marshmallow",
+      "role": "runtime_fix_parent",
+      "sha": "2d30a962a0a104f340e1c69d62b8bba0558027a0",
+      "symbol": "TimeDelta._deserialize"
+    },
+    {
+      "path": "src/dotenv/main.py",
+      "repository": "theskumar/python-dotenv",
+      "role": "runtime_fix_fixed",
+      "sha": "0b2880591780a426b0551436f47a17e7a76d954f",
+      "symbol": "find_dotenv"
+    },
+    {
+      "path": "src/dotenv/main.py",
+      "repository": "theskumar/python-dotenv",
+      "role": "runtime_fix_parent",
+      "sha": "791414804eff08a23f0b7970968e1717e3b28e66",
+      "symbol": "find_dotenv"
+    },
+    {
+      "path": "tomlkit/container.py",
+      "repository": "python-poetry/tomlkit",
+      "role": "runtime_fix_fixed",
+      "sha": "6b5f079099d4bd77b442f4fae96a10790ba3d55c",
+      "symbol": "Container.as_string"
+    },
+    {
+      "path": "tomlkit/container.py",
+      "repository": "python-poetry/tomlkit",
+      "role": "runtime_fix_parent",
+      "sha": "229ee8660872df482a56c93c83b14ac98fedf864",
+      "symbol": "Container.as_string"
+    },
+    {
+      "path": "src/semver/version.py",
+      "repository": "python-semver/python-semver",
+      "role": "runtime_fix_fixed",
+      "sha": "37ae009c7cacab8f1a87157ca2b484b8e18a0a78",
+      "symbol": "Version.next_version"
+    },
+    {
+      "path": "src/semver/version.py",
+      "repository": "python-semver/python-semver",
+      "role": "runtime_fix_parent",
+      "sha": "1d515915d50b31f23fd1fb0f572ef608453e80e3",
+      "symbol": "Version.next_version"
+    },
+    {
+      "path": "pyparsing/core.py",
+      "repository": "pyparsing/pyparsing",
+      "role": "explicit_global_reader",
+      "sha": "f803ae834288032a700331977639fc49c62fcd7f",
+      "symbol": "_trim_arity",
+      "watched_names": [
+        "_trim_arity_call_line",
+        "pa_call_line_synth"
+      ]
+    },
+    {
+      "path": "pyparsing/core.py",
+      "repository": "pyparsing/pyparsing",
+      "role": "explicit_global_reader",
+      "sha": "f803ae834288032a700331977639fc49c62fcd7f",
+      "symbol": "ParserElement",
+      "watched_names": [
+        "_trim_arity_call_line",
+        "pa_call_line_synth"
+      ]
+    }
+  ],
+  "classification": "fixed developer fixtures and prospective-to-graph natural panel; execution preflights already observed; not unseen holdout",
+  "global_tests_selection_sha256": "086649a2b1942c6b04f4e9867d92c43be0743aeb360b14a79ce70a4f775ad1a7",
+  "head_panel": [
+    {
+      "global_functions": [],
+      "parse_failures": [],
+      "production_global_functions": [],
+      "production_prefix": "jsonschema/",
+      "repository": "python-jsonschema/jsonschema",
+      "scanned_python_files": 25,
+      "sha": "c497561ea0a95f5aac09cd63d15eb1420eb7bbec"
+    },
+    {
+      "global_functions": [],
+      "parse_failures": [],
+      "production_global_functions": [],
+      "production_prefix": "lib/yaml/",
+      "repository": "yaml/pyyaml",
+      "scanned_python_files": 22,
+      "sha": "f5e4504a92f169f65350a1047dccb23bc97028be"
+    },
+    {
+      "global_functions": [],
+      "parse_failures": [],
+      "production_global_functions": [],
+      "production_prefix": "src/marshmallow/",
+      "repository": "marshmallow-code/marshmallow",
+      "scanned_python_files": 15,
+      "sha": "d08471b17880c62b789971ada638707a11d3f8d4"
+    },
+    {
+      "global_functions": [],
+      "parse_failures": [],
+      "production_global_functions": [],
+      "production_prefix": "src/dotenv/",
+      "repository": "theskumar/python-dotenv",
+      "scanned_python_files": 8,
+      "sha": "0b2880591780a426b0551436f47a17e7a76d954f"
+    },
+    {
+      "global_functions": [],
+      "parse_failures": [],
+      "production_global_functions": [],
+      "production_prefix": "tomlkit/",
+      "repository": "python-poetry/tomlkit",
+      "scanned_python_files": 12,
+      "sha": "19edc23b0244e1546abbf3b7890c3d8a0deeaf81"
+    },
+    {
+      "global_functions": [
+        {
+          "file": "dest/inv_regex.py",
+          "function": "parser",
+          "function_line": 207,
+          "globals": [
+            {
+              "global_line": 208,
+              "name": "_parser"
+            }
+          ],
+          "potential_writes": [
+            {
+              "context": "Store",
+              "line": 263,
+              "name": "_parser"
+            }
+          ],
+          "sha256": "dc6cfd005029e48f6cc1152d9c5c18e32e5693e0d118355a461299dfa1c1714d"
+        },
+        {
+          "file": "pyparsing/core.py",
+          "function": "_trim_arity",
+          "function_line": 264,
+          "globals": [
+            {
+              "global_line": 266,
+              "name": "_trim_arity_call_line"
+            },
+            {
+              "global_line": 266,
+              "name": "pa_call_line_synth"
+            }
+          ],
+          "potential_writes": [
+            {
+              "context": "Store",
+              "line": 281,
+              "name": "_trim_arity_call_line"
+            },
+            {
+              "context": "Store",
+              "line": 282,
+              "name": "pa_call_line_synth"
+            }
+          ],
+          "sha256": "f00c2f7040e812acd6863bdfacc8a70834b631ac4bdd3fa13b2ac085f38ab133"
+        }
+      ],
+      "parse_failures": [],
+      "production_global_functions": [
+        {
+          "file": "pyparsing/core.py",
+          "function": "_trim_arity",
+          "function_line": 264,
+          "globals": [
+            {
+              "global_line": 266,
+              "name": "_trim_arity_call_line"
+            },
+            {
+              "global_line": 266,
+              "name": "pa_call_line_synth"
+            }
+          ],
+          "potential_writes": [
+            {
+              "context": "Store",
+              "line": 281,
+              "name": "_trim_arity_call_line"
+            },
+            {
+              "context": "Store",
+              "line": 282,
+              "name": "pa_call_line_synth"
+            }
+          ],
+          "sha256": "f00c2f7040e812acd6863bdfacc8a70834b631ac4bdd3fa13b2ac085f38ab133"
+        }
+      ],
+      "production_prefix": "pyparsing/",
+      "repository": "pyparsing/pyparsing",
+      "scanned_python_files": 20,
+      "sha": "f803ae834288032a700331977639fc49c62fcd7f"
+    },
+    {
+      "global_functions": [],
+      "parse_failures": [],
+      "production_global_functions": [],
+      "production_prefix": "src/semver/",
+      "repository": "python-semver/python-semver",
+      "scanned_python_files": 7,
+      "sha": "84561d55265c2cba6f5df0d341d6e967ce20e082"
+    },
+    {
+      "global_functions": [],
+      "parse_failures": [],
+      "production_global_functions": [],
+      "production_prefix": "traitlets/",
+      "repository": "ipython/traitlets",
+      "scanned_python_files": 21,
+      "sha": "c4f12477747b9592d01dae5ff8fcdd2a7cdffd0b"
+    }
+  ],
+  "limits": "Read traces and regression assertions are execution observations, not necessary-context labels, repair success or whole-program semantic proof.",
+  "own_fixtures": [
+    {
+      "name": "assign",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    x = 2\n"
+    },
+    {
+      "name": "destructure",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    x, y = 2, 3\n"
+    },
+    {
+      "name": "multi-assign",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    x = y = 2\n"
+    },
+    {
+      "name": "augassign",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    x += 2\n"
+    },
+    {
+      "name": "delete",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    del x\n"
+    },
+    {
+      "name": "import",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    import math as x\n"
+    },
+    {
+      "name": "from-import",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    from math import pi as x\n"
+    },
+    {
+      "name": "function-definition",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    def x():\n        return 2\n"
+    },
+    {
+      "name": "async-definition",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    async def x():\n        return 2\n"
+    },
+    {
+      "name": "class-definition",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    class x:\n        pass\n"
+    },
+    {
+      "name": "namedexpr",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    y = (x := 2)\n"
+    },
+    {
+      "name": "for-target",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    for x in (2,):\n        pass\n"
+    },
+    {
+      "name": "with-target",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    from contextlib import nullcontext\n    with nullcontext(2) as x:\n        pass\n"
+    },
+    {
+      "name": "except-target",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    try:\n        raise ValueError()\n    except ValueError as x:\n        pass\n"
+    },
+    {
+      "name": "match-capture",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    match 2:\n        case x:\n            pass\n"
+    },
+    {
+      "name": "unreachable-conditional",
+      "possible_global_write": true,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    if False:\n        x = 2\n"
+    },
+    {
+      "name": "nested-function-default",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    def inner(value=(x := 2)):\n        pass\n"
+    },
+    {
+      "name": "lambda-default",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    y = lambda value=(x := 2): value\n"
+    },
+    {
+      "name": "nested-class-global",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    class Inner:\n        global x\n        x = 2\n"
+    },
+    {
+      "name": "comprehension-namedexpr",
+      "possible_global_write": true,
+      "runtime_changes": true,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    y = [(x := item) for item in (2,)]\n"
+    },
+    {
+      "name": "global-declaration-only",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    pass\n"
+    },
+    {
+      "name": "global-read-only",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    y = x\n"
+    },
+    {
+      "name": "different-global",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global y\n    y = 2\n    x = 2\n"
+    },
+    {
+      "name": "local-assignment",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    x = 2\n"
+    },
+    {
+      "name": "nested-class-local",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    class Inner:\n        x = 2\n"
+    },
+    {
+      "name": "comprehension-iteration-target",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    y = [x for x in (2,)]\n"
+    },
+    {
+      "name": "nested-function-local",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    def inner():\n        x = 2\n    inner()\n"
+    },
+    {
+      "name": "nested-function-parameter",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    def inner(x=2):\n        return x\n    inner()\n"
+    },
+    {
+      "name": "lambda-parameter",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    y = lambda x=2: x\n    y()\n"
+    },
+    {
+      "name": "nested-function-readonly-global",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    def inner():\n        global x\n        return x\n    inner()\n"
+    },
+    {
+      "name": "nested-class-readonly-global",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    class Inner:\n        global x\n        y = x\n"
+    },
+    {
+      "name": "dict-comprehension-iteration-target",
+      "possible_global_write": false,
+      "runtime_changes": false,
+      "source": "x = 0\ndef getter():\n    return x\ndef writer():\n    global x\n    y = {x: x for x in (2,)}\n"
+    }
+  ],
+  "primary_selection_sha256": "3dda077da7249a29f1ceb7771428f629e04030a8278fa28fa3832957d45433fa",
+  "prior_diagnostic_source": "Scrapy is development evidence, excluded from this new eight-source panel",
+  "ready_manifest_sha256": "9d67ce5f019c79f71bb457263ff23a870fda484b265f73ba5c28464a31ecf953",
+  "schema_version": 1,
+  "selection": "Keep all eight preflight heads including seven zero-match repositories; four chosen fix anchors on both roles; every top-level declaration reading watched names in independently identified production writer files; no outcome-based filtering.",
+  "sources": [
+    {
+      "archive_sha256": "3758937efe1d5d4d6ecfff4cffbc8e9ed7cad075267f78288e550c12828548bb",
+      "archive_url": "https://codeload.github.com/python-jsonschema/jsonschema/tar.gz/c497561ea0a95f5aac09cd63d15eb1420eb7bbec",
+      "directory": "python-jsonschema--jsonschema-c497561ea0a9",
+      "files": {
+        "jsonschema/__init__.py": {
+          "bytes": 3948,
+          "sha256": "8cb57c93f703ae996eb9f16ac1450b87383cc1539b6ecfcd8fcc73e859033fa3"
+        },
+        "jsonschema/__main__.py": {
+          "bytes": 116,
+          "sha256": "87f25bdb0b9f9db2cd3518a97f97cb44416adcfb23d5a46fdc2aa533a60efa06"
+        },
+        "jsonschema/_format.py": {
+          "bytes": 15473,
+          "sha256": "7864cbd2ecc8c4d178fd913f8319073534d11b6a7029067f1fcaeb72bc671b7f"
+        },
+        "jsonschema/_keywords.py": {
+          "bytes": 15048,
+          "sha256": "30738d7a1805ef854838a83dde42617c6caa214ecf08f3df9335ae845171535a"
+        },
+        "jsonschema/_legacy_keywords.py": {
+          "bytes": 15697,
+          "sha256": "418fa809df52fc94f3e7deb96d8d9452850efee480596f27f90bc9b1dd8e2507"
+        },
+        "jsonschema/_types.py": {
+          "bytes": 5464,
+          "sha256": "4fce9ec000809552fdb17a71a3bd31372367d15624f654af5a4c955025649d67"
+        },
+        "jsonschema/_typing.py": {
+          "bytes": 610,
+          "sha256": "799c9289e893246475fca7268f6c5f511430d44cd5f7907d672741b85eab8ce1"
+        },
+        "jsonschema/_utils.py": {
+          "bytes": 12784,
+          "sha256": "2ead0d18d9ad3843aa34816f76ac2a4ddee386681c8a1d71006a022968e4759d"
+        },
+        "jsonschema/benchmarks/__init__.py": {
+          "bytes": 70,
+          "sha256": "034b10af10c15474b243ef2bbb72f5d613177f7abd815b81f71fd88076f847d3"
+        },
+        "jsonschema/benchmarks/const_vs_enum.py": {
+          "bytes": 830,
+          "sha256": "0d5162dd60ea05a95914e89b9e3a57d6e4d2af74716b670f805728c1ded492bb"
+        },
+        "jsonschema/benchmarks/contains.py": {
+          "bytes": 786,
+          "sha256": "81ec50a14ac23b0102a1f6edd7d05ea2c419ed614be8f0dd917e3d0d6c0194e8"
+        },
+        "jsonschema/benchmarks/import_benchmark.py": {
+          "bytes": 744,
+          "sha256": "7f122d44f0022cd41cbaa1ff583d98e37ff4cd81c229ae39b44877b65272ba74"
+        },
+        "jsonschema/benchmarks/issue232.py": {
+          "bytes": 522,
+          "sha256": "7bb9a7d5202f7856da25ee20472729c81d50c5f6a480b3cb5d76e547454567e3"
+        },
+        "jsonschema/benchmarks/json_schema_test_suite.py": {
+          "bytes": 321,
+          "sha256": "54131ad5372fa421f758cb1fbe4dd9d7baa8c96b020ecb0e46bfdcbeb5201590"
+        },
+        "jsonschema/benchmarks/nested_schemas.py": {
+          "bytes": 1892,
+          "sha256": "8c1b8b96b6685bad971c7beaab023f2d8662fda6c6acdc00f42967c1072c0599"
+        },
+        "jsonschema/benchmarks/subcomponents.py": {
+          "bytes": 1115,
+          "sha256": "18f0dd6ffb38921da73f736b075f5573d75fd7a19856aed371e5c5dc05cc096d"
+        },
+        "jsonschema/benchmarks/unused_registry.py": {
+          "bytes": 941,
+          "sha256": "bb1f374e839b12799c21514ea5afc01d6c484a2ff02d9f546ad27b74aad43657"
+        },
+        "jsonschema/benchmarks/useless_applicator_schemas.py": {
+          "bytes": 3341,
+          "sha256": "40502d7433588f3a156ce5ee3eda90bf613abb041f593b7b718ece6ac5a670ed"
+        },
+        "jsonschema/benchmarks/useless_keywords.py": {
+          "bytes": 867,
+          "sha256": "6e3ff32abd6855cb4596ac9968e6c2b184e01638a23603f30b486bd58f3af261"
+        },
+        "jsonschema/benchmarks/validator_creation.py": {
+          "bytes": 285,
+          "sha256": "52451094b027bacb27aff29d08875a77ac71da95f140b998b6c5e88a2aca7964"
+        },
+        "jsonschema/cli.py": {
+          "bytes": 8524,
+          "sha256": "b8262e58f73fe4c9b22f044581cc55c79abc3140b1a832c8edde65cd6ddcb48a"
+        },
+        "jsonschema/exceptions.py": {
+          "bytes": 17511,
+          "sha256": "4a930b2479fb05273483b4a2f3289af001f20293635611ac0874ae53d9dce106"
+        },
+        "jsonschema/protocols.py": {
+          "bytes": 7228,
+          "sha256": "84b48f4001fe753f0a1c193027b4107dd0f83023f2b0d88642d7a9a2b64b00bd"
+        },
+        "jsonschema/tests/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "jsonschema/tests/_suite.py": {
+          "bytes": 8319,
+          "sha256": "3bb8d88364833ba673426fc79ba618126e2bbe93f229a99a0d12a135862cc657"
+        },
+        "jsonschema/tests/fuzz_validate.py": {
+          "bytes": 1116,
+          "sha256": "bd5b510f1bf5bf53f8e2ba07a0a69e1c4f5cdc59fee815e07c08a870ec52e890"
+        },
+        "jsonschema/tests/test_cli.py": {
+          "bytes": 29042,
+          "sha256": "04ee74574c4745c64ec47ec4ed3afe4ae0698645c31e05faa495a3b9471dd9e8"
+        },
+        "jsonschema/tests/test_deprecations.py": {
+          "bytes": 15809,
+          "sha256": "e90069cb2578d19763e99828df0172908e1b0d8229811029350794df7ab28fec"
+        },
+        "jsonschema/tests/test_exceptions.py": {
+          "bytes": 36314,
+          "sha256": "e34ef8b9c9d7f640034ae2460f5aa1e9b32406fddc55bc5ef302ab6b4f01603e"
+        },
+        "jsonschema/tests/test_format.py": {
+          "bytes": 3188,
+          "sha256": "7959b948c69617694e3cedbc6cf03036f92242f1c240acbe327b808047217c47"
+        },
+        "jsonschema/tests/test_jsonschema_test_suite.py": {
+          "bytes": 12643,
+          "sha256": "c9c66dde9758f33f336aa0bc109237bf6a3e844e504440ec91e0a2415c83c155"
+        },
+        "jsonschema/tests/test_types.py": {
+          "bytes": 7031,
+          "sha256": "d6564aefeec25810e7d9b1c85a1dd3c9f7ba661051e0a984512f730c9bcd6c5a"
+        },
+        "jsonschema/tests/test_utils.py": {
+          "bytes": 7106,
+          "sha256": "f6be7562fff9d40c7b61347cc20119762b8aa7e5b1b3204038b1166ab9236bbb"
+        },
+        "jsonschema/tests/test_validators.py": {
+          "bytes": 89396,
+          "sha256": "5c1a84c76fde906faffabdc4e6cfa900d8aa45b891ac5a23b9a8fea827189171"
+        },
+        "jsonschema/tests/typing/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "jsonschema/tests/typing/test_all_concrete_validators_match_protocol.py": {
+          "bytes": 1239,
+          "sha256": "8da63f2f44083887f256bf2038ccf31a5328b31ce76a4103f86fef3560659ece"
+        },
+        "jsonschema/validators.py": {
+          "bytes": 47347,
+          "sha256": "d24bddbcec02503170c9e1496553658d4fed0d557130f42dc336158b3f50eff7"
+        }
+      },
+      "production_prefix": "jsonschema/",
+      "repository": "python-jsonschema/jsonschema",
+      "sha": "c497561ea0a95f5aac09cd63d15eb1420eb7bbec",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "5057262c185dd1158cf7cc5b1a947b5f8d0ab26ee387eb89340b76fff1c26f30",
+      "archive_url": "https://codeload.github.com/yaml/pyyaml/tar.gz/f5e4504a92f169f65350a1047dccb23bc97028be",
+      "directory": "yaml--pyyaml-f5e4504a92f1",
+      "files": {
+        "lib/yaml/__init__.py": {
+          "bytes": 12316,
+          "sha256": "ebfdbfdc502be2e8aea886f00e0d4454c2b4c2b3f7b2d0928f196136e735827c"
+        },
+        "lib/yaml/composer.py": {
+          "bytes": 4883,
+          "sha256": "fcaa37d16afa783594794a5ab94193dcb720f503c19ce3d59539c8311189f453"
+        },
+        "lib/yaml/constructor.py": {
+          "bytes": 28944,
+          "sha256": "aaad544d91634d2c1b8b7d89642184829994ff429a5ea539b0911fa03d95d4c5"
+        },
+        "lib/yaml/cyaml.py": {
+          "bytes": 3851,
+          "sha256": "e99ac01bd7c062f7557b614aff0d21997a06ed962ca185306a91bc0a20bbd87d"
+        },
+        "lib/yaml/dumper.py": {
+          "bytes": 2837,
+          "sha256": "3cb72d66563064ba7b5e679477046ebf89d8399d940670c8532f3e94a7cb17ea"
+        },
+        "lib/yaml/emitter.py": {
+          "bytes": 43006,
+          "sha256": "8e086d694ede170837d5b1b407b45979aff6f40762f422a65eafd08e04290a44"
+        },
+        "lib/yaml/error.py": {
+          "bytes": 2533,
+          "sha256": "021f73fada072546c4f63f8cf18a7181244ce4280b09cc15cc980b2d1176171a"
+        },
+        "lib/yaml/events.py": {
+          "bytes": 2445,
+          "sha256": "e74fd392c810884e2ea7e94aa3f57e9c1cbeb402319083d0c58e6a0e1282787c"
+        },
+        "lib/yaml/loader.py": {
+          "bytes": 2061,
+          "sha256": "5156becc8aa6905482218abf3e04869b835226db4763645fff3438fdbd5f1cdd"
+        },
+        "lib/yaml/nodes.py": {
+          "bytes": 1440,
+          "sha256": "80f28d8fca4a09d87677882bde021820d9cf39a3b11a12405226211919cf13ce"
+        },
+        "lib/yaml/parser.py": {
+          "bytes": 25495,
+          "sha256": "8a55a9e6fbe0a07146cef3990c8b45a068c3e83e369e1959ad9ca30306b4a09a"
+        },
+        "lib/yaml/reader.py": {
+          "bytes": 6794,
+          "sha256": "d1d9b38ab3a20c6e17a38d519ee412ecaf6b918df18c78956ac7c330d4ea08dc"
+        },
+        "lib/yaml/representer.py": {
+          "bytes": 14190,
+          "sha256": "22e58ff9c016f6c1ca1274b4802a926bcf78935060e1c813c5a0f021c6d143e6"
+        },
+        "lib/yaml/resolver.py": {
+          "bytes": 9004,
+          "sha256": "f4bf9561f9b89961f1503d558385fbae30d12bfed565de9bf76c33abb63620a6"
+        },
+        "lib/yaml/scanner.py": {
+          "bytes": 51279,
+          "sha256": "60433788b652690c17710460da5d91e0c753d3318fd85f5e1e42862a71f25906"
+        },
+        "lib/yaml/serializer.py": {
+          "bytes": 4165,
+          "sha256": "0a1b85826854d35863e31808f0668abfabdf33606e8f06bd8bb7761401e3edc0"
+        },
+        "lib/yaml/tokens.py": {
+          "bytes": 2573,
+          "sha256": "953408cd2570f0c83dc2fe39f7e4e388e41eeb05738aa69196a5f6ffcf6ba79e"
+        }
+      },
+      "production_prefix": "lib/yaml/",
+      "repository": "yaml/pyyaml",
+      "sha": "f5e4504a92f169f65350a1047dccb23bc97028be",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "0e9f52b2b97e3d8f4196e9068622de2346daabb795418fa94158680bfc0aed16",
+      "archive_url": "https://codeload.github.com/marshmallow-code/marshmallow/tar.gz/d08471b17880c62b789971ada638707a11d3f8d4",
+      "directory": "marshmallow-code--marshmallow-d08471b17880",
+      "files": {
+        "src/marshmallow/__init__.py": {
+          "bytes": 573,
+          "sha256": "f571c1453acf99b55a53e67c096a3c9e571ff59e55be4443dfb77596e26e01a3"
+        },
+        "src/marshmallow/class_registry.py": {
+          "bytes": 3030,
+          "sha256": "92215f3c6ad10106a42c11bd1bce3e60cb00b8202b6c4870a6227e8b0ea83399"
+        },
+        "src/marshmallow/constants.py": {
+          "bytes": 415,
+          "sha256": "bfceb327d9f2c3237b7ae887430f2125292e3f27ae7e552fbf48d956d7eb7bc3"
+        },
+        "src/marshmallow/decorators.py": {
+          "bytes": 10163,
+          "sha256": "eae4d17e84935bb687b1b4c73aff2c88069b6eba95cd680a543b78214f325a49"
+        },
+        "src/marshmallow/error_store.py": {
+          "bytes": 2444,
+          "sha256": "e7eeb67a5f04cb6c39f71f050e1502e5a7cfbbadcd5e3ba62a201a80018bf5b6"
+        },
+        "src/marshmallow/exceptions.py": {
+          "bytes": 2273,
+          "sha256": "d4bdd91f040d7a5594e6e8c83ec38de6d67a5903e4eb8a411963727f0873eb4f"
+        },
+        "src/marshmallow/experimental/__init__.py": {
+          "bytes": 147,
+          "sha256": "e7f89a5264fbfdfe9030bd8b257980df1aa093950102009e21acc7b42d465607"
+        },
+        "src/marshmallow/experimental/context.py": {
+          "bytes": 2040,
+          "sha256": "ff8285eac34aea913431c932613197994de124bdad63e4cde2856613f783a1bd"
+        },
+        "src/marshmallow/fields.py": {
+          "bytes": 75463,
+          "sha256": "f4d22965f9583b803307c3d02e3c1b5210c7e2f81e7b213969df25d1f3e20669"
+        },
+        "src/marshmallow/orderedset.py": {
+          "bytes": 2953,
+          "sha256": "69d5421b81ed7d815ec6a65386216c8b073f8b483c2cd588fdb17a723333dabd"
+        },
+        "src/marshmallow/schema.py": {
+          "bytes": 50107,
+          "sha256": "f8b5ab7bc851624d67c900dc8e8d74a64325204066d9a2721a5a484e9d0256f5"
+        },
+        "src/marshmallow/types.py": {
+          "bytes": 1634,
+          "sha256": "eb7b22c63f7a9e7a5ce1e51cbe290d7959ad92dd3fa9f1d71fd0813cf9b847e8"
+        },
+        "src/marshmallow/utils.py": {
+          "bytes": 5216,
+          "sha256": "a1d471ede958e1cf24a36309efcea1fd4cd8a0a0e7b9593c8f12cc34ef28620a"
+        },
+        "src/marshmallow/validate.py": {
+          "bytes": 24880,
+          "sha256": "5c0cf010327df33cd8239026aa7a45c4a69b060401dde3daaf3869feabdc0278"
+        }
+      },
+      "production_prefix": "src/marshmallow/",
+      "repository": "marshmallow-code/marshmallow",
+      "sha": "d08471b17880c62b789971ada638707a11d3f8d4",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "aab964a7425d3016b49d8900203af00bfcfc443bccac593fab551dead10d9241",
+      "archive_url": "https://codeload.github.com/theskumar/python-dotenv/tar.gz/0b2880591780a426b0551436f47a17e7a76d954f",
+      "directory": "theskumar--python-dotenv-0b2880591780",
+      "files": {
+        "src/dotenv/__init__.py": {
+          "bytes": 1230,
+          "sha256": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23"
+        },
+        "src/dotenv/__main__.py": {
+          "bytes": 129,
+          "sha256": "3744612c6ee71c8aad9491f0c1ea48a3ecdb24f371f6c7b0082446639dbc87fe"
+        },
+        "src/dotenv/cli.py": {
+          "bytes": 7284,
+          "sha256": "fd9755edcd5e496b46f141bcfc76310f2f86b961f93e67980ea9c5305d278f8c"
+        },
+        "src/dotenv/ipython.py": {
+          "bytes": 1326,
+          "sha256": "74740177d3dc7425298466faed7c32dc6914a8c49d7fd5d4522358c53677b585"
+        },
+        "src/dotenv/main.py": {
+          "bytes": 16970,
+          "sha256": "fcb89122cd8756c43209f9052bb3c552dbe440d45493c762295c771f0d1ceaa8"
+        },
+        "src/dotenv/parser.py": {
+          "bytes": 5806,
+          "sha256": "0bc1350444eeff987f2c22924400ad0b7727563798118c641cd4c0de55bd30d0"
+        },
+        "src/dotenv/variables.py": {
+          "bytes": 2348,
+          "sha256": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f"
+        },
+        "src/dotenv/version.py": {
+          "bytes": 22,
+          "sha256": "5c1287f04d4b983c6fd3a537f72a8c05b5d96a93844458080840d866cfe446ca"
+        }
+      },
+      "production_prefix": "src/dotenv/",
+      "repository": "theskumar/python-dotenv",
+      "sha": "0b2880591780a426b0551436f47a17e7a76d954f",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "51f043d945cfd9bbc63d3464edb541d086eb815e33400522fc9673c7d7f8f0b2",
+      "archive_url": "https://codeload.github.com/python-poetry/tomlkit/tar.gz/19edc23b0244e1546abbf3b7890c3d8a0deeaf81",
+      "directory": "python-poetry--tomlkit-19edc23b0244",
+      "files": {
+        "tomlkit/__init__.py": {
+          "bytes": 1282,
+          "sha256": "68a7a968a8a90b1d1fcf824d20db14533625b3e4929fd1699878d0079ecd79a2"
+        },
+        "tomlkit/_compat.py": {
+          "bytes": 504,
+          "sha256": "7a1521d5d7466e4e9f65cfd586de32fa6c87abef5c20ad14558063efd5c790e4"
+        },
+        "tomlkit/_types.py": {
+          "bytes": 2230,
+          "sha256": "0611c08906a898981bfcd5511e777c50c656e9940ca4c20bddf7ddeae2486853"
+        },
+        "tomlkit/_utils.py": {
+          "bytes": 4594,
+          "sha256": "4e26e09f3eef396610f4c228c1815b51021066d4fd9c9d9c76acecbd7e9f81ac"
+        },
+        "tomlkit/api.py": {
+          "bytes": 10334,
+          "sha256": "5c6cb9ffb73b6ad19ccbe9fc498be363a9a5ec327582e516768b00ee358d36e3"
+        },
+        "tomlkit/container.py": {
+          "bytes": 52447,
+          "sha256": "8d4315ba9d10e7fbc5b5460d124cf27cb73ff66a31b4b4dfdb8a66cebe93fcb6"
+        },
+        "tomlkit/exceptions.py": {
+          "bytes": 5758,
+          "sha256": "d5b58a0f077b65c93919b4d523380931f927c51a1a0752e570e900e598556e05"
+        },
+        "tomlkit/items.py": {
+          "bytes": 77173,
+          "sha256": "8c9c64daa82de244067b0cda4edceec561a918cad183ba7f06468c45027bb76f"
+        },
+        "tomlkit/parser.py": {
+          "bytes": 45837,
+          "sha256": "a74abeff54ea1222a5bc113c29a2e824a4cc4778ebabdad36b9e91d004c8b92f"
+        },
+        "tomlkit/source.py": {
+          "bytes": 7717,
+          "sha256": "2be326699043ae118d762fc4293ccdbf9e49d88f529af367cc9caf5bef45cefb"
+        },
+        "tomlkit/toml_document.py": {
+          "bytes": 110,
+          "sha256": "3824e45977773f9f04653e120fcfdd75cd58a6431aaad952e7fb2d1d306630e2"
+        },
+        "tomlkit/toml_file.py": {
+          "bytes": 1664,
+          "sha256": "d14e26e415728ee41dd2dd2bfa653e92879fa976e69ec3dd00de8a7bbd56e5d0"
+        }
+      },
+      "production_prefix": "tomlkit/",
+      "repository": "python-poetry/tomlkit",
+      "sha": "19edc23b0244e1546abbf3b7890c3d8a0deeaf81",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "cfb1e0ffc530d7d0745865c2ac6bc4a1e13b8708b9c81549db20f258e58f02b1",
+      "archive_url": "https://codeload.github.com/pyparsing/pyparsing/tar.gz/f803ae834288032a700331977639fc49c62fcd7f",
+      "directory": "pyparsing--pyparsing-f803ae834288",
+      "files": {
+        "pyparsing/__init__.py": {
+          "bytes": 13438,
+          "sha256": "03399cc4dc706c4d40bc062abe70819edef1d80154423bf99779707c3f8d5447"
+        },
+        "pyparsing/actions.py": {
+          "bytes": 8104,
+          "sha256": "a435badd59168794ea47a00a38cc830a86c8d0917e42e05ce39008fa82240fcc"
+        },
+        "pyparsing/ai/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "pyparsing/ai/show_best_practices/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "pyparsing/ai/show_best_practices/__main__.py": {
+          "bytes": 49,
+          "sha256": "c465da0aa0534d66716dd2cdcf91bdcba70c2b53e99bb6dc8156200f501c2a61"
+        },
+        "pyparsing/common.py": {
+          "bytes": 16884,
+          "sha256": "9cf338ee2e5dec6daa8d2d79a07e4500d03d04bad6a7c6dc2dbf0a72d95723fb"
+        },
+        "pyparsing/core.py": {
+          "bytes": 254871,
+          "sha256": "f00c2f7040e812acd6863bdfacc8a70834b631ac4bdd3fa13b2ac085f38ab133"
+        },
+        "pyparsing/diagram/__init__.py": {
+          "bytes": 26929,
+          "sha256": "340b69d195a8937ec92754d5444bd9683e02ab3bc84094541ce0051e5fdaba80"
+        },
+        "pyparsing/exceptions.py": {
+          "bytes": 10981,
+          "sha256": "da91ea43e983721cbdf1ec080b6b3c79e5fb220dfb736ec5dfb69a52dc204521"
+        },
+        "pyparsing/helpers.py": {
+          "bytes": 43014,
+          "sha256": "54aba77a96890388eaaa2e5c4434901b052397b36b38ab930f6ef039df573892"
+        },
+        "pyparsing/results.py": {
+          "bytes": 30043,
+          "sha256": "695ca78ba744413e0899dadf159815418495a6de1ca932927542c31aa4be8e6e"
+        },
+        "pyparsing/testing.py": {
+          "bytes": 15452,
+          "sha256": "91cabab0b3f2036de1af00f3074345e57eb5286cf42110e39e139b0badbf98e9"
+        },
+        "pyparsing/tools/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "pyparsing/tools/cvt_pyparsing_pep8_names.py": {
+          "bytes": 6389,
+          "sha256": "1fc0281dd62ceeb53c6b4451178ce3bab8c6ff167ca4e2d5061022d3e16054e6"
+        },
+        "pyparsing/unicode.py": {
+          "bytes": 10612,
+          "sha256": "8e6b33a519dfca10905a5d9187ff78753fe5c5033a7782a249ff62bd8f5bfe6e"
+        },
+        "pyparsing/util.py": {
+          "bytes": 15997,
+          "sha256": "45c0dcb2af6a73c4c1ab3936bf163752d65bdfb583e3c581c80116a2ad301d37"
+        },
+        "pyparsing/warnings.py": {
+          "bytes": 357,
+          "sha256": "c1058d33b29a975d0e4011c7706f5281dc1a05e15b51eddf0c41777dc1c11c21"
+        }
+      },
+      "production_prefix": "pyparsing/",
+      "repository": "pyparsing/pyparsing",
+      "sha": "f803ae834288032a700331977639fc49c62fcd7f",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "f04bd1567bede82653378d271b214f4d1270f3c714253bc637602569381f4245",
+      "archive_url": "https://codeload.github.com/python-semver/python-semver/tar.gz/84561d55265c2cba6f5df0d341d6e967ce20e082",
+      "directory": "python-semver--python-semver-84561d55265c",
+      "files": {
+        "src/semver/__about__.py": {
+          "bytes": 815,
+          "sha256": "a2f09ee8f767426e5cf58dc8bc46071de1becb9ec566a3d5a211a33f79a5493e"
+        },
+        "src/semver/__init__.py": {
+          "bytes": 1269,
+          "sha256": "451063ea4bae61a098e41f602f1c04d21ee6781c2ead811b7d0667bfbb7590a3"
+        },
+        "src/semver/__main__.py": {
+          "bytes": 593,
+          "sha256": "9ac50bab82dbd0057c2b8aee9619b4173cc93bca0c0afe761a37131b6b7c8b0b"
+        },
+        "src/semver/_deprecated.py": {
+          "bytes": 11273,
+          "sha256": "38e5fe01e698f90a892b6810184f2974913187fd774cffbd012640920a829ade"
+        },
+        "src/semver/_types.py": {
+          "bytes": 422,
+          "sha256": "f807dacd98279a631eed6b614b1fccfb0d410a7ab674f166cac8e6b533a6d687"
+        },
+        "src/semver/cli.py": {
+          "bytes": 5189,
+          "sha256": "1f0be99ea70df791b7388354e1c2e0a2e4470ad5a146cb8a8217e13d6b4639ec"
+        },
+        "src/semver/version.py": {
+          "bytes": 29077,
+          "sha256": "329c09bb9118c87b56ff88177037969b4078359ee597dec1ebdbd525406dcba3"
+        }
+      },
+      "production_prefix": "src/semver/",
+      "repository": "python-semver/python-semver",
+      "sha": "84561d55265c2cba6f5df0d341d6e967ce20e082",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "fee2cd3644f9ea96bd0d5d1274e8e37482ebd58a9422971e8403f036fba226bc",
+      "archive_url": "https://codeload.github.com/ipython/traitlets/tar.gz/c4f12477747b9592d01dae5ff8fcdd2a7cdffd0b",
+      "directory": "ipython--traitlets-c4f12477747b",
+      "files": {
+        "traitlets/__init__.py": {
+          "bytes": 968,
+          "sha256": "1fa4d4fb3906b3f4e4efcf6c201490482b85cde918d89d19c1133c4fe5eaf7e2"
+        },
+        "traitlets/_version.py": {
+          "bytes": 534,
+          "sha256": "d80423e149d0db58acba164b0fc7e12a3cb5c5270d18c1167de61460b3acd0c7"
+        },
+        "traitlets/config/__init__.py": {
+          "bytes": 485,
+          "sha256": "cb374531bc1e69a35df04697541a86b570e1376c63fa611e1c4e04b1ad7cc3d5"
+        },
+        "traitlets/config/application.py": {
+          "bytes": 43046,
+          "sha256": "fce92bf0f7e24568a0cc279285e2c04317cd94fb69938fbd1e6f4380e2f2e24b"
+        },
+        "traitlets/config/argcomplete_config.py": {
+          "bytes": 10240,
+          "sha256": "c9fbe0f2f0d157901da00c1c98c5cb5b67dae83eacc9ec5989583879a3acf945"
+        },
+        "traitlets/config/configurable.py": {
+          "bytes": 29626,
+          "sha256": "5f8d2960856b2587f41bed554a499eb5efe4d73547c30da29e7a4ccc94d36c4a"
+        },
+        "traitlets/config/loader.py": {
+          "bytes": 40423,
+          "sha256": "e0cdcbed99e4ccf4254a8eed8a984870bf75351a15ed6ef56748099d8fd307e6"
+        },
+        "traitlets/config/manager.py": {
+          "bytes": 2470,
+          "sha256": "3ff2eae242952304604ed556a991c725b1e50f73682d8552395f1ca0eee8ca69"
+        },
+        "traitlets/config/sphinxdoc.py": {
+          "bytes": 5251,
+          "sha256": "bc998138b486455bbbb82a79c8310bd136af029899ffdaadef679fe28c1d3229"
+        },
+        "traitlets/log.py": {
+          "bytes": 830,
+          "sha256": "a988d6441b0a94807c7997386a9bc629dcab3652c8dd22685c0ee78e43d6bc2a"
+        },
+        "traitlets/tests/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "traitlets/tests/test_traitlets.py": {
+          "bytes": 2284,
+          "sha256": "9e03655586ceac017e0ab36ab35c99009b5f7919b8427e593806836b473c7a97"
+        },
+        "traitlets/tests/utils.py": {
+          "bytes": 1408,
+          "sha256": "9e497c98dc3e3bdae152561d30dbb711ad37d85c224e7036d36496ac4cf40687"
+        },
+        "traitlets/traitlets.py": {
+          "bytes": 155353,
+          "sha256": "f3bd5b9b1a6e70b00c33aca64baf1250e746c6fce81f92bd3471a23e1af2c86a"
+        },
+        "traitlets/utils/__init__.py": {
+          "bytes": 3158,
+          "sha256": "126bf8d82ca3164619dc43d62b36ab0c2b0978e0407cc9813c4ad7e15809752e"
+        },
+        "traitlets/utils/bunch.py": {
+          "bytes": 758,
+          "sha256": "67a480f0e6e2b4725866b3b38a3019d53fb3e9e2f828679a800e4ef5b855d530"
+        },
+        "traitlets/utils/decorators.py": {
+          "bytes": 3119,
+          "sha256": "fb2bceca5ab0b1f234aa7c059b4acced2f7b1eb8c1e157d399c5cf8eb7239b46"
+        },
+        "traitlets/utils/descriptions.py": {
+          "bytes": 5582,
+          "sha256": "3ea0d37a4d4ac731ed7aa939028bf58b7c71c542c05f704dab6ca4dd7d8a3cfb"
+        },
+        "traitlets/utils/getargspec.py": {
+          "bytes": 1682,
+          "sha256": "1998be8a0a5cf0686b9861677a0aa36acd9d3f58f0f391a4e30a221dae5a7cca"
+        },
+        "traitlets/utils/importstring.py": {
+          "bytes": 1347,
+          "sha256": "91620951ce7f589fb51af6197c1e9ec10ccc59adda1feac9a8cfe84423757a25"
+        },
+        "traitlets/utils/nested_update.py": {
+          "bytes": 1108,
+          "sha256": "9567f8aebfbf84221500f7253d53d04d3c5640bf25d56838889d481395dcc4ac"
+        },
+        "traitlets/utils/sentinel.py": {
+          "bytes": 642,
+          "sha256": "6f7d5fe73eaca1a65696b76ad824503ceb7fd63df5af632c45fe8674ed96a40a"
+        },
+        "traitlets/utils/text.py": {
+          "bytes": 1608,
+          "sha256": "03b64679096cee43adf7b52ca78651ffcae91731ff19dc56abb120f14fb203dc"
+        },
+        "traitlets/utils/warnings.py": {
+          "bytes": 1994,
+          "sha256": "e26c0e44893490315d351b0e23bb8555e721bc1a834ea5dd06036c6b87d43a5e"
+        }
+      },
+      "production_prefix": "traitlets/",
+      "repository": "ipython/traitlets",
+      "sha": "c4f12477747b9592d01dae5ff8fcdd2a7cdffd0b",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "2d3692711dfa71d388f8f61f239d0d74b4f2d3329eed12d784bbd2eecba91d75",
+      "archive_url": "https://codeload.github.com/marshmallow-code/marshmallow/tar.gz/7dff08fcb7fb40d2772728bb8d8a76b5beff3200",
+      "directory": "marshmallow-code--marshmallow-7dff08fcb7fb",
+      "files": {
+        "src/marshmallow/__init__.py": {
+          "bytes": 573,
+          "sha256": "f571c1453acf99b55a53e67c096a3c9e571ff59e55be4443dfb77596e26e01a3"
+        },
+        "src/marshmallow/class_registry.py": {
+          "bytes": 3029,
+          "sha256": "1d30bdb2b084691b22cb92ffbd4290b28ec841f7997915f165fcf8ff6362b683"
+        },
+        "src/marshmallow/constants.py": {
+          "bytes": 415,
+          "sha256": "bfceb327d9f2c3237b7ae887430f2125292e3f27ae7e552fbf48d956d7eb7bc3"
+        },
+        "src/marshmallow/decorators.py": {
+          "bytes": 10165,
+          "sha256": "99a3a8cd6d37bd0ee4f6a66a67f4ef4d8477c3efa46f435f9003b2d50d139d9d"
+        },
+        "src/marshmallow/error_store.py": {
+          "bytes": 2444,
+          "sha256": "e7eeb67a5f04cb6c39f71f050e1502e5a7cfbbadcd5e3ba62a201a80018bf5b6"
+        },
+        "src/marshmallow/exceptions.py": {
+          "bytes": 2273,
+          "sha256": "d4bdd91f040d7a5594e6e8c83ec38de6d67a5903e4eb8a411963727f0873eb4f"
+        },
+        "src/marshmallow/experimental/__init__.py": {
+          "bytes": 147,
+          "sha256": "e7f89a5264fbfdfe9030bd8b257980df1aa093950102009e21acc7b42d465607"
+        },
+        "src/marshmallow/experimental/context.py": {
+          "bytes": 2040,
+          "sha256": "ff8285eac34aea913431c932613197994de124bdad63e4cde2856613f783a1bd"
+        },
+        "src/marshmallow/fields.py": {
+          "bytes": 75468,
+          "sha256": "abf0a671f16ca25e76daf020094e7e87a53dc66c1463731d563b1ca33a37e519"
+        },
+        "src/marshmallow/orderedset.py": {
+          "bytes": 2953,
+          "sha256": "69d5421b81ed7d815ec6a65386216c8b073f8b483c2cd588fdb17a723333dabd"
+        },
+        "src/marshmallow/schema.py": {
+          "bytes": 50119,
+          "sha256": "68dab85f81cd065de48ace29f054bd9f43ba32c08a9db6bc1ecc3d7e0496fb8a"
+        },
+        "src/marshmallow/types.py": {
+          "bytes": 1634,
+          "sha256": "eb7b22c63f7a9e7a5ce1e51cbe290d7959ad92dd3fa9f1d71fd0813cf9b847e8"
+        },
+        "src/marshmallow/utils.py": {
+          "bytes": 5211,
+          "sha256": "426df979927effbff45d5bbbc1494f111768eef2e43c963999c3c6f1ad9269fd"
+        },
+        "src/marshmallow/validate.py": {
+          "bytes": 24880,
+          "sha256": "5c0cf010327df33cd8239026aa7a45c4a69b060401dde3daaf3869feabdc0278"
+        }
+      },
+      "production_prefix": "src/marshmallow/",
+      "repository": "marshmallow-code/marshmallow",
+      "sha": "7dff08fcb7fb40d2772728bb8d8a76b5beff3200",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "5d614958141b0eaeacee1672f81cdf4c41dfd7b76d6923cef0409076903fe39c",
+      "archive_url": "https://codeload.github.com/marshmallow-code/marshmallow/tar.gz/2d30a962a0a104f340e1c69d62b8bba0558027a0",
+      "directory": "marshmallow-code--marshmallow-2d30a962a0a1",
+      "files": {
+        "src/marshmallow/__init__.py": {
+          "bytes": 573,
+          "sha256": "f571c1453acf99b55a53e67c096a3c9e571ff59e55be4443dfb77596e26e01a3"
+        },
+        "src/marshmallow/class_registry.py": {
+          "bytes": 3029,
+          "sha256": "1d30bdb2b084691b22cb92ffbd4290b28ec841f7997915f165fcf8ff6362b683"
+        },
+        "src/marshmallow/constants.py": {
+          "bytes": 415,
+          "sha256": "bfceb327d9f2c3237b7ae887430f2125292e3f27ae7e552fbf48d956d7eb7bc3"
+        },
+        "src/marshmallow/decorators.py": {
+          "bytes": 10165,
+          "sha256": "99a3a8cd6d37bd0ee4f6a66a67f4ef4d8477c3efa46f435f9003b2d50d139d9d"
+        },
+        "src/marshmallow/error_store.py": {
+          "bytes": 2444,
+          "sha256": "e7eeb67a5f04cb6c39f71f050e1502e5a7cfbbadcd5e3ba62a201a80018bf5b6"
+        },
+        "src/marshmallow/exceptions.py": {
+          "bytes": 2273,
+          "sha256": "d4bdd91f040d7a5594e6e8c83ec38de6d67a5903e4eb8a411963727f0873eb4f"
+        },
+        "src/marshmallow/experimental/__init__.py": {
+          "bytes": 147,
+          "sha256": "e7f89a5264fbfdfe9030bd8b257980df1aa093950102009e21acc7b42d465607"
+        },
+        "src/marshmallow/experimental/context.py": {
+          "bytes": 2040,
+          "sha256": "ff8285eac34aea913431c932613197994de124bdad63e4cde2856613f783a1bd"
+        },
+        "src/marshmallow/fields.py": {
+          "bytes": 75337,
+          "sha256": "9fb6b56ce2e2ca018b14d8e4218006d66e2d85ee94bdce88f3ad1d4fd8fd888f"
+        },
+        "src/marshmallow/orderedset.py": {
+          "bytes": 2953,
+          "sha256": "69d5421b81ed7d815ec6a65386216c8b073f8b483c2cd588fdb17a723333dabd"
+        },
+        "src/marshmallow/schema.py": {
+          "bytes": 50119,
+          "sha256": "68dab85f81cd065de48ace29f054bd9f43ba32c08a9db6bc1ecc3d7e0496fb8a"
+        },
+        "src/marshmallow/types.py": {
+          "bytes": 1634,
+          "sha256": "eb7b22c63f7a9e7a5ce1e51cbe290d7959ad92dd3fa9f1d71fd0813cf9b847e8"
+        },
+        "src/marshmallow/utils.py": {
+          "bytes": 5211,
+          "sha256": "426df979927effbff45d5bbbc1494f111768eef2e43c963999c3c6f1ad9269fd"
+        },
+        "src/marshmallow/validate.py": {
+          "bytes": 24880,
+          "sha256": "5c0cf010327df33cd8239026aa7a45c4a69b060401dde3daaf3869feabdc0278"
+        }
+      },
+      "production_prefix": "src/marshmallow/",
+      "repository": "marshmallow-code/marshmallow",
+      "sha": "2d30a962a0a104f340e1c69d62b8bba0558027a0",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "915283ed04aa44032fd5c7ddf76cf71417d10e4b403a3cc5b7aa3ca9e8ce7d60",
+      "archive_url": "https://codeload.github.com/theskumar/python-dotenv/tar.gz/791414804eff08a23f0b7970968e1717e3b28e66",
+      "directory": "theskumar--python-dotenv-791414804eff",
+      "files": {
+        "src/dotenv/__init__.py": {
+          "bytes": 1230,
+          "sha256": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23"
+        },
+        "src/dotenv/__main__.py": {
+          "bytes": 129,
+          "sha256": "3744612c6ee71c8aad9491f0c1ea48a3ecdb24f371f6c7b0082446639dbc87fe"
+        },
+        "src/dotenv/cli.py": {
+          "bytes": 7284,
+          "sha256": "fd9755edcd5e496b46f141bcfc76310f2f86b961f93e67980ea9c5305d278f8c"
+        },
+        "src/dotenv/ipython.py": {
+          "bytes": 1326,
+          "sha256": "74740177d3dc7425298466faed7c32dc6914a8c49d7fd5d4522358c53677b585"
+        },
+        "src/dotenv/main.py": {
+          "bytes": 16788,
+          "sha256": "9a948ca6a02b73c10f6a41880e95d6af4440e3ea702b877557162a7e7c782e74"
+        },
+        "src/dotenv/parser.py": {
+          "bytes": 5806,
+          "sha256": "0bc1350444eeff987f2c22924400ad0b7727563798118c641cd4c0de55bd30d0"
+        },
+        "src/dotenv/variables.py": {
+          "bytes": 2348,
+          "sha256": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f"
+        },
+        "src/dotenv/version.py": {
+          "bytes": 22,
+          "sha256": "5c1287f04d4b983c6fd3a537f72a8c05b5d96a93844458080840d866cfe446ca"
+        }
+      },
+      "production_prefix": "src/dotenv/",
+      "repository": "theskumar/python-dotenv",
+      "sha": "791414804eff08a23f0b7970968e1717e3b28e66",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "9db0baeae04d81d0cc1e820903d75c25ee4153d23bceda31dbccf8ed484bef55",
+      "archive_url": "https://codeload.github.com/python-poetry/tomlkit/tar.gz/6b5f079099d4bd77b442f4fae96a10790ba3d55c",
+      "directory": "python-poetry--tomlkit-6b5f079099d4",
+      "files": {
+        "tomlkit/__init__.py": {
+          "bytes": 1282,
+          "sha256": "68a7a968a8a90b1d1fcf824d20db14533625b3e4929fd1699878d0079ecd79a2"
+        },
+        "tomlkit/_compat.py": {
+          "bytes": 504,
+          "sha256": "7a1521d5d7466e4e9f65cfd586de32fa6c87abef5c20ad14558063efd5c790e4"
+        },
+        "tomlkit/_types.py": {
+          "bytes": 2230,
+          "sha256": "0611c08906a898981bfcd5511e777c50c656e9940ca4c20bddf7ddeae2486853"
+        },
+        "tomlkit/_utils.py": {
+          "bytes": 4594,
+          "sha256": "4e26e09f3eef396610f4c228c1815b51021066d4fd9c9d9c76acecbd7e9f81ac"
+        },
+        "tomlkit/api.py": {
+          "bytes": 10334,
+          "sha256": "5c6cb9ffb73b6ad19ccbe9fc498be363a9a5ec327582e516768b00ee358d36e3"
+        },
+        "tomlkit/container.py": {
+          "bytes": 52447,
+          "sha256": "8d4315ba9d10e7fbc5b5460d124cf27cb73ff66a31b4b4dfdb8a66cebe93fcb6"
+        },
+        "tomlkit/exceptions.py": {
+          "bytes": 5758,
+          "sha256": "d5b58a0f077b65c93919b4d523380931f927c51a1a0752e570e900e598556e05"
+        },
+        "tomlkit/items.py": {
+          "bytes": 77173,
+          "sha256": "8c9c64daa82de244067b0cda4edceec561a918cad183ba7f06468c45027bb76f"
+        },
+        "tomlkit/parser.py": {
+          "bytes": 45837,
+          "sha256": "a74abeff54ea1222a5bc113c29a2e824a4cc4778ebabdad36b9e91d004c8b92f"
+        },
+        "tomlkit/source.py": {
+          "bytes": 7717,
+          "sha256": "2be326699043ae118d762fc4293ccdbf9e49d88f529af367cc9caf5bef45cefb"
+        },
+        "tomlkit/toml_document.py": {
+          "bytes": 110,
+          "sha256": "3824e45977773f9f04653e120fcfdd75cd58a6431aaad952e7fb2d1d306630e2"
+        },
+        "tomlkit/toml_file.py": {
+          "bytes": 1664,
+          "sha256": "d14e26e415728ee41dd2dd2bfa653e92879fa976e69ec3dd00de8a7bbd56e5d0"
+        }
+      },
+      "production_prefix": "tomlkit/",
+      "repository": "python-poetry/tomlkit",
+      "sha": "6b5f079099d4bd77b442f4fae96a10790ba3d55c",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "54bc6334e90b20570b520d01b576c3809c7c0f65b406fdd0580bea0a6097fc41",
+      "archive_url": "https://codeload.github.com/python-poetry/tomlkit/tar.gz/229ee8660872df482a56c93c83b14ac98fedf864",
+      "directory": "python-poetry--tomlkit-229ee8660872",
+      "files": {
+        "tomlkit/__init__.py": {
+          "bytes": 1282,
+          "sha256": "68a7a968a8a90b1d1fcf824d20db14533625b3e4929fd1699878d0079ecd79a2"
+        },
+        "tomlkit/_compat.py": {
+          "bytes": 504,
+          "sha256": "7a1521d5d7466e4e9f65cfd586de32fa6c87abef5c20ad14558063efd5c790e4"
+        },
+        "tomlkit/_types.py": {
+          "bytes": 2230,
+          "sha256": "0611c08906a898981bfcd5511e777c50c656e9940ca4c20bddf7ddeae2486853"
+        },
+        "tomlkit/_utils.py": {
+          "bytes": 4594,
+          "sha256": "4e26e09f3eef396610f4c228c1815b51021066d4fd9c9d9c76acecbd7e9f81ac"
+        },
+        "tomlkit/api.py": {
+          "bytes": 10334,
+          "sha256": "5c6cb9ffb73b6ad19ccbe9fc498be363a9a5ec327582e516768b00ee358d36e3"
+        },
+        "tomlkit/container.py": {
+          "bytes": 49842,
+          "sha256": "f2eda31ca9a65890199ebed3ef5f1aeee4a9fc0b0c9a3a6b5d164f049df2de67"
+        },
+        "tomlkit/exceptions.py": {
+          "bytes": 5758,
+          "sha256": "d5b58a0f077b65c93919b4d523380931f927c51a1a0752e570e900e598556e05"
+        },
+        "tomlkit/items.py": {
+          "bytes": 77173,
+          "sha256": "8c9c64daa82de244067b0cda4edceec561a918cad183ba7f06468c45027bb76f"
+        },
+        "tomlkit/parser.py": {
+          "bytes": 45837,
+          "sha256": "a74abeff54ea1222a5bc113c29a2e824a4cc4778ebabdad36b9e91d004c8b92f"
+        },
+        "tomlkit/source.py": {
+          "bytes": 7717,
+          "sha256": "2be326699043ae118d762fc4293ccdbf9e49d88f529af367cc9caf5bef45cefb"
+        },
+        "tomlkit/toml_document.py": {
+          "bytes": 110,
+          "sha256": "3824e45977773f9f04653e120fcfdd75cd58a6431aaad952e7fb2d1d306630e2"
+        },
+        "tomlkit/toml_file.py": {
+          "bytes": 1664,
+          "sha256": "d14e26e415728ee41dd2dd2bfa653e92879fa976e69ec3dd00de8a7bbd56e5d0"
+        }
+      },
+      "production_prefix": "tomlkit/",
+      "repository": "python-poetry/tomlkit",
+      "sha": "229ee8660872df482a56c93c83b14ac98fedf864",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "dda3a03436023fcb93999e35d747537c198d381e9270a93871fa449fc3ec92a6",
+      "archive_url": "https://codeload.github.com/python-semver/python-semver/tar.gz/37ae009c7cacab8f1a87157ca2b484b8e18a0a78",
+      "directory": "python-semver--python-semver-37ae009c7cac",
+      "files": {
+        "src/semver/__about__.py": {
+          "bytes": 815,
+          "sha256": "a2f09ee8f767426e5cf58dc8bc46071de1becb9ec566a3d5a211a33f79a5493e"
+        },
+        "src/semver/__init__.py": {
+          "bytes": 1269,
+          "sha256": "451063ea4bae61a098e41f602f1c04d21ee6781c2ead811b7d0667bfbb7590a3"
+        },
+        "src/semver/__main__.py": {
+          "bytes": 593,
+          "sha256": "9ac50bab82dbd0057c2b8aee9619b4173cc93bca0c0afe761a37131b6b7c8b0b"
+        },
+        "src/semver/_deprecated.py": {
+          "bytes": 11273,
+          "sha256": "38e5fe01e698f90a892b6810184f2974913187fd774cffbd012640920a829ade"
+        },
+        "src/semver/_types.py": {
+          "bytes": 422,
+          "sha256": "f807dacd98279a631eed6b614b1fccfb0d410a7ab674f166cac8e6b533a6d687"
+        },
+        "src/semver/cli.py": {
+          "bytes": 5189,
+          "sha256": "1f0be99ea70df791b7388354e1c2e0a2e4470ad5a146cb8a8217e13d6b4639ec"
+        },
+        "src/semver/version.py": {
+          "bytes": 29077,
+          "sha256": "329c09bb9118c87b56ff88177037969b4078359ee597dec1ebdbd525406dcba3"
+        }
+      },
+      "production_prefix": "src/semver/",
+      "repository": "python-semver/python-semver",
+      "sha": "37ae009c7cacab8f1a87157ca2b484b8e18a0a78",
+      "source_role": "eight_head_panel"
+    },
+    {
+      "archive_sha256": "0f94f9cee91ac8741c737bf0598c7a35fcdcb3febf3642f864e34849aeba7e59",
+      "archive_url": "https://codeload.github.com/python-semver/python-semver/tar.gz/1d515915d50b31f23fd1fb0f572ef608453e80e3",
+      "directory": "python-semver--python-semver-1d515915d50b",
+      "files": {
+        "src/semver/__about__.py": {
+          "bytes": 815,
+          "sha256": "a2f09ee8f767426e5cf58dc8bc46071de1becb9ec566a3d5a211a33f79a5493e"
+        },
+        "src/semver/__init__.py": {
+          "bytes": 1269,
+          "sha256": "451063ea4bae61a098e41f602f1c04d21ee6781c2ead811b7d0667bfbb7590a3"
+        },
+        "src/semver/__main__.py": {
+          "bytes": 593,
+          "sha256": "9ac50bab82dbd0057c2b8aee9619b4173cc93bca0c0afe761a37131b6b7c8b0b"
+        },
+        "src/semver/_deprecated.py": {
+          "bytes": 11273,
+          "sha256": "38e5fe01e698f90a892b6810184f2974913187fd774cffbd012640920a829ade"
+        },
+        "src/semver/_types.py": {
+          "bytes": 422,
+          "sha256": "f807dacd98279a631eed6b614b1fccfb0d410a7ab674f166cac8e6b533a6d687"
+        },
+        "src/semver/cli.py": {
+          "bytes": 5189,
+          "sha256": "1f0be99ea70df791b7388354e1c2e0a2e4470ad5a146cb8a8217e13d6b4639ec"
+        },
+        "src/semver/version.py": {
+          "bytes": 28721,
+          "sha256": "ae4b6023e458561ccca279c8736140f90da72da4bef49dfbd713bd428bbd1872"
+        }
+      },
+      "production_prefix": "src/semver/",
+      "repository": "python-semver/python-semver",
+      "sha": "1d515915d50b31f23fd1fb0f572ef608453e80e3",
+      "source_role": "eight_head_panel"
+    }
+  ],
+  "upstream_fix_units": 4,
+  "upstream_parameterized_cases": 43
+}

@@ -1,0 +1,5860 @@
+{
+  "original_tasks": 39,
+  "qualified_subset_tasks": 30,
+  "per_repository_denominators": [
+    {
+      "repo": "Significant-Gravitas/AutoGPT",
+      "original_tasks": 1,
+      "finite_qualified_tasks": 1,
+      "nonqualified_tasks_by_reason": {},
+      "original_line_targetable_tasks": 1,
+      "qualified_line_targetable_tasks": 1,
+      "qualified_no_target_tasks": 0,
+      "label_error_or_missing_tasks": 0,
+      "missing_score_cells": 0,
+      "prediction_failure_tasks_retained": 0,
+      "contributing_to_subset_macro": true
+    },
+    {
+      "repo": "huggingface/transformers",
+      "original_tasks": 10,
+      "finite_qualified_tasks": 5,
+      "nonqualified_tasks_by_reason": {
+        "paired_unqualified_with_calls": 3,
+        "source_or_protocol_bindings_incomplete": 1,
+        "paired_no_observed_target_calls": 1
+      },
+      "original_line_targetable_tasks": 9,
+      "qualified_line_targetable_tasks": 4,
+      "qualified_no_target_tasks": 1,
+      "label_error_or_missing_tasks": 0,
+      "missing_score_cells": 0,
+      "prediction_failure_tasks_retained": 5,
+      "contributing_to_subset_macro": true
+    },
+    {
+      "repo": "keras-team/keras",
+      "original_tasks": 10,
+      "finite_qualified_tasks": 9,
+      "nonqualified_tasks_by_reason": {
+        "paired_unqualified_with_calls": 1
+      },
+      "original_line_targetable_tasks": 8,
+      "qualified_line_targetable_tasks": 8,
+      "qualified_no_target_tasks": 1,
+      "label_error_or_missing_tasks": 0,
+      "missing_score_cells": 0,
+      "prediction_failure_tasks_retained": 0,
+      "contributing_to_subset_macro": true
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "original_tasks": 10,
+      "finite_qualified_tasks": 10,
+      "nonqualified_tasks_by_reason": {},
+      "original_line_targetable_tasks": 8,
+      "qualified_line_targetable_tasks": 8,
+      "qualified_no_target_tasks": 2,
+      "label_error_or_missing_tasks": 0,
+      "missing_score_cells": 0,
+      "prediction_failure_tasks_retained": 0,
+      "contributing_to_subset_macro": true
+    },
+    {
+      "repo": "tensorflow/models",
+      "original_tasks": 2,
+      "finite_qualified_tasks": 1,
+      "nonqualified_tasks_by_reason": {
+        "source_or_protocol_bindings_incomplete": 1
+      },
+      "original_line_targetable_tasks": 2,
+      "qualified_line_targetable_tasks": 1,
+      "qualified_no_target_tasks": 0,
+      "label_error_or_missing_tasks": 0,
+      "missing_score_cells": 0,
+      "prediction_failure_tasks_retained": 0,
+      "contributing_to_subset_macro": true
+    },
+    {
+      "repo": "yt-dlp/yt-dlp",
+      "original_tasks": 6,
+      "finite_qualified_tasks": 4,
+      "nonqualified_tasks_by_reason": {
+        "paired_unqualified_with_calls": 2
+      },
+      "original_line_targetable_tasks": 4,
+      "qualified_line_targetable_tasks": 2,
+      "qualified_no_target_tasks": 2,
+      "label_error_or_missing_tasks": 0,
+      "missing_score_cells": 0,
+      "prediction_failure_tasks_retained": 0,
+      "contributing_to_subset_macro": true
+    }
+  ],
+  "membership": [
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-4652",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "cd22893877ce5756ec8e943840e63beb7762e610e19e6f1398dedce5b1bca0a3",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "huggingface__transformers-13865",
+      "repo": "huggingface/transformers",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "7eb7dac6c6431e28dffc97af93943fe3e986228e5cf0b18acd2e378e4de73cb0",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "huggingface__transformers-13989",
+      "repo": "huggingface/transformers",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "40ffbee89f2360e7eb3c7645950b62a244f8d0d1f34bb7fcd284f1ab95b80ed0",
+      "status": "source_or_protocol_bindings_incomplete",
+      "exclusion_reason": "source_or_protocol_bindings_incomplete"
+    },
+    {
+      "instance_id": "huggingface__transformers-15913",
+      "repo": "huggingface/transformers",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "3badecaee834afd68d5577ece4fd2676f41a046b9cbd5f18155b456cfc8834a9",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "huggingface__transformers-19219",
+      "repo": "huggingface/transformers",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "705e950bc7d5a63f78d3771df9c2c0df72eec2945291895a2cfe1bf52acb9286",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "huggingface__transformers-20136",
+      "repo": "huggingface/transformers",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "5728e1b25873c242b72add3d97b0283b455f27f78fe9dfef36f68aa1d31851d9",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "huggingface__transformers-27561",
+      "repo": "huggingface/transformers",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "89356a98d41174d88949f74d6cc7d93f7b1e67ee29bdb88adf6afbc5908adab9",
+      "status": "paired_unqualified_with_calls",
+      "exclusion_reason": "paired_unqualified_with_calls"
+    },
+    {
+      "instance_id": "huggingface__transformers-27717",
+      "repo": "huggingface/transformers",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "c7384414089df379887ca443283edfc3fbfa40f862287c0f2cf76d8b3f3169ec",
+      "status": "paired_unqualified_with_calls",
+      "exclusion_reason": "paired_unqualified_with_calls"
+    },
+    {
+      "instance_id": "huggingface__transformers-31095",
+      "repo": "huggingface/transformers",
+      "finite_qualified": true,
+      "line_targetable": false,
+      "line_label_state": "no_target_undefined",
+      "latest_condition_key": "6e633d84cd2cd6ee1ee62c62110c24deab1a5ce9d176e7e42b8df9d936cc59ef",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "huggingface__transformers-3198",
+      "repo": "huggingface/transformers",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "595fd84491c452f5d2370e374a7f943f5901eea4d37348cda916edb11e0393e0",
+      "status": "paired_no_observed_target_calls",
+      "exclusion_reason": "paired_no_observed_target_calls"
+    },
+    {
+      "instance_id": "huggingface__transformers-7075",
+      "repo": "huggingface/transformers",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "e790a79a532b99f3259fe20c35e07a89e06f975ae28c491dacca7aefa90c1f3f",
+      "status": "paired_unqualified_with_calls",
+      "exclusion_reason": "paired_unqualified_with_calls"
+    },
+    {
+      "instance_id": "keras-team__keras-1767",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "9ac5881285f4b772f2c9ae91bdd4d7a6e13841fb5dc6258d116391d21bb7d007",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-19284",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "13c8416ab56afca92db188c334296ad50b679880c7efb62c838bf042a3b2720d",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-19466",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": false,
+      "line_label_state": "no_target_undefined",
+      "latest_condition_key": "887bada8c2c54997106fe9e635b0e5d9e93faea67b04b3e4b943ebbd6aec5259",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-19826",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "c8a85093d5a33284e3053a5bdecb8ffe807b7d7805a2cfb7d59640685b5cc8f6",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-19863",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "f6aa66a744cec9e42f7b0c04449c8dc0e09fdd93e80f310ab68007f7f423fa27",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-19915",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "8f5304a283ec110d9f45e04c27b6f7e7ec6fa2f22412793bcac1f1807aa14a9c",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-19955",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "b93f4bbad1f8638796fadf3ee1e6461db3512e74af8300ba55b2c4eff30087d4",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-20002",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "20ce99ff1bdd8e4412eeb0779cde079e16afecdfd3619d2c68182dfb829489f6",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-20008",
+      "repo": "keras-team/keras",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "185cbf6390b5962bba11b982db21f7496bc4a9401243beaa0d24503e0505dad5",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "keras-team__keras-3983",
+      "repo": "keras-team/keras",
+      "finite_qualified": false,
+      "line_targetable": false,
+      "line_label_state": "no_target_undefined",
+      "latest_condition_key": "c96f63405408d899209f51ea0be3dc30e7f9c463ab26ace30fb3c6c428220bd7",
+      "status": "paired_unqualified_with_calls",
+      "exclusion_reason": "paired_unqualified_with_calls"
+    },
+    {
+      "instance_id": "langchain-ai__langchain-19331",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "b2bab73188fea824786b472e4f71b45ccd3b63fde3e2a20bb5b6e8590afeb122",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-21201",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "4f9439cca5b28f833190f0ed66116d84dd6e26c07ef2fcb7b8dcff75eeb96fd1",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-4420",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "3f2c437bfe05a817fbc23723a3db2c768897246359e1506f20c22a8feb24eb02",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-5432",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "003ebb502cee110fa17c7be80eec21966937f0e3423c093165c1957fd7dff889",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-5450",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "1ef9470c98d741062d3236ccb1fdfb893d4104a4ed9e9751023e5a7a79688722",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-5625",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "340dfc58bd571d71379fb47bde3853a715f96d5aa328fefed352717263c7328b",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-6456",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": false,
+      "line_label_state": "no_target_undefined",
+      "latest_condition_key": "5b6279edabc99f0a18f6b93222be0c3ee4719a75a97c273ce0882db123f215c3",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-6483",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "a85e7a187314db19a0269615345f67e89684e1711e45949e0f84641cc52b8f38",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-6765",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "c71a2ce11b87b67c6ec49d8a3c0e30b19d4086f478db94956a5e5199d8ad85cc",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "langchain-ai__langchain-7653",
+      "repo": "langchain-ai/langchain",
+      "finite_qualified": true,
+      "line_targetable": false,
+      "line_label_state": "no_target_undefined",
+      "latest_condition_key": "e2be1d1bf367b43febaf7ca121320819e8bd79173273275be6195fb9b7eea7fa",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "tensorflow__models-2727",
+      "repo": "tensorflow/models",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "a9dbe4845cd98d93d60239f676cfd1ab60b87d3d82195be94a1c5415c69291ad",
+      "status": "source_or_protocol_bindings_incomplete",
+      "exclusion_reason": "source_or_protocol_bindings_incomplete"
+    },
+    {
+      "instance_id": "tensorflow__models-4628",
+      "repo": "tensorflow/models",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "a8016b9dd8faa42ab44543c57ddb91cdb6b6799b8b76ff2031d2776060e19eb5",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-1649",
+      "repo": "yt-dlp/yt-dlp",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "509f97570739ecdac5096572f876efb133e29d1d2fcad654f59ca443ed5f6fb6",
+      "status": "paired_unqualified_with_calls",
+      "exclusion_reason": "paired_unqualified_with_calls"
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-3435",
+      "repo": "yt-dlp/yt-dlp",
+      "finite_qualified": true,
+      "line_targetable": false,
+      "line_label_state": "no_target_undefined",
+      "latest_condition_key": "f116f76624622f7085dfe61810695564b0d6fb914ef0e043437572c29315e1e6",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-4524",
+      "repo": "yt-dlp/yt-dlp",
+      "finite_qualified": true,
+      "line_targetable": false,
+      "line_label_state": "no_target_undefined",
+      "latest_condition_key": "da3125c893952b482f6361c6a4b7d417d1d6d3503fd8d2f7375e806b554faef8",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-4841",
+      "repo": "yt-dlp/yt-dlp",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "301878769e6b00c78ab80bf967d6f41a8b6c117ae36d314d8851dbcd424ced0f",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-5933",
+      "repo": "yt-dlp/yt-dlp",
+      "finite_qualified": true,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "89eef7823b05f4011446fc7bcc8302e2f6d73378c54f9304d36a29bd549d16cf",
+      "status": "finite_qualified",
+      "exclusion_reason": null
+    },
+    {
+      "instance_id": "yt-dlp__yt-dlp-8917",
+      "repo": "yt-dlp/yt-dlp",
+      "finite_qualified": false,
+      "line_targetable": true,
+      "line_label_state": "scored",
+      "latest_condition_key": "267f4bf2c261ed491c6bef440c7dd0b23d59a73930418a3f1514952b2afba705",
+      "status": "paired_unqualified_with_calls",
+      "exclusion_reason": "paired_unqualified_with_calls"
+    }
+  ],
+  "all39_reference_recomputed": {
+    "method_budget_cells": [
+      {
+        "method": "bm25_windows",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.027449094115760783,
+            "recall": 0.05133522520555919
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.006080516934693433,
+            "recall": 0.16666666666666666
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0030408902691511385,
+            "recall": 0.15625
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0053475935828877,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.006361323155216285,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.00804656967628489,
+          "recall": 0.10482225663538346
+        }
+      },
+      {
+        "method": "bm25_windows",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.026952400535782465,
+            "recall": 0.11328191321642533
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.003979686251419439,
+            "recall": 0.25
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.010554414758008352,
+            "recall": 0.47610294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.002564102564102564,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004930966469428008,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008163595096456805,
+          "recall": 0.18234441705549514
+        }
+      },
+      {
+        "method": "bm25_windows",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.022586577822640647,
+            "recall": 0.23673870333988212
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0019234434196302125,
+            "recall": 0.25
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.005921779241508944,
+            "recall": 0.49816176470588236
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0012484394506866417,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.011432009626955475,
+            "recall": 0.017790262172284643
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.007185374926903653,
+          "recall": 0.20878178836967484
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.028872578903532085,
+            "recall": 0.11951538965291421
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.005681818181818182,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.026915168785901066,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.00625,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.03221288515406162,
+            "recall": 0.02153558052434457
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.016655408504218826,
+          "recall": 0.1393173185589549
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.020876411024225685,
+            "recall": 0.13240680103810426
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.002613240418118467,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.014056320978628453,
+            "recall": 0.5845588235294118
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.003076923076923077,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.027835051546391754,
+            "recall": 0.025280898876404494
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.011409657840714573,
+          "recall": 0.18620775390732008
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.014614658837148266,
+            "recall": 0.16889810570229694
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0012135922330097086,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.006430763396772309,
+            "recall": 0.5919117647058824
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.001579778830963665,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.01968503937007874,
+            "recall": 0.028089887640449437
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.007253972111328782,
+          "recall": 0.1939832930081048
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.02590396299409445,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.031802062886559755,
+            "recall": 0.28860294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.010530912989241454,
+          "recall": 0.06081369259542953
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.02748348834361405,
+            "recall": 0.2330277232045405
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.03090771408144608,
+            "recall": 0.28860294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.003738317757009346,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.010354920030344912,
+          "recall": 0.08756266378884517
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.01885685083408705,
+            "recall": 0.2330277232045405
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.03217578336897589,
+            "recall": 0.38235294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016374269005847954,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.011234483868151816,
+          "recall": 0.10693298214090509
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.025502309447263574,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.028741061432478537,
+            "recall": 0.2959558823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009953803822422773,
+          "recall": 0.06203918279150796
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.027567411955679976,
+            "recall": 0.23324601615367824
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.020723315080536066,
+            "recall": 0.2959558823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004578754578754579,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.00881158026916177,
+          "recall": 0.08898059107444906
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.01795612849419773,
+            "recall": 0.23324601615367824
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.021281455687212746,
+            "recall": 0.3897058823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016355140186915886,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009265454061387728,
+          "recall": 0.10819485449517315
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.025569815453864095,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.027586553945249597,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009772636908984701,
+          "recall": 0.06602202592876286
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.03234359012256438,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.011835741506242042,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004424778761061947,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008100685064978061,
+          "recall": 0.09350916658454832
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.021969336389937574,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0008445945945945946,
+            "recall": 0.08333333333333333
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.010495873964504649,
+            "recall": 0.38235294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016374269005847954,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008280678992480795,
+          "recall": 0.12140398556082796
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.025332292814987577,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.02657388428518759,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009564271525828281,
+          "recall": 0.06602202592876286
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.03234359012256438,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0007462686567164179,
+            "recall": 0.041666666666666664
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.01310572720058653,
+            "recall": 0.44485294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004424778761061947,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008436727456821546,
+          "recall": 0.1212869443623261
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.021583258253062756,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0010204081632653062,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.009025535508034395,
+            "recall": 0.5294117647058824
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016374269005847954,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008000578488368403,
+          "recall": 0.15285823392684103
+        }
+      }
+    ],
+    "comparisons_all_budgets": [
+      {
+        "budget": 8000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": -0.0019467846684972068,
+            "f1_exact_ratio": "-344107/176756580",
+            "f1_sign": "negative",
+            "recall_difference": 0.021198670838487473,
+            "recall_exact_ratio": "874/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.006080516934693433,
+            "f1_exact_ratio": "-335/55094",
+            "f1_sign": "negative",
+            "recall_difference": -0.16666666666666666,
+            "recall_exact_ratio": "-1/6",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.025700171163327398,
+            "f1_exact_ratio": "212289257/8260227360",
+            "f1_sign": "positive",
+            "recall_difference": 0.13970588235294118,
+            "recall_exact_ratio": "19/136",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.0053475935828877,
+            "f1_exact_ratio": "-1/187",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0008818711004217644,
+            "f1_exact_ratio": "-253/286890",
+            "f1_sign": "negative",
+            "recall_difference": -0.0009363295880149813,
+            "recall_exact_ratio": "-1/1068",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "negative": 4,
+          "positive": 1
+        },
+        "f1_difference": 0.0019072341461378822,
+        "f1_exact_ratio": "415272965047546540717/217735701664353836483520",
+        "f1_sign": "positive",
+        "recall_difference": -0.0427830738438755,
+        "recall_exact_ratio": "-128101717/2994214896",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 8000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": -0.003370269456268511,
+            "f1_exact_ratio": "-10274121301/3048456936252",
+            "f1_sign": "negative",
+            "recall_difference": -0.046981493608867546,
+            "recall_exact_ratio": "-1937/41229",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.005681818181818182,
+            "f1_exact_ratio": "-1/176",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.001825892646577469,
+            "f1_exact_ratio": "2586050387/1416321157680",
+            "f1_sign": "positive",
+            "recall_difference": -0.02389705882352941,
+            "recall_exact_ratio": "-13/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.00625,
+            "f1_exact_ratio": "-1/160",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.026733433099267102,
+            "f1_exact_ratio": "-6967/260610",
+            "f1_sign": "negative",
+            "recall_difference": -0.017790262172284643,
+            "recall_exact_ratio": "-19/1068",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "negative": 4,
+          "positive": 1
+        },
+        "f1_difference": -0.006701604681796054,
+        "f1_exact_ratio": "-2762161338995241751087963/412164171142212517143635520",
+        "f1_sign": "negative",
+        "recall_difference": -0.07727813576744694,
+        "recall_exact_ratio": "-925549381/11976859584",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.0006150114198975098,
+            "f1_exact_ratio": "16578215513/26955947445273",
+            "f1_sign": "positive",
+            "recall_difference": 0.1199641029372529,
+            "recall_exact_ratio": "4946/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.003979686251419439,
+            "f1_exact_ratio": "-757/190216",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.010168900322527714,
+            "f1_exact_ratio": "5958306684697/585934220586000",
+            "f1_sign": "positive",
+            "recall_difference": -0.1801470588235294,
+            "recall_exact_ratio": "-49/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.002564102564102564,
+            "f1_exact_ratio": "-1/390",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0003522118906734291,
+            "f1_exact_ratio": "-5/14196",
+            "f1_sign": "negative",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": 0.0006479851727049652,
+        "f1_exact_ratio": "45161971850580798292823/69695995761840587528844000",
+        "f1_sign": "positive",
+        "recall_difference": -0.09336382598104609,
+        "recall_exact_ratio": "-6282053/67285728",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.006691000931454291,
+            "f1_exact_ratio": "130922807362/19566998824725",
+            "f1_sign": "positive",
+            "recall_difference": 0.10083921511557399,
+            "recall_exact_ratio": "8315/82458",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.002613240418118467,
+            "f1_exact_ratio": "-3/1148",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.006666994101907613,
+            "f1_exact_ratio": "61091418965039/9163262788482000",
+            "f1_sign": "positive",
+            "recall_difference": -0.28860294117647056,
+            "recall_exact_ratio": "-157/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.003076923076923077,
+            "f1_exact_ratio": "-1/325",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.023256296967637174,
+            "f1_exact_ratio": "-12317/529620",
+            "f1_sign": "negative",
+            "recall_difference": -0.020599250936329586,
+            "recall_exact_ratio": "-11/534",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": -0.0025980775715528023,
+        "f1_exact_ratio": "-1226085508797868982194280076911/471920285299668751199295293652000",
+        "f1_sign": "negative",
+        "recall_difference": -0.09722716283287103,
+        "recall_exact_ratio": "-1164476077/11976859584",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 32000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": -0.004630449328442916,
+            "f1_exact_ratio": "-1277563175320225/275904795561132276",
+            "f1_sign": "negative",
+            "recall_difference": -0.0034926871862038856,
+            "recall_exact_ratio": "-16/4581",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.0019234434196302125,
+            "f1_exact_ratio": "-4683/2434696",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.015359676445703803,
+            "f1_exact_ratio": "156115967071296036497/10164014041777725636000",
+            "f1_sign": "positive",
+            "recall_difference": -0.10845588235294118,
+            "recall_exact_ratio": "-59/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.0012484394506866417,
+            "f1_exact_ratio": "-1/801",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.004923130559960413,
+            "f1_exact_ratio": "1751/355668",
+            "f1_sign": "positive",
+            "recall_difference": 0.008426966292134831,
+            "recall_exact_ratio": "3/356",
+            "recall_sign": "positive"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "negative": 3,
+          "positive": 2
+        },
+        "f1_difference": 0.002080079134484074,
+        "f1_exact_ratio": "70952668893563253874720852372982468733309821989/34110562294141648680743869372960099387522147992000",
+        "f1_sign": "positive",
+        "recall_difference": -0.10058693387450171,
+        "recall_exact_ratio": "-133857287/1330762176",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 32000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.003341469657049464,
+            "f1_exact_ratio": "576636039433/172569587222340",
+            "f1_sign": "positive",
+            "recall_difference": 0.06434791045138132,
+            "recall_exact_ratio": "2653/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.0012135922330097086,
+            "f1_exact_ratio": "-1/824",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.014850692290440438,
+            "f1_exact_ratio": "217380322956544658731/14637723191966942328000",
+            "f1_sign": "positive",
+            "recall_difference": -0.20220588235294118,
+            "recall_exact_ratio": "-55/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.001579778830963665,
+            "f1_exact_ratio": "-1/633",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0033298991831628524,
+            "f1_exact_ratio": "-181/54356",
+            "f1_sign": "negative",
+            "recall_difference": -0.0018726591760299626,
+            "recall_exact_ratio": "-1/534",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": 0.002011481950058946,
+        "f1_exact_ratio": "2047771879013163310933116989090629627/1018041389311573986262958745072453456000",
+        "f1_sign": "positive",
+        "recall_difference": -0.08578843851293164,
+        "recall_exact_ratio": "-513738041/5988429792",
+        "recall_sign": "negative"
+      }
+    ],
+    "focus_16000": [
+      {
+        "budget": 16000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.0006150114198975098,
+            "f1_exact_ratio": "16578215513/26955947445273",
+            "f1_sign": "positive",
+            "recall_difference": 0.1199641029372529,
+            "recall_exact_ratio": "4946/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.003979686251419439,
+            "f1_exact_ratio": "-757/190216",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.010168900322527714,
+            "f1_exact_ratio": "5958306684697/585934220586000",
+            "f1_sign": "positive",
+            "recall_difference": -0.1801470588235294,
+            "recall_exact_ratio": "-49/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.002564102564102564,
+            "f1_exact_ratio": "-1/390",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0003522118906734291,
+            "f1_exact_ratio": "-5/14196",
+            "f1_sign": "negative",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": 0.0006479851727049652,
+        "f1_exact_ratio": "45161971850580798292823/69695995761840587528844000",
+        "f1_sign": "positive",
+        "recall_difference": -0.09336382598104609,
+        "recall_exact_ratio": "-6282053/67285728",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.006691000931454291,
+            "f1_exact_ratio": "130922807362/19566998824725",
+            "f1_sign": "positive",
+            "recall_difference": 0.10083921511557399,
+            "recall_exact_ratio": "8315/82458",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.002613240418118467,
+            "f1_exact_ratio": "-3/1148",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.006666994101907613,
+            "f1_exact_ratio": "61091418965039/9163262788482000",
+            "f1_sign": "positive",
+            "recall_difference": -0.28860294117647056,
+            "recall_exact_ratio": "-157/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.003076923076923077,
+            "f1_exact_ratio": "-1/325",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.023256296967637174,
+            "f1_exact_ratio": "-12317/529620",
+            "f1_sign": "negative",
+            "recall_difference": -0.020599250936329586,
+            "recall_exact_ratio": "-11/534",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": -0.0025980775715528023,
+        "f1_exact_ratio": "-1226085508797868982194280076911/471920285299668751199295293652000",
+        "f1_sign": "negative",
+        "recall_difference": -0.09722716283287103,
+        "recall_exact_ratio": "-1164476077/11976859584",
+        "recall_sign": "negative"
+      }
+    ],
+    "joint_strict_negative_F1_and_recall_both_baselines": false
+  },
+  "latest_finite_qualified_secondary": {
+    "method_budget_cells": [
+      {
+        "method": "bm25_windows",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.006080516934693433,
+            "recall": 0.16666666666666666
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0030408902691511385,
+            "recall": 0.15625
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0106951871657754,
+            "recall": 0.5
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.0033027657282699956,
+          "recall": 0.1371527777777778
+        }
+      },
+      {
+        "method": "bm25_windows",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.007739938080495356,
+            "recall": 0.1388888888888889
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.003979686251419439,
+            "recall": 0.25
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.010554414758008352,
+            "recall": 0.47610294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.005128205128205128,
+            "recall": 0.5
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.0045670407030213795,
+          "recall": 0.22749863834422657
+        }
+      },
+      {
+        "method": "bm25_windows",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.007614213197969543,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0019234434196302125,
+            "recall": 0.25
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.005921779241508944,
+            "recall": 0.49816176470588236
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0024968789013732834,
+            "recall": 0.5
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.002992719126746997,
+          "recall": 0.2496936274509804
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.021929824561403508,
+            "recall": 0.1388888888888889
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.005681818181818182,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.026915168785901066,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0125,
+            "recall": 0.5
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.011171135254853793,
+          "recall": 0.18062363834422657
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.013307984790874524,
+            "recall": 0.19444444444444445
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.002613240418118467,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.014056320978628453,
+            "recall": 0.5845588235294118
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.006153846153846154,
+            "recall": 0.5
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.006021898723577933,
+          "recall": 0.23400054466230938
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.006889763779527559,
+            "recall": 0.19444444444444445
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0012135922330097086,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.006430763396772309,
+            "recall": 0.5919117647058824
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.00315955766192733,
+            "recall": 0.5
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.0029489461785394844,
+          "recall": 0.2352260348583878
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.010309278350515464,
+            "recall": 0.05555555555555555
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.031802062886559755,
+            "recall": 0.28860294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.00701855687284587,
+          "recall": 0.05735974945533769
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.018072289156626505,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.03090771408144608,
+            "recall": 0.28860294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008163333873012098,
+          "recall": 0.0897671568627451
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.009202453987730062,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.03217578336897589,
+            "recall": 0.38235294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.006896372892784325,
+          "recall": 0.1053921568627451
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.009523809523809525,
+            "recall": 0.05555555555555555
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.028741061432478537,
+            "recall": 0.2959558823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.006377478492714677,
+          "recall": 0.05858523965141612
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.018145161290322582,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.020723315080536066,
+            "recall": 0.2959558823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.006478079395143108,
+          "recall": 0.09099264705882353
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.00779896013864818,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.021281455687212746,
+            "recall": 0.3897058823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.004846735970976821,
+          "recall": 0.10661764705882353
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.009708737864077669,
+            "recall": 0.05555555555555555
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.027586553945249597,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.006215881968221211,
+          "recall": 0.06256808278867103
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.018072289156626505,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.011835741506242042,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.004984671777144758,
+          "recall": 0.09497549019607843
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.0074503311258278145,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0008445945945945946,
+            "recall": 0.08333333333333333
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.010495873964504649,
+            "recall": 0.38235294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.0031317999474878427,
+          "recall": 0.119281045751634
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.009174311926605505,
+            "recall": 0.05555555555555555
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.02657388428518759,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.005958032701965516,
+          "recall": 0.06256808278867103
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.018072289156626505,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0007462686567164179,
+            "recall": 0.041666666666666664
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.01310572720058653,
+            "recall": 0.44485294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.0053207141689882425,
+          "recall": 0.1227532679738562
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 5,
+            "targetable": 4,
+            "no_target": 1,
+            "f1": 0.0069124423963133645,
+            "recall": 0.25
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 9,
+            "targetable": 8,
+            "no_target": 1,
+            "f1": 0.0010204081632653062,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.009025535508034395,
+            "recall": 0.5294117647058824
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 4,
+            "targetable": 2,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.002826397677935511,
+          "recall": 0.15073529411764705
+        }
+      }
+    ],
+    "comparisons_all_budgets": [
+      {
+        "budget": 8000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.009523809523809525,
+            "f1_exact_ratio": "1/105",
+            "f1_sign": "positive",
+            "recall_difference": 0.05555555555555555,
+            "recall_exact_ratio": "1/18",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.006080516934693433,
+            "f1_exact_ratio": "-335/55094",
+            "f1_sign": "negative",
+            "recall_difference": -0.16666666666666666,
+            "recall_exact_ratio": "-1/6",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.025700171163327398,
+            "f1_exact_ratio": "212289257/8260227360",
+            "f1_sign": "positive",
+            "recall_difference": 0.13970588235294118,
+            "recall_exact_ratio": "19/136",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.0106951871657754,
+            "f1_exact_ratio": "-2/187",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "positive": 2,
+          "negative": 2
+        },
+        "f1_difference": 0.0030747127644446814,
+        "f1_exact_ratio": "71362660515571/23209537274763840",
+        "f1_sign": "positive",
+        "recall_difference": -0.07856753812636165,
+        "recall_exact_ratio": "-577/7344",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 8000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": -0.012406015037593985,
+            "f1_exact_ratio": "-33/2660",
+            "f1_sign": "negative",
+            "recall_difference": -0.08333333333333333,
+            "recall_exact_ratio": "-1/12",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.005681818181818182,
+            "f1_exact_ratio": "-1/176",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.001825892646577469,
+            "f1_exact_ratio": "2586050387/1416321157680",
+            "f1_sign": "positive",
+            "recall_difference": -0.02389705882352941,
+            "recall_exact_ratio": "-13/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.0125,
+            "f1_exact_ratio": "-1/80",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "negative": 3,
+          "positive": 1
+        },
+        "f1_difference": -0.004793656762139116,
+        "f1_exact_ratio": "-5417907280909/1130224283828640",
+        "f1_sign": "negative",
+        "recall_difference": -0.12203839869281045,
+        "recall_exact_ratio": "-1195/9792",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.010405223209827225,
+            "f1_exact_ratio": "1667/160208",
+            "f1_sign": "positive",
+            "recall_difference": 0.1111111111111111,
+            "recall_exact_ratio": "1/9",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.003979686251419439,
+            "f1_exact_ratio": "-757/190216",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.010168900322527714,
+            "f1_exact_ratio": "5958306684697/585934220586000",
+            "f1_sign": "positive",
+            "recall_difference": -0.1801470588235294,
+            "recall_exact_ratio": "-49/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.005128205128205128,
+            "f1_exact_ratio": "-1/195",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "positive": 2,
+          "negative": 2
+        },
+        "f1_difference": 0.0019110386921217285,
+        "f1_exact_ratio": "116736563494659761/61085400298752258000",
+        "f1_sign": "positive",
+        "recall_difference": -0.13650599128540306,
+        "recall_exact_ratio": "-2005/14688",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.004837176499448056,
+            "f1_exact_ratio": "631/130448",
+            "f1_sign": "positive",
+            "recall_difference": 0.05555555555555555,
+            "recall_exact_ratio": "1/18",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.002613240418118467,
+            "f1_exact_ratio": "-3/1148",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.006666994101907613,
+            "f1_exact_ratio": "61091418965039/9163262788482000",
+            "f1_sign": "positive",
+            "recall_difference": -0.28860294117647056,
+            "recall_exact_ratio": "-157/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.006153846153846154,
+            "f1_exact_ratio": "-2/325",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "positive": 2,
+          "negative": 2
+        },
+        "f1_difference": 0.00045618067156517466,
+        "f1_exact_ratio": "381461724642652380421/836207556391728498978000",
+        "f1_sign": "positive",
+        "recall_difference": -0.14300789760348584,
+        "recall_exact_ratio": "-4201/29376",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 32000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.0001847469406786371,
+            "f1_exact_ratio": "21/113669",
+            "f1_sign": "positive",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.0019234434196302125,
+            "f1_exact_ratio": "-4683/2434696",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.015359676445703803,
+            "f1_exact_ratio": "156115967071296036497/10164014041777725636000",
+            "f1_sign": "positive",
+            "recall_difference": -0.10845588235294118,
+            "recall_exact_ratio": "-59/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.0024968789013732834,
+            "f1_exact_ratio": "-2/801",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "positive": 2,
+          "negative": 2
+        },
+        "f1_difference": 0.0018540168442298238,
+        "f1_exact_ratio": "116036796041849652337532273658683/62586700009218325494340780789224000",
+        "f1_sign": "positive",
+        "recall_difference": -0.14307598039215685,
+        "recall_exact_ratio": "-467/3264",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 32000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.0009091963591206212,
+            "f1_exact_ratio": "533/586232",
+            "f1_sign": "positive",
+            "recall_difference": 0.05555555555555555,
+            "recall_exact_ratio": "1/18",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.0012135922330097086,
+            "f1_exact_ratio": "-1/824",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.014850692290440438,
+            "f1_exact_ratio": "217380322956544658731/14637723191966942328000",
+            "f1_sign": "positive",
+            "recall_difference": -0.20220588235294118,
+            "recall_exact_ratio": "-55/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.00315955766192733,
+            "f1_exact_ratio": "-2/633",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "positive": 2,
+          "negative": 2
+        },
+        "f1_difference": 0.0018977897924373367,
+        "f1_exact_ratio": "460040734170048854544852521/242408688255835378902191088000",
+        "f1_sign": "positive",
+        "recall_difference": -0.12860838779956427,
+        "recall_exact_ratio": "-1889/14688",
+        "recall_sign": "negative"
+      }
+    ],
+    "focus_16000": [
+      {
+        "budget": 16000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.010405223209827225,
+            "f1_exact_ratio": "1667/160208",
+            "f1_sign": "positive",
+            "recall_difference": 0.1111111111111111,
+            "recall_exact_ratio": "1/9",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.003979686251419439,
+            "f1_exact_ratio": "-757/190216",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.010168900322527714,
+            "f1_exact_ratio": "5958306684697/585934220586000",
+            "f1_sign": "positive",
+            "recall_difference": -0.1801470588235294,
+            "recall_exact_ratio": "-49/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.005128205128205128,
+            "f1_exact_ratio": "-1/195",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "positive": 2,
+          "negative": 2
+        },
+        "f1_difference": 0.0019110386921217285,
+        "f1_exact_ratio": "116736563494659761/61085400298752258000",
+        "f1_sign": "positive",
+        "recall_difference": -0.13650599128540306,
+        "recall_exact_ratio": "-2005/14688",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.004837176499448056,
+            "f1_exact_ratio": "631/130448",
+            "f1_sign": "positive",
+            "recall_difference": 0.05555555555555555,
+            "recall_exact_ratio": "1/18",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.002613240418118467,
+            "f1_exact_ratio": "-3/1148",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.006666994101907613,
+            "f1_exact_ratio": "61091418965039/9163262788482000",
+            "f1_sign": "positive",
+            "recall_difference": -0.28860294117647056,
+            "recall_exact_ratio": "-157/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.006153846153846154,
+            "f1_exact_ratio": "-2/325",
+            "f1_sign": "negative",
+            "recall_difference": -0.5,
+            "recall_exact_ratio": "-1/2",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 2,
+          "positive": 2,
+          "negative": 2
+        },
+        "f1_difference": 0.00045618067156517466,
+        "f1_exact_ratio": "381461724642652380421/836207556391728498978000",
+        "f1_sign": "positive",
+        "recall_difference": -0.14300789760348584,
+        "recall_exact_ratio": "-4201/29376",
+        "recall_sign": "negative"
+      }
+    ],
+    "joint_strict_negative_F1_and_recall_both_baselines": false
+  },
+  "all39_common_repository_composition_diagnostic": {
+    "method_budget_cells": [
+      {
+        "method": "bm25_windows",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.027449094115760783,
+            "recall": 0.05133522520555919
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.006080516934693433,
+            "recall": 0.16666666666666666
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0030408902691511385,
+            "recall": 0.15625
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0053475935828877,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.006361323155216285,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.00804656967628489,
+          "recall": 0.10482225663538346
+        }
+      },
+      {
+        "method": "bm25_windows",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.026952400535782465,
+            "recall": 0.11328191321642533
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.003979686251419439,
+            "recall": 0.25
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.010554414758008352,
+            "recall": 0.47610294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.002564102564102564,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004930966469428008,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008163595096456805,
+          "recall": 0.18234441705549514
+        }
+      },
+      {
+        "method": "bm25_windows",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.022586577822640647,
+            "recall": 0.23673870333988212
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0019234434196302125,
+            "recall": 0.25
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.005921779241508944,
+            "recall": 0.49816176470588236
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0012484394506866417,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.011432009626955475,
+            "recall": 0.017790262172284643
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.007185374926903653,
+          "recall": 0.20878178836967484
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.028872578903532085,
+            "recall": 0.11951538965291421
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.005681818181818182,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.026915168785901066,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.00625,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.03221288515406162,
+            "recall": 0.02153558052434457
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.016655408504218826,
+          "recall": 0.1393173185589549
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.020876411024225685,
+            "recall": 0.13240680103810426
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.002613240418118467,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.014056320978628453,
+            "recall": 0.5845588235294118
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.003076923076923077,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.027835051546391754,
+            "recall": 0.025280898876404494
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.011409657840714573,
+          "recall": 0.18620775390732008
+        }
+      },
+      {
+        "method": "bm25_declarations",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.014614658837148266,
+            "recall": 0.16889810570229694
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0012135922330097086,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.006430763396772309,
+            "recall": 0.5919117647058824
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.001579778830963665,
+            "recall": 0.25
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.01968503937007874,
+            "recall": 0.028089887640449437
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.007253972111328782,
+          "recall": 0.1939832930081048
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.02590396299409445,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.031802062886559755,
+            "recall": 0.28860294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.010530912989241454,
+          "recall": 0.06081369259542953
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.02748348834361405,
+            "recall": 0.2330277232045405
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.03090771408144608,
+            "recall": 0.28860294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.003738317757009346,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.010354920030344912,
+          "recall": 0.08756266378884517
+        }
+      },
+      {
+        "method": "anchors_only",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.01885685083408705,
+            "recall": 0.2330277232045405
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.03217578336897589,
+            "recall": 0.38235294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016374269005847954,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.011234483868151816,
+          "recall": 0.10693298214090509
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.025502309447263574,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.028741061432478537,
+            "recall": 0.2959558823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009953803822422773,
+          "recall": 0.06203918279150796
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.027567411955679976,
+            "recall": 0.23324601615367824
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.020723315080536066,
+            "recall": 0.2959558823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004578754578754579,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.00881158026916177,
+          "recall": 0.08898059107444906
+        }
+      },
+      {
+        "method": "graph_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.01795612849419773,
+            "recall": 0.23324601615367824
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.021281455687212746,
+            "recall": 0.3897058823529412
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016355140186915886,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009265454061387728,
+          "recall": 0.10819485449517315
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.025569815453864095,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.027586553945249597,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009772636908984701,
+          "recall": 0.06602202592876286
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.03234359012256438,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.011835741506242042,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004424778761061947,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008100685064978061,
+          "recall": 0.09350916658454832
+        }
+      },
+      {
+        "method": "window_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.021969336389937574,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0008445945945945946,
+            "recall": 0.08333333333333333
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.010495873964504649,
+            "recall": 0.38235294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016374269005847954,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008280678992480795,
+          "recall": 0.12140398556082796
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 8000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.025332292814987577,
+            "recall": 0.07253389604404667
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.02657388428518759,
+            "recall": 0.31985294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.005479452054794521,
+            "recall": 0.003745318352059925
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.009564271525828281,
+          "recall": 0.06602202592876286
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 16000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.03234359012256438,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0007462686567164179,
+            "recall": 0.041666666666666664
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.01310572720058653,
+            "recall": 0.44485294117647056
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.004424778761061947,
+            "recall": 0.0046816479400749065
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008436727456821546,
+          "recall": 0.1212869443623261
+        }
+      },
+      {
+        "method": "file_expand",
+        "budget": 32000,
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "tasks": 1,
+            "targetable": 1,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "huggingface/transformers",
+            "tasks": 10,
+            "targetable": 9,
+            "no_target": 1,
+            "f1": 0.021583258253062756,
+            "recall": 0.23652041039074437
+          },
+          {
+            "repo": "keras-team/keras",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.0010204081632653062,
+            "recall": 0.125
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "tasks": 10,
+            "targetable": 8,
+            "no_target": 2,
+            "f1": 0.009025535508034395,
+            "recall": 0.5294117647058824
+          },
+          {
+            "repo": "tensorflow/models",
+            "tasks": 2,
+            "targetable": 2,
+            "no_target": 0,
+            "f1": 0.0,
+            "recall": 0.0
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "tasks": 6,
+            "targetable": 4,
+            "no_target": 2,
+            "f1": 0.016374269005847954,
+            "recall": 0.026217228464419477
+          }
+        ],
+        "contributing_repositories": [
+          "Significant-Gravitas/AutoGPT",
+          "huggingface/transformers",
+          "keras-team/keras",
+          "langchain-ai/langchain",
+          "tensorflow/models",
+          "yt-dlp/yt-dlp"
+        ],
+        "repo_macro": {
+          "f1": 0.008000578488368403,
+          "recall": 0.15285823392684103
+        }
+      }
+    ],
+    "comparisons_all_budgets": [
+      {
+        "budget": 8000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": -0.0019467846684972068,
+            "f1_exact_ratio": "-344107/176756580",
+            "f1_sign": "negative",
+            "recall_difference": 0.021198670838487473,
+            "recall_exact_ratio": "874/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.006080516934693433,
+            "f1_exact_ratio": "-335/55094",
+            "f1_sign": "negative",
+            "recall_difference": -0.16666666666666666,
+            "recall_exact_ratio": "-1/6",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.025700171163327398,
+            "f1_exact_ratio": "212289257/8260227360",
+            "f1_sign": "positive",
+            "recall_difference": 0.13970588235294118,
+            "recall_exact_ratio": "19/136",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.0053475935828877,
+            "f1_exact_ratio": "-1/187",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0008818711004217644,
+            "f1_exact_ratio": "-253/286890",
+            "f1_sign": "negative",
+            "recall_difference": -0.0009363295880149813,
+            "recall_exact_ratio": "-1/1068",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "negative": 4,
+          "positive": 1
+        },
+        "f1_difference": 0.0019072341461378822,
+        "f1_exact_ratio": "415272965047546540717/217735701664353836483520",
+        "f1_sign": "positive",
+        "recall_difference": -0.0427830738438755,
+        "recall_exact_ratio": "-128101717/2994214896",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 8000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": -0.003370269456268511,
+            "f1_exact_ratio": "-10274121301/3048456936252",
+            "f1_sign": "negative",
+            "recall_difference": -0.046981493608867546,
+            "recall_exact_ratio": "-1937/41229",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.005681818181818182,
+            "f1_exact_ratio": "-1/176",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.001825892646577469,
+            "f1_exact_ratio": "2586050387/1416321157680",
+            "f1_sign": "positive",
+            "recall_difference": -0.02389705882352941,
+            "recall_exact_ratio": "-13/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.00625,
+            "f1_exact_ratio": "-1/160",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.026733433099267102,
+            "f1_exact_ratio": "-6967/260610",
+            "f1_sign": "negative",
+            "recall_difference": -0.017790262172284643,
+            "recall_exact_ratio": "-19/1068",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "negative": 4,
+          "positive": 1
+        },
+        "f1_difference": -0.006701604681796054,
+        "f1_exact_ratio": "-2762161338995241751087963/412164171142212517143635520",
+        "f1_sign": "negative",
+        "recall_difference": -0.07727813576744694,
+        "recall_exact_ratio": "-925549381/11976859584",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.0006150114198975098,
+            "f1_exact_ratio": "16578215513/26955947445273",
+            "f1_sign": "positive",
+            "recall_difference": 0.1199641029372529,
+            "recall_exact_ratio": "4946/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.003979686251419439,
+            "f1_exact_ratio": "-757/190216",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.010168900322527714,
+            "f1_exact_ratio": "5958306684697/585934220586000",
+            "f1_sign": "positive",
+            "recall_difference": -0.1801470588235294,
+            "recall_exact_ratio": "-49/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.002564102564102564,
+            "f1_exact_ratio": "-1/390",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0003522118906734291,
+            "f1_exact_ratio": "-5/14196",
+            "f1_sign": "negative",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": 0.0006479851727049652,
+        "f1_exact_ratio": "45161971850580798292823/69695995761840587528844000",
+        "f1_sign": "positive",
+        "recall_difference": -0.09336382598104609,
+        "recall_exact_ratio": "-6282053/67285728",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.006691000931454291,
+            "f1_exact_ratio": "130922807362/19566998824725",
+            "f1_sign": "positive",
+            "recall_difference": 0.10083921511557399,
+            "recall_exact_ratio": "8315/82458",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.002613240418118467,
+            "f1_exact_ratio": "-3/1148",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.006666994101907613,
+            "f1_exact_ratio": "61091418965039/9163262788482000",
+            "f1_sign": "positive",
+            "recall_difference": -0.28860294117647056,
+            "recall_exact_ratio": "-157/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.003076923076923077,
+            "f1_exact_ratio": "-1/325",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.023256296967637174,
+            "f1_exact_ratio": "-12317/529620",
+            "f1_sign": "negative",
+            "recall_difference": -0.020599250936329586,
+            "recall_exact_ratio": "-11/534",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": -0.0025980775715528023,
+        "f1_exact_ratio": "-1226085508797868982194280076911/471920285299668751199295293652000",
+        "f1_sign": "negative",
+        "recall_difference": -0.09722716283287103,
+        "recall_exact_ratio": "-1164476077/11976859584",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 32000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": -0.004630449328442916,
+            "f1_exact_ratio": "-1277563175320225/275904795561132276",
+            "f1_sign": "negative",
+            "recall_difference": -0.0034926871862038856,
+            "recall_exact_ratio": "-16/4581",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.0019234434196302125,
+            "f1_exact_ratio": "-4683/2434696",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.015359676445703803,
+            "f1_exact_ratio": "156115967071296036497/10164014041777725636000",
+            "f1_sign": "positive",
+            "recall_difference": -0.10845588235294118,
+            "recall_exact_ratio": "-59/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.0012484394506866417,
+            "f1_exact_ratio": "-1/801",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": 0.004923130559960413,
+            "f1_exact_ratio": "1751/355668",
+            "f1_sign": "positive",
+            "recall_difference": 0.008426966292134831,
+            "recall_exact_ratio": "3/356",
+            "recall_sign": "positive"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "negative": 3,
+          "positive": 2
+        },
+        "f1_difference": 0.002080079134484074,
+        "f1_exact_ratio": "70952668893563253874720852372982468733309821989/34110562294141648680743869372960099387522147992000",
+        "f1_sign": "positive",
+        "recall_difference": -0.10058693387450171,
+        "recall_exact_ratio": "-133857287/1330762176",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 32000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.003341469657049464,
+            "f1_exact_ratio": "576636039433/172569587222340",
+            "f1_sign": "positive",
+            "recall_difference": 0.06434791045138132,
+            "recall_exact_ratio": "2653/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.0012135922330097086,
+            "f1_exact_ratio": "-1/824",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.014850692290440438,
+            "f1_exact_ratio": "217380322956544658731/14637723191966942328000",
+            "f1_sign": "positive",
+            "recall_difference": -0.20220588235294118,
+            "recall_exact_ratio": "-55/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.001579778830963665,
+            "f1_exact_ratio": "-1/633",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0033298991831628524,
+            "f1_exact_ratio": "-181/54356",
+            "f1_sign": "negative",
+            "recall_difference": -0.0018726591760299626,
+            "recall_exact_ratio": "-1/534",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": 0.002011481950058946,
+        "f1_exact_ratio": "2047771879013163310933116989090629627/1018041389311573986262958745072453456000",
+        "f1_sign": "positive",
+        "recall_difference": -0.08578843851293164,
+        "recall_exact_ratio": "-513738041/5988429792",
+        "recall_sign": "negative"
+      }
+    ],
+    "focus_16000": [
+      {
+        "budget": 16000,
+        "baseline": "bm25_windows",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.0006150114198975098,
+            "f1_exact_ratio": "16578215513/26955947445273",
+            "f1_sign": "positive",
+            "recall_difference": 0.1199641029372529,
+            "recall_exact_ratio": "4946/41229",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.003979686251419439,
+            "f1_exact_ratio": "-757/190216",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.010168900322527714,
+            "f1_exact_ratio": "5958306684697/585934220586000",
+            "f1_sign": "positive",
+            "recall_difference": -0.1801470588235294,
+            "recall_exact_ratio": "-49/272",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.002564102564102564,
+            "f1_exact_ratio": "-1/390",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.0003522118906734291,
+            "f1_exact_ratio": "-5/14196",
+            "f1_sign": "negative",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": 0.0006479851727049652,
+        "f1_exact_ratio": "45161971850580798292823/69695995761840587528844000",
+        "f1_sign": "positive",
+        "recall_difference": -0.09336382598104609,
+        "recall_exact_ratio": "-6282053/67285728",
+        "recall_sign": "negative"
+      },
+      {
+        "budget": 16000,
+        "baseline": "bm25_declarations",
+        "per_repo": [
+          {
+            "repo": "Significant-Gravitas/AutoGPT",
+            "f1_difference": 0.0,
+            "f1_exact_ratio": "0",
+            "f1_sign": "tie",
+            "recall_difference": 0.0,
+            "recall_exact_ratio": "0",
+            "recall_sign": "tie"
+          },
+          {
+            "repo": "huggingface/transformers",
+            "f1_difference": 0.006691000931454291,
+            "f1_exact_ratio": "130922807362/19566998824725",
+            "f1_sign": "positive",
+            "recall_difference": 0.10083921511557399,
+            "recall_exact_ratio": "8315/82458",
+            "recall_sign": "positive"
+          },
+          {
+            "repo": "keras-team/keras",
+            "f1_difference": -0.002613240418118467,
+            "f1_exact_ratio": "-3/1148",
+            "f1_sign": "negative",
+            "recall_difference": -0.125,
+            "recall_exact_ratio": "-1/8",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "langchain-ai/langchain",
+            "f1_difference": 0.006666994101907613,
+            "f1_exact_ratio": "61091418965039/9163262788482000",
+            "f1_sign": "positive",
+            "recall_difference": -0.28860294117647056,
+            "recall_exact_ratio": "-157/544",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "tensorflow/models",
+            "f1_difference": -0.003076923076923077,
+            "f1_exact_ratio": "-1/325",
+            "f1_sign": "negative",
+            "recall_difference": -0.25,
+            "recall_exact_ratio": "-1/4",
+            "recall_sign": "negative"
+          },
+          {
+            "repo": "yt-dlp/yt-dlp",
+            "f1_difference": -0.023256296967637174,
+            "f1_exact_ratio": "-12317/529620",
+            "f1_sign": "negative",
+            "recall_difference": -0.020599250936329586,
+            "recall_exact_ratio": "-11/534",
+            "recall_sign": "negative"
+          }
+        ],
+        "f1_repo_sign_counts": {
+          "tie": 1,
+          "positive": 2,
+          "negative": 3
+        },
+        "f1_difference": -0.0025980775715528023,
+        "f1_exact_ratio": "-1226085508797868982194280076911/471920285299668751199295293652000",
+        "f1_sign": "negative",
+        "recall_difference": -0.09722716283287103,
+        "recall_exact_ratio": "-1164476077/11976859584",
+        "recall_sign": "negative"
+      }
+    ],
+    "joint_strict_negative_F1_and_recall_both_baselines": false
+  },
+  "new_holdout": false,
+  "new_primary": false,
+  "mature_research_established": false,
+  "SUT_or_retrieval_executed": false,
+  "limits": [
+    "Post hoc selected known tasks, local-resource/test/dependency selection bias.",
+    "No necessary-context, retrieval benefit or generated-repair evidence.",
+    "87/5842 supplied test labels and retries are not independent tasks."
+  ],
+  "run_id": "known39-secondary-final-20261015",
+  "provenance": {
+    "recorded_utc": "2026-10-15T05:00:55.619687+00:00",
+    "analysis_program_sha256": "b660d3b4aa34d9cb30905d1458a05a195ca3503970c41a6db186f555d57f25e9",
+    "protocol_sha256": "6d978f180ad4386416ac3cb04984e66484cd2691fa35339fa61eecd8c9c2cc56",
+    "final_eligibility_sha256": "a7e56df07d366afa8959a1fa2dead1ff3d5565ba26fc361b0f162259dae400b4",
+    "approval_sha256": "c86bd4a7b75e23543dfd9bbe353e26532bf08a7c1f101ec9fde082a2336ded7e",
+    "original_scores_sha256": "37f86d7c50ec6de86644c37f3f70328901967ad71342936e39f0785eb5cf82c6",
+    "original_summary_sha256": "ec8e1ea77147752378a1a41b4519a0d1af4a7c9e4794471b55472d07d9719e14",
+    "verified_original_inputs": {
+      "protocol.json": {
+        "sha256": "c8b20655fd75573951f68ea9c3df6f1d5de581b7fb3bdbe6b72e3cf69bfd446a",
+        "bytes": 11325
+      },
+      "amendments.json": {
+        "sha256": "463158e5a692c05880be4f0608a1ecc1d12a0abdc9c8e4df5f3fd92f340c52af",
+        "bytes": 1821
+      },
+      "manifest.json": {
+        "sha256": "483349232c62441feaa0e7129401c1017132ac07f7755d5d80029147f7ba5e3f",
+        "bytes": 5871
+      },
+      "prediction-seal.json": {
+        "sha256": "77c93f693a702543607c48a21a9b6bc7be0595b610cbfa4bbb4e79afe265a36c",
+        "bytes": 3628
+      },
+      "scores.json": {
+        "sha256": "37f86d7c50ec6de86644c37f3f70328901967ad71342936e39f0785eb5cf82c6",
+        "bytes": 344269
+      },
+      "summary.json": {
+        "sha256": "ec8e1ea77147752378a1a41b4519a0d1af4a7c9e4794471b55472d07d9719e14",
+        "bytes": 72312
+      },
+      "scoring.py": {
+        "sha256": "8fa928b0d64e7082e194bd0331a64bad17696e57155f4f898ea721ab25b936a8",
+        "bytes": 6374
+      },
+      "analyze.py": {
+        "sha256": "acdc862b00aafc7886a7c83d6baff5973efef5f31676fdaf35bc787a36546a7e",
+        "bytes": 7050
+      }
+    },
+    "python": "3.12.2 (v3.12.2:6abddd9f6a, Feb  6 2024, 17:02:06) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "analysis_seconds_not_SUT_performance": 0.03233833401463926,
+    "command_path_roles": [
+      "analyze_sensitivity.py",
+      "--protocol",
+      "$PROTOCOL",
+      "--protocol-sha256",
+      "6d978f180ad4386416ac3cb04984e66484cd2691fa35339fa61eecd8c9c2cc56",
+      "--pilot-repository-root",
+      "$PILOT_REPOSITORY_ROOT",
+      "--eligibility-ledger",
+      "$FINAL_LEDGER",
+      "--eligibility-sha256",
+      "a7e56df07d366afa8959a1fa2dead1ff3d5565ba26fc361b0f162259dae400b4",
+      "--approval",
+      "$FINAL_APPROVAL",
+      "--approval-sha256",
+      "c86bd4a7b75e23543dfd9bbe353e26532bf08a7c1f101ec9fde082a2336ded7e",
+      "--run-id",
+      "known39-secondary-final-20261015",
+      "--output",
+      "$NEW_OUTPUT"
+    ],
+    "path_handling": "Public output records role placeholders plus exact input hashes; local paths are not scientific data."
+  }
+}

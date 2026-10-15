@@ -15,6 +15,8 @@ from typing import Any
 
 from .evidence import _bundle_error, _entry_error, _json, _safe_parts, sha256
 from .index import _root_path, iter_source_files, read_source_bytes, snapshot_id, source_lines
+from .module_cache import ModuleCache, _ModuleSummary
+from .catalog import ModuleCatalog
 from .static_scope import guard_module_bindings, guard_references, module_lookup_uncertainty
 
 
@@ -111,11 +113,18 @@ class _Corpus:
         self._load_texts(texts)
 
     @classmethod
-    def from_texts(cls, texts: dict[str, str], parsed_cache: dict | None = None) -> "_Corpus":
+    def from_texts(cls, texts: dict[str, str], parsed_cache: dict | None = None, *,
+                   module_cache: ModuleCache | None = None,
+                   _source_hashes: dict[str, str] | None = None,
+                   _catalog: ModuleCatalog | None = None,
+                   _track_catalog: bool = False) -> "_Corpus":
         """Build the same static corpus from already validated immutable source.
 
         No filesystem reads occur. The provider owns source allowlisting and
-        snapshot consistency; path traversal is still rejected here.
+        snapshot consistency; path traversal is still rejected here. A private
+        GraphSession may supply its already computed hashes and transaction-local
+        module cache. These are internal objects, never serialized certificates.
+        会话可提供已计算哈希及本轮模块摘要缓存；它们不是外部可提交的证书。
         """
         corpus = cls.__new__(cls)
         corpus.root = None
@@ -124,41 +133,65 @@ class _Corpus:
             _safe_parts(path)
             if not isinstance(source, str):
                 raise ValueError("source corpus values must be text")
-        corpus._load_texts(texts, parsed_cache)
+        corpus._load_texts(texts, parsed_cache, module_cache, _source_hashes,
+                           _catalog, _track_catalog)
         return corpus
 
-    def _load_texts(self, texts: dict[str, str], parsed_cache: dict | None = None) -> None:
+    def _load_texts(self, texts: dict[str, str], parsed_cache: dict | None = None,
+                    module_cache: ModuleCache | None = None,
+                    source_hashes: dict[str, str] | None = None,
+                    catalog: ModuleCatalog | None = None,
+                    track_catalog: bool = False) -> None:
         self.texts = dict(sorted(texts.items()))
+        # Read dependencies include unsuccessful lookups, not only graph nodes.
+        # 记录查找所读取的文件，包括未命中属性的包文件。
+        self.lookup_paths: set[str] = set()
         self.trees: dict[str, ast.Module] = {}
-        self.modules: dict[str, list[str]] = defaultdict(list)
+        self._catalog = catalog if catalog is not None else ModuleCatalog(self.texts)
+        expected_paths = tuple(p for p in self.texts if Path(p).suffix.lower() in {'.py', '.pyi'})
+        if self._catalog.source_paths != expected_paths:
+            raise ValueError('catalog/source paths differ')
+        self.modules = self._catalog.mapping()
+        self.catalog_queries: dict = {}
+        self._track_catalog = track_catalog
         self.bindings: dict[str, dict[str, list[dict]]] = {}
         self.definitions: dict[str, dict[str, list[ast.AST]]] = {}
         self.wildcards: set[str] = set()
         for path, source in self.texts.items():
             if Path(path).suffix.lower() not in {".py", ".pyi"}:
                 continue
-            parts = list(Path(path).with_suffix("").parts)
-            if parts[-1] == "__init__":
-                parts.pop()
-            names = {".".join(parts)}
-            if len(parts) > 1 and parts[0] == "src":
-                names.add(".".join(parts[1:]))
-            for name in sorted(names - {""}):
-                self.modules[name].append(path)
-            cache_key = (path, sha256(source))
+            cache_key = (path, source_hashes[path] if source_hashes is not None else sha256(source))
+            summary = module_cache.lookup(cache_key) if module_cache is not None else None
+            if summary is not None:
+                if summary.tree is not None:
+                    self.trees[path] = summary.tree
+                    self.bindings[path] = summary.bindings
+                    self.definitions[path] = summary.definitions
+                    if summary.wildcard:
+                        self.wildcards.add(path)
+                continue
             tree = parsed_cache.get(cache_key) if parsed_cache is not None else None
             if tree is None:
                 try:
                     tree = ast.parse(source, filename=path)
                 except (SyntaxError, ValueError, RecursionError):
+                    if module_cache is not None:
+                        module_cache.store(cache_key, _ModuleSummary.capture(None))
                     continue
                 if parsed_cache is not None:
                     parsed_cache[cache_key] = tree
             self.trees[path] = tree
             self._index(path, tree)
-        guard_module_bindings(self)
-        self.snapshot_id = snapshot_id({path: sha256(text)
-                                        for path, text in self.texts.items()})
+            if module_cache is not None:
+                guard_module_bindings(self, paths=(path,))
+                summary = _ModuleSummary.capture(tree, self.bindings[path], self.definitions[path],
+                                                 path in self.wildcards)
+                module_cache.store(cache_key, summary)
+                self.bindings[path], self.definitions[path] = summary.bindings, summary.definitions
+        if module_cache is None:
+            guard_module_bindings(self)
+        self.snapshot_id = snapshot_id(source_hashes if source_hashes is not None else {
+            path: sha256(text) for path, text in self.texts.items()})
 
     def _index(self, path: str, tree: ast.Module) -> None:
         bindings: dict[str, list[dict]] = defaultdict(list)
@@ -229,17 +262,32 @@ class _Corpus:
         base = parts[:len(parts) - level + 1]
         return ".".join([*base, *filter(None, binding["module"].split("."))])
 
+    def module_candidates(self, module: str) -> tuple[str, ...]:
+        """Record exact positive/negative catalog reads / 登记精确正负目录查询。"""
+        value = self._catalog.candidates(module)
+        if self._track_catalog:
+            self.catalog_queries[('exact', module)] = value
+        return value
+
+    def module_subtree_exists(self, module: str) -> bool:
+        """Record namespace existence including false / 登记含false的命名空间存在性。"""
+        value = self._catalog.subtree_exists(module)
+        if self._track_catalog:
+            self.catalog_queries[('subtree', module)] = value
+        return value
+
     def resolve_module(self, module: str, attrs: list[str], seen: set[tuple[str, str]]) -> dict:
         if len(attrs) > 128:
             return _unresolved("qualified expression exceeds the static resolution depth limit")
         if not attrs:
             return _unresolved("a module value has no bounded definition witness")
+        self.lookup_paths.update(self.module_candidates(module))
         uncertainty = module_lookup_uncertainty(self, module, attrs)
         if uncertainty:
             return _unresolved(uncertainty)
         # A qualified imported module may be a namespace package without init.py.
         # Never guess a submodule over a same-named explicit package binding.
-        candidates = self.modules.get(module, [])
+        candidates = self.module_candidates(module)
         if len(candidates) > 1:
             return _unresolved("ambiguous repository module")
         if len(candidates) == 1:
@@ -249,8 +297,7 @@ class _Corpus:
             if attrs[0] in self.bindings[path]:
                 return self.resolve_name(path, attrs[0], attrs[1:], seen)
         child = f"{module}.{attrs[0]}" if module else attrs[0]
-        if len(attrs) > 1 and (child in self.modules or any(
-                key.startswith(child + ".") for key in self.modules)):
+        if len(attrs) > 1 and self.module_subtree_exists(child):
             return self.resolve_module(child, attrs[1:], seen)
         if not candidates:
             return _unresolved("external or unavailable import")
@@ -258,6 +305,7 @@ class _Corpus:
 
     def resolve_name(self, path: str, name: str, attrs: list[str],
                      seen: set[tuple[str, str]] | None = None) -> dict:
+        self.lookup_paths.add(path)
         seen = set() if seen is None else seen
         if len(seen) >= 128:
             return _unresolved("import chain exceeds the static resolution depth limit")
@@ -270,6 +318,8 @@ class _Corpus:
             return _unresolved("wildcard import may shadow this binding")
         if not bindings:
             return _unresolved("name is not a static repository binding (possibly builtin/external)")
+        if any(binding.get("origin") == "explicit_global_write" for binding in bindings):
+            return _unresolved("explicit function/class global write may rebind this name")
         if len(bindings) != 1:
             return _unresolved("ambiguous or rebound name")
         binding = bindings[0]

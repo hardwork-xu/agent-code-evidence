@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "status": "invalid-retained",
+  "scope": "Exact retained bytes of the invalid execution-semantics pilot; never primary evidence. STATUS.md remains editable to disclose defects.",
+  "files": {
+    "benchmarks/task_evidence/results/initial/cases.json": "30b75956b0be2222502c7e5dea67f1ab033d9185953a4463b1bcfa95c019a875",
+    "benchmarks/task_evidence/results/initial/provenance.json": "3dfdbaad3d084b40f360c1d92cabdc0083f945a4072c0ae4b3916635961c4be0",
+    "benchmarks/task_evidence/results/initial/runs.json": "4337bb81b61816744444679ff1779d08f1efac2e9fa506cd3973841b954d26c5",
+    "benchmarks/task_evidence/results/initial/sandbox.json": "a9ac00e96ec0fe3826770c639053d04e22bf89e5da46789ce9804f9d99f18b9d",
+    "benchmarks/task_evidence/results/initial/summary.json": "331d27fc4f2f8052ca2e205c976c8400e49f6cef2578101de38b473f52ee8190"
+  }
+}

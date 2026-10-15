@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "distribution": "iniconfig",
+  "version": "2.3.1",
+  "metadata_headers": {
+    "Author-email": [
+      "Ronny Pfannschmidt <opensource@ronnypfannschmidt.de>, Holger Krekel <holger.krekel@gmail.com>"
+    ],
+    "Classifier": [
+      "Development Status :: 4 - Beta",
+      "Intended Audience :: Developers",
+      "Operating System :: MacOS :: MacOS X",
+      "Operating System :: Microsoft :: Windows",
+      "Operating System :: POSIX",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Programming Language :: Python :: 3.15",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Utilities"
+    ],
+    "Description-Content-Type": [
+      "text/x-rst"
+    ],
+    "Dynamic": [
+      "license-file"
+    ],
+    "License-Expression": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "iniconfig"
+    ],
+    "Project-URL": [
+      "Homepage, https://github.com/pytest-dev/iniconfig"
+    ],
+    "Requires-Python": [
+      ">=3.10"
+    ],
+    "Summary": [
+      "brain-dead simple config-ini parsing"
+    ],
+    "Version": [
+      "2.3.1"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "setuptools (84.0.0)"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "47c2c35d936f5c649d8074c6464719a42966a67b5cebad01e3e5784cf090cfb6",
+  "wheel_record_inventory": [
+    {
+      "path": "iniconfig-2.3.1.dist-info/METADATA",
+      "sha256": "47c2c35d936f5c649d8074c6464719a42966a67b5cebad01e3e5784cf090cfb6",
+      "bytes": 2826
+    },
+    {
+      "path": "iniconfig-2.3.1.dist-info/RECORD",
+      "sha256": "ab13e40ef0f271bc31f9d6a6655c30cceb2e6e5b079298e7e0a398f5845c38bf",
+      "bytes": 787
+    },
+    {
+      "path": "iniconfig-2.3.1.dist-info/WHEEL",
+      "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+      "bytes": 91
+    },
+    {
+      "path": "iniconfig-2.3.1.dist-info/licenses/LICENSE",
+      "sha256": "3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4",
+      "bytes": 1098
+    },
+    {
+      "path": "iniconfig-2.3.1.dist-info/top_level.txt",
+      "sha256": "eca7ccd1fba07654e88fd516ede9ca5e4d876002d00fca878b22ad8e14b380df",
+      "bytes": 10
+    },
+    {
+      "path": "iniconfig/__init__.py",
+      "sha256": "bb1c9017eea0053a104bd0703f3d8d13e7b9a854e4a364ee765ad64da7220819",
+      "bytes": 7497
+    },
+    {
+      "path": "iniconfig/_parse.py",
+      "sha256": "15824a78105b52aa9ed414ce6ad073967c73be7ea5ae9d991a0df97a6e0cc2e1",
+      "bytes": 5113
+    },
+    {
+      "path": "iniconfig/_version.py",
+      "sha256": "59179225e62b7f766267a618a23c104d06a4fb166ba20478ebf3d0a613bc190b",
+      "bytes": 520
+    },
+    {
+      "path": "iniconfig/exceptions.py",
+      "sha256": "9a2a50fda3310fd0af4af156375a135d8e10b919ca00c6757f7b027668c34d4d",
+      "bytes": 399
+    },
+    {
+      "path": "iniconfig/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "iniconfig-2.3.1.dist-info/licenses/LICENSE",
+      "path": "licenses/3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4.txt",
+      "sha256": "3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4",
+      "bytes": 1098
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

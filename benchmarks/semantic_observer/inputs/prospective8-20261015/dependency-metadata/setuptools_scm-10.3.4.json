@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "distribution": "setuptools-scm",
+  "version": "10.3.4",
+  "metadata_headers": {
+    "Author-email": [
+      "Ronny Pfannschmidt <opensource@ronnypfannschmidt.de>"
+    ],
+    "Classifier": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Software Development :: Version Control",
+      "Topic :: System :: Software Distribution",
+      "Topic :: Utilities"
+    ],
+    "Description-Content-Type": [
+      "text/markdown"
+    ],
+    "Dynamic": [
+      "license-file"
+    ],
+    "License": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "setuptools-scm"
+    ],
+    "Project-URL": [
+      "documentation, https://setuptools-scm.readthedocs.io/",
+      "repository, https://github.com/pypa/setuptools-scm/"
+    ],
+    "Provides-Extra": [
+      "rich",
+      "simple",
+      "toml"
+    ],
+    "Requires-Dist": [
+      "vcs-versioning<3,>=2.5.0.dev0",
+      "packaging>=20",
+      "setuptools",
+      "tomli>=1; python_version < \"3.11\"",
+      "typing-extensions>=4.1; python_version < \"3.11\"",
+      "rich>=13; extra == \"rich\""
+    ],
+    "Requires-Python": [
+      ">=3.8"
+    ],
+    "Summary": [
+      "the blessed package to manage your versions by scm tags"
+    ],
+    "Version": [
+      "10.3.4"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "setuptools (84.0.0)"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "cd44047af046cbb74c19c0b250bc6eb7ad9233d2bb18ccdb37e36e42770d5dd6",
+  "wheel_record_inventory": [
+    {
+      "path": "setuptools_scm-10.3.4.dist-info/METADATA",
+      "sha256": "cd44047af046cbb74c19c0b250bc6eb7ad9233d2bb18ccdb37e36e42770d5dd6",
+      "bytes": 6707
+    },
+    {
+      "path": "setuptools_scm-10.3.4.dist-info/RECORD",
+      "sha256": "15bac15d1ac33b311de638f85ca2483165cfaf457a04f7395db1568b840c693d",
+      "bytes": 2785
+    },
+    {
+      "path": "setuptools_scm-10.3.4.dist-info/WHEEL",
+      "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+      "bytes": 91
+    },
+    {
+      "path": "setuptools_scm-10.3.4.dist-info/entry_points.txt",
+      "sha256": "0d4d201d060bc3b57a3f3d43f3c7a008d33f73503badb6e49293c05b30710524",
+      "bytes": 578
+    },
+    {
+      "path": "setuptools_scm-10.3.4.dist-info/licenses/LICENSE",
+      "sha256": "89807acf2309bd285f033404ee78581602f3cd9b819a16ac2f0e5f60ff4a473e",
+      "bytes": 1023
+    },
+    {
+      "path": "setuptools_scm-10.3.4.dist-info/top_level.txt",
+      "sha256": "922bbef75ab7feb24b528736c25f3f942e1c225a60b60743ff835a0a117884e0",
+      "bytes": 15
+    },
+    {
+      "path": "setuptools_scm/.git_archival.txt",
+      "sha256": "dbff7491d4b53ce49032e65f042530eaa36339bbbb223a7c0e6a6d1009a51a45",
+      "bytes": 102
+    },
+    {
+      "path": "setuptools_scm/__init__.py",
+      "sha256": "1b842e514e7032adcec8503fd1d1f5c6b115d7c511fad769a2e55d7e6902b5a5",
+      "bytes": 839
+    },
+    {
+      "path": "setuptools_scm/__main__.py",
+      "sha256": "666ab854583c65e31f42f7be112fedefb31d2479b1ae1bce7d122797fb8a5808",
+      "bytes": 145
+    },
+    {
+      "path": "setuptools_scm/_compat_helpers.py",
+      "sha256": "689dc13b4363d0674720dd856214fc0a9461360e74088a710caf0ce410b73e0e",
+      "bytes": 1324
+    },
+    {
+      "path": "setuptools_scm/_get_version.py",
+      "sha256": "d9d9b37d8c9c27950db9436a8d72d4742e13c06221246ba3713422c3ba24aa4d",
+      "bytes": 3027
+    },
+    {
+      "path": "setuptools_scm/_integration/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "setuptools_scm/_integration/_discover.py",
+      "sha256": "9082f0c8d6d129e301bf55e67f49ecb534ba5dd922729e842908c5b73409742c",
+      "bytes": 1484
+    },
+    {
+      "path": "setuptools_scm/_integration/bdist_wheel.py",
+      "sha256": "600aa07da3c23554ab32ab8cfa315d0b008658ac858b326fd855c7962eb5e902",
+      "bytes": 1894
+    },
+    {
+      "path": "setuptools_scm/_integration/build_py.py",
+      "sha256": "42169fa87d39cadb9c3d287db11d4e6edf5e3575b29a1f3af428bef3aadf1fd8",
+      "bytes": 14410
+    },
+    {
+      "path": "setuptools_scm/_integration/deprecation.py",
+      "sha256": "7418ea3a98b04ff06ef899e82a88b77afc1f4531e996c03dcfcbbbd0854abe50",
+      "bytes": 822
+    },
+    {
+      "path": "setuptools_scm/_integration/egg_info.py",
+      "sha256": "c382366254bf6d6c89081e425fb27cf2b8431472790a476d635f72fd519e3135",
+      "bytes": 8467
+    },
+    {
+      "path": "setuptools_scm/_integration/file_finders.py",
+      "sha256": "cf7cafe0a9b04470f0e67766c1a9d0118c8cacde2265139c4a132715c02e5277",
+      "bytes": 2575
+    },
+    {
+      "path": "setuptools_scm/_integration/pyproject_reading.py",
+      "sha256": "d1e8be1affde8740addc4281ff14a55efee59d51fead245443b7582821716923",
+      "bytes": 5043
+    },
+    {
+      "path": "setuptools_scm/_integration/setup_cfg.py",
+      "sha256": "78cf3c947a721bb1e45144372f3ef969e85af234bfbc084b24a20be257c92e1a",
+      "bytes": 1302
+    },
+    {
+      "path": "setuptools_scm/_integration/setuptools.py",
+      "sha256": "3253665f6cfad8113e62d465affde0dd04b861dcf7e166173967a16e054df021",
+      "bytes": 10631
+    },
+    {
+      "path": "setuptools_scm/_integration/version_inference.py",
+      "sha256": "c2da59bbd9c8531654a74ac4caabf7c8ac58fb1610bf339ce90003710e1d5548",
+      "bytes": 11469
+    },
+    {
+      "path": "setuptools_scm/discover.py",
+      "sha256": "19eefd6ffd485569f338f2b49618a5e6a89b0a1708a3b124b2995a59a3b49acf",
+      "bytes": 541
+    },
+    {
+      "path": "setuptools_scm/fallbacks.py",
+      "sha256": "36a9cd2c25b028e2c03387eeac4293a1a12188d70c53c11cc139576d9770a535",
+      "bytes": 390
+    },
+    {
+      "path": "setuptools_scm/git.py",
+      "sha256": "b097eff2c512bfc1bea2b204072662aed60aa1a5d65ea928a839cde5554e314a",
+      "bytes": 2764
+    },
+    {
+      "path": "setuptools_scm/hg.py",
+      "sha256": "39def107b3c1b2a64f7945727e9b797009dfa6f8fd951bad9716f0bd905509c8",
+      "bytes": 1271
+    },
+    {
+      "path": "setuptools_scm/hg_git.py",
+      "sha256": "094971ae8960cd7ff379d4ebf32ee8df2a755ce1f8a51a010024fa105ea27a0d",
+      "bytes": 942
+    },
+    {
+      "path": "setuptools_scm/integration.py",
+      "sha256": "b5d9e80c06e06e74d6c6b3b63fc6e4aa91b48df1ba67eb8fb07c3f0887c69bf3",
+      "bytes": 300
+    },
+    {
+      "path": "setuptools_scm/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "setuptools_scm/scm_workdir.py",
+      "sha256": "5f8de3384e3fe6efa8124072754ed7d8dc0f985801fcdd4bdc1ffe19bd98f8d8",
+      "bytes": 1494
+    },
+    {
+      "path": "setuptools_scm/version.py",
+      "sha256": "fa288ce97cac30c841b205ac341707416aeee40161ac8d0cc2b91637d93b556c",
+      "bytes": 2949
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "setuptools_scm-10.3.4.dist-info/licenses/LICENSE",
+      "path": "licenses/89807acf2309bd285f033404ee78581602f3cd9b819a16ac2f0e5f60ff4a473e.txt",
+      "sha256": "89807acf2309bd285f033404ee78581602f3cd9b819a16ac2f0e5f60ff4a473e",
+      "bytes": 1023
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

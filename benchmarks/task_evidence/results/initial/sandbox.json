@@ -1,0 +1,7 @@
+{
+  "fork": "denied",
+  "inside_write": "denied",
+  "network": "denied",
+  "read": "denied",
+  "write": "denied"
+}

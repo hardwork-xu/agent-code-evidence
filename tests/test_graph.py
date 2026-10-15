@@ -5,7 +5,7 @@ import json
 import pytest
 
 from contextproof.graph import (
-    build_graph, canonical_graph_bytes, compare_graphs, validate_graph,
+    RESOLVER_VERSION, build_graph, canonical_graph_bytes, compare_graphs, validate_graph,
 )
 from contextproof.dependencies import _Corpus
 from contextproof.index import source_lines
@@ -209,7 +209,7 @@ def test_nested_method_parameter_cannot_resolve_to_same_named_global():
     texts = {"app.py": "def callback():\n    return 1\nclass Subject:\n"
              "    def method(self, callback):\n        return callback()\n"}
     built = graph(texts, anchor(texts, symbol="Subject"))
-    assert built["policy"]["resolver_version"] == 2
+    assert built["policy"]["resolver_version"] == RESOLVER_VERSION
     assert not compare_graphs(built, built)["fresh"]
     assert all(edge["status"] == "unresolved" for edge in built["edges"].values())
     assert not any(node["symbol"] == "callback" for node in built["nodes"].values())

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "action": "authorize_one_final_secondary_calculation",
+  "allow_real_inputs": true,
+  "recorded_utc": "2026-10-15T05:00:55.461616+00:00",
+  "protocol_sha256": "6d978f180ad4386416ac3cb04984e66484cd2691fa35339fa61eecd8c9c2cc56",
+  "eligibility_ledger_sha256": "a7e56df07d366afa8959a1fa2dead1ff3d5565ba26fc361b0f162259dae400b4",
+  "analysis_program_sha256": "b660d3b4aa34d9cb30905d1458a05a195ca3503970c41a6db186f555d57f25e9",
+  "execution_evidence_sha256": "4e706cf3658d2ad6248db0cc9ed750a9b2f101b47237bc55824875b96c197d28",
+  "scope": "A reproducibility input seal for one final descriptive scalar reanalysis; no SUT, retrieval, model calls, new holdout or maturity claim. This is not an independent human approval or authentication signature."
+}

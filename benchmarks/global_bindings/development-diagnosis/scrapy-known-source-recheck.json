@@ -1,0 +1,92 @@
+{
+  "classification": "known-source posthoc development recheck, not new natural panel or holdout",
+  "limitations": "Two dependent source versions of one getter; external frontier remains. Static explicit-binding repair, not runtime/soundness/coverage accuracy.",
+  "records": [
+    {
+      "baseline_edge": {
+        "expression": "_scrapy_root_handler",
+        "operation": "read",
+        "reason": "unique static repository binding",
+        "status": "resolved"
+      },
+      "baseline_frontier_free": false,
+      "baseline_source_commit": "09d6476ae5d42c9876d0df86b3b60dfa1c2ff048",
+      "candidate_edge": {
+        "expression": "_scrapy_root_handler",
+        "operation": "read",
+        "reason": "explicit function/class global write may rebind this name",
+        "status": "unresolved"
+      },
+      "candidate_graph": {
+        "canonical_sha256": "68ecb518606498a9f8571693d15d231f8e38f9973c4951ae7bc456a05f6880ee",
+        "edges": 2,
+        "frontier_free": false,
+        "frontier_reasons": [
+          "explicit function/class global write may rebind this name",
+          "external or unavailable import"
+        ],
+        "nodes": 1,
+        "resolver_version": 4,
+        "watched_edges": [
+          {
+            "expression": "_scrapy_root_handler",
+            "operation": "read",
+            "reason": "explicit function/class global write may rebind this name",
+            "source": "fe798a0c9f686c361afcaabda06a08622b3b4f725f2b9fd7dbd9d85ae1d498d6",
+            "status": "unresolved"
+          }
+        ]
+      },
+      "candidate_source_commit": "99f09f4594e44fc0805b4d4a4599a0a6857490c3",
+      "commit": "40dc142961080e37fdc2096ad1a79733bf932e45",
+      "path": "scrapy/utils/log.py",
+      "repository": "scrapy/scrapy",
+      "source_file_sha256": "41de96d7772b3328200a67e0d1a48a3be8dcf62f546cadfe30a3caa3c7e3f3c1",
+      "source_permalink": "https://github.com/scrapy/scrapy/blob/40dc142961080e37fdc2096ad1a79733bf932e45/scrapy/utils/log.py"
+    },
+    {
+      "baseline_edge": {
+        "expression": "_scrapy_root_handler",
+        "operation": "read",
+        "reason": "unique static repository binding",
+        "status": "resolved"
+      },
+      "baseline_frontier_free": false,
+      "baseline_source_commit": "09d6476ae5d42c9876d0df86b3b60dfa1c2ff048",
+      "candidate_edge": {
+        "expression": "_scrapy_root_handler",
+        "operation": "read",
+        "reason": "explicit function/class global write may rebind this name",
+        "status": "unresolved"
+      },
+      "candidate_graph": {
+        "canonical_sha256": "3876b26970c056b34780c4a1d7cfc1a9933bcb7cb84d6b10799d1973aa980280",
+        "edges": 2,
+        "frontier_free": false,
+        "frontier_reasons": [
+          "explicit function/class global write may rebind this name",
+          "external or unavailable import"
+        ],
+        "nodes": 1,
+        "resolver_version": 4,
+        "watched_edges": [
+          {
+            "expression": "_scrapy_root_handler",
+            "operation": "read",
+            "reason": "explicit function/class global write may rebind this name",
+            "source": "fe798a0c9f686c361afcaabda06a08622b3b4f725f2b9fd7dbd9d85ae1d498d6",
+            "status": "unresolved"
+          }
+        ]
+      },
+      "candidate_source_commit": "99f09f4594e44fc0805b4d4a4599a0a6857490c3",
+      "commit": "a0951524990e4c43b1b4e8a3783942a0ad95ce7f",
+      "path": "scrapy/utils/log.py",
+      "repository": "scrapy/scrapy",
+      "source_file_sha256": "159767a982b08a474dd01746f355d5bf29815f2d7c92c70ae687d64c90cb8467",
+      "source_permalink": "https://github.com/scrapy/scrapy/blob/a0951524990e4c43b1b4e8a3783942a0ad95ce7f/scrapy/utils/log.py"
+    }
+  ],
+  "source_file_pins_verified_against_catalog_manifest": true,
+  "upstream_source_executed": false
+}

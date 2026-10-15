@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "repository": "un33k/python-slugify",
+  "commit": "548b14fab321ae9bfcb6db7fd990f6ddd7d3192b",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1318,
+      "sha256": "cb0db23869ec2fda160f8a4a1579cd8ac6ed214ca885831ea9e227461a354272"
+    },
+    {
+      "path": ".github/workflows/dev.yml",
+      "bytes": 1321,
+      "sha256": "a7611c4ebc60dc8aa092d51d1add92b7e39dfadb0e0cf8546c80da55e3cd465e"
+    },
+    {
+      "path": ".github/workflows/main.yml",
+      "bytes": 675,
+      "sha256": "8ddab53f414e0bfc63c24dd180a032e5236ad0d18c55bd8ae5274345c902a842"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 739,
+      "sha256": "4bd4d91e2e7156009698c8b15e3c3ba85df230ed8b9f3ebe27cf0ce9217ee75c"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "bytes": 135,
+      "sha256": "d183e6f08d395ff5d77fedb1c86e51f32612abd3b41aa2b1bbe315b15fedc883"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 5895,
+      "sha256": "cc0b5915d6965e91d0fc42ba079bf7ae2961a0375e60cb81d2597fdf56f2037f"
+    },
+    {
+      "path": "DOJO.md",
+      "bytes": 5243,
+      "sha256": "bbb46954b338a47fd2073f6ba13c7db1df08c3a4460bc8828e8dca39686bf915"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1103,
+      "sha256": "30ba4dc69a9f4dce132dd703937c7a93b573e2524604d2d5f92c5066514c0d4f"
+    },
+    {
+      "path": "MANIFEST.in",
+      "bytes": 249,
+      "sha256": "9347ed05578ff4764963d806417512fa5e477706834d821ee484293e530ce4bc"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10405,
+      "sha256": "21fd2b09da6d72cd878ba2c23c8aa27db48236433ce966171fde198a18d299d0"
+    },
+    {
+      "path": "dev.requirements.txt",
+      "bytes": 106,
+      "sha256": "885e060bfb3c58e54e1bc5703868392dca1878f1fc76cf7d8997c9184e043148"
+    },
+    {
+      "path": "docs/release-9/historical-evidence.json",
+      "bytes": 3594939,
+      "sha256": "65892a5f6bf7d8c33dc5f35d25420d2933522391c0b4393b1beadbd54a7a8d20"
+    },
+    {
+      "path": "docs/release-9/historical-review.md",
+      "bytes": 63670,
+      "sha256": "cc48bd889f0ae8a693bc46b8293787c19417b7af71e0bc44c6b7a529bd749b90"
+    },
+    {
+      "path": "docs/release-9/migration.md",
+      "bytes": 6329,
+      "sha256": "a0b4006ef58dc564e035091a9faf2b483f0fe26bca2ab93670f5470b801262bc"
+    },
+    {
+      "path": "docs/release-9/recent-evidence.json",
+      "bytes": 95943,
+      "sha256": "742ba20c3e1d9efadbb0d4e6e70e0071c78c457c84cfbdb048179a4ce8e2aeb8"
+    },
+    {
+      "path": "docs/release-9/recent-review.md",
+      "bytes": 9408,
+      "sha256": "55c6288b4daa109826eedecaf40d34ce36c26445819b6e2ae11ba86a63652604"
+    },
+    {
+      "path": "docs/release-9/verification.md",
+      "bytes": 7186,
+      "sha256": "d05b957edc4fada66aba7820a5807df96db2edbfd5e437452e598f079d2afdbb"
+    },
+    {
+      "path": "format.sh",
+      "bytes": 418,
+      "sha256": "105b0c469558356f35a861cfb064c82bf441d8dba6c116479b3b890b57036d01"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1935,
+      "sha256": "896ff0839f0d8fbe4ad0bee2860df2551c7e3c32da265415520c66891ddc7fdd"
+    },
+    {
+      "path": "setup.py",
+      "bytes": 121,
+      "sha256": "500a09846dc1773bd95e495c381d0ac412803779b8b30dbf1621e39f993bbcd1"
+    },
+    {
+      "path": "slugify/__init__.py",
+      "bytes": 346,
+      "sha256": "43ef5b28242ff3db9fddb26bff21f130f84159737c602ce5c50c0afe476979f2"
+    },
+    {
+      "path": "slugify/__main__.py",
+      "bytes": 4914,
+      "sha256": "998f2f2d2c76e0d91dc9879163e282ec802ba386c38d3700b4ff24cff45c27ec"
+    },
+    {
+      "path": "slugify/__version__.py",
+      "bytes": 350,
+      "sha256": "5d0c2866899832521f55bb42a771fde7bceede0a046d4fc74f5073a9f73c3b67"
+    },
+    {
+      "path": "slugify/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "slugify/slugify.py",
+      "bytes": 10174,
+      "sha256": "842d4d076b93ca0b2faed2187106d7d3909d8dd71e322be739e4aecca52ed402"
+    },
+    {
+      "path": "slugify/special.py",
+      "bytes": 1222,
+      "sha256": "f1b1c03c69d9fb591eb96e31d9665d15755bf4b1684bb8bd268e2dcbfd83f210"
+    },
+    {
+      "path": "tea.yaml",
+      "bytes": 127,
+      "sha256": "b86e33ee003413ab14890e8503bf1e90924c471f011f457a80c0013ae5f6c115"
+    },
+    {
+      "path": "test.py",
+      "bytes": 24913,
+      "sha256": "02d94cbe8e801bb4b76f0da3a86851b9172a533ce074f70e54116c68a392e714"
+    },
+    {
+      "path": "test_release.py",
+      "bytes": 17736,
+      "sha256": "3adc67cf914520fd317d23a4a8f5be4cbf40d1cc2db84a5723e31986d141a605"
+    },
+    {
+      "path": "tools/check_algorithms.py",
+      "bytes": 3525,
+      "sha256": "02bc1f2d47a710901046a57ce88f06050e39e3c6eb381234275035966d43be8e"
+    },
+    {
+      "path": "tools/check_dist.py",
+      "bytes": 6241,
+      "sha256": "c17ec4b951bb8c27a4ac903a35a2cb3efaefb41f4129a318cdcfc54cf0bee417"
+    },
+    {
+      "path": "tools/legacy_reference.py",
+      "bytes": 6270,
+      "sha256": "b4dde01bdc86a9bfdc1cbbae0e87be9d16528a2de18dadbfa16826e8405d7df3"
+    },
+    {
+      "path": "tox.ini",
+      "bytes": 1679,
+      "sha256": "d242c211729794efe371041ebc311f6c92d97d1c9c5ad24762c6368d4d0ec6cc"
+    }
+  ]
+}

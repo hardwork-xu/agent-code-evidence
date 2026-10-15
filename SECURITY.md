@@ -41,3 +41,13 @@ AST/import restrictions supplement the OS sandbox; they are not the security
 boundary. It fails closed when the sandbox is unavailable and provides no
 unsandboxed fallback. Do not treat the core's no-execution property as a claim
 about this explicitly invoked research experiment.
+
+## Experimental replay / 实验性复用
+
+`GraphSession` accepts consistent source-text snapshots and maintains a trusted
+process-local cache. It does not execute analyzed code or accept serialized
+external certificates. Hash equality establishes recorded input identity, not
+source authenticity or runtime safety. Do not use a `fresh` static status as
+permission to execute untrusted source. Source providers remain responsible for
+snapshot consistency and filesystem boundaries. / GraphSession 不执行被分析代码，
+不接受外部证书；哈希和 fresh 只描述有界静态输入，不是执行授权或运行时安全保证。

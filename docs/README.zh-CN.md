@@ -14,6 +14,18 @@ ContextProof 保存源码及其支持解析的 Python 依赖，指出哪条依�
 缺失源码和预算不足都会显式保留。默认工具只依赖 Python 标准库，支持
 Python 3.11+、macOS/Linux；日常使用不需要模型、GPU 或 API Key。
 
+## 外部真实任务先导实验（2026-10-14）
+
+[冻结的仅问题描述研究](zh/EXTERNAL_PILOT_RESULTS.md) 完整尝试了六个未使用仓库的
+**39个真实任务**：34项生成预测，5项触发32 MiB Python源码总量上限。全部任务和失败
+保留；7项没有删除行目标，其行指标记为未知而非编造零分或完美召回。
+
+两个预设推进门槛均未达到。16000 UTF-8字节下，图扩展按仓库宏平均的删除行F1为
+0.881158%，召回为8.898059%；声明BM25分别为1.140966%和18.620775%。这些指标只对应
+参考补丁编辑，不证明必要上下文或智能体修复成功。[原始结果、来源核验与限制](zh/EXTERNAL_PILOT_RESULTS.md) 保留负面和混合pilot，不声称成熟或优于未运行的外部工具。
+
+[协议与命令](zh/EXTERNAL_PILOT_PROTOCOL.md) · [已有工作边界](zh/EXTERNAL_RELATED_WORK.md)
+
 ## 运行三跳依赖演示
 
 ```sh
@@ -129,3 +141,30 @@ MCP SDK 验证实际 stdio 调用。模型推理不在 CI 中自动运行。
 
 项目由 **hardwork-xu** 维护，使用 AI 辅助设计、实现、实验与写作。
 采用 [MIT 许可证](../LICENSE)，上游来源与许可证保留在各实验 manifest 中。
+
+## 研究分支（1.2.0a1）
+
+解析器 3 修复类体 global 重绑定，旧图需要重新捕获。
+[读取集回放研究](zh/RESEARCH_REPORT.md) 保留否定结果：只允许完整图的策略
+在自然锚点转换中复用 **0/480**，四库均未达到预设加速目标；所选自然图
+都有未解析前沿。这不代表成熟论文或普遍加速结论。
+
+后续[研究稿与完整结果](zh/MATURATION_REPORT.md) 在四个按仓库隔离的新样本上
+比较六种方法，测量持久模块摘要、选择性图复用，以及独立进程 RSS 和 Python
+内存。另有九案例、72 次隔离执行的上游测试证据研究，保留 BM25 覆盖优于图的
+案例。[设计与条件保证](zh/INCREMENTAL_DESIGN.md) 解释缓存和失效机制。
+这些证据不能等同于模型任务提升或已经通过同行评审的成熟成果。
+[逐项研究状态](zh/RESEARCH_STATUS.md)将可支持的结论绑定到固定记录，并列出
+语义、任务收益和外部验证方面的缺口；自动检查验证记录一致性，不能判定科研价值。
+
+复现实验分支请使用：
+`git clone --branch research/evidence-risk-20261004 https://github.com/hardwork-xu/agent-code-evidence.git`。
+研究稿记录实际测量提交、固定来源和原始运行；上面的常规安装和稳定图示例仍可在 main 使用。
+
+[研究 API 与示例](zh/SELECTIVE_REUSE.md) 可离线运行，无需模型密钥。
+探索性 `read_set_any_status` 模式只研究保留 unknown 输出的缓存，不认证
+它为 fresh。[第三方归属](../third_party/README.md) 补齐许可原文，并披露
+17 项历史摘录定位限制。
+
+
+[结果后的消融](zh/ABLATION_REPORT.md) 保留未知状态，复用 364/480 个自然图转换；相对同期整体缓存基线，回放耗时分别降低 83.0%（Rich）、29.3%（Humanize）、18.8%（More Itertools）、6.2%（Pyflakes）。这是同数据上的探索性 CPU 结果，不是任务质量收益。

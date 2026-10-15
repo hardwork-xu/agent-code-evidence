@@ -1,0 +1,61 @@
+{
+  "kind": "post-hoc deterministic replay diagnostics",
+  "not_new_holdout": true,
+  "source_commit": "2451b574856048f3d9dded1fc1f55f209241cdc2",
+  "python": "3.12.2",
+  "source_hashes": {
+    "benchmarks/external_context/__init__.py": "0e0d866676d1a0997be80c8fab5b864a0f1bd7789bd67c490c6c2f1551614153",
+    "benchmarks/external_context/analyze.py": "acdc862b00aafc7886a7c83d6baff5973efef5f31676fdaf35bc787a36546a7e",
+    "benchmarks/external_context/fetch.py": "4ea6568071f825486d4b743c7eb258dc5cf70d21eb018d052b740888b1e00a56",
+    "benchmarks/external_context/io.py": "bc6eb09e53a1a58a63082cc5199dbbbd258077b601a88be4676ee69890611918",
+    "benchmarks/external_context/protocol.json": "c8b20655fd75573951f68ea9c3df6f1d5de581b7fb3bdbe6b72e3cf69bfd446a",
+    "benchmarks/external_context/retrieval.py": "1a4c48b79953c5361c08f114ead56fd046408b4d24503448a254564891dd4f64",
+    "benchmarks/external_context/runner.py": "5bfd0848b74aa57bc3214908e00c3666b0fdf05069870c360a8d2da57fb63969",
+    "benchmarks/external_context/scoring.py": "8fa928b0d64e7082e194bd0331a64bad17696e57155f4f898ea721ab25b936a8",
+    "src/contextproof/__init__.py": "ef87b48edc5100642605cee1f0537a6a2f922f73ca0963a95ed944a4851c794e",
+    "src/contextproof/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/contextproof/cli.py": "b6b713817366891fcb815feeaef203cd2095e4b1e340dba879d7b02cc29b74ca",
+    "src/contextproof/dependencies.py": "7699982d64fba2002add70c004bf7b7a784f98be427baa865dae1a78a77bb9bb",
+    "src/contextproof/evidence.py": "63b41f50ced294c391399121752b5ffb096dc153d75f4eeb30a0a3f74357fc6a",
+    "src/contextproof/graph.py": "a0e1aeebaf46d9daf1b895a66082300b6ecd0eb9f63049992e1c628de0e1d6de",
+    "src/contextproof/graph_delta.py": "dd46426a75e42fad59818c6b32303ad5f62c1d4464c5474ae2c1379bee65b741",
+    "src/contextproof/graph_payload.py": "663eca2ac57b5f1ef127b946057629999bfde47c93bf38c8bbc72007ce5ec509",
+    "src/contextproof/graph_session.py": "d86b59beff2566f514464d1b4791fb5bc58dfd2f8a51028d986d457e0829b4ff",
+    "src/contextproof/index.py": "d8b6838ab5161d69e9b50480674345830a2921cc4be9b1c6a02f5a95d792d108",
+    "src/contextproof/mcp.py": "3b954718f775ccb2f99c971369a99fdb202d3a1f20eb0a27330d7d14ece12712",
+    "src/contextproof/models.py": "4bc812d50fe6773f5c89181b7259de9950f4c25ea4272081cdc38b130f15c8bf",
+    "src/contextproof/module_cache.py": "289d9fa5b68fbafeac747d45c02fe7099b75af857c5c24997331bec95fb784a1",
+    "src/contextproof/parse_cache.py": "9aa2ecc4dec7dc4ccd86f66e8202de6cd0de431ce3e8fd79c53c7902398edc85",
+    "src/contextproof/report.py": "12993022760f71142b6ae796ce7d8b1a18a7774f6eb6ed4d8d7c8aef331db666",
+    "src/contextproof/retrieval.py": "c237c65f99197b4565374decd2afc9bf6e1fc079d527f74beb1ab994fc1e1a68",
+    "src/contextproof/reuse.py": "391d56f467b4edbb44ff9b581637ad07bbcf417ad121e4b41754dcf78374c28a",
+    "src/contextproof/revisions.py": "7a4d5d6a707c4ddd4b87308be30b62062178971cdac604088942c3bb40d462f5",
+    "src/contextproof/session.py": "46a40b8fb24d2acd7f2bb595f7f51c993c0204949c0c6d331de8d2b52717c144",
+    "src/contextproof/static_scope.py": "3ad2b0cdecbafd3123df470fe6baea6a26f409b9817772872c876cbb148de801"
+  },
+  "prediction_seal_sha256": "77c93f693a702543607c48a21a9b6bc7be0595b610cbfa4bbb4e79afe265a36c",
+  "cases": {
+    "huggingface__transformers-13865": [
+      8000
+    ],
+    "huggingface__transformers-15913": [
+      16000
+    ],
+    "huggingface__transformers-13989": [
+      16000,
+      32000
+    ],
+    "yt-dlp__yt-dlp-8917": [
+      8000
+    ]
+  },
+  "payload_comparison_fields": [
+    "payload_sha256",
+    "blocks",
+    "consumed",
+    "status",
+    "delivered_lines",
+    "frontier_count"
+  ],
+  "patch_used": false
+}

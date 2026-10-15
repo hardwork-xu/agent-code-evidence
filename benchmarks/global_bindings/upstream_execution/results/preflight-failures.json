@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "failed_attempts": [
+    {
+      "stage": "metadata_candidate",
+      "repository": "jupyter/traitlets",
+      "status": "HTTP404",
+      "resolution": "Official upstream corrected to ipython/traitlets; failed address retained."
+    },
+    {
+      "stage": "dependency_wheel_selection",
+      "package": "simplejson",
+      "version": "3.20.2",
+      "status": "ambiguous_selector",
+      "matching_files": [
+        "simplejson-3.20.2-cp312-cp312-macosx_11_0_arm64.whl",
+        "simplejson-3.20.2-py3-none-any.whl"
+      ],
+      "resolution": "Prefer official pure-Python wheel; no package build/setup script executed."
+    },
+    {
+      "stage": "public_source_preparer_validation",
+      "status": "dependency_manifest_export_path_error",
+      "resolution": "Dependency metadata was initially exported into a private nested directory; corrected public location. Fifteen source archives had verified successfully; no upstream tests or graphs were executed in this failed preparation."
+    },
+    {
+      "stage": "offline_runner_contract_tests",
+      "status": "relative_test_path_resolution_failure",
+      "counts": {
+        "passed": 21,
+        "failed": 1
+      },
+      "resolution": "Direct worker API originally resolved selected test paths from caller cwd; changed to absolute paths under verified execution_root. Synthetic contract only; no upstream assertion changed."
+    },
+    {
+      "stage": "static_runner_check",
+      "status": "invalid_record_update_syntax",
+      "diagnostics": 3,
+      "resolution": "Corrected the keyword argument for collected_cases. Later CLI parsing test, all24 owned tests, and Ruff passed; no upstream run executed with the invalid runner."
+    }
+  ]
+}

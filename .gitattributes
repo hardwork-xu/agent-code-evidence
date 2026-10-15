@@ -1,0 +1,4 @@
+# Preserve reviewed upstream attribution bytes, including original trailing space.
+benchmarks/global_bindings/upstream_execution/licenses/dependencies/pygments-AUTHORS.txt -whitespace
+# Exact original license/NOTICE bytes are hash-bound study assets.
+benchmarks/semantic_observer/inputs/prospective8-20261015/licenses/*.txt -whitespace

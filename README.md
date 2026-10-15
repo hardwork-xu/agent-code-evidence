@@ -20,8 +20,136 @@ ambiguous symbols, unsupported references and missing source remain explicit.
 Python 3.11+, macOS/Linux. The core has no third-party runtime dependencies and
 requires no model, GPU or API key. Hosted-model experiments are separate.
 
-[简体中文](docs/README.zh-CN.md) · [Graph API and contracts](docs/GRAPH.md) ·
+[简体中文](README_zh.md) · [Graph API and contracts](docs/GRAPH.md) ·
 [Measured report](docs/GRAPH_REPORT.md) · [Model protocol](docs/REVISION_STUDY_PROTOCOL.md)
+
+## Independent binding observations (2026-10-15)
+
+The [frozen eight-task study](docs/en/SEMANTIC_OBSERVER.md) completed all 32 conditions:
+21 preserved conditions plus 11 continued under the same protocol and sealed predictions.
+Current-source rebuilding, whole-corpus reuse and read-set reuse tie on all eight tasks.
+Only **6/8 tasks qualify execution and 3/8 have scoreable primitive sites**. The 28 accepted
+site/source-role observations agree, but arise from only 2/8 tasks; the predeclared
+finite-utility gate failed. Zero acceptance has undefined accuracy.
+
+[Generated bilingual tables](benchmarks/semantic_observer/results/prospective8-20261015/REPORT.md)
+and [source reconstruction](benchmarks/semantic_observer/inputs/prospective8-20261015/REPRODUCING.md)
+retain unsupported values, zero observations, subtest qualification failures and complete
+costs. These pre-op binding hypotheses do not establish whole-program semantics,
+necessary context, coding-agent benefit or mature research.
+
+## External real-task pilot (2026-10-14)
+
+The [frozen issue-only study](docs/en/EXTERNAL_PILOT_RESULTS.md) attempted **39 real
+tasks across six unused repositories**:34 generated predictions and five hit the
+32 MiB Python-source cap. All tasks and failures are retained. Seven tasks have
+no removed-line target, so their line metrics remain undefined.
+
+Both predeclared planning gates failed. At16000 UTF-8 bytes, graph expansion
+achieved0.881158% repository-macro removed-line F1 and8.898059% recall;
+declaration BM25 achieved1.140966% F1 and18.620775% recall. These are reference-edit
+proxy labels, not necessary context or agent repair success. The [raw results,
+source checks and limits](docs/en/EXTERNAL_PILOT_RESULTS.md) support a reproducible
+negative/mixed pilot, with no maturity or external-tool superiority claim.
+
+[Protocol and commands](docs/en/EXTERNAL_PILOT_PROTOCOL.md) ·
+[Prior-work boundary](docs/en/EXTERNAL_RELATED_WORK.md)
+
+The [unchanged-upstream test follow-up](docs/en/KNOWN_TASK_EXECUTION.md) retains
+the same39 observed tasks and every earlier failed condition. Its
+[generated status table](docs/en/KNOWN_TASK_EXECUTION_RESULTS.md) separates actual
+finite-label qualification from crashes, skips and missing calls.
+The final snapshot retains51 complete pair conditions and one closed partial
+attempt: **30/39 qualify finite labels; nine remain unqualified**. Source-role
+preparation and the public observation checker are independently runnable;
+checking exported records does not rerun upstream tests. Gold patches are
+existing evaluation oracles, not generated repairs. This stage does not change
+the pilot's failed gates or establish research maturity.
+
+The [post-hoc sensitivity analysis](docs/en/KNOWN_TASK_SENSITIVITY.md) reports the
+execution-qualified subset separately. At16000 bytes, its F1 ordering against
+declaration BM25 flips, while recall remains lower than both BM25 baselines.
+The all39 primary population and every negative result remain unchanged.
+
+## Explicit-global binding reliability (2026-10-14)
+
+[Resolver 4](docs/en/FUNCTION_GLOBAL_BINDINGS.md) retains possible deferred
+function-global writes as unknown instead of selecting an initial module literal.
+In 32 controlled fixtures, 20 possible-write bindings changed from resolved to
+unresolved and 12 non-writing controls remained supported; one unreachable write
+shows the conservatism cost. **No new watched-binding gain appeared in the natural
+panel**: all ten anchor closures remain unknown, and three Pyparsing keys were
+already unresolved. Four upstream fixes supplied 43 assertions, not 43 repair
+tasks; their execution preflights do not measure candidate benefit.
+
+[Design, commands and limitations](docs/en/FUNCTION_GLOBAL_BINDINGS.md) ·
+[Paired development results](benchmarks/global_bindings/results/development-20261014/REPORT_en.md)
+Two protocol amendments and the first baseline remain recorded; the last amendment
+followed an observed baseline. This is development evidence, not blind evaluation,
+performance improvement or mature research.
+
+## Catalog-dependency study (2026-10-14)
+
+The [new typed catalog guards](docs/en/CATALOG_RESULTS.md) retain positive and negative
+module queries while preserving source hashes and all unknown frontiers. Four
+natural repositories supplied 64 updates, each combining eight commits, and all 23
+catalog event pairs. The primary 20% replay cost target against a complete module-root
+guard was met in **0/4** repositories, so the overall gate failed. Observed median
+reductions were 0.46%–5.10%; these small differences on one host do not establish a
+robust speedup. The mechanism reused 95 more of 1536 anchor updates than the root guard;
+this means fewer unnecessary rebuilds, without establishing
+semantic freshness or coding-task improvement.
+
+Only 15/1536 replay outputs in the first measured trajectories had no frontier; unknowns remain.
+All 1816 retained steps matched fresh canonical graphs; the unmodified baseline also
+matched 107 unique snapshots/2568 graphs. All 48 fresh RSS workers completed and the memory gate passed.
+[Complete costs, negatives and limits](docs/en/CATALOG_RESULTS.md) include capture,
+replay, total cost and the missing RQ anchor. No maturity claim or new Release.
+
+The first three catalog reproduction commands below use a separate checkout at measured
+commit `affa59024f70cde86d2549b690204aa73ddccc7d`. The current resolver deliberately
+rejects that old measurement fingerprint. Run the last command in the current
+research checkout to validate retained records against its read-only source archive.
+
+```sh
+PYTHONPATH=src python examples/catalog_reuse.py
+python scripts/prepare_catalog_sources.py --output /tmp/catalog-study-inputs
+PYTHONPATH=src python scripts/run_catalog_study.py --inputs /tmp/catalog-study-inputs/ready-manifest.json --protocol benchmarks/catalog_reuse/protocol.json --output /tmp/catalog-study-results
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m benchmarks.catalog_reuse.report --check
+```
+
+## Research branch (1.2.0a1)
+
+Resolver 4 includes deferred function-global guards; resolver 3 introduced the
+class-body global repair. Older graphs must be recaptured. Historical measurements
+below retain their recorded resolver versions.
+The new [source-read replay study](docs/en/RESEARCH_REPORT.md) preserves a negative
+result: complete-only certificates reused **0/480** natural anchor transitions,
+and no repository met the predeclared speed target. All sampled natural graphs
+had unresolved frontiers. This is not a mature-paper or general acceleration claim.
+
+The follow-up [research manuscript and complete results](docs/en/MATURATION_REPORT.md)
+compare persistent module summaries and selective graph reuse across six methods
+on four separately held-out repositories, with isolated RSS and Python-memory
+measurements. A separate nine-case, 72-process study measures upstream-test
+execution-witness coverage, including cases where BM25 covers more than the graph.
+[Design and conditional guarantees](docs/en/INCREMENTAL_DESIGN.md) explain the
+cache and invalidation mechanisms. These studies do not establish model-task
+improvement or peer-reviewed research maturity.
+The [claim-by-claim research status](docs/en/RESEARCH_STATUS.md) links supported
+results to frozen records and lists missing semantic, task-benefit and external
+validation evidence. Its automated check verifies consistency, not scientific merit.
+
+To reproduce this experimental branch, clone with
+`git clone --branch research/evidence-risk-20261004 https://github.com/hardwork-xu/agent-code-evidence.git`.
+The manuscript records the exact measured commits, source pins and raw runs;
+normal installation and the stable graph example below remain available on main.
+
+The [research API and example](docs/en/SELECTIVE_REUSE.md) are offline and require
+no model key. An explicitly exploratory `read_set_any_status` mode tests caching
+unknown outputs while retaining their unknown status. It is not a freshness
+certificate. [Source attribution](third_party/README.md) now includes exact
+licenses and 17 disclosed historical excerpt-location limitations.
 
 ## Run the three-hop example
 
@@ -150,3 +278,5 @@ Maintained by **hardwork-xu**, with AI assistance for design, implementation,
 experiments and writing. The project claims no new retrieval algorithm or
 published research result. Source and evaluation records are public; personal
 plans, account data and raw local diagnostics are kept outside Git.
+
+The [post-result ablation](docs/en/ABLATION_REPORT.md) preserves unknown states and reuses 364/480 natural graph transitions. Relative to the contemporaneous whole-corpus guard, replay time decreases by 83.0% (Rich), 29.3% (Humanize), 18.8% (More Itertools), and 6.2% (Pyflakes). These are same-data exploratory CPU results, not task-quality gains.

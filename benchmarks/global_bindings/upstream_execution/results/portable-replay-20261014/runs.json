@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "classification": "development_execution_reproduction",
+  "input_sha256": "ca63c5f5b5e89b993831e7ce156aad79c16cd681f8d3eb02f8fd0e5354bac504",
+  "worker_sha256": "66b85eac2791fee06bdcba9b53c4418337c9d52b5a7f387a684204e7c26cd3f6",
+  "runs": [
+    {
+      "repository": "marshmallow-code/marshmallow",
+      "role": "fixed",
+      "source_sha": "7dff08fcb7fb40d2772728bb8d8a76b5beff3200",
+      "started_unix": 1791986621.2225668,
+      "expected_cases": 7,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 7,
+      "upstream_pytest_exit_code": 0
+    },
+    {
+      "repository": "marshmallow-code/marshmallow",
+      "role": "parent",
+      "source_sha": "2d30a962a0a104f340e1c69d62b8bba0558027a0",
+      "started_unix": 1791986625.479159,
+      "expected_cases": 7,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 7,
+      "upstream_pytest_exit_code": 1
+    },
+    {
+      "repository": "theskumar/python-dotenv",
+      "role": "fixed",
+      "source_sha": "0b2880591780a426b0551436f47a17e7a76d954f",
+      "started_unix": 1791986630.260389,
+      "expected_cases": 1,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 1,
+      "upstream_pytest_exit_code": 0
+    },
+    {
+      "repository": "theskumar/python-dotenv",
+      "role": "parent",
+      "source_sha": "791414804eff08a23f0b7970968e1717e3b28e66",
+      "started_unix": 1791986631.696934,
+      "expected_cases": 1,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 1,
+      "upstream_pytest_exit_code": 1
+    },
+    {
+      "repository": "python-poetry/tomlkit",
+      "role": "fixed",
+      "source_sha": "6b5f079099d4bd77b442f4fae96a10790ba3d55c",
+      "started_unix": 1791986633.2608142,
+      "expected_cases": 18,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 18,
+      "upstream_pytest_exit_code": 0
+    },
+    {
+      "repository": "python-poetry/tomlkit",
+      "role": "parent",
+      "source_sha": "229ee8660872df482a56c93c83b14ac98fedf864",
+      "started_unix": 1791986639.4033751,
+      "expected_cases": 18,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 18,
+      "upstream_pytest_exit_code": 1
+    },
+    {
+      "repository": "python-semver/python-semver",
+      "role": "fixed",
+      "source_sha": "37ae009c7cacab8f1a87157ca2b484b8e18a0a78",
+      "started_unix": 1791986646.114161,
+      "expected_cases": 17,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 17,
+      "upstream_pytest_exit_code": 0
+    },
+    {
+      "repository": "python-semver/python-semver",
+      "role": "parent",
+      "source_sha": "1d515915d50b31f23fd1fb0f572ef608453e80e3",
+      "started_unix": 1791986647.594551,
+      "expected_cases": 17,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 17,
+      "upstream_pytest_exit_code": 1
+    },
+    {
+      "repository": "pyparsing/pyparsing",
+      "role": "current_head_global_writer_preflight",
+      "source_sha": "f803ae834288032a700331977639fc49c62fcd7f",
+      "started_unix": 1791986649.606997,
+      "expected_cases": 23,
+      "status": "executed",
+      "process_exit_code": 0,
+      "collected_cases": 23,
+      "upstream_pytest_exit_code": 0
+    }
+  ],
+  "raw_logs_private_outside_git": true
+}

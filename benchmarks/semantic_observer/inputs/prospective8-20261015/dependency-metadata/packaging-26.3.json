@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "distribution": "packaging",
+  "version": "26.3",
+  "metadata_headers": {
+    "Author-email": [
+      "Donald Stufft <donald@stufft.io>"
+    ],
+    "Classifier": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Programming Language :: Python :: 3.15",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Programming Language :: Python :: Free Threading :: 4 - Resilient",
+      "Typing :: Typed"
+    ],
+    "Description-Content-Type": [
+      "text/x-rst"
+    ],
+    "License-Expression": [
+      "Apache-2.0 OR BSD-2-Clause"
+    ],
+    "License-File": [
+      "LICENSE",
+      "LICENSE.APACHE",
+      "LICENSE.BSD"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "packaging"
+    ],
+    "Project-URL": [
+      "Documentation, https://packaging.pypa.io/",
+      "Source, https://github.com/pypa/packaging"
+    ],
+    "Requires-Python": [
+      ">=3.9"
+    ],
+    "Summary": [
+      "Core utilities for Python packages"
+    ],
+    "Version": [
+      "26.3"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "flit 3.12.0"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+  "wheel_record_inventory": [
+    {
+      "path": "packaging-26.3.dist-info/METADATA",
+      "sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+      "bytes": 3544
+    },
+    {
+      "path": "packaging-26.3.dist-info/RECORD",
+      "sha256": "49910a2cb1de4511589f678097f0fd771a2b4266f944806edb1b846f11af324c",
+      "bytes": 2339
+    },
+    {
+      "path": "packaging-26.3.dist-info/WHEEL",
+      "sha256": "1b68144734c4b66791f27add5d425f3620775585718a03d0f9b110ba3a4d88db",
+      "bytes": 82
+    },
+    {
+      "path": "packaging-26.3.dist-info/licenses/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "path": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    },
+    {
+      "path": "packaging/__init__.py",
+      "sha256": "6e758cdd0028b2cad74c739b9adc9c9f06f054932306280b878bfe59d39219b5",
+      "bytes": 494
+    },
+    {
+      "path": "packaging/_elffile.py",
+      "sha256": "1f025f54c573f1a85740c4fbd908cc1d1fb0c177c14377ebf5f09d6cd5368780",
+      "bytes": 3236
+    },
+    {
+      "path": "packaging/_manylinux.py",
+      "sha256": "5b6e84324c42538ab4cdb148e2430fdba36f04427b0efda55bea083a35fa6136",
+      "bytes": 10000
+    },
+    {
+      "path": "packaging/_musllinux.py",
+      "sha256": "0328fb827b1170c77df4c107d49be8df8d37262103490a61e8acad8a2f9cadff",
+      "bytes": 2774
+    },
+    {
+      "path": "packaging/_parser.py",
+      "sha256": "88a348115209327497e453b635e5db099fd592f9335d710c7313b29cdb30c50c",
+      "bytes": 12639
+    },
+    {
+      "path": "packaging/_ranges.py",
+      "sha256": "b7b595f2e692aeb3697c545b85c24cbbcb4552f2adc6d9059aa82d0877e816b7",
+      "bytes": 30850
+    },
+    {
+      "path": "packaging/_structures.py",
+      "sha256": "eb48d16c5efca7ccf930a9cd77a700a6b80e69d0891d5d03966526441a8565cb",
+      "bytes": 1109
+    },
+    {
+      "path": "packaging/_tokenizer.py",
+      "sha256": "cc25e57c0d564c89e15073471d6e1c264299ca946fb17c0e1e4af54ef7713ee6",
+      "bytes": 5573
+    },
+    {
+      "path": "packaging/dependency_groups.py",
+      "sha256": "5309cc564ca3022dfb594816e9d593bb09cdf34208c1fb8c5ec9afb6c670278c",
+      "bytes": 11224
+    },
+    {
+      "path": "packaging/direct_url.py",
+      "sha256": "843baa95d04cbb49288de9d9fd77ee946e862cb603123e7e46a69e171fa7d06b",
+      "bytes": 11645
+    },
+    {
+      "path": "packaging/errors.py",
+      "sha256": "ea17c461701ff2ffc817ae7e94569d24e30889e04fdb120ab721178c6d67188b",
+      "bytes": 2680
+    },
+    {
+      "path": "packaging/licenses/__init__.py",
+      "sha256": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b",
+      "bytes": 7859
+    },
+    {
+      "path": "packaging/licenses/_spdx.py",
+      "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314",
+      "bytes": 51122
+    },
+    {
+      "path": "packaging/markers.py",
+      "sha256": "6cbe860d35d98d2b599e7f0ec73feab124e015711b30be9045e678c92940d9cc",
+      "bytes": 20554
+    },
+    {
+      "path": "packaging/metadata.py",
+      "sha256": "934149f420a5449e6f376aa61d6f26a0823eb82cc7c6a1c8cde5aa7be43d0f63",
+      "bytes": 42059
+    },
+    {
+      "path": "packaging/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "packaging/pylock.py",
+      "sha256": "1bce0a9fe63e42b87e8ced05da272baf16a68aa704b3718405e2735a6112467c",
+      "bytes": 35232
+    },
+    {
+      "path": "packaging/ranges.py",
+      "sha256": "b4781ce913e5dff9e07906f20585c54c3028e1f7ff56341828e79d522ddbfab6",
+      "bytes": 83054
+    },
+    {
+      "path": "packaging/requirements.py",
+      "sha256": "459476eb2107fe30e6b1310051a5bdb44c7d3b7f78e0e87bada268282cba62f5",
+      "bytes": 7040
+    },
+    {
+      "path": "packaging/specifiers.py",
+      "sha256": "661ad31ddf45ffb861d2626734f4e3d66966029b8fdb79586bb105825d8d9d59",
+      "bytes": 52798
+    },
+    {
+      "path": "packaging/tags.py",
+      "sha256": "0e717a082a79620d79cf0321b420df15593c4916fcda03c27cb9d82e07ef5d6e",
+      "bytes": 38302
+    },
+    {
+      "path": "packaging/utils.py",
+      "sha256": "a13742cd9994eeca5adfb0249d126408c478026eb1f48cb97afbf2fe9f28ecc6",
+      "bytes": 12215
+    },
+    {
+      "path": "packaging/version.py",
+      "sha256": "558b2fb50fd198c660a4c082f96b8919c565911b6b4b6e07f34b6b60c074be97",
+      "bytes": 39040
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "packaging-26.3.dist-info/licenses/LICENSE",
+      "path": "licenses/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+      "bytes": 197
+    },
+    {
+      "original_wheel_path": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "path": "licenses/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "original_wheel_path": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "path": "licenses/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+      "bytes": 1344
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

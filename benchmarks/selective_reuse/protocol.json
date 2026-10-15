@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "study": "selective-static-evidence-reuse",
+  "status": "development protocol, fixed before primary measurements; not public preregistration",
+  "date": "2026-10-04",
+  "baseline_commit": "2775499431c50fb0d54719afdb0bc7ccc2fe6efb",
+  "claim_boundary": "Equivalence to a bounded static resolver, not Python semantic soundness or coding-agent effectiveness. Certificates are an engineering application of existing incremental-computation ideas.",
+  "hypothesis": "Read-set certificates reduce repeated static graph construction when relevant files and the module catalog remain unchanged.",
+  "methods": [
+    "warm_ast_rebuild",
+    "whole_corpus_guard",
+    "read_set_certificate"
+  ],
+  "certificate": "Only complete graphs qualify. Track anchor and node paths AND every candidate module consulted by resolution, including unsuccessful attribute lookups. Same entire path catalog, same tracked file bytes, same anchors and policy; otherwise rebuild. No externally supplied certificates.",
+  "correctness_gate": "Zero canonical graph mismatches on all measured cases; any mismatch blocks reuse delivery. Graph equality is not semantic correctness.",
+  "utility_target": "At least 20 percent lower median steady-state time than warm_ast_rebuild on 3 of 4 natural repositories, with zero mismatches; report per-repository regressions. Failure retains an experimental optimization, without a general speedup claim.",
+  "natural": {
+    "repositories": [
+      "Textualize/rich",
+      "python-humanize/humanize",
+      "more-itertools/more-itertools",
+      "PyCQA/pyflakes"
+    ],
+    "selection_reason": "Four permissively licensed Python projects absent from the previous natural-source corpus; convenience sample, not representative of all software.",
+    "revision_rule": "Latest non-prerelease non-draft GitHub release returned on this run; its commit and five first parents. Pin all SHAs before source outcomes. Do not replace projects based on results. If the repository has no GitHub release, use the first tag returned by the tags API, explicitly recorded as a tag rather than release.",
+    "anchors": "At most 24 top-level functions from the oldest revision per repository, sorted by SHA256(path + colon + function name), excluding test, fixture, vendor and generated trees; retain unresolved graphs. Freeze anchor metadata before timing. Deduplicate path/symbol identities by first declaration before hash selection; retain all duplicate definitions in analyzed source, so ambiguity is still reported.",
+    "unit": "Repository and revision transition; functions and repeats are dependent observations, not independent studies.",
+    "versions": 6,
+    "execute_third_party": false
+  },
+  "synthetic": {
+    "module_counts": [
+      10,
+      100,
+      1000
+    ],
+    "workloads": [
+      "unrelated_file_change",
+      "referenced_file_change",
+      "path_catalog_addition"
+    ],
+    "anchors_per_workload": 4,
+    "purpose": "Controlled stress and adverse workloads, not natural prevalence estimates"
+  },
+  "adversarial": "72 developmental cases in 24 templates across six independently authored families, numeric variants not independent. Separate static contract from unsupported runtime effects. Never report as a natural error rate or held-out validation.",
+  "timing": {
+    "clock": "perf_counter_ns",
+    "warmup": 1,
+    "repetitions": 5,
+    "order": "Rotate whole method trajectories by repetition and group; preserve each trajectory across all six revisions.",
+    "include": [
+      "source archive read/decode and hash",
+      "certificate check",
+      "graph clone and seal",
+      "fallback rebuild"
+    ],
+    "separate": [
+      "network download",
+      "initial capture/AST cache seed",
+      "cold capture",
+      "graph equivalence validation",
+      "result serialization"
+    ],
+    "threads": 1,
+    "parallel_benchmarks": false
+  },
+  "reporting": "All rows, failures and per-repository medians. No significance claims from four convenience-sampled repositories. Timing ranges describe repeated runs only. Historical model metrics stay separate. No new model calls in this study.",
+  "maturity_gates": [
+    "Independent static-contract regression",
+    "Traceable licenses and exact source bytes",
+    "Strong warm-cache baseline and total cost accounting",
+    "External end-to-end task validation still required",
+    "Novelty assessment against incremental build systems still required",
+    "Independent human ground-truth review still required before mature-paper claim"
+  ],
+  "strong_baseline": "All methods share one indexed corpus per revision across anchors in addition to a warm AST cache. No artificial per-anchor reindexing handicap.",
+  "amendments_before_primary": [
+    "Pyflakes releases/latest returned 404; use tag fallback without changing repository selection.",
+    "Baseline strengthened to share indexed corpus within each snapshot before any primary results.",
+    "Preserve partial rows on failure and validate manifest protocol lineage; document actual trajectory order. Existing source SHAs and selection remain fixed.",
+    "First primary invocation rejected duplicated overload anchor identities before any measurements. Deduplicate anchor identities, retain ambiguous definitions, rebuild metadata from the same pinned source archives. Initial manifest retained separately."
+  ],
+  "supersedes_protocol_sha256": [
+    "205740dcbfe9dc0563ccf5409771f908edd52653909817b8c407c886aa73cdc5",
+    "a7ab23eda97f8c4cdb6671174ef30ba521e4b7bd97ffe8498bf13023e3682064"
+  ]
+}

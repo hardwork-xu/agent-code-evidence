@@ -70,15 +70,16 @@ explicit frontiers. Reaching a depth or node limit also prevents completeness.
 This is a bounded repository-local static closure, not a complete Python call
 graph. Increasing limits does not make runtime uncertainty disappear.
 
-The current graph policy is `resolver_version=2`. Version 1 could resolve a
-nested or pattern-local name as a module global, miss module rebinding, or select
-a package submodule despite an uncertain package attribute. Version 2 shares
-conservative guards with the served direct-witness capture/check workflow and
-marks these cases unresolved. Graph artifacts from version 1 require recapture;
-the current validator rejects their obsolete policy instead of silently treating
-them as current evidence.
+The current graph policy is `resolver_version=4`. Version 2 introduced conservative
+guards for nested/pattern-local names, module rebinding and uncertain package
+attributes; version 3 added the class-body global repair. Version 4 also retains
+explicit deferred function-global writes and class-private binding names as
+uncertain. Direct witnesses and transitive graphs share these source-local guards.
+Graph artifacts with an older resolver policy require recapture; the current
+validator rejects their obsolete policy instead of treating them as current
+evidence. See the [design and bounded development evidence](en/FUNCTION_GLOBAL_BINDINGS.md).
 
-The [eight-fixture scope audit](../benchmarks/graph/scope-audit.json) preserves
+The historical resolver-2 [eight-fixture scope audit](../benchmarks/graph/scope-audit.json) preserves
 the original failing graphs alongside corrected graphs, exact model payloads,
 legacy API checks, source fixtures and implementation hashes. All eight corrected
 graphs are unresolved; their payloads retain the caller and omit the incorrectly

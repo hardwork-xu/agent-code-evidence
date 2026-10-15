@@ -1,0 +1,31 @@
+{
+  "changes": [
+    {
+      "corrected_unique_anchors": 24,
+      "initial_unique_anchors": 24,
+      "repository": "Textualize/rich"
+    },
+    {
+      "corrected_unique_anchors": 24,
+      "initial_unique_anchors": 24,
+      "repository": "python-humanize/humanize"
+    },
+    {
+      "corrected_unique_anchors": 24,
+      "initial_unique_anchors": 16,
+      "repository": "more-itertools/more-itertools"
+    },
+    {
+      "corrected_unique_anchors": 24,
+      "initial_unique_anchors": 24,
+      "repository": "PyCQA/pyflakes"
+    }
+  ],
+  "error": "duplicate overload anchor identities rejected",
+  "initial_manifest": "benchmarks/selective_reuse/initial-natural-manifest.json",
+  "measured_rows": 0,
+  "recorded_at_utc": "2026-10-04T19:54:24.562954+00:00",
+  "source_commits_changed": false,
+  "stage": "preflight_before_measurement",
+  "status": "failed"
+}

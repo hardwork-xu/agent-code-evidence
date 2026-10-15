@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "distribution": "pytest-mock",
+  "version": "3.15.1",
+  "metadata_headers": {
+    "Author-email": [
+      "Bruno Oliveira <nicoddemus@gmail.com>"
+    ],
+    "Classifier": [
+      "Development Status :: 5 - Production/Stable",
+      "Framework :: Pytest",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: MIT License",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Topic :: Software Development :: Testing"
+    ],
+    "Description-Content-Type": [
+      "text/x-rst"
+    ],
+    "Dynamic": [
+      "license-file"
+    ],
+    "Keywords": [
+      "pytest,mock"
+    ],
+    "License": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "pytest-mock"
+    ],
+    "Project-URL": [
+      "Homepage, https://github.com/pytest-dev/pytest-mock/",
+      "Documentation, https://pytest-mock.readthedocs.io/en/latest/",
+      "Changelog, https://pytest-mock.readthedocs.io/en/latest/changelog.html",
+      "Source, https://github.com/pytest-dev/pytest-mock/",
+      "Tracker, https://github.com/pytest-dev/pytest-mock/issues"
+    ],
+    "Provides-Extra": [
+      "dev"
+    ],
+    "Requires-Dist": [
+      "pytest>=6.2.5",
+      "pre-commit; extra == \"dev\"",
+      "pytest-asyncio; extra == \"dev\"",
+      "tox; extra == \"dev\""
+    ],
+    "Requires-Python": [
+      ">=3.9"
+    ],
+    "Summary": [
+      "Thin-wrapper around the mock package for easier use with pytest"
+    ],
+    "Version": [
+      "3.15.1"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "setuptools (80.9.0)"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "04d63413ef5d0a1694fbc90aa88a4dfa7c8bfd61b528e0fb4bee5892f219d086",
+  "wheel_record_inventory": [
+    {
+      "path": "pytest_mock-3.15.1.dist-info/METADATA",
+      "sha256": "04d63413ef5d0a1694fbc90aa88a4dfa7c8bfd61b528e0fb4bee5892f219d086",
+      "bytes": 3899
+    },
+    {
+      "path": "pytest_mock-3.15.1.dist-info/RECORD",
+      "sha256": "c8542a51a76a0540d5ca82d27949c697b283fb2ee1c1dc268dbe82aa47c4beff",
+      "bytes": 907
+    },
+    {
+      "path": "pytest_mock-3.15.1.dist-info/WHEEL",
+      "sha256": "ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b",
+      "bytes": 91
+    },
+    {
+      "path": "pytest_mock-3.15.1.dist-info/entry_points.txt",
+      "sha256": "90b49e3346422514753ea954cc02e9c5ee76ba2d4083b89c6b89abaa6097d9a5",
+      "bytes": 37
+    },
+    {
+      "path": "pytest_mock-3.15.1.dist-info/licenses/LICENSE",
+      "sha256": "b5cdf9221033a63366515bde3e85b52c1fb2db293c1d9857784c5563a54419c3",
+      "bytes": 1075
+    },
+    {
+      "path": "pytest_mock-3.15.1.dist-info/top_level.txt",
+      "sha256": "836e5f4160748d30a90063359f7b7ed1194bbca24833eb7bf96c216de61fd0e5",
+      "bytes": 12
+    },
+    {
+      "path": "pytest_mock/__init__.py",
+      "sha256": "a21f48bd115fe077bd6233c7c6db4e49fa602293b274e8366ecdad4958248180",
+      "bytes": 825
+    },
+    {
+      "path": "pytest_mock/_util.py",
+      "sha256": "20f5de34ef5f38e7fbc2d87f08291403f3bccab040403c0cb850767943525ac0",
+      "bytes": 930
+    },
+    {
+      "path": "pytest_mock/_version.py",
+      "sha256": "df4de3ded298936f0328674b21fce77967dcfaa490bfc41356334fa4b5a2fa73",
+      "bytes": 706
+    },
+    {
+      "path": "pytest_mock/plugin.py",
+      "sha256": "348587332d3fd73f37e8548639ec2d14c8d820db2f3c6b70e4c0bd90d2302690",
+      "bytes": 25297
+    },
+    {
+      "path": "pytest_mock/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "pytest_mock-3.15.1.dist-info/licenses/LICENSE",
+      "path": "licenses/b5cdf9221033a63366515bde3e85b52c1fb2db293c1d9857784c5563a54419c3.txt",
+      "sha256": "b5cdf9221033a63366515bde3e85b52c1fb2db293c1d9857784c5563a54419c3",
+      "bytes": 1075
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

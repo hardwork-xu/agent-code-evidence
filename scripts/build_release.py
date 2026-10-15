@@ -8,6 +8,9 @@ Reproducibility requires the same source, Python, build frontend and backend.
 Use --no-isolation with a separately pinned build environment when appropriate.
 Only validated, normalized artifacts are copied into the empty output directory.
 Third-party license contents are preserved without modification.
+This release helper requires the exact Git checkout to inventory tracked study
+assets. Ordinary ``pip install`` from the sdist does not invoke this helper and
+does not gain a Git requirement. 发布辅助脚本需 Git；普通源码包安装不依赖它。
 """
 
 from __future__ import annotations
@@ -38,6 +41,13 @@ import zipfile
 
 
 PUBLIC_MAINTAINER = "hardwork-xu"
+LICENSE_TREES = ("third_party/licenses", "benchmarks/selective_reuse/licenses",
+                 "benchmarks/incremental_holdout/licenses", "benchmarks/task_evidence/licenses",
+                 "benchmarks/external_context/licenses",
+                 "benchmarks/global_bindings/upstream_execution/licenses",
+                 "benchmarks/semantic_observer/inputs/prospective8-20261015/licenses")
+RELEASE_ASSET_TREES = ("benchmarks/semantic_observer", "docs")
+REQUIRED_RELEASE_DOCUMENTS = ("README.md", "README_zh.md")
 HOME_PATH = re.compile(
     rb"(?i)(?:/(?:Users|home)/[^/\s\"'<>]+|[a-z]:[\\/]+Users[\\/]+[^\\/\s\"'<>]+)"
 )
@@ -135,8 +145,65 @@ def check_record(payloads: dict[str, bytes]) -> None:
             "wheel RECORD does not cover exactly the wheel payload")
 
 
+def retained_licenses(source: Path) -> dict[str, bytes]:
+    """Read full retained license bytes, including spelling/format variants."""
+    return {path.relative_to(source).as_posix(): path.read_bytes()
+            for tree in LICENSE_TREES for path in sorted((source / tree).rglob('*'))
+            if path.is_file()}
+
+
+def check_retained_licenses(payloads: dict[str, bytes], expected: dict[str, bytes]) -> None:
+    for path, raw in expected.items():
+        require(payloads.get(path) == raw, "source license missing/changed: " + path)
+
+
+def retained_release_assets(source: Path) -> dict[str, bytes]:
+    """Snapshot required tracked reproduction assets, regardless of extension.
+
+    The release command requires an exact Git checkout; a parent repository or
+    an untracked local file must not silently define the release inventory.
+    按 Git 跟踪集合保留复现文件，包含 lock、INDEX 和双语文档；不读未跟踪文件。
+    """
+    source = source.resolve()
+    try:
+        root = subprocess.run(["git", "-C", str(source), "rev-parse", "--show-toplevel"],
+                              check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        require(Path(os.fsdecode(root.stdout).strip()).resolve() == source,
+                "release asset inventory requires the exact Git source root")
+        listed = subprocess.run(["git", "-C", str(source), "ls-files", "--cached", "-z", "--",
+                                 *REQUIRED_RELEASE_DOCUMENTS, *RELEASE_ASSET_TREES],
+                                check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    except (OSError, subprocess.CalledProcessError) as error:
+        raise ValueError("release asset inventory requires a Git source checkout") from error
+    names = [os.fsdecode(name) for name in listed.stdout.split(b"\0") if name]
+    require(len(names) == len(set(names)), "release asset inventory has unresolved duplicate paths")
+    require(set(REQUIRED_RELEASE_DOCUMENTS) <= set(names),
+            "release asset inventory lacks tracked bilingual README files")
+    for tree in ("benchmarks/semantic_observer/inputs", "benchmarks/semantic_observer/results",
+                 "docs/en", "docs/zh"):
+        require(any(name.startswith(tree + "/") for name in names),
+                "release asset inventory lacks tracked required tree: " + tree)
+    assets = {}
+    for name in sorted(names):
+        check_member_name(name)
+        path = source / name
+        parents = [path, *path.parents]
+        require(path.is_file() and path.resolve().is_relative_to(source)
+                and not any(parent.is_symlink() for parent in parents if parent != source),
+                "required release asset is missing or linked: " + name)
+        assets[name] = path.read_bytes()
+    return assets
+
+
+def check_retained_release_assets(payloads: dict[str, bytes], expected: dict[str, bytes]) -> None:
+    """Require exact bytes for every tracked reproduction asset / 逐字节校验复现资产。"""
+    for path, raw in expected.items():
+        require(payloads.get(path) == raw, "source reproduction asset missing/changed: " + path)
+
+
 def validate_artifacts(wheel: Path, sdist: Path, project: dict, license_bytes: bytes,
-                       epoch: int) -> str:
+                       epoch: int, upstream_licenses: dict[str, bytes] | None = None,
+                       release_assets: dict[str, bytes] | None = None) -> str:
     require(PUBLIC_MAINTAINER.encode() in license_bytes,
             "project LICENSE must identify the public maintainer")
     check_private_paths(license_bytes)
@@ -185,6 +252,8 @@ def validate_artifacts(wheel: Path, sdist: Path, project: dict, license_bytes: b
         require(payloads.get("LICENSE") == license_bytes, "source LICENSE is missing/changed")
         require("PKG-INFO" in payloads, "source metadata is missing")
         check_metadata(payloads["PKG-INFO"], name, version)
+        check_retained_licenses(payloads, upstream_licenses or {})
+        check_retained_release_assets(payloads, release_assets or {})
     return generator
 
 
@@ -197,6 +266,7 @@ def build_release(source: Path, output: Path, epoch: int, no_isolation: bool = F
     require(project.get("authors") == [{"name": PUBLIC_MAINTAINER}],
             "project authors must declare the public maintainer handle only")
     license_bytes = (source / "LICENSE").read_bytes()
+    release_assets = retained_release_assets(source)
     env = {**os.environ, "SOURCE_DATE_EPOCH": str(epoch), "PYTHONHASHSEED": "0"}
     with tempfile.TemporaryDirectory(prefix="contextproof-release-") as temporary:
         work = Path(temporary)
@@ -212,7 +282,10 @@ def build_release(source: Path, output: Path, epoch: int, no_isolation: bool = F
         wheel, sdist = checked / wheels[0].name, checked / sdists[0].name
         normalize_wheel(wheels[0], wheel, epoch)
         normalize_sdist(sdists[0], sdist, epoch)
-        generator = validate_artifacts(wheel, sdist, project, license_bytes, epoch)
+        require(retained_release_assets(source) == release_assets,
+                "tracked reproduction assets changed during the build")
+        generator = validate_artifacts(wheel, sdist, project, license_bytes, epoch,
+                                       retained_licenses(source), release_assets)
         info = {
             "name": project["name"], "version": project["version"],
             "source_date_epoch": epoch, "maintainer": PUBLIC_MAINTAINER,
@@ -220,6 +293,13 @@ def build_release(source: Path, output: Path, epoch: int, no_isolation: bool = F
             "wheel_generator": generator, "isolated_build": not no_isolation,
             "reproducibility_scope": "identical source, epoch, Python and build toolchain",
             "archive_ownership": {"uid": 0, "gid": 0, "uname": "", "gname": ""},
+            "sdist_reproduction_assets": {
+                "tracked_files": len(release_assets),
+                "inventory_sha256": hashlib.sha256(json.dumps(
+                    {name: hashlib.sha256(raw).hexdigest() for name, raw in release_assets.items()},
+                    sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
+                "scope": "tracked semantic_observer tree, docs tree, bilingual README; exact bytes",
+            },
         }
         (checked / "BUILDINFO.json").write_text(json.dumps(info, indent=2, sort_keys=True) + "\n")
         artifacts = sorted(checked.iterdir())

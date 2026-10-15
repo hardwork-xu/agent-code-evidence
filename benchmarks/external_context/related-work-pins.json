@@ -1,0 +1,69 @@
+{
+  "checked_on": "2026-10-14",
+  "works": [
+    {
+      "id": "agentless",
+      "repository": "OpenAutoCoder/Agentless",
+      "commit": "5ce5888b9f149beaace393957a55ea8ee46c9f71",
+      "url": "https://arxiv.org/html/2407.01489v2",
+      "code_locations": [
+        "agentless/fl/FL.py:313 localize",
+        "agentless/fl/FL.py:363 localize_function_from_compressed_files",
+        "agentless/fl/FL.py:546 localize_line_from_coarse_function_locs",
+        "agentless/util/compress_file.py:7 CompressTransformer",
+        "agentless/util/compress_file.py:161 get_skeleton"
+      ],
+      "comparison_status": "not_run",
+      "boundary": "Automatic localization and syntax-aware context compression are established. Our BM25/graph pipeline does not reproduce the Agentless LLM+embedding+repair system."
+    },
+    {
+      "id": "aider",
+      "repository": "Aider-AI/aider",
+      "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+      "url": "https://aider.chat/docs/repomap.html",
+      "code_locations": [
+        "aider/repomap.py:233 get_tags",
+        "aider/repomap.py:279 get_tags_raw",
+        "aider/repomap.py:365 get_ranked_tags",
+        "aider/repomap.py:470 graph construction",
+        "aider/repomap.py:525 PageRank",
+        "aider/repomap.py:576 get_ranked_tags_map",
+        "aider/repomap.py:629 get_ranked_tags_map_uncached",
+        "aider/repomap.py:710 render_tree"
+      ],
+      "comparison_status": "not_run",
+      "boundary": "Graph/AST ranking, budgeted maps, caching and refresh are not new. Aider maps summarize definitions; our renderer supplies auditable declaration text and versioned evidence. These differing products require a defined adapter, not name substitution."
+    },
+    {
+      "id": "swebench-bm25",
+      "repository": "SWE-bench/SWE-bench",
+      "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+      "url": "https://arxiv.org/html/2310.06770v3",
+      "code_locations": [
+        "swebench/inference/make_datasets/bm25_retrieval.py:174 build_documents",
+        "swebench/inference/make_datasets/bm25_retrieval.py:309 search",
+        "swebench/inference/make_datasets/create_text_dataset.py:303 max_context_len",
+        "swebench/inference/make_datasets/eval_retrieval.py:18 main"
+      ],
+      "comparison_status": "not_run",
+      "boundary": "Issue-only lexical retrieval, fixed context size and reference edited-file overlap have precedent. Local declaration/chunk BM25 with different tokenizer/corpus is an internal lexical baseline, not an executed official SWE-bench baseline."
+    },
+    {
+      "id": "contextbench",
+      "repository": "EuniAI/ContextBench",
+      "commit": "1436c28a8eb95496da4ea69ad458b9f8a8eb7d61",
+      "url": "https://arxiv.org/html/2602.05892v3",
+      "code_locations": [
+        "contextbench/metrics/compute.py:7 coverage_precision",
+        "contextbench/metrics/compute.py:27 _merge_line_intervals",
+        "contextbench/metrics/compute.py:92 compute_granularity_metrics",
+        "contextbench/metrics/compute.py:159 compute_trajectory_metrics",
+        "contextbench/extractors/treesitter.py",
+        "docs/source/metrics.rst"
+      ],
+      "comparison_status": "not_run",
+      "boundary": "Context coverage, AST alignment, deduplicated intervals and retrieval-efficiency evaluation are established. Patch edited locations are weaker labels than expert context, and neither label type proves downstream repair success."
+    }
+  ],
+  "novelty_assessment": "not_established"
+}
