@@ -91,10 +91,10 @@ Each method cell is the median of all retained repeats. A missing repeat measure
 Method total includes that method's initialization, capture, replay and projection; it excludes shared preparation, full source loading and process costs. Column medians need not sum to the median total. Shared preparation runs once and must not be added once per method. All-method timing includes preparation, every repeat of the three methods, and the always-abstain diagnostic. Child end-to-end includes source/implementation validation, loading, all methods and final validation; controller wall additionally includes child startup, imports and output serialization through closure, excluding earlier request preparation and later sealing, public export or this report. Not reported / not run means timing is unavailable, not a claim about whether execution occurred. These are descriptive costs, without speed ratios, significance tests or quality gains.
 
 
-Numbers are recomputed from INDEX-pinned inputs. Execution/prediction qualification does not imply scoreable primitive observations. Raw counts may include invalid-condition diagnostics; conditional accuracy pools only score-qualified tasks. Site×source-role observations are not independent tests. Full statuses, graph frontiers, repetitions and timings are in SUMMARY.json.
+Numbers are recomputed from INDEX-pinned inputs. Execution/prediction qualification does not imply scoreable primitive observations. Raw counts may include invalid-condition diagnostics; conditional accuracy pools only score-qualified tasks. Site×source-role observations are not independent tests. Retained statuses, aggregate graph completeness/frontier counts, repetitions and timings are in SUMMARY.json; per-anchor detail rows are not public.
 
 Observations are pre-op bindings, not proof of consumed operands; disagreement with a derived hypothesis is not a whole-graph bug. Test changes describe original developer fixes only. Equal outputs are ties and timing is descriptive. This report does not establish full semantics, generated-repair benefit, novelty or research maturity.
 
 INDEX SHA256: `b0c354cf756bc700f14a8cfdfa0695b2d671305bd0715574b426e769f9dc8328`
 
-Report analysis source SHA256: `42ba1324c6a8f3ab0993da7c642a872737092e9a177067febb64c22f1adabf63`
+Report analysis source SHA256: `16474ace765e4554873fad57a870eb01cd157fe27be7122e49aba271dfce3ef9`

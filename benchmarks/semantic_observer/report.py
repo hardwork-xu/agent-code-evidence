@@ -586,8 +586,8 @@ def render(summary, *, chinese=False):
                 f"{primary['mismatching_primitive_sites'] if primary is not None else 'N/A'} | "
                 f"{_number(row['all_selected_site_coverage'])} |")
     lines += _timing_lines(summary, chinese)
-    lines += ["", ("数字由 INDEX 固定的原始文件重算。执行与预测合格不表示存在可计分的 primitive 观测。原始计数可含不合格条件的诊断；条件准确率只计可计分的合格任务。站点×源码角色不是独立测试。完整状态、图前沿、重复与耗时见 SUMMARY.json。"
-        if chinese else "Numbers are recomputed from INDEX-pinned inputs. Execution/prediction qualification does not imply scoreable primitive observations. Raw counts may include invalid-condition diagnostics; conditional accuracy pools only score-qualified tasks. Site×source-role observations are not independent tests. Full statuses, graph frontiers, repetitions and timings are in SUMMARY.json."), "",
+    lines += ["", ("数字由 INDEX 固定的原始文件重算。执行与预测合格不表示存在可计分的 primitive 观测。原始计数可含不合格条件的诊断；条件准确率只计可计分的合格任务。站点×源码角色不是独立测试。保留的状态、图完整性与frontier汇总计数、重复和耗时见 SUMMARY.json；逐锚点明细行未公开。"
+        if chinese else "Numbers are recomputed from INDEX-pinned inputs. Execution/prediction qualification does not imply scoreable primitive observations. Raw counts may include invalid-condition diagnostics; conditional accuracy pools only score-qualified tasks. Site×source-role observations are not independent tests. Retained statuses, aggregate graph completeness/frontier counts, repetitions and timings are in SUMMARY.json; per-anchor detail rows are not public."), "",
         ("观测是执行前绑定，不证明操作数被消费；派生假设不一致不等于完整图失效。测试变化只描述原开发者修复。等价输出视为平局；耗时仅作描述。本报告不证明完整语义、生成修复效果、新颖性或成熟研究成果。"
          if chinese else "Observations are pre-op bindings, not proof of consumed operands; disagreement with a derived hypothesis is not a whole-graph bug. Test changes describe original developer fixes only. Equal outputs are ties and timing is descriptive. This report does not establish full semantics, generated-repair benefit, novelty or research maturity."), "",
         "INDEX SHA256: `" + summary["index_sha256"] + "`", "",

@@ -151,9 +151,11 @@ INDEX pins every published raw JSON byte; the report checks exact file membershi
 recomputes closures/parity, loads only retained SHA-checked scoring bytes and produces
 matching English/Chinese reports. This is a record check, not a new upstream execution
 or an external replication. Full phase events, encoded observations, all four methods,
-three static repetitions, frontiers, failures and timings remain in task-000..007.json.
-Only static graph anchor source bodies and private command/environment paths were
-removed in the public projection; original artifact SHA commitments remain.
+three static repetitions, aggregate graph completeness/frontier counts, failures and
+timings remain in task-000..007.json. The public projection omits graph anchor-detail
+rows, including per-anchor status, frontier reasons and reachable-node details, plus
+private command/environment paths. Original artifact SHA commitments remain; full
+anchor rows stay in the sealed private predictions.
 
 ## Walkthrough and extension boundaries
 

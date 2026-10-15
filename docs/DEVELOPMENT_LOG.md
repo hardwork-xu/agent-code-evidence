@@ -735,8 +735,10 @@ integer/flag/ratio entries with the frozen scorer; zero differences. This is int
 independent arithmetic, not external reproduction or human scholarly assessment.
 
 Published projection retains every phase/typed observation/status, all method repeats,
-frontiers and costs; private paths, raw terminal text and original graph anchor source
-bodies remain outside Git. The first projection omitted source-load/end-to-end timing;
+aggregate graph completeness/frontier counts and costs; private paths, raw terminal
+text and original graph anchor-detail rows remain outside Git. These rows contain
+per-anchor status/frontier reasons and reachable-node metadata, not source bodies.
+The first projection omitted source-load/end-to-end timing;
 it is retained privately and a new candidate adds the original measurements. Report
 integration initially rejected additional measurement-boundary fields; its failed log
 is retained, then explicit typed metadata support was added. Frozen methods, protocol,
@@ -769,3 +771,34 @@ Publication scan returned zero findings; attribution and historical claim checks
 最终本地全套3240通过、2项可选tiktoken跳过、零失败。完整Ruff初次指出已冻结元数据构建driver
 的格式/未用import；保持其原始字节，仅对这一个归档文件设置相应格式规则例外，之后全量Ruff通过。
 许可证原空白保留，不改断言或实验门槛；公开扫描零发现，归属与历史声明检查通过。
+
+## 2026-10-15 — final packaging and record review / 最终构建与记录复核
+
+The normalized wheel and source distribution built successfully from b13b89b using
+CPython3.12.2 and the actual commit timestamp as SOURCE_DATE_EPOCH. Artifact checking
+verified public metadata, archive paths/ownership, wheel RECORD and retained license
+bytes. A separate read-only review matched sixteen reconstructed source roles, all
+96 original method-repeat timings and bilingual aggregate tables; the original2999
+explicit installed-file fingerprints remain unchanged. This does not certify the
+entire OS/native dependency closure or constitute a fresh SUT replication.
+
+Final prose review corrected the projection description: anchor_rows were omitted
+in full, including per-anchor status/frontier reasons, rather than source bodies.
+Aggregate completeness/frontier counts and original hashes remain public. Only prose
+and derived report rendering change; frozen predictions, observations, scoring and
+qualification criteria remain byte-identical.
+
+Independent artifact inspection then found a real packaging failure: the b13b89b
+source archive omitted the semantic input requirements-full-sha256.lock because
+MANIFEST.in did not include *.lock; README_zh.md was also absent. A successful build
+exit had not established complete research-input packaging. The failed inspection
+and original archives are retained. The manifest is corrected, and explicit
+required-source-asset validation is added before rebuilding. This changes packaging,
+not any experimental record. Remote CI is pending at this entry.
+
+本地b13b89b的wheel与源码包构建成功，校验元数据、路径、归档属主、RECORD及原许可字节。
+独立只读核对16棵源码角色、96次原始计时和双语汇总表；原环境显式2999文件指纹不变，
+不声称覆盖整个系统依赖或完成新一轮SUT复现。最终文案修正明确省略完整锚点明细，
+公开保留图完整性/frontier汇总和哈希；冻结数据与判据不变。独立包验收随后发现源码包
+漏收*.lock依赖锁及中文README，保留失败和原包，修正MANIFEST并增加必需资产校验再构建。
+构建exit0不能替代输入完整性验证；本条写入时远端CI尚待运行。
