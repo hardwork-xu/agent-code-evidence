@@ -802,3 +802,21 @@ not any experimental record. Remote CI is pending at this entry.
 公开保留图完整性/frontier汇总和哈希；冻结数据与判据不变。独立包验收随后发现源码包
 漏收*.lock依赖锁及中文README，保留失败和原包，修正MANIFEST并增加必需资产校验再构建。
 构建exit0不能替代输入完整性验证；本条写入时远端CI尚待运行。
+
+The corrected source at57cafe548257ac3b065acfcd43dbe0982f745236 passed the full local
+suite:3254 passed, two optional tiktoken skips, zero failures (47.19s). The command
+was `PYTHONPATH=src python -m pytest -q tests benchmarks/graph/test_scope_audit.py
+benchmarks/revision_baselines/test_baselines.py`. The normalized wheel/sdist rebuilt
+with `python scripts/build_release.py --source-date-epoch 1792048515 --out <outside-git>`.
+Independent archive review matched194/194 requested files, including87/87 input
+assets,15/15 result files and all33 frozen source bindings; nothing missing/changed.
+The171 tracked reproduction-asset inventory also matched BUILDINFO. The original b13
+installed-wheel self-owned capture/check smoke remains separate: valid evidence was
+reusable, then a dependency-source mutation correctly returned can_reuse=false/exit1.
+No upstream test or research timing was rerun for packaging acceptance. Remote CI
+completion for the eventual pushed head is recorded on the existing DraftPR4.
+
+修正提交57cafe5的完整项目测试3254通过、2项可选跳过、零失败；源码包重新构建后，
+独立核对194/194请求文件逐字节相同，其中输入87/87、结果15/15、冻结源码33/33。
+171个必需复现资产摘要与BUILDINFO一致。原b13全新wheel环境自有capture/check及突变拒绝
+保留为单独验证；未增加上游实验条件。最终推送提交的远端CI实际状态另记既有DraftPR4。
