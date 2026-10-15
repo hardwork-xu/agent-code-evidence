@@ -46,6 +46,11 @@ jobs:
           --results benchmarks/global_bindings/results/development-20261014
       - run: python -m benchmarks.global_bindings.upstream_execution.check
       - run: >-
+          python -m benchmarks.known_task_execution.report --check
+          --bundle benchmarks/known_task_execution/results/known39-20261015
+          --expected-index-sha256 06020b127bb16d3b8c2b28438ea3b613d683d550d35b8a3401f36eae695ec45b
+      - run: python -m benchmarks.known_task_execution.secondary_report --check
+      - run: >-
           python -m pytest -q tests benchmarks/graph/test_scope_audit.py
           benchmarks/revision_baselines/test_baselines.py
       - run: python scripts/build_release.py --source-date-epoch "$(git show -s --format=%ct HEAD)"

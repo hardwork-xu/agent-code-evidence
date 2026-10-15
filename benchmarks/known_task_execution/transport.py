@@ -2,6 +2,7 @@
 
 No SUT execution. Always preserves the source JSON and requires external hashes.
 The accompanying public checker recomputes finite qualification from decoded data.
+gzip保留规范JSON和外部摘要，重组检查不执行上游程序或认证私有原始执行。
 """
 import argparse
 import gzip
@@ -11,10 +12,11 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 
-from .public_check import canonical, check, load_contract, require, scan_privacy
+from .public_check import canonical, check, load_contract, read_bounded, require, scan_privacy
 
 MAX_PART = 64 * 1024 * 1024
 MAX_TOTAL = 128 * 1024 * 1024
+MAX_INDEX = 1024 * 1024
 
 
 def sha(data):
@@ -34,7 +36,7 @@ def record_part(root, name, value):
 
 
 def pack(source, trusted_sha, destination):
-    raw = Path(source).read_bytes()
+    raw = read_bounded(source, MAX_TOTAL, 'source evidence')
     require(sha(raw) == trusted_sha, 'source evidence differs from trusted SHA')
     evidence = json.loads(raw)
     scan_privacy(evidence)
@@ -58,21 +60,23 @@ def pack(source, trusted_sha, destination):
             'condition_key', 'instance_id', 'run_id', 'qualified']})
         index['conditions'].append(part)
     scan_privacy(index)
-    (root / 'INDEX.json').write_bytes(canonical(index) + b'\n')
-    return {'index_sha256': sha((root / 'INDEX.json').read_bytes()),
+    index_bytes = canonical(index) + b'\n'
+    require(len(index_bytes) <= MAX_INDEX, 'index exceeds read cap')
+    (root / 'INDEX.json').write_bytes(index_bytes)
+    return {'index_sha256': sha(index_bytes),
             'gzip_bytes': sum(p['gzip_bytes'] for p in [index['metadata'], *index['conditions']]),
             'uncompressed_source_bytes': len(raw), 'condition_parts': len(index['conditions'])}
 
 
 def decode(root, part):
+    """Bound expansion and verify exact bytes / 限制解压大小并核验精确字节。"""
     name = part['name']
     path = PurePosixPath(name)
     require(not path.is_absolute() and '..' not in path.parts and '\\' not in name,
             'unsafe gzip part path')
     p = root / name
     require(not p.is_symlink() and p.is_file(), 'part must be ordinary file')
-    require(p.stat().st_size <= MAX_PART, 'compressed part exceeds read cap')
-    data = p.read_bytes()
+    data = read_bounded(p, MAX_PART, 'compressed part')
     require(len(data) == part['gzip_bytes'] and sha(data) == part['gzip_sha256'],
             'gzip bytes/hash mismatch')
     require(0 <= part['uncompressed_bytes'] <= MAX_PART, 'declared part expansion cap')
@@ -87,8 +91,9 @@ def decode(root, part):
 
 
 def verify(root, trusted_index_sha, contract, output=None):
+    """Reassemble and check exported observations / 重组并检查公开观测，不重跑上游。"""
     root = Path(root)
-    index_bytes = (root / 'INDEX.json').read_bytes()
+    index_bytes = read_bounded(root / 'INDEX.json', MAX_INDEX, 'index')
     require(sha(index_bytes) == trusted_index_sha, 'index differs from trusted external SHA')
     index = json.loads(index_bytes)
     scan_privacy(index)
@@ -134,20 +139,23 @@ def verify(root, trusted_index_sha, contract, output=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='action', required=True)
-    p = sub.add_parser('pack')
-    p.add_argument('--evidence', required=True)
-    p.add_argument('--expected-evidence-sha256', required=True)
-    p.add_argument('--destination', required=True)
-    v = sub.add_parser('verify')
-    v.add_argument('--bundle', required=True)
-    v.add_argument('--expected-index-sha256', required=True)
-    v.add_argument('--contract', required=True)
-    v.add_argument('--output')
+    p = sub.add_parser('pack', help='pack observations / 打包观测')
+    p.add_argument('--evidence', required=True, help='canonical JSON / 规范JSON')
+    p.add_argument('--expected-evidence-sha256', required=True, help='trusted evidence digest / 可信观测摘要')
+    p.add_argument('--destination', required=True, help='new directory / 新目录')
+    v = sub.add_parser('verify', help='verify and reassemble / 核验与重组')
+    v.add_argument('--bundle', required=True, help='gzip bundle / gzip记录目录')
+    v.add_argument('--expected-index-sha256', required=True, help='trusted INDEX digest / 可信INDEX摘要')
+    v.add_argument('--contract', required=True, help='pinned own contract source / 固定自主判据源码')
+    v.add_argument('--output', help='new optional decoded JSON / 可选的新建解码JSON')
     a = parser.parse_args()
-    if a.action == 'pack':
-        result = pack(a.evidence, a.expected_evidence_sha256, a.destination)
-    else:
-        result = verify(a.bundle, a.expected_index_sha256, load_contract(a.contract), a.output)
+    try:
+        if a.action == 'pack':
+            result = pack(a.evidence, a.expected_evidence_sha256, a.destination)
+        else:
+            result = verify(a.bundle, a.expected_index_sha256, load_contract(a.contract), a.output)
+    except (ValueError, OSError) as error:
+        parser.exit(2, 'Validation failed / 核验失败: ' + str(error) + '\n')
     print(json.dumps(result, sort_keys=True))
 
 

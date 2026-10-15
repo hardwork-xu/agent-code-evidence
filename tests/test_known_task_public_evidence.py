@@ -6,6 +6,7 @@ observations or scientific evidence. / 自编计数仅验证导出判据，不�
 from collections import Counter
 import copy
 import hashlib
+import io
 import json
 from pathlib import Path
 
@@ -14,6 +15,35 @@ import pytest
 from benchmarks.known_task_execution import contract
 from benchmarks.known_task_execution import public_check as checker
 from benchmarks.known_task_execution import transport
+from benchmarks.known_task_execution import report
+
+
+def test_bounded_read_limits_the_actual_read_instead_of_prior_stat(monkeypatch):
+    requests = []
+
+    class OwnedStream(io.BytesIO):
+        def read(self, size=-1):
+            requests.append(size)
+            return super().read(size)
+
+    monkeypatch.setattr(Path, 'open', lambda *a, **k: OwnedStream(b'12345'))
+    with pytest.raises(ValueError, match='owned exceeds read cap'):
+        checker.read_bounded('owned', 3, 'owned')
+    assert requests == [4]
+
+
+def test_transport_bounds_index_before_hash_or_json(tmp_path, monkeypatch):
+    (tmp_path / 'INDEX.json').write_bytes(b'x' * 9)
+    monkeypatch.setattr(transport, 'MAX_INDEX', 8)
+    with pytest.raises(ValueError, match='index exceeds read cap'):
+        transport.verify(tmp_path, 'a' * 64, contract)
+
+
+def test_transport_bounds_actual_compressed_read(tmp_path, monkeypatch):
+    (tmp_path / 'part.gz').write_bytes(b'x' * 9)
+    monkeypatch.setattr(transport, 'MAX_PART', 8)
+    with pytest.raises(ValueError, match='compressed part exceeds read cap'):
+        transport.decode(tmp_path, {'name': 'part.gz'})
 
 
 def digest(value):
@@ -112,6 +142,17 @@ def test_owned_full_denominator_recomputes(evidence):
     assert result['partial_conditions_not_qualified'] == 1
 
 
+@pytest.mark.parametrize('reproduced', [{'F2P': 1}, {}])
+@pytest.mark.parametrize('language', ['en', 'zh'])
+def test_result_table_retains_zero_pp_and_zero_reproduced_negative(evidence, reproduced, language):
+    evidence['snapshot_recorded_utc'] = '2026-10-15T00:00:00Z'
+    evidence['conditions'][0]['unit_reproduced'] = reproduced
+    text = report.render(evidence, 'a' * 64, language)
+    expected_fp = reproduced.get('F2P', 0)
+    assert f'| `owned-1` | {expected_fp}/1 | 0/0 |' in text
+    assert '| `owned-0` | 0/49 | 0/5842 |' in text
+
+
 def test_removing_all_observed_phases_is_not_vacuously_valid(evidence):
     evidence['conditions'][0]['roles']['base']['effective_record']['phase_reports'] = []
     refresh_counts(evidence)
@@ -152,14 +193,15 @@ def test_only_hash_checked_contract_bytes_are_executed(tmp_path, monkeypatch):
     path = tmp_path / 'approved.py'
     path.write_bytes(approved)
     read_bytes = Path.read_bytes
+    bounded_read = checker.read_bounded
 
-    def swap_after_read(target):
-        raw = read_bytes(target)
+    def swap_after_read(target, limit, label):
+        raw = bounded_read(target, limit, label)
         if target == path:
             path.write_text('OWNED_SWAPPED_SOURCE = True\n', encoding='utf8')
         return raw
 
-    monkeypatch.setattr(Path, 'read_bytes', swap_after_read)
+    monkeypatch.setattr(checker, 'read_bounded', swap_after_read)
     loaded = checker.load_contract(path)
     assert callable(loaded.evaluate_pair)
     assert not getattr(loaded, 'OWNED_SWAPPED_SOURCE', False)

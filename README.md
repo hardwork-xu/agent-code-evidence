@@ -40,6 +40,22 @@ negative/mixed pilot, with no maturity or external-tool superiority claim.
 [Protocol and commands](docs/en/EXTERNAL_PILOT_PROTOCOL.md) ·
 [Prior-work boundary](docs/en/EXTERNAL_RELATED_WORK.md)
 
+The [unchanged-upstream test follow-up](docs/en/KNOWN_TASK_EXECUTION.md) retains
+the same39 observed tasks and every earlier failed condition. Its
+[generated status table](docs/en/KNOWN_TASK_EXECUTION_RESULTS.md) separates actual
+finite-label qualification from crashes, skips and missing calls.
+The final snapshot retains51 complete pair conditions and one closed partial
+attempt: **30/39 qualify finite labels; nine remain unqualified**. Source-role
+preparation and the public observation checker are independently runnable;
+checking exported records does not rerun upstream tests. Gold patches are
+existing evaluation oracles, not generated repairs. This stage does not change
+the pilot's failed gates or establish research maturity.
+
+The [post-hoc sensitivity analysis](docs/en/KNOWN_TASK_SENSITIVITY.md) reports the
+execution-qualified subset separately. At16000 bytes, its F1 ordering against
+declaration BM25 flips, while recall remains lower than both BM25 baselines.
+The all39 primary population and every negative result remain unchanged.
+
 ## Explicit-global binding reliability (2026-10-14)
 
 [Resolver 4](docs/en/FUNCTION_GLOBAL_BINDINGS.md) retains possible deferred

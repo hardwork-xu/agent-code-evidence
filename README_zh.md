@@ -26,6 +26,17 @@ Python 3.11+、macOS/Linux；日常使用不需要模型、GPU 或 API Key。
 
 [协议与命令](docs/zh/EXTERNAL_PILOT_PROTOCOL.md) · [已有工作边界](docs/zh/EXTERNAL_RELATED_WORK.md)
 
+[原样上游测试的后续执行](docs/zh/KNOWN_TASK_EXECUTION.md)保留相同39个已见任务及
+所有早期失败条件。[自动生成状态表](docs/zh/KNOWN_TASK_EXECUTION_RESULTS.md)区分
+固定标签实际通过、崩溃、跳过和缺失调用。最终保留51完整条件和1闭合不完整条件：
+**30/39固定标签有限合格，9项仍未合格**。源码角色准备与公开观测检查器可独立
+运行；检查记录不等同重跑上游测试。gold为已有参考修复，不是自主生成修复；
+本阶段不改变pilot的失败门槛，也不证明研究成熟度。
+
+[事后敏感性分析](docs/zh/KNOWN_TASK_SENSITIVITY.md)单列执行有限合格子集。
+16000字节下，其F1相对声明BM25的排序翻转，召回仍低于两种BM25基线。
+原all39主样本和全部负面结果保持不变。
+
 ## 显式全局绑定可靠性（2026-10-14）
 
 [解析器 4](docs/zh/FUNCTION_GLOBAL_BINDINGS.md)将可能的延迟函数 global 写入保留为未知，

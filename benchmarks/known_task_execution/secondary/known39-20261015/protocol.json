@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "study_id": "known39-execution-filtered-pilot-sensitivity-20261015",
+  "frozen_at": "2026-10-15T04:41:36.262895+00:00",
+  "status": "secondary_protocol_frozen_before_subset_computation_pending_root_review",
+  "scope": "Post hoc descriptive sensitivity of existing issue-only removed-base-line localization scores after filtering by independently observed original regression-label qualification. Already exposed development tasks, not new holdout/primary/pre-data preregistration. No SUT, new retrieval, tuning, model execution or generated repair.",
+  "original_primary_immutable": {
+    "tasks": 39,
+    "repositories": 6,
+    "methods": [
+      "bm25_windows",
+      "bm25_declarations",
+      "anchors_only",
+      "graph_expand",
+      "window_expand",
+      "file_expand"
+    ],
+    "budgets": [
+      8000,
+      16000,
+      32000
+    ],
+    "cells": 702,
+    "original_primary_budget": 16000,
+    "source_result_commit": "ce6e36de7f6860296d66dadcb3105a8bbda9eb9a",
+    "dataset_sha256": "20961b616b404875adead16dd456adc4cf583035436fc0d7e9c3f2adf8322e0c",
+    "source_bindings": [
+      {
+        "relative_path": "benchmarks/external_context/protocol.json",
+        "sha256": "c8b20655fd75573951f68ea9c3df6f1d5de581b7fb3bdbe6b72e3cf69bfd446a",
+        "bytes": 11325
+      },
+      {
+        "relative_path": "benchmarks/external_context/amendments.json",
+        "sha256": "463158e5a692c05880be4f0608a1ecc1d12a0abdc9c8e4df5f3fd92f340c52af",
+        "bytes": 1821
+      },
+      {
+        "relative_path": "benchmarks/external_context/results/pilot-20261014T081813Z/manifest.json",
+        "sha256": "483349232c62441feaa0e7129401c1017132ac07f7755d5d80029147f7ba5e3f",
+        "bytes": 5871
+      },
+      {
+        "relative_path": "benchmarks/external_context/results/pilot-20261014T081813Z/prediction-seal.json",
+        "sha256": "77c93f693a702543607c48a21a9b6bc7be0595b610cbfa4bbb4e79afe265a36c",
+        "bytes": 3628
+      },
+      {
+        "relative_path": "benchmarks/external_context/results/pilot-20261014T081813Z/scores.json",
+        "sha256": "37f86d7c50ec6de86644c37f3f70328901967ad71342936e39f0785eb5cf82c6",
+        "bytes": 344269
+      },
+      {
+        "relative_path": "benchmarks/external_context/results/pilot-20261014T081813Z/summary.json",
+        "sha256": "ec8e1ea77147752378a1a41b4519a0d1af4a7c9e4794471b55472d07d9719e14",
+        "bytes": 72312
+      },
+      {
+        "relative_path": "benchmarks/external_context/scoring.py",
+        "sha256": "8fa928b0d64e7082e194bd0331a64bad17696e57155f4f898ea721ab25b936a8",
+        "bytes": 6374
+      },
+      {
+        "relative_path": "benchmarks/external_context/analyze.py",
+        "sha256": "acdc862b00aafc7886a7c83d6baff5973efef5f31676fdaf35bc787a36546a7e",
+        "bytes": 7050
+      }
+    ],
+    "rule": "Keep all39 primary results and all702 cells unchanged and visible. Never replace original primary with subset. Read existing scalar score cells only, no prediction/target rescoring or source/dataset patch text needed by standalone sensitivity script."
+  },
+  "final_execution_snapshot_gate": {
+    "snapshot_not_yet_frozen": true,
+    "no_subset_computation_before_root_approval_and_final_snapshot_seal": true,
+    "rule": "For each task, choose most recent approved STARTED condition by protocol_frozen_utc, run_id, condition_key. Unstarted proposal/candidate is not an execution attempt and never displaces an actual attempt. Include later failed, aborted or partial started attempts; never fall back to earlier favorable condition.",
+    "finality": "No started condition may remain running or unresolved at snapshot freeze. Closed failed/aborted conditions with incomplete pair records remain included as nonqualified. Final snapshot must explicitly classify every original39task and bind all retained started condition records and public/source-provenance validation.",
+    "membership": "Include in secondary subset if and only if the selected latest approved started closed condition is finite_qualified under the root frozen original-F2P/P2P qualification contract. No method score, rank, query, target count, method-specific success or environment best-result enters eligibility.",
+    "finite_qualified_meaning": "All original F2P labels observed as actual behavioral base-failure\u2192fixed-pass and every original P2P actual pass in both roles, complete identity/protocol bindings and no missing/skip used as pass, under root qualification contract. Known weak assertions/early returns/mocks remain limits. Do not infer qualification merely from pytest return0 or dependency/compile checks.",
+    "no_condition": "No actual started condition means nonqualified, retained in all39 membership ledger and exclusion reasons.",
+    "required_binding": "Root creates immutable final eligibility ledger plus seal SHA before calculation. Snapshot/version/contract/source/protocol hashes and original task identity mapping must match; missing/duplicate/extra/ambiguous records cause rejection, not silent filtering."
+  },
+  "final_eligibility_ledger_interface": {
+    "schema_version": 1,
+    "fields": [
+      "snapshot_id",
+      "snapshot_frozen_utc",
+      "final_for_secondary_analysis=true",
+      "all_started_conditions_closed=true",
+      "all_original_tasks_included=true",
+      "original_pilot_protocol_sha256",
+      "original_pilot_scores_sha256",
+      "original_task_execution_contract_sha256",
+      "frozen_execution_evidence_sha256",
+      "source_and_protocol_binding_validation_sha256",
+      "tasks[39]"
+    ],
+    "task_fields": [
+      "instance_id",
+      "repo",
+      "base_commit",
+      "original_F2P",
+      "original_P2P",
+      "latest_approved_started_condition_key_or_null",
+      "finite_qualified",
+      "final_status",
+      "exclusion_reason_or_null",
+      "conditions"
+    ],
+    "condition_fields": [
+      "condition_key",
+      "run_id",
+      "protocol_frozen_utc",
+      "approved",
+      "started",
+      "state=closed|not_started",
+      "pair_records_complete",
+      "qualification_status",
+      "qualification_record_sha256_or_null",
+      "protocol_sha256",
+      "environment_manifest_sha256_or_null",
+      "source_identity_manifest_sha256_or_null"
+    ],
+    "selection_tie_break": "max(UTC protocol_frozen_utc, run_id, condition_key) among approved started conditions; duplicate identity rejected. Rule uses no score. Unknown/malformed times rejected.",
+    "sealing": "CLI must require explicit expected SHA256 for protocol, eligibility ledger and root approval record; reject _CURRENT mutable input name or ledger finality false. Root final seal separately binds immutable final evidence and contract. No repeated calculations over changing snapshots."
+  },
+  "metrics": {
+    "secondary_focus_budget_bytes": 16000,
+    "unit": "Task within repository, then equal weight per repository with defined task-level label metric; not independent test nodes or retries.",
+    "primary_comparisons_within_secondary_analysis": [
+      "graph_expand minus bm25_windows",
+      "graph_expand minus bm25_declarations"
+    ],
+    "main_measures": [
+      "removed-base-line F1",
+      "removed-base-line recall"
+    ],
+    "task_measures": "Use frozen original per-task cell integers and values. With targetT>0, recall=intersection/T and F1=2*intersection/(predicted+T); preserve original conservative zero predictions/failures. Empty-target no_target yields undefined/null for F1/recall, never zero.",
+    "within_repo": "Arithmetic mean over eligible tasks having targetT>0 for that repository; identical paired task set for all methods/budgets.",
+    "repo_macro": "Arithmetic mean of defined repository means. Repository with zero targetable eligible tasks is explicitly undefined/null and is not assigned0. Always show actual contributing repository count/list.",
+    "integrity": "Exactly39task identities x6frozen methods x3budgets. Duplicate/missing/extra cells, nonfinite numbers, noninteger/negative counts, impossible intersections, inconsistent targets across methods/budgets or stored metric disagreement>1e-12 reject calculation. No silent deletion/imputation.",
+    "arithmetic": "Use integer counts and exact rational means for signs/differences; report original numeric values checked within1e-12 and JSON finite floats plus optional exact fractions. No epsilon tuned after results.",
+    "targetability": "target>0 with status=scored. status=no_target must have target0 and all three metric fields null. Unsupported/missing labels retained as undefined with explicit reason; original702 expected cell completeness is strict.",
+    "budgets_appendix": "Report all8000/16000/32000 budgets and all6methods with same membership, F1/recall and denominator audit; focus budget16000 cannot change after results. File metrics/byte diagnostics stay available in unchanged original primary bundle, not promoted selectively."
+  },
+  "mandatory_outputs": {
+    "all39_reference": "Exact original frozen all39 summary SHA and unchanged tables retained; independent consistency recomputation may validate but never overwrite source.",
+    "membership_ledger": "All39 identifiers with repo, original task counts, latest approved started condition key, finite-qualified boolean, final status/exclusion reasons and label targetable/no_target/missing states.",
+    "per_repository_denominators": [
+      "original_tasks",
+      "finite_qualified_tasks",
+      "nonqualified_tasks_by_reason",
+      "original_line_targetable_tasks",
+      "qualified_line_targetable_tasks",
+      "qualified_no_target_tasks",
+      "label_error_or_missing_tasks",
+      "missing_score_cells=0 required",
+      "prediction_failures_conservative_zero",
+      "contributing_to_macro"
+    ],
+    "comparisons": "At16000bytes both paired baseline differences for F1 and recall, each repo effect and repo win/tie/loss/undefined count. Report mixed/negative/positive outcomes transparently.",
+    "composition_diagnostic": "Predeclared appendix: also compute all39 reference restricted only to the same contributing repository set as the qualified subset, retaining every original targetable task within those repositories. This separates repository composition from within-repo task filtering descriptively; neither is causal or replacesall39primary.",
+    "traceability": "run_id, exact executed command, UTC timestamp, interpreter/version/platform, analysis program SHA, approved protocol SHA, final ledger SHA, all original data/source hashes and every input validation status."
+  },
+  "interpretation_rules": {
+    "negative_persistence": "For each baseline separately, negative F1 persists iff qualified-subset repo-macro graph-minus-baseline F1<0, negative recall persists iff recall delta<0. Exactly0 is tie/nonpositive and reported separately; undefined cannot establish either sign. Joint persistence across both baselines requires allfour F1/recall differences negative; also report every component, not only joint label.",
+    "no_inference": "No p-values, significance, task-independent confidence intervals, SOTA, mature-research, downstream quality or model-repair success claim. Six original repositories and fewer represented subset repositories are clustered and imbalanced.",
+    "selection_bias": "Qualification is post hoc and dependent on local CPU/platform/dependency/assets, tests and prior failures; method-independent eligibility does not remove selection bias or establish a fresh heldout distribution. Original scores/results and partial execution outcomes were already observed before this secondary protocol.",
+    "source_vs_retrieval": "Passing original source regression labels does not show retrieved context is necessary/sufficient, retrieval improves generated patches, or an agent can repair. Removed patch lines remain a localization proxy.",
+    "test_count_limits": "87F2P and5842P2P are supplied test-node labels, not independent tasks/replicates/sample size; preserve39task denominator and perrepo counts. Repeated environments/phase observations are not additional independent samples.",
+    "no_threshold_reinterpretation": "Do not reuse original confirmatory-advance thresholds as a maturity claim or choose the best environment/budget/subset. Any future change requires separately versioned amendment and preserved old outputs."
+  },
+  "current_execution_state": "15913/7075/31095 updates pending; no final membership/subset means/signs computed",
+  "analysis_performed": false
+}

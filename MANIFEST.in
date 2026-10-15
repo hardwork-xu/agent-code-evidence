@@ -2,6 +2,7 @@ include LICENSE CONTRIBUTING.md SECURITY.md
 recursive-include docs *.md *.png *.svg *.html
 recursive-include examples *.py *.json
 recursive-include benchmarks *.py *.json *.jsonl *.md *.txt LICENSE
+recursive-include benchmarks/known_task_execution/results *.json.gz
 recursive-include scripts *.py
 include NOTICE.md
 recursive-include third_party *

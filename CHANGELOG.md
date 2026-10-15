@@ -1,5 +1,18 @@
 # Changelog / 版本记录
 
+## Unreleased — 2026-10-15 known-task execution audit
+
+- Retain actual paired records for all39 known tasks:51 complete conditions and
+  one closed partial attempt.30 tasks qualify finite labels; nine do not.
+- Add SHA-bound, privacy-filtered phase observations, exact source preparation,
+  bounded public transport and generated bilingual record checks. Public checks
+  do not rerun the historical upstream programs or authenticate private logs.
+- Add a separately sealed post-hoc subset sensitivity: retain the F1 ordering
+  flip against declaration BM25 and the lower recall against both BM25 baselines.
+  Original39-task primary results and failed gates remain unchanged.
+- 保留39项真实双侧记录、51完整条件和1闭合中止条件；30项有限合格、9项未合格。
+  新增可核对观测及事后敏感性分析，完整保留正负结果；不宣称生成修复收益或成熟研究。
+
 ## 1.2.0a1 — experimental research branch, 2026-10-04
 
 - Correct class-body global rebinding uncertainty. Resolver 3 requires recapturing

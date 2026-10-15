@@ -581,3 +581,79 @@ observation bundles are reviewed and recorded separately before publication.
 声明缺失等反例，保留未发布首版和失败。仅执行已校验的自主判据字节，按
 UTC时间值排序；25项自编检查通过。自编计数不代表上游实测或独立研究样本，
 真实观测包另行审核记录；传输检查也不认证私有原始执行。
+
+## 2026-10-15 — complete known-task records / 完整已知任务记录
+
+Executed unchanged dataset-derived upstream tests in both base+test-patch and
+oracle-code-patch+test-patch roles for all39 original tasks. The final retained
+snapshot has51 complete pair conditions, one closed partial attempt,36008 phase
+reports and12006 selected-role node outcomes. Latest conditions qualify finite
+labels for30 tasks; three have no observed calls and six remain unqualified
+with calls. The87 F2P /5842 P2P original-label denominator is unchanged. Earlier
+missing dependencies, native aborts, original skips, already-passing base tests,
+gold failures and the AutoGPT incomplete condition are retained. Compatibility
+changes create new conditions; this is not a historical official-container replay.
+
+Reviewed an exact53-file gzip observation export (INDEX SHA256
+`06020b127bb16d3b8c2b28438ea3b613d683d550d35b8a3401f36eae695ec45b`).
+The public report checker recomputed the qualification arithmetic and generated
+the English/Chinese39-row tables. A zero-P2P Counter omission initially broke a
+candidate table generator; corrected zero handling and four counterexamples are
+retained in tests. A local full-test invocation first omitted `PYTHONPATH=src`
+and failed collection; corrected invocation returned2947 passed/two optional
+tokenizer skips. No source assertion was changed to resolve that invocation.
+
+39项原始任务均实际运行双角色测试，保留51完整条件、1闭合不完整条件、36008阶段
+及12006角色节点结果。30项有限合格，3项无观测调用，6项调用后仍未合格；原始
+87/5842标签分母不变。保留依赖失败、崩溃、跳过、基线已通过、gold失败和中止。
+公开53文件观测包及双语表可核验；生成器曾遗漏零值Counter，修复并保留4反例。
+全套本地测试首次因未设置PYTHONPATH而收集失败，修正调用后2947通过、2可选跳过，
+没有改动断言以制造通过。
+
+## 2026-10-15 — post-hoc sensitivity and read bounds / 事后敏感性与读取上限
+
+After all52 started conditions closed, froze the final eligibility ledger and
+scalar-analysis inputs before computing the30-task subset. The analysis program
+SHA256 is `b660d3b4aa34d9cb30905d1458a05a195ca3503970c41a6db186f555d57f25e9`;
+result SHA256 is `f9566e32e27decd3a0970a04ffe0fad04be7369e0b33cdf2e48468bf2eadbf3c`.
+This is post-hoc known-data analysis, not pre-data preregistration. Independent
+integer/Fraction recomputation agreed with all18 method/budget cells in all
+three views and their signed effects. At16000bytes the qualified subset changes
+graph-minus-declaration F1 to+0.045618pp; recall is still14.300790pp lower.
+The original all39 result and failed planning gates are unchanged. The five
+original prediction failures remain in the primary; the subset retains three,
+of which two have line targets and one is undefined.
+
+Full local tests after adding the scalar report returned2951 passed/two optional
+skips. A separate publication review then found that stat-before-read and an
+unbounded INDEX read did not enforce a hard allocation cap. Public readers now
+read at most limit+1 once and hash/parse those same bytes. Three new controls
+cover oversized INDEX/part and the actual bounded read. The prior source-swap
+test initially hooked the superseded read API and failed; its hook now follows
+the bounded read while retaining the same swap/verified-execution assertions.
+All36 affected observation/report controls passed after that test adaptation.
+No frozen analysis/contract/source or raw measurement was changed by these fixes.
+
+全部启动条件闭合后冻结资格与输入，再计算30项子集；这不是数据观察前预注册。
+独立整数/有理数核对全部18配置×3视图及差值一致。合格子集F1相对声明BM25转为
++0.045618百分点，召回仍低14.300790百分点；原主结果与失败门槛不变。原5项
+预测失败在子集中保留3项，其中2项有行目标、1项未知。2951项本地测试通过、2项
+可选跳过后，独立审查又发现读取上限缺口；修正为单次limit+1有界读取并新增3反例。
+旧源码替换测试首次仍hook旧API而失败，迁移hook后保留原断言，36项受影响测试通过。
+未改冻结分析、判据或原始测量。最终全套与构建验证另行记录。
+
+The report reader initially imported the analysis before checking the source
+fingerprint. Review narrowed this binding: it now compiles the exact bounded,
+SHA-verified own source bytes. A source-swap counterexample verifies execution
+of the retained bytes after the file changes.37 related controls passed, followed
+by the final complete local suite:2955 passed, two optional tiktoken skips,
+zero failures. Commands used `PYTHONPATH=src python -m pytest -q tests
+benchmarks/graph/test_scope_audit.py benchmarks/revision_baselines/test_baselines.py`.
+This test total validates this checkout, not2955 upstream tasks. Docker was
+unavailable; no container build is claimed. Remote CI and package-build results
+are checked separately from local tests.
+
+报告入口最初先导入分析再核源码摘要；审查后改为编译同一份有界读取且SHA核验
+的自主源码，新增读取后替换源文件反例。37项相关检查通过，随后完整本地套件
+2955通过、2项可选tiktoken跳过、零失败；这不是2955项上游任务。Docker不可用，
+不宣称容器构建通过；远端CI和包构建结果与本地测试分别记录。

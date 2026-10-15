@@ -106,3 +106,16 @@ Amazon Science MIT text and39 exact-base root licenses are preserved under
 there for pins/hashes and the distinction between edit labels and necessary context.
 外部先导实验使用固定SWE-PolyBench_500数据版本，公开参考编辑坐标及统计并保留原归属；
 原始题目、补丁与源码不重新分发。MIT原文及39份固定base根许可保留在上述目录。
+
+The later known-task execution records retain dataset test identifiers, exact
+source/version hashes and project-authored phase observations for those same39
+tasks. They do not redistribute upstream test bodies, patches, dependency
+wheels, tokenizer/model files or private raw logs. The dataset card's MIT
+declaration does not relicense upstream code or model resources. This is an
+unofficial independently implemented adapter; the official harness was inspected
+but not incorporated, and its conflicting root/file license statements are not
+resolved by applying this project's MIT license.
+后续39项执行记录含原数据测试标识、源码版本摘要和本项目记录的阶段观测，
+不分发上游测试正文、补丁、依赖、模型资源或私有原始日志。数据卡MIT声明
+不替代上游代码与模型许可；非官方适配器没有复制官方harness，也不以本项目
+MIT消除其根许可与文件标头的不一致。

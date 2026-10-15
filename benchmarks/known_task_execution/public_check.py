@@ -1,9 +1,10 @@
 """Recompute finite qualification from exported records without private inputs.
 
-Requires the explicitly pinned, already public, author-written contract module.
-This imports only that SHA-verified bookkeeping implementation, never SUT code.
+Requires the explicitly pinned, author-written contract module in this checkout.
+This executes only that SHA-verified bookkeeping implementation, never SUT code.
 The evidence SHA must come from a separately trusted release/commit or review;
 SHA consistency alone is not authenticity or proof that tests actually ran.
+重算公开观测与有限判据的一致性，不执行上游；哈希一致不等于原始执行认证。
 """
 import argparse
 from collections import Counter
@@ -15,6 +16,8 @@ from pathlib import Path
 import re
 
 CONTRACT_SHA256 = 'e48afe3dac122e96a7075a72ab406e0e68fb4cc5ac09b98f74ed362211ded9b3'
+MAX_EVIDENCE_BYTES = 128 * 1024 * 1024
+MAX_CONTRACT_BYTES = 1024 * 1024
 COMPARABLE_KEYS = [
     'schema_version', 'classification', 'instance_id', 'pathless_aliases_sha256',
     'pathless_aliases', 'common_environment', 'both_collections_complete',
@@ -44,8 +47,18 @@ def canonical(value):
                       separators=(',', ':'), allow_nan=False).encode()
 
 
+def read_bounded(path, limit, label):
+    """Read at most limit+1 bytes once / 单次读取最多limit+1字节，不信任预先stat。"""
+    require(type(limit) is int and limit >= 0, 'invalid byte cap')
+    with Path(path).open('rb') as handle:
+        raw = handle.read(limit + 1)
+    require(len(raw) <= limit, label + ' exceeds read cap')
+    return raw
+
+
 def load_contract(path):
-    data = Path(path).read_bytes()
+    """Execute only verified own contract bytes / 只执行已核验的自主判据字节。"""
+    data = read_bounded(path, MAX_CONTRACT_BYTES, 'contract')
     require(hashlib.sha256(data).hexdigest() == CONTRACT_SHA256,
             'contract source differs from explicitly reviewed public pin')
     contract = types.ModuleType('reviewed_public_contract')
@@ -107,6 +120,7 @@ def frozen_utc(value):
 
 
 def check(evidence, contract):
+    """Recompute every retained condition and latest state / 重算保留条件及最新状态。"""
     scan_privacy(evidence)
     require(evidence['schema_version'] == 1, 'unsupported evidence schema')
     require(evidence['original_denominator'] == {'tasks': 39, 'F2P': 87, 'P2P': 5842},
@@ -251,14 +265,17 @@ def check(evidence, contract):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--evidence', required=True)
-    p.add_argument('--expected-sha256', required=True)
-    p.add_argument('--contract', required=True)
+    p.add_argument('--evidence', required=True, help='exported JSON / 导出JSON')
+    p.add_argument('--expected-sha256', required=True, help='trusted external digest / 外部可信摘要')
+    p.add_argument('--contract', required=True, help='pinned own contract source / 固定自主判据源码')
     a = p.parse_args()
-    data = Path(a.evidence).read_bytes()
-    require(hashlib.sha256(data).hexdigest() == a.expected_sha256,
-            'evidence differs from trusted external SHA')
-    result = check(json.loads(data), load_contract(a.contract))
+    try:
+        data = read_bounded(a.evidence, MAX_EVIDENCE_BYTES, 'evidence')
+        require(hashlib.sha256(data).hexdigest() == a.expected_sha256,
+                'evidence differs from trusted external SHA')
+        result = check(json.loads(data), load_contract(a.contract))
+    except (ValueError, OSError) as error:
+        p.exit(2, 'Validation failed / 核验失败: ' + str(error) + '\n')
     print(json.dumps(result, sort_keys=True))
 
 
