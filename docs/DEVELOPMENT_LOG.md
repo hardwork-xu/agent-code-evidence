@@ -529,3 +529,20 @@ rerunning the corrected upstream condition, not a task or research result.
 真实 AutoGPT 条件暴露了遗漏的间接周期日志路径；保留原不完整运行与逐阶段
 记录。新增精确文件、总字节限制、源码证明及目录选项检查，176项适配器测试
 通过。此记录不把适配器通过写成上游任务或研究效果，后续复测另存新条件。
+
+
+## 2026-10-15 — portable exact source roles / 可移植精确源码角色
+
+Added an independently callable, source-only preparer using fixed public CSV and
+archive hashes. It never executes Docker/test-command fields or upstream code,
+rejects archive escapes/links/duplicate identities and patch context/position
+errors, and refuses outputs inside Git.35 owned checks passed. Recomputed all78
+role indexes from39 verified archives and the original dataset, matching137283
+files/2461434350 bytes; a real CLI materialization also passed. Initial local
+validation used the data subdirectory instead of the archive cache root and
+failed before source parsing; corrected cache location is recorded privately.
+Old/new parser checks and outputs were retained. No second SUT replay is claimed.
+
+新增源码重建入口和35项异常输入/角色分离检查，真实重算78角色均与先前实验
+字节相同；修正了本地验证脚本首次缓存根目录定位错误。原失败及两轮核对均
+保留。源码重建检查不当作任务效果、独立SUT复验或研究成熟证据。

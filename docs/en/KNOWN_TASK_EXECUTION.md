@@ -69,3 +69,22 @@ other new file, source mutation, symlink, hard link or byte-limit violation
 invalidates execution. Artifact contents remain private. The earlier incomplete
 condition that exposed the missing log paths is retained, not reinterpreted as
 qualified. Passing an owned adapter fixture does not verify the upstream task.
+
+
+Source preparation is now runnable independently of the private task directory:
+
+```sh
+python -m benchmarks.external_context.fetch --cache "$CACHE"
+python -m benchmarks.known_task_execution.prepare --csv "$CACHE/test.csv" --cache "$CACHE" --task yt-dlp__yt-dlp-1649 --output "$WORK/yt-1649"
+```
+
+Set `CACHE` and `WORK` to new private directories outside Git. The first command
+fetches the fixed public inputs; neither command executes dataset instructions
+or upstream programs. The second creates immutable `base_tests` and
+`fixed_tests` plus a complete file-hash manifest. Source-only reconstruction for
+all39 original tasks matched all78 previously prepared role indexes,137283
+files and2461434350 bytes. A real CLI preparation also matched the yt-dlp1649
+inputs. This verifies source reconstruction, not a second regression execution.
+Regular unmodified assets over5MiB and nonregular entries are explicitly omitted
+in the31-task general scope; TensorFlow uses the declared subsystem Python/proto
+scope. Every patched file is required. An absent fixture still fails execution.

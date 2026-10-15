@@ -56,3 +56,19 @@ python -m benchmarks.known_task_execution.contract --help
 并绑定调用方、日志模块及测试源码证明。其他新文件、源码修改、符号链接、
 硬链接或超限均使执行无效。日志正文留在私有目录。暴露遗漏日志路径的原
 不完整条件保留，不重新解释为合格；自编适配器素材通过也不证明上游任务通过。
+
+
+源码准备工具可在私有任务目录之外独立运行：
+
+```sh
+python -m benchmarks.external_context.fetch --cache "$CACHE"
+python -m benchmarks.known_task_execution.prepare --csv "$CACHE/test.csv" --cache "$CACHE" --task yt-dlp__yt-dlp-1649 --output "$WORK/yt-1649"
+```
+
+将CACHE和WORK设为Git之外的新私有目录。首命令下载固定公开输入，两条命令
+都不执行数据集指令或上游程序。第二条生成只读base_tests、fixed_tests及完整
+文件哈希。39任务的源码重建与原78份角色索引全部相同，覆盖137283文件、
+2461434350字节；真实CLI也成功准备yt-dlp1649。这只验证源码重建，不是第二次
+回归执行。31任务通用范围显式记录超过5MiB的未修改素材与非普通条目的省略；
+TensorFlow使用已声明子系统Python/proto范围。全部补丁文件必须存在，缺失
+必要测试素材仍使实际执行失败。
