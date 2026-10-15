@@ -33,8 +33,48 @@ def relative(path, root):
     return path.resolve().relative_to(root.resolve()).as_posix()
 
 
-def validate_tree(root, files):
-    """Check all bytes and the complete file set. / 检查全部字节和文件集合。"""
+def reviewed_source_logs(files, request):
+    """Permit two bounded runtime logs with an exact reviewed source proof.
+
+    只允许固定源码声明的两个限额日志；不能隐藏任何原有源码文件。
+    """
+    if request is None:
+        return None
+    expected = {row['path']: row for row in files}
+    proof = expected.get('autogpt/logs.py')
+    policy = {'source_path': 'autogpt/logs.py', 'source_sha256': proof['sha256'] if proof else None,
+              'files': ['logs/activity.log', 'logs/error.log'], 'max_total_bytes': 1048576}
+    if (proof is None or json.dumps(request, sort_keys=True) != json.dumps(policy, sort_keys=True)
+            or any(name in expected for name in policy['files'])):
+        raise ValueError('unreviewed source log policy or source file overlap')
+    return policy
+
+
+def source_log_records(root, policy):
+    """Hash private runtime outputs without publishing their text. / 只记录日志摘要。"""
+    records = []
+    if policy is None:
+        return records
+    total = 0
+    for name in policy['files']:
+        path = root / name
+        if not path.exists() and not path.is_symlink():
+            continue
+        if (path.is_symlink() or not path.is_file() or path.stat().st_nlink != 1
+                or relative(path, root) != name):
+            raise ValueError('source log must be a distinct regular file')
+        total += path.stat().st_size
+        if total > policy['max_total_bytes']:
+            raise ValueError('source logs exceeded fixed byte cap')
+        records.append({'path': name, 'bytes': path.stat().st_size, 'sha256': sha(path.read_bytes())})
+    return records
+
+
+def validate_tree(root, files, allowed_logs=None):
+    """Check every source byte, with optional separately hashed runtime logs.
+
+    核验全部源码字节；仅经显式审查的运行日志独立计数与摘要，不计入源码。
+    """
     expected = {row['path']: row for row in files}
     if len(expected) != len(files):
         raise ValueError('duplicate source file identity')
@@ -47,6 +87,8 @@ def validate_tree(root, files):
         if not path.is_file():
             continue
         name = relative(path, root)
+        if allowed_logs is not None and name in allowed_logs['files']:
+            continue
         raw = path.read_bytes()
         found[name] = {'sha256': sha(raw), 'bytes': len(raw)}
     if set(found) != set(expected):
@@ -54,6 +96,9 @@ def validate_tree(root, files):
     for name, row in found.items():
         if row != {key: expected[name][key] for key in ('sha256', 'bytes')}:
             raise ValueError('source bytes changed')
+    if allowed_logs is not None:
+        reviewed_source_logs(files, allowed_logs)
+        source_log_records(root, allowed_logs)
     return expected
 
 
@@ -352,6 +397,8 @@ def process_guard(enabled, denied):
     """
     if enabled is not None and enabled is not True:
         raise ValueError('process guard must be an explicit true request')
+    if enabled is True and not hasattr(sys, 'addaudithook'):
+        raise ValueError('Python process audit requires Python 3.8 or newer')
     active = {'value': enabled is True}
 
     def audit(event, args):
@@ -367,7 +414,8 @@ def process_guard(enabled, denied):
 
 def execute(config):
     root = Path(config['execution_root']).resolve()
-    expected = validate_tree(root, config['source_files'])
+    source_logs = reviewed_source_logs(config['source_files'], config.get('allowed_source_logs'))
+    expected = validate_tree(root, config['source_files'], source_logs)
     aliases = config.get('pathless_aliases', {})
     aliases_hash = sha(json.dumps(aliases, sort_keys=True, ensure_ascii=False,
                                  separators=(',', ':'), allow_nan=False).encode())
@@ -495,7 +543,7 @@ def execute(config):
     finally:
         process_state['value'] = False
         restore_network(previous)
-    validate_tree(root, config['source_files'])
+    validate_tree(root, config['source_files'], source_logs)
     # Recheck bytes without the during-run hash cache after the complete source audit.
     observed.update(production_modules(root, expected, config['production_packages']))
     loaded = observed
@@ -527,6 +575,8 @@ def execute(config):
             'network_denials': denied, 'loaded_source_modules': loaded,
             'process_denials': process_denials,
             'source_before_after_verified': True, 'dependency_versions': installed,
+            'allowed_source_logs': source_logs,
+            'runtime_log_artifacts': source_log_records(root, source_logs),
             'explicit_test_plugins': config.get('pytest_plugins', []),
             'restored_upstream_pytest_options': options,
             'numerical_state_config': config.get('numerical_state'),
