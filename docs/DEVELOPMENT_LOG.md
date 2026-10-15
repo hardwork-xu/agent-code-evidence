@@ -546,3 +546,21 @@ Old/new parser checks and outputs were retained. No second SUT replay is claimed
 新增源码重建入口和35项异常输入/角色分离检查，真实重算78角色均与先前实验
 字节相同；修正了本地验证脚本首次缓存根目录定位错误。原失败及两轮核对均
 保留。源码重建检查不当作任务效果、独立SUT复验或研究成熟证据。
+
+## 2026-10-15 — source parser boundary review / 源码解析边界复核
+
+Independent owned counterexamples exposed physical-line splitting, marker
+identity, required-link and verify-then-reopen weaknesses. Parsing now uses
+physical LF records, verifies both patch markers, rejects case-insensitive Git
+metadata and required nonregular entries, and parses the same bounded CSV/tar
+bytes whose SHA256 was checked. Malformed extra hunk headers are rejected by a
+deliberately stricter input policy; this is not claimed as a Git compatibility
+fix. The original failing probes and earlier reconstruction runs are retained
+privately. The expanded source-preparation suite returned53 passed, zero failed
+or skipped. A fourth source-only readback again matched all78 original role
+indexes. No upstream tests were rerun by these parser checks.
+
+独立构造的反例暴露了物理换行、补丁路径标记、必需链接与校验后重读问题。
+修正后对同一份有界读取且已校验的字节进行解析；额外畸形hunk采用更严格的
+输入策略，不宣称这是Git兼容性修复。保留原失败与各轮核对，53项测试通过，
+第四轮78角色索引一致。这些检查不等同于上游测试重跑或独立实验复现。

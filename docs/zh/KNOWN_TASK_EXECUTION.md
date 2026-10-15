@@ -61,6 +61,8 @@ python -m benchmarks.known_task_execution.contract --help
 源码准备工具可在私有任务目录之外独立运行：
 
 ```sh
+WORK="$(mktemp -d)"
+CACHE="$WORK/cache"
 python -m benchmarks.external_context.fetch --cache "$CACHE"
 python -m benchmarks.known_task_execution.prepare --csv "$CACHE/test.csv" --cache "$CACHE" --task yt-dlp__yt-dlp-1649 --output "$WORK/yt-1649"
 ```

@@ -74,6 +74,8 @@ qualified. Passing an owned adapter fixture does not verify the upstream task.
 Source preparation is now runnable independently of the private task directory:
 
 ```sh
+WORK="$(mktemp -d)"
+CACHE="$WORK/cache"
 python -m benchmarks.external_context.fetch --cache "$CACHE"
 python -m benchmarks.known_task_execution.prepare --csv "$CACHE/test.csv" --cache "$CACHE" --task yt-dlp__yt-dlp-1649 --output "$WORK/yt-1649"
 ```

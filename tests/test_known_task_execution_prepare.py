@@ -198,3 +198,15 @@ def test_bilingual_cli_help_does_not_import_upstream():
                          text=True, timeout=20)
     assert run.returncode == 0
     assert '准备固定源码角色' in run.stdout and '--output' in run.stdout
+
+
+def test_expected_cli_input_error_is_bilingual_without_hiding_internal_errors(tmp_path):
+    run = subprocess.run(
+        [sys.executable, '-B', '-m', 'benchmarks.known_task_execution.prepare',
+         '--csv', str(tmp_path / 'missing.csv'), '--cache', str(tmp_path / 'cache'),
+         '--task', 'yt-dlp__yt-dlp-1649', '--output', str(tmp_path / 'new-source')],
+        cwd=Path(__file__).parents[1], capture_output=True, text=True, timeout=20)
+    assert run.returncode == 2
+    assert 'Source preparation failed / 源码准备失败' in run.stderr
+    assert 'Traceback' not in run.stderr
+    assert not (tmp_path / 'new-source').exists()

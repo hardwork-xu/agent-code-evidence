@@ -3,19 +3,36 @@ import argparse
 import ast
 import csv
 import hashlib
+import io
 import json
 import re
 import tarfile
 from pathlib import Path, PurePosixPath
 DATASET_SHA256 = '20961b616b404875adead16dd456adc4cf583035436fc0d7e9c3f2adf8322e0c'
 SOURCES = Path(__file__).parents[1] / 'external_context/sources.json'
+MAX_CSV_BYTES = 32 * 1024 ** 2
+MAX_ARCHIVE_BYTES = 500 * 1024 ** 2
+
+def read_verified_bytes(path, expected_sha, limit, label):
+    """Bound and hash the exact bytes subsequently parsed. / 限量读取并解析同一份核验字节。"""
+    if type(limit) is not int or limit <= 0:
+        raise ValueError('invalid source read byte cap')
+    if path.is_symlink():
+        raise ValueError(label + ' symlink refused')
+    with path.open('rb') as stream:
+        raw = stream.read(limit + 1)
+    if len(raw) > limit:
+        raise ValueError(label + ' byte cap exceeded')
+    if digest(raw) != expected_sha:
+        raise ValueError(label + ' hash differs')
+    return raw
 
 def digest(raw):
     return hashlib.sha256(raw).hexdigest()
 
 def safe_path(name):
     """Reject escapes and ambiguous identities. / 拒绝越界或含糊路径。"""
-    if not isinstance(name, str) or not name or name.startswith('/') or ('\\' in name) or ('\x00' in name) or (':' in name) or any((x in {'', '.', '..', '.git'} for x in name.split('/'))):
+    if not isinstance(name, str) or not name or name.startswith('/') or ('\\' in name) or ('\x00' in name) or (':' in name) or any((x in {'', '.', '..'} or x.casefold() == '.git' for x in name.split('/'))):
         raise ValueError('unsafe source path / 不安全源码路径')
     return PurePosixPath(name)
 
@@ -32,14 +49,21 @@ def split_patch(patch):
 
 def apply_patch(original, block):
     """Exact old/new hunk positions and bytes. / 精确核验两侧hunk位置与字节。"""
-    original_lines = original.splitlines(keepends=True)
-    lines = block.splitlines(keepends=True)
+    if len(patch_blocks(block)) != 1:
+        raise ValueError('expected one canonical text patch block')
+    def physical_lines(text):
+        parts = text.split('\n')
+        return [part + '\n' for part in parts[:-1]] + ([parts[-1]] if parts[-1] else [])
+    original_lines = physical_lines(original)
+    lines = physical_lines(block)
     result = []
     cursor = 0
     i = 0
     while i < len(lines):
         m = re.match('@@ -(\\d+)(?:,(\\d+))? \\+(\\d+)(?:,(\\d+))? @@', lines[i])
         if not m:
+            if lines[i].startswith('@@'):
+                raise ValueError('malformed hunk header')
             i += 1
             continue
         old_start = int(m.group(1))
@@ -88,12 +112,11 @@ def apply_patch(original, block):
 def task_row(csv_path, task_id, expected_sha=None):
     """Parse data only, never execute fields. / 字段仅作数据解析。"""
     expected_sha = DATASET_SHA256 if expected_sha is None else expected_sha
-    if csv_path.is_symlink() or digest(csv_path.read_bytes()) != expected_sha:
-        raise ValueError('dataset hash differs')
+    raw = read_verified_bytes(csv_path, expected_sha, MAX_CSV_BYTES, 'dataset')
     old = csv.field_size_limit()
     try:
         csv.field_size_limit(16 * 1024 ** 2)
-        with csv_path.open(newline='', encoding='utf-8') as f:
+        with io.StringIO(raw.decode('utf-8'), newline='') as f:
             rows = [r for r in csv.DictReader(f) if r['instance_id'] == task_id]
     finally:
         csv.field_size_limit(old)
@@ -118,19 +141,24 @@ def patch_blocks(text):
         m = re.match('diff --git a/(.+?) b/(.+?)\\n', block)
         if not m or m[1] != m[2] or name in names or ('GIT binary patch' in block) or ('deleted file mode' in block) or (not re.search('^@@ ', block, re.M)):
             raise ValueError('unsupported or malformed text patch')
+        header = block.split('\n@@ ', 1)[0]
+        old_markers = re.findall(r'^--- (.*)$', header, re.M)
+        new_markers = re.findall(r'^\+\+\+ (.*)$', header, re.M)
+        is_new = bool(re.search(r'^new file mode [0-7]+$', header, re.M))
+        if old_markers != ['/dev/null' if is_new else 'a/' + name] or new_markers != ['b/' + name]:
+            raise ValueError('patch file markers differ from canonical identity')
         names.add(name)
     return blocks
 
 def archive_files(archive, expected_sha, row, max_total=512 * 1024 ** 2):
     """Read declared regular files; retain omissions. / 读取范围内普通文件并记录省略。"""
-    if archive.is_symlink() or digest(archive.read_bytes()) != expected_sha:
-        raise ValueError('archive checksum differs')
+    archive_raw = read_verified_bytes(archive, expected_sha, MAX_ARCHIVE_BYTES, 'archive')
     patch_names = {n for k in ['patch', 'test_patch'] for n, _ in patch_blocks(row[k])}
     files = {}
     omissions = []
     seen = set()
     total = 0
-    with tarfile.open(archive) as tar:
+    with tarfile.open(fileobj=io.BytesIO(archive_raw)) as tar:
         members = tar.getmembers()
         if len(members) > 100000:
             raise ValueError('archive member cap')
@@ -148,8 +176,8 @@ def archive_files(archive, expected_sha, row, max_total=512 * 1024 ** 2):
             if m.isdir():
                 continue
             if not m.isfile():
-                if row['repo'] in {'yt-dlp/yt-dlp', 'tensorflow/models'}:
-                    raise ValueError('nonregular source member')
+                if name in patch_names or row['repo'] in {'yt-dlp/yt-dlp', 'tensorflow/models'}:
+                    raise ValueError('required or unsupported nonregular source member')
                 omissions.append({'path': name, 'reason': 'nonregular archive member'})
                 continue
             if row['repo'] == 'tensorflow/models':
@@ -179,6 +207,10 @@ def derive_roles(originals, row):
         files = dict(originals)
         for kind in kinds:
             for name, block in patch_blocks(row[kind]):
+                header = block.split('\n@@ ', 1)[0]
+                is_new = bool(re.search(r'^new file mode [0-7]+$', header, re.M))
+                if is_new == (name in files):
+                    raise ValueError('patch old/new file existence differs')
                 files[name] = apply_patch(files.get(name, b'').decode('utf-8'), block).encode('utf-8')
         roles[role] = files
     return roles
@@ -205,21 +237,21 @@ def prepare(csv_path, cache, task_id, output, sources_path=SOURCES):
         raise FileExistsError('immutable output already exists')
     originals, omissions = archive_files(cache.joinpath(*safe_path(pin['archive']).parts), pin['archive_sha256'], row)
     roles = derive_roles(originals, row)
-    output.mkdir(parents=True, mode=448)
+    output.mkdir(parents=True, mode=0o700)
     records = []
     for role, files in roles.items():
         root = output / role
-        root.mkdir(mode=448)
+        root.mkdir(mode=0o700)
         for name, raw in files.items():
             target = root.joinpath(*safe_path(name).parts)
             target.parent.mkdir(parents=True, exist_ok=True)
             with target.open('xb') as f:
                 f.write(raw)
-            target.chmod(292)
+            target.chmod(0o444)
         for p in sorted(root.rglob('*'), reverse=True):
             if p.is_dir():
-                p.chmod(365)
-        root.chmod(365)
+                p.chmod(0o555)
+        root.chmod(0o555)
         rows = index(files)
         records.append({'role': role, 'source_files': rows, 'source_files_index_sha256': digest(json.dumps(rows, sort_keys=True, separators=(',', ':')).encode())})
     result = {'schema_version': 1, 'instance_id': task_id, 'base_commit': row['base_commit'], 'source_archive_sha256': pin['archive_sha256'], 'dataset_sha256': DATASET_SHA256, 'code_patch_sha256': digest(row['patch'].encode()), 'test_patch_sha256': digest(row['test_patch'].encode()), 'F2P': row['F2P'], 'P2P': row['P2P'], 'roles': records, 'omissions': omissions, 'upstream_executed': False, 'scope': 'fixed known development tasks; source preparation only'}
@@ -235,7 +267,10 @@ def main():
     p.add_argument('--task', required=True, help='exact known instance_id / 精确已知任务ID')
     p.add_argument('--output', type=Path, required=True, help='new directory outside Git / Git外新目录')
     a = p.parse_args()
-    r = prepare(a.csv, a.cache, a.task, a.output)
+    try:
+        r = prepare(a.csv, a.cache, a.task, a.output)
+    except (ValueError, OSError, UnicodeError, csv.Error) as error:
+        p.exit(2, 'Source preparation failed / 源码准备失败: ' + str(error) + '\n')
     print(json.dumps({'instance_id': r['instance_id'], 'roles_prepared': len(r['roles']), 'upstream_executed': False}))
 if __name__ == '__main__':
     main()
