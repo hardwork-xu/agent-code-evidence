@@ -51,6 +51,15 @@ jobs:
           --expected-index-sha256 06020b127bb16d3b8c2b28438ea3b613d683d550d35b8a3401f36eae695ec45b
       - run: python -m benchmarks.known_task_execution.secondary_report --check
       - run: >-
+          python -m benchmarks.semantic_observer.prepare --check-spec
+          --spec benchmarks/semantic_observer/inputs/prospective8-20261015/spec.json
+          --expected-spec-sha256 af1ca2c413cde8dfac13ce216943603934574c4b9c7ea6f91eaa37ef38d5f265
+          --expected-index-sha256 0ab9b99349c561e7822aa3785f1b5d674d72bfa4c6f9fc89bdc1d11a753ed363
+      - run: >-
+          python -m benchmarks.semantic_observer.report --check
+          --bundle benchmarks/semantic_observer/results/prospective8-20261015
+          --expected-index-sha256 b0c354cf756bc700f14a8cfdfa0695b2d671305bd0715574b426e769f9dc8328
+      - run: >-
           python -m pytest -q tests benchmarks/graph/test_scope_audit.py
           benchmarks/revision_baselines/test_baselines.py
       - run: python scripts/build_release.py --source-date-epoch "$(git show -s --format=%ct HEAD)"

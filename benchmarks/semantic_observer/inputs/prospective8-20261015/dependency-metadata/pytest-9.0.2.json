@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "distribution": "pytest",
+  "version": "9.0.2",
+  "metadata_headers": {
+    "Author": [
+      "Holger Krekel, Bruno Oliveira, Ronny Pfannschmidt, Floris Bruynooghe, Brianna Laugher, Florian Bruhin, Others (See AUTHORS)"
+    ],
+    "Classifier": [
+      "Development Status :: 6 - Mature",
+      "Intended Audience :: Developers",
+      "Operating System :: MacOS",
+      "Operating System :: Microsoft :: Windows",
+      "Operating System :: POSIX",
+      "Operating System :: Unix",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Software Development :: Testing",
+      "Topic :: Utilities"
+    ],
+    "Description-Content-Type": [
+      "text/x-rst"
+    ],
+    "Dynamic": [
+      "license-file"
+    ],
+    "Keywords": [
+      "test,unittest"
+    ],
+    "License-Expression": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "pytest"
+    ],
+    "Project-URL": [
+      "Changelog, https://docs.pytest.org/en/stable/changelog.html",
+      "Contact, https://docs.pytest.org/en/stable/contact.html",
+      "Funding, https://docs.pytest.org/en/stable/sponsor.html",
+      "Homepage, https://docs.pytest.org/en/latest/",
+      "Source, https://github.com/pytest-dev/pytest",
+      "Tracker, https://github.com/pytest-dev/pytest/issues"
+    ],
+    "Provides-Extra": [
+      "dev"
+    ],
+    "Requires-Dist": [
+      "colorama>=0.4; sys_platform == \"win32\"",
+      "exceptiongroup>=1; python_version < \"3.11\"",
+      "iniconfig>=1.0.1",
+      "packaging>=22",
+      "pluggy<2,>=1.5",
+      "pygments>=2.7.2",
+      "tomli>=1; python_version < \"3.11\"",
+      "argcomplete; extra == \"dev\"",
+      "attrs>=19.2; extra == \"dev\"",
+      "hypothesis>=3.56; extra == \"dev\"",
+      "mock; extra == \"dev\"",
+      "requests; extra == \"dev\"",
+      "setuptools; extra == \"dev\"",
+      "xmlschema; extra == \"dev\""
+    ],
+    "Requires-Python": [
+      ">=3.10"
+    ],
+    "Summary": [
+      "pytest: simple powerful testing with Python"
+    ],
+    "Version": [
+      "9.0.2"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "setuptools (80.9.0)"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "14131718cc1f40cfecb5eac338037029a519b6392876100afec1e949f023d1ed",
+  "wheel_record_inventory": [
+    {
+      "path": "_pytest/__init__.py",
+      "sha256": "e087512619d6e571b62a568990ec67e7f4c2f56790e6d5c3485eed6dbe2f12ca",
+      "bytes": 391
+    },
+    {
+      "path": "_pytest/_argcomplete.py",
+      "sha256": "821d299daebaa782d56f60fc493e39ebc586c6f7489c64f8de6eac95886a36a5",
+      "bytes": 3776
+    },
+    {
+      "path": "_pytest/_code/__init__.py",
+      "sha256": "04a6e8c286100032a300999359d43c49240b6c106c874f9d663dd31a3b67eb23",
+      "bytes": 521
+    },
+    {
+      "path": "_pytest/_code/code.py",
+      "sha256": "1ec7a6dc4ee711db1a3e7631ab6ea0d2a5d73fd3c649fe3e47ed69659993576c",
+      "bytes": 55836
+    },
+    {
+      "path": "_pytest/_code/source.py",
+      "sha256": "56f37358761f4fde923b5dbc9bbb5f21d6a0677e72ba0e3a6d67e05c7ff9569f",
+      "bytes": 7772
+    },
+    {
+      "path": "_pytest/_io/__init__.py",
+      "sha256": "a642c5dbd54416be8396bdde3ad24bf2c7f8ed12c5b7525fe17d436413e56267",
+      "bytes": 190
+    },
+    {
+      "path": "_pytest/_io/pprint.py",
+      "sha256": "18b04a2fa7669d1afdd869d53243733242aac74f0ea7bb5d2527a1dc07b0a276",
+      "bytes": 19622
+    },
+    {
+      "path": "_pytest/_io/saferepr.py",
+      "sha256": "1e1c7917eef98b3d3785d93e58ef3a066cbd441b911ecb898fe614ce8cdfae0a",
+      "bytes": 4082
+    },
+    {
+      "path": "_pytest/_io/terminalwriter.py",
+      "sha256": "2b4a41d697c0beb281585011292a1b438c168b4a5d9a205a19bddafeffc00234",
+      "bytes": 8994
+    },
+    {
+      "path": "_pytest/_io/wcwidth.py",
+      "sha256": "714109ef8521c1e202c1b2af536aba9e865c3600f442504407d09f6a41986aa0",
+      "bytes": 1289
+    },
+    {
+      "path": "_pytest/_py/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "_pytest/_py/error.py",
+      "sha256": "90643b17cfdf67a615061031faef669134014f1d2a231c6754c0b40a088e77bd",
+      "bytes": 3475
+    },
+    {
+      "path": "_pytest/_py/path.py",
+      "sha256": "f8a781afa1618876530f32387b489b479566c1e88e6281fc5bf4e40fb5af18ed",
+      "bytes": 49220
+    },
+    {
+      "path": "_pytest/_version.py",
+      "sha256": "499638aba0077bc9d815dab227563abc2c76be9f1c70f363cb4c8812bdfc1922",
+      "bytes": 704
+    },
+    {
+      "path": "_pytest/assertion/__init__.py",
+      "sha256": "3a39c99b88fa5478306232af5bc77e28579f8c474e48e345178cf5d28f6bede8",
+      "bytes": 7120
+    },
+    {
+      "path": "_pytest/assertion/rewrite.py",
+      "sha256": "376adab93672026552858ffaca009cbef553f082f2e4dee87ace75e7966d4b10",
+      "bytes": 48206
+    },
+    {
+      "path": "_pytest/assertion/truncate.py",
+      "sha256": "daf394de44b88546610c32f45dacf5a4cee85bfd74c0c7342776ff9446d2cd02",
+      "bytes": 5438
+    },
+    {
+      "path": "_pytest/assertion/util.py",
+      "sha256": "6102f243b9d81d0bb4ba2e52781eb6281d0a8eeb9e1721f0821193fe9d5d7e63",
+      "bytes": 20561
+    },
+    {
+      "path": "_pytest/cacheprovider.py",
+      "sha256": "40229d89ea544a4b8f344c790e58484076c0e35dccc0d5257782c8a55d7a156f",
+      "bytes": 23149
+    },
+    {
+      "path": "_pytest/capture.py",
+      "sha256": "92e96e989751747bbbce8a2c3abe257c747471ee8bb0eb616aef41cabc3cc55e",
+      "bytes": 36829
+    },
+    {
+      "path": "_pytest/compat.py",
+      "sha256": "a9c1dc647432100e933b70b4a861203b46ff63136edb7a24d264d9d2c6a1ea49",
+      "bytes": 10254
+    },
+    {
+      "path": "_pytest/config/__init__.py",
+      "sha256": "ff967dc8cbd4baeaa10b2e370f638ead045306b13926b06d06eb778c3f81e1ea",
+      "bytes": 79024
+    },
+    {
+      "path": "_pytest/config/argparsing.py",
+      "sha256": "7438f0b58f6785343d435e196dd53e106c2840a645b95641d4fb34c1c960e7fa",
+      "bytes": 20439
+    },
+    {
+      "path": "_pytest/config/compat.py",
+      "sha256": "7630edfd74cfc170c88279e8a6d8b6655aeab70ccee6115688c86053976020ce",
+      "bytes": 2947
+    },
+    {
+      "path": "_pytest/config/exceptions.py",
+      "sha256": "e959bdcb3c143b12469b5ed93066f0ebdbff8b4ee64f52a607010d336b1c2a19",
+      "bytes": 315
+    },
+    {
+      "path": "_pytest/config/findpaths.py",
+      "sha256": "d22abddac47a73a81504569cc0c356fa0145ce57ef58d3b8e9d5fdc77f609c88",
+      "bytes": 12878
+    },
+    {
+      "path": "_pytest/debugging.py",
+      "sha256": "26457b39bef0439dd3146910d136bdea300c606b9b81d5e212cdfd4fb14fcc74",
+      "bytes": 13947
+    },
+    {
+      "path": "_pytest/deprecated.py",
+      "sha256": "122928623a9d94b4d981b04d4e615d3ea88fe43759a730322b045b3b6840d151",
+      "bytes": 3611
+    },
+    {
+      "path": "_pytest/doctest.py",
+      "sha256": "1a08dd58ec47f9f57d790a1643ba6e29e8dc15d0351cfb46f98eea6e9fb92fc7",
+      "bytes": 25478
+    },
+    {
+      "path": "_pytest/faulthandler.py",
+      "sha256": "d5cec3a51b4fd3f0b7ce91544b0d41391a401bc1ac883b49f730ae59d1222dcd",
+      "bytes": 4250
+    },
+    {
+      "path": "_pytest/fixtures.py",
+      "sha256": "eff80aa15502a5fa38b022f2dd3d3ba760efff16b9c761e7283299bbcf380de6",
+      "bytes": 78681
+    },
+    {
+      "path": "_pytest/freeze_support.py",
+      "sha256": "5fde08c62a6a79b780fc7833261f1d6e3a869ebb44405b8c202e612bb486597c",
+      "bytes": 1300
+    },
+    {
+      "path": "_pytest/helpconfig.py",
+      "sha256": "ea2cb6d6850351119e759a41dde992cda142c5e353fc44529122192c8c4c26f5",
+      "bytes": 10019
+    },
+    {
+      "path": "_pytest/hookspec.py",
+      "sha256": "bb1c4432b56a49fe4fe327308fb4c454e7df55666d1708548cdd392c5102ffc1",
+      "bytes": 43019
+    },
+    {
+      "path": "_pytest/junitxml.py",
+      "sha256": "d71198950cf33bd1c7dc782167986ee130427fc57e221046e6455dc7a5b63d5a",
+      "bytes": 25522
+    },
+    {
+      "path": "_pytest/legacypath.py",
+      "sha256": "fe5eaff1a90d31f4dce53023bdb73a33efedd79ee9f5013afb5d7c58cd0346df",
+      "bytes": 16588
+    },
+    {
+      "path": "_pytest/logging.py",
+      "sha256": "4d9ebb2503ffdd896dd29d750f627af0bfe8b3d825b2e82032f79cd07963b5bf",
+      "bytes": 35234
+    },
+    {
+      "path": "_pytest/main.py",
+      "sha256": "7ca2b20cc41fbfc2761bcb231eecb26967d553651035c40000f44d70e174b693",
+      "bytes": 42435
+    },
+    {
+      "path": "_pytest/mark/__init__.py",
+      "sha256": "dfc1fbc21da4dd264c64d6700213db1c1c693f161b9fec33995b465188a0bf37",
+      "bytes": 9870
+    },
+    {
+      "path": "_pytest/mark/expression.py",
+      "sha256": "df4ad2eb9c8c09d7e7d545a208fff88a67f349e584b4ffeacf8ff6255dd8d7e5",
+      "bytes": 11244
+    },
+    {
+      "path": "_pytest/mark/structures.py",
+      "sha256": "918f3cb7d117aca993d949c8873b50a02119294493c037e3d93227402b59c392",
+      "bytes": 23074
+    },
+    {
+      "path": "_pytest/monkeypatch.py",
+      "sha256": "597dffe9ccd42e1bdcdf0485fb437c55eb1bbfdc0637777096261c0ef4fc11fb",
+      "bytes": 15500
+    },
+    {
+      "path": "_pytest/nodes.py",
+      "sha256": "693b0385b2c45646767200bc517416e776c10c3e58ee5ed937007491be4d868e",
+      "bytes": 26540
+    },
+    {
+      "path": "_pytest/outcomes.py",
+      "sha256": "a9b8074421110d12bc5bc6407da9d07f80e9e3f5bbbcda1cdafbf7a66dc7b4aa",
+      "bytes": 10108
+    },
+    {
+      "path": "_pytest/pastebin.py",
+      "sha256": "a7ddb326d48dcfdfb10c4173a90df37a662081745a0e7c43e97e08ca2b5ebdb0",
+      "bytes": 4155
+    },
+    {
+      "path": "_pytest/pathlib.py",
+      "sha256": "c483986bc125cb2a43d814ee4b6ffc6e1e8ec83e038cf7c13ae9641714396f54",
+      "bytes": 37879
+    },
+    {
+      "path": "_pytest/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "_pytest/pytester.py",
+      "sha256": "c746a6f5b5c7cf740f0533d73f295c6267cff2c1a1562e510bf28f8fa8371e7e",
+      "bytes": 62389
+    },
+    {
+      "path": "_pytest/pytester_assertions.py",
+      "sha256": "c57fc76c53c1f91cff34d0edb53637f5fb7bff064bbcf81040155ebd209e5660",
+      "bytes": 2253
+    },
+    {
+      "path": "_pytest/python.py",
+      "sha256": "fd28318a23e7afb8cf81794ab3cb028ddb0148df80a14666cc8bc9320324561e",
+      "bytes": 68754
+    },
+    {
+      "path": "_pytest/python_api.py",
+      "sha256": "a78d14cf1ab2676a66e88a32d5d06627b52268eed59b1ef38726736bf1795490",
+      "bytes": 31744
+    },
+    {
+      "path": "_pytest/raises.py",
+      "sha256": "f3a57e8686398586daebd9e9cab1fbaf891035bf108e8b986fc4b27462e68d57",
+      "bytes": 60082
+    },
+    {
+      "path": "_pytest/recwarn.py",
+      "sha256": "e1aeacf165aa9fec82087caa82707f7df73fce4c170463c2baf0bed372fae5ce",
+      "bytes": 13386
+    },
+    {
+      "path": "_pytest/reports.py",
+      "sha256": "2e9272a67cde38b925eba24a288b2ef77f741c0daa22da6fbce53ee6e58fa41d",
+      "bytes": 23230
+    },
+    {
+      "path": "_pytest/runner.py",
+      "sha256": "8d784b2b3e23b05f4c4edd3f5263eb11964e86b6e16d2c814c5fcb2125dc4ea4",
+      "bytes": 19785
+    },
+    {
+      "path": "_pytest/scope.py",
+      "sha256": "a41ee3b228acb61d7a3c115a715d58c5ddcf8f7600c767669529866c6e26c3a0",
+      "bytes": 2738
+    },
+    {
+      "path": "_pytest/setuponly.py",
+      "sha256": "06c46b0b81110d5af8dbed86fcbd00c61354e175706ccb32e52d253af2abf300",
+      "bytes": 3167
+    },
+    {
+      "path": "_pytest/setupplan.py",
+      "sha256": "97ec9c14dc4364fc98e76c21e1fef26aa87367b496d628d22a740b9aacc36560",
+      "bytes": 1184
+    },
+    {
+      "path": "_pytest/skipping.py",
+      "sha256": "5824731d5a311780f418eac9a094e7cf1fd63a82d3b0cd5e9e5498cc6ecd127c",
+      "bytes": 10810
+    },
+    {
+      "path": "_pytest/stash.py",
+      "sha256": "e69137903c78abce794d6f5a56f61376b9242a530353afb1897e25b8aa491202",
+      "bytes": 3090
+    },
+    {
+      "path": "_pytest/stepwise.py",
+      "sha256": "903f350eb9e19dc94a06631f6aec1099b78c6d852fbb0d3bc395a73649887444",
+      "bytes": 7689
+    },
+    {
+      "path": "_pytest/subtests.py",
+      "sha256": "f8eccea44d23f7cbc358c02c23ec4c27415c61bea29cbaba60f1ffd2d132538e",
+      "bytes": 13241
+    },
+    {
+      "path": "_pytest/terminal.py",
+      "sha256": "e2fe406f930e795d09026746e8209a9a7142ac704fc0a0200af9e4f74d2104d0",
+      "bytes": 64444
+    },
+    {
+      "path": "_pytest/terminalprogress.py",
+      "sha256": "fc83b7bd1195013cf746491a72a200682502e3e46ada94c400d50063ae9d1304",
+      "bytes": 1153
+    },
+    {
+      "path": "_pytest/threadexception.py",
+      "sha256": "85371ca73654aeb4240d1395140a87817c00538f3571ae0cab8080e1807b9b2e",
+      "bytes": 4953
+    },
+    {
+      "path": "_pytest/timing.py",
+      "sha256": "94f70a1da33578a1efd7fd9981468f2bd877161b6a1af64062e731fcb49d670d",
+      "bytes": 3108
+    },
+    {
+      "path": "_pytest/tmpdir.py",
+      "sha256": "d9f10512bc4bfdc0e94bd78adfdbb32fd534903d9ca50b4f6ad474ffed031e55",
+      "bytes": 11387
+    },
+    {
+      "path": "_pytest/tracemalloc.py",
+      "sha256": "942501fd85006fa475beaabf6fe2d26125f2f9389d6e7da6eed7f3996014ae39",
+      "bytes": 778
+    },
+    {
+      "path": "_pytest/unittest.py",
+      "sha256": "869a3c76e2c19ba64ff9ef6fa63860b80a69e22916db770f5a1e7e57dfceea29",
+      "bytes": 24155
+    },
+    {
+      "path": "_pytest/unraisableexception.py",
+      "sha256": "74d681a411e4381e293884a868c75abb6a23ac6a1cfe2e2ec7be835572cb4fec",
+      "bytes": 5179
+    },
+    {
+      "path": "_pytest/warning_types.py",
+      "sha256": "566ea71b4b0f502c82dcc06a1c7ae86570e5914f95be2d104c941a68caf21890",
+      "bytes": 4398
+    },
+    {
+      "path": "_pytest/warnings.py",
+      "sha256": "c89303afbbd27a28fe9f24ee95d13bc0bdb964bfcbba640663a3c96695e243e2",
+      "bytes": 5194
+    },
+    {
+      "path": "py.py",
+      "sha256": "b71675b5d9845ba0814e9e88767f88dac3b3cc0d3128da028bd45edbb523e871",
+      "bytes": 329
+    },
+    {
+      "path": "pytest-9.0.2.dist-info/METADATA",
+      "sha256": "14131718cc1f40cfecb5eac338037029a519b6392876100afec1e949f023d1ed",
+      "bytes": 7558
+    },
+    {
+      "path": "pytest-9.0.2.dist-info/RECORD",
+      "sha256": "8ee7eb52e3ba0a7f3eb6646eacfe749977afaace145bb37fa2651e296f635e11",
+      "bytes": 6437
+    },
+    {
+      "path": "pytest-9.0.2.dist-info/WHEEL",
+      "sha256": "ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b",
+      "bytes": 91
+    },
+    {
+      "path": "pytest-9.0.2.dist-info/entry_points.txt",
+      "sha256": "f083eb1cf1f72cd650eefe6d34439c35365893f4a178d83ae23b1333d7aba8be",
+      "bytes": 77
+    },
+    {
+      "path": "pytest-9.0.2.dist-info/licenses/LICENSE",
+      "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "bytes": 1091
+    },
+    {
+      "path": "pytest-9.0.2.dist-info/top_level.txt",
+      "sha256": "cb2863be65c7efe24e6a84087663501cfba8042c4ec974b78c8b61b3fe82f00e",
+      "bytes": 18
+    },
+    {
+      "path": "pytest/__init__.py",
+      "sha256": "7be7a1e2218dc59a19d1ad131e4abe21172a295087efc72898938248782e8766",
+      "bytes": 5582
+    },
+    {
+      "path": "pytest/__main__.py",
+      "sha256": "a150eb186a3b3744cdcb35e7b546e57204ca6e11c65ad8af717e530bbb4470aa",
+      "bytes": 154
+    },
+    {
+      "path": "pytest/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "pytest-9.0.2.dist-info/licenses/LICENSE",
+      "path": "licenses/ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b.txt",
+      "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "bytes": 1091
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

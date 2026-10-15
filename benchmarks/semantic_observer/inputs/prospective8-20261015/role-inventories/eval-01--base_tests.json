@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": ".github/CODEOWNERS",
+      "sha256": "13c02526395e9d0677e8dcc79e2e9318ce85c1482e4442d9ec464d2f3dbea1dd",
+      "bytes": 48
+    },
+    {
+      "path": ".github/FUNDING.yaml",
+      "sha256": "dfe31c9dc0a6b913c2f7b0b30ee65bc36747a0f0efcfee988b145cabe6b64afd",
+      "bytes": 79
+    },
+    {
+      "path": ".github/SECURITY.md",
+      "sha256": "4fff186267f8713a867f367d26764027e4374a5197c51ef0e07a83a111bbe201",
+      "bytes": 365
+    },
+    {
+      "path": ".github/dependabot.yaml",
+      "sha256": "023b4aca422022fde82c44ca95ff328f34e776d801367a9ff75af3597da3eea1",
+      "bytes": 232
+    },
+    {
+      "path": ".github/release.yaml",
+      "sha256": "9c7ad5d889af97a7d0892fb93e120b1d4dad5167086ee1972cf82406351b08c8",
+      "bytes": 86
+    },
+    {
+      "path": ".github/workflows/check.yaml",
+      "sha256": "9f324a8e474293f9daa21565400d617bfe94603b9b4f71ada995f9cd0e93ca7a",
+      "bytes": 6153
+    },
+    {
+      "path": ".github/workflows/prepare-release.yaml",
+      "sha256": "8f035c9e5f8c01d0aebf5f1d2b0e46de3745909c84f6ca32952eec498e1170fa",
+      "bytes": 3234
+    },
+    {
+      "path": ".github/workflows/release.yaml",
+      "sha256": "942b83e5e274be624fe7464136bb8c4d66eedc12b67119c387629b8d453ac788",
+      "bytes": 3207
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "7e2689f301b2dddb5d9f956b97c42ec1a5a23dd23bceb396b08182a1756047a9",
+      "bytes": 102
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "sha256": "bcb9c8b52ebada53eddb4b1746af344c0828e306fb3f4efd11643f0a64dc241c",
+      "bytes": 1592
+    },
+    {
+      "path": ".proselintrc.json",
+      "sha256": "1a74cd3c763d27e386b57a63dc46e9cefdd3989392fe6de1e2a5231684477d7f",
+      "bytes": 78
+    },
+    {
+      "path": ".readthedocs.yml",
+      "sha256": "ea1f993e44a38105d54db42a955716e8ecbe4f899dcb4e6da2bd83f74fe37f1d",
+      "bytes": 236
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "85f49c9d5323a48e835d1f26f492e7ef8b2813028268cd288237a63113f9ba31",
+      "bytes": 4531
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+      "bytes": 1089
+    },
+    {
+      "path": "README.md",
+      "sha256": "2c9a0214b41a2a55c98499ce23282d97a41b68458fd3a2f13cd67b8a86b9c3b8",
+      "bytes": 3854
+    },
+    {
+      "path": "docs/api.rst",
+      "sha256": "8a0127f93aba48bd3781353d3ca6f800038dfb486da238a6096f7d3b30bf2ce0",
+      "bytes": 9229
+    },
+    {
+      "path": "docs/changelog.rst",
+      "sha256": "980be72adefebc3302a80c7147b786b2b4702a39c2f89617c4706086914d2d21",
+      "bytes": 26466
+    },
+    {
+      "path": "docs/changelog/template.jinja2",
+      "sha256": "33f4251e7b14bcdabe752c4d8d48ae77207809fb95a94cce38ff7a4e29b0dd88",
+      "bytes": 451
+    },
+    {
+      "path": "docs/conf.py",
+      "sha256": "1bc33120ba88039c4a66e6158c0c7c39474fcc1eee785115f01801aee6051bfd",
+      "bytes": 2364
+    },
+    {
+      "path": "docs/explanation.rst",
+      "sha256": "b415291771cf1d64e2ffcc2260d3adc5003161459a6effc796f30815acd66320",
+      "bytes": 28194
+    },
+    {
+      "path": "docs/howto.rst",
+      "sha256": "84c6d73c92bbbfd7dbbcc4c82e08ee4512d21759171abd758b4edbdbc6c14602",
+      "bytes": 12244
+    },
+    {
+      "path": "docs/index.rst",
+      "sha256": "211a6033d42482c289412d77615a748e713e7dfa1f9f7d74279790dbfb5c3c5c",
+      "bytes": 1792
+    },
+    {
+      "path": "docs/parameters.rst",
+      "sha256": "12cf49f54d9f19438a3d7c3d88bdccc6b54c8d542eb422e57384d7100916db3a",
+      "bytes": 8906
+    },
+    {
+      "path": "docs/platformdirs.svg",
+      "sha256": "23aa78f6b1ad67d55f08602eacffa18936c2a56ae7c0bef680baef377f3ad59b",
+      "bytes": 422
+    },
+    {
+      "path": "docs/platforms.rst",
+      "sha256": "47e9c2206d700961a0d6b32a8515cf85cd2816de6f9a5ca9efd1518f9cb14bed",
+      "bytes": 18605
+    },
+    {
+      "path": "docs/tutorial.rst",
+      "sha256": "c94e3459b682dd9f00ef880177613e19da4f8d607464e577d8f917481167461e",
+      "bytes": 5773
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "a597edc9a83aac40a2abdeee6e89efe1eb5864dc282b03ccf4fbf43feb5d89ff",
+      "bytes": 6167
+    },
+    {
+      "path": "src/platformdirs/__init__.py",
+      "sha256": "3d249a2b0495667a946d3a8a9d9015846e69316dcc127cf59a6063745e66b3f1",
+      "bytes": 43297
+    },
+    {
+      "path": "src/platformdirs/__main__.py",
+      "sha256": "ee1add07cd6b0351220b791800b9c2cc2ffc4c5b57f3707663f4eb6a468d1daf",
+      "bytes": 2021
+    },
+    {
+      "path": "src/platformdirs/_xdg.py",
+      "sha256": "78ff2331a894e158be2c22860d686bb8b91edea7d947bf5d9234fb3192a6f027",
+      "bytes": 8460
+    },
+    {
+      "path": "src/platformdirs/android.py",
+      "sha256": "58830b8bfac5078f1777e9dd51e3898218f9d9a27eaeb5b469ac6f8be66d492b",
+      "bytes": 10294
+    },
+    {
+      "path": "src/platformdirs/api.py",
+      "sha256": "5f5b7a834a43b7d848aaba96f406f2fe4f344ee62333f70a5d7adc437f841924",
+      "bytes": 27616
+    },
+    {
+      "path": "src/platformdirs/ios.py",
+      "sha256": "b50c22f82e6c2ab895cd026cd11718d11bfae8da4bab174ed5e9524ca7d6d661",
+      "bytes": 6892
+    },
+    {
+      "path": "src/platformdirs/macos.py",
+      "sha256": "445fcf4dd28c3e3feca88737c27c19c646927e94b3bbffd007c2e1d15794e10d",
+      "bytes": 8479
+    },
+    {
+      "path": "src/platformdirs/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/platformdirs/pytest_plugin.py",
+      "sha256": "909672c61917b3284cc0c4369a3a8d284049782c3fb26ecbe058bb2a42c68e2c",
+      "bytes": 812
+    },
+    {
+      "path": "src/platformdirs/testing.py",
+      "sha256": "c761c9b07e6be3b98c8e5effacef62477854f38c50c6e3a8c02e4fc055530dc7",
+      "bytes": 2612
+    },
+    {
+      "path": "src/platformdirs/unix.py",
+      "sha256": "860c9c0f6d2e009c46c6581fa265f43261cfd52c9bbfd6efff14b5679c9a685e",
+      "bytes": 16684
+    },
+    {
+      "path": "src/platformdirs/version.py",
+      "sha256": "4676c345f9ce1571486f748f25a27dd256a0d00ea9468ccba57cb83a8620f39e",
+      "bytes": 522
+    },
+    {
+      "path": "src/platformdirs/windows.py",
+      "sha256": "3157e18e5d9e1589463caf00d673bbe7bc901deea55fbe554837009387ebf0de",
+      "bytes": 16549
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "4a8c175d21eaa4a0d1bd10e1a0786604d787b83c84e2cb0b3850d902bb9ae0ce",
+      "bytes": 3560
+    },
+    {
+      "path": "tests/test_android.py",
+      "sha256": "da8b4d7c0241b7a202e6f776cc56d7268beb05d284cc48fff49fe02354de2eac",
+      "bytes": 15003
+    },
+    {
+      "path": "tests/test_api.py",
+      "sha256": "f2556bef77184b994fca982f18118346ef0832ff236f4cc86a64fd99fb98eee9",
+      "bytes": 22541
+    },
+    {
+      "path": "tests/test_comp_with_appdirs.py",
+      "sha256": "16b56e66f467fa347448447ef2262bc885b00e943f8f66fd1f4935f8a6d34e67",
+      "bytes": 2613
+    },
+    {
+      "path": "tests/test_ios.py",
+      "sha256": "8db3625fea282a897f71891cad84ce6d43febad5de6de129e05b7dd84c7d1297",
+      "bytes": 5662
+    },
+    {
+      "path": "tests/test_macos.py",
+      "sha256": "da90fffd9211fc281d6d4a7c3f2fe903213e984a7ffa5d4b4cfb809bbfb6d5dd",
+      "bytes": 29595
+    },
+    {
+      "path": "tests/test_main.py",
+      "sha256": "056653a337fad4c075804d70f2e2c90c7c057e9b14d631133b7e991f378b772f",
+      "bytes": 1408
+    },
+    {
+      "path": "tests/test_pytest_plugin.py",
+      "sha256": "ff92916f24dec9c4427ed4d6a12c2faaf8f4b18e3b384f8ed39063a734d6e2cf",
+      "bytes": 2169
+    },
+    {
+      "path": "tests/test_testing.py",
+      "sha256": "79e06aba8a38632ea0020add5a7eab0181044b2cc4bad28e8af77bfc75688848",
+      "bytes": 6075
+    },
+    {
+      "path": "tests/test_unix.py",
+      "sha256": "eacfd2e3a9bc6722a223e0036be55d809c5af2f956a778f900e6d9e84673f91a",
+      "bytes": 64771
+    },
+    {
+      "path": "tests/test_windows.py",
+      "sha256": "c5b4147f2e4da92aa456447b8474b8ec675469e21d184371e124dec8904bb53b",
+      "bytes": 29354
+    },
+    {
+      "path": "tox.toml",
+      "sha256": "600a98d5d82b126fd2721d32808aabd72fe31c53be92f2b3503c6c60263d3d61",
+      "bytes": 4325
+    }
+  ]
+}

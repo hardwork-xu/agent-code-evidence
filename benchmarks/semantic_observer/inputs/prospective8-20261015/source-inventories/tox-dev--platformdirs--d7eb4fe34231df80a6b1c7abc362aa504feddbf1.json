@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "repository": "tox-dev/platformdirs",
+  "commit": "d7eb4fe34231df80a6b1c7abc362aa504feddbf1",
+  "files": [
+    {
+      "path": ".github/CODEOWNERS",
+      "bytes": 48,
+      "sha256": "13c02526395e9d0677e8dcc79e2e9318ce85c1482e4442d9ec464d2f3dbea1dd"
+    },
+    {
+      "path": ".github/FUNDING.yaml",
+      "bytes": 79,
+      "sha256": "dfe31c9dc0a6b913c2f7b0b30ee65bc36747a0f0efcfee988b145cabe6b64afd"
+    },
+    {
+      "path": ".github/SECURITY.md",
+      "bytes": 365,
+      "sha256": "4fff186267f8713a867f367d26764027e4374a5197c51ef0e07a83a111bbe201"
+    },
+    {
+      "path": ".github/dependabot.yaml",
+      "bytes": 232,
+      "sha256": "023b4aca422022fde82c44ca95ff328f34e776d801367a9ff75af3597da3eea1"
+    },
+    {
+      "path": ".github/release.yaml",
+      "bytes": 86,
+      "sha256": "9c7ad5d889af97a7d0892fb93e120b1d4dad5167086ee1972cf82406351b08c8"
+    },
+    {
+      "path": ".github/workflows/check.yaml",
+      "bytes": 6028,
+      "sha256": "b312cf64d9349b6eac2bc52b68210e9c8fedaee38b987943b0b94f4cb6b4288f"
+    },
+    {
+      "path": ".github/workflows/prepare-release.yaml",
+      "bytes": 3201,
+      "sha256": "3916665611bf7639841dedce94692ab110342fc1a8f265483395cb0b78daf6c6"
+    },
+    {
+      "path": ".github/workflows/release.yaml",
+      "bytes": 3166,
+      "sha256": "ceba888e4604120864757ae95b1cde1908a499190b97abeeda04b101ec5b15f2"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 102,
+      "sha256": "7e2689f301b2dddb5d9f956b97c42ec1a5a23dd23bceb396b08182a1756047a9"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "bytes": 1593,
+      "sha256": "5d43e4949eb09018d677df898c952ee27be353367347aceb349650a55d764b2e"
+    },
+    {
+      "path": ".proselintrc.json",
+      "bytes": 78,
+      "sha256": "1a74cd3c763d27e386b57a63dc46e9cefdd3989392fe6de1e2a5231684477d7f"
+    },
+    {
+      "path": ".readthedocs.yml",
+      "bytes": 177,
+      "sha256": "0f26820c2f88634a5d921b8122752e8829cadb3eaf57ad559a8cc53e8ae06e28"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 4531,
+      "sha256": "85f49c9d5323a48e835d1f26f492e7ef8b2813028268cd288237a63113f9ba31"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1089,
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3854,
+      "sha256": "2c9a0214b41a2a55c98499ce23282d97a41b68458fd3a2f13cd67b8a86b9c3b8"
+    },
+    {
+      "path": "docs/api.rst",
+      "bytes": 9229,
+      "sha256": "8a0127f93aba48bd3781353d3ca6f800038dfb486da238a6096f7d3b30bf2ce0"
+    },
+    {
+      "path": "docs/changelog.rst",
+      "bytes": 26072,
+      "sha256": "6353126f7dd7cb8a08169379ab92c495feadeb6cf006f735d871ed8b05026689"
+    },
+    {
+      "path": "docs/changelog/612.bugfix.rst",
+      "bytes": 251,
+      "sha256": "4cbe208fd5964c84508643a6556a199bf017e3316e163259aa882b1ac39be9e3"
+    },
+    {
+      "path": "docs/changelog/template.jinja2",
+      "bytes": 451,
+      "sha256": "33f4251e7b14bcdabe752c4d8d48ae77207809fb95a94cce38ff7a4e29b0dd88"
+    },
+    {
+      "path": "docs/conf.py",
+      "bytes": 2378,
+      "sha256": "6a78abf8cba1b50f472fd8477af9f8b6ee5291fff97847aaf53793f5d369bb20"
+    },
+    {
+      "path": "docs/explanation.rst",
+      "bytes": 28194,
+      "sha256": "b415291771cf1d64e2ffcc2260d3adc5003161459a6effc796f30815acd66320"
+    },
+    {
+      "path": "docs/howto.rst",
+      "bytes": 12244,
+      "sha256": "84c6d73c92bbbfd7dbbcc4c82e08ee4512d21759171abd758b4edbdbc6c14602"
+    },
+    {
+      "path": "docs/index.rst",
+      "bytes": 1792,
+      "sha256": "211a6033d42482c289412d77615a748e713e7dfa1f9f7d74279790dbfb5c3c5c"
+    },
+    {
+      "path": "docs/parameters.rst",
+      "bytes": 8906,
+      "sha256": "12cf49f54d9f19438a3d7c3d88bdccc6b54c8d542eb422e57384d7100916db3a"
+    },
+    {
+      "path": "docs/platformdirs.svg",
+      "bytes": 422,
+      "sha256": "23aa78f6b1ad67d55f08602eacffa18936c2a56ae7c0bef680baef377f3ad59b"
+    },
+    {
+      "path": "docs/platforms.rst",
+      "bytes": 18605,
+      "sha256": "47e9c2206d700961a0d6b32a8515cf85cd2816de6f9a5ca9efd1518f9cb14bed"
+    },
+    {
+      "path": "docs/tutorial.rst",
+      "bytes": 5773,
+      "sha256": "c94e3459b682dd9f00ef880177613e19da4f8d607464e577d8f917481167461e"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 5792,
+      "sha256": "3ca05a23ca45f8f47bb78a602e0db843b76b2b1c341f7623dea8518be11c84c2"
+    },
+    {
+      "path": "src/platformdirs/__init__.py",
+      "bytes": 43297,
+      "sha256": "3d249a2b0495667a946d3a8a9d9015846e69316dcc127cf59a6063745e66b3f1"
+    },
+    {
+      "path": "src/platformdirs/__main__.py",
+      "bytes": 2021,
+      "sha256": "ee1add07cd6b0351220b791800b9c2cc2ffc4c5b57f3707663f4eb6a468d1daf"
+    },
+    {
+      "path": "src/platformdirs/_xdg.py",
+      "bytes": 8460,
+      "sha256": "78ff2331a894e158be2c22860d686bb8b91edea7d947bf5d9234fb3192a6f027"
+    },
+    {
+      "path": "src/platformdirs/android.py",
+      "bytes": 10294,
+      "sha256": "58830b8bfac5078f1777e9dd51e3898218f9d9a27eaeb5b469ac6f8be66d492b"
+    },
+    {
+      "path": "src/platformdirs/api.py",
+      "bytes": 27616,
+      "sha256": "5f5b7a834a43b7d848aaba96f406f2fe4f344ee62333f70a5d7adc437f841924"
+    },
+    {
+      "path": "src/platformdirs/ios.py",
+      "bytes": 6892,
+      "sha256": "b50c22f82e6c2ab895cd026cd11718d11bfae8da4bab174ed5e9524ca7d6d661"
+    },
+    {
+      "path": "src/platformdirs/macos.py",
+      "bytes": 8479,
+      "sha256": "445fcf4dd28c3e3feca88737c27c19c646927e94b3bbffd007c2e1d15794e10d"
+    },
+    {
+      "path": "src/platformdirs/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/platformdirs/pytest_plugin.py",
+      "bytes": 812,
+      "sha256": "909672c61917b3284cc0c4369a3a8d284049782c3fb26ecbe058bb2a42c68e2c"
+    },
+    {
+      "path": "src/platformdirs/testing.py",
+      "bytes": 2612,
+      "sha256": "c761c9b07e6be3b98c8e5effacef62477854f38c50c6e3a8c02e4fc055530dc7"
+    },
+    {
+      "path": "src/platformdirs/unix.py",
+      "bytes": 16684,
+      "sha256": "860c9c0f6d2e009c46c6581fa265f43261cfd52c9bbfd6efff14b5679c9a685e"
+    },
+    {
+      "path": "src/platformdirs/windows.py",
+      "bytes": 16549,
+      "sha256": "3157e18e5d9e1589463caf00d673bbe7bc901deea55fbe554837009387ebf0de"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 3560,
+      "sha256": "4a8c175d21eaa4a0d1bd10e1a0786604d787b83c84e2cb0b3850d902bb9ae0ce"
+    },
+    {
+      "path": "tests/test_android.py",
+      "bytes": 15003,
+      "sha256": "da8b4d7c0241b7a202e6f776cc56d7268beb05d284cc48fff49fe02354de2eac"
+    },
+    {
+      "path": "tests/test_api.py",
+      "bytes": 22541,
+      "sha256": "f2556bef77184b994fca982f18118346ef0832ff236f4cc86a64fd99fb98eee9"
+    },
+    {
+      "path": "tests/test_comp_with_appdirs.py",
+      "bytes": 2613,
+      "sha256": "16b56e66f467fa347448447ef2262bc885b00e943f8f66fd1f4935f8a6d34e67"
+    },
+    {
+      "path": "tests/test_ios.py",
+      "bytes": 5662,
+      "sha256": "8db3625fea282a897f71891cad84ce6d43febad5de6de129e05b7dd84c7d1297"
+    },
+    {
+      "path": "tests/test_macos.py",
+      "bytes": 29595,
+      "sha256": "da90fffd9211fc281d6d4a7c3f2fe903213e984a7ffa5d4b4cfb809bbfb6d5dd"
+    },
+    {
+      "path": "tests/test_main.py",
+      "bytes": 1408,
+      "sha256": "056653a337fad4c075804d70f2e2c90c7c057e9b14d631133b7e991f378b772f"
+    },
+    {
+      "path": "tests/test_pytest_plugin.py",
+      "bytes": 2169,
+      "sha256": "ff92916f24dec9c4427ed4d6a12c2faaf8f4b18e3b384f8ed39063a734d6e2cf"
+    },
+    {
+      "path": "tests/test_testing.py",
+      "bytes": 6075,
+      "sha256": "79e06aba8a38632ea0020add5a7eab0181044b2cc4bad28e8af77bfc75688848"
+    },
+    {
+      "path": "tests/test_unix.py",
+      "bytes": 63714,
+      "sha256": "0f97d3298c40ad079a6324aee84810cfa310987bb68c7ba470eace62f79df9f1"
+    },
+    {
+      "path": "tests/test_windows.py",
+      "bytes": 29354,
+      "sha256": "c5b4147f2e4da92aa456447b8474b8ec675469e21d184371e124dec8904bb53b"
+    },
+    {
+      "path": "tox.toml",
+      "bytes": 4096,
+      "sha256": "f093b60833b806eb29f3c671db0a3cbff9172b512099c04f6950d60f4fbda077"
+    }
+  ]
+}

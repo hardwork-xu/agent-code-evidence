@@ -709,3 +709,63 @@ The later execution/results section will identify actual runs and failures.
 合计每版本112原selector，4组逐阶段结果相同；但依赖系统探测触发进程拦截，4/4不具
 完整运行资格。观测报告完整仍不等于运行资格或语义正确。新8任务协议在身份解封之前
 冻结，完整预测必须先于目标执行封存；不把派生运行时假设说成产品整图承诺。
+
+## 2026-10-15 — prospective binding panel execution / 前瞻绑定面板执行
+
+Source and protocol froze at d3c7c8c before evaluator task-content unsealing. All eight
+predictions were sealed (raw seal c996d9d3fa8d43fbc977f6958eb66cbdc2755d8a819fcc695b830a1fd1fb9293)
+before target execution. A user-requested pause closed after21 conditions; continuation
+called the same frozen executor only for the remaining11. Before/after independent
+inventories retain875/875 files unchanged. All32 conditions now closed,16/16 paired
+selected/phase/exit outcomes equal,16/16 observations complete, zero dropped events.
+
+The original subtest report shape makes eval-04 and eval-07 fail the frozen completion
+gate. They are not repaired or excluded after outcomes. Six tasks qualify execution,
+three have scoreable primitive sites in both roles, and only two have accepted sites.
+For each of the three real policies,28 site/source-role observations and1426 events
+agree; qualified primitive denominator38 sites/1442 events. All-eight task-macro
+coverage is5/24. The8/8 qualification and4/8 accepting-task gates fail. Three policies
+tie on all eight tasks and all three static repetitions. Twelve of420 first-repeat
+whole graphs have no frontier; accepted bindings' supporting graphs remain incomplete.
+These are finite observations, not coding-agent gains, full semantics or maturity.
+
+An independent implementation recalculated labels and exact rational aggregates from
+raw records without importing the scorer/report/resolver, then compared3360
+integer/flag/ratio entries with the frozen scorer; zero differences. This is internal
+independent arithmetic, not external reproduction or human scholarly assessment.
+
+Published projection retains every phase/typed observation/status, all method repeats,
+frontiers and costs; private paths, raw terminal text and original graph anchor source
+bodies remain outside Git. The first projection omitted source-load/end-to-end timing;
+it is retained privately and a new candidate adds the original measurements. Report
+integration initially rejected additional measurement-boundary fields; its failed log
+is retained, then explicit typed metadata support was added. Frozen methods, protocol,
+predictions and observations were unchanged. The new report has38 owned controls;
+input preparation has42. Final full-suite, build and remote CI are recorded separately.
+
+The public preparation CLI reconstructed all sixteen roles in a new private environment
+from exact cached official archives and fifteen legal hash-locked wheels; pip check
+passed and runtime identity has no reference deviation. No target was imported or
+executed by this preparation check. Public source/role inventories, original
+license/NOTICE text and four actual backend-generated version files are retained.
+New networking through this preparer was not rerun. The recorded primary experiment
+remains32 conditions, not an inflated count including input preparation.
+
+实际先冻结d3c7c8c和协议，再解封任务、封存八任务预测、执行目标。暂停后保留21条件，
+只用相同冻结执行器补11；原875文件完全不变。32条件闭合、16组结果一致、观测完整零丢弃。
+原子测试报告形状使04/07触发冻结门槛，保留其不合格。执行合格6/8、可计分3/8、接受2/8；
+28站点×源码角色、1426事件一致，全八宏覆盖5/24，主门槛失败，三策略平局。独立代码先不导入
+计分器算整数/有理数，再逐3360项对照零差异，不冒充外部独立复现。公开投影/计时接口修正保留
+最初失败，未改冻结测量。新venv输入重建16角色及15wheel通过，单列为输入验证，不增加SUT条件。
+
+Final local suite:3240 passed, two optional tiktoken skips, zero failures (44.79s).
+Ruff's first complete scan flagged formatting and an unused import in the exact
+historical metadata-build driver retained as a SHA-bound input artifact. Its bytes
+remain unchanged; only E401/E701/E702/F401 are exempted for that single artifact.
+The subsequent full Ruff check passed. Original license whitespace also stays exact,
+with a path-scoped Git whitespace exception. No assertion or execution gate changed.
+Publication scan returned zero findings; attribution and historical claim checks passed.
+
+最终本地全套3240通过、2项可选tiktoken跳过、零失败。完整Ruff初次指出已冻结元数据构建driver
+的格式/未用import；保持其原始字节，仅对这一个归档文件设置相应格式规则例外，之后全量Ruff通过。
+许可证原空白保留，不改断言或实验门槛；公开扫描零发现，归属与历史声明检查通过。

@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "distribution": "trove-classifiers",
+  "version": "2026.9.21.13",
+  "metadata_headers": {
+    "Author": [
+      "The PyPI Admins"
+    ],
+    "Author-email": [
+      "admin@pypi.org"
+    ],
+    "Classifier": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: Apache Software License",
+      "Programming Language :: Python :: 3",
+      "Typing :: Typed"
+    ],
+    "Description-Content-Type": [
+      "text/markdown"
+    ],
+    "Dynamic": [
+      "author",
+      "author-email",
+      "classifier",
+      "description",
+      "description-content-type",
+      "home-page",
+      "keywords",
+      "license-file",
+      "summary"
+    ],
+    "Home-page": [
+      "https://github.com/pypa/trove-classifiers"
+    ],
+    "Keywords": [
+      "classifiers"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "trove-classifiers"
+    ],
+    "Summary": [
+      "Canonical source for classifiers on PyPI (pypi.org)."
+    ],
+    "Version": [
+      "2026.9.21.13"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "setuptools (84.0.0)"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "ca7e96493232b21f92aeccf456b2e01f1d4dbcaa8e17a9e1b5e6f03c6eb7461f",
+  "wheel_record_inventory": [
+    {
+      "path": "trove_classifiers-2026.9.21.13.dist-info/METADATA",
+      "sha256": "ca7e96493232b21f92aeccf456b2e01f1d4dbcaa8e17a9e1b5e6f03c6eb7461f",
+      "bytes": 2350
+    },
+    {
+      "path": "trove_classifiers-2026.9.21.13.dist-info/RECORD",
+      "sha256": "8aa75df1c8b71b055cb1cd36c8e49c4d886dc5af5d571d08ed6c2e8c48ae247b",
+      "bytes": 845
+    },
+    {
+      "path": "trove_classifiers-2026.9.21.13.dist-info/WHEEL",
+      "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+      "bytes": 91
+    },
+    {
+      "path": "trove_classifiers-2026.9.21.13.dist-info/entry_points.txt",
+      "sha256": "6dff8b3f2eb367c24540153968f3428c9ad8786bd116e219ecdb43211e97fc32",
+      "bytes": 69
+    },
+    {
+      "path": "trove_classifiers-2026.9.21.13.dist-info/licenses/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "trove_classifiers-2026.9.21.13.dist-info/top_level.txt",
+      "sha256": "fd3bd7bff29905475c9493e0fb4ac09a94cc8100ed04e8cad2cd76c95fa15917",
+      "bytes": 18
+    },
+    {
+      "path": "trove_classifiers/__init__.py",
+      "sha256": "d305cc4cc3a6d96cb4b181fa6a6912e9d1d3c63d5c8d02d9db0a26a5c4716057",
+      "bytes": 43610
+    },
+    {
+      "path": "trove_classifiers/__main__.py",
+      "sha256": "e1ea5b022575ec6e6bd86f283f63b8a2ba96e55fbd32f576a7023b9e26f94856",
+      "bytes": 177
+    },
+    {
+      "path": "trove_classifiers/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "trove_classifiers-2026.9.21.13.dist-info/licenses/LICENSE",
+      "path": "licenses/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "distribution": "pathspec",
+  "version": "1.1.1",
+  "metadata_headers": {
+    "Author-email": [
+      "\"Caleb P. Burns\" <cpburnz@gmail.com>"
+    ],
+    "Classifier": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Topic :: Software Development :: Libraries :: Python Modules",
+      "Topic :: Utilities"
+    ],
+    "Description-Content-Type": [
+      "text/x-rst"
+    ],
+    "License-File": [
+      "LICENSE"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "pathspec"
+    ],
+    "Project-URL": [
+      "Change Log, https://python-path-specification.readthedocs.io/en/latest/changes.html",
+      "Documentation, https://python-path-specification.readthedocs.io/en/latest/index.html",
+      "Issue Tracker, https://github.com/cpburnz/python-pathspec/issues",
+      "Source Code, https://github.com/cpburnz/python-pathspec"
+    ],
+    "Provides-Extra": [
+      "hyperscan",
+      "optional",
+      "re2"
+    ],
+    "Requires-Dist": [
+      "hyperscan >=0.7 ; extra == \"hyperscan\"",
+      "typing-extensions >=4 ; extra == \"optional\"",
+      "google-re2 >=1.1 ; extra == \"re2\""
+    ],
+    "Requires-Python": [
+      ">=3.9"
+    ],
+    "Summary": [
+      "Utility library for gitignore style pattern matching of file paths."
+    ],
+    "Version": [
+      "1.1.1"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "flit 3.12.0"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "68de3f158b6592f086e78754c962092f32a761944ab66a660c0d62ad79c4b69b",
+  "wheel_record_inventory": [
+    {
+      "path": "pathspec-1.1.1.dist-info/METADATA",
+      "sha256": "68de3f158b6592f086e78754c962092f32a761944ab66a660c0d62ad79c4b69b",
+      "bytes": 14797
+    },
+    {
+      "path": "pathspec-1.1.1.dist-info/RECORD",
+      "sha256": "4ac63b5e39220a5029201e9315e61ea033e4ea737cd1e53a04fc1a039f63d906",
+      "bytes": 3067
+    },
+    {
+      "path": "pathspec-1.1.1.dist-info/WHEEL",
+      "sha256": "1b68144734c4b66791f27add5d425f3620775585718a03d0f9b110ba3a4d88db",
+      "bytes": 82
+    },
+    {
+      "path": "pathspec-1.1.1.dist-info/licenses/LICENSE",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "bytes": 16726
+    },
+    {
+      "path": "pathspec/__init__.py",
+      "sha256": "d0f9d909e715a38523b1f0341051ac0148a4cb3d6348316640ff600a82975bf6",
+      "bytes": 1408
+    },
+    {
+      "path": "pathspec/_backends/__init__.py",
+      "sha256": "0a3817e2e48f302e541f88b2fc8add157adc2d0fe0c0af0c296e506eca73fee1",
+      "bytes": 130
+    },
+    {
+      "path": "pathspec/_backends/_utils.py",
+      "sha256": "9838db1a99dd3b2564b7d16e7b458358a4e493e8d5a8e7a3a1ff41bfda7302b1",
+      "bytes": 1066
+    },
+    {
+      "path": "pathspec/_backends/agg.py",
+      "sha256": "9da1c5a985cc479de1c2d807b441ebc0d244045a5b5166dd31b174ce0bb11e51",
+      "bytes": 2505
+    },
+    {
+      "path": "pathspec/_backends/hyperscan/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "pathspec/_backends/hyperscan/_base.py",
+      "sha256": "fb2517feb0bc05204d47260284e027bf253d51745e070bb29d312794828b488c",
+      "bytes": 1773
+    },
+    {
+      "path": "pathspec/_backends/hyperscan/base.py",
+      "sha256": "a1f7d052f47f396033172833c36f7ce3b5089c769366ce97f8db474c34ca56c2",
+      "bytes": 673
+    },
+    {
+      "path": "pathspec/_backends/hyperscan/gitignore.py",
+      "sha256": "1eda825d88267286805c0311ba93a6cddd6c097a6cc2976fddc68a840575a287",
+      "bytes": 6963
+    },
+    {
+      "path": "pathspec/_backends/hyperscan/pathspec.py",
+      "sha256": "abb302f34cd88bbf2aea16a02fc4643990e2444b40a933473f505effe5ee022f",
+      "bytes": 6803
+    },
+    {
+      "path": "pathspec/_backends/re2/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "pathspec/_backends/re2/_base.py",
+      "sha256": "d18cd841d6e4d231e6f57cccb92abd7a86dbc2022adba44be55bb51e488f9595",
+      "bytes": 2299
+    },
+    {
+      "path": "pathspec/_backends/re2/base.py",
+      "sha256": "6186fe38a1b77d6a45afa38aad0a06eb89a9e8f60af32e6119fbd4fe212afe0b",
+      "bytes": 488
+    },
+    {
+      "path": "pathspec/_backends/re2/gitignore.py",
+      "sha256": "7191e1bb1c76b27891ed55678780189655846047628ac581acaadc1c4fb7d723",
+      "bytes": 5237
+    },
+    {
+      "path": "pathspec/_backends/re2/pathspec.py",
+      "sha256": "13eccda4c957d36c8f9ee6e07efa5d388918fd06247b880ad048ee23d7e1669a",
+      "bytes": 5063
+    },
+    {
+      "path": "pathspec/_backends/simple/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "pathspec/_backends/simple/gitignore.py",
+      "sha256": "01327855b1b0d4e1d7e610a2aa8c015132e6219616e5d920c9432466e482be1d",
+      "bytes": 2893
+    },
+    {
+      "path": "pathspec/_backends/simple/pathspec.py",
+      "sha256": "67379bb2dd9ebcdf3e8ee66be70e95070228c7b2d3a184f82b6cc3e09a7733b5",
+      "bytes": 2095
+    },
+    {
+      "path": "pathspec/_meta.py",
+      "sha256": "deb681ec541f2799e8dff0ccd57729adabc1af94b4f025db5baca1be6f926943",
+      "bytes": 3073
+    },
+    {
+      "path": "pathspec/_typing.py",
+      "sha256": "24206b320603ebfc734d36373f63f8e3c8c5c926f8dcc981a710488d150397e8",
+      "bytes": 1756
+    },
+    {
+      "path": "pathspec/_version.py",
+      "sha256": "074dff733b0c2ae215dda3037257710ce1d90a5de46ac141345286b24931b640",
+      "bytes": 64
+    },
+    {
+      "path": "pathspec/backend.py",
+      "sha256": "1e12c5e239fbaf990fd970376eb930d3a0dab8097fcab5b31580fe6a5eab3a7b",
+      "bytes": 1470
+    },
+    {
+      "path": "pathspec/gitignore.py",
+      "sha256": "e4914a27a90e1bf444c7ae79b82a068153eb8dc51c90ca365f3e939448a736d6",
+      "bytes": 5698
+    },
+    {
+      "path": "pathspec/pathspec.py",
+      "sha256": "d362dd67fbf230e187164ff5e890c027511fdf5625cad1b925f391edf0326502",
+      "bytes": 16892
+    },
+    {
+      "path": "pathspec/pattern.py",
+      "sha256": "4b511079f3420a1c11b62eac3df883e9380272b75802b8846280a75bc8c7e188",
+      "bytes": 7269
+    },
+    {
+      "path": "pathspec/patterns/__init__.py",
+      "sha256": "4c5c227638b8babd28c1ff6c5e42f22aca7dd006fcd4803e372e8936a72727e5",
+      "bytes": 406
+    },
+    {
+      "path": "pathspec/patterns/gitignore/__init__.py",
+      "sha256": "31a48065dd030e0d2f087f64d4bb256898c1270e43917e2dcbe16e2e6075cffe",
+      "bytes": 422
+    },
+    {
+      "path": "pathspec/patterns/gitignore/base.py",
+      "sha256": "9befc1bc55698a8359bdf1fc592f20216fe26cf52f8d7a5925a9222e5a04b3fb",
+      "bytes": 5639
+    },
+    {
+      "path": "pathspec/patterns/gitignore/basic.py",
+      "sha256": "eae0401248b42b41a763238331a8b6b7977c44f18c2219bb01599f38e8c07280",
+      "bytes": 10131
+    },
+    {
+      "path": "pathspec/patterns/gitignore/spec.py",
+      "sha256": "a1ae9f963301cf5fc61ccb7974514699beeeac4cb74b4c6c8a80386806c4da01",
+      "bytes": 10598
+    },
+    {
+      "path": "pathspec/patterns/gitwildmatch.py",
+      "sha256": "6c5d8f52d73d80e147b85c07274df9c7dd72dd1f009f9748639a1189bca5b1ca",
+      "bytes": 1463
+    },
+    {
+      "path": "pathspec/py.typed",
+      "sha256": "c2aef0c037b206e9e02ba0ec895e0ef88ba380acc04701f3f78b90b217697445",
+      "bytes": 68
+    },
+    {
+      "path": "pathspec/util.py",
+      "sha256": "b7f231615cc1f853413e28494d0c7366063d985e172523de23d816f7f3ebcfad",
+      "bytes": 25551
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "pathspec-1.1.1.dist-info/licenses/LICENSE",
+      "path": "licenses/fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85.txt",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "bytes": 16726
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

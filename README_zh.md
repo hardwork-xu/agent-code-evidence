@@ -14,6 +14,18 @@ ContextProof 保存源码及其支持解析的 Python 依赖，指出哪条依�
 缺失源码和预算不足都会显式保留。默认工具只依赖 Python 标准库，支持
 Python 3.11+、macOS/Linux；日常使用不需要模型、GPU 或 API Key。
 
+## 独立绑定观测（2026-10-15）
+
+[冻结八任务实验](docs/zh/SEMANTIC_OBSERVER.md)的32条件已全部闭合：保留原21条件，
+在相同协议和封存预测下续跑11条件。当前源码重建、整库相等复用、读取集复用在八任务上平局。
+**6/8任务具执行资格，3/8有可计分primitive站点**；28个接受的站点×源码角色观测一致，
+却仅来自2/8任务，预设有限效用主门槛未通过。零接受的准确率未定义。
+
+[自动生成双语表](benchmarks/semantic_observer/results/prospective8-20261015/REPORT_zh.md)与
+[输入重建](benchmarks/semantic_observer/inputs/prospective8-20261015/REPRODUCING.md)保留不支持值、
+零观测、子测试资格失败和完整成本。这些执行前绑定假设不证明完整语义、必要上下文、
+智能体修复收益或成熟研究。
+
 ## 外部真实任务先导实验（2026-10-14）
 
 [冻结的仅问题描述研究](docs/zh/EXTERNAL_PILOT_RESULTS.md) 完整尝试了六个未使用仓库的

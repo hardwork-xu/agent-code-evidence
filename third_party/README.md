@@ -173,3 +173,17 @@ they do not rerun upstream tests or prove that archived measurements reproduce.
 上述命令还离线核验主要结果的完整配对、来源、汇总及执行对照，不下载、不执行
 上游代码、不重新测量。失败留出尝试与明确无效的任务试运行保留原样，但不计作
 成功证据。记录一致性核验并不等于再次执行上游测试或复现实测结果。
+
+## Prospective binding-observation inputs / 前瞻绑定观测输入
+
+The eight-task study retains official source/test/version metadata and exact original
+license/NOTICE text in `benchmarks/semantic_observer/inputs/prospective8-20261015`.
+Original source/test bodies and dependency wheels are fetched independently. Four
+small generated version-metadata outputs come from the actual declared upstream VCS
+backend and retain their source/license provenance. Dependency alternatives, including
+the offered Artistic License, are recorded as supplied and are not relabeled MIT.
+The observer/comparison modules are project implementations; this is not a strict
+clean-room claim or an attribution of upstream algorithms to the maintainer.
+
+八任务保留官方版本、测试与许可来源；原源码/测试正文和wheel不重新分发。
+四份实际后端生成版本元数据单列溯源，不作为手写替身；依赖原许可及其选项保留。

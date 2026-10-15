@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "distribution": "hatch-vcs",
+  "version": "0.5.0",
+  "metadata_headers": {
+    "Author-email": [
+      "Ofek Lev <oss@ofek.dev>"
+    ],
+    "Classifier": [
+      "Development Status :: 4 - Beta",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy"
+    ],
+    "Description-Content-Type": [
+      "text/markdown"
+    ],
+    "Keywords": [
+      "git,hatch,mercurial,plugin,scm,vcs,version"
+    ],
+    "License-Expression": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE.txt"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "hatch-vcs"
+    ],
+    "Project-URL": [
+      "Funding, https://github.com/sponsors/ofek",
+      "History, https://github.com/ofek/hatch-vcs/blob/master/HISTORY.md",
+      "Issues, https://github.com/ofek/hatch-vcs/issues",
+      "Source, https://github.com/ofek/hatch-vcs"
+    ],
+    "Requires-Dist": [
+      "hatchling>=1.1.0",
+      "setuptools-scm>=8.2.0"
+    ],
+    "Requires-Python": [
+      ">=3.9"
+    ],
+    "Summary": [
+      "Hatch plugin for versioning with your preferred VCS"
+    ],
+    "Version": [
+      "0.5.0"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "hatchling 1.27.0"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "18d1dcef0349807b1a2a75cd2b792d4bc7496ad5441689d4503993cabce2aca9",
+  "wheel_record_inventory": [
+    {
+      "path": "hatch_vcs-0.5.0.dist-info/METADATA",
+      "sha256": "18d1dcef0349807b1a2a75cd2b792d4bc7496ad5441689d4503993cabce2aca9",
+      "bytes": 8988
+    },
+    {
+      "path": "hatch_vcs-0.5.0.dist-info/RECORD",
+      "sha256": "83b6585555e651c66cc92140a7130277c689eab8e87deff811f5e2f2b117a8e9",
+      "bytes": 965
+    },
+    {
+      "path": "hatch_vcs-0.5.0.dist-info/WHEEL",
+      "sha256": "aad0b0a12256807936d52d4a6f88a1773236ae527564a688bab4e3fe780e8724",
+      "bytes": 87
+    },
+    {
+      "path": "hatch_vcs-0.5.0.dist-info/entry_points.txt",
+      "sha256": "a75d394f215059d3ff9d1d13a2b34d263c05f9edbb2d4ef2ac9ee9cec42504b8",
+      "bytes": 30
+    },
+    {
+      "path": "hatch_vcs-0.5.0.dist-info/licenses/LICENSE.txt",
+      "sha256": "117aa5006d8475562f04442ab06dd2a4c501af3a77255eae0deef1f0c2499a1a",
+      "bytes": 1088
+    },
+    {
+      "path": "hatch_vcs/__about__.py",
+      "sha256": "387e43bc5b81e785449dfce670467ad3870a954e7488776d1a3a05d5c8517f69",
+      "bytes": 118
+    },
+    {
+      "path": "hatch_vcs/__init__.py",
+      "sha256": "d98269aeea6aef542db76dc00fd2d520b5c0f3e3f1e1e5961a80cf71e95cbacf",
+      "bytes": 96
+    },
+    {
+      "path": "hatch_vcs/build_hook.py",
+      "sha256": "66fcd2b9bcd683dd5d35b25720405aa4efb23a0a0796f136f6ecd1c9f21e40fe",
+      "bytes": 1363
+    },
+    {
+      "path": "hatch_vcs/hooks.py",
+      "sha256": "fde7eac2f95d6791d071d04cabd3af3cdb1275a1a0f134d6ed67cdc3352f2b04",
+      "bytes": 508
+    },
+    {
+      "path": "hatch_vcs/metadata_hook.py",
+      "sha256": "07dfc7966161ed2c9d0eb5502d543635b3a26687b87e0bf7036c85a6e67c21f0",
+      "bytes": 1370
+    },
+    {
+      "path": "hatch_vcs/vcs_utils.py",
+      "sha256": "6517dc4d1b8a6ef425fa7617400ad970117d529359c40c64f1b4b0c74732967a",
+      "bytes": 282
+    },
+    {
+      "path": "hatch_vcs/version_source.py",
+      "sha256": "4d074c6e18d6999c5399859269c8926c64f1b1a92e3f85614022e562d7d48852",
+      "bytes": 2448
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "hatch_vcs-0.5.0.dist-info/licenses/LICENSE.txt",
+      "path": "licenses/117aa5006d8475562f04442ab06dd2a4c501af3a77255eae0deef1f0c2499a1a.txt",
+      "sha256": "117aa5006d8475562f04442ab06dd2a4c501af3a77255eae0deef1f0c2499a1a",
+      "bytes": 1088
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

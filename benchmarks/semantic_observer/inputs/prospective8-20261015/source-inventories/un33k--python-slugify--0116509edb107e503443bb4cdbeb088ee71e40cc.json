@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "repository": "un33k/python-slugify",
+  "commit": "0116509edb107e503443bb4cdbeb088ee71e40cc",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1213,
+      "sha256": "049c380b3d1788974d1f661d52b7cbabffd73a00d5099272bbd915f552bc49d6"
+    },
+    {
+      "path": ".github/workflows/dev.yml",
+      "bytes": 1215,
+      "sha256": "0b57c9f8a859def702d2c7a903ca6bdf3b281d1b729b4a227820e2e9863b2802"
+    },
+    {
+      "path": ".github/workflows/main.yml",
+      "bytes": 1203,
+      "sha256": "458049e7c95edf521ca819c64e027ac83883017823ba872ee77672c00aff407e"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 739,
+      "sha256": "4bd4d91e2e7156009698c8b15e3c3ba85df230ed8b9f3ebe27cf0ce9217ee75c"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "bytes": 135,
+      "sha256": "d183e6f08d395ff5d77fedb1c86e51f32612abd3b41aa2b1bbe315b15fedc883"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 3920,
+      "sha256": "d70d40df724ad3e0fb7db9c98f29a076ecb39ab596c20832f08ae8d00c8e1d44"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1103,
+      "sha256": "30ba4dc69a9f4dce132dd703937c7a93b573e2524604d2d5f92c5066514c0d4f"
+    },
+    {
+      "path": "MANIFEST.in",
+      "bytes": 55,
+      "sha256": "e8639fe98578d680ddc31a93c05a87eb9f81fb79ff5cda9f92fd6f136d4e034a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7438,
+      "sha256": "432884833efec537c14363f6ffb4aab291c17030cd0816f50c9ae66307c93f5f"
+    },
+    {
+      "path": "dev.requirements.txt",
+      "bytes": 45,
+      "sha256": "cac311542b198568ba7a3505ea8161e7ce87531234e75a99846806baa3d1f3e5"
+    },
+    {
+      "path": "format.sh",
+      "bytes": 418,
+      "sha256": "105b0c469558356f35a861cfb064c82bf441d8dba6c116479b3b890b57036d01"
+    },
+    {
+      "path": "setup.py",
+      "bytes": 2592,
+      "sha256": "d61f2756098b559278668e1ef47a1abb514956473580784e8412be50eb490f9c"
+    },
+    {
+      "path": "slugify/__init__.py",
+      "bytes": 346,
+      "sha256": "43ef5b28242ff3db9fddb26bff21f130f84159737c602ce5c50c0afe476979f2"
+    },
+    {
+      "path": "slugify/__main__.py",
+      "bytes": 3961,
+      "sha256": "d64bfc035e5383fdfe96bc11495b87a18b80f3fca4beb6b73a1080d31628d5c6"
+    },
+    {
+      "path": "slugify/__version__.py",
+      "bytes": 325,
+      "sha256": "8d7b16a7fe94f6fefb45871819178bbac9d4676fa1af664d694fddb41f2d4083"
+    },
+    {
+      "path": "slugify/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "slugify/slugify.py",
+      "bytes": 6180,
+      "sha256": "3103ecc34bb68362d4fbc0414fb2b40ce946b40848c68287403e1f5a5b4a9656"
+    },
+    {
+      "path": "slugify/special.py",
+      "bytes": 1247,
+      "sha256": "69df9e579283cd656d720d8e04ccaf67a65edf35e5f8aa9b2e961ef577417986"
+    },
+    {
+      "path": "test.py",
+      "bytes": 23973,
+      "sha256": "9920b8e59978fa1a3d3f4a6728a5b4e0bfcfa1804983a117170c2709a28dee6c"
+    }
+  ]
+}

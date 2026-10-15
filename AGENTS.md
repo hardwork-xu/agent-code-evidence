@@ -25,3 +25,10 @@
 
 归档源码只读，禁止写入字节码缓存；开发夹具与已知执行面板保留负面，
 不得改称未见样本验证。
+
+- Keep semantic-observer protocol/source pins and published primary inputs/results
+  immutable. New methods or exposed-task amendments need a separately named study.
+  Pre-op binding agreement is finite evidence; zero accepts have undefined accuracy.
+
+绑定观测协议及主结果不可覆盖；新方法/暴露后修订须单列研究。
+执行前绑定一致仅是有限证据，零接受的准确率未定义。

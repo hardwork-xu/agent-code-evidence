@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "distribution": "vcs-versioning",
+  "version": "2.6.0",
+  "metadata_headers": {
+    "Author-email": [
+      "Ronny Pfannschmidt <opensource@ronnypfannschmidt.de>"
+    ],
+    "Classifier": [
+      "Development Status :: 4 - Beta",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14"
+    ],
+    "Description-Content-Type": [
+      "text/markdown"
+    ],
+    "Dynamic": [
+      "license-file"
+    ],
+    "License": [
+      "MIT"
+    ],
+    "License-File": [
+      "LICENSE.txt"
+    ],
+    "Metadata-Version": [
+      "2.4"
+    ],
+    "Name": [
+      "vcs-versioning"
+    ],
+    "Project-URL": [
+      "Documentation, https://github.com/pypa/setuptools-scm#readme",
+      "Issues, https://github.com/pypa/setuptools-scm/issues",
+      "Source, https://github.com/pypa/setuptools-scm"
+    ],
+    "Requires-Dist": [
+      "packaging>=26.2",
+      "tomli>=1; python_version < \"3.11\"",
+      "typing-extensions>=4.1; python_version < \"3.11\""
+    ],
+    "Requires-Python": [
+      ">=3.8"
+    ],
+    "Summary": [
+      "the blessed package to manage your versions by vcs metadata"
+    ],
+    "Version": [
+      "2.6.0"
+    ]
+  },
+  "wheel_headers": {
+    "Generator": [
+      "setuptools (84.0.0)"
+    ],
+    "Root-Is-Purelib": [
+      "true"
+    ],
+    "Tag": [
+      "py3-none-any"
+    ],
+    "Wheel-Version": [
+      "1.0"
+    ]
+  },
+  "wheel_metadata_sha256": "10bc8293fc925b604592c40dacc5d10ae6b1767ce5e0479e42a182d6ebfb55f4",
+  "wheel_record_inventory": [
+    {
+      "path": "vcs_versioning-2.6.0.dist-info/METADATA",
+      "sha256": "10bc8293fc925b604592c40dacc5d10ae6b1767ce5e0479e42a182d6ebfb55f4",
+      "bytes": 1680
+    },
+    {
+      "path": "vcs_versioning-2.6.0.dist-info/RECORD",
+      "sha256": "8914a39e82278c807fb21574f2e71cd79fb21aa632677de58d2ff4fe2ca77cf2",
+      "bytes": 5618
+    },
+    {
+      "path": "vcs_versioning-2.6.0.dist-info/WHEEL",
+      "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+      "bytes": 91
+    },
+    {
+      "path": "vcs_versioning-2.6.0.dist-info/entry_points.txt",
+      "sha256": "ffc3c39cf1368acd711e43c969fd2ad6e452941cffea56022565ff52898e8486",
+      "bytes": 2178
+    },
+    {
+      "path": "vcs_versioning-2.6.0.dist-info/licenses/LICENSE.txt",
+      "sha256": "f52f6085a2f4acdb7f425fac78d4bb013b2d723616792fb173a9f8aea191d8f0",
+      "bytes": 1083
+    },
+    {
+      "path": "vcs_versioning-2.6.0.dist-info/top_level.txt",
+      "sha256": "4c32ad35ee63ea8baf968b1848194ecb5aaced2c6ea7a8d88f5c7559056e9a05",
+      "bytes": 15
+    },
+    {
+      "path": "vcs_versioning/__init__.py",
+      "sha256": "dcac966395926733b53813902315aa98770fec269b4df02a0f2f451bc33d861e",
+      "bytes": 4161
+    },
+    {
+      "path": "vcs_versioning/__main__.py",
+      "sha256": "0219edcdd347dc985c8a8fce86873afc45bb0ae20dd3638cfb48aba461175e1d",
+      "bytes": 116
+    },
+    {
+      "path": "vcs_versioning/_backends/__init__.py",
+      "sha256": "b5fdea7914e3b0933e50ea82c8c94e65c184abc91659d04de4ecb197ddcbcf85",
+      "bytes": 72
+    },
+    {
+      "path": "vcs_versioning/_backends/_discover_vcs.py",
+      "sha256": "5bfcbca184beff8205f83dc6bf2bfc58200dc08a185cc5a6f491fe3179b62fa0",
+      "bytes": 2650
+    },
+    {
+      "path": "vcs_versioning/_backends/_git.py",
+      "sha256": "a4be1842455c4fe2fd916e87d14c58b6596f36d7516a52a3b6d47ad8ee77dc4b",
+      "bytes": 30850
+    },
+    {
+      "path": "vcs_versioning/_backends/_hg.py",
+      "sha256": "55d0d152ae3093eb6208b8336d69451b1b865c0ca8651efc440c73981bc92602",
+      "bytes": 18325
+    },
+    {
+      "path": "vcs_versioning/_backends/_hg_git.py",
+      "sha256": "118578774490960f9b69a4b6742dac2e3994e2c22ca6f3ea2b5bc99bfef4050d",
+      "bytes": 7054
+    },
+    {
+      "path": "vcs_versioning/_backends/_jj.py",
+      "sha256": "c171d5de05f63ce4c1b448c82dd52e94bc83eb00a17fea806fe1ac73999aa9e7",
+      "bytes": 10786
+    },
+    {
+      "path": "vcs_versioning/_backends/_scm_workdir.py",
+      "sha256": "47b97bd89b124bbc4a355ae11da7fe5a4071037aba317b7ec550f9214748e310",
+      "bytes": 7384
+    },
+    {
+      "path": "vcs_versioning/_cli/__init__.py",
+      "sha256": "67733f77e49bc8ce9f6e92d79729decfefea251d1285c54eef50db72763bfc02",
+      "bytes": 7525
+    },
+    {
+      "path": "vcs_versioning/_cli/_args.py",
+      "sha256": "977e17007756f773e39ec086ef5eb9f4f21c94393f4c83c339920a71c08096df",
+      "bytes": 3529
+    },
+    {
+      "path": "vcs_versioning/_cli/git_archival_full.txt",
+      "sha256": "80067458a81922a0cf647806c2e30c21afef9bd4425bc5a04987c0a381f66ac3",
+      "bytes": 276
+    },
+    {
+      "path": "vcs_versioning/_cli/git_archival_stable.txt",
+      "sha256": "3264a5094f885ad5993638eceab9b15fbf6e590de6d18a3cc8723b3e2dc7c235",
+      "bytes": 103
+    },
+    {
+      "path": "vcs_versioning/_compat.py",
+      "sha256": "844927498ddc440727711bdef9c695e6d5f3c11a00d8ba111f6a3bde45681765",
+      "bytes": 3259
+    },
+    {
+      "path": "vcs_versioning/_config.py",
+      "sha256": "f275d8c225532a9b546d592658d7b6749701506cefb3be01e577a5eda5f42a8f",
+      "bytes": 22714
+    },
+    {
+      "path": "vcs_versioning/_discover.py",
+      "sha256": "29e68e492571401c68488acc32c104ae22149e7550054fb709a23a1074138caf",
+      "bytes": 2752
+    },
+    {
+      "path": "vcs_versioning/_dump_version.py",
+      "sha256": "dd7ded849d3bacc8e13b0b675ed991904eb896fc79b4607f4f70ee32e47171d9",
+      "bytes": 4479
+    },
+    {
+      "path": "vcs_versioning/_dynamic_metadata.py",
+      "sha256": "2542e45fd1a290d7367a0023cb4f12618b5acd145ebfb06b6e2e0bfbe36e0c52",
+      "bytes": 1464
+    },
+    {
+      "path": "vcs_versioning/_entrypoints.py",
+      "sha256": "e354c336d7510a05c8be53bf616887937e23eb5007321458195e712d4113b9ba",
+      "bytes": 3008
+    },
+    {
+      "path": "vcs_versioning/_environment.py",
+      "sha256": "c580b8eecfefb171e2babb357f432dc7191dd86fcfff96c262ac14f57c640c09",
+      "bytes": 11577
+    },
+    {
+      "path": "vcs_versioning/_exceptions.py",
+      "sha256": "6b07a7adae22f1de8b3ef5ffe18af4b3c79720ad5f9baff08123f5995192d5ad",
+      "bytes": 176
+    },
+    {
+      "path": "vcs_versioning/_fallback_workdir.py",
+      "sha256": "fd4e5125d779aaeb8475ee08ba4d0a6de58b674cdbeccf69fb5ed7605923aac1",
+      "bytes": 8992
+    },
+    {
+      "path": "vcs_versioning/_fallbacks.py",
+      "sha256": "ec3fe5fdc2aba15e3d7c02debb90146ff1d4696435bffad8c54e4d4d1a02258a",
+      "bytes": 1420
+    },
+    {
+      "path": "vcs_versioning/_file_finders/__init__.py",
+      "sha256": "5dd2720b796ac311c7936ba186b67ef4f99dd09cca95be5cd8f078dc8ea014b6",
+      "bytes": 8709
+    },
+    {
+      "path": "vcs_versioning/_file_finders/_git.py",
+      "sha256": "a8f374604fbcd92548f09f3e42205f59f61df7f0bd4478c6ee95edcbe66d6853",
+      "bytes": 8067
+    },
+    {
+      "path": "vcs_versioning/_file_finders/_hg.py",
+      "sha256": "59fc6cfe4d051886e814cd7c9beb0532e9230a1368c1aa9674359d4ef641aa3e",
+      "bytes": 2286
+    },
+    {
+      "path": "vcs_versioning/_file_finders/_jj.py",
+      "sha256": "75893a8fd1400e9f21eea672039f879989e8e76a61c21714bae1bf5915724b04",
+      "bytes": 2159
+    },
+    {
+      "path": "vcs_versioning/_get_version_impl.py",
+      "sha256": "a0f7fd1a8a7e953bfe98bba431c4efd46b946d8409cbb5d5f4a704dfbf0072b6",
+      "bytes": 14438
+    },
+    {
+      "path": "vcs_versioning/_integration.py",
+      "sha256": "656845df1c55f8d9a837f729f9d06a25cb8eda7219bfd0b998ced98844eece2a",
+      "bytes": 805
+    },
+    {
+      "path": "vcs_versioning/_integrator_helpers.py",
+      "sha256": "e23a4ce0e4770f05756622c182e56333164615551d65b2a39500ba16c511f906",
+      "bytes": 4395
+    },
+    {
+      "path": "vcs_versioning/_legacy_parse.py",
+      "sha256": "a3564e4e6440f89834ee8b79c24c7a6775d5fc19c9ba4639acc655ce951fe5a2",
+      "bytes": 3613
+    },
+    {
+      "path": "vcs_versioning/_log.py",
+      "sha256": "a1bfe369ceb73420bf1b8195a9b33850e9735f573f323f2d503b6533137bfaa0",
+      "bytes": 3617
+    },
+    {
+      "path": "vcs_versioning/_modify_version.py",
+      "sha256": "f5553e8ee160d88663adccb3f642c645f06ae11c996449618cf322a6a8c1dd77",
+      "bytes": 1738
+    },
+    {
+      "path": "vcs_versioning/_node_utils.py",
+      "sha256": "391c6ee76e8ee2bb845181c41e073197aa6e9ca7566392b89160397bacd453c6",
+      "bytes": 1310
+    },
+    {
+      "path": "vcs_versioning/_overrides.py",
+      "sha256": "1c4fbe272b9cd0c3910d01524734a520f12e4df833213d7bc0c59b705784c9f5",
+      "bytes": 11460
+    },
+    {
+      "path": "vcs_versioning/_paths.py",
+      "sha256": "7268690c92c4e6ffc3f02812aeeb7aa861ae845af2cbb2ad8552645b85d044a1",
+      "bytes": 4331
+    },
+    {
+      "path": "vcs_versioning/_project_overrides.py",
+      "sha256": "a489b2643dca7cb5d68c809a02c2a6f071e2c5f539578012a81f934249f294a3",
+      "bytes": 2624
+    },
+    {
+      "path": "vcs_versioning/_protocols.py",
+      "sha256": "984565089ee8771120015a77a66ca752ba9e62a2b28a8ed682a511f7b6b9ec07",
+      "bytes": 4480
+    },
+    {
+      "path": "vcs_versioning/_pyproject_reading.py",
+      "sha256": "b4c527608faa383ee039985a5a327a0df4b5dc9e658a58ef170f8a57977fcd6a",
+      "bytes": 9481
+    },
+    {
+      "path": "vcs_versioning/_requirement_cls.py",
+      "sha256": "e91abdc2d2cc07e5458d71f90a3f96121cdc8747d6fcf85226158060cbdec35e",
+      "bytes": 761
+    },
+    {
+      "path": "vcs_versioning/_run_cmd.py",
+      "sha256": "ceb7e319a8130155a685675687ac8f17b5db95440b0379134750e8be598f567f",
+      "bytes": 6610
+    },
+    {
+      "path": "vcs_versioning/_scm_metadata.py",
+      "sha256": "fe426f9997339cae3e11bf3a8846c229c52014cef175fa8fe1ca8c196952d81d",
+      "bytes": 3710
+    },
+    {
+      "path": "vcs_versioning/_scm_version.py",
+      "sha256": "17daa87368c7a501d8093e0701e36ac50602dd6be3a17438c85613eaab1e7255",
+      "bytes": 13314
+    },
+    {
+      "path": "vcs_versioning/_test_utils.py",
+      "sha256": "8257c48a28130c588a8bbba92f130d4e9345b04b391a09125e5e4a0a67ad6d2c",
+      "bytes": 9352
+    },
+    {
+      "path": "vcs_versioning/_toml.py",
+      "sha256": "93e0c88928857e7b429efcad76f7a1ac779f44b33da9ebd33bd7ba9df3a200a8",
+      "bytes": 4331
+    },
+    {
+      "path": "vcs_versioning/_types.py",
+      "sha256": "7c06b22c62fbcfe0d38ac39056aa65709d51aa309a5a1330a9289900a6efd560",
+      "bytes": 1119
+    },
+    {
+      "path": "vcs_versioning/_version_cls.py",
+      "sha256": "7cad79becd301c5646681939f2afe6132a08e3d4cd0b3626830d6ce41f575a08",
+      "bytes": 3330
+    },
+    {
+      "path": "vcs_versioning/_version_fields.py",
+      "sha256": "ee240a2bc8667031ff8aca36e777bb3c9c41741b01defce13a398a49fbb90965",
+      "bytes": 951
+    },
+    {
+      "path": "vcs_versioning/_version_inference.py",
+      "sha256": "5a5e409a99a63deba3cf47faeed87972ab82ca0e1d77c2c2eafc9cde1aea878a",
+      "bytes": 1893
+    },
+    {
+      "path": "vcs_versioning/_version_schemes/__init__.py",
+      "sha256": "da7df3c8760d8c193e0c1fecd6f93e7f4a4e02f6f30496e87eae4c880266d6f6",
+      "bytes": 3782
+    },
+    {
+      "path": "vcs_versioning/_version_schemes/_common.py",
+      "sha256": "1553fff2483829426583e840cac219211ddefcca265fdee848aa5245320f59dc",
+      "bytes": 2199
+    },
+    {
+      "path": "vcs_versioning/_version_schemes/_standard.py",
+      "sha256": "bfdeeb39d5eb45e81f103a74120ef9a88a2bc2ea6244bf0af20297bc450c98b7",
+      "bytes": 9850
+    },
+    {
+      "path": "vcs_versioning/_version_schemes/_towncrier.py",
+      "sha256": "3103a98231b4febd2fd444c1c16af8691cc883445a7a7bc80c4383307e20238b",
+      "bytes": 9357
+    },
+    {
+      "path": "vcs_versioning/_worktree_discovery.py",
+      "sha256": "ac97b315255ab4b17c98aa1cb1935a3c727608f4f11dce5ed846e56942a39e4f",
+      "bytes": 9552
+    },
+    {
+      "path": "vcs_versioning/overrides.py",
+      "sha256": "bcb44cd01f6cd37aab37ebff939464a24dee216175a34abafae3a589325287c8",
+      "bytes": 20578
+    },
+    {
+      "path": "vcs_versioning/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "vcs_versioning/test_api.py",
+      "sha256": "b2d3bee90cbe78ed51d0835eea89be412cb7a35c3171930b5b0ba80f7a9c4fcb",
+      "bytes": 4786
+    }
+  ],
+  "actual_license_files": [
+    {
+      "original_wheel_path": "vcs_versioning-2.6.0.dist-info/licenses/LICENSE.txt",
+      "path": "licenses/f52f6085a2f4acdb7f425fac78d4bb013b2d723616792fb173a9f8aea191d8f0.txt",
+      "sha256": "f52f6085a2f4acdb7f425fac78d4bb013b2d723616792fb173a9f8aea191d8f0",
+      "bytes": 1083
+    }
+  ],
+  "description_body_or_implementation_source_included": false
+}

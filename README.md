@@ -20,8 +20,23 @@ ambiguous symbols, unsupported references and missing source remain explicit.
 Python 3.11+, macOS/Linux. The core has no third-party runtime dependencies and
 requires no model, GPU or API key. Hosted-model experiments are separate.
 
-[简体中文](docs/README.zh-CN.md) · [Graph API and contracts](docs/GRAPH.md) ·
+[简体中文](README_zh.md) · [Graph API and contracts](docs/GRAPH.md) ·
 [Measured report](docs/GRAPH_REPORT.md) · [Model protocol](docs/REVISION_STUDY_PROTOCOL.md)
+
+## Independent binding observations (2026-10-15)
+
+The [frozen eight-task study](docs/en/SEMANTIC_OBSERVER.md) completed all 32 conditions:
+21 preserved conditions plus 11 continued under the same protocol and sealed predictions.
+Current-source rebuilding, whole-corpus reuse and read-set reuse tie on all eight tasks.
+Only **6/8 tasks qualify execution and 3/8 have scoreable primitive sites**. The 28 accepted
+site/source-role observations agree, but arise from only 2/8 tasks; the predeclared
+finite-utility gate failed. Zero acceptance has undefined accuracy.
+
+[Generated bilingual tables](benchmarks/semantic_observer/results/prospective8-20261015/REPORT.md)
+and [source reconstruction](benchmarks/semantic_observer/inputs/prospective8-20261015/REPRODUCING.md)
+retain unsupported values, zero observations, subtest qualification failures and complete
+costs. These pre-op binding hypotheses do not establish whole-program semantics,
+necessary context, coding-agent benefit or mature research.
 
 ## External real-task pilot (2026-10-14)
 
