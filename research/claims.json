@@ -61,7 +61,7 @@
         "benchmarks/incremental_holdout/results/primary-20261004.json",
         "docs/en/INCREMENTAL_DESIGN.md"
       ],
-      "boundary_en": "Cannot pass on replay equality. Need externally grounded behavioral/semantic change labels and a predeclared nonzero risk/coverage objective; current complete reference count is 0/768. Zero false acceptances at zero acceptances is not evidence of useful certification."
+      "boundary_en": "Cannot pass on replay equality. Need externally grounded behavioral/semantic change labels and a predeclared nonzero risk/coverage objective; the frozen 2026-10-04 holdout's complete reference count is 0/768. Zero false acceptances at zero acceptances is not evidence of useful certification."
     },
     {
       "id": "C5-execution-witness",
@@ -169,8 +169,8 @@
     {
       "id": "semantic-freshness",
       "status": "missing",
-      "en": "Independent semantic labels and nonzero useful acceptance coverage; current 0/768 complete graphs.",
-      "zh": "独立语义标签和非零有效接受覆盖；当前完整图0/768。"
+      "en": "Independent semantic labels and nonzero useful acceptance coverage. The frozen 2026-10-04 holdout had 0/768 complete graphs; this is not a pooled count across later studies.",
+      "zh": "独立语义标签和非零有效接受覆盖。2026-10-04固定留出实验的完整图为0/768；该分母不汇总后续不同研究。"
     },
     {
       "id": "task-relevance",

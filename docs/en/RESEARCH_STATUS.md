@@ -54,15 +54,15 @@ High recall may result from broad declaration spans: packaging-metadata covers 1
 
 ## Substantive evidence still missing
 
-- Independent semantic labels and nonzero useful acceptance coverage; current 0/768 complete graphs.
+- Independent semantic labels and nonzero useful acceptance coverage. The frozen 2026-10-04 holdout had 0/768 complete graphs; this is not a pooled count across later studies.
 - Untouched task-context labels with fixed budgets and strong lexical/context-expansion controls. Execution witnesses are not relevance gold.
 - Actual downstream task outcomes if agent improvement remains a claim. Historical graph and simpler fresh baselines tie 24/25.
 - Broader or prospective workloads and independent environment replication; repeated trajectories are not independent datasets.
 - A defensible contribution relative to prior work, with independent scrutiny. Publication or academic firstness is not itself required, and this checker cannot judge novelty.
 
-Next priority: after license/source/label verification, compare graph expansion with strong lexical retrieval and ordinary context expansion on unseen repositories with external task-relevance labels, fixed budgets and issue-only automatic localization. Retain failures and narrow claims when needed. This experiment has not run; even success would not establish agent repair benefit.
+The outstanding validation requires a separately frozen unseen task set with independent semantic/necessary-context labels, reviewed licenses and source pins, and matched-budget lexical retrieval, ordinary context expansion and graph expansion. This semantic validation has not run. The completed 39-task issue-only edit-localization pilot uses patch-proxy labels; it is a different endpoint. Even successful semantic validation would not by itself establish agent repair benefit.
 
-See the separate39-task edit-localization pilot:[measured negative/mixed results](EXTERNAL_PILOT_RESULTS.md). Its patch-proxy labels do not fill the expert-necessary-context or downstream-benefit gap.
+Completed work is reported separately in the [39-task pilot and negative results](EXTERNAL_PILOT_RESULTS.md), [unchanged-upstream test qualification](KNOWN_TASK_EXECUTION.md) and [post-hoc subset sensitivity](KNOWN_TASK_SENSITIVITY.md). These records retain known-task failures; they do not fill the unseen-task, necessary-context or generated-repair-benefit gaps.
 
 ## Checks and evidence
 

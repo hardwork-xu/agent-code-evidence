@@ -657,3 +657,24 @@ are checked separately from local tests.
 的自主源码，新增读取后替换源文件反例。37项相关检查通过，随后完整本地套件
 2955通过、2项可选tiktoken跳过、零失败；这不是2955项上游任务。Docker不可用，
 不宣称容器构建通过；远端CI和包构建结果与本地测试分别记录。
+
+## 2026-10-15 — research-status scope clarification / 研究状态范围澄清
+
+A cross-document review found that the status page's future experiment wording
+could be mistaken for an unrun issue-only pilot, although the39-task pilot and
+its unchanged-test follow-up were already recorded. The generated English and
+Chinese pages now distinguish the outstanding unseen semantic/necessary-context
+validation from that completed known-task work, and link to both the execution
+and subset reports. The ledger also binds0/768 explicitly to the2026-10-04 frozen
+holdout instead of calling it a current total across later studies.
+
+Existing claim-ledger tests returned25 passed. Ruff, publication and attribution
+checks passed. Only status prose, its generator and this log changed; no source
+measurement, task membership, pass criterion or negative outcome was replaced.
+These checks are documentation consistency evidence, not a new experiment.
+
+跨文档复核发现“下一实验尚未运行”容易被误读为39项issue-only pilot尚未执行。
+双语生成页现明确区分未完成的未见任务语义/必要上下文验证与已完成的已知任务
+测量，并连接执行核验和子集报告；0/768明确限定为2026-10-04固定留出实验。
+现有声明账本25项测试、Ruff、公开内容及归属检查通过。仅修改状态文字、生成器
+与本日志，不改原始测量、任务成员、通过判据和负面结果；不计为新实验。
