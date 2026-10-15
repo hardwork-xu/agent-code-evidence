@@ -58,3 +58,14 @@ python -m benchmarks.known_task_execution.contract --help
 
 Sources: [fixed dataset](https://huggingface.co/datasets/AmazonScience/SWE-PolyBench_500/tree/546075b4b05d17ba914e72b8f4c6d5b1ea150c1d),
 [fixed official harness](https://github.com/amazon-science/SWE-PolyBench/tree/9c836c5d7f3cb991934132b77d29e6941d912a07).
+
+
+Source-adjacent runtime logs require a fixed, source-hash-bound allowlist and a
+1 MiB combined byte limit. The AutoGPT summary test also invokes the original
+cycle logger indirectly. Its source-supported `OVERWRITE_DEBUG=1` option fixes
+the output directory; only the four named summary artifacts for the two batches
+are additionally permitted, with caller, logger and test source proofs. Every
+other new file, source mutation, symlink, hard link or byte-limit violation
+invalidates execution. Artifact contents remain private. The earlier incomplete
+condition that exposed the missing log paths is retained, not reinterpreted as
+qualified. Passing an owned adapter fixture does not verify the upstream task.

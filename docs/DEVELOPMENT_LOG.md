@@ -513,3 +513,19 @@ index; worker/runner/raw results remain unchanged.
 暂存空白检查遇到Pygments原始AUTHORS文件的尾随空格，保留原字节并仅对该
 归属文件设置例外。实际验证/文档变更合并在c611cd5，不虚构未发生的test提交。
 重放索引补充指纹明确标为执行后审查，原索引及所有原始结果不改。
+
+
+## 2026-10-15 — source-bound cycle outputs / 源码绑定的周期输出
+
+A real AutoGPT source run reached the original assertion but then failed the
+source-set guard: the summary caller indirectly writes cycle JSON/text outputs,
+in addition to two simple logs. The incomplete run and its progress stream were
+retained. Added a separate exact six-file, 1 MiB policy with the original
+`OVERWRITE_DEBUG` directory option and three additional source proofs. New
+owned-child and mutation checks passed; the complete known-task adapter suite
+returned176 passed, zero failed/skipped. This is adapter validation, before
+rerunning the corrected upstream condition, not a task or research result.
+
+真实 AutoGPT 条件暴露了遗漏的间接周期日志路径；保留原不完整运行与逐阶段
+记录。新增精确文件、总字节限制、源码证明及目录选项检查，176项适配器测试
+通过。此记录不把适配器通过写成上游任务或研究效果，后续复测另存新条件。

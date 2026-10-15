@@ -44,6 +44,21 @@ def reviewed_source_logs(files, request):
     proof = expected.get('autogpt/logs.py')
     policy = {'source_path': 'autogpt/logs.py', 'source_sha256': proof['sha256'] if proof else None,
               'files': ['logs/activity.log', 'logs/error.log'], 'max_total_bytes': 1048576}
+    if isinstance(request, dict) and 'cycle_source_proofs' in request:
+        # Source-supported OVERWRITE_DEBUG makes the original cycle paths exact.
+        # 源码支持的目录选项只固定日志路径，不改变摘要逻辑或测试断言。
+        paths = ['autogpt/log_cycle/log_cycle.py', 'autogpt/memory/message_history.py',
+                 'tests/unit/test_message_history.py']
+        if any(path not in expected for path in paths):
+            raise ValueError('unreviewed cycle log source proof')
+        policy['cycle_source_proofs'] = [
+            {'path': path, 'sha256': expected[path]['sha256']} for path in paths]
+        policy['overwrite_debug'] = '1'
+        policy['files'] += [
+            'logs/DEBUG/auto_gpt/000/0_prompt_summary.json',
+            'logs/DEBUG/auto_gpt/000/1_summary.txt',
+            'logs/DEBUG/auto_gpt/000/2_prompt_summary.json',
+            'logs/DEBUG/auto_gpt/000/3_summary.txt']
     if (proof is None or json.dumps(request, sort_keys=True) != json.dumps(policy, sort_keys=True)
             or any(name in expected for name in policy['files'])):
         raise ValueError('unreviewed source log policy or source file overlap')
@@ -415,6 +430,9 @@ def process_guard(enabled, denied):
 def execute(config):
     root = Path(config['execution_root']).resolve()
     source_logs = reviewed_source_logs(config['source_files'], config.get('allowed_source_logs'))
+    if (source_logs is not None and 'cycle_source_proofs' in source_logs
+            and os.environ.get('OVERWRITE_DEBUG') != source_logs['overwrite_debug']):
+        raise ValueError('source-supported cycle log directory option differs')
     expected = validate_tree(root, config['source_files'], source_logs)
     aliases = config.get('pathless_aliases', {})
     aliases_hash = sha(json.dumps(aliases, sort_keys=True, ensure_ascii=False,

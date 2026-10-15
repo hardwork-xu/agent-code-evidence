@@ -48,3 +48,11 @@ python -m benchmarks.known_task_execution.contract --help
 
 来源：[固定数据集](https://huggingface.co/datasets/AmazonScience/SWE-PolyBench_500/tree/546075b4b05d17ba914e72b8f4c6d5b1ea150c1d)、
 [固定官方 harness](https://github.com/amazon-science/SWE-PolyBench/tree/9c836c5d7f3cb991934132b77d29e6941d912a07)。
+
+
+源码旁的运行日志必须有固定源码哈希对应的具体文件许可清单，合计不超过
+1 MiB。AutoGPT 原摘要测试还会间接调用周期日志；源码支持的
+`OVERWRITE_DEBUG=1` 只固定输出目录。额外许可限于两批摘要的四个指定文件，
+并绑定调用方、日志模块及测试源码证明。其他新文件、源码修改、符号链接、
+硬链接或超限均使执行无效。日志正文留在私有目录。暴露遗漏日志路径的原
+不完整条件保留，不重新解释为合格；自编适配器素材通过也不证明上游任务通过。
