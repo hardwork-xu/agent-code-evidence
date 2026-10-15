@@ -111,7 +111,8 @@ def error_class(report):
 def reviewed_plugins(names, versions):
     """Load only locked test plugins from their distributions. / 只加载已锁定测试插件。"""
     allowed = {'pytest_asyncio.plugin': 'pytest-asyncio', 'pytest_mock.plugin': 'pytest-mock'}
-    if not isinstance(names, list) or len(names) != len(set(names)):
+    if (not isinstance(names, list) or not all(isinstance(name, str) for name in names)
+            or len(names) != len(set(names))):
         raise ValueError('plugin names must be a distinct reviewed list')
     modules = []
     for name in names:
@@ -126,6 +127,30 @@ def reviewed_plugins(names, versions):
             raise ValueError('test plugin import spec differs')
         modules.append(module)
     return modules
+
+
+def reviewed_pytest_options(root, expected, config):
+    """Restore a source-bound async mode without broad config execution.
+
+    仅恢复经源码字节核验的异步模式，不执行整份外来配置或改写原测试。
+    """
+    mode = config.get('asyncio_mode')
+    if mode is None:
+        return []
+    if mode not in {'auto', 'strict'} or 'pytest_asyncio.plugin' not in config.get('pytest_plugins', []):
+        raise ValueError('async mode requires the explicit locked plugin')
+    proof = config.get('upstream_pytest_config', {})
+    key = proof.get('path')
+    if key not in expected or proof.get('sha256') != expected[key]['sha256']:
+        raise ValueError('upstream pytest config identity differs')
+    try:
+        import tomllib
+    except ImportError:
+        import tomli as tomllib
+    parsed = tomllib.loads((root / key).read_text(encoding='utf-8'))
+    if parsed.get('tool', {}).get('pytest', {}).get('ini_options', {}).get('asyncio_mode') != mode:
+        raise ValueError('requested async mode differs from fixed upstream config')
+    return ['--asyncio-mode=' + mode]
 
 
 def execute(config):
@@ -194,9 +219,11 @@ def execute(config):
     previous = network_guard(config['network_mode'], denied)
     try:
         plugins = reviewed_plugins(config.get('pytest_plugins', []), installed)
+        options = reviewed_pytest_options(root, expected, config)
         code = int(pytest.main(['-c', '/dev/null', '--rootdir=' + str(root),
                                '--confcutdir=' + str(root), '--import-mode=importlib',
                                '-p', 'no:cacheprovider', '-q',
+                               *options,
                                *[str(root / value) for value in config['test_files']]],
                               plugins=[Recorder(), *plugins]))
     finally:
@@ -248,6 +275,7 @@ def execute(config):
             'network_denials': denied, 'loaded_source_modules': loaded,
             'source_before_after_verified': True, 'dependency_versions': installed,
             'explicit_test_plugins': config.get('pytest_plugins', []),
+            'restored_upstream_pytest_options': options,
             'python_version': sys.version, 'elapsed_seconds': time.perf_counter() - started,
             'peak_rss_mib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss /
                             (1024 * 1024 if sys.platform == 'darwin' else 1024),

@@ -129,3 +129,19 @@ def test_crash_category_does_not_disclose_stack_path():
 def test_unreviewed_or_unlocked_plugins_are_rejected(names, versions):
     with pytest.raises(ValueError):
         worker.reviewed_plugins(names, versions)
+
+
+def test_async_mode_is_bound_to_original_config_bytes(tmp_path):
+    p = tmp_path / 'pyproject.toml'
+    p.write_text('[tool.pytest.ini_options]\nasyncio_mode = "auto"\n')
+    expected = {r['path']: r for r in files(tmp_path)}
+    config = {'asyncio_mode': 'auto', 'pytest_plugins': ['pytest_asyncio.plugin'],
+              'upstream_pytest_config': {'path': 'pyproject.toml', 'sha256': expected['pyproject.toml']['sha256']}}
+    assert worker.reviewed_pytest_options(tmp_path, expected, config) == ['--asyncio-mode=auto']
+    config['asyncio_mode'] = 'strict'
+    with pytest.raises(ValueError, match='differs from fixed upstream config'):
+        worker.reviewed_pytest_options(tmp_path, expected, config)
+    config['asyncio_mode'] = 'auto'
+    config['upstream_pytest_config']['sha256'] = '0' * 64
+    with pytest.raises(ValueError, match='identity differs'):
+        worker.reviewed_pytest_options(tmp_path, expected, config)
