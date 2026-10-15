@@ -3,11 +3,10 @@
 执行经过审查、未修改断言的测试，并核验实际导入源码。This is an adapter,
 not the official container harness or a security sandbox. Logs stay private.
 本程序是执行适配器，不是官方容器，也不构成安全沙箱；原始日志保留在私有目录。
-The worker uses Python 3.8-compatible syntax for historical source tests.
+The standalone worker supports Python 3.7 with a locked metadata backport.
 """
 import hashlib
 import importlib
-import importlib.metadata
 import ipaddress
 import json
 import os
@@ -18,6 +17,11 @@ import shlex
 import socket
 import sys
 import time
+
+if sys.version_info >= (3, 8):
+    from importlib import metadata
+else:
+    import importlib_metadata as metadata
 
 
 def sha(raw):
@@ -121,7 +125,7 @@ def reviewed_plugins(names, versions):
     for name in names:
         if name not in allowed or allowed[name] not in versions:
             raise ValueError('unreviewed or unlocked test plugin')
-        distribution = importlib.metadata.distribution(allowed[name])
+        distribution = metadata.distribution(allowed[name])
         path = Path(distribution.locate_file(name.replace('.', '/') + '.py')).resolve()
         module = importlib.import_module(name)
         if Path(module.__file__).resolve() != path:
@@ -195,7 +199,7 @@ def dependency_module(name, versions):
     """Import only the locked numerical dependency. / 仅导入锁定的数值依赖。"""
     if name not in {'torch', 'numpy'} or name not in versions:
         raise ValueError('unlocked numerical dependency')
-    distribution = importlib.metadata.distribution(name)
+    distribution = metadata.distribution(name)
     if distribution.version != versions[name]:
         raise ValueError('numerical distribution version differs')
     expected = Path(distribution.locate_file(name + '/__init__.py')).resolve()
@@ -372,7 +376,11 @@ def execute(config):
             raise ValueError('pathless alias source identity differs')
     if tuple(sys.version_info[:2]) != tuple(config['python_minor']):
         raise ValueError('reference interpreter minor mismatch')
-    installed = {name: importlib.metadata.version(name)
+    if sys.version_info < (3, 8) and not any(
+            name.lower().replace('_', '-') == 'importlib-metadata'
+            for name in config['dependency_versions']):
+        raise ValueError('Python 3.7 requires an explicit locked metadata backport')
+    installed = {name: metadata.version(name)
                  for name in config['dependency_versions']}
     if installed != config['dependency_versions']:
         raise ValueError('dependency lock mismatch')
